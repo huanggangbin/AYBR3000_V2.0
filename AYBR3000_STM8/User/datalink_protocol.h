@@ -1,5 +1,5 @@
-#ifndef _PROTOCOL_H_
-#define _PROTOCOL_H_
+#ifndef _DATALINK_PROTOCOL_H_
+#define _DATALINK_PROTOCOL_H_
 #include "types.h"
 
 typedef enum
@@ -17,8 +17,11 @@ typedef struct
     uint8 data[10];
 }App_protocol;
 
+#define PROTOCOL_HEAD_LENGTH 10u        //data[]前面的字节数
+
 extern void protocol_init(void);
-extern void protocol_process(void);
+extern bool protocol_send(uint8 * data, uint8 length);
+extern bool protocol_receive(uint8 * data, uint8 length);
 
 #endif
 

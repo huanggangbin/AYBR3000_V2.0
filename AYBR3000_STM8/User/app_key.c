@@ -28,6 +28,10 @@ typedef enum
     VALUE_NUMBER
 }Key_value;
 
+typedef struct
+{
+
+}
 static Key_value key;
 
 void app_key_init(void)

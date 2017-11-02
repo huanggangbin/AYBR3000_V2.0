@@ -1,0 +1,5 @@
+---- memset Matches (4 in 3 files) ----
+App_protocol.c (user):    memset((uint8 *)&app_frame, 0, sizeof (App_frame));
+Datalink_protocol.c (user):    memset((uint8 *)&send_frame, 0, sizeof(App_protocol));
+Datalink_protocol.c (user):    memset((uint8 *)&receive_frame, 0, sizeof(App_protocol));
+Task_manager.c (user):    memset((uint8 *)&task_manager, 0, sizeof(Task_manager));

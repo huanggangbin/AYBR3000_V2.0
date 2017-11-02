@@ -3,6 +3,7 @@
 #include "types.h"
 #include "timing.h"
 #include "LCD_driver.h"
+#include "app_protocol.h"
 
 //时间设置模式定义
 typedef enum

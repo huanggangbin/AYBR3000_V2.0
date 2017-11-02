@@ -18,6 +18,7 @@ static App_work_event event;
 
 static void app_work_mode_display(void);
 static void app_work_mode_send(void);
+static App_frame app_frame;
 
 void app_work_mode_init(void)
 {
@@ -44,6 +45,8 @@ void app_work_mode_init(void)
     }
     work_mode = APP_MODE_IDLE;
     previous_mode = APP_MODE_IDLE;
+
+    app_protocol_init(&app_frame);
 }
 
 void app_work_mode_process(void)
@@ -205,6 +208,35 @@ static void app_work_mode_display(void)
 
 static void app_work_mode_send(void)
 {
+    app_frame.non_mutex_func.bai_dong = (uint8)status[work_mode].bai_dong;
+
+    switch(status[work_mode].cf_mode)
+    {
+        case APP_CHUI_FENG_INIT: 
+            app_frame.non_mutex_func.qiang = 0;
+            app_frame.non_mutex_func.ruo = 0;
+            app_frame.non_mutex_func.zi_dong = 0;
+            break;
+        case APP_CHUI_FENG_QIANG: 
+            app_frame.non_mutex_func.qiang = 1;
+            app_frame.non_mutex_func.ruo = 0;
+            app_frame.non_mutex_func.zi_dong = 0;
+            break;
+        case APP_CHUI_FENG_RUO: 
+            app_frame.non_mutex_func.qiang = 0;
+            app_frame.non_mutex_func.ruo = 1;
+            app_frame.non_mutex_func.zi_dong = 0;
+            break;
+        case APP_CHUI_FENG_ZI_DONG: 
+            app_frame.non_mutex_func.qiang = 0;
+            app_frame.non_mutex_func.ruo = 0;
+            app_frame.non_mutex_func.zi_dong = 1;
+            break;
+    }
     
+    app_frame.temp =  status[work_mode].wen_du;
+    app_frame.ding_shi = status[work_mode].ding_shi;
+    
+    app_protocol_send(&app_frame);
 }
 
