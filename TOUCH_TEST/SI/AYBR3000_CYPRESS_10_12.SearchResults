@@ -1,0 +1,4 @@
+---- light_key_changed Matches (3 in 1 files) ----
+Key.c (aybr3000.cydsn):               light_key_changed = TRUE;
+Key.c (aybr3000.cydsn):                        if (light_key_changed == TRUE)
+Key.c (aybr3000.cydsn):                            light_key_changed = FALSE;

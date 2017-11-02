@@ -1,0 +1,1129 @@
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.time_1ms_Interrupt,"ax",%progbits
+  18              		.align	2
+  19              		.global	time_1ms_Interrupt
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	time_1ms_Interrupt, %function
+  23              	time_1ms_Interrupt:
+  24              	.LFB36:
+  25              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include "timing.h"
+  14:main.c        **** #include "app.h"
+  15:main.c        **** #include "key.h"
+  16:main.c        **** #include "simple_protocol.h"
+  17:main.c        **** #include "task_manager.h"
+  18:main.c        **** 
+  19:main.c        **** CY_ISR_PROTO(time_1ms_Interrupt);
+  20:main.c        **** 
+  21:main.c        **** //#define TOUCH_TUNE_SWITCH
+  22:main.c        **** int main(void)
+  23:main.c        **** {
+  24:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  25:main.c        ****     
+  26:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  27:main.c        ****     
+  28:main.c        ****     key_init();
+  29:main.c        ****     simple_protocol_init();
+  30:main.c        **** #ifdef TOUCH_TUNE_SWITCH 
+  31:main.c        ****     
+  32:main.c        ****     EZI2C_Start(); /* Start EZI2C Component */
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 2
+
+
+  33:main.c        ****     /*
+  34:main.c        ****     * Set up communication and initialize data buffer to CapSense data structure
+  35:main.c        ****     * to use Tuner application
+  36:main.c        ****     */
+  37:main.c        ****     EZI2C_EzI2CSetBuffer1(sizeof(key_touch_dsRam), sizeof(key_touch_dsRam),(uint8 *)&key_touch_dsRa
+  38:main.c        **** 
+  39:main.c        **** #endif
+  40:main.c        ****     task_init();
+  41:main.c        ****     app_init();
+  42:main.c        ****     Timer_1_Start();  //开定时器
+  43:main.c        ****     time_1ms_ISR_StartEx(time_1ms_Interrupt);      //自定义中断服务函数
+  44:main.c        ****     key_touch_Start(); /* Initialize Component */
+  45:main.c        ****     key_touch_ScanAllWidgets(); /* Scan all widgets */
+  46:main.c        ****     
+  47:main.c        ****     task_add(key_process, 10);      
+  48:main.c        ****     task_add(simple_protocol_process, 1);
+  49:main.c        ****     for(;;)
+  50:main.c        ****     {
+  51:main.c        ****         //CySysWdtIsr();   //feed dog
+  52:main.c        ****         /* Do this only when a scan is done */
+  53:main.c        ****         if(key_touch_NOT_BUSY == key_touch_IsBusy()) 
+  54:main.c        ****         {
+  55:main.c        ****             key_touch_ProcessAllWidgets(); 
+  56:main.c        **** #ifdef TOUCH_TUNE_SWITCH             
+  57:main.c        ****                 key_touch_RunTuner(); 
+  58:main.c        **** #endif
+  59:main.c        ****             task_main();
+  60:main.c        ****             key_touch_ScanAllWidgets(); 
+  61:main.c        ****         } 
+  62:main.c        ****         /* Place your application code here. */
+  63:main.c        ****         task_main();
+  64:main.c        ****     }
+  65:main.c        **** }
+  66:main.c        **** 
+  67:main.c        **** CY_ISR(time_1ms_Interrupt)
+  68:main.c        **** {
+  26              		.loc 1 68 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  69:main.c        ****     task_1ms_updater();
+  32              		.loc 1 69 0
+  33 0002 FFF7FEFF 		bl	task_1ms_updater
+  34              	.LVL0:
+  70:main.c        ****     timing_count();
+  35              		.loc 1 70 0
+  36 0006 FFF7FEFF 		bl	timing_count
+  37              	.LVL1:
+  71:main.c        ****     Timer_1_ClearInterrupt(Timer_1_INTR_MASK_TC);
+  38              		.loc 1 71 0
+  39 000a 0120     		mov	r0, #1
+  40 000c FFF7FEFF 		bl	Timer_1_ClearInterrupt
+  41              	.LVL2:
+  72:main.c        **** }
+  42              		.loc 1 72 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 3
+
+
+  43              		@ sp needed
+  44 0010 08BD     		pop	{r3, pc}
+  45              		.cfi_endproc
+  46              	.LFE36:
+  47              		.size	time_1ms_Interrupt, .-time_1ms_Interrupt
+  48 0012 C046     		.section	.text.main,"ax",%progbits
+  49              		.align	2
+  50              		.global	main
+  51              		.code	16
+  52              		.thumb_func
+  53              		.type	main, %function
+  54              	main:
+  55              	.LFB35:
+  23:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  56              		.loc 1 23 0
+  57              		.cfi_startproc
+  58 0000 08B5     		push	{r3, lr}
+  59              		.cfi_def_cfa_offset 8
+  60              		.cfi_offset 3, -8
+  61              		.cfi_offset 14, -4
+  26:main.c        ****     
+  62              		.loc 1 26 0
+  63              	@ 26 "main.c" 1
+  64 0002 62B6     		CPSIE   i
+  65              	@ 0 "" 2
+  28:main.c        ****     simple_protocol_init();
+  66              		.loc 1 28 0
+  67              		.code	16
+  68 0004 FFF7FEFF 		bl	key_init
+  69              	.LVL3:
+  29:main.c        **** #ifdef TOUCH_TUNE_SWITCH 
+  70              		.loc 1 29 0
+  71 0008 FFF7FEFF 		bl	simple_protocol_init
+  72              	.LVL4:
+  40:main.c        ****     app_init();
+  73              		.loc 1 40 0
+  74 000c FFF7FEFF 		bl	task_init
+  75              	.LVL5:
+  41:main.c        ****     Timer_1_Start();  //开定时器
+  76              		.loc 1 41 0
+  77 0010 FFF7FEFF 		bl	app_init
+  78              	.LVL6:
+  42:main.c        ****     time_1ms_ISR_StartEx(time_1ms_Interrupt);      //自定义中断服务函数
+  79              		.loc 1 42 0
+  80 0014 FFF7FEFF 		bl	Timer_1_Start
+  81              	.LVL7:
+  43:main.c        ****     key_touch_Start(); /* Initialize Component */
+  82              		.loc 1 43 0
+  83 0018 0D48     		ldr	r0, .L5
+  84 001a FFF7FEFF 		bl	time_1ms_ISR_StartEx
+  85              	.LVL8:
+  44:main.c        ****     key_touch_ScanAllWidgets(); /* Scan all widgets */
+  86              		.loc 1 44 0
+  87 001e FFF7FEFF 		bl	key_touch_Start
+  88              	.LVL9:
+  45:main.c        ****     
+  89              		.loc 1 45 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 4
+
+
+  90 0022 FFF7FEFF 		bl	key_touch_ScanAllWidgets
+  91              	.LVL10:
+  47:main.c        ****     task_add(simple_protocol_process, 1);
+  92              		.loc 1 47 0
+  93 0026 0B48     		ldr	r0, .L5+4
+  94 0028 0A21     		mov	r1, #10
+  95 002a FFF7FEFF 		bl	task_add
+  96              	.LVL11:
+  48:main.c        ****     for(;;)
+  97              		.loc 1 48 0
+  98 002e 0A48     		ldr	r0, .L5+8
+  99 0030 0121     		mov	r1, #1
+ 100 0032 FFF7FEFF 		bl	task_add
+ 101              	.LVL12:
+ 102              	.L4:
+  53:main.c        ****         {
+ 103              		.loc 1 53 0
+ 104 0036 FFF7FEFF 		bl	key_touch_IsBusy
+ 105              	.LVL13:
+ 106 003a 0028     		cmp	r0, #0
+ 107 003c 05D1     		bne	.L3
+  55:main.c        **** #ifdef TOUCH_TUNE_SWITCH             
+ 108              		.loc 1 55 0
+ 109 003e FFF7FEFF 		bl	key_touch_ProcessAllWidgets
+ 110              	.LVL14:
+  59:main.c        ****             key_touch_ScanAllWidgets(); 
+ 111              		.loc 1 59 0
+ 112 0042 FFF7FEFF 		bl	task_main
+ 113              	.LVL15:
+  60:main.c        ****         } 
+ 114              		.loc 1 60 0
+ 115 0046 FFF7FEFF 		bl	key_touch_ScanAllWidgets
+ 116              	.LVL16:
+ 117              	.L3:
+  63:main.c        ****     }
+ 118              		.loc 1 63 0
+ 119 004a FFF7FEFF 		bl	task_main
+ 120              	.LVL17:
+  64:main.c        **** }
+ 121              		.loc 1 64 0
+ 122 004e F2E7     		b	.L4
+ 123              	.L6:
+ 124              		.align	2
+ 125              	.L5:
+ 126 0050 00000000 		.word	time_1ms_Interrupt
+ 127 0054 00000000 		.word	key_process
+ 128 0058 00000000 		.word	simple_protocol_process
+ 129              		.cfi_endproc
+ 130              	.LFE35:
+ 131              		.size	main, .-main
+ 132              		.text
+ 133              	.Letext0:
+ 134              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 135              		.file 3 "types.h"
+ 136              		.file 4 "task_manager.h"
+ 137              		.file 5 "timing.h"
+ 138              		.file 6 "key.h"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 5
+
+
+ 139              		.file 7 "simple_protocol.h"
+ 140              		.file 8 "app.h"
+ 141              		.file 9 "Generated_Source\\PSoC4/Timer_1.h"
+ 142              		.file 10 "Generated_Source\\PSoC4/time_1ms_ISR.h"
+ 143              		.file 11 "Generated_Source\\PSoC4/key_touch_Control.h"
+ 144              		.file 12 "Generated_Source\\PSoC4/key_touch_Sensing.h"
+ 145              		.section	.debug_info,"",%progbits
+ 146              	.Ldebug_info0:
+ 147 0000 76020000 		.4byte	0x276
+ 148 0004 0400     		.2byte	0x4
+ 149 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 150 000a 04       		.byte	0x4
+ 151 000b 01       		.uleb128 0x1
+ 152 000c E9010000 		.4byte	.LASF34
+ 153 0010 01       		.byte	0x1
+ 154 0011 CA010000 		.4byte	.LASF35
+ 155 0015 A2000000 		.4byte	.LASF36
+ 156 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 157 001d 00000000 		.4byte	0
+ 158 0021 00000000 		.4byte	.Ldebug_line0
+ 159 0025 02       		.uleb128 0x2
+ 160 0026 01       		.byte	0x1
+ 161 0027 06       		.byte	0x6
+ 162 0028 7B020000 		.4byte	.LASF0
+ 163 002c 02       		.uleb128 0x2
+ 164 002d 01       		.byte	0x1
+ 165 002e 08       		.byte	0x8
+ 166 002f 94000000 		.4byte	.LASF1
+ 167 0033 02       		.uleb128 0x2
+ 168 0034 02       		.byte	0x2
+ 169 0035 05       		.byte	0x5
+ 170 0036 3A010000 		.4byte	.LASF2
+ 171 003a 02       		.uleb128 0x2
+ 172 003b 02       		.byte	0x2
+ 173 003c 07       		.byte	0x7
+ 174 003d 32000000 		.4byte	.LASF3
+ 175 0041 02       		.uleb128 0x2
+ 176 0042 04       		.byte	0x4
+ 177 0043 05       		.byte	0x5
+ 178 0044 29000000 		.4byte	.LASF4
+ 179 0048 02       		.uleb128 0x2
+ 180 0049 04       		.byte	0x4
+ 181 004a 07       		.byte	0x7
+ 182 004b E3000000 		.4byte	.LASF5
+ 183 004f 02       		.uleb128 0x2
+ 184 0050 08       		.byte	0x8
+ 185 0051 05       		.byte	0x5
+ 186 0052 BC010000 		.4byte	.LASF6
+ 187 0056 02       		.uleb128 0x2
+ 188 0057 08       		.byte	0x8
+ 189 0058 07       		.byte	0x7
+ 190 0059 76010000 		.4byte	.LASF7
+ 191 005d 03       		.uleb128 0x3
+ 192 005e 04       		.byte	0x4
+ 193 005f 05       		.byte	0x5
+ 194 0060 696E7400 		.ascii	"int\000"
+ 195 0064 02       		.uleb128 0x2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 6
+
+
+ 196 0065 04       		.byte	0x4
+ 197 0066 07       		.byte	0x7
+ 198 0067 69010000 		.4byte	.LASF8
+ 199 006b 04       		.uleb128 0x4
+ 200 006c 5D010000 		.4byte	.LASF12
+ 201 0070 02       		.byte	0x2
+ 202 0071 BB01     		.2byte	0x1bb
+ 203 0073 48000000 		.4byte	0x48
+ 204 0077 02       		.uleb128 0x2
+ 205 0078 04       		.byte	0x4
+ 206 0079 04       		.byte	0x4
+ 207 007a 8E000000 		.4byte	.LASF9
+ 208 007e 02       		.uleb128 0x2
+ 209 007f 08       		.byte	0x8
+ 210 0080 04       		.byte	0x4
+ 211 0081 29010000 		.4byte	.LASF10
+ 212 0085 02       		.uleb128 0x2
+ 213 0086 01       		.byte	0x1
+ 214 0087 08       		.byte	0x8
+ 215 0088 D1010000 		.4byte	.LASF11
+ 216 008c 04       		.uleb128 0x4
+ 217 008d 54010000 		.4byte	.LASF13
+ 218 0091 02       		.byte	0x2
+ 219 0092 5B02     		.2byte	0x25b
+ 220 0094 48000000 		.4byte	0x48
+ 221 0098 04       		.uleb128 0x4
+ 222 0099 8D010000 		.4byte	.LASF14
+ 223 009d 02       		.byte	0x2
+ 224 009e 7502     		.2byte	0x275
+ 225 00a0 A4000000 		.4byte	0xa4
+ 226 00a4 05       		.uleb128 0x5
+ 227 00a5 04       		.byte	0x4
+ 228 00a6 AA000000 		.4byte	0xaa
+ 229 00aa 06       		.uleb128 0x6
+ 230 00ab 02       		.uleb128 0x2
+ 231 00ac 04       		.byte	0x4
+ 232 00ad 07       		.byte	0x7
+ 233 00ae B3010000 		.4byte	.LASF15
+ 234 00b2 07       		.uleb128 0x7
+ 235 00b3 01       		.byte	0x1
+ 236 00b4 03       		.byte	0x3
+ 237 00b5 12       		.byte	0x12
+ 238 00b6 C7000000 		.4byte	0xc7
+ 239 00ba 08       		.uleb128 0x8
+ 240 00bb 23010000 		.4byte	.LASF16
+ 241 00bf 00       		.sleb128 0
+ 242 00c0 08       		.uleb128 0x8
+ 243 00c1 24000000 		.4byte	.LASF17
+ 244 00c5 01       		.sleb128 1
+ 245 00c6 00       		.byte	0
+ 246 00c7 09       		.uleb128 0x9
+ 247 00c8 DE000000 		.4byte	.LASF18
+ 248 00cc 03       		.byte	0x3
+ 249 00cd 15       		.byte	0x15
+ 250 00ce B2000000 		.4byte	0xb2
+ 251 00d2 09       		.uleb128 0x9
+ 252 00d3 77000000 		.4byte	.LASF19
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 7
+
+
+ 253 00d7 04       		.byte	0x4
+ 254 00d8 11       		.byte	0x11
+ 255 00d9 A4000000 		.4byte	0xa4
+ 256 00dd 0A       		.uleb128 0xa
+ 257 00de D6010000 		.4byte	.LASF37
+ 258 00e2 01       		.byte	0x1
+ 259 00e3 43       		.byte	0x43
+ 260 00e4 00000000 		.4byte	.LFB36
+ 261 00e8 12000000 		.4byte	.LFE36-.LFB36
+ 262 00ec 01       		.uleb128 0x1
+ 263 00ed 9C       		.byte	0x9c
+ 264 00ee 14010000 		.4byte	0x114
+ 265 00f2 0B       		.uleb128 0xb
+ 266 00f3 06000000 		.4byte	.LVL0
+ 267 00f7 D7010000 		.4byte	0x1d7
+ 268 00fb 0B       		.uleb128 0xb
+ 269 00fc 0A000000 		.4byte	.LVL1
+ 270 0100 DE010000 		.4byte	0x1de
+ 271 0104 0C       		.uleb128 0xc
+ 272 0105 10000000 		.4byte	.LVL2
+ 273 0109 E5010000 		.4byte	0x1e5
+ 274 010d 0D       		.uleb128 0xd
+ 275 010e 01       		.uleb128 0x1
+ 276 010f 50       		.byte	0x50
+ 277 0110 01       		.uleb128 0x1
+ 278 0111 31       		.byte	0x31
+ 279 0112 00       		.byte	0
+ 280 0113 00       		.byte	0
+ 281 0114 0E       		.uleb128 0xe
+ 282 0115 64010000 		.4byte	.LASF38
+ 283 0119 01       		.byte	0x1
+ 284 011a 16       		.byte	0x16
+ 285 011b 5D000000 		.4byte	0x5d
+ 286 011f 00000000 		.4byte	.LFB35
+ 287 0123 5C000000 		.4byte	.LFE35-.LFB35
+ 288 0127 01       		.uleb128 0x1
+ 289 0128 9C       		.byte	0x9c
+ 290 0129 D7010000 		.4byte	0x1d7
+ 291 012d 0B       		.uleb128 0xb
+ 292 012e 08000000 		.4byte	.LVL3
+ 293 0132 F7010000 		.4byte	0x1f7
+ 294 0136 0B       		.uleb128 0xb
+ 295 0137 0C000000 		.4byte	.LVL4
+ 296 013b FE010000 		.4byte	0x1fe
+ 297 013f 0B       		.uleb128 0xb
+ 298 0140 10000000 		.4byte	.LVL5
+ 299 0144 05020000 		.4byte	0x205
+ 300 0148 0B       		.uleb128 0xb
+ 301 0149 14000000 		.4byte	.LVL6
+ 302 014d 0C020000 		.4byte	0x20c
+ 303 0151 0B       		.uleb128 0xb
+ 304 0152 18000000 		.4byte	.LVL7
+ 305 0156 13020000 		.4byte	0x213
+ 306 015a 0F       		.uleb128 0xf
+ 307 015b 1E000000 		.4byte	.LVL8
+ 308 015f 1B020000 		.4byte	0x21b
+ 309 0163 71010000 		.4byte	0x171
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 8
+
+
+ 310 0167 0D       		.uleb128 0xd
+ 311 0168 01       		.uleb128 0x1
+ 312 0169 50       		.byte	0x50
+ 313 016a 05       		.uleb128 0x5
+ 314 016b 03       		.byte	0x3
+ 315 016c 00000000 		.4byte	time_1ms_Interrupt
+ 316 0170 00       		.byte	0
+ 317 0171 0B       		.uleb128 0xb
+ 318 0172 22000000 		.4byte	.LVL9
+ 319 0176 2C020000 		.4byte	0x22c
+ 320 017a 0B       		.uleb128 0xb
+ 321 017b 26000000 		.4byte	.LVL10
+ 322 017f 37020000 		.4byte	0x237
+ 323 0183 0F       		.uleb128 0xf
+ 324 0184 2E000000 		.4byte	.LVL11
+ 325 0188 42020000 		.4byte	0x242
+ 326 018c 96010000 		.4byte	0x196
+ 327 0190 0D       		.uleb128 0xd
+ 328 0191 01       		.uleb128 0x1
+ 329 0192 51       		.byte	0x51
+ 330 0193 01       		.uleb128 0x1
+ 331 0194 3A       		.byte	0x3a
+ 332 0195 00       		.byte	0
+ 333 0196 0F       		.uleb128 0xf
+ 334 0197 36000000 		.4byte	.LVL12
+ 335 019b 42020000 		.4byte	0x242
+ 336 019f A9010000 		.4byte	0x1a9
+ 337 01a3 0D       		.uleb128 0xd
+ 338 01a4 01       		.uleb128 0x1
+ 339 01a5 51       		.byte	0x51
+ 340 01a6 01       		.uleb128 0x1
+ 341 01a7 31       		.byte	0x31
+ 342 01a8 00       		.byte	0
+ 343 01a9 0B       		.uleb128 0xb
+ 344 01aa 3A000000 		.4byte	.LVL13
+ 345 01ae 5C020000 		.4byte	0x25c
+ 346 01b2 0B       		.uleb128 0xb
+ 347 01b3 42000000 		.4byte	.LVL14
+ 348 01b7 67020000 		.4byte	0x267
+ 349 01bb 0B       		.uleb128 0xb
+ 350 01bc 46000000 		.4byte	.LVL15
+ 351 01c0 72020000 		.4byte	0x272
+ 352 01c4 0B       		.uleb128 0xb
+ 353 01c5 4A000000 		.4byte	.LVL16
+ 354 01c9 37020000 		.4byte	0x237
+ 355 01cd 0B       		.uleb128 0xb
+ 356 01ce 4E000000 		.4byte	.LVL17
+ 357 01d2 72020000 		.4byte	0x272
+ 358 01d6 00       		.byte	0
+ 359 01d7 10       		.uleb128 0x10
+ 360 01d8 66000000 		.4byte	.LASF20
+ 361 01dc 04       		.byte	0x4
+ 362 01dd 16       		.byte	0x16
+ 363 01de 10       		.uleb128 0x10
+ 364 01df 00000000 		.4byte	.LASF21
+ 365 01e3 05       		.byte	0x5
+ 366 01e4 10       		.byte	0x10
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 9
+
+
+ 367 01e5 11       		.uleb128 0x11
+ 368 01e6 4F000000 		.4byte	.LASF27
+ 369 01ea 09       		.byte	0x9
+ 370 01eb 4701     		.2byte	0x147
+ 371 01ed F7010000 		.4byte	0x1f7
+ 372 01f1 12       		.uleb128 0x12
+ 373 01f2 6B000000 		.4byte	0x6b
+ 374 01f6 00       		.byte	0
+ 375 01f7 10       		.uleb128 0x10
+ 376 01f8 1A010000 		.4byte	.LASF22
+ 377 01fc 06       		.byte	0x6
+ 378 01fd 3E       		.byte	0x3e
+ 379 01fe 10       		.uleb128 0x10
+ 380 01ff 87020000 		.4byte	.LASF23
+ 381 0203 07       		.byte	0x7
+ 382 0204 27       		.byte	0x27
+ 383 0205 10       		.uleb128 0x10
+ 384 0206 45000000 		.4byte	.LASF24
+ 385 020a 04       		.byte	0x4
+ 386 020b 13       		.byte	0x13
+ 387 020c 10       		.uleb128 0x10
+ 388 020d F5000000 		.4byte	.LASF25
+ 389 0211 08       		.byte	0x8
+ 390 0212 35       		.byte	0x35
+ 391 0213 13       		.uleb128 0x13
+ 392 0214 16000000 		.4byte	.LASF26
+ 393 0218 09       		.byte	0x9
+ 394 0219 3201     		.2byte	0x132
+ 395 021b 14       		.uleb128 0x14
+ 396 021c 9C020000 		.4byte	.LASF28
+ 397 0220 0A       		.byte	0xa
+ 398 0221 18       		.byte	0x18
+ 399 0222 2C020000 		.4byte	0x22c
+ 400 0226 12       		.uleb128 0x12
+ 401 0227 98000000 		.4byte	0x98
+ 402 022b 00       		.byte	0
+ 403 022c 15       		.uleb128 0x15
+ 404 022d 44010000 		.4byte	.LASF29
+ 405 0231 0B       		.byte	0xb
+ 406 0232 39       		.byte	0x39
+ 407 0233 8C000000 		.4byte	0x8c
+ 408 0237 15       		.uleb128 0x15
+ 409 0238 9A010000 		.4byte	.LASF30
+ 410 023c 0C       		.byte	0xc
+ 411 023d 5C       		.byte	0x5c
+ 412 023e 8C000000 		.4byte	0x8c
+ 413 0242 16       		.uleb128 0x16
+ 414 0243 0D000000 		.4byte	.LASF39
+ 415 0247 04       		.byte	0x4
+ 416 0248 15       		.byte	0x15
+ 417 0249 C7000000 		.4byte	0xc7
+ 418 024d 5C020000 		.4byte	0x25c
+ 419 0251 12       		.uleb128 0x12
+ 420 0252 D2000000 		.4byte	0xd2
+ 421 0256 12       		.uleb128 0x12
+ 422 0257 3A000000 		.4byte	0x3a
+ 423 025b 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 10
+
+
+ 424 025c 15       		.uleb128 0x15
+ 425 025d 7D000000 		.4byte	.LASF31
+ 426 0261 0C       		.byte	0xc
+ 427 0262 5D       		.byte	0x5d
+ 428 0263 6B000000 		.4byte	0x6b
+ 429 0267 15       		.uleb128 0x15
+ 430 0268 FE000000 		.4byte	.LASF32
+ 431 026c 0B       		.byte	0xb
+ 432 026d 3D       		.byte	0x3d
+ 433 026e 8C000000 		.4byte	0x8c
+ 434 0272 10       		.uleb128 0x10
+ 435 0273 30010000 		.4byte	.LASF33
+ 436 0277 04       		.byte	0x4
+ 437 0278 14       		.byte	0x14
+ 438 0279 00       		.byte	0
+ 439              		.section	.debug_abbrev,"",%progbits
+ 440              	.Ldebug_abbrev0:
+ 441 0000 01       		.uleb128 0x1
+ 442 0001 11       		.uleb128 0x11
+ 443 0002 01       		.byte	0x1
+ 444 0003 25       		.uleb128 0x25
+ 445 0004 0E       		.uleb128 0xe
+ 446 0005 13       		.uleb128 0x13
+ 447 0006 0B       		.uleb128 0xb
+ 448 0007 03       		.uleb128 0x3
+ 449 0008 0E       		.uleb128 0xe
+ 450 0009 1B       		.uleb128 0x1b
+ 451 000a 0E       		.uleb128 0xe
+ 452 000b 55       		.uleb128 0x55
+ 453 000c 17       		.uleb128 0x17
+ 454 000d 11       		.uleb128 0x11
+ 455 000e 01       		.uleb128 0x1
+ 456 000f 10       		.uleb128 0x10
+ 457 0010 17       		.uleb128 0x17
+ 458 0011 00       		.byte	0
+ 459 0012 00       		.byte	0
+ 460 0013 02       		.uleb128 0x2
+ 461 0014 24       		.uleb128 0x24
+ 462 0015 00       		.byte	0
+ 463 0016 0B       		.uleb128 0xb
+ 464 0017 0B       		.uleb128 0xb
+ 465 0018 3E       		.uleb128 0x3e
+ 466 0019 0B       		.uleb128 0xb
+ 467 001a 03       		.uleb128 0x3
+ 468 001b 0E       		.uleb128 0xe
+ 469 001c 00       		.byte	0
+ 470 001d 00       		.byte	0
+ 471 001e 03       		.uleb128 0x3
+ 472 001f 24       		.uleb128 0x24
+ 473 0020 00       		.byte	0
+ 474 0021 0B       		.uleb128 0xb
+ 475 0022 0B       		.uleb128 0xb
+ 476 0023 3E       		.uleb128 0x3e
+ 477 0024 0B       		.uleb128 0xb
+ 478 0025 03       		.uleb128 0x3
+ 479 0026 08       		.uleb128 0x8
+ 480 0027 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 11
+
+
+ 481 0028 00       		.byte	0
+ 482 0029 04       		.uleb128 0x4
+ 483 002a 16       		.uleb128 0x16
+ 484 002b 00       		.byte	0
+ 485 002c 03       		.uleb128 0x3
+ 486 002d 0E       		.uleb128 0xe
+ 487 002e 3A       		.uleb128 0x3a
+ 488 002f 0B       		.uleb128 0xb
+ 489 0030 3B       		.uleb128 0x3b
+ 490 0031 05       		.uleb128 0x5
+ 491 0032 49       		.uleb128 0x49
+ 492 0033 13       		.uleb128 0x13
+ 493 0034 00       		.byte	0
+ 494 0035 00       		.byte	0
+ 495 0036 05       		.uleb128 0x5
+ 496 0037 0F       		.uleb128 0xf
+ 497 0038 00       		.byte	0
+ 498 0039 0B       		.uleb128 0xb
+ 499 003a 0B       		.uleb128 0xb
+ 500 003b 49       		.uleb128 0x49
+ 501 003c 13       		.uleb128 0x13
+ 502 003d 00       		.byte	0
+ 503 003e 00       		.byte	0
+ 504 003f 06       		.uleb128 0x6
+ 505 0040 15       		.uleb128 0x15
+ 506 0041 00       		.byte	0
+ 507 0042 27       		.uleb128 0x27
+ 508 0043 19       		.uleb128 0x19
+ 509 0044 00       		.byte	0
+ 510 0045 00       		.byte	0
+ 511 0046 07       		.uleb128 0x7
+ 512 0047 04       		.uleb128 0x4
+ 513 0048 01       		.byte	0x1
+ 514 0049 0B       		.uleb128 0xb
+ 515 004a 0B       		.uleb128 0xb
+ 516 004b 3A       		.uleb128 0x3a
+ 517 004c 0B       		.uleb128 0xb
+ 518 004d 3B       		.uleb128 0x3b
+ 519 004e 0B       		.uleb128 0xb
+ 520 004f 01       		.uleb128 0x1
+ 521 0050 13       		.uleb128 0x13
+ 522 0051 00       		.byte	0
+ 523 0052 00       		.byte	0
+ 524 0053 08       		.uleb128 0x8
+ 525 0054 28       		.uleb128 0x28
+ 526 0055 00       		.byte	0
+ 527 0056 03       		.uleb128 0x3
+ 528 0057 0E       		.uleb128 0xe
+ 529 0058 1C       		.uleb128 0x1c
+ 530 0059 0D       		.uleb128 0xd
+ 531 005a 00       		.byte	0
+ 532 005b 00       		.byte	0
+ 533 005c 09       		.uleb128 0x9
+ 534 005d 16       		.uleb128 0x16
+ 535 005e 00       		.byte	0
+ 536 005f 03       		.uleb128 0x3
+ 537 0060 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 12
+
+
+ 538 0061 3A       		.uleb128 0x3a
+ 539 0062 0B       		.uleb128 0xb
+ 540 0063 3B       		.uleb128 0x3b
+ 541 0064 0B       		.uleb128 0xb
+ 542 0065 49       		.uleb128 0x49
+ 543 0066 13       		.uleb128 0x13
+ 544 0067 00       		.byte	0
+ 545 0068 00       		.byte	0
+ 546 0069 0A       		.uleb128 0xa
+ 547 006a 2E       		.uleb128 0x2e
+ 548 006b 01       		.byte	0x1
+ 549 006c 3F       		.uleb128 0x3f
+ 550 006d 19       		.uleb128 0x19
+ 551 006e 03       		.uleb128 0x3
+ 552 006f 0E       		.uleb128 0xe
+ 553 0070 3A       		.uleb128 0x3a
+ 554 0071 0B       		.uleb128 0xb
+ 555 0072 3B       		.uleb128 0x3b
+ 556 0073 0B       		.uleb128 0xb
+ 557 0074 27       		.uleb128 0x27
+ 558 0075 19       		.uleb128 0x19
+ 559 0076 11       		.uleb128 0x11
+ 560 0077 01       		.uleb128 0x1
+ 561 0078 12       		.uleb128 0x12
+ 562 0079 06       		.uleb128 0x6
+ 563 007a 40       		.uleb128 0x40
+ 564 007b 18       		.uleb128 0x18
+ 565 007c 9742     		.uleb128 0x2117
+ 566 007e 19       		.uleb128 0x19
+ 567 007f 01       		.uleb128 0x1
+ 568 0080 13       		.uleb128 0x13
+ 569 0081 00       		.byte	0
+ 570 0082 00       		.byte	0
+ 571 0083 0B       		.uleb128 0xb
+ 572 0084 898201   		.uleb128 0x4109
+ 573 0087 00       		.byte	0
+ 574 0088 11       		.uleb128 0x11
+ 575 0089 01       		.uleb128 0x1
+ 576 008a 31       		.uleb128 0x31
+ 577 008b 13       		.uleb128 0x13
+ 578 008c 00       		.byte	0
+ 579 008d 00       		.byte	0
+ 580 008e 0C       		.uleb128 0xc
+ 581 008f 898201   		.uleb128 0x4109
+ 582 0092 01       		.byte	0x1
+ 583 0093 11       		.uleb128 0x11
+ 584 0094 01       		.uleb128 0x1
+ 585 0095 31       		.uleb128 0x31
+ 586 0096 13       		.uleb128 0x13
+ 587 0097 00       		.byte	0
+ 588 0098 00       		.byte	0
+ 589 0099 0D       		.uleb128 0xd
+ 590 009a 8A8201   		.uleb128 0x410a
+ 591 009d 00       		.byte	0
+ 592 009e 02       		.uleb128 0x2
+ 593 009f 18       		.uleb128 0x18
+ 594 00a0 9142     		.uleb128 0x2111
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 13
+
+
+ 595 00a2 18       		.uleb128 0x18
+ 596 00a3 00       		.byte	0
+ 597 00a4 00       		.byte	0
+ 598 00a5 0E       		.uleb128 0xe
+ 599 00a6 2E       		.uleb128 0x2e
+ 600 00a7 01       		.byte	0x1
+ 601 00a8 3F       		.uleb128 0x3f
+ 602 00a9 19       		.uleb128 0x19
+ 603 00aa 03       		.uleb128 0x3
+ 604 00ab 0E       		.uleb128 0xe
+ 605 00ac 3A       		.uleb128 0x3a
+ 606 00ad 0B       		.uleb128 0xb
+ 607 00ae 3B       		.uleb128 0x3b
+ 608 00af 0B       		.uleb128 0xb
+ 609 00b0 27       		.uleb128 0x27
+ 610 00b1 19       		.uleb128 0x19
+ 611 00b2 49       		.uleb128 0x49
+ 612 00b3 13       		.uleb128 0x13
+ 613 00b4 11       		.uleb128 0x11
+ 614 00b5 01       		.uleb128 0x1
+ 615 00b6 12       		.uleb128 0x12
+ 616 00b7 06       		.uleb128 0x6
+ 617 00b8 40       		.uleb128 0x40
+ 618 00b9 18       		.uleb128 0x18
+ 619 00ba 9742     		.uleb128 0x2117
+ 620 00bc 19       		.uleb128 0x19
+ 621 00bd 01       		.uleb128 0x1
+ 622 00be 13       		.uleb128 0x13
+ 623 00bf 00       		.byte	0
+ 624 00c0 00       		.byte	0
+ 625 00c1 0F       		.uleb128 0xf
+ 626 00c2 898201   		.uleb128 0x4109
+ 627 00c5 01       		.byte	0x1
+ 628 00c6 11       		.uleb128 0x11
+ 629 00c7 01       		.uleb128 0x1
+ 630 00c8 31       		.uleb128 0x31
+ 631 00c9 13       		.uleb128 0x13
+ 632 00ca 01       		.uleb128 0x1
+ 633 00cb 13       		.uleb128 0x13
+ 634 00cc 00       		.byte	0
+ 635 00cd 00       		.byte	0
+ 636 00ce 10       		.uleb128 0x10
+ 637 00cf 2E       		.uleb128 0x2e
+ 638 00d0 00       		.byte	0
+ 639 00d1 3F       		.uleb128 0x3f
+ 640 00d2 19       		.uleb128 0x19
+ 641 00d3 03       		.uleb128 0x3
+ 642 00d4 0E       		.uleb128 0xe
+ 643 00d5 3A       		.uleb128 0x3a
+ 644 00d6 0B       		.uleb128 0xb
+ 645 00d7 3B       		.uleb128 0x3b
+ 646 00d8 0B       		.uleb128 0xb
+ 647 00d9 27       		.uleb128 0x27
+ 648 00da 19       		.uleb128 0x19
+ 649 00db 3C       		.uleb128 0x3c
+ 650 00dc 19       		.uleb128 0x19
+ 651 00dd 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 14
+
+
+ 652 00de 00       		.byte	0
+ 653 00df 11       		.uleb128 0x11
+ 654 00e0 2E       		.uleb128 0x2e
+ 655 00e1 01       		.byte	0x1
+ 656 00e2 3F       		.uleb128 0x3f
+ 657 00e3 19       		.uleb128 0x19
+ 658 00e4 03       		.uleb128 0x3
+ 659 00e5 0E       		.uleb128 0xe
+ 660 00e6 3A       		.uleb128 0x3a
+ 661 00e7 0B       		.uleb128 0xb
+ 662 00e8 3B       		.uleb128 0x3b
+ 663 00e9 05       		.uleb128 0x5
+ 664 00ea 27       		.uleb128 0x27
+ 665 00eb 19       		.uleb128 0x19
+ 666 00ec 3C       		.uleb128 0x3c
+ 667 00ed 19       		.uleb128 0x19
+ 668 00ee 01       		.uleb128 0x1
+ 669 00ef 13       		.uleb128 0x13
+ 670 00f0 00       		.byte	0
+ 671 00f1 00       		.byte	0
+ 672 00f2 12       		.uleb128 0x12
+ 673 00f3 05       		.uleb128 0x5
+ 674 00f4 00       		.byte	0
+ 675 00f5 49       		.uleb128 0x49
+ 676 00f6 13       		.uleb128 0x13
+ 677 00f7 00       		.byte	0
+ 678 00f8 00       		.byte	0
+ 679 00f9 13       		.uleb128 0x13
+ 680 00fa 2E       		.uleb128 0x2e
+ 681 00fb 00       		.byte	0
+ 682 00fc 3F       		.uleb128 0x3f
+ 683 00fd 19       		.uleb128 0x19
+ 684 00fe 03       		.uleb128 0x3
+ 685 00ff 0E       		.uleb128 0xe
+ 686 0100 3A       		.uleb128 0x3a
+ 687 0101 0B       		.uleb128 0xb
+ 688 0102 3B       		.uleb128 0x3b
+ 689 0103 05       		.uleb128 0x5
+ 690 0104 27       		.uleb128 0x27
+ 691 0105 19       		.uleb128 0x19
+ 692 0106 3C       		.uleb128 0x3c
+ 693 0107 19       		.uleb128 0x19
+ 694 0108 00       		.byte	0
+ 695 0109 00       		.byte	0
+ 696 010a 14       		.uleb128 0x14
+ 697 010b 2E       		.uleb128 0x2e
+ 698 010c 01       		.byte	0x1
+ 699 010d 3F       		.uleb128 0x3f
+ 700 010e 19       		.uleb128 0x19
+ 701 010f 03       		.uleb128 0x3
+ 702 0110 0E       		.uleb128 0xe
+ 703 0111 3A       		.uleb128 0x3a
+ 704 0112 0B       		.uleb128 0xb
+ 705 0113 3B       		.uleb128 0x3b
+ 706 0114 0B       		.uleb128 0xb
+ 707 0115 27       		.uleb128 0x27
+ 708 0116 19       		.uleb128 0x19
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 15
+
+
+ 709 0117 3C       		.uleb128 0x3c
+ 710 0118 19       		.uleb128 0x19
+ 711 0119 01       		.uleb128 0x1
+ 712 011a 13       		.uleb128 0x13
+ 713 011b 00       		.byte	0
+ 714 011c 00       		.byte	0
+ 715 011d 15       		.uleb128 0x15
+ 716 011e 2E       		.uleb128 0x2e
+ 717 011f 00       		.byte	0
+ 718 0120 3F       		.uleb128 0x3f
+ 719 0121 19       		.uleb128 0x19
+ 720 0122 03       		.uleb128 0x3
+ 721 0123 0E       		.uleb128 0xe
+ 722 0124 3A       		.uleb128 0x3a
+ 723 0125 0B       		.uleb128 0xb
+ 724 0126 3B       		.uleb128 0x3b
+ 725 0127 0B       		.uleb128 0xb
+ 726 0128 27       		.uleb128 0x27
+ 727 0129 19       		.uleb128 0x19
+ 728 012a 49       		.uleb128 0x49
+ 729 012b 13       		.uleb128 0x13
+ 730 012c 3C       		.uleb128 0x3c
+ 731 012d 19       		.uleb128 0x19
+ 732 012e 00       		.byte	0
+ 733 012f 00       		.byte	0
+ 734 0130 16       		.uleb128 0x16
+ 735 0131 2E       		.uleb128 0x2e
+ 736 0132 01       		.byte	0x1
+ 737 0133 3F       		.uleb128 0x3f
+ 738 0134 19       		.uleb128 0x19
+ 739 0135 03       		.uleb128 0x3
+ 740 0136 0E       		.uleb128 0xe
+ 741 0137 3A       		.uleb128 0x3a
+ 742 0138 0B       		.uleb128 0xb
+ 743 0139 3B       		.uleb128 0x3b
+ 744 013a 0B       		.uleb128 0xb
+ 745 013b 27       		.uleb128 0x27
+ 746 013c 19       		.uleb128 0x19
+ 747 013d 49       		.uleb128 0x49
+ 748 013e 13       		.uleb128 0x13
+ 749 013f 3C       		.uleb128 0x3c
+ 750 0140 19       		.uleb128 0x19
+ 751 0141 01       		.uleb128 0x1
+ 752 0142 13       		.uleb128 0x13
+ 753 0143 00       		.byte	0
+ 754 0144 00       		.byte	0
+ 755 0145 00       		.byte	0
+ 756              		.section	.debug_aranges,"",%progbits
+ 757 0000 24000000 		.4byte	0x24
+ 758 0004 0200     		.2byte	0x2
+ 759 0006 00000000 		.4byte	.Ldebug_info0
+ 760 000a 04       		.byte	0x4
+ 761 000b 00       		.byte	0
+ 762 000c 0000     		.2byte	0
+ 763 000e 0000     		.2byte	0
+ 764 0010 00000000 		.4byte	.LFB36
+ 765 0014 12000000 		.4byte	.LFE36-.LFB36
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 16
+
+
+ 766 0018 00000000 		.4byte	.LFB35
+ 767 001c 5C000000 		.4byte	.LFE35-.LFB35
+ 768 0020 00000000 		.4byte	0
+ 769 0024 00000000 		.4byte	0
+ 770              		.section	.debug_ranges,"",%progbits
+ 771              	.Ldebug_ranges0:
+ 772 0000 00000000 		.4byte	.LFB36
+ 773 0004 12000000 		.4byte	.LFE36
+ 774 0008 00000000 		.4byte	.LFB35
+ 775 000c 5C000000 		.4byte	.LFE35
+ 776 0010 00000000 		.4byte	0
+ 777 0014 00000000 		.4byte	0
+ 778              		.section	.debug_line,"",%progbits
+ 779              	.Ldebug_line0:
+ 780 0000 1A010000 		.section	.debug_str,"MS",%progbits,1
+ 780      0200DE00 
+ 780      00000201 
+ 780      FB0E0D00 
+ 780      01010101 
+ 781              	.LASF21:
+ 782 0000 74696D69 		.ascii	"timing_count\000"
+ 782      6E675F63 
+ 782      6F756E74 
+ 782      00
+ 783              	.LASF39:
+ 784 000d 7461736B 		.ascii	"task_add\000"
+ 784      5F616464 
+ 784      00
+ 785              	.LASF26:
+ 786 0016 54696D65 		.ascii	"Timer_1_Start\000"
+ 786      725F315F 
+ 786      53746172 
+ 786      7400
+ 787              	.LASF17:
+ 788 0024 54525545 		.ascii	"TRUE\000"
+ 788      00
+ 789              	.LASF4:
+ 790 0029 6C6F6E67 		.ascii	"long int\000"
+ 790      20696E74 
+ 790      00
+ 791              	.LASF3:
+ 792 0032 73686F72 		.ascii	"short unsigned int\000"
+ 792      7420756E 
+ 792      7369676E 
+ 792      65642069 
+ 792      6E7400
+ 793              	.LASF24:
+ 794 0045 7461736B 		.ascii	"task_init\000"
+ 794      5F696E69 
+ 794      7400
+ 795              	.LASF27:
+ 796 004f 54696D65 		.ascii	"Timer_1_ClearInterrupt\000"
+ 796      725F315F 
+ 796      436C6561 
+ 796      72496E74 
+ 796      65727275 
+ 797              	.LASF20:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 17
+
+
+ 798 0066 7461736B 		.ascii	"task_1ms_updater\000"
+ 798      5F316D73 
+ 798      5F757064 
+ 798      61746572 
+ 798      00
+ 799              	.LASF19:
+ 800 0077 7066756E 		.ascii	"pfunc\000"
+ 800      6300
+ 801              	.LASF31:
+ 802 007d 6B65795F 		.ascii	"key_touch_IsBusy\000"
+ 802      746F7563 
+ 802      685F4973 
+ 802      42757379 
+ 802      00
+ 803              	.LASF9:
+ 804 008e 666C6F61 		.ascii	"float\000"
+ 804      7400
+ 805              	.LASF1:
+ 806 0094 756E7369 		.ascii	"unsigned char\000"
+ 806      676E6564 
+ 806      20636861 
+ 806      7200
+ 807              	.LASF36:
+ 808 00a2 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\A"
+ 808      6F63616C 
+ 808      5F73766E 
+ 808      5C415942 
+ 808      52333030 
+ 809 00d0 59425233 		.ascii	"YBR3000.cydsn\000"
+ 809      3030302E 
+ 809      63796473 
+ 809      6E00
+ 810              	.LASF18:
+ 811 00de 426F6F6C 		.ascii	"Bool\000"
+ 811      00
+ 812              	.LASF5:
+ 813 00e3 6C6F6E67 		.ascii	"long unsigned int\000"
+ 813      20756E73 
+ 813      69676E65 
+ 813      6420696E 
+ 813      7400
+ 814              	.LASF25:
+ 815 00f5 6170705F 		.ascii	"app_init\000"
+ 815      696E6974 
+ 815      00
+ 816              	.LASF32:
+ 817 00fe 6B65795F 		.ascii	"key_touch_ProcessAllWidgets\000"
+ 817      746F7563 
+ 817      685F5072 
+ 817      6F636573 
+ 817      73416C6C 
+ 818              	.LASF22:
+ 819 011a 6B65795F 		.ascii	"key_init\000"
+ 819      696E6974 
+ 819      00
+ 820              	.LASF16:
+ 821 0123 46414C53 		.ascii	"FALSE\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 18
+
+
+ 821      4500
+ 822              	.LASF10:
+ 823 0129 646F7562 		.ascii	"double\000"
+ 823      6C6500
+ 824              	.LASF33:
+ 825 0130 7461736B 		.ascii	"task_main\000"
+ 825      5F6D6169 
+ 825      6E00
+ 826              	.LASF2:
+ 827 013a 73686F72 		.ascii	"short int\000"
+ 827      7420696E 
+ 827      7400
+ 828              	.LASF29:
+ 829 0144 6B65795F 		.ascii	"key_touch_Start\000"
+ 829      746F7563 
+ 829      685F5374 
+ 829      61727400 
+ 830              	.LASF13:
+ 831 0154 63797374 		.ascii	"cystatus\000"
+ 831      61747573 
+ 831      00
+ 832              	.LASF12:
+ 833 015d 75696E74 		.ascii	"uint32\000"
+ 833      333200
+ 834              	.LASF38:
+ 835 0164 6D61696E 		.ascii	"main\000"
+ 835      00
+ 836              	.LASF8:
+ 837 0169 756E7369 		.ascii	"unsigned int\000"
+ 837      676E6564 
+ 837      20696E74 
+ 837      00
+ 838              	.LASF7:
+ 839 0176 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 839      206C6F6E 
+ 839      6720756E 
+ 839      7369676E 
+ 839      65642069 
+ 840              	.LASF14:
+ 841 018d 63796973 		.ascii	"cyisraddress\000"
+ 841      72616464 
+ 841      72657373 
+ 841      00
+ 842              	.LASF30:
+ 843 019a 6B65795F 		.ascii	"key_touch_ScanAllWidgets\000"
+ 843      746F7563 
+ 843      685F5363 
+ 843      616E416C 
+ 843      6C576964 
+ 844              	.LASF15:
+ 845 01b3 73697A65 		.ascii	"sizetype\000"
+ 845      74797065 
+ 845      00
+ 846              	.LASF6:
+ 847 01bc 6C6F6E67 		.ascii	"long long int\000"
+ 847      206C6F6E 
+ 847      6720696E 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccGbujim.s 			page 19
+
+
+ 847      7400
+ 848              	.LASF35:
+ 849 01ca 6D61696E 		.ascii	"main.c\000"
+ 849      2E6300
+ 850              	.LASF11:
+ 851 01d1 63686172 		.ascii	"char\000"
+ 851      00
+ 852              	.LASF37:
+ 853 01d6 74696D65 		.ascii	"time_1ms_Interrupt\000"
+ 853      5F316D73 
+ 853      5F496E74 
+ 853      65727275 
+ 853      707400
+ 854              	.LASF34:
+ 855 01e9 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 855      4320342E 
+ 855      392E3320 
+ 855      32303135 
+ 855      30333033 
+ 856 021c 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 856      20726576 
+ 856      6973696F 
+ 856      6E203232 
+ 856      31323230 
+ 857 024f 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 857      67202D66 
+ 857      66756E63 
+ 857      74696F6E 
+ 857      2D736563 
+ 858              	.LASF0:
+ 859 027b 7369676E 		.ascii	"signed char\000"
+ 859      65642063 
+ 859      68617200 
+ 860              	.LASF23:
+ 861 0287 73696D70 		.ascii	"simple_protocol_init\000"
+ 861      6C655F70 
+ 861      726F746F 
+ 861      636F6C5F 
+ 861      696E6974 
+ 862              	.LASF28:
+ 863 029c 74696D65 		.ascii	"time_1ms_ISR_StartEx\000"
+ 863      5F316D73 
+ 863      5F495352 
+ 863      5F537461 
+ 863      72744578 
+ 864              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

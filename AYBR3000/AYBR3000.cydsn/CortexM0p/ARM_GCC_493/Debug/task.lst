@@ -1,0 +1,1251 @@
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"task.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.task_init,"ax",%progbits
+  18              		.align	2
+  19              		.global	task_init
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	task_init, %function
+  23              	task_init:
+  24              	.LFB0:
+  25              		.file 1 "task.c"
+   1:task.c        **** /* ========================================
+   2:task.c        ****  *
+   3:task.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:task.c        ****  * All Rights Reserved
+   5:task.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:task.c        ****  *
+   7:task.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:task.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:task.c        ****  *
+  10:task.c        ****  * ========================================
+  11:task.c        **** */
+  12:task.c        **** #include "task.h"
+  13:task.c        **** #include "string.h"
+  14:task.c        **** 
+  15:task.c        **** typedef struct
+  16:task.c        **** {
+  17:task.c        ****     pfunc task;           
+  18:task.c        ****     uint16 schedule_period;
+  19:task.c        ****     uint16 old_time;
+  20:task.c        **** }Task;
+  21:task.c        **** #define TASK_MAX_NUMBER 20
+  22:task.c        **** 
+  23:task.c        **** typedef struct
+  24:task.c        **** {
+  25:task.c        ****     Task task_list[TASK_MAX_NUMBER];        
+  26:task.c        ****     uint8 task_nunber;      
+  27:task.c        ****     uint16 time_counter;
+  28:task.c        ****     uint16 prev_time_counter;
+  29:task.c        **** }Task_manager;
+  30:task.c        **** 
+  31:task.c        **** static Task_manager task_manager;
+  32:task.c        **** 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 2
+
+
+  33:task.c        **** void task_init(void)
+  34:task.c        **** {
+  26              		.loc 1 34 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  35:task.c        ****     memset(&task_manager, 0, sizeof(Task_manager));
+  32              		.loc 1 35 0
+  33 0002 0348     		ldr	r0, .L2
+  34 0004 0021     		mov	r1, #0
+  35 0006 A822     		mov	r2, #168
+  36 0008 FFF7FEFF 		bl	memset
+  37              	.LVL0:
+  36:task.c        **** }
+  38              		.loc 1 36 0
+  39              		@ sp needed
+  40 000c 08BD     		pop	{r3, pc}
+  41              	.L3:
+  42 000e C046     		.align	2
+  43              	.L2:
+  44 0010 00000000 		.word	.LANCHOR0
+  45              		.cfi_endproc
+  46              	.LFE0:
+  47              		.size	task_init, .-task_init
+  48              		.section	.text.task_main,"ax",%progbits
+  49              		.align	2
+  50              		.global	task_main
+  51              		.code	16
+  52              		.thumb_func
+  53              		.type	task_main, %function
+  54              	task_main:
+  55              	.LFB1:
+  37:task.c        **** 
+  38:task.c        **** void task_main(void)
+  39:task.c        **** {
+  56              		.loc 1 39 0
+  57              		.cfi_startproc
+  58 0000 10B5     		push	{r4, lr}
+  59              		.cfi_def_cfa_offset 8
+  60              		.cfi_offset 4, -8
+  61              		.cfi_offset 14, -4
+  62              	.LVL1:
+  40:task.c        ****     uint8 i = 0;
+  41:task.c        ****     
+  42:task.c        ****     if (task_manager.time_counter == task_manager.prev_time_counter)
+  63              		.loc 1 42 0
+  64 0002 124B     		ldr	r3, .L9
+  65 0004 A222     		mov	r2, #162
+  66 0006 9A5A     		ldrh	r2, [r3, r2]
+  67 0008 A421     		mov	r1, #164
+  68 000a 5B5A     		ldrh	r3, [r3, r1]
+  69 000c 9A42     		cmp	r2, r3
+  70 000e 1BD0     		beq	.L4
+  43:task.c        ****         return;
+  44:task.c        ****     task_manager.prev_time_counter = task_manager.time_counter;
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 3
+
+
+  71              		.loc 1 44 0
+  72 0010 A423     		mov	r3, #164
+  73 0012 0E49     		ldr	r1, .L9
+  74 0014 CA52     		strh	r2, [r1, r3]
+  45:task.c        ****     
+  46:task.c        ****     for (i = 0; i < task_manager.task_nunber; i++)
+  75              		.loc 1 46 0
+  76 0016 0024     		mov	r4, #0
+  77 0018 11E0     		b	.L6
+  78              	.LVL2:
+  79              	.L8:
+  47:task.c        ****     {
+  48:task.c        ****         if ((task_manager.time_counter - task_manager.task_list[i].old_time) < task_manager.task_li
+  80              		.loc 1 48 0
+  81 001a 0C4A     		ldr	r2, .L9
+  82 001c A223     		mov	r3, #162
+  83 001e D15A     		ldrh	r1, [r2, r3]
+  84 0020 E300     		lsl	r3, r4, #3
+  85 0022 D318     		add	r3, r2, r3
+  86 0024 DA88     		ldrh	r2, [r3, #6]
+  87 0026 8A1A     		sub	r2, r1, r2
+  88 0028 9B88     		ldrh	r3, [r3, #4]
+  89 002a 9A42     		cmp	r2, r3
+  90 002c 05DB     		blt	.L7
+  49:task.c        ****             continue;
+  50:task.c        ****         else        //调用周期到
+  51:task.c        ****         {
+  52:task.c        ****             task_manager.task_list[i].old_time = task_manager.time_counter;
+  91              		.loc 1 52 0
+  92 002e 074B     		ldr	r3, .L9
+  93 0030 E200     		lsl	r2, r4, #3
+  94 0032 9818     		add	r0, r3, r2
+  95 0034 C180     		strh	r1, [r0, #6]
+  53:task.c        ****             task_manager.task_list[i].task();
+  96              		.loc 1 53 0
+  97 0036 D358     		ldr	r3, [r2, r3]
+  98 0038 9847     		blx	r3
+  99              	.LVL3:
+ 100              	.L7:
+  46:task.c        ****     {
+ 101              		.loc 1 46 0 discriminator 2
+ 102 003a 0134     		add	r4, r4, #1
+ 103              	.LVL4:
+ 104 003c E4B2     		uxtb	r4, r4
+ 105              	.LVL5:
+ 106              	.L6:
+  46:task.c        ****     {
+ 107              		.loc 1 46 0 is_stmt 0 discriminator 1
+ 108 003e A023     		mov	r3, #160
+ 109 0040 024A     		ldr	r2, .L9
+ 110 0042 D35C     		ldrb	r3, [r2, r3]
+ 111 0044 A342     		cmp	r3, r4
+ 112 0046 E8D8     		bhi	.L8
+ 113              	.LVL6:
+ 114              	.L4:
+  54:task.c        ****         }
+  55:task.c        ****     }
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 4
+
+
+  56:task.c        **** }
+ 115              		.loc 1 56 0 is_stmt 1
+ 116              		@ sp needed
+ 117 0048 10BD     		pop	{r4, pc}
+ 118              	.L10:
+ 119 004a C046     		.align	2
+ 120              	.L9:
+ 121 004c 00000000 		.word	.LANCHOR0
+ 122              		.cfi_endproc
+ 123              	.LFE1:
+ 124              		.size	task_main, .-task_main
+ 125              		.section	.text.task_100us_updater,"ax",%progbits
+ 126              		.align	2
+ 127              		.global	task_100us_updater
+ 128              		.code	16
+ 129              		.thumb_func
+ 130              		.type	task_100us_updater, %function
+ 131              	task_100us_updater:
+ 132              	.LFB2:
+  57:task.c        **** 
+  58:task.c        **** /*在100us中断中调用这个函数*/
+  59:task.c        **** void task_100us_updater(void)
+  60:task.c        **** {
+ 133              		.loc 1 60 0
+ 134              		.cfi_startproc
+  61:task.c        ****     task_manager.time_counter++;
+ 135              		.loc 1 61 0
+ 136 0000 0249     		ldr	r1, .L12
+ 137 0002 A222     		mov	r2, #162
+ 138 0004 8B5A     		ldrh	r3, [r1, r2]
+ 139 0006 0133     		add	r3, r3, #1
+ 140 0008 8B52     		strh	r3, [r1, r2]
+  62:task.c        **** }
+ 141              		.loc 1 62 0
+ 142              		@ sp needed
+ 143 000a 7047     		bx	lr
+ 144              	.L13:
+ 145              		.align	2
+ 146              	.L12:
+ 147 000c 00000000 		.word	.LANCHOR0
+ 148              		.cfi_endproc
+ 149              	.LFE2:
+ 150              		.size	task_100us_updater, .-task_100us_updater
+ 151              		.section	.text.task_add,"ax",%progbits
+ 152              		.align	2
+ 153              		.global	task_add
+ 154              		.code	16
+ 155              		.thumb_func
+ 156              		.type	task_add, %function
+ 157              	task_add:
+ 158              	.LFB3:
+  63:task.c        **** 
+  64:task.c        **** Bool task_add(pfunc task, uint16 schedule_period)
+  65:task.c        **** {
+ 159              		.loc 1 65 0
+ 160              		.cfi_startproc
+ 161              	.LVL7:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 5
+
+
+  66:task.c        ****     if (task == NULL || schedule_period == 0)
+ 162              		.loc 1 66 0
+ 163 0000 0028     		cmp	r0, #0
+ 164 0002 0CD0     		beq	.L16
+ 165              		.loc 1 66 0 is_stmt 0 discriminator 1
+ 166 0004 0029     		cmp	r1, #0
+ 167 0006 0CD0     		beq	.L17
+  67:task.c        ****         return FALSE;
+  68:task.c        ****     if (task_manager.task_nunber >= TASK_MAX_NUMBER)
+ 168              		.loc 1 68 0 is_stmt 1
+ 169 0008 A023     		mov	r3, #160
+ 170 000a 084A     		ldr	r2, .L19
+ 171 000c D35C     		ldrb	r3, [r2, r3]
+ 172 000e 132B     		cmp	r3, #19
+ 173 0010 09D8     		bhi	.L18
+  69:task.c        ****         return FALSE;
+  70:task.c        ****     
+  71:task.c        ****     task_manager.task_list[task_manager.task_nunber].task = task;
+ 174              		.loc 1 71 0
+ 175 0012 DB00     		lsl	r3, r3, #3
+ 176 0014 9850     		str	r0, [r3, r2]
+  72:task.c        ****     task_manager.task_list[task_manager.task_nunber].schedule_period = schedule_period;
+ 177              		.loc 1 72 0
+ 178 0016 D318     		add	r3, r2, r3
+ 179 0018 9980     		strh	r1, [r3, #4]
+  73:task.c        ****     
+  74:task.c        ****     return TRUE;
+ 180              		.loc 1 74 0
+ 181 001a 0120     		mov	r0, #1
+ 182              	.LVL8:
+ 183 001c 04E0     		b	.L15
+ 184              	.LVL9:
+ 185              	.L16:
+  67:task.c        ****     if (task_manager.task_nunber >= TASK_MAX_NUMBER)
+ 186              		.loc 1 67 0
+ 187 001e 0020     		mov	r0, #0
+ 188              	.LVL10:
+ 189 0020 02E0     		b	.L15
+ 190              	.LVL11:
+ 191              	.L17:
+ 192 0022 0020     		mov	r0, #0
+ 193              	.LVL12:
+ 194 0024 00E0     		b	.L15
+ 195              	.LVL13:
+ 196              	.L18:
+  69:task.c        ****     
+ 197              		.loc 1 69 0
+ 198 0026 0020     		mov	r0, #0
+ 199              	.LVL14:
+ 200              	.L15:
+  75:task.c        **** }
+ 201              		.loc 1 75 0
+ 202              		@ sp needed
+ 203 0028 7047     		bx	lr
+ 204              	.L20:
+ 205 002a C046     		.align	2
+ 206              	.L19:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 6
+
+
+ 207 002c 00000000 		.word	.LANCHOR0
+ 208              		.cfi_endproc
+ 209              	.LFE3:
+ 210              		.size	task_add, .-task_add
+ 211              		.bss
+ 212              		.align	2
+ 213              		.set	.LANCHOR0,. + 0
+ 214              		.type	task_manager, %object
+ 215              		.size	task_manager, 168
+ 216              	task_manager:
+ 217 0000 00000000 		.space	168
+ 217      00000000 
+ 217      00000000 
+ 217      00000000 
+ 217      00000000 
+ 218              		.text
+ 219              	.Letext0:
+ 220              		.file 2 "types.h"
+ 221              		.file 3 "task.h"
+ 222              		.section	.debug_info,"",%progbits
+ 223              	.Ldebug_info0:
+ 224 0000 14020000 		.4byte	0x214
+ 225 0004 0400     		.2byte	0x4
+ 226 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 227 000a 04       		.byte	0x4
+ 228 000b 01       		.uleb128 0x1
+ 229 000c 61010000 		.4byte	.LASF29
+ 230 0010 01       		.byte	0x1
+ 231 0011 16000000 		.4byte	.LASF30
+ 232 0015 56000000 		.4byte	.LASF31
+ 233 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 234 001d 00000000 		.4byte	0
+ 235 0021 00000000 		.4byte	.Ldebug_line0
+ 236 0025 02       		.uleb128 0x2
+ 237 0026 04       		.byte	0x4
+ 238 0027 05       		.byte	0x5
+ 239 0028 696E7400 		.ascii	"int\000"
+ 240 002c 03       		.uleb128 0x3
+ 241 002d 04       		.byte	0x4
+ 242 002e 07       		.byte	0x7
+ 243 002f 02010000 		.4byte	.LASF0
+ 244 0033 04       		.uleb128 0x4
+ 245 0034 AE000000 		.4byte	.LASF2
+ 246 0038 02       		.byte	0x2
+ 247 0039 07       		.byte	0x7
+ 248 003a 3E000000 		.4byte	0x3e
+ 249 003e 03       		.uleb128 0x3
+ 250 003f 01       		.byte	0x1
+ 251 0040 08       		.byte	0x8
+ 252 0041 F4000000 		.4byte	.LASF1
+ 253 0045 04       		.uleb128 0x4
+ 254 0046 ED000000 		.4byte	.LASF3
+ 255 004a 02       		.byte	0x2
+ 256 004b 08       		.byte	0x8
+ 257 004c 50000000 		.4byte	0x50
+ 258 0050 03       		.uleb128 0x3
+ 259 0051 02       		.byte	0x2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 7
+
+
+ 260 0052 07       		.byte	0x7
+ 261 0053 22000000 		.4byte	.LASF4
+ 262 0057 03       		.uleb128 0x3
+ 263 0058 04       		.byte	0x4
+ 264 0059 07       		.byte	0x7
+ 265 005a 9C000000 		.4byte	.LASF5
+ 266 005e 05       		.uleb128 0x5
+ 267 005f 01       		.byte	0x1
+ 268 0060 02       		.byte	0x2
+ 269 0061 12       		.byte	0x12
+ 270 0062 73000000 		.4byte	0x73
+ 271 0066 06       		.uleb128 0x6
+ 272 0067 D6000000 		.4byte	.LASF6
+ 273 006b 00       		.sleb128 0
+ 274 006c 06       		.uleb128 0x6
+ 275 006d 1D000000 		.4byte	.LASF7
+ 276 0071 01       		.sleb128 1
+ 277 0072 00       		.byte	0
+ 278 0073 04       		.uleb128 0x4
+ 279 0074 22020000 		.4byte	.LASF8
+ 280 0078 02       		.byte	0x2
+ 281 0079 15       		.byte	0x15
+ 282 007a 5E000000 		.4byte	0x5e
+ 283 007e 04       		.uleb128 0x4
+ 284 007f 3E000000 		.4byte	.LASF9
+ 285 0083 03       		.byte	0x3
+ 286 0084 0D       		.byte	0xd
+ 287 0085 89000000 		.4byte	0x89
+ 288 0089 07       		.uleb128 0x7
+ 289 008a 04       		.byte	0x4
+ 290 008b 8F000000 		.4byte	0x8f
+ 291 008f 08       		.uleb128 0x8
+ 292 0090 03       		.uleb128 0x3
+ 293 0091 01       		.byte	0x1
+ 294 0092 06       		.byte	0x6
+ 295 0093 27020000 		.4byte	.LASF10
+ 296 0097 03       		.uleb128 0x3
+ 297 0098 02       		.byte	0x2
+ 298 0099 05       		.byte	0x5
+ 299 009a F3010000 		.4byte	.LASF11
+ 300 009e 03       		.uleb128 0x3
+ 301 009f 04       		.byte	0x4
+ 302 00a0 05       		.byte	0x5
+ 303 00a1 19020000 		.4byte	.LASF12
+ 304 00a5 03       		.uleb128 0x3
+ 305 00a6 08       		.byte	0x8
+ 306 00a7 05       		.byte	0x5
+ 307 00a8 3B010000 		.4byte	.LASF13
+ 308 00ac 03       		.uleb128 0x3
+ 309 00ad 08       		.byte	0x8
+ 310 00ae 07       		.byte	0x7
+ 311 00af 1B010000 		.4byte	.LASF14
+ 312 00b3 03       		.uleb128 0x3
+ 313 00b4 04       		.byte	0x4
+ 314 00b5 07       		.byte	0x7
+ 315 00b6 32010000 		.4byte	.LASF15
+ 316 00ba 09       		.uleb128 0x9
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 8
+
+
+ 317 00bb 04       		.byte	0x4
+ 318 00bc 03       		.uleb128 0x3
+ 319 00bd 01       		.byte	0x1
+ 320 00be 08       		.byte	0x8
+ 321 00bf 49010000 		.4byte	.LASF16
+ 322 00c3 0A       		.uleb128 0xa
+ 323 00c4 08       		.byte	0x8
+ 324 00c5 01       		.byte	0x1
+ 325 00c6 0F       		.byte	0xf
+ 326 00c7 F0000000 		.4byte	0xf0
+ 327 00cb 0B       		.uleb128 0xb
+ 328 00cc 14020000 		.4byte	.LASF17
+ 329 00d0 01       		.byte	0x1
+ 330 00d1 11       		.byte	0x11
+ 331 00d2 7E000000 		.4byte	0x7e
+ 332 00d6 00       		.byte	0
+ 333 00d7 0B       		.uleb128 0xb
+ 334 00d8 B4000000 		.4byte	.LASF18
+ 335 00dc 01       		.byte	0x1
+ 336 00dd 12       		.byte	0x12
+ 337 00de 45000000 		.4byte	0x45
+ 338 00e2 04       		.byte	0x4
+ 339 00e3 0B       		.uleb128 0xb
+ 340 00e4 35000000 		.4byte	.LASF19
+ 341 00e8 01       		.byte	0x1
+ 342 00e9 13       		.byte	0x13
+ 343 00ea 45000000 		.4byte	0x45
+ 344 00ee 06       		.byte	0x6
+ 345 00ef 00       		.byte	0
+ 346 00f0 04       		.uleb128 0x4
+ 347 00f1 D1000000 		.4byte	.LASF20
+ 348 00f5 01       		.byte	0x1
+ 349 00f6 14       		.byte	0x14
+ 350 00f7 C3000000 		.4byte	0xc3
+ 351 00fb 0A       		.uleb128 0xa
+ 352 00fc A8       		.byte	0xa8
+ 353 00fd 01       		.byte	0x1
+ 354 00fe 17       		.byte	0x17
+ 355 00ff 34010000 		.4byte	0x134
+ 356 0103 0B       		.uleb128 0xb
+ 357 0104 92000000 		.4byte	.LASF21
+ 358 0108 01       		.byte	0x1
+ 359 0109 19       		.byte	0x19
+ 360 010a 34010000 		.4byte	0x134
+ 361 010e 00       		.byte	0
+ 362 010f 0B       		.uleb128 0xb
+ 363 0110 0F010000 		.4byte	.LASF22
+ 364 0114 01       		.byte	0x1
+ 365 0115 1A       		.byte	0x1a
+ 366 0116 33000000 		.4byte	0x33
+ 367 011a A0       		.byte	0xa0
+ 368 011b 0B       		.uleb128 0xb
+ 369 011c C4000000 		.4byte	.LASF23
+ 370 0120 01       		.byte	0x1
+ 371 0121 1B       		.byte	0x1b
+ 372 0122 45000000 		.4byte	0x45
+ 373 0126 A2       		.byte	0xa2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 9
+
+
+ 374 0127 0B       		.uleb128 0xb
+ 375 0128 44000000 		.4byte	.LASF24
+ 376 012c 01       		.byte	0x1
+ 377 012d 1C       		.byte	0x1c
+ 378 012e 45000000 		.4byte	0x45
+ 379 0132 A4       		.byte	0xa4
+ 380 0133 00       		.byte	0
+ 381 0134 0C       		.uleb128 0xc
+ 382 0135 F0000000 		.4byte	0xf0
+ 383 0139 44010000 		.4byte	0x144
+ 384 013d 0D       		.uleb128 0xd
+ 385 013e B3000000 		.4byte	0xb3
+ 386 0142 13       		.byte	0x13
+ 387 0143 00       		.byte	0
+ 388 0144 04       		.uleb128 0x4
+ 389 0145 00000000 		.4byte	.LASF25
+ 390 0149 01       		.byte	0x1
+ 391 014a 1D       		.byte	0x1d
+ 392 014b FB000000 		.4byte	0xfb
+ 393 014f 0E       		.uleb128 0xe
+ 394 0150 FD010000 		.4byte	.LASF26
+ 395 0154 01       		.byte	0x1
+ 396 0155 21       		.byte	0x21
+ 397 0156 00000000 		.4byte	.LFB0
+ 398 015a 14000000 		.4byte	.LFE0-.LFB0
+ 399 015e 01       		.uleb128 0x1
+ 400 015f 9C       		.byte	0x9c
+ 401 0160 83010000 		.4byte	0x183
+ 402 0164 0F       		.uleb128 0xf
+ 403 0165 0C000000 		.4byte	.LVL0
+ 404 0169 FE010000 		.4byte	0x1fe
+ 405 016d 10       		.uleb128 0x10
+ 406 016e 01       		.uleb128 0x1
+ 407 016f 52       		.byte	0x52
+ 408 0170 02       		.uleb128 0x2
+ 409 0171 08       		.byte	0x8
+ 410 0172 A8       		.byte	0xa8
+ 411 0173 10       		.uleb128 0x10
+ 412 0174 01       		.uleb128 0x1
+ 413 0175 51       		.byte	0x51
+ 414 0176 01       		.uleb128 0x1
+ 415 0177 30       		.byte	0x30
+ 416 0178 10       		.uleb128 0x10
+ 417 0179 01       		.uleb128 0x1
+ 418 017a 50       		.byte	0x50
+ 419 017b 05       		.uleb128 0x5
+ 420 017c 03       		.byte	0x3
+ 421 017d 00000000 		.4byte	.LANCHOR0
+ 422 0181 00       		.byte	0
+ 423 0182 00       		.byte	0
+ 424 0183 11       		.uleb128 0x11
+ 425 0184 E3000000 		.4byte	.LASF27
+ 426 0188 01       		.byte	0x1
+ 427 0189 26       		.byte	0x26
+ 428 018a 00000000 		.4byte	.LFB1
+ 429 018e 50000000 		.4byte	.LFE1-.LFB1
+ 430 0192 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 10
+
+
+ 431 0193 9C       		.byte	0x9c
+ 432 0194 A6010000 		.4byte	0x1a6
+ 433 0198 12       		.uleb128 0x12
+ 434 0199 6900     		.ascii	"i\000"
+ 435 019b 01       		.byte	0x1
+ 436 019c 28       		.byte	0x28
+ 437 019d 33000000 		.4byte	0x33
+ 438 01a1 00000000 		.4byte	.LLST0
+ 439 01a5 00       		.byte	0
+ 440 01a6 13       		.uleb128 0x13
+ 441 01a7 4E010000 		.4byte	.LASF32
+ 442 01ab 01       		.byte	0x1
+ 443 01ac 3B       		.byte	0x3b
+ 444 01ad 00000000 		.4byte	.LFB2
+ 445 01b1 10000000 		.4byte	.LFE2-.LFB2
+ 446 01b5 01       		.uleb128 0x1
+ 447 01b6 9C       		.byte	0x9c
+ 448 01b7 14       		.uleb128 0x14
+ 449 01b8 0D000000 		.4byte	.LASF33
+ 450 01bc 01       		.byte	0x1
+ 451 01bd 40       		.byte	0x40
+ 452 01be 73000000 		.4byte	0x73
+ 453 01c2 00000000 		.4byte	.LFB3
+ 454 01c6 30000000 		.4byte	.LFE3-.LFB3
+ 455 01ca 01       		.uleb128 0x1
+ 456 01cb 9C       		.byte	0x9c
+ 457 01cc ED010000 		.4byte	0x1ed
+ 458 01d0 15       		.uleb128 0x15
+ 459 01d1 14020000 		.4byte	.LASF17
+ 460 01d5 01       		.byte	0x1
+ 461 01d6 40       		.byte	0x40
+ 462 01d7 7E000000 		.4byte	0x7e
+ 463 01db 2A000000 		.4byte	.LLST1
+ 464 01df 16       		.uleb128 0x16
+ 465 01e0 B4000000 		.4byte	.LASF18
+ 466 01e4 01       		.byte	0x1
+ 467 01e5 40       		.byte	0x40
+ 468 01e6 45000000 		.4byte	0x45
+ 469 01ea 01       		.uleb128 0x1
+ 470 01eb 51       		.byte	0x51
+ 471 01ec 00       		.byte	0
+ 472 01ed 17       		.uleb128 0x17
+ 473 01ee 07020000 		.4byte	.LASF28
+ 474 01f2 01       		.byte	0x1
+ 475 01f3 1F       		.byte	0x1f
+ 476 01f4 44010000 		.4byte	0x144
+ 477 01f8 05       		.uleb128 0x5
+ 478 01f9 03       		.byte	0x3
+ 479 01fa 00000000 		.4byte	task_manager
+ 480 01fe 18       		.uleb128 0x18
+ 481 01ff DC000000 		.4byte	.LASF34
+ 482 0203 BA000000 		.4byte	0xba
+ 483 0207 19       		.uleb128 0x19
+ 484 0208 BA000000 		.4byte	0xba
+ 485 020c 19       		.uleb128 0x19
+ 486 020d 25000000 		.4byte	0x25
+ 487 0211 19       		.uleb128 0x19
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 11
+
+
+ 488 0212 B3000000 		.4byte	0xb3
+ 489 0216 00       		.byte	0
+ 490 0217 00       		.byte	0
+ 491              		.section	.debug_abbrev,"",%progbits
+ 492              	.Ldebug_abbrev0:
+ 493 0000 01       		.uleb128 0x1
+ 494 0001 11       		.uleb128 0x11
+ 495 0002 01       		.byte	0x1
+ 496 0003 25       		.uleb128 0x25
+ 497 0004 0E       		.uleb128 0xe
+ 498 0005 13       		.uleb128 0x13
+ 499 0006 0B       		.uleb128 0xb
+ 500 0007 03       		.uleb128 0x3
+ 501 0008 0E       		.uleb128 0xe
+ 502 0009 1B       		.uleb128 0x1b
+ 503 000a 0E       		.uleb128 0xe
+ 504 000b 55       		.uleb128 0x55
+ 505 000c 17       		.uleb128 0x17
+ 506 000d 11       		.uleb128 0x11
+ 507 000e 01       		.uleb128 0x1
+ 508 000f 10       		.uleb128 0x10
+ 509 0010 17       		.uleb128 0x17
+ 510 0011 00       		.byte	0
+ 511 0012 00       		.byte	0
+ 512 0013 02       		.uleb128 0x2
+ 513 0014 24       		.uleb128 0x24
+ 514 0015 00       		.byte	0
+ 515 0016 0B       		.uleb128 0xb
+ 516 0017 0B       		.uleb128 0xb
+ 517 0018 3E       		.uleb128 0x3e
+ 518 0019 0B       		.uleb128 0xb
+ 519 001a 03       		.uleb128 0x3
+ 520 001b 08       		.uleb128 0x8
+ 521 001c 00       		.byte	0
+ 522 001d 00       		.byte	0
+ 523 001e 03       		.uleb128 0x3
+ 524 001f 24       		.uleb128 0x24
+ 525 0020 00       		.byte	0
+ 526 0021 0B       		.uleb128 0xb
+ 527 0022 0B       		.uleb128 0xb
+ 528 0023 3E       		.uleb128 0x3e
+ 529 0024 0B       		.uleb128 0xb
+ 530 0025 03       		.uleb128 0x3
+ 531 0026 0E       		.uleb128 0xe
+ 532 0027 00       		.byte	0
+ 533 0028 00       		.byte	0
+ 534 0029 04       		.uleb128 0x4
+ 535 002a 16       		.uleb128 0x16
+ 536 002b 00       		.byte	0
+ 537 002c 03       		.uleb128 0x3
+ 538 002d 0E       		.uleb128 0xe
+ 539 002e 3A       		.uleb128 0x3a
+ 540 002f 0B       		.uleb128 0xb
+ 541 0030 3B       		.uleb128 0x3b
+ 542 0031 0B       		.uleb128 0xb
+ 543 0032 49       		.uleb128 0x49
+ 544 0033 13       		.uleb128 0x13
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 12
+
+
+ 545 0034 00       		.byte	0
+ 546 0035 00       		.byte	0
+ 547 0036 05       		.uleb128 0x5
+ 548 0037 04       		.uleb128 0x4
+ 549 0038 01       		.byte	0x1
+ 550 0039 0B       		.uleb128 0xb
+ 551 003a 0B       		.uleb128 0xb
+ 552 003b 3A       		.uleb128 0x3a
+ 553 003c 0B       		.uleb128 0xb
+ 554 003d 3B       		.uleb128 0x3b
+ 555 003e 0B       		.uleb128 0xb
+ 556 003f 01       		.uleb128 0x1
+ 557 0040 13       		.uleb128 0x13
+ 558 0041 00       		.byte	0
+ 559 0042 00       		.byte	0
+ 560 0043 06       		.uleb128 0x6
+ 561 0044 28       		.uleb128 0x28
+ 562 0045 00       		.byte	0
+ 563 0046 03       		.uleb128 0x3
+ 564 0047 0E       		.uleb128 0xe
+ 565 0048 1C       		.uleb128 0x1c
+ 566 0049 0D       		.uleb128 0xd
+ 567 004a 00       		.byte	0
+ 568 004b 00       		.byte	0
+ 569 004c 07       		.uleb128 0x7
+ 570 004d 0F       		.uleb128 0xf
+ 571 004e 00       		.byte	0
+ 572 004f 0B       		.uleb128 0xb
+ 573 0050 0B       		.uleb128 0xb
+ 574 0051 49       		.uleb128 0x49
+ 575 0052 13       		.uleb128 0x13
+ 576 0053 00       		.byte	0
+ 577 0054 00       		.byte	0
+ 578 0055 08       		.uleb128 0x8
+ 579 0056 15       		.uleb128 0x15
+ 580 0057 00       		.byte	0
+ 581 0058 27       		.uleb128 0x27
+ 582 0059 19       		.uleb128 0x19
+ 583 005a 00       		.byte	0
+ 584 005b 00       		.byte	0
+ 585 005c 09       		.uleb128 0x9
+ 586 005d 0F       		.uleb128 0xf
+ 587 005e 00       		.byte	0
+ 588 005f 0B       		.uleb128 0xb
+ 589 0060 0B       		.uleb128 0xb
+ 590 0061 00       		.byte	0
+ 591 0062 00       		.byte	0
+ 592 0063 0A       		.uleb128 0xa
+ 593 0064 13       		.uleb128 0x13
+ 594 0065 01       		.byte	0x1
+ 595 0066 0B       		.uleb128 0xb
+ 596 0067 0B       		.uleb128 0xb
+ 597 0068 3A       		.uleb128 0x3a
+ 598 0069 0B       		.uleb128 0xb
+ 599 006a 3B       		.uleb128 0x3b
+ 600 006b 0B       		.uleb128 0xb
+ 601 006c 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 13
+
+
+ 602 006d 13       		.uleb128 0x13
+ 603 006e 00       		.byte	0
+ 604 006f 00       		.byte	0
+ 605 0070 0B       		.uleb128 0xb
+ 606 0071 0D       		.uleb128 0xd
+ 607 0072 00       		.byte	0
+ 608 0073 03       		.uleb128 0x3
+ 609 0074 0E       		.uleb128 0xe
+ 610 0075 3A       		.uleb128 0x3a
+ 611 0076 0B       		.uleb128 0xb
+ 612 0077 3B       		.uleb128 0x3b
+ 613 0078 0B       		.uleb128 0xb
+ 614 0079 49       		.uleb128 0x49
+ 615 007a 13       		.uleb128 0x13
+ 616 007b 38       		.uleb128 0x38
+ 617 007c 0B       		.uleb128 0xb
+ 618 007d 00       		.byte	0
+ 619 007e 00       		.byte	0
+ 620 007f 0C       		.uleb128 0xc
+ 621 0080 01       		.uleb128 0x1
+ 622 0081 01       		.byte	0x1
+ 623 0082 49       		.uleb128 0x49
+ 624 0083 13       		.uleb128 0x13
+ 625 0084 01       		.uleb128 0x1
+ 626 0085 13       		.uleb128 0x13
+ 627 0086 00       		.byte	0
+ 628 0087 00       		.byte	0
+ 629 0088 0D       		.uleb128 0xd
+ 630 0089 21       		.uleb128 0x21
+ 631 008a 00       		.byte	0
+ 632 008b 49       		.uleb128 0x49
+ 633 008c 13       		.uleb128 0x13
+ 634 008d 2F       		.uleb128 0x2f
+ 635 008e 0B       		.uleb128 0xb
+ 636 008f 00       		.byte	0
+ 637 0090 00       		.byte	0
+ 638 0091 0E       		.uleb128 0xe
+ 639 0092 2E       		.uleb128 0x2e
+ 640 0093 01       		.byte	0x1
+ 641 0094 3F       		.uleb128 0x3f
+ 642 0095 19       		.uleb128 0x19
+ 643 0096 03       		.uleb128 0x3
+ 644 0097 0E       		.uleb128 0xe
+ 645 0098 3A       		.uleb128 0x3a
+ 646 0099 0B       		.uleb128 0xb
+ 647 009a 3B       		.uleb128 0x3b
+ 648 009b 0B       		.uleb128 0xb
+ 649 009c 27       		.uleb128 0x27
+ 650 009d 19       		.uleb128 0x19
+ 651 009e 11       		.uleb128 0x11
+ 652 009f 01       		.uleb128 0x1
+ 653 00a0 12       		.uleb128 0x12
+ 654 00a1 06       		.uleb128 0x6
+ 655 00a2 40       		.uleb128 0x40
+ 656 00a3 18       		.uleb128 0x18
+ 657 00a4 9742     		.uleb128 0x2117
+ 658 00a6 19       		.uleb128 0x19
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 14
+
+
+ 659 00a7 01       		.uleb128 0x1
+ 660 00a8 13       		.uleb128 0x13
+ 661 00a9 00       		.byte	0
+ 662 00aa 00       		.byte	0
+ 663 00ab 0F       		.uleb128 0xf
+ 664 00ac 898201   		.uleb128 0x4109
+ 665 00af 01       		.byte	0x1
+ 666 00b0 11       		.uleb128 0x11
+ 667 00b1 01       		.uleb128 0x1
+ 668 00b2 31       		.uleb128 0x31
+ 669 00b3 13       		.uleb128 0x13
+ 670 00b4 00       		.byte	0
+ 671 00b5 00       		.byte	0
+ 672 00b6 10       		.uleb128 0x10
+ 673 00b7 8A8201   		.uleb128 0x410a
+ 674 00ba 00       		.byte	0
+ 675 00bb 02       		.uleb128 0x2
+ 676 00bc 18       		.uleb128 0x18
+ 677 00bd 9142     		.uleb128 0x2111
+ 678 00bf 18       		.uleb128 0x18
+ 679 00c0 00       		.byte	0
+ 680 00c1 00       		.byte	0
+ 681 00c2 11       		.uleb128 0x11
+ 682 00c3 2E       		.uleb128 0x2e
+ 683 00c4 01       		.byte	0x1
+ 684 00c5 3F       		.uleb128 0x3f
+ 685 00c6 19       		.uleb128 0x19
+ 686 00c7 03       		.uleb128 0x3
+ 687 00c8 0E       		.uleb128 0xe
+ 688 00c9 3A       		.uleb128 0x3a
+ 689 00ca 0B       		.uleb128 0xb
+ 690 00cb 3B       		.uleb128 0x3b
+ 691 00cc 0B       		.uleb128 0xb
+ 692 00cd 27       		.uleb128 0x27
+ 693 00ce 19       		.uleb128 0x19
+ 694 00cf 11       		.uleb128 0x11
+ 695 00d0 01       		.uleb128 0x1
+ 696 00d1 12       		.uleb128 0x12
+ 697 00d2 06       		.uleb128 0x6
+ 698 00d3 40       		.uleb128 0x40
+ 699 00d4 18       		.uleb128 0x18
+ 700 00d5 9642     		.uleb128 0x2116
+ 701 00d7 19       		.uleb128 0x19
+ 702 00d8 01       		.uleb128 0x1
+ 703 00d9 13       		.uleb128 0x13
+ 704 00da 00       		.byte	0
+ 705 00db 00       		.byte	0
+ 706 00dc 12       		.uleb128 0x12
+ 707 00dd 34       		.uleb128 0x34
+ 708 00de 00       		.byte	0
+ 709 00df 03       		.uleb128 0x3
+ 710 00e0 08       		.uleb128 0x8
+ 711 00e1 3A       		.uleb128 0x3a
+ 712 00e2 0B       		.uleb128 0xb
+ 713 00e3 3B       		.uleb128 0x3b
+ 714 00e4 0B       		.uleb128 0xb
+ 715 00e5 49       		.uleb128 0x49
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 15
+
+
+ 716 00e6 13       		.uleb128 0x13
+ 717 00e7 02       		.uleb128 0x2
+ 718 00e8 17       		.uleb128 0x17
+ 719 00e9 00       		.byte	0
+ 720 00ea 00       		.byte	0
+ 721 00eb 13       		.uleb128 0x13
+ 722 00ec 2E       		.uleb128 0x2e
+ 723 00ed 00       		.byte	0
+ 724 00ee 3F       		.uleb128 0x3f
+ 725 00ef 19       		.uleb128 0x19
+ 726 00f0 03       		.uleb128 0x3
+ 727 00f1 0E       		.uleb128 0xe
+ 728 00f2 3A       		.uleb128 0x3a
+ 729 00f3 0B       		.uleb128 0xb
+ 730 00f4 3B       		.uleb128 0x3b
+ 731 00f5 0B       		.uleb128 0xb
+ 732 00f6 27       		.uleb128 0x27
+ 733 00f7 19       		.uleb128 0x19
+ 734 00f8 11       		.uleb128 0x11
+ 735 00f9 01       		.uleb128 0x1
+ 736 00fa 12       		.uleb128 0x12
+ 737 00fb 06       		.uleb128 0x6
+ 738 00fc 40       		.uleb128 0x40
+ 739 00fd 18       		.uleb128 0x18
+ 740 00fe 9742     		.uleb128 0x2117
+ 741 0100 19       		.uleb128 0x19
+ 742 0101 00       		.byte	0
+ 743 0102 00       		.byte	0
+ 744 0103 14       		.uleb128 0x14
+ 745 0104 2E       		.uleb128 0x2e
+ 746 0105 01       		.byte	0x1
+ 747 0106 3F       		.uleb128 0x3f
+ 748 0107 19       		.uleb128 0x19
+ 749 0108 03       		.uleb128 0x3
+ 750 0109 0E       		.uleb128 0xe
+ 751 010a 3A       		.uleb128 0x3a
+ 752 010b 0B       		.uleb128 0xb
+ 753 010c 3B       		.uleb128 0x3b
+ 754 010d 0B       		.uleb128 0xb
+ 755 010e 27       		.uleb128 0x27
+ 756 010f 19       		.uleb128 0x19
+ 757 0110 49       		.uleb128 0x49
+ 758 0111 13       		.uleb128 0x13
+ 759 0112 11       		.uleb128 0x11
+ 760 0113 01       		.uleb128 0x1
+ 761 0114 12       		.uleb128 0x12
+ 762 0115 06       		.uleb128 0x6
+ 763 0116 40       		.uleb128 0x40
+ 764 0117 18       		.uleb128 0x18
+ 765 0118 9742     		.uleb128 0x2117
+ 766 011a 19       		.uleb128 0x19
+ 767 011b 01       		.uleb128 0x1
+ 768 011c 13       		.uleb128 0x13
+ 769 011d 00       		.byte	0
+ 770 011e 00       		.byte	0
+ 771 011f 15       		.uleb128 0x15
+ 772 0120 05       		.uleb128 0x5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 16
+
+
+ 773 0121 00       		.byte	0
+ 774 0122 03       		.uleb128 0x3
+ 775 0123 0E       		.uleb128 0xe
+ 776 0124 3A       		.uleb128 0x3a
+ 777 0125 0B       		.uleb128 0xb
+ 778 0126 3B       		.uleb128 0x3b
+ 779 0127 0B       		.uleb128 0xb
+ 780 0128 49       		.uleb128 0x49
+ 781 0129 13       		.uleb128 0x13
+ 782 012a 02       		.uleb128 0x2
+ 783 012b 17       		.uleb128 0x17
+ 784 012c 00       		.byte	0
+ 785 012d 00       		.byte	0
+ 786 012e 16       		.uleb128 0x16
+ 787 012f 05       		.uleb128 0x5
+ 788 0130 00       		.byte	0
+ 789 0131 03       		.uleb128 0x3
+ 790 0132 0E       		.uleb128 0xe
+ 791 0133 3A       		.uleb128 0x3a
+ 792 0134 0B       		.uleb128 0xb
+ 793 0135 3B       		.uleb128 0x3b
+ 794 0136 0B       		.uleb128 0xb
+ 795 0137 49       		.uleb128 0x49
+ 796 0138 13       		.uleb128 0x13
+ 797 0139 02       		.uleb128 0x2
+ 798 013a 18       		.uleb128 0x18
+ 799 013b 00       		.byte	0
+ 800 013c 00       		.byte	0
+ 801 013d 17       		.uleb128 0x17
+ 802 013e 34       		.uleb128 0x34
+ 803 013f 00       		.byte	0
+ 804 0140 03       		.uleb128 0x3
+ 805 0141 0E       		.uleb128 0xe
+ 806 0142 3A       		.uleb128 0x3a
+ 807 0143 0B       		.uleb128 0xb
+ 808 0144 3B       		.uleb128 0x3b
+ 809 0145 0B       		.uleb128 0xb
+ 810 0146 49       		.uleb128 0x49
+ 811 0147 13       		.uleb128 0x13
+ 812 0148 02       		.uleb128 0x2
+ 813 0149 18       		.uleb128 0x18
+ 814 014a 00       		.byte	0
+ 815 014b 00       		.byte	0
+ 816 014c 18       		.uleb128 0x18
+ 817 014d 2E       		.uleb128 0x2e
+ 818 014e 01       		.byte	0x1
+ 819 014f 3F       		.uleb128 0x3f
+ 820 0150 19       		.uleb128 0x19
+ 821 0151 03       		.uleb128 0x3
+ 822 0152 0E       		.uleb128 0xe
+ 823 0153 27       		.uleb128 0x27
+ 824 0154 19       		.uleb128 0x19
+ 825 0155 49       		.uleb128 0x49
+ 826 0156 13       		.uleb128 0x13
+ 827 0157 34       		.uleb128 0x34
+ 828 0158 19       		.uleb128 0x19
+ 829 0159 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 17
+
+
+ 830 015a 19       		.uleb128 0x19
+ 831 015b 00       		.byte	0
+ 832 015c 00       		.byte	0
+ 833 015d 19       		.uleb128 0x19
+ 834 015e 05       		.uleb128 0x5
+ 835 015f 00       		.byte	0
+ 836 0160 49       		.uleb128 0x49
+ 837 0161 13       		.uleb128 0x13
+ 838 0162 00       		.byte	0
+ 839 0163 00       		.byte	0
+ 840 0164 00       		.byte	0
+ 841              		.section	.debug_loc,"",%progbits
+ 842              	.Ldebug_loc0:
+ 843              	.LLST0:
+ 844 0000 02000000 		.4byte	.LVL1
+ 845 0004 1A000000 		.4byte	.LVL2
+ 846 0008 0200     		.2byte	0x2
+ 847 000a 30       		.byte	0x30
+ 848 000b 9F       		.byte	0x9f
+ 849 000c 1A000000 		.4byte	.LVL2
+ 850 0010 3C000000 		.4byte	.LVL4
+ 851 0014 0100     		.2byte	0x1
+ 852 0016 54       		.byte	0x54
+ 853 0017 3E000000 		.4byte	.LVL5
+ 854 001b 48000000 		.4byte	.LVL6
+ 855 001f 0100     		.2byte	0x1
+ 856 0021 54       		.byte	0x54
+ 857 0022 00000000 		.4byte	0
+ 858 0026 00000000 		.4byte	0
+ 859              	.LLST1:
+ 860 002a 00000000 		.4byte	.LVL7
+ 861 002e 1C000000 		.4byte	.LVL8
+ 862 0032 0100     		.2byte	0x1
+ 863 0034 50       		.byte	0x50
+ 864 0035 1C000000 		.4byte	.LVL8
+ 865 0039 1E000000 		.4byte	.LVL9
+ 866 003d 0200     		.2byte	0x2
+ 867 003f 73       		.byte	0x73
+ 868 0040 00       		.sleb128 0
+ 869 0041 1E000000 		.4byte	.LVL9
+ 870 0045 20000000 		.4byte	.LVL10
+ 871 0049 0100     		.2byte	0x1
+ 872 004b 50       		.byte	0x50
+ 873 004c 20000000 		.4byte	.LVL10
+ 874 0050 22000000 		.4byte	.LVL11
+ 875 0054 0400     		.2byte	0x4
+ 876 0056 F3       		.byte	0xf3
+ 877 0057 01       		.uleb128 0x1
+ 878 0058 50       		.byte	0x50
+ 879 0059 9F       		.byte	0x9f
+ 880 005a 22000000 		.4byte	.LVL11
+ 881 005e 24000000 		.4byte	.LVL12
+ 882 0062 0100     		.2byte	0x1
+ 883 0064 50       		.byte	0x50
+ 884 0065 24000000 		.4byte	.LVL12
+ 885 0069 26000000 		.4byte	.LVL13
+ 886 006d 0400     		.2byte	0x4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 18
+
+
+ 887 006f F3       		.byte	0xf3
+ 888 0070 01       		.uleb128 0x1
+ 889 0071 50       		.byte	0x50
+ 890 0072 9F       		.byte	0x9f
+ 891 0073 26000000 		.4byte	.LVL13
+ 892 0077 28000000 		.4byte	.LVL14
+ 893 007b 0100     		.2byte	0x1
+ 894 007d 50       		.byte	0x50
+ 895 007e 28000000 		.4byte	.LVL14
+ 896 0082 30000000 		.4byte	.LFE3
+ 897 0086 0400     		.2byte	0x4
+ 898 0088 F3       		.byte	0xf3
+ 899 0089 01       		.uleb128 0x1
+ 900 008a 50       		.byte	0x50
+ 901 008b 9F       		.byte	0x9f
+ 902 008c 00000000 		.4byte	0
+ 903 0090 00000000 		.4byte	0
+ 904              		.section	.debug_aranges,"",%progbits
+ 905 0000 34000000 		.4byte	0x34
+ 906 0004 0200     		.2byte	0x2
+ 907 0006 00000000 		.4byte	.Ldebug_info0
+ 908 000a 04       		.byte	0x4
+ 909 000b 00       		.byte	0
+ 910 000c 0000     		.2byte	0
+ 911 000e 0000     		.2byte	0
+ 912 0010 00000000 		.4byte	.LFB0
+ 913 0014 14000000 		.4byte	.LFE0-.LFB0
+ 914 0018 00000000 		.4byte	.LFB1
+ 915 001c 50000000 		.4byte	.LFE1-.LFB1
+ 916 0020 00000000 		.4byte	.LFB2
+ 917 0024 10000000 		.4byte	.LFE2-.LFB2
+ 918 0028 00000000 		.4byte	.LFB3
+ 919 002c 30000000 		.4byte	.LFE3-.LFB3
+ 920 0030 00000000 		.4byte	0
+ 921 0034 00000000 		.4byte	0
+ 922              		.section	.debug_ranges,"",%progbits
+ 923              	.Ldebug_ranges0:
+ 924 0000 00000000 		.4byte	.LFB0
+ 925 0004 14000000 		.4byte	.LFE0
+ 926 0008 00000000 		.4byte	.LFB1
+ 927 000c 50000000 		.4byte	.LFE1
+ 928 0010 00000000 		.4byte	.LFB2
+ 929 0014 10000000 		.4byte	.LFE2
+ 930 0018 00000000 		.4byte	.LFB3
+ 931 001c 30000000 		.4byte	.LFE3
+ 932 0020 00000000 		.4byte	0
+ 933 0024 00000000 		.4byte	0
+ 934              		.section	.debug_line,"",%progbits
+ 935              	.Ldebug_line0:
+ 936 0000 A1000000 		.section	.debug_str,"MS",%progbits,1
+ 936      02003200 
+ 936      00000201 
+ 936      FB0E0D00 
+ 936      01010101 
+ 937              	.LASF25:
+ 938 0000 5461736B 		.ascii	"Task_manager\000"
+ 938      5F6D616E 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 19
+
+
+ 938      61676572 
+ 938      00
+ 939              	.LASF33:
+ 940 000d 7461736B 		.ascii	"task_add\000"
+ 940      5F616464 
+ 940      00
+ 941              	.LASF30:
+ 942 0016 7461736B 		.ascii	"task.c\000"
+ 942      2E6300
+ 943              	.LASF7:
+ 944 001d 54525545 		.ascii	"TRUE\000"
+ 944      00
+ 945              	.LASF4:
+ 946 0022 73686F72 		.ascii	"short unsigned int\000"
+ 946      7420756E 
+ 946      7369676E 
+ 946      65642069 
+ 946      6E7400
+ 947              	.LASF19:
+ 948 0035 6F6C645F 		.ascii	"old_time\000"
+ 948      74696D65 
+ 948      00
+ 949              	.LASF9:
+ 950 003e 7066756E 		.ascii	"pfunc\000"
+ 950      6300
+ 951              	.LASF24:
+ 952 0044 70726576 		.ascii	"prev_time_counter\000"
+ 952      5F74696D 
+ 952      655F636F 
+ 952      756E7465 
+ 952      7200
+ 953              	.LASF31:
+ 954 0056 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\A"
+ 954      6F63616C 
+ 954      5F73766E 
+ 954      5C415942 
+ 954      52333030 
+ 955 0084 59425233 		.ascii	"YBR3000.cydsn\000"
+ 955      3030302E 
+ 955      63796473 
+ 955      6E00
+ 956              	.LASF21:
+ 957 0092 7461736B 		.ascii	"task_list\000"
+ 957      5F6C6973 
+ 957      7400
+ 958              	.LASF5:
+ 959 009c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 959      20756E73 
+ 959      69676E65 
+ 959      6420696E 
+ 959      7400
+ 960              	.LASF2:
+ 961 00ae 75696E74 		.ascii	"uint8\000"
+ 961      3800
+ 962              	.LASF18:
+ 963 00b4 73636865 		.ascii	"schedule_period\000"
+ 963      64756C65 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 20
+
+
+ 963      5F706572 
+ 963      696F6400 
+ 964              	.LASF23:
+ 965 00c4 74696D65 		.ascii	"time_counter\000"
+ 965      5F636F75 
+ 965      6E746572 
+ 965      00
+ 966              	.LASF20:
+ 967 00d1 5461736B 		.ascii	"Task\000"
+ 967      00
+ 968              	.LASF6:
+ 969 00d6 46414C53 		.ascii	"FALSE\000"
+ 969      4500
+ 970              	.LASF34:
+ 971 00dc 6D656D73 		.ascii	"memset\000"
+ 971      657400
+ 972              	.LASF27:
+ 973 00e3 7461736B 		.ascii	"task_main\000"
+ 973      5F6D6169 
+ 973      6E00
+ 974              	.LASF3:
+ 975 00ed 75696E74 		.ascii	"uint16\000"
+ 975      313600
+ 976              	.LASF1:
+ 977 00f4 756E7369 		.ascii	"unsigned char\000"
+ 977      676E6564 
+ 977      20636861 
+ 977      7200
+ 978              	.LASF0:
+ 979 0102 756E7369 		.ascii	"unsigned int\000"
+ 979      676E6564 
+ 979      20696E74 
+ 979      00
+ 980              	.LASF22:
+ 981 010f 7461736B 		.ascii	"task_nunber\000"
+ 981      5F6E756E 
+ 981      62657200 
+ 982              	.LASF14:
+ 983 011b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 983      206C6F6E 
+ 983      6720756E 
+ 983      7369676E 
+ 983      65642069 
+ 984              	.LASF15:
+ 985 0132 73697A65 		.ascii	"sizetype\000"
+ 985      74797065 
+ 985      00
+ 986              	.LASF13:
+ 987 013b 6C6F6E67 		.ascii	"long long int\000"
+ 987      206C6F6E 
+ 987      6720696E 
+ 987      7400
+ 988              	.LASF16:
+ 989 0149 63686172 		.ascii	"char\000"
+ 989      00
+ 990              	.LASF32:
+ 991 014e 7461736B 		.ascii	"task_100us_updater\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKtKJDR.s 			page 21
+
+
+ 991      5F313030 
+ 991      75735F75 
+ 991      70646174 
+ 991      657200
+ 992              	.LASF29:
+ 993 0161 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 993      4320342E 
+ 993      392E3320 
+ 993      32303135 
+ 993      30333033 
+ 994 0194 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 994      20726576 
+ 994      6973696F 
+ 994      6E203232 
+ 994      31323230 
+ 995 01c7 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 995      67202D66 
+ 995      66756E63 
+ 995      74696F6E 
+ 995      2D736563 
+ 996              	.LASF11:
+ 997 01f3 73686F72 		.ascii	"short int\000"
+ 997      7420696E 
+ 997      7400
+ 998              	.LASF26:
+ 999 01fd 7461736B 		.ascii	"task_init\000"
+ 999      5F696E69 
+ 999      7400
+ 1000              	.LASF28:
+ 1001 0207 7461736B 		.ascii	"task_manager\000"
+ 1001      5F6D616E 
+ 1001      61676572 
+ 1001      00
+ 1002              	.LASF17:
+ 1003 0214 7461736B 		.ascii	"task\000"
+ 1003      00
+ 1004              	.LASF12:
+ 1005 0219 6C6F6E67 		.ascii	"long int\000"
+ 1005      20696E74 
+ 1005      00
+ 1006              	.LASF8:
+ 1007 0222 426F6F6C 		.ascii	"Bool\000"
+ 1007      00
+ 1008              	.LASF10:
+ 1009 0227 7369676E 		.ascii	"signed char\000"
+ 1009      65642063 
+ 1009      68617200 
+ 1010              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

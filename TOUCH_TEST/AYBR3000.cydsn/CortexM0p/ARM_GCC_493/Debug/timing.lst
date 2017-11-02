@@ -1,0 +1,853 @@
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"timing.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.timing_get_count,"ax",%progbits
+  18              		.align	2
+  19              		.code	16
+  20              		.thumb_func
+  21              		.type	timing_get_count, %function
+  22              	timing_get_count:
+  23              	.LFB1:
+  24              		.file 1 "timing.c"
+   1:timing.c      **** #include "timing.h"
+   2:timing.c      **** 
+   3:timing.c      **** static uint16 counter = 0;
+   4:timing.c      **** static uint16 timing_get_count(void);
+   5:timing.c      **** /*
+   6:timing.c      **** **1ms增加一次
+   7:timing.c      **** */
+   8:timing.c      **** inline void timing_count(void)
+   9:timing.c      **** {
+  10:timing.c      ****     counter++;
+  11:timing.c      **** }
+  12:timing.c      **** /*
+  13:timing.c      **** **获取counter当前值
+  14:timing.c      **** */
+  15:timing.c      **** static uint16 timing_get_count(void)
+  16:timing.c      **** {    
+  25              		.loc 1 16 0
+  26              		.cfi_startproc
+  17:timing.c      ****     return counter;
+  27              		.loc 1 17 0
+  28 0000 014B     		ldr	r3, .L2
+  29 0002 1888     		ldrh	r0, [r3]
+  18:timing.c      **** }
+  30              		.loc 1 18 0
+  31              		@ sp needed
+  32 0004 7047     		bx	lr
+  33              	.L3:
+  34 0006 C046     		.align	2
+  35              	.L2:
+  36 0008 00000000 		.word	.LANCHOR0
+  37              		.cfi_endproc
+  38              	.LFE1:
+  39              		.size	timing_get_count, .-timing_get_count
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 2
+
+
+  40              		.section	.text.timing_count,"ax",%progbits
+  41              		.align	2
+  42              		.global	timing_count
+  43              		.code	16
+  44              		.thumb_func
+  45              		.type	timing_count, %function
+  46              	timing_count:
+  47              	.LFB0:
+   9:timing.c      ****     counter++;
+  48              		.loc 1 9 0
+  49              		.cfi_startproc
+  10:timing.c      **** }
+  50              		.loc 1 10 0
+  51 0000 024A     		ldr	r2, .L5
+  52 0002 1388     		ldrh	r3, [r2]
+  53 0004 0133     		add	r3, r3, #1
+  54 0006 1380     		strh	r3, [r2]
+  11:timing.c      **** /*
+  55              		.loc 1 11 0
+  56              		@ sp needed
+  57 0008 7047     		bx	lr
+  58              	.L6:
+  59 000a C046     		.align	2
+  60              	.L5:
+  61 000c 00000000 		.word	.LANCHOR0
+  62              		.cfi_endproc
+  63              	.LFE0:
+  64              		.size	timing_count, .-timing_count
+  65              		.section	.text.timing_set_counts,"ax",%progbits
+  66              		.align	2
+  67              		.global	timing_set_counts
+  68              		.code	16
+  69              		.thumb_func
+  70              		.type	timing_set_counts, %function
+  71              	timing_set_counts:
+  72              	.LFB2:
+  19:timing.c      **** 
+  20:timing.c      **** /*
+  21:timing.c      **** **设置定时长度,
+  22:timing.c      **** */
+  23:timing.c      **** void timing_set_counts(Timing_type *pdata, uint16 set_count)
+  24:timing.c      **** {   
+  73              		.loc 1 24 0
+  74              		.cfi_startproc
+  75              	.LVL0:
+  76 0000 38B5     		push	{r3, r4, r5, lr}
+  77              		.cfi_def_cfa_offset 16
+  78              		.cfi_offset 3, -16
+  79              		.cfi_offset 4, -12
+  80              		.cfi_offset 5, -8
+  81              		.cfi_offset 14, -4
+  82 0002 041C     		mov	r4, r0
+  83 0004 0D1C     		mov	r5, r1
+  25:timing.c      ****     pdata->old_count = timing_get_count();   
+  84              		.loc 1 25 0
+  85 0006 FFF7FEFF 		bl	timing_get_count
+  86              	.LVL1:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 3
+
+
+  87 000a 6080     		strh	r0, [r4, #2]
+  26:timing.c      ****     pdata->set_count = set_count;    
+  88              		.loc 1 26 0
+  89 000c A580     		strh	r5, [r4, #4]
+  27:timing.c      ****     pdata->count_end = FALSE;
+  90              		.loc 1 27 0
+  91 000e 0023     		mov	r3, #0
+  92 0010 2370     		strb	r3, [r4]
+  28:timing.c      **** }
+  93              		.loc 1 28 0
+  94              		@ sp needed
+  95              	.LVL2:
+  96 0012 38BD     		pop	{r3, r4, r5, pc}
+  97              		.cfi_endproc
+  98              	.LFE2:
+  99              		.size	timing_set_counts, .-timing_set_counts
+ 100              		.section	.text.timing_count_end,"ax",%progbits
+ 101              		.align	2
+ 102              		.global	timing_count_end
+ 103              		.code	16
+ 104              		.thumb_func
+ 105              		.type	timing_count_end, %function
+ 106              	timing_count_end:
+ 107              	.LFB3:
+  29:timing.c      **** 
+  30:timing.c      **** /*
+  31:timing.c      **** **定时时间到
+  32:timing.c      **** */
+  33:timing.c      **** Bool timing_count_end(Timing_type *pdata)
+  34:timing.c      **** {   
+ 108              		.loc 1 34 0
+ 109              		.cfi_startproc
+ 110              	.LVL3:
+ 111 0000 10B5     		push	{r4, lr}
+ 112              		.cfi_def_cfa_offset 8
+ 113              		.cfi_offset 4, -8
+ 114              		.cfi_offset 14, -4
+ 115 0002 041C     		mov	r4, r0
+  35:timing.c      ****     if ((pdata->count_end) == FALSE)    
+ 116              		.loc 1 35 0
+ 117 0004 0378     		ldrb	r3, [r0]
+ 118 0006 002B     		cmp	r3, #0
+ 119 0008 08D1     		bne	.L9
+  36:timing.c      ****     {        
+  37:timing.c      ****         if ((timing_get_count() - (pdata->old_count)) > (pdata->set_count))        
+ 120              		.loc 1 37 0
+ 121 000a FFF7FEFF 		bl	timing_get_count
+ 122              	.LVL4:
+ 123 000e 6388     		ldrh	r3, [r4, #2]
+ 124 0010 C01A     		sub	r0, r0, r3
+ 125 0012 A388     		ldrh	r3, [r4, #4]
+ 126 0014 9842     		cmp	r0, r3
+ 127 0016 01DD     		ble	.L9
+  38:timing.c      ****         {            
+  39:timing.c      ****             pdata->count_end  = TRUE;       
+ 128              		.loc 1 39 0
+ 129 0018 0123     		mov	r3, #1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 4
+
+
+ 130 001a 2370     		strb	r3, [r4]
+ 131              	.L9:
+  40:timing.c      ****         }          
+  41:timing.c      ****     }   
+  42:timing.c      ****     return (pdata->count_end);
+ 132              		.loc 1 42 0
+ 133 001c 2078     		ldrb	r0, [r4]
+  43:timing.c      **** }
+ 134              		.loc 1 43 0
+ 135              		@ sp needed
+ 136              	.LVL5:
+ 137 001e 10BD     		pop	{r4, pc}
+ 138              		.cfi_endproc
+ 139              	.LFE3:
+ 140              		.size	timing_count_end, .-timing_count_end
+ 141              		.bss
+ 142              		.align	1
+ 143              		.set	.LANCHOR0,. + 0
+ 144              		.type	counter, %object
+ 145              		.size	counter, 2
+ 146              	counter:
+ 147 0000 0000     		.space	2
+ 148              		.text
+ 149              	.Letext0:
+ 150              		.file 2 "types.h"
+ 151              		.file 3 "timing.h"
+ 152              		.section	.debug_info,"",%progbits
+ 153              	.Ldebug_info0:
+ 154 0000 54010000 		.4byte	0x154
+ 155 0004 0400     		.2byte	0x4
+ 156 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 157 000a 04       		.byte	0x4
+ 158 000b 01       		.uleb128 0x1
+ 159 000c C0000000 		.4byte	.LASF13
+ 160 0010 01       		.byte	0x1
+ 161 0011 B7000000 		.4byte	.LASF14
+ 162 0015 6B010000 		.4byte	.LASF15
+ 163 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 164 001d 00000000 		.4byte	0
+ 165 0021 00000000 		.4byte	.Ldebug_line0
+ 166 0025 02       		.uleb128 0x2
+ 167 0026 04       		.byte	0x4
+ 168 0027 05       		.byte	0x5
+ 169 0028 696E7400 		.ascii	"int\000"
+ 170 002c 03       		.uleb128 0x3
+ 171 002d 04       		.byte	0x4
+ 172 002e 07       		.byte	0x7
+ 173 002f 00000000 		.4byte	.LASF0
+ 174 0033 03       		.uleb128 0x3
+ 175 0034 01       		.byte	0x1
+ 176 0035 08       		.byte	0x8
+ 177 0036 63000000 		.4byte	.LASF1
+ 178 003a 04       		.uleb128 0x4
+ 179 003b 64010000 		.4byte	.LASF6
+ 180 003f 02       		.byte	0x2
+ 181 0040 08       		.byte	0x8
+ 182 0041 45000000 		.4byte	0x45
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 5
+
+
+ 183 0045 03       		.uleb128 0x3
+ 184 0046 02       		.byte	0x2
+ 185 0047 07       		.byte	0x7
+ 186 0048 A4000000 		.4byte	.LASF2
+ 187 004c 03       		.uleb128 0x3
+ 188 004d 04       		.byte	0x4
+ 189 004e 07       		.byte	0x7
+ 190 004f 2A000000 		.4byte	.LASF3
+ 191 0053 05       		.uleb128 0x5
+ 192 0054 01       		.byte	0x1
+ 193 0055 02       		.byte	0x2
+ 194 0056 12       		.byte	0x12
+ 195 0057 68000000 		.4byte	0x68
+ 196 005b 06       		.uleb128 0x6
+ 197 005c 13000000 		.4byte	.LASF4
+ 198 0060 00       		.sleb128 0
+ 199 0061 06       		.uleb128 0x6
+ 200 0062 71000000 		.4byte	.LASF5
+ 201 0066 01       		.sleb128 1
+ 202 0067 00       		.byte	0
+ 203 0068 04       		.uleb128 0x4
+ 204 0069 80000000 		.4byte	.LASF7
+ 205 006d 02       		.byte	0x2
+ 206 006e 15       		.byte	0x15
+ 207 006f 53000000 		.4byte	0x53
+ 208 0073 07       		.uleb128 0x7
+ 209 0074 06       		.byte	0x6
+ 210 0075 03       		.byte	0x3
+ 211 0076 07       		.byte	0x7
+ 212 0077 A0000000 		.4byte	0xa0
+ 213 007b 08       		.uleb128 0x8
+ 214 007c 76000000 		.4byte	.LASF8
+ 215 0080 03       		.byte	0x3
+ 216 0081 09       		.byte	0x9
+ 217 0082 68000000 		.4byte	0x68
+ 218 0086 00       		.byte	0
+ 219 0087 08       		.uleb128 0x8
+ 220 0088 85000000 		.4byte	.LASF9
+ 221 008c 03       		.byte	0x3
+ 222 008d 0A       		.byte	0xa
+ 223 008e 3A000000 		.4byte	0x3a
+ 224 0092 02       		.byte	0x2
+ 225 0093 08       		.uleb128 0x8
+ 226 0094 3C000000 		.4byte	.LASF10
+ 227 0098 03       		.byte	0x3
+ 228 0099 0B       		.byte	0xb
+ 229 009a 3A000000 		.4byte	0x3a
+ 230 009e 04       		.byte	0x4
+ 231 009f 00       		.byte	0
+ 232 00a0 04       		.uleb128 0x4
+ 233 00a1 46000000 		.4byte	.LASF11
+ 234 00a5 03       		.byte	0x3
+ 235 00a6 0C       		.byte	0xc
+ 236 00a7 73000000 		.4byte	0x73
+ 237 00ab 09       		.uleb128 0x9
+ 238 00ac 19000000 		.4byte	.LASF16
+ 239 00b0 01       		.byte	0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 6
+
+
+ 240 00b1 0F       		.byte	0xf
+ 241 00b2 3A000000 		.4byte	0x3a
+ 242 00b6 00000000 		.4byte	.LFB1
+ 243 00ba 0C000000 		.4byte	.LFE1-.LFB1
+ 244 00be 01       		.uleb128 0x1
+ 245 00bf 9C       		.byte	0x9c
+ 246 00c0 0A       		.uleb128 0xa
+ 247 00c1 8F000000 		.4byte	.LASF17
+ 248 00c5 01       		.byte	0x1
+ 249 00c6 08       		.byte	0x8
+ 250 00c7 00000000 		.4byte	.LFB0
+ 251 00cb 10000000 		.4byte	.LFE0-.LFB0
+ 252 00cf 01       		.uleb128 0x1
+ 253 00d0 9C       		.byte	0x9c
+ 254 00d1 0B       		.uleb128 0xb
+ 255 00d2 52010000 		.4byte	.LASF18
+ 256 00d6 01       		.byte	0x1
+ 257 00d7 17       		.byte	0x17
+ 258 00d8 00000000 		.4byte	.LFB2
+ 259 00dc 14000000 		.4byte	.LFE2-.LFB2
+ 260 00e0 01       		.uleb128 0x1
+ 261 00e1 9C       		.byte	0x9c
+ 262 00e2 0E010000 		.4byte	0x10e
+ 263 00e6 0C       		.uleb128 0xc
+ 264 00e7 0D000000 		.4byte	.LASF12
+ 265 00eb 01       		.byte	0x1
+ 266 00ec 17       		.byte	0x17
+ 267 00ed 0E010000 		.4byte	0x10e
+ 268 00f1 00000000 		.4byte	.LLST0
+ 269 00f5 0C       		.uleb128 0xc
+ 270 00f6 3C000000 		.4byte	.LASF10
+ 271 00fa 01       		.byte	0x1
+ 272 00fb 17       		.byte	0x17
+ 273 00fc 3A000000 		.4byte	0x3a
+ 274 0100 2C000000 		.4byte	.LLST1
+ 275 0104 0D       		.uleb128 0xd
+ 276 0105 0A000000 		.4byte	.LVL1
+ 277 0109 AB000000 		.4byte	0xab
+ 278 010d 00       		.byte	0
+ 279 010e 0E       		.uleb128 0xe
+ 280 010f 04       		.byte	0x4
+ 281 0110 A0000000 		.4byte	0xa0
+ 282 0114 0F       		.uleb128 0xf
+ 283 0115 52000000 		.4byte	.LASF19
+ 284 0119 01       		.byte	0x1
+ 285 011a 21       		.byte	0x21
+ 286 011b 68000000 		.4byte	0x68
+ 287 011f 00000000 		.4byte	.LFB3
+ 288 0123 20000000 		.4byte	.LFE3-.LFB3
+ 289 0127 01       		.uleb128 0x1
+ 290 0128 9C       		.byte	0x9c
+ 291 0129 46010000 		.4byte	0x146
+ 292 012d 0C       		.uleb128 0xc
+ 293 012e 0D000000 		.4byte	.LASF12
+ 294 0132 01       		.byte	0x1
+ 295 0133 21       		.byte	0x21
+ 296 0134 0E010000 		.4byte	0x10e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 7
+
+
+ 297 0138 4D000000 		.4byte	.LLST2
+ 298 013c 0D       		.uleb128 0xd
+ 299 013d 0E000000 		.4byte	.LVL4
+ 300 0141 AB000000 		.4byte	0xab
+ 301 0145 00       		.byte	0
+ 302 0146 10       		.uleb128 0x10
+ 303 0147 9C000000 		.4byte	.LASF20
+ 304 014b 01       		.byte	0x1
+ 305 014c 03       		.byte	0x3
+ 306 014d 3A000000 		.4byte	0x3a
+ 307 0151 05       		.uleb128 0x5
+ 308 0152 03       		.byte	0x3
+ 309 0153 00000000 		.4byte	counter
+ 310 0157 00       		.byte	0
+ 311              		.section	.debug_abbrev,"",%progbits
+ 312              	.Ldebug_abbrev0:
+ 313 0000 01       		.uleb128 0x1
+ 314 0001 11       		.uleb128 0x11
+ 315 0002 01       		.byte	0x1
+ 316 0003 25       		.uleb128 0x25
+ 317 0004 0E       		.uleb128 0xe
+ 318 0005 13       		.uleb128 0x13
+ 319 0006 0B       		.uleb128 0xb
+ 320 0007 03       		.uleb128 0x3
+ 321 0008 0E       		.uleb128 0xe
+ 322 0009 1B       		.uleb128 0x1b
+ 323 000a 0E       		.uleb128 0xe
+ 324 000b 55       		.uleb128 0x55
+ 325 000c 17       		.uleb128 0x17
+ 326 000d 11       		.uleb128 0x11
+ 327 000e 01       		.uleb128 0x1
+ 328 000f 10       		.uleb128 0x10
+ 329 0010 17       		.uleb128 0x17
+ 330 0011 00       		.byte	0
+ 331 0012 00       		.byte	0
+ 332 0013 02       		.uleb128 0x2
+ 333 0014 24       		.uleb128 0x24
+ 334 0015 00       		.byte	0
+ 335 0016 0B       		.uleb128 0xb
+ 336 0017 0B       		.uleb128 0xb
+ 337 0018 3E       		.uleb128 0x3e
+ 338 0019 0B       		.uleb128 0xb
+ 339 001a 03       		.uleb128 0x3
+ 340 001b 08       		.uleb128 0x8
+ 341 001c 00       		.byte	0
+ 342 001d 00       		.byte	0
+ 343 001e 03       		.uleb128 0x3
+ 344 001f 24       		.uleb128 0x24
+ 345 0020 00       		.byte	0
+ 346 0021 0B       		.uleb128 0xb
+ 347 0022 0B       		.uleb128 0xb
+ 348 0023 3E       		.uleb128 0x3e
+ 349 0024 0B       		.uleb128 0xb
+ 350 0025 03       		.uleb128 0x3
+ 351 0026 0E       		.uleb128 0xe
+ 352 0027 00       		.byte	0
+ 353 0028 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 8
+
+
+ 354 0029 04       		.uleb128 0x4
+ 355 002a 16       		.uleb128 0x16
+ 356 002b 00       		.byte	0
+ 357 002c 03       		.uleb128 0x3
+ 358 002d 0E       		.uleb128 0xe
+ 359 002e 3A       		.uleb128 0x3a
+ 360 002f 0B       		.uleb128 0xb
+ 361 0030 3B       		.uleb128 0x3b
+ 362 0031 0B       		.uleb128 0xb
+ 363 0032 49       		.uleb128 0x49
+ 364 0033 13       		.uleb128 0x13
+ 365 0034 00       		.byte	0
+ 366 0035 00       		.byte	0
+ 367 0036 05       		.uleb128 0x5
+ 368 0037 04       		.uleb128 0x4
+ 369 0038 01       		.byte	0x1
+ 370 0039 0B       		.uleb128 0xb
+ 371 003a 0B       		.uleb128 0xb
+ 372 003b 3A       		.uleb128 0x3a
+ 373 003c 0B       		.uleb128 0xb
+ 374 003d 3B       		.uleb128 0x3b
+ 375 003e 0B       		.uleb128 0xb
+ 376 003f 01       		.uleb128 0x1
+ 377 0040 13       		.uleb128 0x13
+ 378 0041 00       		.byte	0
+ 379 0042 00       		.byte	0
+ 380 0043 06       		.uleb128 0x6
+ 381 0044 28       		.uleb128 0x28
+ 382 0045 00       		.byte	0
+ 383 0046 03       		.uleb128 0x3
+ 384 0047 0E       		.uleb128 0xe
+ 385 0048 1C       		.uleb128 0x1c
+ 386 0049 0D       		.uleb128 0xd
+ 387 004a 00       		.byte	0
+ 388 004b 00       		.byte	0
+ 389 004c 07       		.uleb128 0x7
+ 390 004d 13       		.uleb128 0x13
+ 391 004e 01       		.byte	0x1
+ 392 004f 0B       		.uleb128 0xb
+ 393 0050 0B       		.uleb128 0xb
+ 394 0051 3A       		.uleb128 0x3a
+ 395 0052 0B       		.uleb128 0xb
+ 396 0053 3B       		.uleb128 0x3b
+ 397 0054 0B       		.uleb128 0xb
+ 398 0055 01       		.uleb128 0x1
+ 399 0056 13       		.uleb128 0x13
+ 400 0057 00       		.byte	0
+ 401 0058 00       		.byte	0
+ 402 0059 08       		.uleb128 0x8
+ 403 005a 0D       		.uleb128 0xd
+ 404 005b 00       		.byte	0
+ 405 005c 03       		.uleb128 0x3
+ 406 005d 0E       		.uleb128 0xe
+ 407 005e 3A       		.uleb128 0x3a
+ 408 005f 0B       		.uleb128 0xb
+ 409 0060 3B       		.uleb128 0x3b
+ 410 0061 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 9
+
+
+ 411 0062 49       		.uleb128 0x49
+ 412 0063 13       		.uleb128 0x13
+ 413 0064 38       		.uleb128 0x38
+ 414 0065 0B       		.uleb128 0xb
+ 415 0066 00       		.byte	0
+ 416 0067 00       		.byte	0
+ 417 0068 09       		.uleb128 0x9
+ 418 0069 2E       		.uleb128 0x2e
+ 419 006a 00       		.byte	0
+ 420 006b 03       		.uleb128 0x3
+ 421 006c 0E       		.uleb128 0xe
+ 422 006d 3A       		.uleb128 0x3a
+ 423 006e 0B       		.uleb128 0xb
+ 424 006f 3B       		.uleb128 0x3b
+ 425 0070 0B       		.uleb128 0xb
+ 426 0071 27       		.uleb128 0x27
+ 427 0072 19       		.uleb128 0x19
+ 428 0073 49       		.uleb128 0x49
+ 429 0074 13       		.uleb128 0x13
+ 430 0075 11       		.uleb128 0x11
+ 431 0076 01       		.uleb128 0x1
+ 432 0077 12       		.uleb128 0x12
+ 433 0078 06       		.uleb128 0x6
+ 434 0079 40       		.uleb128 0x40
+ 435 007a 18       		.uleb128 0x18
+ 436 007b 9742     		.uleb128 0x2117
+ 437 007d 19       		.uleb128 0x19
+ 438 007e 00       		.byte	0
+ 439 007f 00       		.byte	0
+ 440 0080 0A       		.uleb128 0xa
+ 441 0081 2E       		.uleb128 0x2e
+ 442 0082 00       		.byte	0
+ 443 0083 3F       		.uleb128 0x3f
+ 444 0084 19       		.uleb128 0x19
+ 445 0085 03       		.uleb128 0x3
+ 446 0086 0E       		.uleb128 0xe
+ 447 0087 3A       		.uleb128 0x3a
+ 448 0088 0B       		.uleb128 0xb
+ 449 0089 3B       		.uleb128 0x3b
+ 450 008a 0B       		.uleb128 0xb
+ 451 008b 27       		.uleb128 0x27
+ 452 008c 19       		.uleb128 0x19
+ 453 008d 11       		.uleb128 0x11
+ 454 008e 01       		.uleb128 0x1
+ 455 008f 12       		.uleb128 0x12
+ 456 0090 06       		.uleb128 0x6
+ 457 0091 40       		.uleb128 0x40
+ 458 0092 18       		.uleb128 0x18
+ 459 0093 9742     		.uleb128 0x2117
+ 460 0095 19       		.uleb128 0x19
+ 461 0096 00       		.byte	0
+ 462 0097 00       		.byte	0
+ 463 0098 0B       		.uleb128 0xb
+ 464 0099 2E       		.uleb128 0x2e
+ 465 009a 01       		.byte	0x1
+ 466 009b 3F       		.uleb128 0x3f
+ 467 009c 19       		.uleb128 0x19
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 10
+
+
+ 468 009d 03       		.uleb128 0x3
+ 469 009e 0E       		.uleb128 0xe
+ 470 009f 3A       		.uleb128 0x3a
+ 471 00a0 0B       		.uleb128 0xb
+ 472 00a1 3B       		.uleb128 0x3b
+ 473 00a2 0B       		.uleb128 0xb
+ 474 00a3 27       		.uleb128 0x27
+ 475 00a4 19       		.uleb128 0x19
+ 476 00a5 11       		.uleb128 0x11
+ 477 00a6 01       		.uleb128 0x1
+ 478 00a7 12       		.uleb128 0x12
+ 479 00a8 06       		.uleb128 0x6
+ 480 00a9 40       		.uleb128 0x40
+ 481 00aa 18       		.uleb128 0x18
+ 482 00ab 9742     		.uleb128 0x2117
+ 483 00ad 19       		.uleb128 0x19
+ 484 00ae 01       		.uleb128 0x1
+ 485 00af 13       		.uleb128 0x13
+ 486 00b0 00       		.byte	0
+ 487 00b1 00       		.byte	0
+ 488 00b2 0C       		.uleb128 0xc
+ 489 00b3 05       		.uleb128 0x5
+ 490 00b4 00       		.byte	0
+ 491 00b5 03       		.uleb128 0x3
+ 492 00b6 0E       		.uleb128 0xe
+ 493 00b7 3A       		.uleb128 0x3a
+ 494 00b8 0B       		.uleb128 0xb
+ 495 00b9 3B       		.uleb128 0x3b
+ 496 00ba 0B       		.uleb128 0xb
+ 497 00bb 49       		.uleb128 0x49
+ 498 00bc 13       		.uleb128 0x13
+ 499 00bd 02       		.uleb128 0x2
+ 500 00be 17       		.uleb128 0x17
+ 501 00bf 00       		.byte	0
+ 502 00c0 00       		.byte	0
+ 503 00c1 0D       		.uleb128 0xd
+ 504 00c2 898201   		.uleb128 0x4109
+ 505 00c5 00       		.byte	0
+ 506 00c6 11       		.uleb128 0x11
+ 507 00c7 01       		.uleb128 0x1
+ 508 00c8 31       		.uleb128 0x31
+ 509 00c9 13       		.uleb128 0x13
+ 510 00ca 00       		.byte	0
+ 511 00cb 00       		.byte	0
+ 512 00cc 0E       		.uleb128 0xe
+ 513 00cd 0F       		.uleb128 0xf
+ 514 00ce 00       		.byte	0
+ 515 00cf 0B       		.uleb128 0xb
+ 516 00d0 0B       		.uleb128 0xb
+ 517 00d1 49       		.uleb128 0x49
+ 518 00d2 13       		.uleb128 0x13
+ 519 00d3 00       		.byte	0
+ 520 00d4 00       		.byte	0
+ 521 00d5 0F       		.uleb128 0xf
+ 522 00d6 2E       		.uleb128 0x2e
+ 523 00d7 01       		.byte	0x1
+ 524 00d8 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 11
+
+
+ 525 00d9 19       		.uleb128 0x19
+ 526 00da 03       		.uleb128 0x3
+ 527 00db 0E       		.uleb128 0xe
+ 528 00dc 3A       		.uleb128 0x3a
+ 529 00dd 0B       		.uleb128 0xb
+ 530 00de 3B       		.uleb128 0x3b
+ 531 00df 0B       		.uleb128 0xb
+ 532 00e0 27       		.uleb128 0x27
+ 533 00e1 19       		.uleb128 0x19
+ 534 00e2 49       		.uleb128 0x49
+ 535 00e3 13       		.uleb128 0x13
+ 536 00e4 11       		.uleb128 0x11
+ 537 00e5 01       		.uleb128 0x1
+ 538 00e6 12       		.uleb128 0x12
+ 539 00e7 06       		.uleb128 0x6
+ 540 00e8 40       		.uleb128 0x40
+ 541 00e9 18       		.uleb128 0x18
+ 542 00ea 9742     		.uleb128 0x2117
+ 543 00ec 19       		.uleb128 0x19
+ 544 00ed 01       		.uleb128 0x1
+ 545 00ee 13       		.uleb128 0x13
+ 546 00ef 00       		.byte	0
+ 547 00f0 00       		.byte	0
+ 548 00f1 10       		.uleb128 0x10
+ 549 00f2 34       		.uleb128 0x34
+ 550 00f3 00       		.byte	0
+ 551 00f4 03       		.uleb128 0x3
+ 552 00f5 0E       		.uleb128 0xe
+ 553 00f6 3A       		.uleb128 0x3a
+ 554 00f7 0B       		.uleb128 0xb
+ 555 00f8 3B       		.uleb128 0x3b
+ 556 00f9 0B       		.uleb128 0xb
+ 557 00fa 49       		.uleb128 0x49
+ 558 00fb 13       		.uleb128 0x13
+ 559 00fc 02       		.uleb128 0x2
+ 560 00fd 18       		.uleb128 0x18
+ 561 00fe 00       		.byte	0
+ 562 00ff 00       		.byte	0
+ 563 0100 00       		.byte	0
+ 564              		.section	.debug_loc,"",%progbits
+ 565              	.Ldebug_loc0:
+ 566              	.LLST0:
+ 567 0000 00000000 		.4byte	.LVL0
+ 568 0004 09000000 		.4byte	.LVL1-1
+ 569 0008 0100     		.2byte	0x1
+ 570 000a 50       		.byte	0x50
+ 571 000b 09000000 		.4byte	.LVL1-1
+ 572 000f 12000000 		.4byte	.LVL2
+ 573 0013 0100     		.2byte	0x1
+ 574 0015 54       		.byte	0x54
+ 575 0016 12000000 		.4byte	.LVL2
+ 576 001a 14000000 		.4byte	.LFE2
+ 577 001e 0400     		.2byte	0x4
+ 578 0020 F3       		.byte	0xf3
+ 579 0021 01       		.uleb128 0x1
+ 580 0022 50       		.byte	0x50
+ 581 0023 9F       		.byte	0x9f
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 12
+
+
+ 582 0024 00000000 		.4byte	0
+ 583 0028 00000000 		.4byte	0
+ 584              	.LLST1:
+ 585 002c 00000000 		.4byte	.LVL0
+ 586 0030 09000000 		.4byte	.LVL1-1
+ 587 0034 0100     		.2byte	0x1
+ 588 0036 51       		.byte	0x51
+ 589 0037 09000000 		.4byte	.LVL1-1
+ 590 003b 14000000 		.4byte	.LFE2
+ 591 003f 0400     		.2byte	0x4
+ 592 0041 F3       		.byte	0xf3
+ 593 0042 01       		.uleb128 0x1
+ 594 0043 51       		.byte	0x51
+ 595 0044 9F       		.byte	0x9f
+ 596 0045 00000000 		.4byte	0
+ 597 0049 00000000 		.4byte	0
+ 598              	.LLST2:
+ 599 004d 00000000 		.4byte	.LVL3
+ 600 0051 0D000000 		.4byte	.LVL4-1
+ 601 0055 0100     		.2byte	0x1
+ 602 0057 50       		.byte	0x50
+ 603 0058 0D000000 		.4byte	.LVL4-1
+ 604 005c 1E000000 		.4byte	.LVL5
+ 605 0060 0100     		.2byte	0x1
+ 606 0062 54       		.byte	0x54
+ 607 0063 1E000000 		.4byte	.LVL5
+ 608 0067 20000000 		.4byte	.LFE3
+ 609 006b 0400     		.2byte	0x4
+ 610 006d F3       		.byte	0xf3
+ 611 006e 01       		.uleb128 0x1
+ 612 006f 50       		.byte	0x50
+ 613 0070 9F       		.byte	0x9f
+ 614 0071 00000000 		.4byte	0
+ 615 0075 00000000 		.4byte	0
+ 616              		.section	.debug_aranges,"",%progbits
+ 617 0000 34000000 		.4byte	0x34
+ 618 0004 0200     		.2byte	0x2
+ 619 0006 00000000 		.4byte	.Ldebug_info0
+ 620 000a 04       		.byte	0x4
+ 621 000b 00       		.byte	0
+ 622 000c 0000     		.2byte	0
+ 623 000e 0000     		.2byte	0
+ 624 0010 00000000 		.4byte	.LFB1
+ 625 0014 0C000000 		.4byte	.LFE1-.LFB1
+ 626 0018 00000000 		.4byte	.LFB0
+ 627 001c 10000000 		.4byte	.LFE0-.LFB0
+ 628 0020 00000000 		.4byte	.LFB2
+ 629 0024 14000000 		.4byte	.LFE2-.LFB2
+ 630 0028 00000000 		.4byte	.LFB3
+ 631 002c 20000000 		.4byte	.LFE3-.LFB3
+ 632 0030 00000000 		.4byte	0
+ 633 0034 00000000 		.4byte	0
+ 634              		.section	.debug_ranges,"",%progbits
+ 635              	.Ldebug_ranges0:
+ 636 0000 00000000 		.4byte	.LFB1
+ 637 0004 0C000000 		.4byte	.LFE1
+ 638 0008 00000000 		.4byte	.LFB0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 13
+
+
+ 639 000c 10000000 		.4byte	.LFE0
+ 640 0010 00000000 		.4byte	.LFB2
+ 641 0014 14000000 		.4byte	.LFE2
+ 642 0018 00000000 		.4byte	.LFB3
+ 643 001c 20000000 		.4byte	.LFE3
+ 644 0020 00000000 		.4byte	0
+ 645 0024 00000000 		.4byte	0
+ 646              		.section	.debug_line,"",%progbits
+ 647              	.Ldebug_line0:
+ 648 0000 83000000 		.section	.debug_str,"MS",%progbits,1
+ 648      02003600 
+ 648      00000201 
+ 648      FB0E0D00 
+ 648      01010101 
+ 649              	.LASF0:
+ 650 0000 756E7369 		.ascii	"unsigned int\000"
+ 650      676E6564 
+ 650      20696E74 
+ 650      00
+ 651              	.LASF12:
+ 652 000d 70646174 		.ascii	"pdata\000"
+ 652      6100
+ 653              	.LASF4:
+ 654 0013 46414C53 		.ascii	"FALSE\000"
+ 654      4500
+ 655              	.LASF16:
+ 656 0019 74696D69 		.ascii	"timing_get_count\000"
+ 656      6E675F67 
+ 656      65745F63 
+ 656      6F756E74 
+ 656      00
+ 657              	.LASF3:
+ 658 002a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 658      20756E73 
+ 658      69676E65 
+ 658      6420696E 
+ 658      7400
+ 659              	.LASF10:
+ 660 003c 7365745F 		.ascii	"set_count\000"
+ 660      636F756E 
+ 660      7400
+ 661              	.LASF11:
+ 662 0046 54696D69 		.ascii	"Timing_type\000"
+ 662      6E675F74 
+ 662      79706500 
+ 663              	.LASF19:
+ 664 0052 74696D69 		.ascii	"timing_count_end\000"
+ 664      6E675F63 
+ 664      6F756E74 
+ 664      5F656E64 
+ 664      00
+ 665              	.LASF1:
+ 666 0063 756E7369 		.ascii	"unsigned char\000"
+ 666      676E6564 
+ 666      20636861 
+ 666      7200
+ 667              	.LASF5:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 14
+
+
+ 668 0071 54525545 		.ascii	"TRUE\000"
+ 668      00
+ 669              	.LASF8:
+ 670 0076 636F756E 		.ascii	"count_end\000"
+ 670      745F656E 
+ 670      6400
+ 671              	.LASF7:
+ 672 0080 426F6F6C 		.ascii	"Bool\000"
+ 672      00
+ 673              	.LASF9:
+ 674 0085 6F6C645F 		.ascii	"old_count\000"
+ 674      636F756E 
+ 674      7400
+ 675              	.LASF17:
+ 676 008f 74696D69 		.ascii	"timing_count\000"
+ 676      6E675F63 
+ 676      6F756E74 
+ 676      00
+ 677              	.LASF20:
+ 678 009c 636F756E 		.ascii	"counter\000"
+ 678      74657200 
+ 679              	.LASF2:
+ 680 00a4 73686F72 		.ascii	"short unsigned int\000"
+ 680      7420756E 
+ 680      7369676E 
+ 680      65642069 
+ 680      6E7400
+ 681              	.LASF14:
+ 682 00b7 74696D69 		.ascii	"timing.c\000"
+ 682      6E672E63 
+ 682      00
+ 683              	.LASF13:
+ 684 00c0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 684      4320342E 
+ 684      392E3320 
+ 684      32303135 
+ 684      30333033 
+ 685 00f3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 685      20726576 
+ 685      6973696F 
+ 685      6E203232 
+ 685      31323230 
+ 686 0126 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 686      67202D66 
+ 686      66756E63 
+ 686      74696F6E 
+ 686      2D736563 
+ 687              	.LASF18:
+ 688 0152 74696D69 		.ascii	"timing_set_counts\000"
+ 688      6E675F73 
+ 688      65745F63 
+ 688      6F756E74 
+ 688      7300
+ 689              	.LASF6:
+ 690 0164 75696E74 		.ascii	"uint16\000"
+ 690      313600
+ 691              	.LASF15:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccfmMU5o.s 			page 15
+
+
+ 692 016b 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V1.0\\AYBR3000\\A"
+ 692      6F63616C 
+ 692      5F73766E 
+ 692      5C415942 
+ 692      52333030 
+ 693 0199 59425233 		.ascii	"YBR3000.cydsn\000"
+ 693      3030302E 
+ 693      63796473 
+ 693      6E00
+ 694              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

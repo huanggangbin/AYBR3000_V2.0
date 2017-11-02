@@ -1,0 +1,2922 @@
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"key1.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.key_event_deal,"ax",%progbits
+  18              		.align	2
+  19              		.code	16
+  20              		.thumb_func
+  21              		.type	key_event_deal, %function
+  22              	key_event_deal:
+  23              	.LFB39:
+  24              		.file 1 "key1.c"
+   1:key1.c        **** /* ========================================
+   2:key1.c        ****  *
+   3:key1.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:key1.c        ****  * All Rights Reserved
+   5:key1.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:key1.c        ****  *
+   7:key1.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:key1.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:key1.c        ****  *
+  10:key1.c        ****  * ========================================
+  11:key1.c        **** */
+  12:key1.c        **** #include "key1.h"
+  13:key1.c        **** #include <string.h>
+  14:key1.c        **** #include <math.h>
+  15:key1.c        **** 
+  16:key1.c        **** static Key_event_handler event_handlers[KEY_NUMBER][KEY_EVENT_NUMBER];
+  17:key1.c        **** static void key_event_deal(Key_Index i, Key_event e);
+  18:key1.c        **** 
+  19:key1.c        **** static Key_conbine_handler conbine_handler[KEY_NUMBER][KEY_NUMBER];
+  20:key1.c        **** static void key_combine_deal(Key_Index i, Key_Index j);
+  21:key1.c        **** static void key_conbine_check(void);
+  22:key1.c        **** 
+  23:key1.c        **** Key keys[KEY_NUMBER];
+  24:key1.c        **** Key_state state[KEY_NUMBER];
+  25:key1.c        **** Key_parameter key_paras[KEY_NUMBER] = 
+  26:key1.c        **** {
+  27:key1.c        ****     {40, 3000u, 8000u},
+  28:key1.c        ****     {40, 3000u, 8000u},
+  29:key1.c        ****     {40, 3000u, 8000u},
+  30:key1.c        ****     {40, 3000u, 8000u},
+  31:key1.c        ****     {40, 3000u, 8000u},
+  32:key1.c        ****     {40, 3000u, 8000u},
+  33:key1.c        ****     {40, 3000u, 8000u},
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 2
+
+
+  34:key1.c        ****     {40, 3000u, 8000u},
+  35:key1.c        ****     {40, 3000u, 8000u},
+  36:key1.c        ****     {40, 3000u, 8000u},
+  37:key1.c        ****     {40, 3000u, 8000u},
+  38:key1.c        ****     {40, 3000u, 8000u},
+  39:key1.c        **** };
+  40:key1.c        **** 
+  41:key1.c        **** void key_init(void)
+  42:key1.c        **** {
+  43:key1.c        ****     Key_Index i;
+  44:key1.c        ****     
+  45:key1.c        ****     memset(keys, 0, sizeof (Key) * KEY_NUMBER);
+  46:key1.c        ****     for (i = 0; i < KEY_NUMBER; i++)
+  47:key1.c        ****     {
+  48:key1.c        ****         keys[i].pin = input_pins[i];
+  49:key1.c        ****         state[i] = KEY_RELEASE;
+  50:key1.c        ****     }
+  51:key1.c        **** }
+  52:key1.c        **** 
+  53:key1.c        **** void key_main(void)
+  54:key1.c        **** {
+  55:key1.c        ****     Key_Index i;
+  56:key1.c        **** 
+  57:key1.c        ****     for (i = 0; i < KEY_NUMBER; i++)
+  58:key1.c        ****     {
+  59:key1.c        ****         keys[i].current_level = keys[i].pin();
+  60:key1.c        ****         
+  61:key1.c        ****         if (keys[i].current_level == keys[i].previous_level)
+  62:key1.c        ****         {
+  63:key1.c        ****             keys[i].level_time++;
+  64:key1.c        ****             if (keys[i].level_time < key_paras[i].decounce_time)
+  65:key1.c        ****                 continue;
+  66:key1.c        ****             
+  67:key1.c        ****             //此时keys[i].level_time >= 消抖时间
+  68:key1.c        ****             switch(state[i])
+  69:key1.c        ****             {
+  70:key1.c        ****                 case KEY_RELEASE: 
+  71:key1.c        ****                     if (keys[i].current_level == keys[i].active_level)
+  72:key1.c        ****                     {
+  73:key1.c        ****                         keys[i].level_time = 0;
+  74:key1.c        ****                         state[i] = KEY_PRESS;
+  75:key1.c        ****                         key_conbine_check();
+  76:key1.c        ****                     }
+  77:key1.c        ****                     break;
+  78:key1.c        ****                 case KEY_PRESS: 
+  79:key1.c        ****                     if (keys[i].current_level != keys[i].active_level)
+  80:key1.c        ****                     {
+  81:key1.c        ****                         state[i] = KEY_RELEASE;
+  82:key1.c        ****                         key_event_deal(i, KEY_EVENT_SHORT_PRESS);
+  83:key1.c        ****                     }
+  84:key1.c        ****                     else
+  85:key1.c        ****                     {
+  86:key1.c        ****                         if (keys[i].level_time > key_paras[i].long_press_time)
+  87:key1.c        ****                         {
+  88:key1.c        ****                             state[i] = KEY_LONG_PRESS;
+  89:key1.c        ****                             key_event_deal(i, KEY_EVENT_LONG_PRESS);
+  90:key1.c        ****                         }
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 3
+
+
+  91:key1.c        ****                     }
+  92:key1.c        ****                     break;
+  93:key1.c        ****                 case KEY_LONG_PRESS:
+  94:key1.c        ****                     if (keys[i].current_level != keys[i].active_level)
+  95:key1.c        ****                     {
+  96:key1.c        ****                         state[i] = KEY_RELEASE;
+  97:key1.c        ****                         key_event_deal(i, KEY_EVENT_LONG_RELEASE);
+  98:key1.c        ****                     }
+  99:key1.c        ****                     else
+ 100:key1.c        ****                     {
+ 101:key1.c        ****                         if (keys[i].level_time > key_paras[i].stuck_time)
+ 102:key1.c        ****                         {
+ 103:key1.c        ****                             state[i] = KEY_STUCK;
+ 104:key1.c        ****                         }
+ 105:key1.c        ****                     }
+ 106:key1.c        ****                     break;
+ 107:key1.c        ****                 case KEY_STUCK:
+ 108:key1.c        ****                     if (keys[i].current_level != keys[i].active_level)
+ 109:key1.c        ****                         state[i] = KEY_RELEASE;
+ 110:key1.c        ****                     //防止level_time变量发生上溢
+ 111:key1.c        ****                     if (keys[i].level_time > 50000u)
+ 112:key1.c        ****                         keys[i].level_time = 15000;
+ 113:key1.c        ****                     break;
+ 114:key1.c        ****             }
+ 115:key1.c        ****             
+ 116:key1.c        ****             
+ 117:key1.c        ****             
+ 118:key1.c        ****         }
+ 119:key1.c        ****         else
+ 120:key1.c        ****         {
+ 121:key1.c        ****             keys[i].level_time = 0;
+ 122:key1.c        ****         }
+ 123:key1.c        ****     }
+ 124:key1.c        **** }
+ 125:key1.c        **** 
+ 126:key1.c        **** Bool key_add_event_handler(Key_Index i, Key_event e, Key_event_handler h)
+ 127:key1.c        **** {
+ 128:key1.c        ****     if (i >= KEY_NUMBER || e >= KEY_EVENT_NUMBER)
+ 129:key1.c        ****         return FALSE;
+ 130:key1.c        ****     else
+ 131:key1.c        ****     {
+ 132:key1.c        ****         event_handlers[i][e] = h;
+ 133:key1.c        ****         return TRUE;
+ 134:key1.c        ****     }
+ 135:key1.c        ****     
+ 136:key1.c        **** }
+ 137:key1.c        **** 
+ 138:key1.c        **** Bool key_add_combine_handler(Key_Index i, Key_Index j, Key_conbine_handler h)
+ 139:key1.c        **** {
+ 140:key1.c        ****     Key_Index key1, key2;
+ 141:key1.c        ****     if (i == j)
+ 142:key1.c        ****         return FALSE;
+ 143:key1.c        ****     if (h == NULL)
+ 144:key1.c        ****         return FALSE;
+ 145:key1.c        ****     key1 = MIN(i, j);
+ 146:key1.c        ****     key2 = MAX(i, j);
+ 147:key1.c        ****     conbine_handler[key1][key2] = h;
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 4
+
+
+ 148:key1.c        ****     return TRUE;
+ 149:key1.c        **** }
+ 150:key1.c        **** 
+ 151:key1.c        **** static void key_event_deal(Key_Index i, Key_event e)
+ 152:key1.c        **** {
+  25              		.loc 1 152 0
+  26              		.cfi_startproc
+  27              	.LVL0:
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+ 153:key1.c        ****     if (i >= KEY_NUMBER || e >= KEY_EVENT_NUMBER)
+  32              		.loc 1 153 0
+  33 0002 0B28     		cmp	r0, #11
+  34 0004 09D8     		bhi	.L1
+  35              		.loc 1 153 0 is_stmt 0 discriminator 1
+  36 0006 0329     		cmp	r1, #3
+  37 0008 07D8     		bhi	.L1
+ 154:key1.c        ****         return;
+ 155:key1.c        ****     
+ 156:key1.c        ****     if ( event_handlers[i][e] != NULL)
+  38              		.loc 1 156 0 is_stmt 1
+  39 000a 8000     		lsl	r0, r0, #2
+  40              	.LVL1:
+  41 000c 4118     		add	r1, r0, r1
+  42              	.LVL2:
+  43 000e 8900     		lsl	r1, r1, #2
+  44 0010 024B     		ldr	r3, .L3
+  45 0012 CB58     		ldr	r3, [r1, r3]
+  46 0014 002B     		cmp	r3, #0
+  47 0016 00D0     		beq	.L1
+ 157:key1.c        ****         event_handlers[i][e]();
+  48              		.loc 1 157 0
+  49 0018 9847     		blx	r3
+  50              	.LVL3:
+  51              	.L1:
+ 158:key1.c        **** }
+  52              		.loc 1 158 0
+  53              		@ sp needed
+  54 001a 08BD     		pop	{r3, pc}
+  55              	.L4:
+  56              		.align	2
+  57              	.L3:
+  58 001c 00000000 		.word	.LANCHOR0
+  59              		.cfi_endproc
+  60              	.LFE39:
+  61              		.size	key_event_deal, .-key_event_deal
+  62              		.section	.text.key_combine_deal,"ax",%progbits
+  63              		.align	2
+  64              		.code	16
+  65              		.thumb_func
+  66              		.type	key_combine_deal, %function
+  67              	key_combine_deal:
+  68              	.LFB40:
+ 159:key1.c        **** 
+ 160:key1.c        **** static void key_combine_deal(Key_Index i, Key_Index j)
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 5
+
+
+ 161:key1.c        **** {
+  69              		.loc 1 161 0
+  70              		.cfi_startproc
+  71              	.LVL4:
+  72 0000 08B5     		push	{r3, lr}
+  73              		.cfi_def_cfa_offset 8
+  74              		.cfi_offset 3, -8
+  75              		.cfi_offset 14, -4
+ 162:key1.c        ****     if (i == j)
+  76              		.loc 1 162 0
+  77 0002 8842     		cmp	r0, r1
+  78 0004 0AD0     		beq	.L5
+ 163:key1.c        ****         return;
+ 164:key1.c        ****     if (conbine_handler[i][j] != NULL)
+  79              		.loc 1 164 0
+  80 0006 4300     		lsl	r3, r0, #1
+  81 0008 1818     		add	r0, r3, r0
+  82              	.LVL5:
+  83 000a 8000     		lsl	r0, r0, #2
+  84 000c 4118     		add	r1, r0, r1
+  85              	.LVL6:
+  86 000e 8900     		lsl	r1, r1, #2
+  87 0010 0348     		ldr	r0, .L7
+  88 0012 4118     		add	r1, r0, r1
+  89 0014 0B6C     		ldr	r3, [r1, #64]
+  90 0016 002B     		cmp	r3, #0
+  91 0018 00D0     		beq	.L5
+ 165:key1.c        ****         conbine_handler[i][j]();
+  92              		.loc 1 165 0
+  93 001a 9847     		blx	r3
+  94              	.LVL7:
+  95              	.L5:
+ 166:key1.c        **** }
+  96              		.loc 1 166 0
+  97              		@ sp needed
+  98 001c 08BD     		pop	{r3, pc}
+  99              	.L8:
+ 100 001e C046     		.align	2
+ 101              	.L7:
+ 102 0020 80000000 		.word	.LANCHOR1
+ 103              		.cfi_endproc
+ 104              	.LFE40:
+ 105              		.size	key_combine_deal, .-key_combine_deal
+ 106              		.section	.text.key_conbine_check,"ax",%progbits
+ 107              		.align	2
+ 108              		.code	16
+ 109              		.thumb_func
+ 110              		.type	key_conbine_check, %function
+ 111              	key_conbine_check:
+ 112              	.LFB41:
+ 167:key1.c        **** 
+ 168:key1.c        **** static void key_conbine_check(void)
+ 169:key1.c        **** {
+ 113              		.loc 1 169 0
+ 114              		.cfi_startproc
+ 115 0000 10B5     		push	{r4, lr}
+ 116              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 6
+
+
+ 117              		.cfi_offset 4, -8
+ 118              		.cfi_offset 14, -4
+ 119              	.LVL8:
+ 170:key1.c        ****     Key_Index i, key1, key2;
+ 171:key1.c        ****     uint8 key_count;
+ 172:key1.c        ****     
+ 173:key1.c        ****     for (i = 0, key_count = 0; i < KEY_NUMBER; i++)
+ 120              		.loc 1 173 0
+ 121 0002 0024     		mov	r4, #0
+ 122 0004 0023     		mov	r3, #0
+ 123 0006 0EE0     		b	.L10
+ 124              	.LVL9:
+ 125              	.L13:
+ 174:key1.c        ****     {
+ 175:key1.c        ****         if (state[i] != KEY_PRESS && state[i] != KEY_LONG_PRESS)
+ 126              		.loc 1 175 0
+ 127 0008 0A4A     		ldr	r2, .L17
+ 128 000a D25C     		ldrb	r2, [r2, r3]
+ 129 000c 013A     		sub	r2, r2, #1
+ 130 000e 012A     		cmp	r2, #1
+ 131 0010 07D8     		bhi	.L11
+ 176:key1.c        ****            continue;
+ 177:key1.c        ****         key_count++;
+ 132              		.loc 1 177 0
+ 133 0012 0134     		add	r4, r4, #1
+ 134              	.LVL10:
+ 135 0014 E4B2     		uxtb	r4, r4
+ 136              	.LVL11:
+ 178:key1.c        ****         if (key_count == 1)
+ 137              		.loc 1 178 0
+ 138 0016 012C     		cmp	r4, #1
+ 139 0018 00D1     		bne	.L12
+ 179:key1.c        ****             key1 = i;
+ 140              		.loc 1 179 0
+ 141 001a 181C     		mov	r0, r3
+ 142              	.LVL12:
+ 143              	.L12:
+ 180:key1.c        ****         if (key_count == 2)
+ 144              		.loc 1 180 0
+ 145 001c 022C     		cmp	r4, #2
+ 146 001e 00D1     		bne	.L11
+ 181:key1.c        ****             key2 = i;
+ 147              		.loc 1 181 0
+ 148 0020 191C     		mov	r1, r3
+ 149              	.LVL13:
+ 150              	.L11:
+ 173:key1.c        ****     {
+ 151              		.loc 1 173 0 discriminator 2
+ 152 0022 0133     		add	r3, r3, #1
+ 153              	.LVL14:
+ 154 0024 DBB2     		uxtb	r3, r3
+ 155              	.LVL15:
+ 156              	.L10:
+ 173:key1.c        ****     {
+ 157              		.loc 1 173 0 is_stmt 0 discriminator 1
+ 158 0026 0B2B     		cmp	r3, #11
+ 159 0028 EED9     		bls	.L13
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 7
+
+
+ 182:key1.c        ****     }
+ 183:key1.c        **** 
+ 184:key1.c        ****     if (key_count == 2)
+ 160              		.loc 1 184 0 is_stmt 1
+ 161 002a 022C     		cmp	r4, #2
+ 162 002c 01D1     		bne	.L9
+ 185:key1.c        ****         key_combine_deal(key1, key2);
+ 163              		.loc 1 185 0
+ 164 002e FFF7FEFF 		bl	key_combine_deal
+ 165              	.LVL16:
+ 166              	.L9:
+ 186:key1.c        **** }
+ 167              		.loc 1 186 0
+ 168              		@ sp needed
+ 169              	.LVL17:
+ 170 0032 10BD     		pop	{r4, pc}
+ 171              	.L18:
+ 172              		.align	2
+ 173              	.L17:
+ 174 0034 00000000 		.word	state
+ 175              		.cfi_endproc
+ 176              	.LFE41:
+ 177              		.size	key_conbine_check, .-key_conbine_check
+ 178              		.section	.text.key_init,"ax",%progbits
+ 179              		.align	2
+ 180              		.global	key_init
+ 181              		.code	16
+ 182              		.thumb_func
+ 183              		.type	key_init, %function
+ 184              	key_init:
+ 185              	.LFB35:
+  42:key1.c        ****     Key_Index i;
+ 186              		.loc 1 42 0
+ 187              		.cfi_startproc
+ 188 0000 08B5     		push	{r3, lr}
+ 189              		.cfi_def_cfa_offset 8
+ 190              		.cfi_offset 3, -8
+ 191              		.cfi_offset 14, -4
+  45:key1.c        ****     for (i = 0; i < KEY_NUMBER; i++)
+ 192              		.loc 1 45 0
+ 193 0002 0B48     		ldr	r0, .L22
+ 194 0004 0021     		mov	r1, #0
+ 195 0006 6022     		mov	r2, #96
+ 196 0008 FFF7FEFF 		bl	memset
+ 197              	.LVL18:
+  46:key1.c        ****     {
+ 198              		.loc 1 46 0
+ 199 000c 0023     		mov	r3, #0
+ 200 000e 0BE0     		b	.L20
+ 201              	.LVL19:
+ 202              	.L21:
+  48:key1.c        ****         state[i] = KEY_RELEASE;
+ 203              		.loc 1 48 0 discriminator 3
+ 204 0010 9900     		lsl	r1, r3, #2
+ 205 0012 084A     		ldr	r2, .L22+4
+ 206 0014 8958     		ldr	r1, [r1, r2]
+ 207 0016 DA00     		lsl	r2, r3, #3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 8
+
+
+ 208 0018 0548     		ldr	r0, .L22
+ 209 001a 8218     		add	r2, r0, r2
+ 210 001c 5160     		str	r1, [r2, #4]
+  49:key1.c        ****     }
+ 211              		.loc 1 49 0 discriminator 3
+ 212 001e 0021     		mov	r1, #0
+ 213 0020 054A     		ldr	r2, .L22+8
+ 214 0022 D154     		strb	r1, [r2, r3]
+  46:key1.c        ****     {
+ 215              		.loc 1 46 0 discriminator 3
+ 216 0024 0133     		add	r3, r3, #1
+ 217              	.LVL20:
+ 218 0026 DBB2     		uxtb	r3, r3
+ 219              	.LVL21:
+ 220              	.L20:
+  46:key1.c        ****     {
+ 221              		.loc 1 46 0 is_stmt 0 discriminator 1
+ 222 0028 0B2B     		cmp	r3, #11
+ 223 002a F1D9     		bls	.L21
+  51:key1.c        **** 
+ 224              		.loc 1 51 0 is_stmt 1
+ 225              		@ sp needed
+ 226 002c 08BD     		pop	{r3, pc}
+ 227              	.L23:
+ 228 002e C046     		.align	2
+ 229              	.L22:
+ 230 0030 00000000 		.word	keys
+ 231 0034 00000000 		.word	input_pins
+ 232 0038 00000000 		.word	state
+ 233              		.cfi_endproc
+ 234              	.LFE35:
+ 235              		.size	key_init, .-key_init
+ 236              		.section	.text.key_main,"ax",%progbits
+ 237              		.align	2
+ 238              		.global	key_main
+ 239              		.code	16
+ 240              		.thumb_func
+ 241              		.type	key_main, %function
+ 242              	key_main:
+ 243              	.LFB36:
+  54:key1.c        ****     Key_Index i;
+ 244              		.loc 1 54 0
+ 245              		.cfi_startproc
+ 246 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 247              		.cfi_def_cfa_offset 24
+ 248              		.cfi_offset 3, -24
+ 249              		.cfi_offset 4, -20
+ 250              		.cfi_offset 5, -16
+ 251              		.cfi_offset 6, -12
+ 252              		.cfi_offset 7, -8
+ 253              		.cfi_offset 14, -4
+ 254              	.LVL22:
+  57:key1.c        ****     {
+ 255              		.loc 1 57 0
+ 256 0002 0025     		mov	r5, #0
+ 257 0004 9AE0     		b	.L25
+ 258              	.LVL23:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 9
+
+
+ 259              	.L35:
+  59:key1.c        ****         
+ 260              		.loc 1 59 0
+ 261 0006 2C1C     		mov	r4, r5
+ 262 0008 4E4E     		ldr	r6, .L36
+ 263 000a EF00     		lsl	r7, r5, #3
+ 264 000c F319     		add	r3, r6, r7
+ 265 000e 5B68     		ldr	r3, [r3, #4]
+ 266 0010 9847     		blx	r3
+ 267              	.LVL24:
+ 268 0012 0123     		mov	r3, #1
+ 269 0014 1840     		and	r0, r3
+ 270 0016 0340     		and	r3, r0
+ 271 0018 5B00     		lsl	r3, r3, #1
+ 272 001a BA5D     		ldrb	r2, [r7, r6]
+ 273 001c 0221     		mov	r1, #2
+ 274 001e 8A43     		bic	r2, r1
+ 275 0020 1343     		orr	r3, r2
+ 276 0022 BB55     		strb	r3, [r7, r6]
+  61:key1.c        ****         {
+ 277              		.loc 1 61 0
+ 278 0024 DB07     		lsl	r3, r3, #31
+ 279 0026 DB0F     		lsr	r3, r3, #31
+ 280 0028 DBB2     		uxtb	r3, r3
+ 281 002a 9842     		cmp	r0, r3
+ 282 002c 00D0     		beq	.LCB259
+ 283 002e 7EE0     		b	.L26	@long jump
+ 284              	.LCB259:
+  63:key1.c        ****             if (keys[i].level_time < key_paras[i].decounce_time)
+ 285              		.loc 1 63 0
+ 286 0030 444B     		ldr	r3, .L36
+ 287 0032 DA19     		add	r2, r3, r7
+ 288 0034 5388     		ldrh	r3, [r2, #2]
+ 289 0036 0133     		add	r3, r3, #1
+ 290 0038 9BB2     		uxth	r3, r3
+ 291 003a 5380     		strh	r3, [r2, #2]
+  64:key1.c        ****                 continue;
+ 292              		.loc 1 64 0
+ 293 003c 6A00     		lsl	r2, r5, #1
+ 294 003e 5219     		add	r2, r2, r5
+ 295 0040 5200     		lsl	r2, r2, #1
+ 296 0042 4149     		ldr	r1, .L36+4
+ 297 0044 525A     		ldrh	r2, [r2, r1]
+ 298 0046 9342     		cmp	r3, r2
+ 299 0048 76D3     		bcc	.L27
+  68:key1.c        ****             {
+ 300              		.loc 1 68 0
+ 301 004a 404A     		ldr	r2, .L36+8
+ 302 004c 525D     		ldrb	r2, [r2, r5]
+ 303 004e 012A     		cmp	r2, #1
+ 304 0050 1AD0     		beq	.L28
+ 305 0052 002A     		cmp	r2, #0
+ 306 0054 04D0     		beq	.L29
+ 307 0056 022A     		cmp	r2, #2
+ 308 0058 37D0     		beq	.L30
+ 309 005a 032A     		cmp	r2, #3
+ 310 005c 52D0     		beq	.L31
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 10
+
+
+ 311 005e 6BE0     		b	.L27
+ 312              	.L29:
+  71:key1.c        ****                     {
+ 313              		.loc 1 71 0
+ 314 0060 EB00     		lsl	r3, r5, #3
+ 315 0062 384A     		ldr	r2, .L36
+ 316 0064 9B5C     		ldrb	r3, [r3, r2]
+ 317 0066 9A07     		lsl	r2, r3, #30
+ 318 0068 D20F     		lsr	r2, r2, #31
+ 319 006a 5B07     		lsl	r3, r3, #29
+ 320 006c DB0F     		lsr	r3, r3, #31
+ 321 006e 9A42     		cmp	r2, r3
+ 322 0070 62D1     		bne	.L27
+  73:key1.c        ****                         state[i] = KEY_PRESS;
+ 323              		.loc 1 73 0
+ 324 0072 EB00     		lsl	r3, r5, #3
+ 325 0074 334A     		ldr	r2, .L36
+ 326 0076 D318     		add	r3, r2, r3
+ 327 0078 0022     		mov	r2, #0
+ 328 007a 5A80     		strh	r2, [r3, #2]
+  74:key1.c        ****                         key_conbine_check();
+ 329              		.loc 1 74 0
+ 330 007c 0132     		add	r2, r2, #1
+ 331 007e 334B     		ldr	r3, .L36+8
+ 332 0080 5A55     		strb	r2, [r3, r5]
+  75:key1.c        ****                     }
+ 333              		.loc 1 75 0
+ 334 0082 FFF7FEFF 		bl	key_conbine_check
+ 335              	.LVL25:
+ 336 0086 57E0     		b	.L27
+ 337              	.L28:
+  79:key1.c        ****                     {
+ 338              		.loc 1 79 0
+ 339 0088 EA00     		lsl	r2, r5, #3
+ 340 008a 2E49     		ldr	r1, .L36
+ 341 008c 525C     		ldrb	r2, [r2, r1]
+ 342 008e 9107     		lsl	r1, r2, #30
+ 343 0090 C90F     		lsr	r1, r1, #31
+ 344 0092 5207     		lsl	r2, r2, #29
+ 345 0094 D20F     		lsr	r2, r2, #31
+ 346 0096 9142     		cmp	r1, r2
+ 347 0098 07D0     		beq	.L32
+  81:key1.c        ****                         key_event_deal(i, KEY_EVENT_SHORT_PRESS);
+ 348              		.loc 1 81 0
+ 349 009a 0022     		mov	r2, #0
+ 350 009c 2B4B     		ldr	r3, .L36+8
+ 351 009e 5A55     		strb	r2, [r3, r5]
+  82:key1.c        ****                     }
+ 352              		.loc 1 82 0
+ 353 00a0 281C     		mov	r0, r5
+ 354 00a2 0021     		mov	r1, #0
+ 355 00a4 FFF7FEFF 		bl	key_event_deal
+ 356              	.LVL26:
+ 357 00a8 46E0     		b	.L27
+ 358              	.L32:
+  86:key1.c        ****                         {
+ 359              		.loc 1 86 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 11
+
+
+ 360 00aa 6A00     		lsl	r2, r5, #1
+ 361 00ac 5219     		add	r2, r2, r5
+ 362 00ae 5200     		lsl	r2, r2, #1
+ 363 00b0 2549     		ldr	r1, .L36+4
+ 364 00b2 8A18     		add	r2, r1, r2
+ 365 00b4 5288     		ldrh	r2, [r2, #2]
+ 366 00b6 9342     		cmp	r3, r2
+ 367 00b8 3ED9     		bls	.L27
+  88:key1.c        ****                             key_event_deal(i, KEY_EVENT_LONG_PRESS);
+ 368              		.loc 1 88 0
+ 369 00ba 0222     		mov	r2, #2
+ 370 00bc 234B     		ldr	r3, .L36+8
+ 371 00be 5A55     		strb	r2, [r3, r5]
+  89:key1.c        ****                         }
+ 372              		.loc 1 89 0
+ 373 00c0 281C     		mov	r0, r5
+ 374 00c2 0121     		mov	r1, #1
+ 375 00c4 FFF7FEFF 		bl	key_event_deal
+ 376              	.LVL27:
+ 377 00c8 36E0     		b	.L27
+ 378              	.L30:
+  94:key1.c        ****                     {
+ 379              		.loc 1 94 0
+ 380 00ca EA00     		lsl	r2, r5, #3
+ 381 00cc 1D49     		ldr	r1, .L36
+ 382 00ce 525C     		ldrb	r2, [r2, r1]
+ 383 00d0 9107     		lsl	r1, r2, #30
+ 384 00d2 C90F     		lsr	r1, r1, #31
+ 385 00d4 5207     		lsl	r2, r2, #29
+ 386 00d6 D20F     		lsr	r2, r2, #31
+ 387 00d8 9142     		cmp	r1, r2
+ 388 00da 07D0     		beq	.L33
+  96:key1.c        ****                         key_event_deal(i, KEY_EVENT_LONG_RELEASE);
+ 389              		.loc 1 96 0
+ 390 00dc 0022     		mov	r2, #0
+ 391 00de 1B4B     		ldr	r3, .L36+8
+ 392 00e0 5A55     		strb	r2, [r3, r5]
+  97:key1.c        ****                     }
+ 393              		.loc 1 97 0
+ 394 00e2 281C     		mov	r0, r5
+ 395 00e4 0221     		mov	r1, #2
+ 396 00e6 FFF7FEFF 		bl	key_event_deal
+ 397              	.LVL28:
+ 398 00ea 25E0     		b	.L27
+ 399              	.L33:
+ 101:key1.c        ****                         {
+ 400              		.loc 1 101 0
+ 401 00ec 6A00     		lsl	r2, r5, #1
+ 402 00ee 5219     		add	r2, r2, r5
+ 403 00f0 5200     		lsl	r2, r2, #1
+ 404 00f2 1549     		ldr	r1, .L36+4
+ 405 00f4 8A18     		add	r2, r1, r2
+ 406 00f6 9288     		ldrh	r2, [r2, #4]
+ 407 00f8 9342     		cmp	r3, r2
+ 408 00fa 1DD9     		bls	.L27
+ 103:key1.c        ****                         }
+ 409              		.loc 1 103 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 12
+
+
+ 410 00fc 0322     		mov	r2, #3
+ 411 00fe 134B     		ldr	r3, .L36+8
+ 412 0100 5A55     		strb	r2, [r3, r5]
+ 413 0102 19E0     		b	.L27
+ 414              	.L31:
+ 108:key1.c        ****                         state[i] = KEY_RELEASE;
+ 415              		.loc 1 108 0
+ 416 0104 EA00     		lsl	r2, r5, #3
+ 417 0106 0F49     		ldr	r1, .L36
+ 418 0108 525C     		ldrb	r2, [r2, r1]
+ 419 010a 9107     		lsl	r1, r2, #30
+ 420 010c C90F     		lsr	r1, r1, #31
+ 421 010e 5207     		lsl	r2, r2, #29
+ 422 0110 D20F     		lsr	r2, r2, #31
+ 423 0112 9142     		cmp	r1, r2
+ 424 0114 02D0     		beq	.L34
+ 109:key1.c        ****                     //防止level_time变量发生上溢
+ 425              		.loc 1 109 0
+ 426 0116 0021     		mov	r1, #0
+ 427 0118 0C4A     		ldr	r2, .L36+8
+ 428 011a 5155     		strb	r1, [r2, r5]
+ 429              	.L34:
+ 111:key1.c        ****                         keys[i].level_time = 15000;
+ 430              		.loc 1 111 0
+ 431 011c 0C4A     		ldr	r2, .L36+12
+ 432 011e 9342     		cmp	r3, r2
+ 433 0120 0AD9     		bls	.L27
+ 112:key1.c        ****                     break;
+ 434              		.loc 1 112 0
+ 435 0122 E400     		lsl	r4, r4, #3
+ 436 0124 074B     		ldr	r3, .L36
+ 437 0126 1C19     		add	r4, r3, r4
+ 438 0128 0A4B     		ldr	r3, .L36+16
+ 439 012a 6380     		strh	r3, [r4, #2]
+ 440 012c 04E0     		b	.L27
+ 441              	.L26:
+ 121:key1.c        ****         }
+ 442              		.loc 1 121 0
+ 443 012e EB00     		lsl	r3, r5, #3
+ 444 0130 044A     		ldr	r2, .L36
+ 445 0132 D318     		add	r3, r2, r3
+ 446 0134 0022     		mov	r2, #0
+ 447 0136 5A80     		strh	r2, [r3, #2]
+ 448              	.L27:
+  57:key1.c        ****     {
+ 449              		.loc 1 57 0 discriminator 2
+ 450 0138 0135     		add	r5, r5, #1
+ 451              	.LVL29:
+ 452 013a EDB2     		uxtb	r5, r5
+ 453              	.LVL30:
+ 454              	.L25:
+  57:key1.c        ****     {
+ 455              		.loc 1 57 0 is_stmt 0 discriminator 1
+ 456 013c 0B2D     		cmp	r5, #11
+ 457 013e 00D8     		bhi	.LCB437
+ 458 0140 61E7     		b	.L35	@long jump
+ 459              	.LCB437:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 13
+
+
+ 124:key1.c        **** 
+ 460              		.loc 1 124 0 is_stmt 1
+ 461              		@ sp needed
+ 462              	.LVL31:
+ 463 0142 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 464              	.L37:
+ 465              		.align	2
+ 466              	.L36:
+ 467 0144 00000000 		.word	keys
+ 468 0148 00000000 		.word	.LANCHOR2
+ 469 014c 00000000 		.word	state
+ 470 0150 50C30000 		.word	50000
+ 471 0154 983A0000 		.word	15000
+ 472              		.cfi_endproc
+ 473              	.LFE36:
+ 474              		.size	key_main, .-key_main
+ 475              		.section	.text.key_add_event_handler,"ax",%progbits
+ 476              		.align	2
+ 477              		.global	key_add_event_handler
+ 478              		.code	16
+ 479              		.thumb_func
+ 480              		.type	key_add_event_handler, %function
+ 481              	key_add_event_handler:
+ 482              	.LFB37:
+ 127:key1.c        ****     if (i >= KEY_NUMBER || e >= KEY_EVENT_NUMBER)
+ 483              		.loc 1 127 0
+ 484              		.cfi_startproc
+ 485              	.LVL32:
+ 128:key1.c        ****         return FALSE;
+ 486              		.loc 1 128 0
+ 487 0000 0B28     		cmp	r0, #11
+ 488 0002 08D8     		bhi	.L40
+ 128:key1.c        ****         return FALSE;
+ 489              		.loc 1 128 0 is_stmt 0 discriminator 1
+ 490 0004 0329     		cmp	r1, #3
+ 491 0006 08D8     		bhi	.L41
+ 132:key1.c        ****         return TRUE;
+ 492              		.loc 1 132 0 is_stmt 1
+ 493 0008 8000     		lsl	r0, r0, #2
+ 494              	.LVL33:
+ 495 000a 4118     		add	r1, r0, r1
+ 496              	.LVL34:
+ 497 000c 8900     		lsl	r1, r1, #2
+ 498 000e 044B     		ldr	r3, .L42
+ 499 0010 CA50     		str	r2, [r1, r3]
+ 133:key1.c        ****     }
+ 500              		.loc 1 133 0
+ 501 0012 0120     		mov	r0, #1
+ 502 0014 02E0     		b	.L39
+ 503              	.LVL35:
+ 504              	.L40:
+ 129:key1.c        ****     else
+ 505              		.loc 1 129 0
+ 506 0016 0020     		mov	r0, #0
+ 507              	.LVL36:
+ 508 0018 00E0     		b	.L39
+ 509              	.LVL37:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 14
+
+
+ 510              	.L41:
+ 511 001a 0020     		mov	r0, #0
+ 512              	.LVL38:
+ 513              	.L39:
+ 136:key1.c        **** 
+ 514              		.loc 1 136 0
+ 515              		@ sp needed
+ 516 001c 7047     		bx	lr
+ 517              	.L43:
+ 518 001e C046     		.align	2
+ 519              	.L42:
+ 520 0020 00000000 		.word	.LANCHOR0
+ 521              		.cfi_endproc
+ 522              	.LFE37:
+ 523              		.size	key_add_event_handler, .-key_add_event_handler
+ 524              		.section	.text.key_add_combine_handler,"ax",%progbits
+ 525              		.align	2
+ 526              		.global	key_add_combine_handler
+ 527              		.code	16
+ 528              		.thumb_func
+ 529              		.type	key_add_combine_handler, %function
+ 530              	key_add_combine_handler:
+ 531              	.LFB38:
+ 139:key1.c        ****     Key_Index key1, key2;
+ 532              		.loc 1 139 0
+ 533              		.cfi_startproc
+ 534              	.LVL39:
+ 535 0000 10B5     		push	{r4, lr}
+ 536              		.cfi_def_cfa_offset 8
+ 537              		.cfi_offset 4, -8
+ 538              		.cfi_offset 14, -4
+ 141:key1.c        ****         return FALSE;
+ 539              		.loc 1 141 0
+ 540 0002 8842     		cmp	r0, r1
+ 541 0004 15D0     		beq	.L48
+ 143:key1.c        ****         return FALSE;
+ 542              		.loc 1 143 0
+ 543 0006 002A     		cmp	r2, #0
+ 544 0008 15D0     		beq	.L49
+ 145:key1.c        ****     key2 = MAX(i, j);
+ 545              		.loc 1 145 0
+ 546 000a 0B1C     		add	r3, r1, #0
+ 547 000c 8142     		cmp	r1, r0
+ 548 000e 00D9     		bls	.L46
+ 549 0010 031C     		add	r3, r0, #0
+ 550              	.L46:
+ 551 0012 DCB2     		uxtb	r4, r3
+ 552              	.LVL40:
+ 146:key1.c        ****     conbine_handler[key1][key2] = h;
+ 553              		.loc 1 146 0
+ 554 0014 0B1C     		add	r3, r1, #0
+ 555              	.LVL41:
+ 556 0016 8142     		cmp	r1, r0
+ 557 0018 00D2     		bcs	.L47
+ 558 001a 031C     		add	r3, r0, #0
+ 559              	.L47:
+ 560 001c D9B2     		uxtb	r1, r3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 15
+
+
+ 561              	.LVL42:
+ 147:key1.c        ****     return TRUE;
+ 562              		.loc 1 147 0
+ 563 001e 6300     		lsl	r3, r4, #1
+ 564              	.LVL43:
+ 565 0020 1B19     		add	r3, r3, r4
+ 566 0022 9B00     		lsl	r3, r3, #2
+ 567 0024 5B18     		add	r3, r3, r1
+ 568 0026 9B00     		lsl	r3, r3, #2
+ 569 0028 0449     		ldr	r1, .L50
+ 570              	.LVL44:
+ 571 002a CB18     		add	r3, r1, r3
+ 572 002c 1A64     		str	r2, [r3, #64]
+ 148:key1.c        **** }
+ 573              		.loc 1 148 0
+ 574 002e 0120     		mov	r0, #1
+ 575              	.LVL45:
+ 576 0030 02E0     		b	.L45
+ 577              	.LVL46:
+ 578              	.L48:
+ 142:key1.c        ****     if (h == NULL)
+ 579              		.loc 1 142 0
+ 580 0032 0020     		mov	r0, #0
+ 581              	.LVL47:
+ 582 0034 00E0     		b	.L45
+ 583              	.LVL48:
+ 584              	.L49:
+ 144:key1.c        ****     key1 = MIN(i, j);
+ 585              		.loc 1 144 0
+ 586 0036 0020     		mov	r0, #0
+ 587              	.LVL49:
+ 588              	.L45:
+ 149:key1.c        **** 
+ 589              		.loc 1 149 0
+ 590              		@ sp needed
+ 591 0038 10BD     		pop	{r4, pc}
+ 592              	.L51:
+ 593 003a C046     		.align	2
+ 594              	.L50:
+ 595 003c 80000000 		.word	.LANCHOR1
+ 596              		.cfi_endproc
+ 597              	.LFE38:
+ 598              		.size	key_add_combine_handler, .-key_add_combine_handler
+ 599              		.global	key_paras
+ 600              		.comm	state,12,4
+ 601              		.comm	keys,96,4
+ 602              		.data
+ 603              		.align	2
+ 604              		.set	.LANCHOR2,. + 0
+ 605              		.type	key_paras, %object
+ 606              		.size	key_paras, 72
+ 607              	key_paras:
+ 608 0000 2800     		.short	40
+ 609 0002 B80B     		.short	3000
+ 610 0004 401F     		.short	8000
+ 611 0006 2800     		.short	40
+ 612 0008 B80B     		.short	3000
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 16
+
+
+ 613 000a 401F     		.short	8000
+ 614 000c 2800     		.short	40
+ 615 000e B80B     		.short	3000
+ 616 0010 401F     		.short	8000
+ 617 0012 2800     		.short	40
+ 618 0014 B80B     		.short	3000
+ 619 0016 401F     		.short	8000
+ 620 0018 2800     		.short	40
+ 621 001a B80B     		.short	3000
+ 622 001c 401F     		.short	8000
+ 623 001e 2800     		.short	40
+ 624 0020 B80B     		.short	3000
+ 625 0022 401F     		.short	8000
+ 626 0024 2800     		.short	40
+ 627 0026 B80B     		.short	3000
+ 628 0028 401F     		.short	8000
+ 629 002a 2800     		.short	40
+ 630 002c B80B     		.short	3000
+ 631 002e 401F     		.short	8000
+ 632 0030 2800     		.short	40
+ 633 0032 B80B     		.short	3000
+ 634 0034 401F     		.short	8000
+ 635 0036 2800     		.short	40
+ 636 0038 B80B     		.short	3000
+ 637 003a 401F     		.short	8000
+ 638 003c 2800     		.short	40
+ 639 003e B80B     		.short	3000
+ 640 0040 401F     		.short	8000
+ 641 0042 2800     		.short	40
+ 642 0044 B80B     		.short	3000
+ 643 0046 401F     		.short	8000
+ 644              		.bss
+ 645              		.align	2
+ 646              		.set	.LANCHOR0,. + 0
+ 647              		.set	.LANCHOR1,. + 128
+ 648              		.type	event_handlers, %object
+ 649              		.size	event_handlers, 192
+ 650              	event_handlers:
+ 651 0000 00000000 		.space	192
+ 651      00000000 
+ 651      00000000 
+ 651      00000000 
+ 651      00000000 
+ 652              		.type	conbine_handler, %object
+ 653              		.size	conbine_handler, 576
+ 654              	conbine_handler:
+ 655 00c0 00000000 		.space	576
+ 655      00000000 
+ 655      00000000 
+ 655      00000000 
+ 655      00000000 
+ 656              		.text
+ 657              	.Letext0:
+ 658              		.file 2 "types.h"
+ 659              		.file 3 "key1_config.h"
+ 660              		.file 4 "key1.h"
+ 661              		.section	.debug_info,"",%progbits
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 17
+
+
+ 662              	.Ldebug_info0:
+ 663 0000 3F050000 		.4byte	0x53f
+ 664 0004 0400     		.2byte	0x4
+ 665 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 666 000a 04       		.byte	0x4
+ 667 000b 01       		.uleb128 0x1
+ 668 000c 9B000000 		.4byte	.LASF72
+ 669 0010 01       		.byte	0x1
+ 670 0011 09020000 		.4byte	.LASF73
+ 671 0015 3C040000 		.4byte	.LASF74
+ 672 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 673 001d 00000000 		.4byte	0
+ 674 0021 00000000 		.4byte	.Ldebug_line0
+ 675 0025 02       		.uleb128 0x2
+ 676 0026 04       		.byte	0x4
+ 677 0027 05       		.byte	0x5
+ 678 0028 696E7400 		.ascii	"int\000"
+ 679 002c 03       		.uleb128 0x3
+ 680 002d 04       		.byte	0x4
+ 681 002e 07       		.byte	0x7
+ 682 002f B7020000 		.4byte	.LASF0
+ 683 0033 03       		.uleb128 0x3
+ 684 0034 01       		.byte	0x1
+ 685 0035 08       		.byte	0x8
+ 686 0036 4E020000 		.4byte	.LASF1
+ 687 003a 03       		.uleb128 0x3
+ 688 003b 02       		.byte	0x2
+ 689 003c 07       		.byte	0x7
+ 690 003d 28030000 		.4byte	.LASF2
+ 691 0041 03       		.uleb128 0x3
+ 692 0042 04       		.byte	0x4
+ 693 0043 07       		.byte	0x7
+ 694 0044 86030000 		.4byte	.LASF3
+ 695 0048 04       		.uleb128 0x4
+ 696 0049 01       		.byte	0x1
+ 697 004a 02       		.byte	0x2
+ 698 004b 12       		.byte	0x12
+ 699 004c 5D000000 		.4byte	0x5d
+ 700 0050 05       		.uleb128 0x5
+ 701 0051 77000000 		.4byte	.LASF4
+ 702 0055 00       		.sleb128 0
+ 703 0056 05       		.uleb128 0x5
+ 704 0057 DF030000 		.4byte	.LASF5
+ 705 005b 01       		.sleb128 1
+ 706 005c 00       		.byte	0
+ 707 005d 06       		.uleb128 0x6
+ 708 005e 78040000 		.4byte	.LASF8
+ 709 0062 02       		.byte	0x2
+ 710 0063 15       		.byte	0x15
+ 711 0064 48000000 		.4byte	0x48
+ 712 0068 04       		.uleb128 0x4
+ 713 0069 01       		.byte	0x1
+ 714 006a 02       		.byte	0x2
+ 715 006b 1E       		.byte	0x1e
+ 716 006c 7D000000 		.4byte	0x7d
+ 717 0070 05       		.uleb128 0x5
+ 718 0071 BE010000 		.4byte	.LASF6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 18
+
+
+ 719 0075 00       		.sleb128 0
+ 720 0076 05       		.uleb128 0x5
+ 721 0077 31040000 		.4byte	.LASF7
+ 722 007b 01       		.sleb128 1
+ 723 007c 00       		.byte	0
+ 724 007d 06       		.uleb128 0x6
+ 725 007e F1020000 		.4byte	.LASF9
+ 726 0082 02       		.byte	0x2
+ 727 0083 21       		.byte	0x21
+ 728 0084 68000000 		.4byte	0x68
+ 729 0088 03       		.uleb128 0x3
+ 730 0089 01       		.byte	0x1
+ 731 008a 06       		.byte	0x6
+ 732 008b 5C000000 		.4byte	.LASF10
+ 733 008f 03       		.uleb128 0x3
+ 734 0090 02       		.byte	0x2
+ 735 0091 05       		.byte	0x5
+ 736 0092 83000000 		.4byte	.LASF11
+ 737 0096 03       		.uleb128 0x3
+ 738 0097 04       		.byte	0x4
+ 739 0098 05       		.byte	0x5
+ 740 0099 10020000 		.4byte	.LASF12
+ 741 009d 03       		.uleb128 0x3
+ 742 009e 08       		.byte	0x8
+ 743 009f 05       		.byte	0x5
+ 744 00a0 E6010000 		.4byte	.LASF13
+ 745 00a4 03       		.uleb128 0x3
+ 746 00a5 08       		.byte	0x8
+ 747 00a6 07       		.byte	0x7
+ 748 00a7 82020000 		.4byte	.LASF14
+ 749 00ab 03       		.uleb128 0x3
+ 750 00ac 04       		.byte	0x4
+ 751 00ad 04       		.byte	0x4
+ 752 00ae E0010000 		.4byte	.LASF15
+ 753 00b2 03       		.uleb128 0x3
+ 754 00b3 08       		.byte	0x8
+ 755 00b4 04       		.byte	0x4
+ 756 00b5 98030000 		.4byte	.LASF16
+ 757 00b9 03       		.uleb128 0x3
+ 758 00ba 01       		.byte	0x1
+ 759 00bb 08       		.byte	0x8
+ 760 00bc 0D030000 		.4byte	.LASF17
+ 761 00c0 07       		.uleb128 0x7
+ 762 00c1 04       		.byte	0x4
+ 763 00c2 C6000000 		.4byte	0xc6
+ 764 00c6 08       		.uleb128 0x8
+ 765 00c7 03       		.uleb128 0x3
+ 766 00c8 04       		.byte	0x4
+ 767 00c9 07       		.byte	0x7
+ 768 00ca 92000000 		.4byte	.LASF18
+ 769 00ce 09       		.uleb128 0x9
+ 770 00cf 04       		.byte	0x4
+ 771 00d0 06       		.uleb128 0x6
+ 772 00d1 3B030000 		.4byte	.LASF19
+ 773 00d5 03       		.byte	0x3
+ 774 00d6 11       		.byte	0x11
+ 775 00d7 DB000000 		.4byte	0xdb
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 19
+
+
+ 776 00db 07       		.uleb128 0x7
+ 777 00dc 04       		.byte	0x4
+ 778 00dd E1000000 		.4byte	0xe1
+ 779 00e1 0A       		.uleb128 0xa
+ 780 00e2 7D000000 		.4byte	0x7d
+ 781 00e6 04       		.uleb128 0x4
+ 782 00e7 01       		.byte	0x1
+ 783 00e8 03       		.byte	0x3
+ 784 00e9 14       		.byte	0x14
+ 785 00ea 3D010000 		.4byte	0x13d
+ 786 00ee 05       		.uleb128 0x5
+ 787 00ef 43010000 		.4byte	.LASF20
+ 788 00f3 00       		.sleb128 0
+ 789 00f4 05       		.uleb128 0x5
+ 790 00f5 17000000 		.4byte	.LASF21
+ 791 00f9 01       		.sleb128 1
+ 792 00fa 05       		.uleb128 0x5
+ 793 00fb 86010000 		.4byte	.LASF22
+ 794 00ff 02       		.sleb128 2
+ 795 0100 05       		.uleb128 0x5
+ 796 0101 AF010000 		.4byte	.LASF23
+ 797 0105 03       		.sleb128 3
+ 798 0106 05       		.uleb128 0x5
+ 799 0107 67020000 		.4byte	.LASF24
+ 800 010b 04       		.sleb128 4
+ 801 010c 05       		.uleb128 0x5
+ 802 010d C8010000 		.4byte	.LASF25
+ 803 0111 05       		.sleb128 5
+ 804 0112 05       		.uleb128 0x5
+ 805 0113 19020000 		.4byte	.LASF26
+ 806 0117 06       		.sleb128 6
+ 807 0118 05       		.uleb128 0x5
+ 808 0119 25000000 		.4byte	.LASF27
+ 809 011d 07       		.sleb128 7
+ 810 011e 05       		.uleb128 0x5
+ 811 011f 6C030000 		.4byte	.LASF28
+ 812 0123 08       		.sleb128 8
+ 813 0124 05       		.uleb128 0x5
+ 814 0125 A9030000 		.4byte	.LASF29
+ 815 0129 09       		.sleb128 9
+ 816 012a 05       		.uleb128 0x5
+ 817 012b 94010000 		.4byte	.LASF30
+ 818 012f 0A       		.sleb128 10
+ 819 0130 05       		.uleb128 0x5
+ 820 0131 45000000 		.4byte	.LASF31
+ 821 0135 0B       		.sleb128 11
+ 822 0136 05       		.uleb128 0x5
+ 823 0137 D5010000 		.4byte	.LASF32
+ 824 013b 0C       		.sleb128 12
+ 825 013c 00       		.byte	0
+ 826 013d 06       		.uleb128 0x6
+ 827 013e 9F030000 		.4byte	.LASF33
+ 828 0142 03       		.byte	0x3
+ 829 0143 22       		.byte	0x22
+ 830 0144 E6000000 		.4byte	0xe6
+ 831 0148 04       		.uleb128 0x4
+ 832 0149 01       		.byte	0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 20
+
+
+ 833 014a 04       		.byte	0x4
+ 834 014b 12       		.byte	0x12
+ 835 014c 69010000 		.4byte	0x169
+ 836 0150 05       		.uleb128 0x5
+ 837 0151 E4030000 		.4byte	.LASF34
+ 838 0155 00       		.sleb128 0
+ 839 0156 05       		.uleb128 0x5
+ 840 0157 44020000 		.4byte	.LASF35
+ 841 015b 01       		.sleb128 1
+ 842 015c 05       		.uleb128 0x5
+ 843 015d BA030000 		.4byte	.LASF36
+ 844 0161 02       		.sleb128 2
+ 845 0162 05       		.uleb128 0x5
+ 846 0163 C4020000 		.4byte	.LASF37
+ 847 0167 03       		.sleb128 3
+ 848 0168 00       		.byte	0
+ 849 0169 06       		.uleb128 0x6
+ 850 016a D5030000 		.4byte	.LASF38
+ 851 016e 04       		.byte	0x4
+ 852 016f 17       		.byte	0x17
+ 853 0170 48010000 		.4byte	0x148
+ 854 0174 04       		.uleb128 0x4
+ 855 0175 01       		.byte	0x1
+ 856 0176 04       		.byte	0x4
+ 857 0177 1A       		.byte	0x1a
+ 858 0178 9B010000 		.4byte	0x19b
+ 859 017c 05       		.uleb128 0x5
+ 860 017d 12030000 		.4byte	.LASF39
+ 861 0181 00       		.sleb128 0
+ 862 0182 05       		.uleb128 0x5
+ 863 0183 0C040000 		.4byte	.LASF40
+ 864 0187 01       		.sleb128 1
+ 865 0188 05       		.uleb128 0x5
+ 866 0189 00000000 		.4byte	.LASF41
+ 867 018d 02       		.sleb128 2
+ 868 018e 05       		.uleb128 0x5
+ 869 018f 62010000 		.4byte	.LASF42
+ 870 0193 03       		.sleb128 3
+ 871 0194 05       		.uleb128 0x5
+ 872 0195 51010000 		.4byte	.LASF43
+ 873 0199 04       		.sleb128 4
+ 874 019a 00       		.byte	0
+ 875 019b 06       		.uleb128 0x6
+ 876 019c 52000000 		.4byte	.LASF44
+ 877 01a0 04       		.byte	0x4
+ 878 01a1 20       		.byte	0x20
+ 879 01a2 74010000 		.4byte	0x174
+ 880 01a6 0B       		.uleb128 0xb
+ 881 01a7 08       		.byte	0x8
+ 882 01a8 04       		.byte	0x4
+ 883 01a9 22       		.byte	0x22
+ 884 01aa F4010000 		.4byte	0x1f4
+ 885 01ae 0C       		.uleb128 0xc
+ 886 01af 5D030000 		.4byte	.LASF45
+ 887 01b3 04       		.byte	0x4
+ 888 01b4 24       		.byte	0x24
+ 889 01b5 33000000 		.4byte	0x33
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 21
+
+
+ 890 01b9 01       		.byte	0x1
+ 891 01ba 01       		.byte	0x1
+ 892 01bb 07       		.byte	0x7
+ 893 01bc 00       		.byte	0
+ 894 01bd 0C       		.uleb128 0xc
+ 895 01be F4010000 		.4byte	.LASF46
+ 896 01c2 04       		.byte	0x4
+ 897 01c3 25       		.byte	0x25
+ 898 01c4 33000000 		.4byte	0x33
+ 899 01c8 01       		.byte	0x1
+ 900 01c9 01       		.byte	0x1
+ 901 01ca 06       		.byte	0x6
+ 902 01cb 00       		.byte	0
+ 903 01cc 0C       		.uleb128 0xc
+ 904 01cd 25020000 		.4byte	.LASF47
+ 905 01d1 04       		.byte	0x4
+ 906 01d2 26       		.byte	0x26
+ 907 01d3 33000000 		.4byte	0x33
+ 908 01d7 01       		.byte	0x1
+ 909 01d8 01       		.byte	0x1
+ 910 01d9 05       		.byte	0x5
+ 911 01da 00       		.byte	0
+ 912 01db 0D       		.uleb128 0xd
+ 913 01dc E6020000 		.4byte	.LASF48
+ 914 01e0 04       		.byte	0x4
+ 915 01e1 27       		.byte	0x27
+ 916 01e2 3A000000 		.4byte	0x3a
+ 917 01e6 02       		.byte	0x2
+ 918 01e7 0E       		.uleb128 0xe
+ 919 01e8 70696E00 		.ascii	"pin\000"
+ 920 01ec 04       		.byte	0x4
+ 921 01ed 28       		.byte	0x28
+ 922 01ee D0000000 		.4byte	0xd0
+ 923 01f2 04       		.byte	0x4
+ 924 01f3 00       		.byte	0
+ 925 01f4 0F       		.uleb128 0xf
+ 926 01f5 4B657900 		.ascii	"Key\000"
+ 927 01f9 04       		.byte	0x4
+ 928 01fa 29       		.byte	0x29
+ 929 01fb A6010000 		.4byte	0x1a6
+ 930 01ff 0B       		.uleb128 0xb
+ 931 0200 06       		.byte	0x6
+ 932 0201 04       		.byte	0x4
+ 933 0202 2B       		.byte	0x2b
+ 934 0203 2C020000 		.4byte	0x22c
+ 935 0207 0D       		.uleb128 0xd
+ 936 0208 A9020000 		.4byte	.LASF49
+ 937 020c 04       		.byte	0x4
+ 938 020d 2D       		.byte	0x2d
+ 939 020e 3A000000 		.4byte	0x3a
+ 940 0212 00       		.byte	0
+ 941 0213 0D       		.uleb128 0xd
+ 942 0214 21040000 		.4byte	.LASF50
+ 943 0218 04       		.byte	0x4
+ 944 0219 2E       		.byte	0x2e
+ 945 021a 3A000000 		.4byte	0x3a
+ 946 021e 02       		.byte	0x2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 22
+
+
+ 947 021f 0D       		.uleb128 0xd
+ 948 0220 5C020000 		.4byte	.LASF51
+ 949 0224 04       		.byte	0x4
+ 950 0225 2F       		.byte	0x2f
+ 951 0226 3A000000 		.4byte	0x3a
+ 952 022a 04       		.byte	0x4
+ 953 022b 00       		.byte	0
+ 954 022c 06       		.uleb128 0x6
+ 955 022d 74020000 		.4byte	.LASF52
+ 956 0231 04       		.byte	0x4
+ 957 0232 30       		.byte	0x30
+ 958 0233 FF010000 		.4byte	0x1ff
+ 959 0237 06       		.uleb128 0x6
+ 960 0238 32020000 		.4byte	.LASF53
+ 961 023c 04       		.byte	0x4
+ 962 023d 32       		.byte	0x32
+ 963 023e C0000000 		.4byte	0xc0
+ 964 0242 06       		.uleb128 0x6
+ 965 0243 72010000 		.4byte	.LASF54
+ 966 0247 04       		.byte	0x4
+ 967 0248 33       		.byte	0x33
+ 968 0249 C0000000 		.4byte	0xc0
+ 969 024d 03       		.uleb128 0x3
+ 970 024e 08       		.byte	0x8
+ 971 024f 04       		.byte	0x4
+ 972 0250 C9030000 		.4byte	.LASF55
+ 973 0254 10       		.uleb128 0x10
+ 974 0255 45030000 		.4byte	.LASF56
+ 975 0259 01       		.byte	0x1
+ 976 025a 97       		.byte	0x97
+ 977 025b 00000000 		.4byte	.LFB39
+ 978 025f 20000000 		.4byte	.LFE39-.LFB39
+ 979 0263 01       		.uleb128 0x1
+ 980 0264 9C       		.byte	0x9c
+ 981 0265 84020000 		.4byte	0x284
+ 982 0269 11       		.uleb128 0x11
+ 983 026a 6900     		.ascii	"i\000"
+ 984 026c 01       		.byte	0x1
+ 985 026d 97       		.byte	0x97
+ 986 026e 3D010000 		.4byte	0x13d
+ 987 0272 00000000 		.4byte	.LLST0
+ 988 0276 11       		.uleb128 0x11
+ 989 0277 6500     		.ascii	"e\000"
+ 990 0279 01       		.byte	0x1
+ 991 027a 97       		.byte	0x97
+ 992 027b 9B010000 		.4byte	0x19b
+ 993 027f 21000000 		.4byte	.LLST1
+ 994 0283 00       		.byte	0
+ 995 0284 10       		.uleb128 0x10
+ 996 0285 F7020000 		.4byte	.LASF57
+ 997 0289 01       		.byte	0x1
+ 998 028a A0       		.byte	0xa0
+ 999 028b 00000000 		.4byte	.LFB40
+ 1000 028f 24000000 		.4byte	.LFE40-.LFB40
+ 1001 0293 01       		.uleb128 0x1
+ 1002 0294 9C       		.byte	0x9c
+ 1003 0295 B4020000 		.4byte	0x2b4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 23
+
+
+ 1004 0299 11       		.uleb128 0x11
+ 1005 029a 6900     		.ascii	"i\000"
+ 1006 029c 01       		.byte	0x1
+ 1007 029d A0       		.byte	0xa0
+ 1008 029e 3D010000 		.4byte	0x13d
+ 1009 02a2 42000000 		.4byte	.LLST2
+ 1010 02a6 11       		.uleb128 0x11
+ 1011 02a7 6A00     		.ascii	"j\000"
+ 1012 02a9 01       		.byte	0x1
+ 1013 02aa A0       		.byte	0xa0
+ 1014 02ab 3D010000 		.4byte	0x13d
+ 1015 02af 63000000 		.4byte	.LLST3
+ 1016 02b3 00       		.byte	0
+ 1017 02b4 12       		.uleb128 0x12
+ 1018 02b5 FA030000 		.4byte	.LASF58
+ 1019 02b9 01       		.byte	0x1
+ 1020 02ba A8       		.byte	0xa8
+ 1021 02bb 00000000 		.4byte	.LFB41
+ 1022 02bf 38000000 		.4byte	.LFE41-.LFB41
+ 1023 02c3 01       		.uleb128 0x1
+ 1024 02c4 9C       		.byte	0x9c
+ 1025 02c5 0D030000 		.4byte	0x30d
+ 1026 02c9 13       		.uleb128 0x13
+ 1027 02ca 6900     		.ascii	"i\000"
+ 1028 02cc 01       		.byte	0x1
+ 1029 02cd AA       		.byte	0xaa
+ 1030 02ce 3D010000 		.4byte	0x13d
+ 1031 02d2 84000000 		.4byte	.LLST4
+ 1032 02d6 14       		.uleb128 0x14
+ 1033 02d7 8D000000 		.4byte	.LASF59
+ 1034 02db 01       		.byte	0x1
+ 1035 02dc AA       		.byte	0xaa
+ 1036 02dd 3D010000 		.4byte	0x13d
+ 1037 02e1 AE000000 		.4byte	.LLST5
+ 1038 02e5 14       		.uleb128 0x14
+ 1039 02e6 AA010000 		.4byte	.LASF60
+ 1040 02ea 01       		.byte	0x1
+ 1041 02eb AA       		.byte	0xaa
+ 1042 02ec 3D010000 		.4byte	0x13d
+ 1043 02f0 C1000000 		.4byte	.LLST6
+ 1044 02f4 14       		.uleb128 0x14
+ 1045 02f5 F0030000 		.4byte	.LASF61
+ 1046 02f9 01       		.byte	0x1
+ 1047 02fa AB       		.byte	0xab
+ 1048 02fb 33000000 		.4byte	0x33
+ 1049 02ff D4000000 		.4byte	.LLST7
+ 1050 0303 15       		.uleb128 0x15
+ 1051 0304 32000000 		.4byte	.LVL16
+ 1052 0308 84020000 		.4byte	0x284
+ 1053 030c 00       		.byte	0
+ 1054 030d 16       		.uleb128 0x16
+ 1055 030e A1010000 		.4byte	.LASF62
+ 1056 0312 01       		.byte	0x1
+ 1057 0313 29       		.byte	0x29
+ 1058 0314 00000000 		.4byte	.LFB35
+ 1059 0318 3C000000 		.4byte	.LFE35-.LFB35
+ 1060 031c 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 24
+
+
+ 1061 031d 9C       		.byte	0x9c
+ 1062 031e 4E030000 		.4byte	0x34e
+ 1063 0322 13       		.uleb128 0x13
+ 1064 0323 6900     		.ascii	"i\000"
+ 1065 0325 01       		.byte	0x1
+ 1066 0326 2B       		.byte	0x2b
+ 1067 0327 3D010000 		.4byte	0x13d
+ 1068 032b FE000000 		.4byte	.LLST8
+ 1069 032f 17       		.uleb128 0x17
+ 1070 0330 0C000000 		.4byte	.LVL18
+ 1071 0334 29050000 		.4byte	0x529
+ 1072 0338 18       		.uleb128 0x18
+ 1073 0339 01       		.uleb128 0x1
+ 1074 033a 52       		.byte	0x52
+ 1075 033b 02       		.uleb128 0x2
+ 1076 033c 08       		.byte	0x8
+ 1077 033d 60       		.byte	0x60
+ 1078 033e 18       		.uleb128 0x18
+ 1079 033f 01       		.uleb128 0x1
+ 1080 0340 51       		.byte	0x51
+ 1081 0341 01       		.uleb128 0x1
+ 1082 0342 30       		.byte	0x30
+ 1083 0343 18       		.uleb128 0x18
+ 1084 0344 01       		.uleb128 0x1
+ 1085 0345 50       		.byte	0x50
+ 1086 0346 05       		.uleb128 0x5
+ 1087 0347 03       		.byte	0x3
+ 1088 0348 00000000 		.4byte	keys
+ 1089 034c 00       		.byte	0
+ 1090 034d 00       		.byte	0
+ 1091 034e 19       		.uleb128 0x19
+ 1092 034f 54030000 		.4byte	.LASF63
+ 1093 0353 01       		.byte	0x1
+ 1094 0354 35       		.byte	0x35
+ 1095 0355 00000000 		.4byte	.LFB36
+ 1096 0359 58010000 		.4byte	.LFE36-.LFB36
+ 1097 035d 01       		.uleb128 0x1
+ 1098 035e 9C       		.byte	0x9c
+ 1099 035f C1030000 		.4byte	0x3c1
+ 1100 0363 13       		.uleb128 0x13
+ 1101 0364 6900     		.ascii	"i\000"
+ 1102 0366 01       		.byte	0x1
+ 1103 0367 37       		.byte	0x37
+ 1104 0368 3D010000 		.4byte	0x13d
+ 1105 036c 28010000 		.4byte	.LLST9
+ 1106 0370 15       		.uleb128 0x15
+ 1107 0371 86000000 		.4byte	.LVL25
+ 1108 0375 B4020000 		.4byte	0x2b4
+ 1109 0379 1A       		.uleb128 0x1a
+ 1110 037a A8000000 		.4byte	.LVL26
+ 1111 037e 54020000 		.4byte	0x254
+ 1112 0382 92030000 		.4byte	0x392
+ 1113 0386 18       		.uleb128 0x18
+ 1114 0387 01       		.uleb128 0x1
+ 1115 0388 51       		.byte	0x51
+ 1116 0389 01       		.uleb128 0x1
+ 1117 038a 30       		.byte	0x30
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 25
+
+
+ 1118 038b 18       		.uleb128 0x18
+ 1119 038c 01       		.uleb128 0x1
+ 1120 038d 50       		.byte	0x50
+ 1121 038e 02       		.uleb128 0x2
+ 1122 038f 74       		.byte	0x74
+ 1123 0390 00       		.sleb128 0
+ 1124 0391 00       		.byte	0
+ 1125 0392 1A       		.uleb128 0x1a
+ 1126 0393 C8000000 		.4byte	.LVL27
+ 1127 0397 54020000 		.4byte	0x254
+ 1128 039b AB030000 		.4byte	0x3ab
+ 1129 039f 18       		.uleb128 0x18
+ 1130 03a0 01       		.uleb128 0x1
+ 1131 03a1 51       		.byte	0x51
+ 1132 03a2 01       		.uleb128 0x1
+ 1133 03a3 31       		.byte	0x31
+ 1134 03a4 18       		.uleb128 0x18
+ 1135 03a5 01       		.uleb128 0x1
+ 1136 03a6 50       		.byte	0x50
+ 1137 03a7 02       		.uleb128 0x2
+ 1138 03a8 74       		.byte	0x74
+ 1139 03a9 00       		.sleb128 0
+ 1140 03aa 00       		.byte	0
+ 1141 03ab 17       		.uleb128 0x17
+ 1142 03ac EA000000 		.4byte	.LVL28
+ 1143 03b0 54020000 		.4byte	0x254
+ 1144 03b4 18       		.uleb128 0x18
+ 1145 03b5 01       		.uleb128 0x1
+ 1146 03b6 51       		.byte	0x51
+ 1147 03b7 01       		.uleb128 0x1
+ 1148 03b8 32       		.byte	0x32
+ 1149 03b9 18       		.uleb128 0x18
+ 1150 03ba 01       		.uleb128 0x1
+ 1151 03bb 50       		.byte	0x50
+ 1152 03bc 02       		.uleb128 0x2
+ 1153 03bd 74       		.byte	0x74
+ 1154 03be 00       		.sleb128 0
+ 1155 03bf 00       		.byte	0
+ 1156 03c0 00       		.byte	0
+ 1157 03c1 1B       		.uleb128 0x1b
+ 1158 03c2 2D010000 		.4byte	.LASF64
+ 1159 03c6 01       		.byte	0x1
+ 1160 03c7 7E       		.byte	0x7e
+ 1161 03c8 5D000000 		.4byte	0x5d
+ 1162 03cc 00000000 		.4byte	.LFB37
+ 1163 03d0 24000000 		.4byte	.LFE37-.LFB37
+ 1164 03d4 01       		.uleb128 0x1
+ 1165 03d5 9C       		.byte	0x9c
+ 1166 03d6 00040000 		.4byte	0x400
+ 1167 03da 11       		.uleb128 0x11
+ 1168 03db 6900     		.ascii	"i\000"
+ 1169 03dd 01       		.byte	0x1
+ 1170 03de 7E       		.byte	0x7e
+ 1171 03df 3D010000 		.4byte	0x13d
+ 1172 03e3 52010000 		.4byte	.LLST10
+ 1173 03e7 11       		.uleb128 0x11
+ 1174 03e8 6500     		.ascii	"e\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 26
+
+
+ 1175 03ea 01       		.byte	0x1
+ 1176 03eb 7E       		.byte	0x7e
+ 1177 03ec 9B010000 		.4byte	0x19b
+ 1178 03f0 A5010000 		.4byte	.LLST11
+ 1179 03f4 1C       		.uleb128 0x1c
+ 1180 03f5 6800     		.ascii	"h\000"
+ 1181 03f7 01       		.byte	0x1
+ 1182 03f8 7E       		.byte	0x7e
+ 1183 03f9 37020000 		.4byte	0x237
+ 1184 03fd 01       		.uleb128 0x1
+ 1185 03fe 52       		.byte	0x52
+ 1186 03ff 00       		.byte	0
+ 1187 0400 1B       		.uleb128 0x1b
+ 1188 0401 CE020000 		.4byte	.LASF65
+ 1189 0405 01       		.byte	0x1
+ 1190 0406 8A       		.byte	0x8a
+ 1191 0407 5D000000 		.4byte	0x5d
+ 1192 040b 00000000 		.4byte	.LFB38
+ 1193 040f 40000000 		.4byte	.LFE38-.LFB38
+ 1194 0413 01       		.uleb128 0x1
+ 1195 0414 9C       		.byte	0x9c
+ 1196 0415 5D040000 		.4byte	0x45d
+ 1197 0419 11       		.uleb128 0x11
+ 1198 041a 6900     		.ascii	"i\000"
+ 1199 041c 01       		.byte	0x1
+ 1200 041d 8A       		.byte	0x8a
+ 1201 041e 3D010000 		.4byte	0x13d
+ 1202 0422 DF010000 		.4byte	.LLST12
+ 1203 0426 11       		.uleb128 0x11
+ 1204 0427 6A00     		.ascii	"j\000"
+ 1205 0429 01       		.byte	0x1
+ 1206 042a 8A       		.byte	0x8a
+ 1207 042b 3D010000 		.4byte	0x13d
+ 1208 042f 32020000 		.4byte	.LLST13
+ 1209 0433 1C       		.uleb128 0x1c
+ 1210 0434 6800     		.ascii	"h\000"
+ 1211 0436 01       		.byte	0x1
+ 1212 0437 8A       		.byte	0x8a
+ 1213 0438 42020000 		.4byte	0x242
+ 1214 043c 01       		.uleb128 0x1
+ 1215 043d 52       		.byte	0x52
+ 1216 043e 14       		.uleb128 0x14
+ 1217 043f 8D000000 		.4byte	.LASF59
+ 1218 0443 01       		.byte	0x1
+ 1219 0444 8C       		.byte	0x8c
+ 1220 0445 3D010000 		.4byte	0x13d
+ 1221 0449 6C020000 		.4byte	.LLST14
+ 1222 044d 14       		.uleb128 0x14
+ 1223 044e AA010000 		.4byte	.LASF60
+ 1224 0452 01       		.byte	0x1
+ 1225 0453 8C       		.byte	0x8c
+ 1226 0454 3D010000 		.4byte	0x13d
+ 1227 0458 8A020000 		.4byte	.LLST15
+ 1228 045c 00       		.byte	0
+ 1229 045d 1D       		.uleb128 0x1d
+ 1230 045e 37020000 		.4byte	0x237
+ 1231 0462 73040000 		.4byte	0x473
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 27
+
+
+ 1232 0466 1E       		.uleb128 0x1e
+ 1233 0467 C7000000 		.4byte	0xc7
+ 1234 046b 0B       		.byte	0xb
+ 1235 046c 1E       		.uleb128 0x1e
+ 1236 046d C7000000 		.4byte	0xc7
+ 1237 0471 03       		.byte	0x3
+ 1238 0472 00       		.byte	0
+ 1239 0473 1F       		.uleb128 0x1f
+ 1240 0474 68000000 		.4byte	.LASF66
+ 1241 0478 01       		.byte	0x1
+ 1242 0479 10       		.byte	0x10
+ 1243 047a 5D040000 		.4byte	0x45d
+ 1244 047e 05       		.uleb128 0x5
+ 1245 047f 03       		.byte	0x3
+ 1246 0480 00000000 		.4byte	event_handlers
+ 1247 0484 1D       		.uleb128 0x1d
+ 1248 0485 42020000 		.4byte	0x242
+ 1249 0489 9A040000 		.4byte	0x49a
+ 1250 048d 1E       		.uleb128 0x1e
+ 1251 048e C7000000 		.4byte	0xc7
+ 1252 0492 0B       		.byte	0xb
+ 1253 0493 1E       		.uleb128 0x1e
+ 1254 0494 C7000000 		.4byte	0xc7
+ 1255 0498 0B       		.byte	0xb
+ 1256 0499 00       		.byte	0
+ 1257 049a 1F       		.uleb128 0x1f
+ 1258 049b 99020000 		.4byte	.LASF67
+ 1259 049f 01       		.byte	0x1
+ 1260 04a0 13       		.byte	0x13
+ 1261 04a1 84040000 		.4byte	0x484
+ 1262 04a5 05       		.uleb128 0x5
+ 1263 04a6 03       		.byte	0x3
+ 1264 04a7 C0000000 		.4byte	conbine_handler
+ 1265 04ab 1D       		.uleb128 0x1d
+ 1266 04ac D0000000 		.4byte	0xd0
+ 1267 04b0 BB040000 		.4byte	0x4bb
+ 1268 04b4 1E       		.uleb128 0x1e
+ 1269 04b5 C7000000 		.4byte	0xc7
+ 1270 04b9 0B       		.byte	0xb
+ 1271 04ba 00       		.byte	0
+ 1272 04bb 20       		.uleb128 0x20
+ 1273 04bc 3A000000 		.4byte	.LASF68
+ 1274 04c0 03       		.byte	0x3
+ 1275 04c1 24       		.byte	0x24
+ 1276 04c2 AB040000 		.4byte	0x4ab
+ 1277 04c6 1D       		.uleb128 0x1d
+ 1278 04c7 F4010000 		.4byte	0x1f4
+ 1279 04cb D6040000 		.4byte	0x4d6
+ 1280 04cf 1E       		.uleb128 0x1e
+ 1281 04d0 C7000000 		.4byte	0xc7
+ 1282 04d4 0B       		.byte	0xb
+ 1283 04d5 00       		.byte	0
+ 1284 04d6 21       		.uleb128 0x21
+ 1285 04d7 08030000 		.4byte	.LASF69
+ 1286 04db 01       		.byte	0x1
+ 1287 04dc 17       		.byte	0x17
+ 1288 04dd C6040000 		.4byte	0x4c6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 28
+
+
+ 1289 04e1 05       		.uleb128 0x5
+ 1290 04e2 03       		.byte	0x3
+ 1291 04e3 00000000 		.4byte	keys
+ 1292 04e7 1D       		.uleb128 0x1d
+ 1293 04e8 69010000 		.4byte	0x169
+ 1294 04ec F7040000 		.4byte	0x4f7
+ 1295 04f0 1E       		.uleb128 0x1e
+ 1296 04f1 C7000000 		.4byte	0xc7
+ 1297 04f5 0B       		.byte	0xb
+ 1298 04f6 00       		.byte	0
+ 1299 04f7 21       		.uleb128 0x21
+ 1300 04f8 7D000000 		.4byte	.LASF70
+ 1301 04fc 01       		.byte	0x1
+ 1302 04fd 18       		.byte	0x18
+ 1303 04fe E7040000 		.4byte	0x4e7
+ 1304 0502 05       		.uleb128 0x5
+ 1305 0503 03       		.byte	0x3
+ 1306 0504 00000000 		.4byte	state
+ 1307 0508 1D       		.uleb128 0x1d
+ 1308 0509 2C020000 		.4byte	0x22c
+ 1309 050d 18050000 		.4byte	0x518
+ 1310 0511 1E       		.uleb128 0x1e
+ 1311 0512 C7000000 		.4byte	0xc7
+ 1312 0516 0B       		.byte	0xb
+ 1313 0517 00       		.byte	0
+ 1314 0518 21       		.uleb128 0x21
+ 1315 0519 7C030000 		.4byte	.LASF71
+ 1316 051d 01       		.byte	0x1
+ 1317 051e 19       		.byte	0x19
+ 1318 051f 08050000 		.4byte	0x508
+ 1319 0523 05       		.uleb128 0x5
+ 1320 0524 03       		.byte	0x3
+ 1321 0525 00000000 		.4byte	key_paras
+ 1322 0529 22       		.uleb128 0x22
+ 1323 052a 02020000 		.4byte	.LASF75
+ 1324 052e CE000000 		.4byte	0xce
+ 1325 0532 23       		.uleb128 0x23
+ 1326 0533 CE000000 		.4byte	0xce
+ 1327 0537 23       		.uleb128 0x23
+ 1328 0538 25000000 		.4byte	0x25
+ 1329 053c 23       		.uleb128 0x23
+ 1330 053d C7000000 		.4byte	0xc7
+ 1331 0541 00       		.byte	0
+ 1332 0542 00       		.byte	0
+ 1333              		.section	.debug_abbrev,"",%progbits
+ 1334              	.Ldebug_abbrev0:
+ 1335 0000 01       		.uleb128 0x1
+ 1336 0001 11       		.uleb128 0x11
+ 1337 0002 01       		.byte	0x1
+ 1338 0003 25       		.uleb128 0x25
+ 1339 0004 0E       		.uleb128 0xe
+ 1340 0005 13       		.uleb128 0x13
+ 1341 0006 0B       		.uleb128 0xb
+ 1342 0007 03       		.uleb128 0x3
+ 1343 0008 0E       		.uleb128 0xe
+ 1344 0009 1B       		.uleb128 0x1b
+ 1345 000a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 29
+
+
+ 1346 000b 55       		.uleb128 0x55
+ 1347 000c 17       		.uleb128 0x17
+ 1348 000d 11       		.uleb128 0x11
+ 1349 000e 01       		.uleb128 0x1
+ 1350 000f 10       		.uleb128 0x10
+ 1351 0010 17       		.uleb128 0x17
+ 1352 0011 00       		.byte	0
+ 1353 0012 00       		.byte	0
+ 1354 0013 02       		.uleb128 0x2
+ 1355 0014 24       		.uleb128 0x24
+ 1356 0015 00       		.byte	0
+ 1357 0016 0B       		.uleb128 0xb
+ 1358 0017 0B       		.uleb128 0xb
+ 1359 0018 3E       		.uleb128 0x3e
+ 1360 0019 0B       		.uleb128 0xb
+ 1361 001a 03       		.uleb128 0x3
+ 1362 001b 08       		.uleb128 0x8
+ 1363 001c 00       		.byte	0
+ 1364 001d 00       		.byte	0
+ 1365 001e 03       		.uleb128 0x3
+ 1366 001f 24       		.uleb128 0x24
+ 1367 0020 00       		.byte	0
+ 1368 0021 0B       		.uleb128 0xb
+ 1369 0022 0B       		.uleb128 0xb
+ 1370 0023 3E       		.uleb128 0x3e
+ 1371 0024 0B       		.uleb128 0xb
+ 1372 0025 03       		.uleb128 0x3
+ 1373 0026 0E       		.uleb128 0xe
+ 1374 0027 00       		.byte	0
+ 1375 0028 00       		.byte	0
+ 1376 0029 04       		.uleb128 0x4
+ 1377 002a 04       		.uleb128 0x4
+ 1378 002b 01       		.byte	0x1
+ 1379 002c 0B       		.uleb128 0xb
+ 1380 002d 0B       		.uleb128 0xb
+ 1381 002e 3A       		.uleb128 0x3a
+ 1382 002f 0B       		.uleb128 0xb
+ 1383 0030 3B       		.uleb128 0x3b
+ 1384 0031 0B       		.uleb128 0xb
+ 1385 0032 01       		.uleb128 0x1
+ 1386 0033 13       		.uleb128 0x13
+ 1387 0034 00       		.byte	0
+ 1388 0035 00       		.byte	0
+ 1389 0036 05       		.uleb128 0x5
+ 1390 0037 28       		.uleb128 0x28
+ 1391 0038 00       		.byte	0
+ 1392 0039 03       		.uleb128 0x3
+ 1393 003a 0E       		.uleb128 0xe
+ 1394 003b 1C       		.uleb128 0x1c
+ 1395 003c 0D       		.uleb128 0xd
+ 1396 003d 00       		.byte	0
+ 1397 003e 00       		.byte	0
+ 1398 003f 06       		.uleb128 0x6
+ 1399 0040 16       		.uleb128 0x16
+ 1400 0041 00       		.byte	0
+ 1401 0042 03       		.uleb128 0x3
+ 1402 0043 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 30
+
+
+ 1403 0044 3A       		.uleb128 0x3a
+ 1404 0045 0B       		.uleb128 0xb
+ 1405 0046 3B       		.uleb128 0x3b
+ 1406 0047 0B       		.uleb128 0xb
+ 1407 0048 49       		.uleb128 0x49
+ 1408 0049 13       		.uleb128 0x13
+ 1409 004a 00       		.byte	0
+ 1410 004b 00       		.byte	0
+ 1411 004c 07       		.uleb128 0x7
+ 1412 004d 0F       		.uleb128 0xf
+ 1413 004e 00       		.byte	0
+ 1414 004f 0B       		.uleb128 0xb
+ 1415 0050 0B       		.uleb128 0xb
+ 1416 0051 49       		.uleb128 0x49
+ 1417 0052 13       		.uleb128 0x13
+ 1418 0053 00       		.byte	0
+ 1419 0054 00       		.byte	0
+ 1420 0055 08       		.uleb128 0x8
+ 1421 0056 15       		.uleb128 0x15
+ 1422 0057 00       		.byte	0
+ 1423 0058 27       		.uleb128 0x27
+ 1424 0059 19       		.uleb128 0x19
+ 1425 005a 00       		.byte	0
+ 1426 005b 00       		.byte	0
+ 1427 005c 09       		.uleb128 0x9
+ 1428 005d 0F       		.uleb128 0xf
+ 1429 005e 00       		.byte	0
+ 1430 005f 0B       		.uleb128 0xb
+ 1431 0060 0B       		.uleb128 0xb
+ 1432 0061 00       		.byte	0
+ 1433 0062 00       		.byte	0
+ 1434 0063 0A       		.uleb128 0xa
+ 1435 0064 15       		.uleb128 0x15
+ 1436 0065 00       		.byte	0
+ 1437 0066 27       		.uleb128 0x27
+ 1438 0067 19       		.uleb128 0x19
+ 1439 0068 49       		.uleb128 0x49
+ 1440 0069 13       		.uleb128 0x13
+ 1441 006a 00       		.byte	0
+ 1442 006b 00       		.byte	0
+ 1443 006c 0B       		.uleb128 0xb
+ 1444 006d 13       		.uleb128 0x13
+ 1445 006e 01       		.byte	0x1
+ 1446 006f 0B       		.uleb128 0xb
+ 1447 0070 0B       		.uleb128 0xb
+ 1448 0071 3A       		.uleb128 0x3a
+ 1449 0072 0B       		.uleb128 0xb
+ 1450 0073 3B       		.uleb128 0x3b
+ 1451 0074 0B       		.uleb128 0xb
+ 1452 0075 01       		.uleb128 0x1
+ 1453 0076 13       		.uleb128 0x13
+ 1454 0077 00       		.byte	0
+ 1455 0078 00       		.byte	0
+ 1456 0079 0C       		.uleb128 0xc
+ 1457 007a 0D       		.uleb128 0xd
+ 1458 007b 00       		.byte	0
+ 1459 007c 03       		.uleb128 0x3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 31
+
+
+ 1460 007d 0E       		.uleb128 0xe
+ 1461 007e 3A       		.uleb128 0x3a
+ 1462 007f 0B       		.uleb128 0xb
+ 1463 0080 3B       		.uleb128 0x3b
+ 1464 0081 0B       		.uleb128 0xb
+ 1465 0082 49       		.uleb128 0x49
+ 1466 0083 13       		.uleb128 0x13
+ 1467 0084 0B       		.uleb128 0xb
+ 1468 0085 0B       		.uleb128 0xb
+ 1469 0086 0D       		.uleb128 0xd
+ 1470 0087 0B       		.uleb128 0xb
+ 1471 0088 0C       		.uleb128 0xc
+ 1472 0089 0B       		.uleb128 0xb
+ 1473 008a 38       		.uleb128 0x38
+ 1474 008b 0B       		.uleb128 0xb
+ 1475 008c 00       		.byte	0
+ 1476 008d 00       		.byte	0
+ 1477 008e 0D       		.uleb128 0xd
+ 1478 008f 0D       		.uleb128 0xd
+ 1479 0090 00       		.byte	0
+ 1480 0091 03       		.uleb128 0x3
+ 1481 0092 0E       		.uleb128 0xe
+ 1482 0093 3A       		.uleb128 0x3a
+ 1483 0094 0B       		.uleb128 0xb
+ 1484 0095 3B       		.uleb128 0x3b
+ 1485 0096 0B       		.uleb128 0xb
+ 1486 0097 49       		.uleb128 0x49
+ 1487 0098 13       		.uleb128 0x13
+ 1488 0099 38       		.uleb128 0x38
+ 1489 009a 0B       		.uleb128 0xb
+ 1490 009b 00       		.byte	0
+ 1491 009c 00       		.byte	0
+ 1492 009d 0E       		.uleb128 0xe
+ 1493 009e 0D       		.uleb128 0xd
+ 1494 009f 00       		.byte	0
+ 1495 00a0 03       		.uleb128 0x3
+ 1496 00a1 08       		.uleb128 0x8
+ 1497 00a2 3A       		.uleb128 0x3a
+ 1498 00a3 0B       		.uleb128 0xb
+ 1499 00a4 3B       		.uleb128 0x3b
+ 1500 00a5 0B       		.uleb128 0xb
+ 1501 00a6 49       		.uleb128 0x49
+ 1502 00a7 13       		.uleb128 0x13
+ 1503 00a8 38       		.uleb128 0x38
+ 1504 00a9 0B       		.uleb128 0xb
+ 1505 00aa 00       		.byte	0
+ 1506 00ab 00       		.byte	0
+ 1507 00ac 0F       		.uleb128 0xf
+ 1508 00ad 16       		.uleb128 0x16
+ 1509 00ae 00       		.byte	0
+ 1510 00af 03       		.uleb128 0x3
+ 1511 00b0 08       		.uleb128 0x8
+ 1512 00b1 3A       		.uleb128 0x3a
+ 1513 00b2 0B       		.uleb128 0xb
+ 1514 00b3 3B       		.uleb128 0x3b
+ 1515 00b4 0B       		.uleb128 0xb
+ 1516 00b5 49       		.uleb128 0x49
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 32
+
+
+ 1517 00b6 13       		.uleb128 0x13
+ 1518 00b7 00       		.byte	0
+ 1519 00b8 00       		.byte	0
+ 1520 00b9 10       		.uleb128 0x10
+ 1521 00ba 2E       		.uleb128 0x2e
+ 1522 00bb 01       		.byte	0x1
+ 1523 00bc 03       		.uleb128 0x3
+ 1524 00bd 0E       		.uleb128 0xe
+ 1525 00be 3A       		.uleb128 0x3a
+ 1526 00bf 0B       		.uleb128 0xb
+ 1527 00c0 3B       		.uleb128 0x3b
+ 1528 00c1 0B       		.uleb128 0xb
+ 1529 00c2 27       		.uleb128 0x27
+ 1530 00c3 19       		.uleb128 0x19
+ 1531 00c4 11       		.uleb128 0x11
+ 1532 00c5 01       		.uleb128 0x1
+ 1533 00c6 12       		.uleb128 0x12
+ 1534 00c7 06       		.uleb128 0x6
+ 1535 00c8 40       		.uleb128 0x40
+ 1536 00c9 18       		.uleb128 0x18
+ 1537 00ca 9642     		.uleb128 0x2116
+ 1538 00cc 19       		.uleb128 0x19
+ 1539 00cd 01       		.uleb128 0x1
+ 1540 00ce 13       		.uleb128 0x13
+ 1541 00cf 00       		.byte	0
+ 1542 00d0 00       		.byte	0
+ 1543 00d1 11       		.uleb128 0x11
+ 1544 00d2 05       		.uleb128 0x5
+ 1545 00d3 00       		.byte	0
+ 1546 00d4 03       		.uleb128 0x3
+ 1547 00d5 08       		.uleb128 0x8
+ 1548 00d6 3A       		.uleb128 0x3a
+ 1549 00d7 0B       		.uleb128 0xb
+ 1550 00d8 3B       		.uleb128 0x3b
+ 1551 00d9 0B       		.uleb128 0xb
+ 1552 00da 49       		.uleb128 0x49
+ 1553 00db 13       		.uleb128 0x13
+ 1554 00dc 02       		.uleb128 0x2
+ 1555 00dd 17       		.uleb128 0x17
+ 1556 00de 00       		.byte	0
+ 1557 00df 00       		.byte	0
+ 1558 00e0 12       		.uleb128 0x12
+ 1559 00e1 2E       		.uleb128 0x2e
+ 1560 00e2 01       		.byte	0x1
+ 1561 00e3 03       		.uleb128 0x3
+ 1562 00e4 0E       		.uleb128 0xe
+ 1563 00e5 3A       		.uleb128 0x3a
+ 1564 00e6 0B       		.uleb128 0xb
+ 1565 00e7 3B       		.uleb128 0x3b
+ 1566 00e8 0B       		.uleb128 0xb
+ 1567 00e9 27       		.uleb128 0x27
+ 1568 00ea 19       		.uleb128 0x19
+ 1569 00eb 11       		.uleb128 0x11
+ 1570 00ec 01       		.uleb128 0x1
+ 1571 00ed 12       		.uleb128 0x12
+ 1572 00ee 06       		.uleb128 0x6
+ 1573 00ef 40       		.uleb128 0x40
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 33
+
+
+ 1574 00f0 18       		.uleb128 0x18
+ 1575 00f1 9742     		.uleb128 0x2117
+ 1576 00f3 19       		.uleb128 0x19
+ 1577 00f4 01       		.uleb128 0x1
+ 1578 00f5 13       		.uleb128 0x13
+ 1579 00f6 00       		.byte	0
+ 1580 00f7 00       		.byte	0
+ 1581 00f8 13       		.uleb128 0x13
+ 1582 00f9 34       		.uleb128 0x34
+ 1583 00fa 00       		.byte	0
+ 1584 00fb 03       		.uleb128 0x3
+ 1585 00fc 08       		.uleb128 0x8
+ 1586 00fd 3A       		.uleb128 0x3a
+ 1587 00fe 0B       		.uleb128 0xb
+ 1588 00ff 3B       		.uleb128 0x3b
+ 1589 0100 0B       		.uleb128 0xb
+ 1590 0101 49       		.uleb128 0x49
+ 1591 0102 13       		.uleb128 0x13
+ 1592 0103 02       		.uleb128 0x2
+ 1593 0104 17       		.uleb128 0x17
+ 1594 0105 00       		.byte	0
+ 1595 0106 00       		.byte	0
+ 1596 0107 14       		.uleb128 0x14
+ 1597 0108 34       		.uleb128 0x34
+ 1598 0109 00       		.byte	0
+ 1599 010a 03       		.uleb128 0x3
+ 1600 010b 0E       		.uleb128 0xe
+ 1601 010c 3A       		.uleb128 0x3a
+ 1602 010d 0B       		.uleb128 0xb
+ 1603 010e 3B       		.uleb128 0x3b
+ 1604 010f 0B       		.uleb128 0xb
+ 1605 0110 49       		.uleb128 0x49
+ 1606 0111 13       		.uleb128 0x13
+ 1607 0112 02       		.uleb128 0x2
+ 1608 0113 17       		.uleb128 0x17
+ 1609 0114 00       		.byte	0
+ 1610 0115 00       		.byte	0
+ 1611 0116 15       		.uleb128 0x15
+ 1612 0117 898201   		.uleb128 0x4109
+ 1613 011a 00       		.byte	0
+ 1614 011b 11       		.uleb128 0x11
+ 1615 011c 01       		.uleb128 0x1
+ 1616 011d 31       		.uleb128 0x31
+ 1617 011e 13       		.uleb128 0x13
+ 1618 011f 00       		.byte	0
+ 1619 0120 00       		.byte	0
+ 1620 0121 16       		.uleb128 0x16
+ 1621 0122 2E       		.uleb128 0x2e
+ 1622 0123 01       		.byte	0x1
+ 1623 0124 3F       		.uleb128 0x3f
+ 1624 0125 19       		.uleb128 0x19
+ 1625 0126 03       		.uleb128 0x3
+ 1626 0127 0E       		.uleb128 0xe
+ 1627 0128 3A       		.uleb128 0x3a
+ 1628 0129 0B       		.uleb128 0xb
+ 1629 012a 3B       		.uleb128 0x3b
+ 1630 012b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 34
+
+
+ 1631 012c 27       		.uleb128 0x27
+ 1632 012d 19       		.uleb128 0x19
+ 1633 012e 11       		.uleb128 0x11
+ 1634 012f 01       		.uleb128 0x1
+ 1635 0130 12       		.uleb128 0x12
+ 1636 0131 06       		.uleb128 0x6
+ 1637 0132 40       		.uleb128 0x40
+ 1638 0133 18       		.uleb128 0x18
+ 1639 0134 9742     		.uleb128 0x2117
+ 1640 0136 19       		.uleb128 0x19
+ 1641 0137 01       		.uleb128 0x1
+ 1642 0138 13       		.uleb128 0x13
+ 1643 0139 00       		.byte	0
+ 1644 013a 00       		.byte	0
+ 1645 013b 17       		.uleb128 0x17
+ 1646 013c 898201   		.uleb128 0x4109
+ 1647 013f 01       		.byte	0x1
+ 1648 0140 11       		.uleb128 0x11
+ 1649 0141 01       		.uleb128 0x1
+ 1650 0142 31       		.uleb128 0x31
+ 1651 0143 13       		.uleb128 0x13
+ 1652 0144 00       		.byte	0
+ 1653 0145 00       		.byte	0
+ 1654 0146 18       		.uleb128 0x18
+ 1655 0147 8A8201   		.uleb128 0x410a
+ 1656 014a 00       		.byte	0
+ 1657 014b 02       		.uleb128 0x2
+ 1658 014c 18       		.uleb128 0x18
+ 1659 014d 9142     		.uleb128 0x2111
+ 1660 014f 18       		.uleb128 0x18
+ 1661 0150 00       		.byte	0
+ 1662 0151 00       		.byte	0
+ 1663 0152 19       		.uleb128 0x19
+ 1664 0153 2E       		.uleb128 0x2e
+ 1665 0154 01       		.byte	0x1
+ 1666 0155 3F       		.uleb128 0x3f
+ 1667 0156 19       		.uleb128 0x19
+ 1668 0157 03       		.uleb128 0x3
+ 1669 0158 0E       		.uleb128 0xe
+ 1670 0159 3A       		.uleb128 0x3a
+ 1671 015a 0B       		.uleb128 0xb
+ 1672 015b 3B       		.uleb128 0x3b
+ 1673 015c 0B       		.uleb128 0xb
+ 1674 015d 27       		.uleb128 0x27
+ 1675 015e 19       		.uleb128 0x19
+ 1676 015f 11       		.uleb128 0x11
+ 1677 0160 01       		.uleb128 0x1
+ 1678 0161 12       		.uleb128 0x12
+ 1679 0162 06       		.uleb128 0x6
+ 1680 0163 40       		.uleb128 0x40
+ 1681 0164 18       		.uleb128 0x18
+ 1682 0165 9642     		.uleb128 0x2116
+ 1683 0167 19       		.uleb128 0x19
+ 1684 0168 01       		.uleb128 0x1
+ 1685 0169 13       		.uleb128 0x13
+ 1686 016a 00       		.byte	0
+ 1687 016b 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 35
+
+
+ 1688 016c 1A       		.uleb128 0x1a
+ 1689 016d 898201   		.uleb128 0x4109
+ 1690 0170 01       		.byte	0x1
+ 1691 0171 11       		.uleb128 0x11
+ 1692 0172 01       		.uleb128 0x1
+ 1693 0173 31       		.uleb128 0x31
+ 1694 0174 13       		.uleb128 0x13
+ 1695 0175 01       		.uleb128 0x1
+ 1696 0176 13       		.uleb128 0x13
+ 1697 0177 00       		.byte	0
+ 1698 0178 00       		.byte	0
+ 1699 0179 1B       		.uleb128 0x1b
+ 1700 017a 2E       		.uleb128 0x2e
+ 1701 017b 01       		.byte	0x1
+ 1702 017c 3F       		.uleb128 0x3f
+ 1703 017d 19       		.uleb128 0x19
+ 1704 017e 03       		.uleb128 0x3
+ 1705 017f 0E       		.uleb128 0xe
+ 1706 0180 3A       		.uleb128 0x3a
+ 1707 0181 0B       		.uleb128 0xb
+ 1708 0182 3B       		.uleb128 0x3b
+ 1709 0183 0B       		.uleb128 0xb
+ 1710 0184 27       		.uleb128 0x27
+ 1711 0185 19       		.uleb128 0x19
+ 1712 0186 49       		.uleb128 0x49
+ 1713 0187 13       		.uleb128 0x13
+ 1714 0188 11       		.uleb128 0x11
+ 1715 0189 01       		.uleb128 0x1
+ 1716 018a 12       		.uleb128 0x12
+ 1717 018b 06       		.uleb128 0x6
+ 1718 018c 40       		.uleb128 0x40
+ 1719 018d 18       		.uleb128 0x18
+ 1720 018e 9742     		.uleb128 0x2117
+ 1721 0190 19       		.uleb128 0x19
+ 1722 0191 01       		.uleb128 0x1
+ 1723 0192 13       		.uleb128 0x13
+ 1724 0193 00       		.byte	0
+ 1725 0194 00       		.byte	0
+ 1726 0195 1C       		.uleb128 0x1c
+ 1727 0196 05       		.uleb128 0x5
+ 1728 0197 00       		.byte	0
+ 1729 0198 03       		.uleb128 0x3
+ 1730 0199 08       		.uleb128 0x8
+ 1731 019a 3A       		.uleb128 0x3a
+ 1732 019b 0B       		.uleb128 0xb
+ 1733 019c 3B       		.uleb128 0x3b
+ 1734 019d 0B       		.uleb128 0xb
+ 1735 019e 49       		.uleb128 0x49
+ 1736 019f 13       		.uleb128 0x13
+ 1737 01a0 02       		.uleb128 0x2
+ 1738 01a1 18       		.uleb128 0x18
+ 1739 01a2 00       		.byte	0
+ 1740 01a3 00       		.byte	0
+ 1741 01a4 1D       		.uleb128 0x1d
+ 1742 01a5 01       		.uleb128 0x1
+ 1743 01a6 01       		.byte	0x1
+ 1744 01a7 49       		.uleb128 0x49
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 36
+
+
+ 1745 01a8 13       		.uleb128 0x13
+ 1746 01a9 01       		.uleb128 0x1
+ 1747 01aa 13       		.uleb128 0x13
+ 1748 01ab 00       		.byte	0
+ 1749 01ac 00       		.byte	0
+ 1750 01ad 1E       		.uleb128 0x1e
+ 1751 01ae 21       		.uleb128 0x21
+ 1752 01af 00       		.byte	0
+ 1753 01b0 49       		.uleb128 0x49
+ 1754 01b1 13       		.uleb128 0x13
+ 1755 01b2 2F       		.uleb128 0x2f
+ 1756 01b3 0B       		.uleb128 0xb
+ 1757 01b4 00       		.byte	0
+ 1758 01b5 00       		.byte	0
+ 1759 01b6 1F       		.uleb128 0x1f
+ 1760 01b7 34       		.uleb128 0x34
+ 1761 01b8 00       		.byte	0
+ 1762 01b9 03       		.uleb128 0x3
+ 1763 01ba 0E       		.uleb128 0xe
+ 1764 01bb 3A       		.uleb128 0x3a
+ 1765 01bc 0B       		.uleb128 0xb
+ 1766 01bd 3B       		.uleb128 0x3b
+ 1767 01be 0B       		.uleb128 0xb
+ 1768 01bf 49       		.uleb128 0x49
+ 1769 01c0 13       		.uleb128 0x13
+ 1770 01c1 02       		.uleb128 0x2
+ 1771 01c2 18       		.uleb128 0x18
+ 1772 01c3 00       		.byte	0
+ 1773 01c4 00       		.byte	0
+ 1774 01c5 20       		.uleb128 0x20
+ 1775 01c6 34       		.uleb128 0x34
+ 1776 01c7 00       		.byte	0
+ 1777 01c8 03       		.uleb128 0x3
+ 1778 01c9 0E       		.uleb128 0xe
+ 1779 01ca 3A       		.uleb128 0x3a
+ 1780 01cb 0B       		.uleb128 0xb
+ 1781 01cc 3B       		.uleb128 0x3b
+ 1782 01cd 0B       		.uleb128 0xb
+ 1783 01ce 49       		.uleb128 0x49
+ 1784 01cf 13       		.uleb128 0x13
+ 1785 01d0 3F       		.uleb128 0x3f
+ 1786 01d1 19       		.uleb128 0x19
+ 1787 01d2 3C       		.uleb128 0x3c
+ 1788 01d3 19       		.uleb128 0x19
+ 1789 01d4 00       		.byte	0
+ 1790 01d5 00       		.byte	0
+ 1791 01d6 21       		.uleb128 0x21
+ 1792 01d7 34       		.uleb128 0x34
+ 1793 01d8 00       		.byte	0
+ 1794 01d9 03       		.uleb128 0x3
+ 1795 01da 0E       		.uleb128 0xe
+ 1796 01db 3A       		.uleb128 0x3a
+ 1797 01dc 0B       		.uleb128 0xb
+ 1798 01dd 3B       		.uleb128 0x3b
+ 1799 01de 0B       		.uleb128 0xb
+ 1800 01df 49       		.uleb128 0x49
+ 1801 01e0 13       		.uleb128 0x13
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 37
+
+
+ 1802 01e1 3F       		.uleb128 0x3f
+ 1803 01e2 19       		.uleb128 0x19
+ 1804 01e3 02       		.uleb128 0x2
+ 1805 01e4 18       		.uleb128 0x18
+ 1806 01e5 00       		.byte	0
+ 1807 01e6 00       		.byte	0
+ 1808 01e7 22       		.uleb128 0x22
+ 1809 01e8 2E       		.uleb128 0x2e
+ 1810 01e9 01       		.byte	0x1
+ 1811 01ea 3F       		.uleb128 0x3f
+ 1812 01eb 19       		.uleb128 0x19
+ 1813 01ec 03       		.uleb128 0x3
+ 1814 01ed 0E       		.uleb128 0xe
+ 1815 01ee 27       		.uleb128 0x27
+ 1816 01ef 19       		.uleb128 0x19
+ 1817 01f0 49       		.uleb128 0x49
+ 1818 01f1 13       		.uleb128 0x13
+ 1819 01f2 34       		.uleb128 0x34
+ 1820 01f3 19       		.uleb128 0x19
+ 1821 01f4 3C       		.uleb128 0x3c
+ 1822 01f5 19       		.uleb128 0x19
+ 1823 01f6 00       		.byte	0
+ 1824 01f7 00       		.byte	0
+ 1825 01f8 23       		.uleb128 0x23
+ 1826 01f9 05       		.uleb128 0x5
+ 1827 01fa 00       		.byte	0
+ 1828 01fb 49       		.uleb128 0x49
+ 1829 01fc 13       		.uleb128 0x13
+ 1830 01fd 00       		.byte	0
+ 1831 01fe 00       		.byte	0
+ 1832 01ff 00       		.byte	0
+ 1833              		.section	.debug_loc,"",%progbits
+ 1834              	.Ldebug_loc0:
+ 1835              	.LLST0:
+ 1836 0000 00000000 		.4byte	.LVL0
+ 1837 0004 0C000000 		.4byte	.LVL1
+ 1838 0008 0100     		.2byte	0x1
+ 1839 000a 50       		.byte	0x50
+ 1840 000b 0C000000 		.4byte	.LVL1
+ 1841 000f 20000000 		.4byte	.LFE39
+ 1842 0013 0400     		.2byte	0x4
+ 1843 0015 F3       		.byte	0xf3
+ 1844 0016 01       		.uleb128 0x1
+ 1845 0017 50       		.byte	0x50
+ 1846 0018 9F       		.byte	0x9f
+ 1847 0019 00000000 		.4byte	0
+ 1848 001d 00000000 		.4byte	0
+ 1849              	.LLST1:
+ 1850 0021 00000000 		.4byte	.LVL0
+ 1851 0025 0E000000 		.4byte	.LVL2
+ 1852 0029 0100     		.2byte	0x1
+ 1853 002b 51       		.byte	0x51
+ 1854 002c 0E000000 		.4byte	.LVL2
+ 1855 0030 20000000 		.4byte	.LFE39
+ 1856 0034 0400     		.2byte	0x4
+ 1857 0036 F3       		.byte	0xf3
+ 1858 0037 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 38
+
+
+ 1859 0038 51       		.byte	0x51
+ 1860 0039 9F       		.byte	0x9f
+ 1861 003a 00000000 		.4byte	0
+ 1862 003e 00000000 		.4byte	0
+ 1863              	.LLST2:
+ 1864 0042 00000000 		.4byte	.LVL4
+ 1865 0046 0A000000 		.4byte	.LVL5
+ 1866 004a 0100     		.2byte	0x1
+ 1867 004c 50       		.byte	0x50
+ 1868 004d 0A000000 		.4byte	.LVL5
+ 1869 0051 24000000 		.4byte	.LFE40
+ 1870 0055 0400     		.2byte	0x4
+ 1871 0057 F3       		.byte	0xf3
+ 1872 0058 01       		.uleb128 0x1
+ 1873 0059 50       		.byte	0x50
+ 1874 005a 9F       		.byte	0x9f
+ 1875 005b 00000000 		.4byte	0
+ 1876 005f 00000000 		.4byte	0
+ 1877              	.LLST3:
+ 1878 0063 00000000 		.4byte	.LVL4
+ 1879 0067 0E000000 		.4byte	.LVL6
+ 1880 006b 0100     		.2byte	0x1
+ 1881 006d 51       		.byte	0x51
+ 1882 006e 0E000000 		.4byte	.LVL6
+ 1883 0072 24000000 		.4byte	.LFE40
+ 1884 0076 0400     		.2byte	0x4
+ 1885 0078 F3       		.byte	0xf3
+ 1886 0079 01       		.uleb128 0x1
+ 1887 007a 51       		.byte	0x51
+ 1888 007b 9F       		.byte	0x9f
+ 1889 007c 00000000 		.4byte	0
+ 1890 0080 00000000 		.4byte	0
+ 1891              	.LLST4:
+ 1892 0084 02000000 		.4byte	.LVL8
+ 1893 0088 08000000 		.4byte	.LVL9
+ 1894 008c 0200     		.2byte	0x2
+ 1895 008e 30       		.byte	0x30
+ 1896 008f 9F       		.byte	0x9f
+ 1897 0090 08000000 		.4byte	.LVL9
+ 1898 0094 24000000 		.4byte	.LVL14
+ 1899 0098 0100     		.2byte	0x1
+ 1900 009a 53       		.byte	0x53
+ 1901 009b 26000000 		.4byte	.LVL15
+ 1902 009f 31000000 		.4byte	.LVL16-1
+ 1903 00a3 0100     		.2byte	0x1
+ 1904 00a5 53       		.byte	0x53
+ 1905 00a6 00000000 		.4byte	0
+ 1906 00aa 00000000 		.4byte	0
+ 1907              	.LLST5:
+ 1908 00ae 08000000 		.4byte	.LVL9
+ 1909 00b2 31000000 		.4byte	.LVL16-1
+ 1910 00b6 0100     		.2byte	0x1
+ 1911 00b8 50       		.byte	0x50
+ 1912 00b9 00000000 		.4byte	0
+ 1913 00bd 00000000 		.4byte	0
+ 1914              	.LLST6:
+ 1915 00c1 08000000 		.4byte	.LVL9
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 39
+
+
+ 1916 00c5 31000000 		.4byte	.LVL16-1
+ 1917 00c9 0100     		.2byte	0x1
+ 1918 00cb 51       		.byte	0x51
+ 1919 00cc 00000000 		.4byte	0
+ 1920 00d0 00000000 		.4byte	0
+ 1921              	.LLST7:
+ 1922 00d4 02000000 		.4byte	.LVL8
+ 1923 00d8 08000000 		.4byte	.LVL9
+ 1924 00dc 0200     		.2byte	0x2
+ 1925 00de 30       		.byte	0x30
+ 1926 00df 9F       		.byte	0x9f
+ 1927 00e0 08000000 		.4byte	.LVL9
+ 1928 00e4 14000000 		.4byte	.LVL10
+ 1929 00e8 0100     		.2byte	0x1
+ 1930 00ea 54       		.byte	0x54
+ 1931 00eb 16000000 		.4byte	.LVL11
+ 1932 00ef 32000000 		.4byte	.LVL17
+ 1933 00f3 0100     		.2byte	0x1
+ 1934 00f5 54       		.byte	0x54
+ 1935 00f6 00000000 		.4byte	0
+ 1936 00fa 00000000 		.4byte	0
+ 1937              	.LLST8:
+ 1938 00fe 0C000000 		.4byte	.LVL18
+ 1939 0102 10000000 		.4byte	.LVL19
+ 1940 0106 0200     		.2byte	0x2
+ 1941 0108 30       		.byte	0x30
+ 1942 0109 9F       		.byte	0x9f
+ 1943 010a 10000000 		.4byte	.LVL19
+ 1944 010e 26000000 		.4byte	.LVL20
+ 1945 0112 0100     		.2byte	0x1
+ 1946 0114 53       		.byte	0x53
+ 1947 0115 28000000 		.4byte	.LVL21
+ 1948 0119 3C000000 		.4byte	.LFE35
+ 1949 011d 0100     		.2byte	0x1
+ 1950 011f 53       		.byte	0x53
+ 1951 0120 00000000 		.4byte	0
+ 1952 0124 00000000 		.4byte	0
+ 1953              	.LLST9:
+ 1954 0128 02000000 		.4byte	.LVL22
+ 1955 012c 06000000 		.4byte	.LVL23
+ 1956 0130 0200     		.2byte	0x2
+ 1957 0132 30       		.byte	0x30
+ 1958 0133 9F       		.byte	0x9f
+ 1959 0134 06000000 		.4byte	.LVL23
+ 1960 0138 3A010000 		.4byte	.LVL29
+ 1961 013c 0100     		.2byte	0x1
+ 1962 013e 55       		.byte	0x55
+ 1963 013f 3C010000 		.4byte	.LVL30
+ 1964 0143 42010000 		.4byte	.LVL31
+ 1965 0147 0100     		.2byte	0x1
+ 1966 0149 55       		.byte	0x55
+ 1967 014a 00000000 		.4byte	0
+ 1968 014e 00000000 		.4byte	0
+ 1969              	.LLST10:
+ 1970 0152 00000000 		.4byte	.LVL32
+ 1971 0156 0A000000 		.4byte	.LVL33
+ 1972 015a 0100     		.2byte	0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 40
+
+
+ 1973 015c 50       		.byte	0x50
+ 1974 015d 0A000000 		.4byte	.LVL33
+ 1975 0161 16000000 		.4byte	.LVL35
+ 1976 0165 0400     		.2byte	0x4
+ 1977 0167 F3       		.byte	0xf3
+ 1978 0168 01       		.uleb128 0x1
+ 1979 0169 50       		.byte	0x50
+ 1980 016a 9F       		.byte	0x9f
+ 1981 016b 16000000 		.4byte	.LVL35
+ 1982 016f 18000000 		.4byte	.LVL36
+ 1983 0173 0100     		.2byte	0x1
+ 1984 0175 50       		.byte	0x50
+ 1985 0176 18000000 		.4byte	.LVL36
+ 1986 017a 1A000000 		.4byte	.LVL37
+ 1987 017e 0400     		.2byte	0x4
+ 1988 0180 F3       		.byte	0xf3
+ 1989 0181 01       		.uleb128 0x1
+ 1990 0182 50       		.byte	0x50
+ 1991 0183 9F       		.byte	0x9f
+ 1992 0184 1A000000 		.4byte	.LVL37
+ 1993 0188 1C000000 		.4byte	.LVL38
+ 1994 018c 0100     		.2byte	0x1
+ 1995 018e 50       		.byte	0x50
+ 1996 018f 1C000000 		.4byte	.LVL38
+ 1997 0193 24000000 		.4byte	.LFE37
+ 1998 0197 0400     		.2byte	0x4
+ 1999 0199 F3       		.byte	0xf3
+ 2000 019a 01       		.uleb128 0x1
+ 2001 019b 50       		.byte	0x50
+ 2002 019c 9F       		.byte	0x9f
+ 2003 019d 00000000 		.4byte	0
+ 2004 01a1 00000000 		.4byte	0
+ 2005              	.LLST11:
+ 2006 01a5 00000000 		.4byte	.LVL32
+ 2007 01a9 0C000000 		.4byte	.LVL34
+ 2008 01ad 0100     		.2byte	0x1
+ 2009 01af 51       		.byte	0x51
+ 2010 01b0 0C000000 		.4byte	.LVL34
+ 2011 01b4 16000000 		.4byte	.LVL35
+ 2012 01b8 0400     		.2byte	0x4
+ 2013 01ba F3       		.byte	0xf3
+ 2014 01bb 01       		.uleb128 0x1
+ 2015 01bc 51       		.byte	0x51
+ 2016 01bd 9F       		.byte	0x9f
+ 2017 01be 16000000 		.4byte	.LVL35
+ 2018 01c2 1C000000 		.4byte	.LVL38
+ 2019 01c6 0100     		.2byte	0x1
+ 2020 01c8 51       		.byte	0x51
+ 2021 01c9 1C000000 		.4byte	.LVL38
+ 2022 01cd 24000000 		.4byte	.LFE37
+ 2023 01d1 0400     		.2byte	0x4
+ 2024 01d3 F3       		.byte	0xf3
+ 2025 01d4 01       		.uleb128 0x1
+ 2026 01d5 51       		.byte	0x51
+ 2027 01d6 9F       		.byte	0x9f
+ 2028 01d7 00000000 		.4byte	0
+ 2029 01db 00000000 		.4byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 41
+
+
+ 2030              	.LLST12:
+ 2031 01df 00000000 		.4byte	.LVL39
+ 2032 01e3 30000000 		.4byte	.LVL45
+ 2033 01e7 0100     		.2byte	0x1
+ 2034 01e9 50       		.byte	0x50
+ 2035 01ea 30000000 		.4byte	.LVL45
+ 2036 01ee 32000000 		.4byte	.LVL46
+ 2037 01f2 0400     		.2byte	0x4
+ 2038 01f4 F3       		.byte	0xf3
+ 2039 01f5 01       		.uleb128 0x1
+ 2040 01f6 50       		.byte	0x50
+ 2041 01f7 9F       		.byte	0x9f
+ 2042 01f8 32000000 		.4byte	.LVL46
+ 2043 01fc 34000000 		.4byte	.LVL47
+ 2044 0200 0100     		.2byte	0x1
+ 2045 0202 50       		.byte	0x50
+ 2046 0203 34000000 		.4byte	.LVL47
+ 2047 0207 36000000 		.4byte	.LVL48
+ 2048 020b 0400     		.2byte	0x4
+ 2049 020d F3       		.byte	0xf3
+ 2050 020e 01       		.uleb128 0x1
+ 2051 020f 50       		.byte	0x50
+ 2052 0210 9F       		.byte	0x9f
+ 2053 0211 36000000 		.4byte	.LVL48
+ 2054 0215 38000000 		.4byte	.LVL49
+ 2055 0219 0100     		.2byte	0x1
+ 2056 021b 50       		.byte	0x50
+ 2057 021c 38000000 		.4byte	.LVL49
+ 2058 0220 40000000 		.4byte	.LFE38
+ 2059 0224 0400     		.2byte	0x4
+ 2060 0226 F3       		.byte	0xf3
+ 2061 0227 01       		.uleb128 0x1
+ 2062 0228 50       		.byte	0x50
+ 2063 0229 9F       		.byte	0x9f
+ 2064 022a 00000000 		.4byte	0
+ 2065 022e 00000000 		.4byte	0
+ 2066              	.LLST13:
+ 2067 0232 00000000 		.4byte	.LVL39
+ 2068 0236 1E000000 		.4byte	.LVL42
+ 2069 023a 0100     		.2byte	0x1
+ 2070 023c 51       		.byte	0x51
+ 2071 023d 1E000000 		.4byte	.LVL42
+ 2072 0241 32000000 		.4byte	.LVL46
+ 2073 0245 0400     		.2byte	0x4
+ 2074 0247 F3       		.byte	0xf3
+ 2075 0248 01       		.uleb128 0x1
+ 2076 0249 51       		.byte	0x51
+ 2077 024a 9F       		.byte	0x9f
+ 2078 024b 32000000 		.4byte	.LVL46
+ 2079 024f 38000000 		.4byte	.LVL49
+ 2080 0253 0100     		.2byte	0x1
+ 2081 0255 51       		.byte	0x51
+ 2082 0256 38000000 		.4byte	.LVL49
+ 2083 025a 40000000 		.4byte	.LFE38
+ 2084 025e 0400     		.2byte	0x4
+ 2085 0260 F3       		.byte	0xf3
+ 2086 0261 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 42
+
+
+ 2087 0262 51       		.byte	0x51
+ 2088 0263 9F       		.byte	0x9f
+ 2089 0264 00000000 		.4byte	0
+ 2090 0268 00000000 		.4byte	0
+ 2091              	.LLST14:
+ 2092 026c 14000000 		.4byte	.LVL40
+ 2093 0270 16000000 		.4byte	.LVL41
+ 2094 0274 0100     		.2byte	0x1
+ 2095 0276 53       		.byte	0x53
+ 2096 0277 16000000 		.4byte	.LVL41
+ 2097 027b 32000000 		.4byte	.LVL46
+ 2098 027f 0100     		.2byte	0x1
+ 2099 0281 54       		.byte	0x54
+ 2100 0282 00000000 		.4byte	0
+ 2101 0286 00000000 		.4byte	0
+ 2102              	.LLST15:
+ 2103 028a 1E000000 		.4byte	.LVL42
+ 2104 028e 20000000 		.4byte	.LVL43
+ 2105 0292 0100     		.2byte	0x1
+ 2106 0294 53       		.byte	0x53
+ 2107 0295 20000000 		.4byte	.LVL43
+ 2108 0299 2A000000 		.4byte	.LVL44
+ 2109 029d 0100     		.2byte	0x1
+ 2110 029f 51       		.byte	0x51
+ 2111 02a0 00000000 		.4byte	0
+ 2112 02a4 00000000 		.4byte	0
+ 2113              		.section	.debug_aranges,"",%progbits
+ 2114 0000 4C000000 		.4byte	0x4c
+ 2115 0004 0200     		.2byte	0x2
+ 2116 0006 00000000 		.4byte	.Ldebug_info0
+ 2117 000a 04       		.byte	0x4
+ 2118 000b 00       		.byte	0
+ 2119 000c 0000     		.2byte	0
+ 2120 000e 0000     		.2byte	0
+ 2121 0010 00000000 		.4byte	.LFB39
+ 2122 0014 20000000 		.4byte	.LFE39-.LFB39
+ 2123 0018 00000000 		.4byte	.LFB40
+ 2124 001c 24000000 		.4byte	.LFE40-.LFB40
+ 2125 0020 00000000 		.4byte	.LFB41
+ 2126 0024 38000000 		.4byte	.LFE41-.LFB41
+ 2127 0028 00000000 		.4byte	.LFB35
+ 2128 002c 3C000000 		.4byte	.LFE35-.LFB35
+ 2129 0030 00000000 		.4byte	.LFB36
+ 2130 0034 58010000 		.4byte	.LFE36-.LFB36
+ 2131 0038 00000000 		.4byte	.LFB37
+ 2132 003c 24000000 		.4byte	.LFE37-.LFB37
+ 2133 0040 00000000 		.4byte	.LFB38
+ 2134 0044 40000000 		.4byte	.LFE38-.LFB38
+ 2135 0048 00000000 		.4byte	0
+ 2136 004c 00000000 		.4byte	0
+ 2137              		.section	.debug_ranges,"",%progbits
+ 2138              	.Ldebug_ranges0:
+ 2139 0000 00000000 		.4byte	.LFB39
+ 2140 0004 20000000 		.4byte	.LFE39
+ 2141 0008 00000000 		.4byte	.LFB40
+ 2142 000c 24000000 		.4byte	.LFE40
+ 2143 0010 00000000 		.4byte	.LFB41
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 43
+
+
+ 2144 0014 38000000 		.4byte	.LFE41
+ 2145 0018 00000000 		.4byte	.LFB35
+ 2146 001c 3C000000 		.4byte	.LFE35
+ 2147 0020 00000000 		.4byte	.LFB36
+ 2148 0024 58010000 		.4byte	.LFE36
+ 2149 0028 00000000 		.4byte	.LFB37
+ 2150 002c 24000000 		.4byte	.LFE37
+ 2151 0030 00000000 		.4byte	.LFB38
+ 2152 0034 40000000 		.4byte	.LFE38
+ 2153 0038 00000000 		.4byte	0
+ 2154 003c 00000000 		.4byte	0
+ 2155              		.section	.debug_line,"",%progbits
+ 2156              	.Ldebug_line0:
+ 2157 0000 3E010000 		.section	.debug_str,"MS",%progbits,1
+ 2157      02004300 
+ 2157      00000201 
+ 2157      FB0E0D00 
+ 2157      01010101 
+ 2158              	.LASF41:
+ 2159 0000 4B45595F 		.ascii	"KEY_EVENT_LONG_RELEASE\000"
+ 2159      4556454E 
+ 2159      545F4C4F 
+ 2159      4E475F52 
+ 2159      454C4541 
+ 2160              	.LASF21:
+ 2161 0017 4B45595F 		.ascii	"KEY_FENG_NUAN\000"
+ 2161      46454E47 
+ 2161      5F4E5541 
+ 2161      4E00
+ 2162              	.LASF27:
+ 2163 0025 4B45595F 		.ascii	"KEY_XIN_FENG_QU_NUAN\000"
+ 2163      58494E5F 
+ 2163      46454E47 
+ 2163      5F51555F 
+ 2163      4E55414E 
+ 2164              	.LASF68:
+ 2165 003a 696E7075 		.ascii	"input_pins\000"
+ 2165      745F7069 
+ 2165      6E7300
+ 2166              	.LASF31:
+ 2167 0045 4B45595F 		.ascii	"KEY_ZHI_NENG\000"
+ 2167      5A48495F 
+ 2167      4E454E47 
+ 2167      00
+ 2168              	.LASF44:
+ 2169 0052 4B65795F 		.ascii	"Key_event\000"
+ 2169      6576656E 
+ 2169      7400
+ 2170              	.LASF10:
+ 2171 005c 7369676E 		.ascii	"signed char\000"
+ 2171      65642063 
+ 2171      68617200 
+ 2172              	.LASF66:
+ 2173 0068 6576656E 		.ascii	"event_handlers\000"
+ 2173      745F6861 
+ 2173      6E646C65 
+ 2173      727300
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 44
+
+
+ 2174              	.LASF4:
+ 2175 0077 46414C53 		.ascii	"FALSE\000"
+ 2175      4500
+ 2176              	.LASF70:
+ 2177 007d 73746174 		.ascii	"state\000"
+ 2177      6500
+ 2178              	.LASF11:
+ 2179 0083 73686F72 		.ascii	"short int\000"
+ 2179      7420696E 
+ 2179      7400
+ 2180              	.LASF59:
+ 2181 008d 6B657931 		.ascii	"key1\000"
+ 2181      00
+ 2182              	.LASF18:
+ 2183 0092 73697A65 		.ascii	"sizetype\000"
+ 2183      74797065 
+ 2183      00
+ 2184              	.LASF72:
+ 2185 009b 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2185      4320342E 
+ 2185      392E3320 
+ 2185      32303135 
+ 2185      30333033 
+ 2186 00ce 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 2186      20726576 
+ 2186      6973696F 
+ 2186      6E203232 
+ 2186      31323230 
+ 2187 0101 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 2187      67202D66 
+ 2187      66756E63 
+ 2187      74696F6E 
+ 2187      2D736563 
+ 2188              	.LASF64:
+ 2189 012d 6B65795F 		.ascii	"key_add_event_handler\000"
+ 2189      6164645F 
+ 2189      6576656E 
+ 2189      745F6861 
+ 2189      6E646C65 
+ 2190              	.LASF20:
+ 2191 0143 4B45595F 		.ascii	"KEY_DIAN_YUAN\000"
+ 2191      4449414E 
+ 2191      5F595541 
+ 2191      4E00
+ 2192              	.LASF43:
+ 2193 0151 4B45595F 		.ascii	"KEY_EVENT_NUMBER\000"
+ 2193      4556454E 
+ 2193      545F4E55 
+ 2193      4D424552 
+ 2193      00
+ 2194              	.LASF42:
+ 2195 0162 4B45595F 		.ascii	"KEY_EVENT_STUCK\000"
+ 2195      4556454E 
+ 2195      545F5354 
+ 2195      55434B00 
+ 2196              	.LASF54:
+ 2197 0172 4B65795F 		.ascii	"Key_conbine_handler\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 45
+
+
+ 2197      636F6E62 
+ 2197      696E655F 
+ 2197      68616E64 
+ 2197      6C657200 
+ 2198              	.LASF22:
+ 2199 0186 4B45595F 		.ascii	"KEY_WENDU_JIA\000"
+ 2199      57454E44 
+ 2199      555F4A49 
+ 2199      4100
+ 2200              	.LASF30:
+ 2201 0194 4B45595F 		.ascii	"KEY_BAI_DONG\000"
+ 2201      4241495F 
+ 2201      444F4E47 
+ 2201      00
+ 2202              	.LASF62:
+ 2203 01a1 6B65795F 		.ascii	"key_init\000"
+ 2203      696E6974 
+ 2203      00
+ 2204              	.LASF60:
+ 2205 01aa 6B657932 		.ascii	"key2\000"
+ 2205      00
+ 2206              	.LASF23:
+ 2207 01af 4B45595F 		.ascii	"KEY_WENDU_JIAN\000"
+ 2207      57454E44 
+ 2207      555F4A49 
+ 2207      414E00
+ 2208              	.LASF6:
+ 2209 01be 4C455645 		.ascii	"LEVEL_LOW\000"
+ 2209      4C5F4C4F 
+ 2209      5700
+ 2210              	.LASF25:
+ 2211 01c8 4B45595F 		.ascii	"KEY_QING_RUO\000"
+ 2211      51494E47 
+ 2211      5F52554F 
+ 2211      00
+ 2212              	.LASF32:
+ 2213 01d5 4B45595F 		.ascii	"KEY_NUMBER\000"
+ 2213      4E554D42 
+ 2213      455200
+ 2214              	.LASF15:
+ 2215 01e0 666C6F61 		.ascii	"float\000"
+ 2215      7400
+ 2216              	.LASF13:
+ 2217 01e6 6C6F6E67 		.ascii	"long long int\000"
+ 2217      206C6F6E 
+ 2217      6720696E 
+ 2217      7400
+ 2218              	.LASF46:
+ 2219 01f4 63757272 		.ascii	"current_level\000"
+ 2219      656E745F 
+ 2219      6C657665 
+ 2219      6C00
+ 2220              	.LASF75:
+ 2221 0202 6D656D73 		.ascii	"memset\000"
+ 2221      657400
+ 2222              	.LASF73:
+ 2223 0209 6B657931 		.ascii	"key1.c\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 46
+
+
+ 2223      2E6300
+ 2224              	.LASF12:
+ 2225 0210 6C6F6E67 		.ascii	"long int\000"
+ 2225      20696E74 
+ 2225      00
+ 2226              	.LASF26:
+ 2227 0219 4B45595F 		.ascii	"KEY_HUAN_QI\000"
+ 2227      4855414E 
+ 2227      5F514900 
+ 2228              	.LASF47:
+ 2229 0225 61637469 		.ascii	"active_level\000"
+ 2229      76655F6C 
+ 2229      6576656C 
+ 2229      00
+ 2230              	.LASF53:
+ 2231 0232 4B65795F 		.ascii	"Key_event_handler\000"
+ 2231      6576656E 
+ 2231      745F6861 
+ 2231      6E646C65 
+ 2231      7200
+ 2232              	.LASF35:
+ 2233 0244 4B45595F 		.ascii	"KEY_PRESS\000"
+ 2233      50524553 
+ 2233      5300
+ 2234              	.LASF1:
+ 2235 024e 756E7369 		.ascii	"unsigned char\000"
+ 2235      676E6564 
+ 2235      20636861 
+ 2235      7200
+ 2236              	.LASF51:
+ 2237 025c 73747563 		.ascii	"stuck_time\000"
+ 2237      6B5F7469 
+ 2237      6D6500
+ 2238              	.LASF24:
+ 2239 0267 4B45595F 		.ascii	"KEY_XIN_FENG\000"
+ 2239      58494E5F 
+ 2239      46454E47 
+ 2239      00
+ 2240              	.LASF52:
+ 2241 0274 4B65795F 		.ascii	"Key_parameter\000"
+ 2241      70617261 
+ 2241      6D657465 
+ 2241      7200
+ 2242              	.LASF14:
+ 2243 0282 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2243      206C6F6E 
+ 2243      6720756E 
+ 2243      7369676E 
+ 2243      65642069 
+ 2244              	.LASF67:
+ 2245 0299 636F6E62 		.ascii	"conbine_handler\000"
+ 2245      696E655F 
+ 2245      68616E64 
+ 2245      6C657200 
+ 2246              	.LASF49:
+ 2247 02a9 6465636F 		.ascii	"decounce_time\000"
+ 2247      756E6365 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 47
+
+
+ 2247      5F74696D 
+ 2247      6500
+ 2248              	.LASF0:
+ 2249 02b7 756E7369 		.ascii	"unsigned int\000"
+ 2249      676E6564 
+ 2249      20696E74 
+ 2249      00
+ 2250              	.LASF37:
+ 2251 02c4 4B45595F 		.ascii	"KEY_STUCK\000"
+ 2251      53545543 
+ 2251      4B00
+ 2252              	.LASF65:
+ 2253 02ce 6B65795F 		.ascii	"key_add_combine_handler\000"
+ 2253      6164645F 
+ 2253      636F6D62 
+ 2253      696E655F 
+ 2253      68616E64 
+ 2254              	.LASF48:
+ 2255 02e6 6C657665 		.ascii	"level_time\000"
+ 2255      6C5F7469 
+ 2255      6D6500
+ 2256              	.LASF9:
+ 2257 02f1 4C657665 		.ascii	"Level\000"
+ 2257      6C00
+ 2258              	.LASF57:
+ 2259 02f7 6B65795F 		.ascii	"key_combine_deal\000"
+ 2259      636F6D62 
+ 2259      696E655F 
+ 2259      6465616C 
+ 2259      00
+ 2260              	.LASF69:
+ 2261 0308 6B657973 		.ascii	"keys\000"
+ 2261      00
+ 2262              	.LASF17:
+ 2263 030d 63686172 		.ascii	"char\000"
+ 2263      00
+ 2264              	.LASF39:
+ 2265 0312 4B45595F 		.ascii	"KEY_EVENT_SHORT_PRESS\000"
+ 2265      4556454E 
+ 2265      545F5348 
+ 2265      4F52545F 
+ 2265      50524553 
+ 2266              	.LASF2:
+ 2267 0328 73686F72 		.ascii	"short unsigned int\000"
+ 2267      7420756E 
+ 2267      7369676E 
+ 2267      65642069 
+ 2267      6E7400
+ 2268              	.LASF19:
+ 2269 033b 50696E5F 		.ascii	"Pin_input\000"
+ 2269      696E7075 
+ 2269      7400
+ 2270              	.LASF56:
+ 2271 0345 6B65795F 		.ascii	"key_event_deal\000"
+ 2271      6576656E 
+ 2271      745F6465 
+ 2271      616C00
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 48
+
+
+ 2272              	.LASF63:
+ 2273 0354 6B65795F 		.ascii	"key_main\000"
+ 2273      6D61696E 
+ 2273      00
+ 2274              	.LASF45:
+ 2275 035d 70726576 		.ascii	"previous_level\000"
+ 2275      696F7573 
+ 2275      5F6C6576 
+ 2275      656C00
+ 2276              	.LASF28:
+ 2277 036c 4B45595F 		.ascii	"KEY_DINGSHI_JIA\000"
+ 2277      44494E47 
+ 2277      5348495F 
+ 2277      4A494100 
+ 2278              	.LASF71:
+ 2279 037c 6B65795F 		.ascii	"key_paras\000"
+ 2279      70617261 
+ 2279      7300
+ 2280              	.LASF3:
+ 2281 0386 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2281      20756E73 
+ 2281      69676E65 
+ 2281      6420696E 
+ 2281      7400
+ 2282              	.LASF16:
+ 2283 0398 646F7562 		.ascii	"double\000"
+ 2283      6C6500
+ 2284              	.LASF33:
+ 2285 039f 4B65795F 		.ascii	"Key_Index\000"
+ 2285      496E6465 
+ 2285      7800
+ 2286              	.LASF29:
+ 2287 03a9 4B45595F 		.ascii	"KEY_DINGSHI_JIAN\000"
+ 2287      44494E47 
+ 2287      5348495F 
+ 2287      4A49414E 
+ 2287      00
+ 2288              	.LASF36:
+ 2289 03ba 4B45595F 		.ascii	"KEY_LONG_PRESS\000"
+ 2289      4C4F4E47 
+ 2289      5F505245 
+ 2289      535300
+ 2290              	.LASF55:
+ 2291 03c9 6C6F6E67 		.ascii	"long double\000"
+ 2291      20646F75 
+ 2291      626C6500 
+ 2292              	.LASF38:
+ 2293 03d5 4B65795F 		.ascii	"Key_state\000"
+ 2293      73746174 
+ 2293      6500
+ 2294              	.LASF5:
+ 2295 03df 54525545 		.ascii	"TRUE\000"
+ 2295      00
+ 2296              	.LASF34:
+ 2297 03e4 4B45595F 		.ascii	"KEY_RELEASE\000"
+ 2297      52454C45 
+ 2297      41534500 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccIMoIzk.s 			page 49
+
+
+ 2298              	.LASF61:
+ 2299 03f0 6B65795F 		.ascii	"key_count\000"
+ 2299      636F756E 
+ 2299      7400
+ 2300              	.LASF58:
+ 2301 03fa 6B65795F 		.ascii	"key_conbine_check\000"
+ 2301      636F6E62 
+ 2301      696E655F 
+ 2301      63686563 
+ 2301      6B00
+ 2302              	.LASF40:
+ 2303 040c 4B45595F 		.ascii	"KEY_EVENT_LONG_PRESS\000"
+ 2303      4556454E 
+ 2303      545F4C4F 
+ 2303      4E475F50 
+ 2303      52455353 
+ 2304              	.LASF50:
+ 2305 0421 6C6F6E67 		.ascii	"long_press_time\000"
+ 2305      5F707265 
+ 2305      73735F74 
+ 2305      696D6500 
+ 2306              	.LASF7:
+ 2307 0431 4C455645 		.ascii	"LEVEL_HIGH\000"
+ 2307      4C5F4849 
+ 2307      474800
+ 2308              	.LASF74:
+ 2309 043c 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\A"
+ 2309      6F63616C 
+ 2309      5F73766E 
+ 2309      5C415942 
+ 2309      52333030 
+ 2310 046a 59425233 		.ascii	"YBR3000.cydsn\000"
+ 2310      3030302E 
+ 2310      63796473 
+ 2310      6E00
+ 2311              	.LASF8:
+ 2312 0478 426F6F6C 		.ascii	"Bool\000"
+ 2312      00
+ 2313              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

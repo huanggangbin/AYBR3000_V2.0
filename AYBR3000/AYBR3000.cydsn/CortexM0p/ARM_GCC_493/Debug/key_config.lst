@@ -1,0 +1,1650 @@
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"key_config.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.pin_zhi_neng,"ax",%progbits
+  18              		.align	2
+  19              		.code	16
+  20              		.thumb_func
+  21              		.type	pin_zhi_neng, %function
+  22              	pin_zhi_neng:
+  23              	.LFB46:
+  24              		.file 1 "key_config.c"
+   1:key_config.c  **** /* ========================================
+   2:key_config.c  ****  *
+   3:key_config.c  ****  * Copyright YOUR COMPANY, THE YEAR
+   4:key_config.c  ****  * All Rights Reserved
+   5:key_config.c  ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:key_config.c  ****  *
+   7:key_config.c  ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:key_config.c  ****  * WHICH IS THE PROPERTY OF your company.
+   9:key_config.c  ****  *
+  10:key_config.c  ****  * ========================================
+  11:key_config.c  **** */
+  12:key_config.c  **** #include "key_config.h"
+  13:key_config.c  **** 
+  14:key_config.c  **** 
+  15:key_config.c  **** 
+  16:key_config.c  **** static Level pin_dian_yuan(void);
+  17:key_config.c  **** static Level pin_feng_nuan(void);
+  18:key_config.c  **** static Level pin_wendu_jia(void);
+  19:key_config.c  **** static Level pin_wendu_jian(void);
+  20:key_config.c  **** static Level pin_xin_feng(void);
+  21:key_config.c  **** static Level pin_qiang_ruo(void);
+  22:key_config.c  **** static Level pin_huan_qi(void);
+  23:key_config.c  **** static Level pin_xin_feng_qu_nuan(void);
+  24:key_config.c  **** static Level pin_dingshi_jia(void);
+  25:key_config.c  **** static Level pin_dingshi_jian(void);
+  26:key_config.c  **** static Level pin_bai_dong(void);
+  27:key_config.c  **** static Level pin_zhi_neng(void);
+  28:key_config.c  **** 
+  29:key_config.c  **** Pin_input input_pins[KEY_NUMBER] = 
+  30:key_config.c  **** {
+  31:key_config.c  ****     pin_dian_yuan,
+  32:key_config.c  ****     pin_feng_nuan, 
+  33:key_config.c  ****     pin_wendu_jia,
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 2
+
+
+  34:key_config.c  ****     pin_wendu_jian,
+  35:key_config.c  ****     pin_xin_feng,
+  36:key_config.c  ****     pin_qiang_ruo,
+  37:key_config.c  ****     pin_huan_qi,
+  38:key_config.c  ****     pin_xin_feng_qu_nuan,
+  39:key_config.c  ****     pin_dingshi_jia,
+  40:key_config.c  ****     pin_dingshi_jian,
+  41:key_config.c  ****     pin_bai_dong,
+  42:key_config.c  ****     pin_zhi_neng,
+  43:key_config.c  **** };
+  44:key_config.c  **** 
+  45:key_config.c  **** 
+  46:key_config.c  **** static Level pin_dian_yuan(void)
+  47:key_config.c  **** {
+  48:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON0_WDGT_ID))
+  49:key_config.c  ****         return LEVEL_HIGH;
+  50:key_config.c  ****     else
+  51:key_config.c  ****         return LEVEL_LOW;
+  52:key_config.c  **** }
+  53:key_config.c  **** 
+  54:key_config.c  **** static Level pin_feng_nuan(void)
+  55:key_config.c  **** {
+  56:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON1_WDGT_ID))
+  57:key_config.c  ****         return LEVEL_HIGH;
+  58:key_config.c  ****     else
+  59:key_config.c  ****         return LEVEL_LOW;
+  60:key_config.c  **** }
+  61:key_config.c  **** 
+  62:key_config.c  **** static Level pin_wendu_jia(void)
+  63:key_config.c  **** {
+  64:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON2_WDGT_ID))
+  65:key_config.c  ****         return LEVEL_HIGH;
+  66:key_config.c  ****     else
+  67:key_config.c  ****         return LEVEL_LOW;
+  68:key_config.c  **** }
+  69:key_config.c  **** 
+  70:key_config.c  **** static Level pin_wendu_jian(void)
+  71:key_config.c  **** {
+  72:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON3_WDGT_ID))
+  73:key_config.c  ****         return LEVEL_HIGH;
+  74:key_config.c  ****     else
+  75:key_config.c  ****         return LEVEL_LOW;
+  76:key_config.c  **** }
+  77:key_config.c  **** 
+  78:key_config.c  **** static Level pin_xin_feng(void)
+  79:key_config.c  **** {
+  80:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON4_WDGT_ID))
+  81:key_config.c  ****         return LEVEL_HIGH;
+  82:key_config.c  ****     else
+  83:key_config.c  ****         return LEVEL_LOW;
+  84:key_config.c  **** }
+  85:key_config.c  **** 
+  86:key_config.c  **** static Level pin_qiang_ruo(void)
+  87:key_config.c  **** {
+  88:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON5_WDGT_ID))
+  89:key_config.c  ****         return LEVEL_HIGH;
+  90:key_config.c  ****     else
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 3
+
+
+  91:key_config.c  ****         return LEVEL_LOW;
+  92:key_config.c  **** }
+  93:key_config.c  **** 
+  94:key_config.c  **** static Level pin_huan_qi(void)
+  95:key_config.c  **** {
+  96:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON6_WDGT_ID))
+  97:key_config.c  ****         return LEVEL_HIGH;
+  98:key_config.c  ****     else
+  99:key_config.c  ****         return LEVEL_LOW;
+ 100:key_config.c  **** }
+ 101:key_config.c  **** 
+ 102:key_config.c  **** static Level pin_xin_feng_qu_nuan(void)
+ 103:key_config.c  **** {
+ 104:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON7_WDGT_ID))
+ 105:key_config.c  ****         return LEVEL_HIGH;
+ 106:key_config.c  ****     else
+ 107:key_config.c  ****         return LEVEL_LOW;
+ 108:key_config.c  **** }
+ 109:key_config.c  **** 
+ 110:key_config.c  **** static Level pin_dingshi_jia(void)
+ 111:key_config.c  **** {
+ 112:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON8_WDGT_ID))
+ 113:key_config.c  ****         return LEVEL_HIGH;
+ 114:key_config.c  ****     else
+ 115:key_config.c  ****         return LEVEL_LOW;
+ 116:key_config.c  **** }
+ 117:key_config.c  **** 
+ 118:key_config.c  **** static Level pin_dingshi_jian(void)
+ 119:key_config.c  **** {
+ 120:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON9_WDGT_ID))
+ 121:key_config.c  ****         return LEVEL_HIGH;
+ 122:key_config.c  ****     else
+ 123:key_config.c  ****         return LEVEL_LOW;
+ 124:key_config.c  **** }
+ 125:key_config.c  **** 
+ 126:key_config.c  **** static Level pin_bai_dong(void)
+ 127:key_config.c  **** {
+ 128:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON10_WDGT_ID))
+ 129:key_config.c  ****         return LEVEL_HIGH;
+ 130:key_config.c  ****     else
+ 131:key_config.c  ****         return LEVEL_LOW;
+ 132:key_config.c  **** }
+ 133:key_config.c  **** 
+ 134:key_config.c  **** static Level pin_zhi_neng(void)
+ 135:key_config.c  **** {
+  25              		.loc 1 135 0
+  26              		.cfi_startproc
+  27 0000 08B5     		push	{r3, lr}
+  28              		.cfi_def_cfa_offset 8
+  29              		.cfi_offset 3, -8
+  30              		.cfi_offset 14, -4
+ 136:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON11_WDGT_ID))
+  31              		.loc 1 136 0
+  32 0002 0B20     		mov	r0, #11
+  33 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+  34              	.LVL0:
+  35 0008 0028     		cmp	r0, #0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 4
+
+
+  36 000a 01D0     		beq	.L3
+ 137:key_config.c  ****         return LEVEL_HIGH;
+  37              		.loc 1 137 0
+  38 000c 0120     		mov	r0, #1
+  39 000e 00E0     		b	.L2
+  40              	.L3:
+ 138:key_config.c  ****     else
+ 139:key_config.c  ****         return LEVEL_LOW;
+  41              		.loc 1 139 0
+  42 0010 0020     		mov	r0, #0
+  43              	.L2:
+ 140:key_config.c  **** }
+  44              		.loc 1 140 0
+  45              		@ sp needed
+  46 0012 08BD     		pop	{r3, pc}
+  47              		.cfi_endproc
+  48              	.LFE46:
+  49              		.size	pin_zhi_neng, .-pin_zhi_neng
+  50              		.section	.text.pin_bai_dong,"ax",%progbits
+  51              		.align	2
+  52              		.code	16
+  53              		.thumb_func
+  54              		.type	pin_bai_dong, %function
+  55              	pin_bai_dong:
+  56              	.LFB45:
+ 127:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON10_WDGT_ID))
+  57              		.loc 1 127 0
+  58              		.cfi_startproc
+  59 0000 08B5     		push	{r3, lr}
+  60              		.cfi_def_cfa_offset 8
+  61              		.cfi_offset 3, -8
+  62              		.cfi_offset 14, -4
+ 128:key_config.c  ****         return LEVEL_HIGH;
+  63              		.loc 1 128 0
+  64 0002 0A20     		mov	r0, #10
+  65 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+  66              	.LVL1:
+  67 0008 0028     		cmp	r0, #0
+  68 000a 01D0     		beq	.L6
+ 129:key_config.c  ****     else
+  69              		.loc 1 129 0
+  70 000c 0120     		mov	r0, #1
+  71 000e 00E0     		b	.L5
+  72              	.L6:
+ 131:key_config.c  **** }
+  73              		.loc 1 131 0
+  74 0010 0020     		mov	r0, #0
+  75              	.L5:
+ 132:key_config.c  **** 
+  76              		.loc 1 132 0
+  77              		@ sp needed
+  78 0012 08BD     		pop	{r3, pc}
+  79              		.cfi_endproc
+  80              	.LFE45:
+  81              		.size	pin_bai_dong, .-pin_bai_dong
+  82              		.section	.text.pin_dingshi_jian,"ax",%progbits
+  83              		.align	2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 5
+
+
+  84              		.code	16
+  85              		.thumb_func
+  86              		.type	pin_dingshi_jian, %function
+  87              	pin_dingshi_jian:
+  88              	.LFB44:
+ 119:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON9_WDGT_ID))
+  89              		.loc 1 119 0
+  90              		.cfi_startproc
+  91 0000 08B5     		push	{r3, lr}
+  92              		.cfi_def_cfa_offset 8
+  93              		.cfi_offset 3, -8
+  94              		.cfi_offset 14, -4
+ 120:key_config.c  ****         return LEVEL_HIGH;
+  95              		.loc 1 120 0
+  96 0002 0920     		mov	r0, #9
+  97 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+  98              	.LVL2:
+  99 0008 0028     		cmp	r0, #0
+ 100 000a 01D0     		beq	.L9
+ 121:key_config.c  ****     else
+ 101              		.loc 1 121 0
+ 102 000c 0120     		mov	r0, #1
+ 103 000e 00E0     		b	.L8
+ 104              	.L9:
+ 123:key_config.c  **** }
+ 105              		.loc 1 123 0
+ 106 0010 0020     		mov	r0, #0
+ 107              	.L8:
+ 124:key_config.c  **** 
+ 108              		.loc 1 124 0
+ 109              		@ sp needed
+ 110 0012 08BD     		pop	{r3, pc}
+ 111              		.cfi_endproc
+ 112              	.LFE44:
+ 113              		.size	pin_dingshi_jian, .-pin_dingshi_jian
+ 114              		.section	.text.pin_dingshi_jia,"ax",%progbits
+ 115              		.align	2
+ 116              		.code	16
+ 117              		.thumb_func
+ 118              		.type	pin_dingshi_jia, %function
+ 119              	pin_dingshi_jia:
+ 120              	.LFB43:
+ 111:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON8_WDGT_ID))
+ 121              		.loc 1 111 0
+ 122              		.cfi_startproc
+ 123 0000 08B5     		push	{r3, lr}
+ 124              		.cfi_def_cfa_offset 8
+ 125              		.cfi_offset 3, -8
+ 126              		.cfi_offset 14, -4
+ 112:key_config.c  ****         return LEVEL_HIGH;
+ 127              		.loc 1 112 0
+ 128 0002 0820     		mov	r0, #8
+ 129 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+ 130              	.LVL3:
+ 131 0008 0028     		cmp	r0, #0
+ 132 000a 01D0     		beq	.L12
+ 113:key_config.c  ****     else
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 6
+
+
+ 133              		.loc 1 113 0
+ 134 000c 0120     		mov	r0, #1
+ 135 000e 00E0     		b	.L11
+ 136              	.L12:
+ 115:key_config.c  **** }
+ 137              		.loc 1 115 0
+ 138 0010 0020     		mov	r0, #0
+ 139              	.L11:
+ 116:key_config.c  **** 
+ 140              		.loc 1 116 0
+ 141              		@ sp needed
+ 142 0012 08BD     		pop	{r3, pc}
+ 143              		.cfi_endproc
+ 144              	.LFE43:
+ 145              		.size	pin_dingshi_jia, .-pin_dingshi_jia
+ 146              		.section	.text.pin_xin_feng_qu_nuan,"ax",%progbits
+ 147              		.align	2
+ 148              		.code	16
+ 149              		.thumb_func
+ 150              		.type	pin_xin_feng_qu_nuan, %function
+ 151              	pin_xin_feng_qu_nuan:
+ 152              	.LFB42:
+ 103:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON7_WDGT_ID))
+ 153              		.loc 1 103 0
+ 154              		.cfi_startproc
+ 155 0000 08B5     		push	{r3, lr}
+ 156              		.cfi_def_cfa_offset 8
+ 157              		.cfi_offset 3, -8
+ 158              		.cfi_offset 14, -4
+ 104:key_config.c  ****         return LEVEL_HIGH;
+ 159              		.loc 1 104 0
+ 160 0002 0720     		mov	r0, #7
+ 161 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+ 162              	.LVL4:
+ 163 0008 0028     		cmp	r0, #0
+ 164 000a 01D0     		beq	.L15
+ 105:key_config.c  ****     else
+ 165              		.loc 1 105 0
+ 166 000c 0120     		mov	r0, #1
+ 167 000e 00E0     		b	.L14
+ 168              	.L15:
+ 107:key_config.c  **** }
+ 169              		.loc 1 107 0
+ 170 0010 0020     		mov	r0, #0
+ 171              	.L14:
+ 108:key_config.c  **** 
+ 172              		.loc 1 108 0
+ 173              		@ sp needed
+ 174 0012 08BD     		pop	{r3, pc}
+ 175              		.cfi_endproc
+ 176              	.LFE42:
+ 177              		.size	pin_xin_feng_qu_nuan, .-pin_xin_feng_qu_nuan
+ 178              		.section	.text.pin_huan_qi,"ax",%progbits
+ 179              		.align	2
+ 180              		.code	16
+ 181              		.thumb_func
+ 182              		.type	pin_huan_qi, %function
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 7
+
+
+ 183              	pin_huan_qi:
+ 184              	.LFB41:
+  95:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON6_WDGT_ID))
+ 185              		.loc 1 95 0
+ 186              		.cfi_startproc
+ 187 0000 08B5     		push	{r3, lr}
+ 188              		.cfi_def_cfa_offset 8
+ 189              		.cfi_offset 3, -8
+ 190              		.cfi_offset 14, -4
+  96:key_config.c  ****         return LEVEL_HIGH;
+ 191              		.loc 1 96 0
+ 192 0002 0620     		mov	r0, #6
+ 193 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+ 194              	.LVL5:
+ 195 0008 0028     		cmp	r0, #0
+ 196 000a 01D0     		beq	.L18
+  97:key_config.c  ****     else
+ 197              		.loc 1 97 0
+ 198 000c 0120     		mov	r0, #1
+ 199 000e 00E0     		b	.L17
+ 200              	.L18:
+  99:key_config.c  **** }
+ 201              		.loc 1 99 0
+ 202 0010 0020     		mov	r0, #0
+ 203              	.L17:
+ 100:key_config.c  **** 
+ 204              		.loc 1 100 0
+ 205              		@ sp needed
+ 206 0012 08BD     		pop	{r3, pc}
+ 207              		.cfi_endproc
+ 208              	.LFE41:
+ 209              		.size	pin_huan_qi, .-pin_huan_qi
+ 210              		.section	.text.pin_qiang_ruo,"ax",%progbits
+ 211              		.align	2
+ 212              		.code	16
+ 213              		.thumb_func
+ 214              		.type	pin_qiang_ruo, %function
+ 215              	pin_qiang_ruo:
+ 216              	.LFB40:
+  87:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON5_WDGT_ID))
+ 217              		.loc 1 87 0
+ 218              		.cfi_startproc
+ 219 0000 08B5     		push	{r3, lr}
+ 220              		.cfi_def_cfa_offset 8
+ 221              		.cfi_offset 3, -8
+ 222              		.cfi_offset 14, -4
+  88:key_config.c  ****         return LEVEL_HIGH;
+ 223              		.loc 1 88 0
+ 224 0002 0520     		mov	r0, #5
+ 225 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+ 226              	.LVL6:
+ 227 0008 0028     		cmp	r0, #0
+ 228 000a 01D0     		beq	.L21
+  89:key_config.c  ****     else
+ 229              		.loc 1 89 0
+ 230 000c 0120     		mov	r0, #1
+ 231 000e 00E0     		b	.L20
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 8
+
+
+ 232              	.L21:
+  91:key_config.c  **** }
+ 233              		.loc 1 91 0
+ 234 0010 0020     		mov	r0, #0
+ 235              	.L20:
+  92:key_config.c  **** 
+ 236              		.loc 1 92 0
+ 237              		@ sp needed
+ 238 0012 08BD     		pop	{r3, pc}
+ 239              		.cfi_endproc
+ 240              	.LFE40:
+ 241              		.size	pin_qiang_ruo, .-pin_qiang_ruo
+ 242              		.section	.text.pin_xin_feng,"ax",%progbits
+ 243              		.align	2
+ 244              		.code	16
+ 245              		.thumb_func
+ 246              		.type	pin_xin_feng, %function
+ 247              	pin_xin_feng:
+ 248              	.LFB39:
+  79:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON4_WDGT_ID))
+ 249              		.loc 1 79 0
+ 250              		.cfi_startproc
+ 251 0000 08B5     		push	{r3, lr}
+ 252              		.cfi_def_cfa_offset 8
+ 253              		.cfi_offset 3, -8
+ 254              		.cfi_offset 14, -4
+  80:key_config.c  ****         return LEVEL_HIGH;
+ 255              		.loc 1 80 0
+ 256 0002 0420     		mov	r0, #4
+ 257 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+ 258              	.LVL7:
+ 259 0008 0028     		cmp	r0, #0
+ 260 000a 01D0     		beq	.L24
+  81:key_config.c  ****     else
+ 261              		.loc 1 81 0
+ 262 000c 0120     		mov	r0, #1
+ 263 000e 00E0     		b	.L23
+ 264              	.L24:
+  83:key_config.c  **** }
+ 265              		.loc 1 83 0
+ 266 0010 0020     		mov	r0, #0
+ 267              	.L23:
+  84:key_config.c  **** 
+ 268              		.loc 1 84 0
+ 269              		@ sp needed
+ 270 0012 08BD     		pop	{r3, pc}
+ 271              		.cfi_endproc
+ 272              	.LFE39:
+ 273              		.size	pin_xin_feng, .-pin_xin_feng
+ 274              		.section	.text.pin_wendu_jian,"ax",%progbits
+ 275              		.align	2
+ 276              		.code	16
+ 277              		.thumb_func
+ 278              		.type	pin_wendu_jian, %function
+ 279              	pin_wendu_jian:
+ 280              	.LFB38:
+  71:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON3_WDGT_ID))
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 9
+
+
+ 281              		.loc 1 71 0
+ 282              		.cfi_startproc
+ 283 0000 08B5     		push	{r3, lr}
+ 284              		.cfi_def_cfa_offset 8
+ 285              		.cfi_offset 3, -8
+ 286              		.cfi_offset 14, -4
+  72:key_config.c  ****         return LEVEL_HIGH;
+ 287              		.loc 1 72 0
+ 288 0002 0320     		mov	r0, #3
+ 289 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+ 290              	.LVL8:
+ 291 0008 0028     		cmp	r0, #0
+ 292 000a 01D0     		beq	.L27
+  73:key_config.c  ****     else
+ 293              		.loc 1 73 0
+ 294 000c 0120     		mov	r0, #1
+ 295 000e 00E0     		b	.L26
+ 296              	.L27:
+  75:key_config.c  **** }
+ 297              		.loc 1 75 0
+ 298 0010 0020     		mov	r0, #0
+ 299              	.L26:
+  76:key_config.c  **** 
+ 300              		.loc 1 76 0
+ 301              		@ sp needed
+ 302 0012 08BD     		pop	{r3, pc}
+ 303              		.cfi_endproc
+ 304              	.LFE38:
+ 305              		.size	pin_wendu_jian, .-pin_wendu_jian
+ 306              		.section	.text.pin_wendu_jia,"ax",%progbits
+ 307              		.align	2
+ 308              		.code	16
+ 309              		.thumb_func
+ 310              		.type	pin_wendu_jia, %function
+ 311              	pin_wendu_jia:
+ 312              	.LFB37:
+  63:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON2_WDGT_ID))
+ 313              		.loc 1 63 0
+ 314              		.cfi_startproc
+ 315 0000 08B5     		push	{r3, lr}
+ 316              		.cfi_def_cfa_offset 8
+ 317              		.cfi_offset 3, -8
+ 318              		.cfi_offset 14, -4
+  64:key_config.c  ****         return LEVEL_HIGH;
+ 319              		.loc 1 64 0
+ 320 0002 0220     		mov	r0, #2
+ 321 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+ 322              	.LVL9:
+ 323 0008 0028     		cmp	r0, #0
+ 324 000a 01D0     		beq	.L30
+  65:key_config.c  ****     else
+ 325              		.loc 1 65 0
+ 326 000c 0120     		mov	r0, #1
+ 327 000e 00E0     		b	.L29
+ 328              	.L30:
+  67:key_config.c  **** }
+ 329              		.loc 1 67 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 10
+
+
+ 330 0010 0020     		mov	r0, #0
+ 331              	.L29:
+  68:key_config.c  **** 
+ 332              		.loc 1 68 0
+ 333              		@ sp needed
+ 334 0012 08BD     		pop	{r3, pc}
+ 335              		.cfi_endproc
+ 336              	.LFE37:
+ 337              		.size	pin_wendu_jia, .-pin_wendu_jia
+ 338              		.section	.text.pin_feng_nuan,"ax",%progbits
+ 339              		.align	2
+ 340              		.code	16
+ 341              		.thumb_func
+ 342              		.type	pin_feng_nuan, %function
+ 343              	pin_feng_nuan:
+ 344              	.LFB36:
+  55:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON1_WDGT_ID))
+ 345              		.loc 1 55 0
+ 346              		.cfi_startproc
+ 347 0000 08B5     		push	{r3, lr}
+ 348              		.cfi_def_cfa_offset 8
+ 349              		.cfi_offset 3, -8
+ 350              		.cfi_offset 14, -4
+  56:key_config.c  ****         return LEVEL_HIGH;
+ 351              		.loc 1 56 0
+ 352 0002 0120     		mov	r0, #1
+ 353 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+ 354              	.LVL10:
+ 355 0008 0028     		cmp	r0, #0
+ 356 000a 01D0     		beq	.L33
+  57:key_config.c  ****     else
+ 357              		.loc 1 57 0
+ 358 000c 0120     		mov	r0, #1
+ 359 000e 00E0     		b	.L32
+ 360              	.L33:
+  59:key_config.c  **** }
+ 361              		.loc 1 59 0
+ 362 0010 0020     		mov	r0, #0
+ 363              	.L32:
+  60:key_config.c  **** 
+ 364              		.loc 1 60 0
+ 365              		@ sp needed
+ 366 0012 08BD     		pop	{r3, pc}
+ 367              		.cfi_endproc
+ 368              	.LFE36:
+ 369              		.size	pin_feng_nuan, .-pin_feng_nuan
+ 370              		.section	.text.pin_dian_yuan,"ax",%progbits
+ 371              		.align	2
+ 372              		.code	16
+ 373              		.thumb_func
+ 374              		.type	pin_dian_yuan, %function
+ 375              	pin_dian_yuan:
+ 376              	.LFB35:
+  47:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON0_WDGT_ID))
+ 377              		.loc 1 47 0
+ 378              		.cfi_startproc
+ 379 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 11
+
+
+ 380              		.cfi_def_cfa_offset 8
+ 381              		.cfi_offset 3, -8
+ 382              		.cfi_offset 14, -4
+  48:key_config.c  ****         return LEVEL_HIGH;
+ 383              		.loc 1 48 0
+ 384 0002 0020     		mov	r0, #0
+ 385 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
+ 386              	.LVL11:
+ 387 0008 0028     		cmp	r0, #0
+ 388 000a 01D0     		beq	.L36
+  49:key_config.c  ****     else
+ 389              		.loc 1 49 0
+ 390 000c 0120     		mov	r0, #1
+ 391 000e 00E0     		b	.L35
+ 392              	.L36:
+  51:key_config.c  **** }
+ 393              		.loc 1 51 0
+ 394 0010 0020     		mov	r0, #0
+ 395              	.L35:
+  52:key_config.c  **** 
+ 396              		.loc 1 52 0
+ 397              		@ sp needed
+ 398 0012 08BD     		pop	{r3, pc}
+ 399              		.cfi_endproc
+ 400              	.LFE35:
+ 401              		.size	pin_dian_yuan, .-pin_dian_yuan
+ 402              		.global	input_pins
+ 403              		.data
+ 404              		.align	2
+ 405              		.type	input_pins, %object
+ 406              		.size	input_pins, 48
+ 407              	input_pins:
+ 408 0000 00000000 		.word	pin_dian_yuan
+ 409 0004 00000000 		.word	pin_feng_nuan
+ 410 0008 00000000 		.word	pin_wendu_jia
+ 411 000c 00000000 		.word	pin_wendu_jian
+ 412 0010 00000000 		.word	pin_xin_feng
+ 413 0014 00000000 		.word	pin_qiang_ruo
+ 414 0018 00000000 		.word	pin_huan_qi
+ 415 001c 00000000 		.word	pin_xin_feng_qu_nuan
+ 416 0020 00000000 		.word	pin_dingshi_jia
+ 417 0024 00000000 		.word	pin_dingshi_jian
+ 418 0028 00000000 		.word	pin_bai_dong
+ 419 002c 00000000 		.word	pin_zhi_neng
+ 420              		.text
+ 421              	.Letext0:
+ 422              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 423              		.file 3 "types.h"
+ 424              		.file 4 "key_config.h"
+ 425              		.file 5 "Generated_Source\\PSoC4/key_touch_Structure.h"
+ 426              		.section	.debug_info,"",%progbits
+ 427              	.Ldebug_info0:
+ 428 0000 48030000 		.4byte	0x348
+ 429 0004 0400     		.2byte	0x4
+ 430 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 431 000a 04       		.byte	0x4
+ 432 000b 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 12
+
+
+ 433 000c 54020000 		.4byte	.LASF44
+ 434 0010 01       		.byte	0x1
+ 435 0011 78000000 		.4byte	.LASF45
+ 436 0015 BF000000 		.4byte	.LASF46
+ 437 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 438 001d 00000000 		.4byte	0
+ 439 0021 00000000 		.4byte	.Ldebug_line0
+ 440 0025 02       		.uleb128 0x2
+ 441 0026 01       		.byte	0x1
+ 442 0027 06       		.byte	0x6
+ 443 0028 FE020000 		.4byte	.LASF0
+ 444 002c 02       		.uleb128 0x2
+ 445 002d 01       		.byte	0x1
+ 446 002e 08       		.byte	0x8
+ 447 002f B1000000 		.4byte	.LASF1
+ 448 0033 02       		.uleb128 0x2
+ 449 0034 02       		.byte	0x2
+ 450 0035 05       		.byte	0x5
+ 451 0036 28020000 		.4byte	.LASF2
+ 452 003a 02       		.uleb128 0x2
+ 453 003b 02       		.byte	0x2
+ 454 003c 07       		.byte	0x7
+ 455 003d 50000000 		.4byte	.LASF3
+ 456 0041 02       		.uleb128 0x2
+ 457 0042 04       		.byte	0x4
+ 458 0043 05       		.byte	0x5
+ 459 0044 47000000 		.4byte	.LASF4
+ 460 0048 02       		.uleb128 0x2
+ 461 0049 04       		.byte	0x4
+ 462 004a 07       		.byte	0x7
+ 463 004b 16010000 		.4byte	.LASF5
+ 464 004f 02       		.uleb128 0x2
+ 465 0050 08       		.byte	0x8
+ 466 0051 05       		.byte	0x5
+ 467 0052 F3010000 		.4byte	.LASF6
+ 468 0056 02       		.uleb128 0x2
+ 469 0057 08       		.byte	0x8
+ 470 0058 07       		.byte	0x7
+ 471 0059 A7010000 		.4byte	.LASF7
+ 472 005d 03       		.uleb128 0x3
+ 473 005e 04       		.byte	0x4
+ 474 005f 05       		.byte	0x5
+ 475 0060 696E7400 		.ascii	"int\000"
+ 476 0064 02       		.uleb128 0x2
+ 477 0065 04       		.byte	0x4
+ 478 0066 07       		.byte	0x7
+ 479 0067 8F010000 		.4byte	.LASF8
+ 480 006b 04       		.uleb128 0x4
+ 481 006c 40020000 		.4byte	.LASF9
+ 482 0070 02       		.byte	0x2
+ 483 0071 B901     		.2byte	0x1b9
+ 484 0073 2C000000 		.4byte	0x2c
+ 485 0077 04       		.uleb128 0x4
+ 486 0078 6F010000 		.4byte	.LASF10
+ 487 007c 02       		.byte	0x2
+ 488 007d BB01     		.2byte	0x1bb
+ 489 007f 48000000 		.4byte	0x48
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 13
+
+
+ 490 0083 02       		.uleb128 0x2
+ 491 0084 04       		.byte	0x4
+ 492 0085 04       		.byte	0x4
+ 493 0086 AB000000 		.4byte	.LASF11
+ 494 008a 02       		.uleb128 0x2
+ 495 008b 08       		.byte	0x8
+ 496 008c 04       		.byte	0x4
+ 497 008d 0A030000 		.4byte	.LASF12
+ 498 0091 02       		.uleb128 0x2
+ 499 0092 01       		.byte	0x1
+ 500 0093 08       		.byte	0x8
+ 501 0094 E6020000 		.4byte	.LASF13
+ 502 0098 02       		.uleb128 0x2
+ 503 0099 04       		.byte	0x4
+ 504 009a 07       		.byte	0x7
+ 505 009b DC010000 		.4byte	.LASF14
+ 506 009f 05       		.uleb128 0x5
+ 507 00a0 01       		.byte	0x1
+ 508 00a1 03       		.byte	0x3
+ 509 00a2 1E       		.byte	0x1e
+ 510 00a3 B4000000 		.4byte	0xb4
+ 511 00a7 06       		.uleb128 0x6
+ 512 00a8 19000000 		.4byte	.LASF15
+ 513 00ac 00       		.sleb128 0
+ 514 00ad 06       		.uleb128 0x6
+ 515 00ae 44010000 		.4byte	.LASF16
+ 516 00b2 01       		.sleb128 1
+ 517 00b3 00       		.byte	0
+ 518 00b4 07       		.uleb128 0x7
+ 519 00b5 F8020000 		.4byte	.LASF17
+ 520 00b9 03       		.byte	0x3
+ 521 00ba 21       		.byte	0x21
+ 522 00bb 9F000000 		.4byte	0x9f
+ 523 00bf 07       		.uleb128 0x7
+ 524 00c0 3D000000 		.4byte	.LASF18
+ 525 00c4 04       		.byte	0x4
+ 526 00c5 11       		.byte	0x11
+ 527 00c6 CA000000 		.4byte	0xca
+ 528 00ca 08       		.uleb128 0x8
+ 529 00cb 04       		.byte	0x4
+ 530 00cc D0000000 		.4byte	0xd0
+ 531 00d0 09       		.uleb128 0x9
+ 532 00d1 B4000000 		.4byte	0xb4
+ 533 00d5 05       		.uleb128 0x5
+ 534 00d6 01       		.byte	0x1
+ 535 00d7 04       		.byte	0x4
+ 536 00d8 14       		.byte	0x14
+ 537 00d9 2C010000 		.4byte	0x12c
+ 538 00dd 06       		.uleb128 0x6
+ 539 00de 11030000 		.4byte	.LASF19
+ 540 00e2 00       		.sleb128 0
+ 541 00e3 06       		.uleb128 0x6
+ 542 00e4 1F030000 		.4byte	.LASF20
+ 543 00e8 01       		.sleb128 1
+ 544 00e9 06       		.uleb128 0x6
+ 545 00ea FB000000 		.4byte	.LASF21
+ 546 00ee 02       		.sleb128 2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 14
+
+
+ 547 00ef 06       		.uleb128 0x6
+ 548 00f0 23000000 		.4byte	.LASF22
+ 549 00f4 03       		.sleb128 3
+ 550 00f5 06       		.uleb128 0x6
+ 551 00f6 1B020000 		.4byte	.LASF23
+ 552 00fa 04       		.sleb128 4
+ 553 00fb 06       		.uleb128 0x6
+ 554 00fc EB020000 		.4byte	.LASF24
+ 555 0100 05       		.sleb128 5
+ 556 0101 06       		.uleb128 0x6
+ 557 0102 00000000 		.4byte	.LASF25
+ 558 0106 06       		.sleb128 6
+ 559 0107 06       		.uleb128 0x6
+ 560 0108 96000000 		.4byte	.LASF26
+ 561 010c 07       		.sleb128 7
+ 562 010d 06       		.uleb128 0x6
+ 563 010e BE010000 		.4byte	.LASF27
+ 564 0112 08       		.sleb128 8
+ 565 0113 06       		.uleb128 0x6
+ 566 0114 85000000 		.4byte	.LASF28
+ 567 0118 09       		.sleb128 9
+ 568 0119 06       		.uleb128 0x6
+ 569 011a 01020000 		.4byte	.LASF29
+ 570 011e 0A       		.sleb128 10
+ 571 011f 06       		.uleb128 0x6
+ 572 0120 09010000 		.4byte	.LASF30
+ 573 0124 0B       		.sleb128 11
+ 574 0125 06       		.uleb128 0x6
+ 575 0126 32000000 		.4byte	.LASF31
+ 576 012a 0C       		.sleb128 12
+ 577 012b 00       		.byte	0
+ 578 012c 0A       		.uleb128 0xa
+ 579 012d 0E020000 		.4byte	.LASF32
+ 580 0131 01       		.byte	0x1
+ 581 0132 86       		.byte	0x86
+ 582 0133 B4000000 		.4byte	0xb4
+ 583 0137 00000000 		.4byte	.LFB46
+ 584 013b 14000000 		.4byte	.LFE46-.LFB46
+ 585 013f 01       		.uleb128 0x1
+ 586 0140 9C       		.byte	0x9c
+ 587 0141 55010000 		.4byte	0x155
+ 588 0145 0B       		.uleb128 0xb
+ 589 0146 08000000 		.4byte	.LVL0
+ 590 014a 39030000 		.4byte	0x339
+ 591 014e 0C       		.uleb128 0xc
+ 592 014f 01       		.uleb128 0x1
+ 593 0150 50       		.byte	0x50
+ 594 0151 01       		.uleb128 0x1
+ 595 0152 3B       		.byte	0x3b
+ 596 0153 00       		.byte	0
+ 597 0154 00       		.byte	0
+ 598 0155 0A       		.uleb128 0xa
+ 599 0156 2D030000 		.4byte	.LASF33
+ 600 015a 01       		.byte	0x1
+ 601 015b 7E       		.byte	0x7e
+ 602 015c B4000000 		.4byte	0xb4
+ 603 0160 00000000 		.4byte	.LFB45
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 15
+
+
+ 604 0164 14000000 		.4byte	.LFE45-.LFB45
+ 605 0168 01       		.uleb128 0x1
+ 606 0169 9C       		.byte	0x9c
+ 607 016a 7E010000 		.4byte	0x17e
+ 608 016e 0B       		.uleb128 0xb
+ 609 016f 08000000 		.4byte	.LVL1
+ 610 0173 39030000 		.4byte	0x339
+ 611 0177 0C       		.uleb128 0xc
+ 612 0178 01       		.uleb128 0x1
+ 613 0179 50       		.byte	0x50
+ 614 017a 01       		.uleb128 0x1
+ 615 017b 3A       		.byte	0x3a
+ 616 017c 00       		.byte	0
+ 617 017d 00       		.byte	0
+ 618 017e 0A       		.uleb128 0xa
+ 619 017f 5E010000 		.4byte	.LASF34
+ 620 0183 01       		.byte	0x1
+ 621 0184 76       		.byte	0x76
+ 622 0185 B4000000 		.4byte	0xb4
+ 623 0189 00000000 		.4byte	.LFB44
+ 624 018d 14000000 		.4byte	.LFE44-.LFB44
+ 625 0191 01       		.uleb128 0x1
+ 626 0192 9C       		.byte	0x9c
+ 627 0193 A7010000 		.4byte	0x1a7
+ 628 0197 0B       		.uleb128 0xb
+ 629 0198 08000000 		.4byte	.LVL2
+ 630 019c 39030000 		.4byte	0x339
+ 631 01a0 0C       		.uleb128 0xc
+ 632 01a1 01       		.uleb128 0x1
+ 633 01a2 50       		.byte	0x50
+ 634 01a3 01       		.uleb128 0x1
+ 635 01a4 39       		.byte	0x39
+ 636 01a5 00       		.byte	0
+ 637 01a6 00       		.byte	0
+ 638 01a7 0A       		.uleb128 0xa
+ 639 01a8 28010000 		.4byte	.LASF35
+ 640 01ac 01       		.byte	0x1
+ 641 01ad 6E       		.byte	0x6e
+ 642 01ae B4000000 		.4byte	0xb4
+ 643 01b2 00000000 		.4byte	.LFB43
+ 644 01b6 14000000 		.4byte	.LFE43-.LFB43
+ 645 01ba 01       		.uleb128 0x1
+ 646 01bb 9C       		.byte	0x9c
+ 647 01bc D0010000 		.4byte	0x1d0
+ 648 01c0 0B       		.uleb128 0xb
+ 649 01c1 08000000 		.4byte	.LVL3
+ 650 01c5 39030000 		.4byte	0x339
+ 651 01c9 0C       		.uleb128 0xc
+ 652 01ca 01       		.uleb128 0x1
+ 653 01cb 50       		.byte	0x50
+ 654 01cc 01       		.uleb128 0x1
+ 655 01cd 38       		.byte	0x38
+ 656 01ce 00       		.byte	0
+ 657 01cf 00       		.byte	0
+ 658 01d0 0A       		.uleb128 0xa
+ 659 01d1 63000000 		.4byte	.LASF36
+ 660 01d5 01       		.byte	0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 16
+
+
+ 661 01d6 66       		.byte	0x66
+ 662 01d7 B4000000 		.4byte	0xb4
+ 663 01db 00000000 		.4byte	.LFB42
+ 664 01df 14000000 		.4byte	.LFE42-.LFB42
+ 665 01e3 01       		.uleb128 0x1
+ 666 01e4 9C       		.byte	0x9c
+ 667 01e5 F9010000 		.4byte	0x1f9
+ 668 01e9 0B       		.uleb128 0xb
+ 669 01ea 08000000 		.4byte	.LVL4
+ 670 01ee 39030000 		.4byte	0x339
+ 671 01f2 0C       		.uleb128 0xc
+ 672 01f3 01       		.uleb128 0x1
+ 673 01f4 50       		.byte	0x50
+ 674 01f5 01       		.uleb128 0x1
+ 675 01f6 37       		.byte	0x37
+ 676 01f7 00       		.byte	0
+ 677 01f8 00       		.byte	0
+ 678 01f9 0A       		.uleb128 0xa
+ 679 01fa 38010000 		.4byte	.LASF37
+ 680 01fe 01       		.byte	0x1
+ 681 01ff 5E       		.byte	0x5e
+ 682 0200 B4000000 		.4byte	0xb4
+ 683 0204 00000000 		.4byte	.LFB41
+ 684 0208 14000000 		.4byte	.LFE41-.LFB41
+ 685 020c 01       		.uleb128 0x1
+ 686 020d 9C       		.byte	0x9c
+ 687 020e 22020000 		.4byte	0x222
+ 688 0212 0B       		.uleb128 0xb
+ 689 0213 08000000 		.4byte	.LVL5
+ 690 0217 39030000 		.4byte	0x339
+ 691 021b 0C       		.uleb128 0xc
+ 692 021c 01       		.uleb128 0x1
+ 693 021d 50       		.byte	0x50
+ 694 021e 01       		.uleb128 0x1
+ 695 021f 36       		.byte	0x36
+ 696 0220 00       		.byte	0
+ 697 0221 00       		.byte	0
+ 698 0222 0A       		.uleb128 0xa
+ 699 0223 CE010000 		.4byte	.LASF38
+ 700 0227 01       		.byte	0x1
+ 701 0228 56       		.byte	0x56
+ 702 0229 B4000000 		.4byte	0xb4
+ 703 022d 00000000 		.4byte	.LFB40
+ 704 0231 14000000 		.4byte	.LFE40-.LFB40
+ 705 0235 01       		.uleb128 0x1
+ 706 0236 9C       		.byte	0x9c
+ 707 0237 4B020000 		.4byte	0x24b
+ 708 023b 0B       		.uleb128 0xb
+ 709 023c 08000000 		.4byte	.LVL6
+ 710 0240 39030000 		.4byte	0x339
+ 711 0244 0C       		.uleb128 0xc
+ 712 0245 01       		.uleb128 0x1
+ 713 0246 50       		.byte	0x50
+ 714 0247 01       		.uleb128 0x1
+ 715 0248 35       		.byte	0x35
+ 716 0249 00       		.byte	0
+ 717 024a 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 17
+
+
+ 718 024b 0A       		.uleb128 0xa
+ 719 024c 0C000000 		.4byte	.LASF39
+ 720 0250 01       		.byte	0x1
+ 721 0251 4E       		.byte	0x4e
+ 722 0252 B4000000 		.4byte	0xb4
+ 723 0256 00000000 		.4byte	.LFB39
+ 724 025a 14000000 		.4byte	.LFE39-.LFB39
+ 725 025e 01       		.uleb128 0x1
+ 726 025f 9C       		.byte	0x9c
+ 727 0260 74020000 		.4byte	0x274
+ 728 0264 0B       		.uleb128 0xb
+ 729 0265 08000000 		.4byte	.LVL7
+ 730 0269 39030000 		.4byte	0x339
+ 731 026d 0C       		.uleb128 0xc
+ 732 026e 01       		.uleb128 0x1
+ 733 026f 50       		.byte	0x50
+ 734 0270 01       		.uleb128 0x1
+ 735 0271 34       		.byte	0x34
+ 736 0272 00       		.byte	0
+ 737 0273 00       		.byte	0
+ 738 0274 0A       		.uleb128 0xa
+ 739 0275 4F010000 		.4byte	.LASF40
+ 740 0279 01       		.byte	0x1
+ 741 027a 46       		.byte	0x46
+ 742 027b B4000000 		.4byte	0xb4
+ 743 027f 00000000 		.4byte	.LFB38
+ 744 0283 14000000 		.4byte	.LFE38-.LFB38
+ 745 0287 01       		.uleb128 0x1
+ 746 0288 9C       		.byte	0x9c
+ 747 0289 9D020000 		.4byte	0x29d
+ 748 028d 0B       		.uleb128 0xb
+ 749 028e 08000000 		.4byte	.LVL8
+ 750 0292 39030000 		.4byte	0x339
+ 751 0296 0C       		.uleb128 0xc
+ 752 0297 01       		.uleb128 0x1
+ 753 0298 50       		.byte	0x50
+ 754 0299 01       		.uleb128 0x1
+ 755 029a 33       		.byte	0x33
+ 756 029b 00       		.byte	0
+ 757 029c 00       		.byte	0
+ 758 029d 0A       		.uleb128 0xa
+ 759 029e 32020000 		.4byte	.LASF41
+ 760 02a2 01       		.byte	0x1
+ 761 02a3 3E       		.byte	0x3e
+ 762 02a4 B4000000 		.4byte	0xb4
+ 763 02a8 00000000 		.4byte	.LFB37
+ 764 02ac 14000000 		.4byte	.LFE37-.LFB37
+ 765 02b0 01       		.uleb128 0x1
+ 766 02b1 9C       		.byte	0x9c
+ 767 02b2 C6020000 		.4byte	0x2c6
+ 768 02b6 0B       		.uleb128 0xb
+ 769 02b7 08000000 		.4byte	.LVL9
+ 770 02bb 39030000 		.4byte	0x339
+ 771 02bf 0C       		.uleb128 0xc
+ 772 02c0 01       		.uleb128 0x1
+ 773 02c1 50       		.byte	0x50
+ 774 02c2 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 18
+
+
+ 775 02c3 32       		.byte	0x32
+ 776 02c4 00       		.byte	0
+ 777 02c5 00       		.byte	0
+ 778 02c6 0A       		.uleb128 0xa
+ 779 02c7 E5010000 		.4byte	.LASF42
+ 780 02cb 01       		.byte	0x1
+ 781 02cc 36       		.byte	0x36
+ 782 02cd B4000000 		.4byte	0xb4
+ 783 02d1 00000000 		.4byte	.LFB36
+ 784 02d5 14000000 		.4byte	.LFE36-.LFB36
+ 785 02d9 01       		.uleb128 0x1
+ 786 02da 9C       		.byte	0x9c
+ 787 02db EF020000 		.4byte	0x2ef
+ 788 02df 0B       		.uleb128 0xb
+ 789 02e0 08000000 		.4byte	.LVL10
+ 790 02e4 39030000 		.4byte	0x339
+ 791 02e8 0C       		.uleb128 0xc
+ 792 02e9 01       		.uleb128 0x1
+ 793 02ea 50       		.byte	0x50
+ 794 02eb 01       		.uleb128 0x1
+ 795 02ec 31       		.byte	0x31
+ 796 02ed 00       		.byte	0
+ 797 02ee 00       		.byte	0
+ 798 02ef 0A       		.uleb128 0xa
+ 799 02f0 46020000 		.4byte	.LASF43
+ 800 02f4 01       		.byte	0x1
+ 801 02f5 2E       		.byte	0x2e
+ 802 02f6 B4000000 		.4byte	0xb4
+ 803 02fa 00000000 		.4byte	.LFB35
+ 804 02fe 14000000 		.4byte	.LFE35-.LFB35
+ 805 0302 01       		.uleb128 0x1
+ 806 0303 9C       		.byte	0x9c
+ 807 0304 18030000 		.4byte	0x318
+ 808 0308 0B       		.uleb128 0xb
+ 809 0309 08000000 		.4byte	.LVL11
+ 810 030d 39030000 		.4byte	0x339
+ 811 0311 0C       		.uleb128 0xc
+ 812 0312 01       		.uleb128 0x1
+ 813 0313 50       		.byte	0x50
+ 814 0314 01       		.uleb128 0x1
+ 815 0315 30       		.byte	0x30
+ 816 0316 00       		.byte	0
+ 817 0317 00       		.byte	0
+ 818 0318 0D       		.uleb128 0xd
+ 819 0319 BF000000 		.4byte	0xbf
+ 820 031d 28030000 		.4byte	0x328
+ 821 0321 0E       		.uleb128 0xe
+ 822 0322 98000000 		.4byte	0x98
+ 823 0326 0B       		.byte	0xb
+ 824 0327 00       		.byte	0
+ 825 0328 0F       		.uleb128 0xf
+ 826 0329 9C010000 		.4byte	.LASF47
+ 827 032d 01       		.byte	0x1
+ 828 032e 1D       		.byte	0x1d
+ 829 032f 18030000 		.4byte	0x318
+ 830 0333 05       		.uleb128 0x5
+ 831 0334 03       		.byte	0x3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 19
+
+
+ 832 0335 00000000 		.4byte	input_pins
+ 833 0339 10       		.uleb128 0x10
+ 834 033a 76010000 		.4byte	.LASF48
+ 835 033e 05       		.byte	0x5
+ 836 033f 1904     		.2byte	0x419
+ 837 0341 77000000 		.4byte	0x77
+ 838 0345 11       		.uleb128 0x11
+ 839 0346 77000000 		.4byte	0x77
+ 840 034a 00       		.byte	0
+ 841 034b 00       		.byte	0
+ 842              		.section	.debug_abbrev,"",%progbits
+ 843              	.Ldebug_abbrev0:
+ 844 0000 01       		.uleb128 0x1
+ 845 0001 11       		.uleb128 0x11
+ 846 0002 01       		.byte	0x1
+ 847 0003 25       		.uleb128 0x25
+ 848 0004 0E       		.uleb128 0xe
+ 849 0005 13       		.uleb128 0x13
+ 850 0006 0B       		.uleb128 0xb
+ 851 0007 03       		.uleb128 0x3
+ 852 0008 0E       		.uleb128 0xe
+ 853 0009 1B       		.uleb128 0x1b
+ 854 000a 0E       		.uleb128 0xe
+ 855 000b 55       		.uleb128 0x55
+ 856 000c 17       		.uleb128 0x17
+ 857 000d 11       		.uleb128 0x11
+ 858 000e 01       		.uleb128 0x1
+ 859 000f 10       		.uleb128 0x10
+ 860 0010 17       		.uleb128 0x17
+ 861 0011 00       		.byte	0
+ 862 0012 00       		.byte	0
+ 863 0013 02       		.uleb128 0x2
+ 864 0014 24       		.uleb128 0x24
+ 865 0015 00       		.byte	0
+ 866 0016 0B       		.uleb128 0xb
+ 867 0017 0B       		.uleb128 0xb
+ 868 0018 3E       		.uleb128 0x3e
+ 869 0019 0B       		.uleb128 0xb
+ 870 001a 03       		.uleb128 0x3
+ 871 001b 0E       		.uleb128 0xe
+ 872 001c 00       		.byte	0
+ 873 001d 00       		.byte	0
+ 874 001e 03       		.uleb128 0x3
+ 875 001f 24       		.uleb128 0x24
+ 876 0020 00       		.byte	0
+ 877 0021 0B       		.uleb128 0xb
+ 878 0022 0B       		.uleb128 0xb
+ 879 0023 3E       		.uleb128 0x3e
+ 880 0024 0B       		.uleb128 0xb
+ 881 0025 03       		.uleb128 0x3
+ 882 0026 08       		.uleb128 0x8
+ 883 0027 00       		.byte	0
+ 884 0028 00       		.byte	0
+ 885 0029 04       		.uleb128 0x4
+ 886 002a 16       		.uleb128 0x16
+ 887 002b 00       		.byte	0
+ 888 002c 03       		.uleb128 0x3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 20
+
+
+ 889 002d 0E       		.uleb128 0xe
+ 890 002e 3A       		.uleb128 0x3a
+ 891 002f 0B       		.uleb128 0xb
+ 892 0030 3B       		.uleb128 0x3b
+ 893 0031 05       		.uleb128 0x5
+ 894 0032 49       		.uleb128 0x49
+ 895 0033 13       		.uleb128 0x13
+ 896 0034 00       		.byte	0
+ 897 0035 00       		.byte	0
+ 898 0036 05       		.uleb128 0x5
+ 899 0037 04       		.uleb128 0x4
+ 900 0038 01       		.byte	0x1
+ 901 0039 0B       		.uleb128 0xb
+ 902 003a 0B       		.uleb128 0xb
+ 903 003b 3A       		.uleb128 0x3a
+ 904 003c 0B       		.uleb128 0xb
+ 905 003d 3B       		.uleb128 0x3b
+ 906 003e 0B       		.uleb128 0xb
+ 907 003f 01       		.uleb128 0x1
+ 908 0040 13       		.uleb128 0x13
+ 909 0041 00       		.byte	0
+ 910 0042 00       		.byte	0
+ 911 0043 06       		.uleb128 0x6
+ 912 0044 28       		.uleb128 0x28
+ 913 0045 00       		.byte	0
+ 914 0046 03       		.uleb128 0x3
+ 915 0047 0E       		.uleb128 0xe
+ 916 0048 1C       		.uleb128 0x1c
+ 917 0049 0D       		.uleb128 0xd
+ 918 004a 00       		.byte	0
+ 919 004b 00       		.byte	0
+ 920 004c 07       		.uleb128 0x7
+ 921 004d 16       		.uleb128 0x16
+ 922 004e 00       		.byte	0
+ 923 004f 03       		.uleb128 0x3
+ 924 0050 0E       		.uleb128 0xe
+ 925 0051 3A       		.uleb128 0x3a
+ 926 0052 0B       		.uleb128 0xb
+ 927 0053 3B       		.uleb128 0x3b
+ 928 0054 0B       		.uleb128 0xb
+ 929 0055 49       		.uleb128 0x49
+ 930 0056 13       		.uleb128 0x13
+ 931 0057 00       		.byte	0
+ 932 0058 00       		.byte	0
+ 933 0059 08       		.uleb128 0x8
+ 934 005a 0F       		.uleb128 0xf
+ 935 005b 00       		.byte	0
+ 936 005c 0B       		.uleb128 0xb
+ 937 005d 0B       		.uleb128 0xb
+ 938 005e 49       		.uleb128 0x49
+ 939 005f 13       		.uleb128 0x13
+ 940 0060 00       		.byte	0
+ 941 0061 00       		.byte	0
+ 942 0062 09       		.uleb128 0x9
+ 943 0063 15       		.uleb128 0x15
+ 944 0064 00       		.byte	0
+ 945 0065 27       		.uleb128 0x27
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 21
+
+
+ 946 0066 19       		.uleb128 0x19
+ 947 0067 49       		.uleb128 0x49
+ 948 0068 13       		.uleb128 0x13
+ 949 0069 00       		.byte	0
+ 950 006a 00       		.byte	0
+ 951 006b 0A       		.uleb128 0xa
+ 952 006c 2E       		.uleb128 0x2e
+ 953 006d 01       		.byte	0x1
+ 954 006e 03       		.uleb128 0x3
+ 955 006f 0E       		.uleb128 0xe
+ 956 0070 3A       		.uleb128 0x3a
+ 957 0071 0B       		.uleb128 0xb
+ 958 0072 3B       		.uleb128 0x3b
+ 959 0073 0B       		.uleb128 0xb
+ 960 0074 27       		.uleb128 0x27
+ 961 0075 19       		.uleb128 0x19
+ 962 0076 49       		.uleb128 0x49
+ 963 0077 13       		.uleb128 0x13
+ 964 0078 11       		.uleb128 0x11
+ 965 0079 01       		.uleb128 0x1
+ 966 007a 12       		.uleb128 0x12
+ 967 007b 06       		.uleb128 0x6
+ 968 007c 40       		.uleb128 0x40
+ 969 007d 18       		.uleb128 0x18
+ 970 007e 9742     		.uleb128 0x2117
+ 971 0080 19       		.uleb128 0x19
+ 972 0081 01       		.uleb128 0x1
+ 973 0082 13       		.uleb128 0x13
+ 974 0083 00       		.byte	0
+ 975 0084 00       		.byte	0
+ 976 0085 0B       		.uleb128 0xb
+ 977 0086 898201   		.uleb128 0x4109
+ 978 0089 01       		.byte	0x1
+ 979 008a 11       		.uleb128 0x11
+ 980 008b 01       		.uleb128 0x1
+ 981 008c 31       		.uleb128 0x31
+ 982 008d 13       		.uleb128 0x13
+ 983 008e 00       		.byte	0
+ 984 008f 00       		.byte	0
+ 985 0090 0C       		.uleb128 0xc
+ 986 0091 8A8201   		.uleb128 0x410a
+ 987 0094 00       		.byte	0
+ 988 0095 02       		.uleb128 0x2
+ 989 0096 18       		.uleb128 0x18
+ 990 0097 9142     		.uleb128 0x2111
+ 991 0099 18       		.uleb128 0x18
+ 992 009a 00       		.byte	0
+ 993 009b 00       		.byte	0
+ 994 009c 0D       		.uleb128 0xd
+ 995 009d 01       		.uleb128 0x1
+ 996 009e 01       		.byte	0x1
+ 997 009f 49       		.uleb128 0x49
+ 998 00a0 13       		.uleb128 0x13
+ 999 00a1 01       		.uleb128 0x1
+ 1000 00a2 13       		.uleb128 0x13
+ 1001 00a3 00       		.byte	0
+ 1002 00a4 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 22
+
+
+ 1003 00a5 0E       		.uleb128 0xe
+ 1004 00a6 21       		.uleb128 0x21
+ 1005 00a7 00       		.byte	0
+ 1006 00a8 49       		.uleb128 0x49
+ 1007 00a9 13       		.uleb128 0x13
+ 1008 00aa 2F       		.uleb128 0x2f
+ 1009 00ab 0B       		.uleb128 0xb
+ 1010 00ac 00       		.byte	0
+ 1011 00ad 00       		.byte	0
+ 1012 00ae 0F       		.uleb128 0xf
+ 1013 00af 34       		.uleb128 0x34
+ 1014 00b0 00       		.byte	0
+ 1015 00b1 03       		.uleb128 0x3
+ 1016 00b2 0E       		.uleb128 0xe
+ 1017 00b3 3A       		.uleb128 0x3a
+ 1018 00b4 0B       		.uleb128 0xb
+ 1019 00b5 3B       		.uleb128 0x3b
+ 1020 00b6 0B       		.uleb128 0xb
+ 1021 00b7 49       		.uleb128 0x49
+ 1022 00b8 13       		.uleb128 0x13
+ 1023 00b9 3F       		.uleb128 0x3f
+ 1024 00ba 19       		.uleb128 0x19
+ 1025 00bb 02       		.uleb128 0x2
+ 1026 00bc 18       		.uleb128 0x18
+ 1027 00bd 00       		.byte	0
+ 1028 00be 00       		.byte	0
+ 1029 00bf 10       		.uleb128 0x10
+ 1030 00c0 2E       		.uleb128 0x2e
+ 1031 00c1 01       		.byte	0x1
+ 1032 00c2 3F       		.uleb128 0x3f
+ 1033 00c3 19       		.uleb128 0x19
+ 1034 00c4 03       		.uleb128 0x3
+ 1035 00c5 0E       		.uleb128 0xe
+ 1036 00c6 3A       		.uleb128 0x3a
+ 1037 00c7 0B       		.uleb128 0xb
+ 1038 00c8 3B       		.uleb128 0x3b
+ 1039 00c9 05       		.uleb128 0x5
+ 1040 00ca 27       		.uleb128 0x27
+ 1041 00cb 19       		.uleb128 0x19
+ 1042 00cc 49       		.uleb128 0x49
+ 1043 00cd 13       		.uleb128 0x13
+ 1044 00ce 3C       		.uleb128 0x3c
+ 1045 00cf 19       		.uleb128 0x19
+ 1046 00d0 00       		.byte	0
+ 1047 00d1 00       		.byte	0
+ 1048 00d2 11       		.uleb128 0x11
+ 1049 00d3 05       		.uleb128 0x5
+ 1050 00d4 00       		.byte	0
+ 1051 00d5 49       		.uleb128 0x49
+ 1052 00d6 13       		.uleb128 0x13
+ 1053 00d7 00       		.byte	0
+ 1054 00d8 00       		.byte	0
+ 1055 00d9 00       		.byte	0
+ 1056              		.section	.debug_aranges,"",%progbits
+ 1057 0000 74000000 		.4byte	0x74
+ 1058 0004 0200     		.2byte	0x2
+ 1059 0006 00000000 		.4byte	.Ldebug_info0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 23
+
+
+ 1060 000a 04       		.byte	0x4
+ 1061 000b 00       		.byte	0
+ 1062 000c 0000     		.2byte	0
+ 1063 000e 0000     		.2byte	0
+ 1064 0010 00000000 		.4byte	.LFB46
+ 1065 0014 14000000 		.4byte	.LFE46-.LFB46
+ 1066 0018 00000000 		.4byte	.LFB45
+ 1067 001c 14000000 		.4byte	.LFE45-.LFB45
+ 1068 0020 00000000 		.4byte	.LFB44
+ 1069 0024 14000000 		.4byte	.LFE44-.LFB44
+ 1070 0028 00000000 		.4byte	.LFB43
+ 1071 002c 14000000 		.4byte	.LFE43-.LFB43
+ 1072 0030 00000000 		.4byte	.LFB42
+ 1073 0034 14000000 		.4byte	.LFE42-.LFB42
+ 1074 0038 00000000 		.4byte	.LFB41
+ 1075 003c 14000000 		.4byte	.LFE41-.LFB41
+ 1076 0040 00000000 		.4byte	.LFB40
+ 1077 0044 14000000 		.4byte	.LFE40-.LFB40
+ 1078 0048 00000000 		.4byte	.LFB39
+ 1079 004c 14000000 		.4byte	.LFE39-.LFB39
+ 1080 0050 00000000 		.4byte	.LFB38
+ 1081 0054 14000000 		.4byte	.LFE38-.LFB38
+ 1082 0058 00000000 		.4byte	.LFB37
+ 1083 005c 14000000 		.4byte	.LFE37-.LFB37
+ 1084 0060 00000000 		.4byte	.LFB36
+ 1085 0064 14000000 		.4byte	.LFE36-.LFB36
+ 1086 0068 00000000 		.4byte	.LFB35
+ 1087 006c 14000000 		.4byte	.LFE35-.LFB35
+ 1088 0070 00000000 		.4byte	0
+ 1089 0074 00000000 		.4byte	0
+ 1090              		.section	.debug_ranges,"",%progbits
+ 1091              	.Ldebug_ranges0:
+ 1092 0000 00000000 		.4byte	.LFB46
+ 1093 0004 14000000 		.4byte	.LFE46
+ 1094 0008 00000000 		.4byte	.LFB45
+ 1095 000c 14000000 		.4byte	.LFE45
+ 1096 0010 00000000 		.4byte	.LFB44
+ 1097 0014 14000000 		.4byte	.LFE44
+ 1098 0018 00000000 		.4byte	.LFB43
+ 1099 001c 14000000 		.4byte	.LFE43
+ 1100 0020 00000000 		.4byte	.LFB42
+ 1101 0024 14000000 		.4byte	.LFE42
+ 1102 0028 00000000 		.4byte	.LFB41
+ 1103 002c 14000000 		.4byte	.LFE41
+ 1104 0030 00000000 		.4byte	.LFB40
+ 1105 0034 14000000 		.4byte	.LFE40
+ 1106 0038 00000000 		.4byte	.LFB39
+ 1107 003c 14000000 		.4byte	.LFE39
+ 1108 0040 00000000 		.4byte	.LFB38
+ 1109 0044 14000000 		.4byte	.LFE38
+ 1110 0048 00000000 		.4byte	.LFB37
+ 1111 004c 14000000 		.4byte	.LFE37
+ 1112 0050 00000000 		.4byte	.LFB36
+ 1113 0054 14000000 		.4byte	.LFE36
+ 1114 0058 00000000 		.4byte	.LFB35
+ 1115 005c 14000000 		.4byte	.LFE35
+ 1116 0060 00000000 		.4byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 24
+
+
+ 1117 0064 00000000 		.4byte	0
+ 1118              		.section	.debug_line,"",%progbits
+ 1119              	.Ldebug_line0:
+ 1120 0000 6E010000 		.section	.debug_str,"MS",%progbits,1
+ 1120      02007B00 
+ 1120      00000201 
+ 1120      FB0E0D00 
+ 1120      01010101 
+ 1121              	.LASF25:
+ 1122 0000 4B45595F 		.ascii	"KEY_HUAN_QI\000"
+ 1122      4855414E 
+ 1122      5F514900 
+ 1123              	.LASF39:
+ 1124 000c 70696E5F 		.ascii	"pin_xin_feng\000"
+ 1124      78696E5F 
+ 1124      66656E67 
+ 1124      00
+ 1125              	.LASF15:
+ 1126 0019 4C455645 		.ascii	"LEVEL_LOW\000"
+ 1126      4C5F4C4F 
+ 1126      5700
+ 1127              	.LASF22:
+ 1128 0023 4B45595F 		.ascii	"KEY_WENDU_JIAN\000"
+ 1128      57454E44 
+ 1128      555F4A49 
+ 1128      414E00
+ 1129              	.LASF31:
+ 1130 0032 4B45595F 		.ascii	"KEY_NUMBER\000"
+ 1130      4E554D42 
+ 1130      455200
+ 1131              	.LASF18:
+ 1132 003d 50696E5F 		.ascii	"Pin_input\000"
+ 1132      696E7075 
+ 1132      7400
+ 1133              	.LASF4:
+ 1134 0047 6C6F6E67 		.ascii	"long int\000"
+ 1134      20696E74 
+ 1134      00
+ 1135              	.LASF3:
+ 1136 0050 73686F72 		.ascii	"short unsigned int\000"
+ 1136      7420756E 
+ 1136      7369676E 
+ 1136      65642069 
+ 1136      6E7400
+ 1137              	.LASF36:
+ 1138 0063 70696E5F 		.ascii	"pin_xin_feng_qu_nuan\000"
+ 1138      78696E5F 
+ 1138      66656E67 
+ 1138      5F71755F 
+ 1138      6E75616E 
+ 1139              	.LASF45:
+ 1140 0078 6B65795F 		.ascii	"key_config.c\000"
+ 1140      636F6E66 
+ 1140      69672E63 
+ 1140      00
+ 1141              	.LASF28:
+ 1142 0085 4B45595F 		.ascii	"KEY_DINGSHI_JIAN\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 25
+
+
+ 1142      44494E47 
+ 1142      5348495F 
+ 1142      4A49414E 
+ 1142      00
+ 1143              	.LASF26:
+ 1144 0096 4B45595F 		.ascii	"KEY_XIN_FENG_QU_NUAN\000"
+ 1144      58494E5F 
+ 1144      46454E47 
+ 1144      5F51555F 
+ 1144      4E55414E 
+ 1145              	.LASF11:
+ 1146 00ab 666C6F61 		.ascii	"float\000"
+ 1146      7400
+ 1147              	.LASF1:
+ 1148 00b1 756E7369 		.ascii	"unsigned char\000"
+ 1148      676E6564 
+ 1148      20636861 
+ 1148      7200
+ 1149              	.LASF46:
+ 1150 00bf 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\A"
+ 1150      6F63616C 
+ 1150      5F73766E 
+ 1150      5C415942 
+ 1150      52333030 
+ 1151 00ed 59425233 		.ascii	"YBR3000.cydsn\000"
+ 1151      3030302E 
+ 1151      63796473 
+ 1151      6E00
+ 1152              	.LASF21:
+ 1153 00fb 4B45595F 		.ascii	"KEY_WENDU_JIA\000"
+ 1153      57454E44 
+ 1153      555F4A49 
+ 1153      4100
+ 1154              	.LASF30:
+ 1155 0109 4B45595F 		.ascii	"KEY_ZHI_NENG\000"
+ 1155      5A48495F 
+ 1155      4E454E47 
+ 1155      00
+ 1156              	.LASF5:
+ 1157 0116 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1157      20756E73 
+ 1157      69676E65 
+ 1157      6420696E 
+ 1157      7400
+ 1158              	.LASF35:
+ 1159 0128 70696E5F 		.ascii	"pin_dingshi_jia\000"
+ 1159      64696E67 
+ 1159      7368695F 
+ 1159      6A696100 
+ 1160              	.LASF37:
+ 1161 0138 70696E5F 		.ascii	"pin_huan_qi\000"
+ 1161      6875616E 
+ 1161      5F716900 
+ 1162              	.LASF16:
+ 1163 0144 4C455645 		.ascii	"LEVEL_HIGH\000"
+ 1163      4C5F4849 
+ 1163      474800
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 26
+
+
+ 1164              	.LASF40:
+ 1165 014f 70696E5F 		.ascii	"pin_wendu_jian\000"
+ 1165      77656E64 
+ 1165      755F6A69 
+ 1165      616E00
+ 1166              	.LASF34:
+ 1167 015e 70696E5F 		.ascii	"pin_dingshi_jian\000"
+ 1167      64696E67 
+ 1167      7368695F 
+ 1167      6A69616E 
+ 1167      00
+ 1168              	.LASF10:
+ 1169 016f 75696E74 		.ascii	"uint32\000"
+ 1169      333200
+ 1170              	.LASF48:
+ 1171 0176 6B65795F 		.ascii	"key_touch_IsWidgetActive\000"
+ 1171      746F7563 
+ 1171      685F4973 
+ 1171      57696467 
+ 1171      65744163 
+ 1172              	.LASF8:
+ 1173 018f 756E7369 		.ascii	"unsigned int\000"
+ 1173      676E6564 
+ 1173      20696E74 
+ 1173      00
+ 1174              	.LASF47:
+ 1175 019c 696E7075 		.ascii	"input_pins\000"
+ 1175      745F7069 
+ 1175      6E7300
+ 1176              	.LASF7:
+ 1177 01a7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1177      206C6F6E 
+ 1177      6720756E 
+ 1177      7369676E 
+ 1177      65642069 
+ 1178              	.LASF27:
+ 1179 01be 4B45595F 		.ascii	"KEY_DINGSHI_JIA\000"
+ 1179      44494E47 
+ 1179      5348495F 
+ 1179      4A494100 
+ 1180              	.LASF38:
+ 1181 01ce 70696E5F 		.ascii	"pin_qiang_ruo\000"
+ 1181      7169616E 
+ 1181      675F7275 
+ 1181      6F00
+ 1182              	.LASF14:
+ 1183 01dc 73697A65 		.ascii	"sizetype\000"
+ 1183      74797065 
+ 1183      00
+ 1184              	.LASF42:
+ 1185 01e5 70696E5F 		.ascii	"pin_feng_nuan\000"
+ 1185      66656E67 
+ 1185      5F6E7561 
+ 1185      6E00
+ 1186              	.LASF6:
+ 1187 01f3 6C6F6E67 		.ascii	"long long int\000"
+ 1187      206C6F6E 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 27
+
+
+ 1187      6720696E 
+ 1187      7400
+ 1188              	.LASF29:
+ 1189 0201 4B45595F 		.ascii	"KEY_BAI_DONG\000"
+ 1189      4241495F 
+ 1189      444F4E47 
+ 1189      00
+ 1190              	.LASF32:
+ 1191 020e 70696E5F 		.ascii	"pin_zhi_neng\000"
+ 1191      7A68695F 
+ 1191      6E656E67 
+ 1191      00
+ 1192              	.LASF23:
+ 1193 021b 4B45595F 		.ascii	"KEY_XIN_FENG\000"
+ 1193      58494E5F 
+ 1193      46454E47 
+ 1193      00
+ 1194              	.LASF2:
+ 1195 0228 73686F72 		.ascii	"short int\000"
+ 1195      7420696E 
+ 1195      7400
+ 1196              	.LASF41:
+ 1197 0232 70696E5F 		.ascii	"pin_wendu_jia\000"
+ 1197      77656E64 
+ 1197      755F6A69 
+ 1197      6100
+ 1198              	.LASF9:
+ 1199 0240 75696E74 		.ascii	"uint8\000"
+ 1199      3800
+ 1200              	.LASF43:
+ 1201 0246 70696E5F 		.ascii	"pin_dian_yuan\000"
+ 1201      6469616E 
+ 1201      5F797561 
+ 1201      6E00
+ 1202              	.LASF44:
+ 1203 0254 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1203      4320342E 
+ 1203      392E3320 
+ 1203      32303135 
+ 1203      30333033 
+ 1204 0287 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 1204      20726576 
+ 1204      6973696F 
+ 1204      6E203232 
+ 1204      31323230 
+ 1205 02ba 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1205      67202D66 
+ 1205      66756E63 
+ 1205      74696F6E 
+ 1205      2D736563 
+ 1206              	.LASF13:
+ 1207 02e6 63686172 		.ascii	"char\000"
+ 1207      00
+ 1208              	.LASF24:
+ 1209 02eb 4B45595F 		.ascii	"KEY_QING_RUO\000"
+ 1209      51494E47 
+ 1209      5F52554F 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccKnohSx.s 			page 28
+
+
+ 1209      00
+ 1210              	.LASF17:
+ 1211 02f8 4C657665 		.ascii	"Level\000"
+ 1211      6C00
+ 1212              	.LASF0:
+ 1213 02fe 7369676E 		.ascii	"signed char\000"
+ 1213      65642063 
+ 1213      68617200 
+ 1214              	.LASF12:
+ 1215 030a 646F7562 		.ascii	"double\000"
+ 1215      6C6500
+ 1216              	.LASF19:
+ 1217 0311 4B45595F 		.ascii	"KEY_DIAN_YUAN\000"
+ 1217      4449414E 
+ 1217      5F595541 
+ 1217      4E00
+ 1218              	.LASF20:
+ 1219 031f 4B45595F 		.ascii	"KEY_FENG_NUAN\000"
+ 1219      46454E47 
+ 1219      5F4E5541 
+ 1219      4E00
+ 1220              	.LASF33:
+ 1221 032d 70696E5F 		.ascii	"pin_bai_dong\000"
+ 1221      6261695F 
+ 1221      646F6E67 
+ 1221      00
+ 1222              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,0 +1,6 @@
+---- handler Matches (5 in 2 files) ----
+Key.c (aybr3000.cydsn):static Key_event_handler event_handlers[KEY_NUMBER][KEY_EVENT_NUMBER - 1];     //KEY_STUCK不需要event handler
+Key.c (aybr3000.cydsn):    combine_keys[combine_key_number].handler = h;
+Key.c (aybr3000.cydsn):        if (combine_keys[n].handler == NULL)
+Key.c (aybr3000.cydsn):            combine_keys[n].handler();
+Key.h (aybr3000.cydsn):    Key_conbine_handler handler;

@@ -1,0 +1,896 @@
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"timing.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.timing_get_count,"ax",%progbits
+  18              		.align	2
+  19              		.code	16
+  20              		.thumb_func
+  21              		.type	timing_get_count, %function
+  22              	timing_get_count:
+  23              	.LFB1:
+  24              		.file 1 "timing.c"
+   1:timing.c      **** #include "timing.h"
+   2:timing.c      **** 
+   3:timing.c      **** static uint16 counter = 0;
+   4:timing.c      **** static uint16 timing_get_count(void);
+   5:timing.c      **** /*
+   6:timing.c      **** **1ms增加一次
+   7:timing.c      **** */
+   8:timing.c      **** inline void timing_count(void)
+   9:timing.c      **** {
+  10:timing.c      ****     counter++;
+  11:timing.c      **** }
+  12:timing.c      **** /*
+  13:timing.c      **** **获取counter当前值
+  14:timing.c      **** */
+  15:timing.c      **** static uint16 timing_get_count(void)
+  16:timing.c      **** {    
+  25              		.loc 1 16 0
+  26              		.cfi_startproc
+  17:timing.c      ****     return counter;
+  27              		.loc 1 17 0
+  28 0000 014B     		ldr	r3, .L2
+  29 0002 1888     		ldrh	r0, [r3]
+  18:timing.c      **** }
+  30              		.loc 1 18 0
+  31              		@ sp needed
+  32 0004 7047     		bx	lr
+  33              	.L3:
+  34 0006 C046     		.align	2
+  35              	.L2:
+  36 0008 00000000 		.word	.LANCHOR0
+  37              		.cfi_endproc
+  38              	.LFE1:
+  39              		.size	timing_get_count, .-timing_get_count
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 2
+
+
+  40              		.section	.text.timing_count,"ax",%progbits
+  41              		.align	2
+  42              		.global	timing_count
+  43              		.code	16
+  44              		.thumb_func
+  45              		.type	timing_count, %function
+  46              	timing_count:
+  47              	.LFB0:
+   9:timing.c      ****     counter++;
+  48              		.loc 1 9 0
+  49              		.cfi_startproc
+  10:timing.c      **** }
+  50              		.loc 1 10 0
+  51 0000 024A     		ldr	r2, .L5
+  52 0002 1388     		ldrh	r3, [r2]
+  53 0004 0133     		add	r3, r3, #1
+  54 0006 1380     		strh	r3, [r2]
+  11:timing.c      **** /*
+  55              		.loc 1 11 0
+  56              		@ sp needed
+  57 0008 7047     		bx	lr
+  58              	.L6:
+  59 000a C046     		.align	2
+  60              	.L5:
+  61 000c 00000000 		.word	.LANCHOR0
+  62              		.cfi_endproc
+  63              	.LFE0:
+  64              		.size	timing_count, .-timing_count
+  65              		.section	.text.timing_set_counts,"ax",%progbits
+  66              		.align	2
+  67              		.global	timing_set_counts
+  68              		.code	16
+  69              		.thumb_func
+  70              		.type	timing_set_counts, %function
+  71              	timing_set_counts:
+  72              	.LFB2:
+  19:timing.c      **** 
+  20:timing.c      **** /*
+  21:timing.c      **** **设置定时长度,
+  22:timing.c      **** */
+  23:timing.c      **** void timing_set_counts(Timing_type *pdata, uint16 set_count)
+  24:timing.c      **** {   
+  73              		.loc 1 24 0
+  74              		.cfi_startproc
+  75              	.LVL0:
+  76 0000 38B5     		push	{r3, r4, r5, lr}
+  77              		.cfi_def_cfa_offset 16
+  78              		.cfi_offset 3, -16
+  79              		.cfi_offset 4, -12
+  80              		.cfi_offset 5, -8
+  81              		.cfi_offset 14, -4
+  82 0002 041C     		mov	r4, r0
+  83 0004 0D1C     		mov	r5, r1
+  25:timing.c      ****     pdata->old_count = timing_get_count();   
+  84              		.loc 1 25 0
+  85 0006 FFF7FEFF 		bl	timing_get_count
+  86              	.LVL1:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 3
+
+
+  87 000a 6080     		strh	r0, [r4, #2]
+  26:timing.c      ****     pdata->set_count = set_count;    
+  88              		.loc 1 26 0
+  89 000c A580     		strh	r5, [r4, #4]
+  27:timing.c      ****     pdata->count_end = FALSE;
+  90              		.loc 1 27 0
+  91 000e 0023     		mov	r3, #0
+  92 0010 2370     		strb	r3, [r4]
+  28:timing.c      **** }
+  93              		.loc 1 28 0
+  94              		@ sp needed
+  95              	.LVL2:
+  96 0012 38BD     		pop	{r3, r4, r5, pc}
+  97              		.cfi_endproc
+  98              	.LFE2:
+  99              		.size	timing_set_counts, .-timing_set_counts
+ 100              		.section	.text.timing_count_end,"ax",%progbits
+ 101              		.align	2
+ 102              		.global	timing_count_end
+ 103              		.code	16
+ 104              		.thumb_func
+ 105              		.type	timing_count_end, %function
+ 106              	timing_count_end:
+ 107              	.LFB3:
+  29:timing.c      **** 
+  30:timing.c      **** /*
+  31:timing.c      **** **定时时间到
+  32:timing.c      **** */
+  33:timing.c      **** Bool timing_count_end(Timing_type *pdata)
+  34:timing.c      **** {   
+ 108              		.loc 1 34 0
+ 109              		.cfi_startproc
+ 110              	.LVL3:
+ 111 0000 10B5     		push	{r4, lr}
+ 112              		.cfi_def_cfa_offset 8
+ 113              		.cfi_offset 4, -8
+ 114              		.cfi_offset 14, -4
+ 115 0002 041C     		mov	r4, r0
+ 116              	.LVL4:
+  35:timing.c      ****     uint16 temp = 0;
+  36:timing.c      ****     if ((pdata->count_end) == FALSE)    
+ 117              		.loc 1 36 0
+ 118 0004 0378     		ldrb	r3, [r0]
+ 119 0006 002B     		cmp	r3, #0
+ 120 0008 09D1     		bne	.L9
+  37:timing.c      ****     {        
+  38:timing.c      ****         temp = timing_get_count() - (pdata->old_count);
+ 121              		.loc 1 38 0
+ 122 000a FFF7FEFF 		bl	timing_get_count
+ 123              	.LVL5:
+ 124 000e 6388     		ldrh	r3, [r4, #2]
+ 125 0010 C01A     		sub	r0, r0, r3
+ 126 0012 80B2     		uxth	r0, r0
+ 127              	.LVL6:
+  39:timing.c      ****         if (temp > (pdata->set_count))        
+ 128              		.loc 1 39 0
+ 129 0014 A388     		ldrh	r3, [r4, #4]
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 4
+
+
+ 130 0016 8342     		cmp	r3, r0
+ 131 0018 01D2     		bcs	.L9
+  40:timing.c      ****         {            
+  41:timing.c      ****             pdata->count_end  = TRUE;       
+ 132              		.loc 1 41 0
+ 133 001a 0123     		mov	r3, #1
+ 134 001c 2370     		strb	r3, [r4]
+ 135              	.LVL7:
+ 136              	.L9:
+  42:timing.c      ****         }          
+  43:timing.c      ****     }   
+  44:timing.c      ****     return (pdata->count_end);
+ 137              		.loc 1 44 0
+ 138 001e 2078     		ldrb	r0, [r4]
+  45:timing.c      **** }
+ 139              		.loc 1 45 0
+ 140              		@ sp needed
+ 141              	.LVL8:
+ 142 0020 10BD     		pop	{r4, pc}
+ 143              		.cfi_endproc
+ 144              	.LFE3:
+ 145              		.size	timing_count_end, .-timing_count_end
+ 146 0022 C046     		.bss
+ 147              		.align	1
+ 148              		.set	.LANCHOR0,. + 0
+ 149              		.type	counter, %object
+ 150              		.size	counter, 2
+ 151              	counter:
+ 152 0000 0000     		.space	2
+ 153              		.text
+ 154              	.Letext0:
+ 155              		.file 2 "types.h"
+ 156              		.file 3 "timing.h"
+ 157              		.section	.debug_info,"",%progbits
+ 158              	.Ldebug_info0:
+ 159 0000 63010000 		.4byte	0x163
+ 160 0004 0400     		.2byte	0x4
+ 161 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 162 000a 04       		.byte	0x4
+ 163 000b 01       		.uleb128 0x1
+ 164 000c 01010000 		.4byte	.LASF15
+ 165 0010 01       		.byte	0x1
+ 166 0011 F8000000 		.4byte	.LASF16
+ 167 0015 41000000 		.4byte	.LASF17
+ 168 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 169 001d 00000000 		.4byte	0
+ 170 0021 00000000 		.4byte	.Ldebug_line0
+ 171 0025 02       		.uleb128 0x2
+ 172 0026 04       		.byte	0x4
+ 173 0027 05       		.byte	0x5
+ 174 0028 696E7400 		.ascii	"int\000"
+ 175 002c 03       		.uleb128 0x3
+ 176 002d 04       		.byte	0x4
+ 177 002e 07       		.byte	0x7
+ 178 002f 00000000 		.4byte	.LASF0
+ 179 0033 03       		.uleb128 0x3
+ 180 0034 01       		.byte	0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 5
+
+
+ 181 0035 08       		.byte	0x8
+ 182 0036 A4000000 		.4byte	.LASF1
+ 183 003a 04       		.uleb128 0x4
+ 184 003b A5010000 		.4byte	.LASF6
+ 185 003f 02       		.byte	0x2
+ 186 0040 08       		.byte	0x8
+ 187 0041 45000000 		.4byte	0x45
+ 188 0045 03       		.uleb128 0x3
+ 189 0046 02       		.byte	0x2
+ 190 0047 07       		.byte	0x7
+ 191 0048 E5000000 		.4byte	.LASF2
+ 192 004c 03       		.uleb128 0x3
+ 193 004d 04       		.byte	0x4
+ 194 004e 07       		.byte	0x7
+ 195 004f 2F000000 		.4byte	.LASF3
+ 196 0053 05       		.uleb128 0x5
+ 197 0054 01       		.byte	0x1
+ 198 0055 02       		.byte	0x2
+ 199 0056 12       		.byte	0x12
+ 200 0057 68000000 		.4byte	0x68
+ 201 005b 06       		.uleb128 0x6
+ 202 005c 18000000 		.4byte	.LASF4
+ 203 0060 00       		.sleb128 0
+ 204 0061 06       		.uleb128 0x6
+ 205 0062 B2000000 		.4byte	.LASF5
+ 206 0066 01       		.sleb128 1
+ 207 0067 00       		.byte	0
+ 208 0068 04       		.uleb128 0x4
+ 209 0069 C1000000 		.4byte	.LASF7
+ 210 006d 02       		.byte	0x2
+ 211 006e 15       		.byte	0x15
+ 212 006f 53000000 		.4byte	0x53
+ 213 0073 07       		.uleb128 0x7
+ 214 0074 06       		.byte	0x6
+ 215 0075 03       		.byte	0x3
+ 216 0076 06       		.byte	0x6
+ 217 0077 A0000000 		.4byte	0xa0
+ 218 007b 08       		.uleb128 0x8
+ 219 007c B7000000 		.4byte	.LASF8
+ 220 0080 03       		.byte	0x3
+ 221 0081 08       		.byte	0x8
+ 222 0082 68000000 		.4byte	0x68
+ 223 0086 00       		.byte	0
+ 224 0087 08       		.uleb128 0x8
+ 225 0088 C6000000 		.4byte	.LASF9
+ 226 008c 03       		.byte	0x3
+ 227 008d 09       		.byte	0x9
+ 228 008e 3A000000 		.4byte	0x3a
+ 229 0092 02       		.byte	0x2
+ 230 0093 08       		.uleb128 0x8
+ 231 0094 7D000000 		.4byte	.LASF10
+ 232 0098 03       		.byte	0x3
+ 233 0099 0A       		.byte	0xa
+ 234 009a 3A000000 		.4byte	0x3a
+ 235 009e 04       		.byte	0x4
+ 236 009f 00       		.byte	0
+ 237 00a0 04       		.uleb128 0x4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 6
+
+
+ 238 00a1 87000000 		.4byte	.LASF11
+ 239 00a5 03       		.byte	0x3
+ 240 00a6 0B       		.byte	0xb
+ 241 00a7 73000000 		.4byte	0x73
+ 242 00ab 09       		.uleb128 0x9
+ 243 00ac 1E000000 		.4byte	.LASF18
+ 244 00b0 01       		.byte	0x1
+ 245 00b1 0F       		.byte	0xf
+ 246 00b2 3A000000 		.4byte	0x3a
+ 247 00b6 00000000 		.4byte	.LFB1
+ 248 00ba 0C000000 		.4byte	.LFE1-.LFB1
+ 249 00be 01       		.uleb128 0x1
+ 250 00bf 9C       		.byte	0x9c
+ 251 00c0 0A       		.uleb128 0xa
+ 252 00c1 D0000000 		.4byte	.LASF19
+ 253 00c5 01       		.byte	0x1
+ 254 00c6 08       		.byte	0x8
+ 255 00c7 00000000 		.4byte	.LFB0
+ 256 00cb 10000000 		.4byte	.LFE0-.LFB0
+ 257 00cf 01       		.uleb128 0x1
+ 258 00d0 9C       		.byte	0x9c
+ 259 00d1 0B       		.uleb128 0xb
+ 260 00d2 93010000 		.4byte	.LASF20
+ 261 00d6 01       		.byte	0x1
+ 262 00d7 17       		.byte	0x17
+ 263 00d8 00000000 		.4byte	.LFB2
+ 264 00dc 14000000 		.4byte	.LFE2-.LFB2
+ 265 00e0 01       		.uleb128 0x1
+ 266 00e1 9C       		.byte	0x9c
+ 267 00e2 0E010000 		.4byte	0x10e
+ 268 00e6 0C       		.uleb128 0xc
+ 269 00e7 0D000000 		.4byte	.LASF12
+ 270 00eb 01       		.byte	0x1
+ 271 00ec 17       		.byte	0x17
+ 272 00ed 0E010000 		.4byte	0x10e
+ 273 00f1 00000000 		.4byte	.LLST0
+ 274 00f5 0C       		.uleb128 0xc
+ 275 00f6 7D000000 		.4byte	.LASF10
+ 276 00fa 01       		.byte	0x1
+ 277 00fb 17       		.byte	0x17
+ 278 00fc 3A000000 		.4byte	0x3a
+ 279 0100 2C000000 		.4byte	.LLST1
+ 280 0104 0D       		.uleb128 0xd
+ 281 0105 0A000000 		.4byte	.LVL1
+ 282 0109 AB000000 		.4byte	0xab
+ 283 010d 00       		.byte	0
+ 284 010e 0E       		.uleb128 0xe
+ 285 010f 04       		.byte	0x4
+ 286 0110 A0000000 		.4byte	0xa0
+ 287 0114 0F       		.uleb128 0xf
+ 288 0115 93000000 		.4byte	.LASF21
+ 289 0119 01       		.byte	0x1
+ 290 011a 21       		.byte	0x21
+ 291 011b 68000000 		.4byte	0x68
+ 292 011f 00000000 		.4byte	.LFB3
+ 293 0123 22000000 		.4byte	.LFE3-.LFB3
+ 294 0127 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 7
+
+
+ 295 0128 9C       		.byte	0x9c
+ 296 0129 55010000 		.4byte	0x155
+ 297 012d 0C       		.uleb128 0xc
+ 298 012e 0D000000 		.4byte	.LASF12
+ 299 0132 01       		.byte	0x1
+ 300 0133 21       		.byte	0x21
+ 301 0134 0E010000 		.4byte	0x10e
+ 302 0138 4D000000 		.4byte	.LLST2
+ 303 013c 10       		.uleb128 0x10
+ 304 013d 13000000 		.4byte	.LASF13
+ 305 0141 01       		.byte	0x1
+ 306 0142 23       		.byte	0x23
+ 307 0143 3A000000 		.4byte	0x3a
+ 308 0147 79000000 		.4byte	.LLST3
+ 309 014b 0D       		.uleb128 0xd
+ 310 014c 0E000000 		.4byte	.LVL5
+ 311 0150 AB000000 		.4byte	0xab
+ 312 0154 00       		.byte	0
+ 313 0155 11       		.uleb128 0x11
+ 314 0156 DD000000 		.4byte	.LASF14
+ 315 015a 01       		.byte	0x1
+ 316 015b 03       		.byte	0x3
+ 317 015c 3A000000 		.4byte	0x3a
+ 318 0160 05       		.uleb128 0x5
+ 319 0161 03       		.byte	0x3
+ 320 0162 00000000 		.4byte	counter
+ 321 0166 00       		.byte	0
+ 322              		.section	.debug_abbrev,"",%progbits
+ 323              	.Ldebug_abbrev0:
+ 324 0000 01       		.uleb128 0x1
+ 325 0001 11       		.uleb128 0x11
+ 326 0002 01       		.byte	0x1
+ 327 0003 25       		.uleb128 0x25
+ 328 0004 0E       		.uleb128 0xe
+ 329 0005 13       		.uleb128 0x13
+ 330 0006 0B       		.uleb128 0xb
+ 331 0007 03       		.uleb128 0x3
+ 332 0008 0E       		.uleb128 0xe
+ 333 0009 1B       		.uleb128 0x1b
+ 334 000a 0E       		.uleb128 0xe
+ 335 000b 55       		.uleb128 0x55
+ 336 000c 17       		.uleb128 0x17
+ 337 000d 11       		.uleb128 0x11
+ 338 000e 01       		.uleb128 0x1
+ 339 000f 10       		.uleb128 0x10
+ 340 0010 17       		.uleb128 0x17
+ 341 0011 00       		.byte	0
+ 342 0012 00       		.byte	0
+ 343 0013 02       		.uleb128 0x2
+ 344 0014 24       		.uleb128 0x24
+ 345 0015 00       		.byte	0
+ 346 0016 0B       		.uleb128 0xb
+ 347 0017 0B       		.uleb128 0xb
+ 348 0018 3E       		.uleb128 0x3e
+ 349 0019 0B       		.uleb128 0xb
+ 350 001a 03       		.uleb128 0x3
+ 351 001b 08       		.uleb128 0x8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 8
+
+
+ 352 001c 00       		.byte	0
+ 353 001d 00       		.byte	0
+ 354 001e 03       		.uleb128 0x3
+ 355 001f 24       		.uleb128 0x24
+ 356 0020 00       		.byte	0
+ 357 0021 0B       		.uleb128 0xb
+ 358 0022 0B       		.uleb128 0xb
+ 359 0023 3E       		.uleb128 0x3e
+ 360 0024 0B       		.uleb128 0xb
+ 361 0025 03       		.uleb128 0x3
+ 362 0026 0E       		.uleb128 0xe
+ 363 0027 00       		.byte	0
+ 364 0028 00       		.byte	0
+ 365 0029 04       		.uleb128 0x4
+ 366 002a 16       		.uleb128 0x16
+ 367 002b 00       		.byte	0
+ 368 002c 03       		.uleb128 0x3
+ 369 002d 0E       		.uleb128 0xe
+ 370 002e 3A       		.uleb128 0x3a
+ 371 002f 0B       		.uleb128 0xb
+ 372 0030 3B       		.uleb128 0x3b
+ 373 0031 0B       		.uleb128 0xb
+ 374 0032 49       		.uleb128 0x49
+ 375 0033 13       		.uleb128 0x13
+ 376 0034 00       		.byte	0
+ 377 0035 00       		.byte	0
+ 378 0036 05       		.uleb128 0x5
+ 379 0037 04       		.uleb128 0x4
+ 380 0038 01       		.byte	0x1
+ 381 0039 0B       		.uleb128 0xb
+ 382 003a 0B       		.uleb128 0xb
+ 383 003b 3A       		.uleb128 0x3a
+ 384 003c 0B       		.uleb128 0xb
+ 385 003d 3B       		.uleb128 0x3b
+ 386 003e 0B       		.uleb128 0xb
+ 387 003f 01       		.uleb128 0x1
+ 388 0040 13       		.uleb128 0x13
+ 389 0041 00       		.byte	0
+ 390 0042 00       		.byte	0
+ 391 0043 06       		.uleb128 0x6
+ 392 0044 28       		.uleb128 0x28
+ 393 0045 00       		.byte	0
+ 394 0046 03       		.uleb128 0x3
+ 395 0047 0E       		.uleb128 0xe
+ 396 0048 1C       		.uleb128 0x1c
+ 397 0049 0D       		.uleb128 0xd
+ 398 004a 00       		.byte	0
+ 399 004b 00       		.byte	0
+ 400 004c 07       		.uleb128 0x7
+ 401 004d 13       		.uleb128 0x13
+ 402 004e 01       		.byte	0x1
+ 403 004f 0B       		.uleb128 0xb
+ 404 0050 0B       		.uleb128 0xb
+ 405 0051 3A       		.uleb128 0x3a
+ 406 0052 0B       		.uleb128 0xb
+ 407 0053 3B       		.uleb128 0x3b
+ 408 0054 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 9
+
+
+ 409 0055 01       		.uleb128 0x1
+ 410 0056 13       		.uleb128 0x13
+ 411 0057 00       		.byte	0
+ 412 0058 00       		.byte	0
+ 413 0059 08       		.uleb128 0x8
+ 414 005a 0D       		.uleb128 0xd
+ 415 005b 00       		.byte	0
+ 416 005c 03       		.uleb128 0x3
+ 417 005d 0E       		.uleb128 0xe
+ 418 005e 3A       		.uleb128 0x3a
+ 419 005f 0B       		.uleb128 0xb
+ 420 0060 3B       		.uleb128 0x3b
+ 421 0061 0B       		.uleb128 0xb
+ 422 0062 49       		.uleb128 0x49
+ 423 0063 13       		.uleb128 0x13
+ 424 0064 38       		.uleb128 0x38
+ 425 0065 0B       		.uleb128 0xb
+ 426 0066 00       		.byte	0
+ 427 0067 00       		.byte	0
+ 428 0068 09       		.uleb128 0x9
+ 429 0069 2E       		.uleb128 0x2e
+ 430 006a 00       		.byte	0
+ 431 006b 03       		.uleb128 0x3
+ 432 006c 0E       		.uleb128 0xe
+ 433 006d 3A       		.uleb128 0x3a
+ 434 006e 0B       		.uleb128 0xb
+ 435 006f 3B       		.uleb128 0x3b
+ 436 0070 0B       		.uleb128 0xb
+ 437 0071 27       		.uleb128 0x27
+ 438 0072 19       		.uleb128 0x19
+ 439 0073 49       		.uleb128 0x49
+ 440 0074 13       		.uleb128 0x13
+ 441 0075 11       		.uleb128 0x11
+ 442 0076 01       		.uleb128 0x1
+ 443 0077 12       		.uleb128 0x12
+ 444 0078 06       		.uleb128 0x6
+ 445 0079 40       		.uleb128 0x40
+ 446 007a 18       		.uleb128 0x18
+ 447 007b 9742     		.uleb128 0x2117
+ 448 007d 19       		.uleb128 0x19
+ 449 007e 00       		.byte	0
+ 450 007f 00       		.byte	0
+ 451 0080 0A       		.uleb128 0xa
+ 452 0081 2E       		.uleb128 0x2e
+ 453 0082 00       		.byte	0
+ 454 0083 3F       		.uleb128 0x3f
+ 455 0084 19       		.uleb128 0x19
+ 456 0085 03       		.uleb128 0x3
+ 457 0086 0E       		.uleb128 0xe
+ 458 0087 3A       		.uleb128 0x3a
+ 459 0088 0B       		.uleb128 0xb
+ 460 0089 3B       		.uleb128 0x3b
+ 461 008a 0B       		.uleb128 0xb
+ 462 008b 27       		.uleb128 0x27
+ 463 008c 19       		.uleb128 0x19
+ 464 008d 11       		.uleb128 0x11
+ 465 008e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 10
+
+
+ 466 008f 12       		.uleb128 0x12
+ 467 0090 06       		.uleb128 0x6
+ 468 0091 40       		.uleb128 0x40
+ 469 0092 18       		.uleb128 0x18
+ 470 0093 9742     		.uleb128 0x2117
+ 471 0095 19       		.uleb128 0x19
+ 472 0096 00       		.byte	0
+ 473 0097 00       		.byte	0
+ 474 0098 0B       		.uleb128 0xb
+ 475 0099 2E       		.uleb128 0x2e
+ 476 009a 01       		.byte	0x1
+ 477 009b 3F       		.uleb128 0x3f
+ 478 009c 19       		.uleb128 0x19
+ 479 009d 03       		.uleb128 0x3
+ 480 009e 0E       		.uleb128 0xe
+ 481 009f 3A       		.uleb128 0x3a
+ 482 00a0 0B       		.uleb128 0xb
+ 483 00a1 3B       		.uleb128 0x3b
+ 484 00a2 0B       		.uleb128 0xb
+ 485 00a3 27       		.uleb128 0x27
+ 486 00a4 19       		.uleb128 0x19
+ 487 00a5 11       		.uleb128 0x11
+ 488 00a6 01       		.uleb128 0x1
+ 489 00a7 12       		.uleb128 0x12
+ 490 00a8 06       		.uleb128 0x6
+ 491 00a9 40       		.uleb128 0x40
+ 492 00aa 18       		.uleb128 0x18
+ 493 00ab 9742     		.uleb128 0x2117
+ 494 00ad 19       		.uleb128 0x19
+ 495 00ae 01       		.uleb128 0x1
+ 496 00af 13       		.uleb128 0x13
+ 497 00b0 00       		.byte	0
+ 498 00b1 00       		.byte	0
+ 499 00b2 0C       		.uleb128 0xc
+ 500 00b3 05       		.uleb128 0x5
+ 501 00b4 00       		.byte	0
+ 502 00b5 03       		.uleb128 0x3
+ 503 00b6 0E       		.uleb128 0xe
+ 504 00b7 3A       		.uleb128 0x3a
+ 505 00b8 0B       		.uleb128 0xb
+ 506 00b9 3B       		.uleb128 0x3b
+ 507 00ba 0B       		.uleb128 0xb
+ 508 00bb 49       		.uleb128 0x49
+ 509 00bc 13       		.uleb128 0x13
+ 510 00bd 02       		.uleb128 0x2
+ 511 00be 17       		.uleb128 0x17
+ 512 00bf 00       		.byte	0
+ 513 00c0 00       		.byte	0
+ 514 00c1 0D       		.uleb128 0xd
+ 515 00c2 898201   		.uleb128 0x4109
+ 516 00c5 00       		.byte	0
+ 517 00c6 11       		.uleb128 0x11
+ 518 00c7 01       		.uleb128 0x1
+ 519 00c8 31       		.uleb128 0x31
+ 520 00c9 13       		.uleb128 0x13
+ 521 00ca 00       		.byte	0
+ 522 00cb 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 11
+
+
+ 523 00cc 0E       		.uleb128 0xe
+ 524 00cd 0F       		.uleb128 0xf
+ 525 00ce 00       		.byte	0
+ 526 00cf 0B       		.uleb128 0xb
+ 527 00d0 0B       		.uleb128 0xb
+ 528 00d1 49       		.uleb128 0x49
+ 529 00d2 13       		.uleb128 0x13
+ 530 00d3 00       		.byte	0
+ 531 00d4 00       		.byte	0
+ 532 00d5 0F       		.uleb128 0xf
+ 533 00d6 2E       		.uleb128 0x2e
+ 534 00d7 01       		.byte	0x1
+ 535 00d8 3F       		.uleb128 0x3f
+ 536 00d9 19       		.uleb128 0x19
+ 537 00da 03       		.uleb128 0x3
+ 538 00db 0E       		.uleb128 0xe
+ 539 00dc 3A       		.uleb128 0x3a
+ 540 00dd 0B       		.uleb128 0xb
+ 541 00de 3B       		.uleb128 0x3b
+ 542 00df 0B       		.uleb128 0xb
+ 543 00e0 27       		.uleb128 0x27
+ 544 00e1 19       		.uleb128 0x19
+ 545 00e2 49       		.uleb128 0x49
+ 546 00e3 13       		.uleb128 0x13
+ 547 00e4 11       		.uleb128 0x11
+ 548 00e5 01       		.uleb128 0x1
+ 549 00e6 12       		.uleb128 0x12
+ 550 00e7 06       		.uleb128 0x6
+ 551 00e8 40       		.uleb128 0x40
+ 552 00e9 18       		.uleb128 0x18
+ 553 00ea 9742     		.uleb128 0x2117
+ 554 00ec 19       		.uleb128 0x19
+ 555 00ed 01       		.uleb128 0x1
+ 556 00ee 13       		.uleb128 0x13
+ 557 00ef 00       		.byte	0
+ 558 00f0 00       		.byte	0
+ 559 00f1 10       		.uleb128 0x10
+ 560 00f2 34       		.uleb128 0x34
+ 561 00f3 00       		.byte	0
+ 562 00f4 03       		.uleb128 0x3
+ 563 00f5 0E       		.uleb128 0xe
+ 564 00f6 3A       		.uleb128 0x3a
+ 565 00f7 0B       		.uleb128 0xb
+ 566 00f8 3B       		.uleb128 0x3b
+ 567 00f9 0B       		.uleb128 0xb
+ 568 00fa 49       		.uleb128 0x49
+ 569 00fb 13       		.uleb128 0x13
+ 570 00fc 02       		.uleb128 0x2
+ 571 00fd 17       		.uleb128 0x17
+ 572 00fe 00       		.byte	0
+ 573 00ff 00       		.byte	0
+ 574 0100 11       		.uleb128 0x11
+ 575 0101 34       		.uleb128 0x34
+ 576 0102 00       		.byte	0
+ 577 0103 03       		.uleb128 0x3
+ 578 0104 0E       		.uleb128 0xe
+ 579 0105 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 12
+
+
+ 580 0106 0B       		.uleb128 0xb
+ 581 0107 3B       		.uleb128 0x3b
+ 582 0108 0B       		.uleb128 0xb
+ 583 0109 49       		.uleb128 0x49
+ 584 010a 13       		.uleb128 0x13
+ 585 010b 02       		.uleb128 0x2
+ 586 010c 18       		.uleb128 0x18
+ 587 010d 00       		.byte	0
+ 588 010e 00       		.byte	0
+ 589 010f 00       		.byte	0
+ 590              		.section	.debug_loc,"",%progbits
+ 591              	.Ldebug_loc0:
+ 592              	.LLST0:
+ 593 0000 00000000 		.4byte	.LVL0
+ 594 0004 09000000 		.4byte	.LVL1-1
+ 595 0008 0100     		.2byte	0x1
+ 596 000a 50       		.byte	0x50
+ 597 000b 09000000 		.4byte	.LVL1-1
+ 598 000f 12000000 		.4byte	.LVL2
+ 599 0013 0100     		.2byte	0x1
+ 600 0015 54       		.byte	0x54
+ 601 0016 12000000 		.4byte	.LVL2
+ 602 001a 14000000 		.4byte	.LFE2
+ 603 001e 0400     		.2byte	0x4
+ 604 0020 F3       		.byte	0xf3
+ 605 0021 01       		.uleb128 0x1
+ 606 0022 50       		.byte	0x50
+ 607 0023 9F       		.byte	0x9f
+ 608 0024 00000000 		.4byte	0
+ 609 0028 00000000 		.4byte	0
+ 610              	.LLST1:
+ 611 002c 00000000 		.4byte	.LVL0
+ 612 0030 09000000 		.4byte	.LVL1-1
+ 613 0034 0100     		.2byte	0x1
+ 614 0036 51       		.byte	0x51
+ 615 0037 09000000 		.4byte	.LVL1-1
+ 616 003b 14000000 		.4byte	.LFE2
+ 617 003f 0400     		.2byte	0x4
+ 618 0041 F3       		.byte	0xf3
+ 619 0042 01       		.uleb128 0x1
+ 620 0043 51       		.byte	0x51
+ 621 0044 9F       		.byte	0x9f
+ 622 0045 00000000 		.4byte	0
+ 623 0049 00000000 		.4byte	0
+ 624              	.LLST2:
+ 625 004d 00000000 		.4byte	.LVL3
+ 626 0051 0D000000 		.4byte	.LVL5-1
+ 627 0055 0100     		.2byte	0x1
+ 628 0057 50       		.byte	0x50
+ 629 0058 0D000000 		.4byte	.LVL5-1
+ 630 005c 20000000 		.4byte	.LVL8
+ 631 0060 0100     		.2byte	0x1
+ 632 0062 54       		.byte	0x54
+ 633 0063 20000000 		.4byte	.LVL8
+ 634 0067 22000000 		.4byte	.LFE3
+ 635 006b 0400     		.2byte	0x4
+ 636 006d F3       		.byte	0xf3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 13
+
+
+ 637 006e 01       		.uleb128 0x1
+ 638 006f 50       		.byte	0x50
+ 639 0070 9F       		.byte	0x9f
+ 640 0071 00000000 		.4byte	0
+ 641 0075 00000000 		.4byte	0
+ 642              	.LLST3:
+ 643 0079 04000000 		.4byte	.LVL4
+ 644 007d 14000000 		.4byte	.LVL6
+ 645 0081 0200     		.2byte	0x2
+ 646 0083 30       		.byte	0x30
+ 647 0084 9F       		.byte	0x9f
+ 648 0085 14000000 		.4byte	.LVL6
+ 649 0089 1E000000 		.4byte	.LVL7
+ 650 008d 0100     		.2byte	0x1
+ 651 008f 50       		.byte	0x50
+ 652 0090 00000000 		.4byte	0
+ 653 0094 00000000 		.4byte	0
+ 654              		.section	.debug_aranges,"",%progbits
+ 655 0000 34000000 		.4byte	0x34
+ 656 0004 0200     		.2byte	0x2
+ 657 0006 00000000 		.4byte	.Ldebug_info0
+ 658 000a 04       		.byte	0x4
+ 659 000b 00       		.byte	0
+ 660 000c 0000     		.2byte	0
+ 661 000e 0000     		.2byte	0
+ 662 0010 00000000 		.4byte	.LFB1
+ 663 0014 0C000000 		.4byte	.LFE1-.LFB1
+ 664 0018 00000000 		.4byte	.LFB0
+ 665 001c 10000000 		.4byte	.LFE0-.LFB0
+ 666 0020 00000000 		.4byte	.LFB2
+ 667 0024 14000000 		.4byte	.LFE2-.LFB2
+ 668 0028 00000000 		.4byte	.LFB3
+ 669 002c 22000000 		.4byte	.LFE3-.LFB3
+ 670 0030 00000000 		.4byte	0
+ 671 0034 00000000 		.4byte	0
+ 672              		.section	.debug_ranges,"",%progbits
+ 673              	.Ldebug_ranges0:
+ 674 0000 00000000 		.4byte	.LFB1
+ 675 0004 0C000000 		.4byte	.LFE1
+ 676 0008 00000000 		.4byte	.LFB0
+ 677 000c 10000000 		.4byte	.LFE0
+ 678 0010 00000000 		.4byte	.LFB2
+ 679 0014 14000000 		.4byte	.LFE2
+ 680 0018 00000000 		.4byte	.LFB3
+ 681 001c 22000000 		.4byte	.LFE3
+ 682 0020 00000000 		.4byte	0
+ 683 0024 00000000 		.4byte	0
+ 684              		.section	.debug_line,"",%progbits
+ 685              	.Ldebug_line0:
+ 686 0000 84000000 		.section	.debug_str,"MS",%progbits,1
+ 686      02003600 
+ 686      00000201 
+ 686      FB0E0D00 
+ 686      01010101 
+ 687              	.LASF0:
+ 688 0000 756E7369 		.ascii	"unsigned int\000"
+ 688      676E6564 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 14
+
+
+ 688      20696E74 
+ 688      00
+ 689              	.LASF12:
+ 690 000d 70646174 		.ascii	"pdata\000"
+ 690      6100
+ 691              	.LASF13:
+ 692 0013 74656D70 		.ascii	"temp\000"
+ 692      00
+ 693              	.LASF4:
+ 694 0018 46414C53 		.ascii	"FALSE\000"
+ 694      4500
+ 695              	.LASF18:
+ 696 001e 74696D69 		.ascii	"timing_get_count\000"
+ 696      6E675F67 
+ 696      65745F63 
+ 696      6F756E74 
+ 696      00
+ 697              	.LASF3:
+ 698 002f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 698      20756E73 
+ 698      69676E65 
+ 698      6420696E 
+ 698      7400
+ 699              	.LASF17:
+ 700 0041 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\A"
+ 700      6F63616C 
+ 700      5F73766E 
+ 700      5C415942 
+ 700      52333030 
+ 701 006f 59425233 		.ascii	"YBR3000.cydsn\000"
+ 701      3030302E 
+ 701      63796473 
+ 701      6E00
+ 702              	.LASF10:
+ 703 007d 7365745F 		.ascii	"set_count\000"
+ 703      636F756E 
+ 703      7400
+ 704              	.LASF11:
+ 705 0087 54696D69 		.ascii	"Timing_type\000"
+ 705      6E675F74 
+ 705      79706500 
+ 706              	.LASF21:
+ 707 0093 74696D69 		.ascii	"timing_count_end\000"
+ 707      6E675F63 
+ 707      6F756E74 
+ 707      5F656E64 
+ 707      00
+ 708              	.LASF1:
+ 709 00a4 756E7369 		.ascii	"unsigned char\000"
+ 709      676E6564 
+ 709      20636861 
+ 709      7200
+ 710              	.LASF5:
+ 711 00b2 54525545 		.ascii	"TRUE\000"
+ 711      00
+ 712              	.LASF8:
+ 713 00b7 636F756E 		.ascii	"count_end\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccDwFNIN.s 			page 15
+
+
+ 713      745F656E 
+ 713      6400
+ 714              	.LASF7:
+ 715 00c1 426F6F6C 		.ascii	"Bool\000"
+ 715      00
+ 716              	.LASF9:
+ 717 00c6 6F6C645F 		.ascii	"old_count\000"
+ 717      636F756E 
+ 717      7400
+ 718              	.LASF19:
+ 719 00d0 74696D69 		.ascii	"timing_count\000"
+ 719      6E675F63 
+ 719      6F756E74 
+ 719      00
+ 720              	.LASF14:
+ 721 00dd 636F756E 		.ascii	"counter\000"
+ 721      74657200 
+ 722              	.LASF2:
+ 723 00e5 73686F72 		.ascii	"short unsigned int\000"
+ 723      7420756E 
+ 723      7369676E 
+ 723      65642069 
+ 723      6E7400
+ 724              	.LASF16:
+ 725 00f8 74696D69 		.ascii	"timing.c\000"
+ 725      6E672E63 
+ 725      00
+ 726              	.LASF15:
+ 727 0101 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 727      4320342E 
+ 727      392E3320 
+ 727      32303135 
+ 727      30333033 
+ 728 0134 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 728      20726576 
+ 728      6973696F 
+ 728      6E203232 
+ 728      31323230 
+ 729 0167 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 729      67202D66 
+ 729      66756E63 
+ 729      74696F6E 
+ 729      2D736563 
+ 730              	.LASF20:
+ 731 0193 74696D69 		.ascii	"timing_set_counts\000"
+ 731      6E675F73 
+ 731      65745F63 
+ 731      6F756E74 
+ 731      7300
+ 732              	.LASF6:
+ 733 01a5 75696E74 		.ascii	"uint16\000"
+ 733      313600
+ 734              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

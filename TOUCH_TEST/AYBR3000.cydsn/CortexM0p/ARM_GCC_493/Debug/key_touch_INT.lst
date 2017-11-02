@@ -1,0 +1,3614 @@
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"key_touch_INT.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.key_touch_CSDPostSingleScan,"ax",%progbits
+  18              		.align	2
+  19              		.global	key_touch_CSDPostSingleScan
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	key_touch_CSDPostSingleScan, %function
+  23              	key_touch_CSDPostSingleScan:
+  24              	.LFB1:
+  25              		.file 1 "Generated_Source\\PSoC4\\key_touch_INT.c"
+   1:Generated_Source\PSoC4/key_touch_INT.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/key_touch_INT.c **** * \file key_touch_INT.c
+   3:Generated_Source\PSoC4/key_touch_INT.c **** * \version 3.10
+   4:Generated_Source\PSoC4/key_touch_INT.c **** *
+   5:Generated_Source\PSoC4/key_touch_INT.c **** * \brief
+   6:Generated_Source\PSoC4/key_touch_INT.c **** *   This file contains the source code for implementation of the CapSense component
+   7:Generated_Source\PSoC4/key_touch_INT.c **** *   Interrupt Service Routine (ISR).
+   8:Generated_Source\PSoC4/key_touch_INT.c **** *
+   9:Generated_Source\PSoC4/key_touch_INT.c **** * \see CapSense P4 v3.10 Datasheet
+  10:Generated_Source\PSoC4/key_touch_INT.c **** *
+  11:Generated_Source\PSoC4/key_touch_INT.c **** *//*****************************************************************************
+  12:Generated_Source\PSoC4/key_touch_INT.c **** * Copyright (2016), Cypress Semiconductor Corporation.
+  13:Generated_Source\PSoC4/key_touch_INT.c **** ********************************************************************************
+  14:Generated_Source\PSoC4/key_touch_INT.c **** * This software is owned by Cypress Semiconductor Corporation (Cypress) and is
+  15:Generated_Source\PSoC4/key_touch_INT.c **** * protected by and subject to worldwide patent protection (United States and
+  16:Generated_Source\PSoC4/key_touch_INT.c **** * foreign), United States copyright laws and international treaty provisions.
+  17:Generated_Source\PSoC4/key_touch_INT.c **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+  18:Generated_Source\PSoC4/key_touch_INT.c **** * license to copy, use, modify, create derivative works of, and compile the
+  19:Generated_Source\PSoC4/key_touch_INT.c **** * Cypress Source Code and derivative works for the sole purpose of creating
+  20:Generated_Source\PSoC4/key_touch_INT.c **** * custom software in support of licensee product to be used only in conjunction
+  21:Generated_Source\PSoC4/key_touch_INT.c **** * with a Cypress integrated circuit as specified in the applicable agreement.
+  22:Generated_Source\PSoC4/key_touch_INT.c **** * Any reproduction, modification, translation, compilation, or representation of
+  23:Generated_Source\PSoC4/key_touch_INT.c **** * this software except as specified above is prohibited without the express
+  24:Generated_Source\PSoC4/key_touch_INT.c **** * written permission of Cypress.
+  25:Generated_Source\PSoC4/key_touch_INT.c **** *
+  26:Generated_Source\PSoC4/key_touch_INT.c **** * Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH
+  27:Generated_Source\PSoC4/key_touch_INT.c **** * REGARD TO THIS MATERIAL, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  28:Generated_Source\PSoC4/key_touch_INT.c **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  29:Generated_Source\PSoC4/key_touch_INT.c **** * Cypress reserves the right to make changes without further notice to the
+  30:Generated_Source\PSoC4/key_touch_INT.c **** * materials described herein. Cypress does not assume any liability arising out
+  31:Generated_Source\PSoC4/key_touch_INT.c **** * of the application or use of any product or circuit described herein. Cypress
+  32:Generated_Source\PSoC4/key_touch_INT.c **** * does not authorize its products for use as critical components in life-support
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 2
+
+
+  33:Generated_Source\PSoC4/key_touch_INT.c **** * systems where a malfunction or failure may reasonably be expected to result in
+  34:Generated_Source\PSoC4/key_touch_INT.c **** * significant injury to the user. The inclusion of Cypress' product in a life-
+  35:Generated_Source\PSoC4/key_touch_INT.c **** * support systems application implies that the manufacturer assumes all risk of
+  36:Generated_Source\PSoC4/key_touch_INT.c **** * such use and in doing so indemnifies Cypress against all charges. Use may be
+  37:Generated_Source\PSoC4/key_touch_INT.c **** * limited by and subject to the applicable Cypress software license agreement.
+  38:Generated_Source\PSoC4/key_touch_INT.c **** *******************************************************************************/
+  39:Generated_Source\PSoC4/key_touch_INT.c **** #include "cytypes.h"
+  40:Generated_Source\PSoC4/key_touch_INT.c **** #include "cyfitter.h"
+  41:Generated_Source\PSoC4/key_touch_INT.c **** #include "key_touch_Configuration.h"
+  42:Generated_Source\PSoC4/key_touch_INT.c **** #include "key_touch_Sensing.h"
+  43:Generated_Source\PSoC4/key_touch_INT.c **** #include "cyapicallbacks.h"
+  44:Generated_Source\PSoC4/key_touch_INT.c **** 
+  45:Generated_Source\PSoC4/key_touch_INT.c **** /*******************************************************************************
+  46:Generated_Source\PSoC4/key_touch_INT.c **** * Static Function Prototypes
+  47:Generated_Source\PSoC4/key_touch_INT.c **** *******************************************************************************/
+  48:Generated_Source\PSoC4/key_touch_INT.c **** /**
+  49:Generated_Source\PSoC4/key_touch_INT.c **** * \if SECTION_CAPSENSE_INTERNAL
+  50:Generated_Source\PSoC4/key_touch_INT.c **** * \addtogroup group_capsense_internal
+  51:Generated_Source\PSoC4/key_touch_INT.c **** * \{
+  52:Generated_Source\PSoC4/key_touch_INT.c **** */
+  53:Generated_Source\PSoC4/key_touch_INT.c **** 
+  54:Generated_Source\PSoC4/key_touch_INT.c **** #if (((key_touch_ENABLE == key_touch_CSD_EN) || (key_touch_ENABLE == key_touch_CSD_CSX_EN)) && \
+  55:Generated_Source\PSoC4/key_touch_INT.c ****      (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN))
+  56:Generated_Source\PSoC4/key_touch_INT.c ****     static void key_touch_SsNextFrequencyScan(void);
+  57:Generated_Source\PSoC4/key_touch_INT.c **** #endif /* (((key_touch_ENABLE == key_touch_CSD_EN) || (key_touch_ENABLE == key_touch_CSD_CSX_EN)) &
+  58:Generated_Source\PSoC4/key_touch_INT.c ****             (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)) */
+  59:Generated_Source\PSoC4/key_touch_INT.c **** 
+  60:Generated_Source\PSoC4/key_touch_INT.c **** #if ((key_touch_ENABLE == key_touch_CSD_EN) || (key_touch_ENABLE == key_touch_CSD_CSX_EN))
+  61:Generated_Source\PSoC4/key_touch_INT.c ****     CY_INLINE static void key_touch_SsCSDPostScan(void);
+  62:Generated_Source\PSoC4/key_touch_INT.c ****     CY_INLINE static void key_touch_SsCSDInitNextScan(void);
+  63:Generated_Source\PSoC4/key_touch_INT.c **** #endif /* ((key_touch_ENABLE == key_touch_CSD_EN) || (key_touch_ENABLE == key_touch_CSD_CSX_EN)) */
+  64:Generated_Source\PSoC4/key_touch_INT.c **** 
+  65:Generated_Source\PSoC4/key_touch_INT.c **** #if (key_touch_ENABLE == key_touch_CSD2X_EN)
+  66:Generated_Source\PSoC4/key_touch_INT.c ****     #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+  67:Generated_Source\PSoC4/key_touch_INT.c ****         CY_INLINE static void key_touch_SsCSD2XCheckNextScan(void);
+  68:Generated_Source\PSoC4/key_touch_INT.c ****         static void key_touch_SsCSD2XNextFrequencyScan(void);
+  69:Generated_Source\PSoC4/key_touch_INT.c ****     #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+  70:Generated_Source\PSoC4/key_touch_INT.c ****     CY_INLINE static void key_touch_SsCSD2XInitNextScan(void);
+  71:Generated_Source\PSoC4/key_touch_INT.c **** #endif /* (key_touch_ENABLE == key_touch_CSD2X_EN) */
+  72:Generated_Source\PSoC4/key_touch_INT.c **** 
+  73:Generated_Source\PSoC4/key_touch_INT.c ****    
+  74:Generated_Source\PSoC4/key_touch_INT.c **** /** \}
+  75:Generated_Source\PSoC4/key_touch_INT.c **** * \endif */
+  76:Generated_Source\PSoC4/key_touch_INT.c **** 
+  77:Generated_Source\PSoC4/key_touch_INT.c **** 
+  78:Generated_Source\PSoC4/key_touch_INT.c **** /**
+  79:Generated_Source\PSoC4/key_touch_INT.c **** * \if SECTION_CAPSENSE_INTERRUPT
+  80:Generated_Source\PSoC4/key_touch_INT.c **** * \addtogroup group_capsense_interrupt
+  81:Generated_Source\PSoC4/key_touch_INT.c **** * \{
+  82:Generated_Source\PSoC4/key_touch_INT.c **** */
+  83:Generated_Source\PSoC4/key_touch_INT.c **** 
+  84:Generated_Source\PSoC4/key_touch_INT.c **** 
+  85:Generated_Source\PSoC4/key_touch_INT.c **** #if ((key_touch_ENABLE == key_touch_CSD_EN) || (key_touch_ENABLE == key_touch_CSD_CSX_EN))
+  86:Generated_Source\PSoC4/key_touch_INT.c **** 
+  87:Generated_Source\PSoC4/key_touch_INT.c **** #if (key_touch_ENABLE == key_touch_CSDV2)
+  88:Generated_Source\PSoC4/key_touch_INT.c ****     /*  CSDv2 HW IP block part */
+  89:Generated_Source\PSoC4/key_touch_INT.c **** 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 3
+
+
+  90:Generated_Source\PSoC4/key_touch_INT.c ****     /*******************************************************************************
+  91:Generated_Source\PSoC4/key_touch_INT.c ****     * Function Name: key_touch_CSDPostSingleScan
+  92:Generated_Source\PSoC4/key_touch_INT.c ****     ****************************************************************************//**
+  93:Generated_Source\PSoC4/key_touch_INT.c ****     *
+  94:Generated_Source\PSoC4/key_touch_INT.c ****     * \brief
+  95:Generated_Source\PSoC4/key_touch_INT.c ****     *  This is an internal ISR function for single-sensor scanning implementation.
+  96:Generated_Source\PSoC4/key_touch_INT.c ****     *
+  97:Generated_Source\PSoC4/key_touch_INT.c ****     * \details
+  98:Generated_Source\PSoC4/key_touch_INT.c ****     *  This ISR handler is triggered when the user calls the
+  99:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_CSDScanExt() function.
+ 100:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 101:Generated_Source\PSoC4/key_touch_INT.c ****     *  The following tasks are performed for CSDv1 HW IP block:
+ 102:Generated_Source\PSoC4/key_touch_INT.c ****     *    1. Disable the CSD interrupt
+ 103:Generated_Source\PSoC4/key_touch_INT.c ****     *    2. Read the Counter register and update the data structure with raw data
+ 104:Generated_Source\PSoC4/key_touch_INT.c ****     *    3. Connect the Vref buffer to the AMUX bus
+ 105:Generated_Source\PSoC4/key_touch_INT.c ****     *    4. Update the Scan Counter
+ 106:Generated_Source\PSoC4/key_touch_INT.c ****     *    5. Reset the BUSY flag
+ 107:Generated_Source\PSoC4/key_touch_INT.c ****     *    6. Enable the CSD interrupt.
+ 108:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 109:Generated_Source\PSoC4/key_touch_INT.c ****     *  The following tasks are performed for CSDv2 HW IP block:
+ 110:Generated_Source\PSoC4/key_touch_INT.c ****     *    1. Check if the raw data is not noisy
+ 111:Generated_Source\PSoC4/key_touch_INT.c ****     *    2. Read the Counter register and update the data structure with raw data
+ 112:Generated_Source\PSoC4/key_touch_INT.c ****     *    3. Configure and start the scan for the next frequency if the
+ 113:Generated_Source\PSoC4/key_touch_INT.c ****     *      multi-frequency is enabled
+ 114:Generated_Source\PSoC4/key_touch_INT.c ****     *    4. Update the Scan Counter
+ 115:Generated_Source\PSoC4/key_touch_INT.c ****     *    5. Reset the BUSY flag
+ 116:Generated_Source\PSoC4/key_touch_INT.c ****     *    6. Enable the CSD interrupt.
+ 117:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 118:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler changes IMO and initializes scanning for the next frequency
+ 119:Generated_Source\PSoC4/key_touch_INT.c ****     *  channels when multi-frequency scanning is enabled.
+ 120:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 121:Generated_Source\PSoC4/key_touch_INT.c **** 	*  This function has two Macro Callbacks that allow calling the user code
+ 122:Generated_Source\PSoC4/key_touch_INT.c ****     *  from macros specified in a component's generated code. Refer to the 
+ 123:Generated_Source\PSoC4/key_touch_INT.c ****     *  \ref group_capsense_macrocallbacks section of PSoC Creator User Guide 
+ 124:Generated_Source\PSoC4/key_touch_INT.c ****     *  for details. 
+ 125:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 126:Generated_Source\PSoC4/key_touch_INT.c ****     *******************************************************************************/
+ 127:Generated_Source\PSoC4/key_touch_INT.c ****     CY_ISR(key_touch_CSDPostSingleScan)
+ 128:Generated_Source\PSoC4/key_touch_INT.c ****     {
+  26              		.loc 1 128 0
+  27              		.cfi_startproc
+ 129:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_ENTRY_CALLBACK
+ 130:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_EntryCallback();
+ 131:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_ENTRY_CALLBACK */
+ 132:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 133:Generated_Source\PSoC4/key_touch_INT.c ****         /* Clear pending interrupt */
+ 134:Generated_Source\PSoC4/key_touch_INT.c ****         CY_SET_REG32(key_touch_INTR_PTR, key_touch_INTR_SET_MASK);
+  28              		.loc 1 134 0
+  29 0000 8322     		mov	r2, #131
+  30 0002 5200     		lsl	r2, r2, #1
+  31 0004 134B     		ldr	r3, .L4
+  32 0006 1A60     		str	r2, [r3]
+  33              	.LBB4:
+  34              	.LBB5:
+ 135:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 136:Generated_Source\PSoC4/key_touch_INT.c ****     #if (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN)
+ 137:Generated_Source\PSoC4/key_touch_INT.c ****         if ((key_touch_CSD_NOISE_METRIC_TH < ((CY_GET_REG32(key_touch_RESULT_VAL1_PTR) &
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 4
+
+
+ 138:Generated_Source\PSoC4/key_touch_INT.c ****                                                     key_touch_RESULT_VAL1_BAD_CONVS_MASK) >>
+ 139:Generated_Source\PSoC4/key_touch_INT.c ****                                                     key_touch_RESULT_VAL1_BAD_CONVS_SHIFT)) &&
+ 140:Generated_Source\PSoC4/key_touch_INT.c ****                                                     (0u < key_touch_badConversionsNum))
+ 141:Generated_Source\PSoC4/key_touch_INT.c ****         {
+ 142:Generated_Source\PSoC4/key_touch_INT.c ****             /* Decrement bad conversions number */
+ 143:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_badConversionsNum--;
+ 144:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 145:Generated_Source\PSoC4/key_touch_INT.c ****             /* Start the re-scan */
+ 146:Generated_Source\PSoC4/key_touch_INT.c ****             CY_SET_REG32(key_touch_SEQ_START_PTR, key_touch_SEQ_START_AZ0_SKIP_MASK |
+ 147:Generated_Source\PSoC4/key_touch_INT.c ****                                                          key_touch_SEQ_START_AZ1_SKIP_MASK |
+ 148:Generated_Source\PSoC4/key_touch_INT.c ****                                                          key_touch_SEQ_START_START_MASK);
+ 149:Generated_Source\PSoC4/key_touch_INT.c ****         }
+ 150:Generated_Source\PSoC4/key_touch_INT.c ****         else
+ 151:Generated_Source\PSoC4/key_touch_INT.c ****         {
+ 152:Generated_Source\PSoC4/key_touch_INT.c ****     #endif /* (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN) */
+ 153:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 154:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_SsCSDPostScan();
+ 155:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 156:Generated_Source\PSoC4/key_touch_INT.c ****             #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 157:Generated_Source\PSoC4/key_touch_INT.c ****                 if (key_touch_FREQ_CHANNEL_2 > key_touch_scanFreqIndex)
+ 158:Generated_Source\PSoC4/key_touch_INT.c ****                 {
+ 159:Generated_Source\PSoC4/key_touch_INT.c ****                     /* Scan the next channel */
+ 160:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsNextFrequencyScan();
+ 161:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+ 162:Generated_Source\PSoC4/key_touch_INT.c ****                 else
+ 163:Generated_Source\PSoC4/key_touch_INT.c ****                 {
+ 164:Generated_Source\PSoC4/key_touch_INT.c ****                     /* All channels are scanned. Set IMO to zero channel */
+ 165:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_scanFreqIndex = key_touch_FREQ_CHANNEL_0;
+ 166:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsChangeImoFreq(key_touch_FREQ_CHANNEL_0);
+ 167:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 168:Generated_Source\PSoC4/key_touch_INT.c ****                     #if (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN)
+ 169:Generated_Source\PSoC4/key_touch_INT.c ****                         /*  Disable CSDv2 block */
+ 170:Generated_Source\PSoC4/key_touch_INT.c ****                         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd);
+ 171:Generated_Source\PSoC4/key_touch_INT.c ****                     #endif /* (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN) */
+ 172:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 173:Generated_Source\PSoC4/key_touch_INT.c ****                     /* Update Scan Counter */
+ 174:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_dsRam.scanCounter++;
+ 175:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 176:Generated_Source\PSoC4/key_touch_INT.c ****                     /* Sensor is totally scanned. Reset BUSY flag */
+ 177:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_dsRam.status &= ~(key_touch_SW_STS_BUSY | key_touch_WDGT_SW_STS_BUSY)
+ 178:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+ 179:Generated_Source\PSoC4/key_touch_INT.c ****             #else
+ 180:Generated_Source\PSoC4/key_touch_INT.c ****                 {
+ 181:Generated_Source\PSoC4/key_touch_INT.c ****                     #if (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN)
+ 182:Generated_Source\PSoC4/key_touch_INT.c ****                         /*  Disable CSDv2 block */
+ 183:Generated_Source\PSoC4/key_touch_INT.c ****                         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd);
+ 184:Generated_Source\PSoC4/key_touch_INT.c ****                     #endif /* (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN) */
+ 185:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 186:Generated_Source\PSoC4/key_touch_INT.c ****                     /* Update Scan Counter */
+ 187:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_dsRam.scanCounter++;
+ 188:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 189:Generated_Source\PSoC4/key_touch_INT.c ****                     /* Sensor is totally scanned. Reset BUSY flag */
+ 190:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_dsRam.status &= ~(key_touch_SW_STS_BUSY | key_touch_WDGT_SW_STS_BUSY)
+ 191:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+ 192:Generated_Source\PSoC4/key_touch_INT.c ****             #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 193:Generated_Source\PSoC4/key_touch_INT.c ****     #if (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN)
+ 194:Generated_Source\PSoC4/key_touch_INT.c ****         }
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 5
+
+
+ 195:Generated_Source\PSoC4/key_touch_INT.c ****     #endif /* (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN) */
+ 196:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 197:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_EXIT_CALLBACK
+ 198:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_ExitCallback();
+ 199:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_EXIT_CALLBACK */
+ 200:Generated_Source\PSoC4/key_touch_INT.c ****     }
+ 201:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 202:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 203:Generated_Source\PSoC4/key_touch_INT.c ****     /*******************************************************************************
+ 204:Generated_Source\PSoC4/key_touch_INT.c ****     * Function Name: key_touch_CSDPostMultiScan
+ 205:Generated_Source\PSoC4/key_touch_INT.c ****     ****************************************************************************//**
+ 206:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 207:Generated_Source\PSoC4/key_touch_INT.c ****     * \brief
+ 208:Generated_Source\PSoC4/key_touch_INT.c ****     *  This is an internal ISR function for multiple-sensor scanning 
+ 209:Generated_Source\PSoC4/key_touch_INT.c ****     *  implementation.
+ 210:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 211:Generated_Source\PSoC4/key_touch_INT.c ****     * \details
+ 212:Generated_Source\PSoC4/key_touch_INT.c ****     *  This ISR handler is triggered when the user calls the
+ 213:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_Scan() or key_touch_ScanAllWidgets() APIs.
+ 214:Generated_Source\PSoC4/key_touch_INT.c ****     *  
+ 215:Generated_Source\PSoC4/key_touch_INT.c ****     *  The following tasks are performed:
+ 216:Generated_Source\PSoC4/key_touch_INT.c ****     *    1. Disable the CSD interrupt
+ 217:Generated_Source\PSoC4/key_touch_INT.c ****     *    2. Read the Counter register and update the data structure with raw data
+ 218:Generated_Source\PSoC4/key_touch_INT.c ****     *    3. Connect the Vref buffer to the AMUX bus
+ 219:Generated_Source\PSoC4/key_touch_INT.c ****     *    4. Disable the CSD block (after the widget has been scanned)
+ 220:Generated_Source\PSoC4/key_touch_INT.c ****     *    5. Update Scan Counter
+ 221:Generated_Source\PSoC4/key_touch_INT.c ****     *    6. Reset the BUSY flag
+ 222:Generated_Source\PSoC4/key_touch_INT.c ****     *    7. Enable the CSD interrupt.
+ 223:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 224:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler initializes scanning for the previous sensor when the 
+ 225:Generated_Source\PSoC4/key_touch_INT.c ****     *  widget has more than one sensor.
+ 226:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler initializes scanning for the next widget when the
+ 227:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_ScanAllWidgets() APIs are called and the project has
+ 228:Generated_Source\PSoC4/key_touch_INT.c ****     *  more than one widget.
+ 229:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler changes the IMO and initializes scanning for the next
+ 230:Generated_Source\PSoC4/key_touch_INT.c ****     *  frequency channels when multi-frequency scanning is enabled.
+ 231:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 232:Generated_Source\PSoC4/key_touch_INT.c ****     *  This function has two Macro Callbacks that allow calling the user 
+ 233:Generated_Source\PSoC4/key_touch_INT.c ****     *  code from macros specified in a component's generated code. Refer to the 
+ 234:Generated_Source\PSoC4/key_touch_INT.c ****     *  \ref group_capsense_macrocallbacks section of PSoC Creator User Guide 
+ 235:Generated_Source\PSoC4/key_touch_INT.c ****     *  for details.
+ 236:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 237:Generated_Source\PSoC4/key_touch_INT.c ****     *******************************************************************************/
+ 238:Generated_Source\PSoC4/key_touch_INT.c ****     CY_ISR(key_touch_CSDPostMultiScan)
+ 239:Generated_Source\PSoC4/key_touch_INT.c ****     {
+ 240:Generated_Source\PSoC4/key_touch_INT.c ****         /*  Declare and initialise ptr to sensor IO structure to appropriate address        */
+ 241:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_FLASH_IO_STRUCT const *curSnsIOPtr = (key_touch_FLASH_IO_STRUCT const *)
+ 242:Generated_Source\PSoC4/key_touch_INT.c ****                                                           key_touch_dsFlash.wdgtArray[key_touch_wid
+ 243:Generated_Source\PSoC4/key_touch_INT.c ****                                                           + key_touch_sensorIndex;
+ 244:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 245:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_ENTRY_CALLBACK
+ 246:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_EntryCallback();
+ 247:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_ENTRY_CALLBACK */
+ 248:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 249:Generated_Source\PSoC4/key_touch_INT.c ****         /* Clear pending interrupt */
+ 250:Generated_Source\PSoC4/key_touch_INT.c ****         CY_SET_REG32(key_touch_INTR_PTR, key_touch_INTR_SET_MASK);
+ 251:Generated_Source\PSoC4/key_touch_INT.c **** 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 6
+
+
+ 252:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN)
+ 253:Generated_Source\PSoC4/key_touch_INT.c ****             if ((key_touch_CSD_NOISE_METRIC_TH < ((CY_GET_REG32(key_touch_RESULT_VAL1_PTR) &
+ 254:Generated_Source\PSoC4/key_touch_INT.c ****                                                       key_touch_RESULT_VAL1_BAD_CONVS_MASK) >>
+ 255:Generated_Source\PSoC4/key_touch_INT.c ****                                                       key_touch_RESULT_VAL1_BAD_CONVS_SHIFT)) &&
+ 256:Generated_Source\PSoC4/key_touch_INT.c ****                                                       (0u < key_touch_badConversionsNum))
+ 257:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 258:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Decrement bad conversions number */
+ 259:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_badConversionsNum--;
+ 260:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 261:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Start the re-scan */
+ 262:Generated_Source\PSoC4/key_touch_INT.c ****                 CY_SET_REG32(key_touch_SEQ_START_PTR, key_touch_SEQ_START_AZ0_SKIP_MASK |
+ 263:Generated_Source\PSoC4/key_touch_INT.c ****                                                              key_touch_SEQ_START_AZ1_SKIP_MASK |
+ 264:Generated_Source\PSoC4/key_touch_INT.c ****                                                              key_touch_SEQ_START_START_MASK);
+ 265:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 266:Generated_Source\PSoC4/key_touch_INT.c ****             else
+ 267:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 268:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN) */
+ 269:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 270:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_SsCSDPostScan();
+ 271:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 272:Generated_Source\PSoC4/key_touch_INT.c ****             #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 273:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Disable sensor when all frequency channels are scanned */
+ 274:Generated_Source\PSoC4/key_touch_INT.c ****                 if (key_touch_FREQ_CHANNEL_2 == key_touch_scanFreqIndex)
+ 275:Generated_Source\PSoC4/key_touch_INT.c ****                 {
+ 276:Generated_Source\PSoC4/key_touch_INT.c ****                     /* Disable sensor */
+ 277:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_CSDDisconnectSns(curSnsIOPtr);
+ 278:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+ 279:Generated_Source\PSoC4/key_touch_INT.c ****             #else
+ 280:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Disable sensor */
+ 281:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_CSDDisconnectSns(curSnsIOPtr);
+ 282:Generated_Source\PSoC4/key_touch_INT.c ****             #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 283:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 284:Generated_Source\PSoC4/key_touch_INT.c ****             #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 285:Generated_Source\PSoC4/key_touch_INT.c ****                 if (key_touch_FREQ_CHANNEL_2 > key_touch_scanFreqIndex)
+ 286:Generated_Source\PSoC4/key_touch_INT.c ****                 {
+ 287:Generated_Source\PSoC4/key_touch_INT.c ****                      /* Scan the next channel */
+ 288:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsNextFrequencyScan();
+ 289:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+ 290:Generated_Source\PSoC4/key_touch_INT.c ****                 else
+ 291:Generated_Source\PSoC4/key_touch_INT.c ****                 {
+ 292:Generated_Source\PSoC4/key_touch_INT.c ****                      /* All channels are scanned. Set IMO to zero channel */
+ 293:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_scanFreqIndex = key_touch_FREQ_CHANNEL_0;
+ 294:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsChangeImoFreq(key_touch_FREQ_CHANNEL_0);
+ 295:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 296:Generated_Source\PSoC4/key_touch_INT.c ****                      /* Scan the next sensor */
+ 297:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsCSDInitNextScan();
+ 298:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+ 299:Generated_Source\PSoC4/key_touch_INT.c ****             #else
+ 300:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Scan the next sensor */
+ 301:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsCSDInitNextScan();
+ 302:Generated_Source\PSoC4/key_touch_INT.c ****             #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 303:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN)
+ 304:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 305:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN) */
+ 306:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 307:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_EXIT_CALLBACK
+ 308:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_ExitCallback();
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 7
+
+
+ 309:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_EXIT_CALLBACK */
+ 310:Generated_Source\PSoC4/key_touch_INT.c ****     }
+ 311:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 312:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 313:Generated_Source\PSoC4/key_touch_INT.c ****     #if (key_touch_ENABLE == key_touch_CSD_GANGED_SNS_EN)
+ 314:Generated_Source\PSoC4/key_touch_INT.c ****     /*******************************************************************************
+ 315:Generated_Source\PSoC4/key_touch_INT.c ****     * Function Name: key_touch_CSDPostMultiScanGanged
+ 316:Generated_Source\PSoC4/key_touch_INT.c ****     ****************************************************************************//**
+ 317:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 318:Generated_Source\PSoC4/key_touch_INT.c ****     * \brief
+ 319:Generated_Source\PSoC4/key_touch_INT.c ****     *  This is an internal ISR function for multiple-sensor scanning 
+ 320:Generated_Source\PSoC4/key_touch_INT.c ****     *  implementation for ganged sensors.
+ 321:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 322:Generated_Source\PSoC4/key_touch_INT.c ****     * \details
+ 323:Generated_Source\PSoC4/key_touch_INT.c ****     *  This ISR handler is triggered when the user calls the
+ 324:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_Scan() API for a ganged sensor or the
+ 325:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_ScanAllWidgets() API in the project with ganged sensors.
+ 326:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 327:Generated_Source\PSoC4/key_touch_INT.c ****     *  The following tasks are performed:
+ 328:Generated_Source\PSoC4/key_touch_INT.c ****     *    1. Disable the CSD interrupt
+ 329:Generated_Source\PSoC4/key_touch_INT.c ****     *    2. Read the Counter register and update the data structure with raw data
+ 330:Generated_Source\PSoC4/key_touch_INT.c ****     *    3. Connect the Vref buffer to the AMUX bus
+ 331:Generated_Source\PSoC4/key_touch_INT.c ****     *    4. Disable the CSD block (after the widget has been scanned)
+ 332:Generated_Source\PSoC4/key_touch_INT.c ****     *    5. Update Scan Counter
+ 333:Generated_Source\PSoC4/key_touch_INT.c ****     *    6. Reset the BUSY flag
+ 334:Generated_Source\PSoC4/key_touch_INT.c ****     *    7. Enable the CSD interrupt.
+ 335:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 336:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler initializes scanning for the previous sensor when the
+ 337:Generated_Source\PSoC4/key_touch_INT.c ****     *  widget has more than one sensor.
+ 338:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler initializes scanning for the next widget when the
+ 339:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_ScanAllWidgets() APIs are called and the project has 
+ 340:Generated_Source\PSoC4/key_touch_INT.c ****     *  more than one widget.
+ 341:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler changes the IMO and initializes scanning for the next 
+ 342:Generated_Source\PSoC4/key_touch_INT.c ****     *  frequency channels when multi-frequency scanning is enabled.
+ 343:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 344:Generated_Source\PSoC4/key_touch_INT.c ****     *  This function has two Macro Callbacks that allow calling the user 
+ 345:Generated_Source\PSoC4/key_touch_INT.c ****     *  code from macros specified in a component's generated code. Refer to the 
+ 346:Generated_Source\PSoC4/key_touch_INT.c ****     *  \ref group_capsense_macrocallbacks section of PSoC Creator User Guide 
+ 347:Generated_Source\PSoC4/key_touch_INT.c ****     *  for details.
+ 348:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 349:Generated_Source\PSoC4/key_touch_INT.c ****     *******************************************************************************/
+ 350:Generated_Source\PSoC4/key_touch_INT.c ****     CY_ISR(key_touch_CSDPostMultiScanGanged)
+ 351:Generated_Source\PSoC4/key_touch_INT.c ****     {
+ 352:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_ENTRY_CALLBACK
+ 353:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_EntryCallback();
+ 354:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_ENTRY_CALLBACK */
+ 355:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 356:Generated_Source\PSoC4/key_touch_INT.c ****         /* Clear pending interrupt */
+ 357:Generated_Source\PSoC4/key_touch_INT.c ****         CY_SET_REG32(key_touch_INTR_PTR, key_touch_INTR_SET_MASK);
+ 358:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 359:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN)
+ 360:Generated_Source\PSoC4/key_touch_INT.c ****             if ((key_touch_CSD_NOISE_METRIC_TH < ((CY_GET_REG32(key_touch_RESULT_VAL1_PTR) &
+ 361:Generated_Source\PSoC4/key_touch_INT.c ****                                                       key_touch_RESULT_VAL1_BAD_CONVS_MASK) >>
+ 362:Generated_Source\PSoC4/key_touch_INT.c ****                                                       key_touch_RESULT_VAL1_BAD_CONVS_SHIFT)) &&
+ 363:Generated_Source\PSoC4/key_touch_INT.c ****                                                       (0u < key_touch_badConversionsNum))
+ 364:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 365:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Decrement bad conversions number */
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 8
+
+
+ 366:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_badConversionsNum--;
+ 367:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 368:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Start the re-scan */
+ 369:Generated_Source\PSoC4/key_touch_INT.c ****                 CY_SET_REG32(key_touch_SEQ_START_PTR, key_touch_SEQ_START_AZ0_SKIP_MASK |
+ 370:Generated_Source\PSoC4/key_touch_INT.c ****                                                              key_touch_SEQ_START_AZ1_SKIP_MASK |
+ 371:Generated_Source\PSoC4/key_touch_INT.c ****                                                              key_touch_SEQ_START_START_MASK);
+ 372:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 373:Generated_Source\PSoC4/key_touch_INT.c ****             else
+ 374:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 375:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN) */
+ 376:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 377:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_SsCSDPostScan();
+ 378:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 379:Generated_Source\PSoC4/key_touch_INT.c ****             #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 380:Generated_Source\PSoC4/key_touch_INT.c ****                 if (key_touch_FREQ_CHANNEL_2 == key_touch_scanFreqIndex)
+ 381:Generated_Source\PSoC4/key_touch_INT.c ****                 {
+ 382:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsCSDDisconnectSnsExt((uint32)key_touch_widgetIndex, (uint32)key_touc
+ 383:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+ 384:Generated_Source\PSoC4/key_touch_INT.c ****             #else
+ 385:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsCSDDisconnectSnsExt((uint32)key_touch_widgetIndex, (uint32)key_touch_se
+ 386:Generated_Source\PSoC4/key_touch_INT.c ****             #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 387:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 388:Generated_Source\PSoC4/key_touch_INT.c ****             #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 389:Generated_Source\PSoC4/key_touch_INT.c ****                 if (key_touch_FREQ_CHANNEL_2 > key_touch_scanFreqIndex)
+ 390:Generated_Source\PSoC4/key_touch_INT.c ****                 {
+ 391:Generated_Source\PSoC4/key_touch_INT.c ****                      /* Scan the next channel */
+ 392:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsNextFrequencyScan();
+ 393:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+ 394:Generated_Source\PSoC4/key_touch_INT.c ****                 else
+ 395:Generated_Source\PSoC4/key_touch_INT.c ****                 {
+ 396:Generated_Source\PSoC4/key_touch_INT.c ****                     /* All channels are scanned. Set IMO to zero channel */
+ 397:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_scanFreqIndex = key_touch_FREQ_CHANNEL_0;
+ 398:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsChangeImoFreq(key_touch_FREQ_CHANNEL_0);
+ 399:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 400:Generated_Source\PSoC4/key_touch_INT.c ****                      /* Scan the next sensor */
+ 401:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsCSDInitNextScan();
+ 402:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+ 403:Generated_Source\PSoC4/key_touch_INT.c ****             #else
+ 404:Generated_Source\PSoC4/key_touch_INT.c ****                  /* Scan the next sensor */
+ 405:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsCSDInitNextScan();
+ 406:Generated_Source\PSoC4/key_touch_INT.c ****             #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 407:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN)
+ 408:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 409:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN) */
+ 410:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 411:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_EXIT_CALLBACK
+ 412:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_ExitCallback();
+ 413:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_EXIT_CALLBACK */
+ 414:Generated_Source\PSoC4/key_touch_INT.c ****     }
+ 415:Generated_Source\PSoC4/key_touch_INT.c ****     #endif /* (key_touch_ENABLE == key_touch_CSD_GANGED_SNS_EN) */
+ 416:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 417:Generated_Source\PSoC4/key_touch_INT.c **** #else
+ 418:Generated_Source\PSoC4/key_touch_INT.c ****     /* CSDv1 part */
+ 419:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 420:Generated_Source\PSoC4/key_touch_INT.c ****     /*******************************************************************************
+ 421:Generated_Source\PSoC4/key_touch_INT.c ****     * Function Name: key_touch_CSDPostSingleScan
+ 422:Generated_Source\PSoC4/key_touch_INT.c ****     ****************************************************************************//**
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 9
+
+
+ 423:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 424:Generated_Source\PSoC4/key_touch_INT.c ****     * \brief
+ 425:Generated_Source\PSoC4/key_touch_INT.c ****     *  This is an internal ISR function for single-sensor scanning implementation.
+ 426:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 427:Generated_Source\PSoC4/key_touch_INT.c ****     * \details
+ 428:Generated_Source\PSoC4/key_touch_INT.c ****     *  This ISR handler is triggered when the user calls the
+ 429:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_CSDScanExt() function.
+ 430:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 431:Generated_Source\PSoC4/key_touch_INT.c ****     *  The following tasks are performed for CSDv1 HW IP block:
+ 432:Generated_Source\PSoC4/key_touch_INT.c ****     *    1. Disable the CSD interrupt
+ 433:Generated_Source\PSoC4/key_touch_INT.c ****     *    2. Read the Counter register and update the data structure with raw data
+ 434:Generated_Source\PSoC4/key_touch_INT.c ****     *    3. Connect the Vref buffer to the AMUX bus
+ 435:Generated_Source\PSoC4/key_touch_INT.c ****     *    4. Update the Scan Counter
+ 436:Generated_Source\PSoC4/key_touch_INT.c ****     *    5. Reset the BUSY flag
+ 437:Generated_Source\PSoC4/key_touch_INT.c ****     *    6. Enable the CSD interrupt.
+ 438:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 439:Generated_Source\PSoC4/key_touch_INT.c ****     *  The following tasks are performed for CSDv2 HW IP block:
+ 440:Generated_Source\PSoC4/key_touch_INT.c ****     *    1. Check if the raw data is not noisy
+ 441:Generated_Source\PSoC4/key_touch_INT.c ****     *    2. Read the Counter register and update the data structure with raw data
+ 442:Generated_Source\PSoC4/key_touch_INT.c ****     *    3. Configure and start the scan for the next frequency if the
+ 443:Generated_Source\PSoC4/key_touch_INT.c ****     *      multi-frequency is enabled
+ 444:Generated_Source\PSoC4/key_touch_INT.c ****     *    4. Update the Scan Counter
+ 445:Generated_Source\PSoC4/key_touch_INT.c ****     *    5. Reset the BUSY flag
+ 446:Generated_Source\PSoC4/key_touch_INT.c ****     *    6. Enable the CSD interrupt.
+ 447:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 448:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler changes IMO and initializes scanning for the next frequency
+ 449:Generated_Source\PSoC4/key_touch_INT.c ****     *  channels when multi-frequency scanning is enabled.
+ 450:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 451:Generated_Source\PSoC4/key_touch_INT.c **** 	*  This function has two Macro Callbacks that allow calling the user code
+ 452:Generated_Source\PSoC4/key_touch_INT.c ****     *  from macros specified in a component's generated code. Refer to the 
+ 453:Generated_Source\PSoC4/key_touch_INT.c ****     *  \ref group_capsense_macrocallbacks section of PSoC Creator User Guide 
+ 454:Generated_Source\PSoC4/key_touch_INT.c ****     *  for details. 
+ 455:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 456:Generated_Source\PSoC4/key_touch_INT.c ****     *******************************************************************************/
+ 457:Generated_Source\PSoC4/key_touch_INT.c ****     CY_ISR(key_touch_CSDPostSingleScan)
+ 458:Generated_Source\PSoC4/key_touch_INT.c ****     {
+ 459:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_ENTRY_CALLBACK
+ 460:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_EntryCallback();
+ 461:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_ENTRY_CALLBACK */
+ 462:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 463:Generated_Source\PSoC4/key_touch_INT.c ****         /* Clear pending interrupt */
+ 464:Generated_Source\PSoC4/key_touch_INT.c ****         CY_SET_REG32(key_touch_INTR_PTR, key_touch_INTR_SET_MASK);
+ 465:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 466:Generated_Source\PSoC4/key_touch_INT.c ****         /* Read Rawdata */
+ 467:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_SsCSDPostScan();
+ 468:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 469:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 470:Generated_Source\PSoC4/key_touch_INT.c ****             if (key_touch_FREQ_CHANNEL_2 > key_touch_scanFreqIndex)
+ 471:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 472:Generated_Source\PSoC4/key_touch_INT.c ****                 /*  Connect Vref Buffer to AMUX bus. CSDv1 block is enabled */
+ 473:Generated_Source\PSoC4/key_touch_INT.c ****                 CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CTANK_PRECHARGE_
+ 474:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 475:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsNextFrequencyScan();
+ 476:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 477:Generated_Source\PSoC4/key_touch_INT.c ****             else
+ 478:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 479:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_scanFreqIndex = key_touch_FREQ_CHANNEL_0;
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 10
+
+
+ 480:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsChangeImoFreq(key_touch_FREQ_CHANNEL_0);
+ 481:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 482:Generated_Source\PSoC4/key_touch_INT.c ****                 #if (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN)
+ 483:Generated_Source\PSoC4/key_touch_INT.c ****                     /*  Disable CSDv1 block. Connect Vref Buffer to AMUX bus */
+ 484:Generated_Source\PSoC4/key_touch_INT.c ****                     #if ((key_touch_CSH_PRECHARGE_IO_BUF == key_touch_CSD_CSH_PRECHARGE_SRC) &&\
+ 485:Generated_Source\PSoC4/key_touch_INT.c ****                          (key_touch_ENABLE == key_touch_CSD_SHIELD_TANK_EN))
+ 486:Generated_Source\PSoC4/key_touch_INT.c ****                         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CMOD_PRE
+ 487:Generated_Source\PSoC4/key_touch_INT.c ****                     #else
+ 488:Generated_Source\PSoC4/key_touch_INT.c ****                         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CTANK_PR
+ 489:Generated_Source\PSoC4/key_touch_INT.c ****                     #endif /* ((key_touch_CSH_PRECHARGE_IO_BUF == key_touch_CSD_CSH_PRECHARGE_SRC) 
+ 490:Generated_Source\PSoC4/key_touch_INT.c ****                                (key_touch_ENABLE == key_touch_CSD_SHIELD_TANK_EN)) */
+ 491:Generated_Source\PSoC4/key_touch_INT.c ****                 #else
+ 492:Generated_Source\PSoC4/key_touch_INT.c ****                     /*  Connect Vref Buffer to AMUX bus. CSDv1 block is enabled */
+ 493:Generated_Source\PSoC4/key_touch_INT.c ****                     CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CTANK_PRECHA
+ 494:Generated_Source\PSoC4/key_touch_INT.c ****                 #endif /* (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN) */
+ 495:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 496:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Update Scan Counter */
+ 497:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_dsRam.scanCounter++;
+ 498:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 499:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Sensor is totally scanned. Reset BUSY flag */
+ 500:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_dsRam.status &= ~(key_touch_SW_STS_BUSY | key_touch_WDGT_SW_STS_BUSY);
+ 501:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 502:Generated_Source\PSoC4/key_touch_INT.c ****         #else
+ 503:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 504:Generated_Source\PSoC4/key_touch_INT.c ****                 #if (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN)
+ 505:Generated_Source\PSoC4/key_touch_INT.c ****                     /*  Disable CSDv1 block. Connect Vref Buffer to AMUX bus */
+ 506:Generated_Source\PSoC4/key_touch_INT.c ****                     #if ((key_touch_CSH_PRECHARGE_IO_BUF == key_touch_CSD_CSH_PRECHARGE_SRC) &&\
+ 507:Generated_Source\PSoC4/key_touch_INT.c ****                          (key_touch_ENABLE == key_touch_CSD_SHIELD_TANK_EN))
+ 508:Generated_Source\PSoC4/key_touch_INT.c ****                         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CMOD_PRE
+ 509:Generated_Source\PSoC4/key_touch_INT.c ****                     #else
+ 510:Generated_Source\PSoC4/key_touch_INT.c ****                         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CTANK_PR
+ 511:Generated_Source\PSoC4/key_touch_INT.c ****                     #endif /* ((key_touch_CSH_PRECHARGE_IO_BUF == key_touch_CSD_CSH_PRECHARGE_SRC) 
+ 512:Generated_Source\PSoC4/key_touch_INT.c ****                                (key_touch_ENABLE == key_touch_CSD_SHIELD_TANK_EN)) */
+ 513:Generated_Source\PSoC4/key_touch_INT.c ****                 #else
+ 514:Generated_Source\PSoC4/key_touch_INT.c ****                     /*  Connect Vref Buffer to AMUX bus. CSDv1 block is enabled */
+ 515:Generated_Source\PSoC4/key_touch_INT.c ****                     CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CTANK_PRECHA
+ 516:Generated_Source\PSoC4/key_touch_INT.c ****                 #endif /* (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN) */
+ 517:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 518:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Update Scan Counter */
+ 519:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_dsRam.scanCounter++;
+ 520:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 521:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Sensor is totally scanned. Reset BUSY flag */
+ 522:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_dsRam.status &= ~(key_touch_SW_STS_BUSY | key_touch_WDGT_SW_STS_BUSY);
+ 523:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 524:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 525:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 526:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_EXIT_CALLBACK
+ 527:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_ExitCallback();
+ 528:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_EXIT_CALLBACK */
+ 529:Generated_Source\PSoC4/key_touch_INT.c ****     }
+ 530:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 531:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 532:Generated_Source\PSoC4/key_touch_INT.c ****     /*******************************************************************************
+ 533:Generated_Source\PSoC4/key_touch_INT.c ****     * Function Name: key_touch_CSDPostMultiScan
+ 534:Generated_Source\PSoC4/key_touch_INT.c ****     ****************************************************************************//**
+ 535:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 536:Generated_Source\PSoC4/key_touch_INT.c ****     * \brief
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 11
+
+
+ 537:Generated_Source\PSoC4/key_touch_INT.c ****     *  This is an internal ISR function for multiple-sensor scanning 
+ 538:Generated_Source\PSoC4/key_touch_INT.c ****     *  implementation.
+ 539:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 540:Generated_Source\PSoC4/key_touch_INT.c ****     * \details
+ 541:Generated_Source\PSoC4/key_touch_INT.c ****     *  This ISR handler is triggered when the user calls the
+ 542:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_Scan() or key_touch_ScanAllWidgets() APIs.
+ 543:Generated_Source\PSoC4/key_touch_INT.c ****     *  
+ 544:Generated_Source\PSoC4/key_touch_INT.c ****     *  The following tasks are performed:
+ 545:Generated_Source\PSoC4/key_touch_INT.c ****     *    1. Disable the CSD interrupt
+ 546:Generated_Source\PSoC4/key_touch_INT.c ****     *    2. Read the Counter register and update the data structure with raw data
+ 547:Generated_Source\PSoC4/key_touch_INT.c ****     *    3. Connect the Vref buffer to the AMUX bus
+ 548:Generated_Source\PSoC4/key_touch_INT.c ****     *    4. Disable the CSD block (after the widget has been scanned)
+ 549:Generated_Source\PSoC4/key_touch_INT.c ****     *    5. Update Scan Counter
+ 550:Generated_Source\PSoC4/key_touch_INT.c ****     *    6. Reset the BUSY flag
+ 551:Generated_Source\PSoC4/key_touch_INT.c ****     *    7. Enable the CSD interrupt.
+ 552:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 553:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler initializes scanning for the previous sensor when the 
+ 554:Generated_Source\PSoC4/key_touch_INT.c ****     *  widget has more than one sensor.
+ 555:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler initializes scanning for the next widget when the
+ 556:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_ScanAllWidgets() APIs are called and the project has
+ 557:Generated_Source\PSoC4/key_touch_INT.c ****     *  more than one widget.
+ 558:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler changes the IMO and initializes scanning for the next
+ 559:Generated_Source\PSoC4/key_touch_INT.c ****     *  frequency channels when multi-frequency scanning is enabled.
+ 560:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 561:Generated_Source\PSoC4/key_touch_INT.c ****     *  This function has two Macro Callbacks that allow calling the user 
+ 562:Generated_Source\PSoC4/key_touch_INT.c ****     *  code from macros specified in a component's generated code. Refer to the 
+ 563:Generated_Source\PSoC4/key_touch_INT.c ****     *  \ref group_capsense_macrocallbacks section of PSoC Creator User Guide 
+ 564:Generated_Source\PSoC4/key_touch_INT.c ****     *  for details.
+ 565:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 566:Generated_Source\PSoC4/key_touch_INT.c ****     *******************************************************************************/
+ 567:Generated_Source\PSoC4/key_touch_INT.c ****     CY_ISR(key_touch_CSDPostMultiScan)
+ 568:Generated_Source\PSoC4/key_touch_INT.c ****     {
+ 569:Generated_Source\PSoC4/key_touch_INT.c ****         /*  Declare and initialise ptr to sensor IO structure to appropriate address        */
+ 570:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_FLASH_IO_STRUCT const *curSnsIOPtr = (key_touch_FLASH_IO_STRUCT const *)
+ 571:Generated_Source\PSoC4/key_touch_INT.c ****                                                           key_touch_dsFlash.wdgtArray[key_touch_wid
+ 572:Generated_Source\PSoC4/key_touch_INT.c ****                                                           + key_touch_sensorIndex;
+ 573:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 574:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_ENTRY_CALLBACK
+ 575:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_EntryCallback();
+ 576:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_ENTRY_CALLBACK */
+ 577:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 578:Generated_Source\PSoC4/key_touch_INT.c ****         /* Clear pending interrupt */
+ 579:Generated_Source\PSoC4/key_touch_INT.c ****         CY_SET_REG32(key_touch_INTR_PTR, key_touch_INTR_SET_MASK);
+ 580:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 581:Generated_Source\PSoC4/key_touch_INT.c ****          /* Read Rawdata */
+ 582:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_SsCSDPostScan();
+ 583:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 584:Generated_Source\PSoC4/key_touch_INT.c ****         /*  Connect Vref Buffer to AMUX bus */
+ 585:Generated_Source\PSoC4/key_touch_INT.c ****         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CTANK_PRECHARGE_CONFIG_C
+ 586:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 587:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 588:Generated_Source\PSoC4/key_touch_INT.c ****             /* Disable sensor when all frequency channels are scanned */
+ 589:Generated_Source\PSoC4/key_touch_INT.c ****             if (key_touch_FREQ_CHANNEL_2 == key_touch_scanFreqIndex)
+ 590:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 591:Generated_Source\PSoC4/key_touch_INT.c ****                 /* Disable sensor */
+ 592:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_CSDDisconnectSns(curSnsIOPtr);
+ 593:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 12
+
+
+ 594:Generated_Source\PSoC4/key_touch_INT.c ****         #else
+ 595:Generated_Source\PSoC4/key_touch_INT.c ****             /* Disable sensor */
+ 596:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_CSDDisconnectSns(curSnsIOPtr);
+ 597:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 598:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 599:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 600:Generated_Source\PSoC4/key_touch_INT.c ****             if (key_touch_FREQ_CHANNEL_2 > key_touch_scanFreqIndex)
+ 601:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 602:Generated_Source\PSoC4/key_touch_INT.c ****                  /* Scan the next channel */
+ 603:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsNextFrequencyScan();
+ 604:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 605:Generated_Source\PSoC4/key_touch_INT.c ****             else
+ 606:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 607:Generated_Source\PSoC4/key_touch_INT.c ****                  /* All channels are scanned. Set IMO to zero channel */
+ 608:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_scanFreqIndex = key_touch_FREQ_CHANNEL_0;
+ 609:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsChangeImoFreq(key_touch_FREQ_CHANNEL_0);
+ 610:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 611:Generated_Source\PSoC4/key_touch_INT.c ****                  /* Scan the next sensor */
+ 612:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsCSDInitNextScan();
+ 613:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 614:Generated_Source\PSoC4/key_touch_INT.c ****         #else
+ 615:Generated_Source\PSoC4/key_touch_INT.c ****             /* Scan the next sensor */
+ 616:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_SsCSDInitNextScan();
+ 617:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 618:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 619:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_EXIT_CALLBACK
+ 620:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_ExitCallback();
+ 621:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_EXIT_CALLBACK */
+ 622:Generated_Source\PSoC4/key_touch_INT.c ****     }
+ 623:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 624:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 625:Generated_Source\PSoC4/key_touch_INT.c ****     #if (key_touch_ENABLE == key_touch_CSD_GANGED_SNS_EN)
+ 626:Generated_Source\PSoC4/key_touch_INT.c ****     /*******************************************************************************
+ 627:Generated_Source\PSoC4/key_touch_INT.c ****     * Function Name: key_touch_CSDPostMultiScanGanged
+ 628:Generated_Source\PSoC4/key_touch_INT.c ****     ****************************************************************************//**
+ 629:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 630:Generated_Source\PSoC4/key_touch_INT.c ****     * \brief
+ 631:Generated_Source\PSoC4/key_touch_INT.c ****     *  This is an internal ISR function for multiple-sensor scanning 
+ 632:Generated_Source\PSoC4/key_touch_INT.c ****     *  implementation for ganged sensors.
+ 633:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 634:Generated_Source\PSoC4/key_touch_INT.c ****     * \details
+ 635:Generated_Source\PSoC4/key_touch_INT.c ****     *  This ISR handler is triggered when the user calls the
+ 636:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_Scan() API for a ganged sensor or the
+ 637:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_ScanAllWidgets() API in the project with ganged sensors.
+ 638:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 639:Generated_Source\PSoC4/key_touch_INT.c ****     *  The following tasks are performed:
+ 640:Generated_Source\PSoC4/key_touch_INT.c ****     *    1. Disable the CSD interrupt
+ 641:Generated_Source\PSoC4/key_touch_INT.c ****     *    2. Read the Counter register and update the data structure with raw data
+ 642:Generated_Source\PSoC4/key_touch_INT.c ****     *    3. Connect the Vref buffer to the AMUX bus
+ 643:Generated_Source\PSoC4/key_touch_INT.c ****     *    4. Disable the CSD block (after the widget has been scanned)
+ 644:Generated_Source\PSoC4/key_touch_INT.c ****     *    5. Update Scan Counter
+ 645:Generated_Source\PSoC4/key_touch_INT.c ****     *    6. Reset the BUSY flag
+ 646:Generated_Source\PSoC4/key_touch_INT.c ****     *    7. Enable the CSD interrupt.
+ 647:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 648:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler initializes scanning for the previous sensor when the
+ 649:Generated_Source\PSoC4/key_touch_INT.c ****     *  widget has more than one sensor.
+ 650:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler initializes scanning for the next widget when the
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 13
+
+
+ 651:Generated_Source\PSoC4/key_touch_INT.c ****     *  key_touch_ScanAllWidgets() APIs are called and the project has 
+ 652:Generated_Source\PSoC4/key_touch_INT.c ****     *  more than one widget.
+ 653:Generated_Source\PSoC4/key_touch_INT.c ****     *  The ISR handler changes the IMO and initializes scanning for the next 
+ 654:Generated_Source\PSoC4/key_touch_INT.c ****     *  frequency channels when multi-frequency scanning is enabled.
+ 655:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 656:Generated_Source\PSoC4/key_touch_INT.c ****     *  This function has two Macro Callbacks that allow calling the user 
+ 657:Generated_Source\PSoC4/key_touch_INT.c ****     *  code from macros specified in a component's generated code. Refer to the 
+ 658:Generated_Source\PSoC4/key_touch_INT.c ****     *  \ref group_capsense_macrocallbacks section of PSoC Creator User Guide 
+ 659:Generated_Source\PSoC4/key_touch_INT.c ****     *  for details.
+ 660:Generated_Source\PSoC4/key_touch_INT.c ****     *
+ 661:Generated_Source\PSoC4/key_touch_INT.c ****     *******************************************************************************/
+ 662:Generated_Source\PSoC4/key_touch_INT.c ****     CY_ISR(key_touch_CSDPostMultiScanGanged)
+ 663:Generated_Source\PSoC4/key_touch_INT.c ****     {
+ 664:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_ENTRY_CALLBACK
+ 665:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_EntryCallback();
+ 666:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_ENTRY_CALLBACK */
+ 667:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 668:Generated_Source\PSoC4/key_touch_INT.c ****         /* Clear pending interrupt */
+ 669:Generated_Source\PSoC4/key_touch_INT.c ****         CY_SET_REG32(key_touch_INTR_PTR, key_touch_INTR_SET_MASK);
+ 670:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 671:Generated_Source\PSoC4/key_touch_INT.c ****          /* Read Rawdata */
+ 672:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_SsCSDPostScan();
+ 673:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 674:Generated_Source\PSoC4/key_touch_INT.c ****         /*  Connect Vref Buffer to AMUX bus */
+ 675:Generated_Source\PSoC4/key_touch_INT.c ****         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CTANK_PRECHARGE_CONFIG_C
+ 676:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 677:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 678:Generated_Source\PSoC4/key_touch_INT.c ****             if (key_touch_FREQ_CHANNEL_2 == key_touch_scanFreqIndex)
+ 679:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 680:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsCSDDisconnectSnsExt((uint32)key_touch_widgetIndex, (uint32)key_touch_se
+ 681:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 682:Generated_Source\PSoC4/key_touch_INT.c ****         #else
+ 683:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_SsCSDDisconnectSnsExt((uint32)key_touch_widgetIndex, (uint32)key_touch_sensor
+ 684:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 685:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 686:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN)
+ 687:Generated_Source\PSoC4/key_touch_INT.c ****             if (key_touch_FREQ_CHANNEL_2 > key_touch_scanFreqIndex)
+ 688:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 689:Generated_Source\PSoC4/key_touch_INT.c ****                  /* Scan the next channel */
+ 690:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsNextFrequencyScan();
+ 691:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 692:Generated_Source\PSoC4/key_touch_INT.c ****             else
+ 693:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 694:Generated_Source\PSoC4/key_touch_INT.c ****                 /* All channels are scanned. Set IMO to zero channel */
+ 695:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_scanFreqIndex = key_touch_FREQ_CHANNEL_0;
+ 696:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsChangeImoFreq(key_touch_FREQ_CHANNEL_0);
+ 697:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 698:Generated_Source\PSoC4/key_touch_INT.c ****                  /* Scan the next sensor */
+ 699:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsCSDInitNextScan();
+ 700:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 701:Generated_Source\PSoC4/key_touch_INT.c ****         #else
+ 702:Generated_Source\PSoC4/key_touch_INT.c ****              /* Scan the next sensor */
+ 703:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_SsCSDInitNextScan();
+ 704:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 705:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 706:Generated_Source\PSoC4/key_touch_INT.c ****         #ifdef key_touch_EXIT_CALLBACK
+ 707:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_ExitCallback();
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 14
+
+
+ 708:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* key_touch_EXIT_CALLBACK */
+ 709:Generated_Source\PSoC4/key_touch_INT.c ****     }
+ 710:Generated_Source\PSoC4/key_touch_INT.c ****     #endif /* (key_touch_ENABLE == key_touch_CSD_GANGED_SNS_EN) */
+ 711:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 712:Generated_Source\PSoC4/key_touch_INT.c **** #endif /* (key_touch_ENABLE == key_touch_CSDV2) */
+ 713:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 714:Generated_Source\PSoC4/key_touch_INT.c **** #endif /* ((key_touch_ENABLE == key_touch_CSD_EN) || (key_touch_ENABLE == key_touch_CSD_CSX_EN)) */
+ 715:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 716:Generated_Source\PSoC4/key_touch_INT.c **** /** \}
+ 717:Generated_Source\PSoC4/key_touch_INT.c ****  * \endif */
+ 718:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 719:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 720:Generated_Source\PSoC4/key_touch_INT.c **** #if ((key_touch_ENABLE == key_touch_CSD_EN) || (key_touch_ENABLE == key_touch_CSD_CSX_EN))
+ 721:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 722:Generated_Source\PSoC4/key_touch_INT.c **** /*******************************************************************************
+ 723:Generated_Source\PSoC4/key_touch_INT.c **** * Function Name: key_touch_SsCSDPostScan
+ 724:Generated_Source\PSoC4/key_touch_INT.c **** ****************************************************************************//**
+ 725:Generated_Source\PSoC4/key_touch_INT.c **** *
+ 726:Generated_Source\PSoC4/key_touch_INT.c **** * \brief
+ 727:Generated_Source\PSoC4/key_touch_INT.c **** *   This function reads rawdata and releases required HW resources after scan.
+ 728:Generated_Source\PSoC4/key_touch_INT.c **** *
+ 729:Generated_Source\PSoC4/key_touch_INT.c **** * \details
+ 730:Generated_Source\PSoC4/key_touch_INT.c **** *   This function performs following tasks after scan:
+ 731:Generated_Source\PSoC4/key_touch_INT.c **** *   - Reads SlotResult from Raw Counter;
+ 732:Generated_Source\PSoC4/key_touch_INT.c **** *   - Inits bad Conversions number;
+ 733:Generated_Source\PSoC4/key_touch_INT.c **** *   - Disconnects Vrefhi from AMUBUF positive input;
+ 734:Generated_Source\PSoC4/key_touch_INT.c **** *   - Disconnects AMUBUF output from CSDBUSB with sych PHI2+HSCMP;
+ 735:Generated_Source\PSoC4/key_touch_INT.c **** *   - Opens HCBV and HCBG switches.
+ 736:Generated_Source\PSoC4/key_touch_INT.c **** *
+ 737:Generated_Source\PSoC4/key_touch_INT.c **** *******************************************************************************/
+ 738:Generated_Source\PSoC4/key_touch_INT.c **** CY_INLINE static void key_touch_SsCSDPostScan(void)
+ 739:Generated_Source\PSoC4/key_touch_INT.c **** {
+ 740:Generated_Source\PSoC4/key_touch_INT.c ****     #if (key_touch_ENABLE == key_touch_CSDV2)
+ 741:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 742:Generated_Source\PSoC4/key_touch_INT.c ****         uint32 tmpRawData;
+ 743:Generated_Source\PSoC4/key_touch_INT.c ****         uint32 tmpMaxCount;
+ 744:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_RAM_WD_BASE_STRUCT const *ptrWdgt = (key_touch_RAM_WD_BASE_STRUCT *)
+ 745:Generated_Source\PSoC4/key_touch_INT.c ****                                             key_touch_dsFlash.wdgtArray[key_touch_widgetIndex].ptr2
+  35              		.loc 1 745 0
+  36 0008 134B     		ldr	r3, .L4+4
+  37 000a 1B78     		ldrb	r3, [r3]
+ 744:Generated_Source\PSoC4/key_touch_INT.c ****                                             key_touch_dsFlash.wdgtArray[key_touch_widgetIndex].ptr2
+  38              		.loc 1 744 0
+  39 000c 5B01     		lsl	r3, r3, #5
+  40 000e 134A     		ldr	r2, .L4+8
+  41 0010 D318     		add	r3, r2, r3
+  42 0012 5B68     		ldr	r3, [r3, #4]
+  43              	.LVL0:
+ 746:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 747:Generated_Source\PSoC4/key_touch_INT.c ****         /* Read SlotResult from Raw Counter */
+ 748:Generated_Source\PSoC4/key_touch_INT.c ****         tmpRawData = key_touch_RESULT_VAL1_VALUE_MASK & CY_GET_REG32(key_touch_COUNTER_PTR);
+  44              		.loc 1 748 0
+  45 0014 124A     		ldr	r2, .L4+12
+  46 0016 1268     		ldr	r2, [r2]
+  47 0018 1204     		lsl	r2, r2, #16
+  48 001a 120C     		lsr	r2, r2, #16
+  49              	.LVL1:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 15
+
+
+ 749:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 750:Generated_Source\PSoC4/key_touch_INT.c ****         tmpMaxCount = ((1uL << ptrWdgt->resolution) - 1uL);
+  50              		.loc 1 750 0
+  51 001c 1988     		ldrh	r1, [r3]
+  52 001e 0123     		mov	r3, #1
+  53              	.LVL2:
+  54 0020 8B40     		lsl	r3, r3, r1
+  55 0022 013B     		sub	r3, r3, #1
+  56              	.LVL3:
+ 751:Generated_Source\PSoC4/key_touch_INT.c ****         if(tmpRawData < tmpMaxCount)
+  57              		.loc 1 751 0
+  58 0024 9A42     		cmp	r2, r3
+  59 0026 06D2     		bcs	.L2
+ 752:Generated_Source\PSoC4/key_touch_INT.c ****         {
+ 753:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_curRamSnsPtr->raw[key_touch_scanFreqIndex] = LO16(tmpRawData);
+  60              		.loc 1 753 0
+  61 0028 0E4B     		ldr	r3, .L4+16
+  62              	.LVL4:
+  63 002a 1968     		ldr	r1, [r3]
+  64              	.LVL5:
+  65 002c 0E4B     		ldr	r3, .L4+20
+  66 002e 1B78     		ldrb	r3, [r3]
+  67 0030 5B00     		lsl	r3, r3, #1
+  68 0032 CA52     		strh	r2, [r1, r3]
+  69 0034 05E0     		b	.L3
+  70              	.LVL6:
+  71              	.L2:
+ 754:Generated_Source\PSoC4/key_touch_INT.c ****         }
+ 755:Generated_Source\PSoC4/key_touch_INT.c ****         else
+ 756:Generated_Source\PSoC4/key_touch_INT.c ****         {
+ 757:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_curRamSnsPtr->raw[key_touch_scanFreqIndex] = LO16(tmpMaxCount);
+  72              		.loc 1 757 0
+  73 0036 0B4A     		ldr	r2, .L4+16
+  74              	.LVL7:
+  75 0038 1168     		ldr	r1, [r2]
+  76 003a 0B4A     		ldr	r2, .L4+20
+  77 003c 1278     		ldrb	r2, [r2]
+  78 003e 5200     		lsl	r2, r2, #1
+  79 0040 8B52     		strh	r3, [r1, r2]
+  80              	.LVL8:
+  81              	.L3:
+  82              	.LBE5:
+  83              	.LBE4:
+ 187:Generated_Source\PSoC4/key_touch_INT.c **** 
+  84              		.loc 1 187 0
+  85 0042 0A4B     		ldr	r3, .L4+24
+  86 0044 DA88     		ldrh	r2, [r3, #6]
+  87 0046 0132     		add	r2, r2, #1
+  88 0048 DA80     		strh	r2, [r3, #6]
+ 190:Generated_Source\PSoC4/key_touch_INT.c ****                 }
+  89              		.loc 1 190 0
+  90 004a 094A     		ldr	r2, .L4+28
+  91 004c 9968     		ldr	r1, [r3, #8]
+  92 004e 0A40     		and	r2, r1
+  93 0050 9A60     		str	r2, [r3, #8]
+ 200:Generated_Source\PSoC4/key_touch_INT.c **** 
+  94              		.loc 1 200 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 16
+
+
+  95              		@ sp needed
+  96 0052 7047     		bx	lr
+  97              	.L5:
+  98              		.align	2
+  99              	.L4:
+ 100 0054 F0000B40 		.word	1074462960
+ 101 0058 00000000 		.word	key_touch_widgetIndex
+ 102 005c 00000000 		.word	key_touch_dsFlash
+ 103 0060 D0000B40 		.word	1074462928
+ 104 0064 00000000 		.word	key_touch_curRamSnsPtr
+ 105 0068 00000000 		.word	key_touch_scanFreqIndex
+ 106 006c 00000000 		.word	key_touch_dsRam
+ 107 0070 7FFFFEFF 		.word	-65665
+ 108              		.cfi_endproc
+ 109              	.LFE1:
+ 110              		.size	key_touch_CSDPostSingleScan, .-key_touch_CSDPostSingleScan
+ 111              		.section	.text.key_touch_CSDPostMultiScan,"ax",%progbits
+ 112              		.align	2
+ 113              		.global	key_touch_CSDPostMultiScan
+ 114              		.code	16
+ 115              		.thumb_func
+ 116              		.type	key_touch_CSDPostMultiScan, %function
+ 117              	key_touch_CSDPostMultiScan:
+ 118              	.LFB2:
+ 239:Generated_Source\PSoC4/key_touch_INT.c ****         /*  Declare and initialise ptr to sensor IO structure to appropriate address        */
+ 119              		.loc 1 239 0
+ 120              		.cfi_startproc
+ 121 0000 38B5     		push	{r3, r4, r5, lr}
+ 122              		.cfi_def_cfa_offset 16
+ 123              		.cfi_offset 3, -16
+ 124              		.cfi_offset 4, -12
+ 125              		.cfi_offset 5, -8
+ 126              		.cfi_offset 14, -4
+ 241:Generated_Source\PSoC4/key_touch_INT.c ****                                                           key_touch_dsFlash.wdgtArray[key_touch_wid
+ 127              		.loc 1 241 0
+ 128 0002 374B     		ldr	r3, .L12
+ 129 0004 1A78     		ldrb	r2, [r3]
+ 242:Generated_Source\PSoC4/key_touch_INT.c ****                                                           + key_touch_sensorIndex;
+ 130              		.loc 1 242 0
+ 131 0006 374C     		ldr	r4, .L12+4
+ 132 0008 5201     		lsl	r2, r2, #5
+ 133 000a 1059     		ldr	r0, [r2, r4]
+ 243:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 134              		.loc 1 243 0
+ 135 000c 364A     		ldr	r2, .L12+8
+ 136 000e 1578     		ldrb	r5, [r2]
+ 137 0010 E900     		lsl	r1, r5, #3
+ 138 0012 4A1B     		sub	r2, r1, r5
+ 139 0014 9200     		lsl	r2, r2, #2
+ 241:Generated_Source\PSoC4/key_touch_INT.c ****                                                           key_touch_dsFlash.wdgtArray[key_touch_wid
+ 140              		.loc 1 241 0
+ 141 0016 8018     		add	r0, r0, r2
+ 142              	.LVL9:
+ 250:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 143              		.loc 1 250 0
+ 144 0018 8321     		mov	r1, #131
+ 145 001a 4900     		lsl	r1, r1, #1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 17
+
+
+ 146 001c 334A     		ldr	r2, .L12+12
+ 147 001e 1160     		str	r1, [r2]
+ 148              	.LBB10:
+ 149              	.LBB11:
+ 745:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 150              		.loc 1 745 0
+ 151 0020 1B78     		ldrb	r3, [r3]
+ 744:Generated_Source\PSoC4/key_touch_INT.c ****                                             key_touch_dsFlash.wdgtArray[key_touch_widgetIndex].ptr2
+ 152              		.loc 1 744 0
+ 153 0022 5B01     		lsl	r3, r3, #5
+ 154 0024 E318     		add	r3, r4, r3
+ 155 0026 5B68     		ldr	r3, [r3, #4]
+ 156              	.LVL10:
+ 748:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 157              		.loc 1 748 0
+ 158 0028 314A     		ldr	r2, .L12+16
+ 159 002a 1268     		ldr	r2, [r2]
+ 160 002c 1204     		lsl	r2, r2, #16
+ 161 002e 120C     		lsr	r2, r2, #16
+ 162              	.LVL11:
+ 750:Generated_Source\PSoC4/key_touch_INT.c ****         if(tmpRawData < tmpMaxCount)
+ 163              		.loc 1 750 0
+ 164 0030 1988     		ldrh	r1, [r3]
+ 165 0032 0123     		mov	r3, #1
+ 166              	.LVL12:
+ 167 0034 8B40     		lsl	r3, r3, r1
+ 168 0036 013B     		sub	r3, r3, #1
+ 169              	.LVL13:
+ 751:Generated_Source\PSoC4/key_touch_INT.c ****         {
+ 170              		.loc 1 751 0
+ 171 0038 9A42     		cmp	r2, r3
+ 172 003a 06D2     		bcs	.L7
+ 753:Generated_Source\PSoC4/key_touch_INT.c ****         }
+ 173              		.loc 1 753 0
+ 174 003c 2D4B     		ldr	r3, .L12+20
+ 175              	.LVL14:
+ 176 003e 1968     		ldr	r1, [r3]
+ 177              	.LVL15:
+ 178 0040 2D4B     		ldr	r3, .L12+24
+ 179 0042 1B78     		ldrb	r3, [r3]
+ 180 0044 5B00     		lsl	r3, r3, #1
+ 181 0046 CA52     		strh	r2, [r1, r3]
+ 182 0048 05E0     		b	.L8
+ 183              	.LVL16:
+ 184              	.L7:
+ 185              		.loc 1 757 0
+ 186 004a 2A4A     		ldr	r2, .L12+20
+ 187              	.LVL17:
+ 188 004c 1168     		ldr	r1, [r2]
+ 189 004e 2A4A     		ldr	r2, .L12+24
+ 190 0050 1278     		ldrb	r2, [r2]
+ 191 0052 5200     		lsl	r2, r2, #1
+ 192 0054 8B52     		strh	r3, [r1, r2]
+ 193              	.LVL18:
+ 194              	.L8:
+ 195              	.LBE11:
+ 196              	.LBE10:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 18
+
+
+ 281:Generated_Source\PSoC4/key_touch_INT.c ****             #endif /* (key_touch_ENABLE == key_touch_MULTI_FREQ_SCAN_EN) */
+ 197              		.loc 1 281 0
+ 198 0056 FFF7FEFF 		bl	key_touch_CSDDisconnectSns
+ 199              	.LVL19:
+ 200              	.LBB12:
+ 201              	.LBB13:
+ 758:Generated_Source\PSoC4/key_touch_INT.c ****         }
+ 759:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 760:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN)
+ 761:Generated_Source\PSoC4/key_touch_INT.c ****             /*  Init bad Conversions number */
+ 762:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_badConversionsNum = key_touch_BAD_CONVERSIONS_NUM;
+ 763:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_CSD_NOISE_METRIC_EN) */
+ 764:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 765:Generated_Source\PSoC4/key_touch_INT.c ****         #if ((key_touch_ENABLE == key_touch_CSD_SHIELD_EN) && \
+ 766:Generated_Source\PSoC4/key_touch_INT.c ****              (key_touch_2000_MV <= key_touch_CYDEV_VDDA_MV))
+ 767:Generated_Source\PSoC4/key_touch_INT.c ****             /*  Disconnect Vrefhi from AMUBUF positive input. Disconnect AMUBUF output from CSDBUSB
+ 768:Generated_Source\PSoC4/key_touch_INT.c ****             CY_SET_REG32(key_touch_SW_AMUXBUF_SEL_PTR, key_touch_SW_AMUXBUF_SEL_SW_DEFAULT);
+ 769:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* ((key_touch_ENABLE == key_touch_CSD_SHIELD_EN) && \
+ 770:Generated_Source\PSoC4/key_touch_INT.c ****                    (key_touch_2000_MV <= key_touch_CYDEV_VDDA_MV)) */
+ 771:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 772:Generated_Source\PSoC4/key_touch_INT.c ****         #if (key_touch_ENABLE == key_touch_CSD_SHIELD_EN)
+ 773:Generated_Source\PSoC4/key_touch_INT.c ****             /* Open HCBV and HCBG switches */
+ 774:Generated_Source\PSoC4/key_touch_INT.c ****             CY_SET_REG32(key_touch_SW_SHIELD_SEL_PTR, key_touch_SW_SHIELD_SEL_SW_HCBV_STATIC_OPEN |
+ 775:Generated_Source\PSoC4/key_touch_INT.c ****                                                              key_touch_SW_SHIELD_SEL_SW_HCBG_STATIC
+ 776:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* (key_touch_ENABLE == key_touch_CSD_SHIELD_EN) */
+ 777:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 778:Generated_Source\PSoC4/key_touch_INT.c ****     #else
+ 779:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 780:Generated_Source\PSoC4/key_touch_INT.c ****         /* Read SlotResult from Raw Counter */
+ 781:Generated_Source\PSoC4/key_touch_INT.c ****        key_touch_curRamSnsPtr->raw[key_touch_scanFreqIndex] = (uint16)CY_GET_REG32(key_touch_COUNTE
+ 782:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 783:Generated_Source\PSoC4/key_touch_INT.c ****     #endif /* (key_touch_ENABLE == key_touch_CSDV2) */
+ 784:Generated_Source\PSoC4/key_touch_INT.c **** }
+ 785:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 786:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 787:Generated_Source\PSoC4/key_touch_INT.c **** /*******************************************************************************
+ 788:Generated_Source\PSoC4/key_touch_INT.c **** * Function Name: key_touch_SsCSDInitNextScan
+ 789:Generated_Source\PSoC4/key_touch_INT.c **** ****************************************************************************//**
+ 790:Generated_Source\PSoC4/key_touch_INT.c **** *
+ 791:Generated_Source\PSoC4/key_touch_INT.c **** * \brief
+ 792:Generated_Source\PSoC4/key_touch_INT.c **** *   This function initializes the next sensor scan.
+ 793:Generated_Source\PSoC4/key_touch_INT.c **** *
+ 794:Generated_Source\PSoC4/key_touch_INT.c **** * \details
+ 795:Generated_Source\PSoC4/key_touch_INT.c **** *   The function decrements the sensor index, updates sense clock for matrix
+ 796:Generated_Source\PSoC4/key_touch_INT.c **** *   or touchpad widgets only, sets up Compensation IDAC, enables the sensor and
+ 797:Generated_Source\PSoC4/key_touch_INT.c **** *   scans it. When all sensors are scanned it continues to set up the next widget
+ 798:Generated_Source\PSoC4/key_touch_INT.c **** *   until all widgets are scanned. The CSD block is disabled when all widgets are
+ 799:Generated_Source\PSoC4/key_touch_INT.c **** *   scanned.
+ 800:Generated_Source\PSoC4/key_touch_INT.c **** *
+ 801:Generated_Source\PSoC4/key_touch_INT.c **** *******************************************************************************/
+ 802:Generated_Source\PSoC4/key_touch_INT.c **** CY_INLINE static void key_touch_SsCSDInitNextScan(void)
+ 803:Generated_Source\PSoC4/key_touch_INT.c **** {
+ 804:Generated_Source\PSoC4/key_touch_INT.c ****     /*  Declare and initialise ptr to widget and sensor structures to appropriate address */
+ 805:Generated_Source\PSoC4/key_touch_INT.c ****     #if (((key_touch_ENABLE == key_touch_CSD_IDAC_COMP_EN) || \
+ 806:Generated_Source\PSoC4/key_touch_INT.c ****              (key_touch_ENABLE == (key_touch_CSD_MATRIX_WIDGET_EN | key_touch_CSD_TOUCHPAD_WIDGET_E
+ 807:Generated_Source\PSoC4/key_touch_INT.c ****          (((key_touch_DISABLE == key_touch_CSD_COMMON_SNS_CLK_EN) && \
+ 808:Generated_Source\PSoC4/key_touch_INT.c ****            (key_touch_ENABLE == key_touch_CSDV2) && \
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 19
+
+
+ 809:Generated_Source\PSoC4/key_touch_INT.c ****           (key_touch_ENABLE == (key_touch_CSD_MATRIX_WIDGET_EN | key_touch_CSD_TOUCHPAD_WIDGET_EN))
+ 810:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_RAM_WD_BASE_STRUCT *ptrWdgt = (key_touch_RAM_WD_BASE_STRUCT *)
+ 811:Generated_Source\PSoC4/key_touch_INT.c ****                                                         key_touch_dsFlash.wdgtArray[key_touch_widge
+ 202              		.loc 1 811 0
+ 203 005a 214B     		ldr	r3, .L12
+ 204 005c 1A78     		ldrb	r2, [r3]
+ 810:Generated_Source\PSoC4/key_touch_INT.c ****                                                         key_touch_dsFlash.wdgtArray[key_touch_widge
+ 205              		.loc 1 810 0
+ 206 005e 2149     		ldr	r1, .L12+4
+ 207 0060 5201     		lsl	r2, r2, #5
+ 208 0062 8A18     		add	r2, r1, r2
+ 209 0064 5068     		ldr	r0, [r2, #4]
+ 210              	.LVL20:
+ 812:Generated_Source\PSoC4/key_touch_INT.c ****     #endif /* ((((key_touch_ENABLE == key_touch_CSD_IDAC_COMP_EN) && \
+ 813:Generated_Source\PSoC4/key_touch_INT.c ****                (key_touch_ENABLE == (key_touch_CSD_MATRIX_WIDGET_EN | key_touch_CSD_TOUCHPAD_WIDGET
+ 814:Generated_Source\PSoC4/key_touch_INT.c ****                (((key_touch_DISABLE == key_touch_CSD_COMMON_SNS_CLK_EN) && \
+ 815:Generated_Source\PSoC4/key_touch_INT.c ****                (key_touch_ENABLE == (key_touch_CSD_MATRIX_WIDGET_EN | key_touch_CSD_TOUCHPAD_WIDGET
+ 816:Generated_Source\PSoC4/key_touch_INT.c ****                (key_touch_CLK_SOURCE_DIRECT == key_touch_CSD_SNS_CLK_SOURCE))) */
+ 817:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 818:Generated_Source\PSoC4/key_touch_INT.c ****     /* Check if all sensors are scanned in widget */
+ 819:Generated_Source\PSoC4/key_touch_INT.c ****     if (((uint8)key_touch_dsFlash.wdgtArray[(key_touch_widgetIndex)].totalNumSns - 1u) > key_touch_
+ 211              		.loc 1 819 0
+ 212 0066 1B78     		ldrb	r3, [r3]
+ 213 0068 5B01     		lsl	r3, r3, #5
+ 214 006a CB18     		add	r3, r1, r3
+ 215 006c 9B7D     		ldrb	r3, [r3, #22]
+ 216 006e 1E4A     		ldr	r2, .L12+8
+ 217 0070 1278     		ldrb	r2, [r2]
+ 218 0072 013B     		sub	r3, r3, #1
+ 219 0074 9342     		cmp	r3, r2
+ 220 0076 1BD9     		bls	.L9
+ 820:Generated_Source\PSoC4/key_touch_INT.c ****     {
+ 821:Generated_Source\PSoC4/key_touch_INT.c ****         /*  Decrement snsIndex to configure next sensor in widget */
+ 822:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_sensorIndex++;
+ 221              		.loc 1 822 0
+ 222 0078 1B4C     		ldr	r4, .L12+8
+ 223 007a 2378     		ldrb	r3, [r4]
+ 224 007c 0133     		add	r3, r3, #1
+ 225 007e DBB2     		uxtb	r3, r3
+ 226 0080 2370     		strb	r3, [r4]
+ 823:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 824:Generated_Source\PSoC4/key_touch_INT.c ****         /*  Update global pointer to key_touch_RAM_SNS_STRUCT to current sensor  */
+ 825:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_curRamSnsPtr = (key_touch_RAM_SNS_STRUCT *)
+ 826:Generated_Source\PSoC4/key_touch_INT.c ****                                                   key_touch_dsFlash.wdgtArray[key_touch_widgetIndex
+ 227              		.loc 1 826 0
+ 228 0082 174D     		ldr	r5, .L12
+ 229 0084 2B78     		ldrb	r3, [r5]
+ 230 0086 5B01     		lsl	r3, r3, #5
+ 231 0088 CB18     		add	r3, r1, r3
+ 232 008a 9968     		ldr	r1, [r3, #8]
+ 827:Generated_Source\PSoC4/key_touch_INT.c ****                                                   + key_touch_sensorIndex;
+ 233              		.loc 1 827 0
+ 234 008c 2278     		ldrb	r2, [r4]
+ 235 008e 9300     		lsl	r3, r2, #2
+ 236 0090 9B18     		add	r3, r3, r2
+ 237 0092 5B00     		lsl	r3, r3, #1
+ 238 0094 CB18     		add	r3, r1, r3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 20
+
+
+ 825:Generated_Source\PSoC4/key_touch_INT.c ****                                                   key_touch_dsFlash.wdgtArray[key_touch_widgetIndex
+ 239              		.loc 1 825 0
+ 240 0096 174A     		ldr	r2, .L12+20
+ 241 0098 1360     		str	r3, [r2]
+ 828:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 829:Generated_Source\PSoC4/key_touch_INT.c ****         /* Configure clock divider to row or column */
+ 830:Generated_Source\PSoC4/key_touch_INT.c ****         #if ((key_touch_DISABLE == key_touch_CSD_COMMON_SNS_CLK_EN) && \
+ 831:Generated_Source\PSoC4/key_touch_INT.c ****              (key_touch_ENABLE == (key_touch_CSD_MATRIX_WIDGET_EN | key_touch_CSD_TOUCHPAD_WIDGET_E
+ 832:Generated_Source\PSoC4/key_touch_INT.c ****             if ((key_touch_WD_TOUCHPAD_E == (key_touch_WD_TYPE_ENUM)key_touch_dsFlash.wdgtArray[(ke
+ 833:Generated_Source\PSoC4/key_touch_INT.c ****                 (key_touch_WD_MATRIX_BUTTON_E == (key_touch_WD_TYPE_ENUM)key_touch_dsFlash.wdgtArra
+ 834:Generated_Source\PSoC4/key_touch_INT.c ****             {
+ 835:Generated_Source\PSoC4/key_touch_INT.c ****                 key_touch_SsCSDConfigClock();
+ 836:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 837:Generated_Source\PSoC4/key_touch_INT.c ****                 #if (key_touch_ENABLE == key_touch_CSDV2)
+ 838:Generated_Source\PSoC4/key_touch_INT.c ****                      /* Set up scanning resolution */
+ 839:Generated_Source\PSoC4/key_touch_INT.c ****                     key_touch_SsCSDCalculateScanDuration(ptrWdgt);
+ 840:Generated_Source\PSoC4/key_touch_INT.c ****                 #endif /* (key_touch_ENABLE == key_touch_CSDV2) */
+ 841:Generated_Source\PSoC4/key_touch_INT.c ****             }
+ 842:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* ((key_touch_DISABLE == key_touch_CSD_COMMON_SNS_CLK_EN) && \
+ 843:Generated_Source\PSoC4/key_touch_INT.c ****                    (key_touch_ENABLE == (key_touch_CSD_MATRIX_WIDGET_EN | key_touch_CSD_TOUCHPAD_WI
+ 844:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 845:Generated_Source\PSoC4/key_touch_INT.c ****         /* Setup Compensation IDAC for next sensor in widget */
+ 846:Generated_Source\PSoC4/key_touch_INT.c ****         #if ((key_touch_ENABLE == key_touch_CSD_IDAC_COMP_EN) || \
+ 847:Generated_Source\PSoC4/key_touch_INT.c ****              (key_touch_ENABLE == (key_touch_CSD_MATRIX_WIDGET_EN | key_touch_CSD_TOUCHPAD_WIDGET_E
+ 848:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_SsCSDSetUpIdacs(ptrWdgt);
+ 242              		.loc 1 848 0
+ 243 009a FFF7FEFF 		bl	key_touch_SsCSDSetUpIdacs
+ 244              	.LVL21:
+ 849:Generated_Source\PSoC4/key_touch_INT.c ****         #endif /* ((key_touch_ENABLE == key_touch_CSD_IDAC_COMP_EN) || \
+ 850:Generated_Source\PSoC4/key_touch_INT.c ****              (key_touch_ENABLE == (key_touch_CSD_MATRIX_WIDGET_EN | key_touch_CSD_TOUCHPAD_WIDGET_E
+ 851:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 852:Generated_Source\PSoC4/key_touch_INT.c ****         /* Enable sensor */
+ 853:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_SsCSDConnectSensorExt((uint32)key_touch_widgetIndex, (uint32)key_touch_sensorInde
+ 245              		.loc 1 853 0
+ 246 009e 2878     		ldrb	r0, [r5]
+ 247 00a0 C0B2     		uxtb	r0, r0
+ 248 00a2 2178     		ldrb	r1, [r4]
+ 249 00a4 C9B2     		uxtb	r1, r1
+ 250 00a6 FFF7FEFF 		bl	key_touch_SsCSDConnectSensorExt
+ 251              	.LVL22:
+ 854:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 855:Generated_Source\PSoC4/key_touch_INT.c ****         /* Proceed scanning */
+ 856:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_SsCSDStartSample();
+ 252              		.loc 1 856 0
+ 253 00aa FFF7FEFF 		bl	key_touch_SsCSDStartSample
+ 254              	.LVL23:
+ 255 00ae 15E0     		b	.L6
+ 256              	.LVL24:
+ 257              	.L9:
+ 857:Generated_Source\PSoC4/key_touch_INT.c ****     }
+ 858:Generated_Source\PSoC4/key_touch_INT.c ****     /*    Call scan next widget API if requested, if not, complete the scan  */
+ 859:Generated_Source\PSoC4/key_touch_INT.c ****     else
+ 860:Generated_Source\PSoC4/key_touch_INT.c ****     {
+ 861:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_sensorIndex = 0u;
+ 258              		.loc 1 861 0
+ 259 00b0 0022     		mov	r2, #0
+ 260 00b2 0D4B     		ldr	r3, .L12+8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 21
+
+
+ 261 00b4 1A70     		strb	r2, [r3]
+ 862:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 863:Generated_Source\PSoC4/key_touch_INT.c ****         /* Current widget is totally scanned. Reset WIDGET BUSY flag */
+ 864:Generated_Source\PSoC4/key_touch_INT.c ****         key_touch_dsRam.status &= ~key_touch_WDGT_SW_STS_BUSY;
+ 262              		.loc 1 864 0
+ 263 00b6 114A     		ldr	r2, .L12+28
+ 264 00b8 114B     		ldr	r3, .L12+32
+ 265 00ba 9168     		ldr	r1, [r2, #8]
+ 266 00bc 0B40     		and	r3, r1
+ 267 00be 9360     		str	r3, [r2, #8]
+ 865:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 866:Generated_Source\PSoC4/key_touch_INT.c ****         /* Check if all widgets have been scanned */
+ 867:Generated_Source\PSoC4/key_touch_INT.c ****         if (key_touch_ENABLE == key_touch_requestScanAllWidget)
+ 268              		.loc 1 867 0
+ 269 00c0 104A     		ldr	r2, .L12+36
+ 270 00c2 1278     		ldrb	r2, [r2]
+ 271 00c4 012A     		cmp	r2, #1
+ 272 00c6 02D1     		bne	.L11
+ 868:Generated_Source\PSoC4/key_touch_INT.c ****         {
+ 869:Generated_Source\PSoC4/key_touch_INT.c ****             /* Configure and begin scanning next widget */
+ 870:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_SsPostAllWidgetsScan();
+ 273              		.loc 1 870 0
+ 274 00c8 FFF7FEFF 		bl	key_touch_SsPostAllWidgetsScan
+ 275              	.LVL25:
+ 276 00cc 06E0     		b	.L6
+ 277              	.LVL26:
+ 278              	.L11:
+ 871:Generated_Source\PSoC4/key_touch_INT.c ****         }
+ 872:Generated_Source\PSoC4/key_touch_INT.c ****         else
+ 873:Generated_Source\PSoC4/key_touch_INT.c ****         {
+ 874:Generated_Source\PSoC4/key_touch_INT.c ****             #if (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN)
+ 875:Generated_Source\PSoC4/key_touch_INT.c ****                 #if (key_touch_ENABLE == key_touch_CSDV2)
+ 876:Generated_Source\PSoC4/key_touch_INT.c ****                     /*  Disable the CSD block */
+ 877:Generated_Source\PSoC4/key_touch_INT.c ****                     CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd);
+ 878:Generated_Source\PSoC4/key_touch_INT.c ****                 #else
+ 879:Generated_Source\PSoC4/key_touch_INT.c ****                     /*  Disable the CSD block. Connect Vref Buffer to AMUX bus */
+ 880:Generated_Source\PSoC4/key_touch_INT.c ****                     #if ((key_touch_CSH_PRECHARGE_IO_BUF == key_touch_CSD_CSH_PRECHARGE_SRC) &&\
+ 881:Generated_Source\PSoC4/key_touch_INT.c ****                          (key_touch_ENABLE == key_touch_CSD_SHIELD_TANK_EN))
+ 882:Generated_Source\PSoC4/key_touch_INT.c ****                         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CMOD_PRE
+ 883:Generated_Source\PSoC4/key_touch_INT.c ****                     #else
+ 884:Generated_Source\PSoC4/key_touch_INT.c ****                         CY_SET_REG32(key_touch_CONFIG_PTR, key_touch_configCsd | key_touch_CTANK_PR
+ 885:Generated_Source\PSoC4/key_touch_INT.c ****                     #endif /* ((key_touch_CSH_PRECHARGE_IO_BUF == key_touch_CSD_CSH_PRECHARGE_SRC) 
+ 886:Generated_Source\PSoC4/key_touch_INT.c ****                                (key_touch_ENABLE == key_touch_CSD_SHIELD_TANK_EN)) */
+ 887:Generated_Source\PSoC4/key_touch_INT.c ****                 #endif /* (key_touch_ENABLE == key_touch_CSDV2) */
+ 888:Generated_Source\PSoC4/key_touch_INT.c ****             #endif /* (key_touch_ENABLE == key_touch_BLOCK_OFF_AFTER_SCAN_EN) */
+ 889:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 890:Generated_Source\PSoC4/key_touch_INT.c ****             /* All widgets are totally scanned. Reset BUSY flag */
+ 891:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_dsRam.status &= ~key_touch_SW_STS_BUSY;
+ 279              		.loc 1 891 0
+ 280 00ce 0B4A     		ldr	r2, .L12+28
+ 281 00d0 8021     		mov	r1, #128
+ 282 00d2 8B43     		bic	r3, r1
+ 283 00d4 9360     		str	r3, [r2, #8]
+ 892:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 893:Generated_Source\PSoC4/key_touch_INT.c ****             /* Update scan Counter */
+ 894:Generated_Source\PSoC4/key_touch_INT.c ****             key_touch_dsRam.scanCounter++;
+ 284              		.loc 1 894 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 22
+
+
+ 285 00d6 D388     		ldrh	r3, [r2, #6]
+ 286 00d8 0133     		add	r3, r3, #1
+ 287 00da D380     		strh	r3, [r2, #6]
+ 288              	.LVL27:
+ 289              	.L6:
+ 290              	.LBE13:
+ 291              	.LBE12:
+ 310:Generated_Source\PSoC4/key_touch_INT.c **** 
+ 292              		.loc 1 310 0
+ 293              		@ sp needed
+ 294 00dc 38BD     		pop	{r3, r4, r5, pc}
+ 295              	.L13:
+ 296 00de C046     		.align	2
+ 297              	.L12:
+ 298 00e0 00000000 		.word	key_touch_widgetIndex
+ 299 00e4 00000000 		.word	key_touch_dsFlash
+ 300 00e8 00000000 		.word	key_touch_sensorIndex
+ 301 00ec F0000B40 		.word	1074462960
+ 302 00f0 D0000B40 		.word	1074462928
+ 303 00f4 00000000 		.word	key_touch_curRamSnsPtr
+ 304 00f8 00000000 		.word	key_touch_scanFreqIndex
+ 305 00fc 00000000 		.word	key_touch_dsRam
+ 306 0100 FFFFFEFF 		.word	-65537
+ 307 0104 00000000 		.word	key_touch_requestScanAllWidget
+ 308              		.cfi_endproc
+ 309              	.LFE2:
+ 310              		.size	key_touch_CSDPostMultiScan, .-key_touch_CSDPostMultiScan
+ 311              		.text
+ 312              	.Letext0:
+ 313              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+ 314              		.file 3 "Generated_Source\\PSoC4\\key_touch_Configuration.h"
+ 315              		.file 4 "Generated_Source\\PSoC4\\key_touch_SmartSense_LL.h"
+ 316              		.file 5 "Generated_Source\\PSoC4\\key_touch_Structure.h"
+ 317              		.file 6 "Generated_Source\\PSoC4\\key_touch_Sensing.h"
+ 318              		.file 7 "Generated_Source\\PSoC4\\key_touch_SensingCSD_LL.h"
+ 319              		.section	.debug_info,"",%progbits
+ 320              	.Ldebug_info0:
+ 321 0000 35090000 		.4byte	0x935
+ 322 0004 0400     		.2byte	0x4
+ 323 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 324 000a 04       		.byte	0x4
+ 325 000b 01       		.uleb128 0x1
+ 326 000c DB060000 		.4byte	.LASF120
+ 327 0010 01       		.byte	0x1
+ 328 0011 5E000000 		.4byte	.LASF121
+ 329 0015 62040000 		.4byte	.LASF122
+ 330 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 331 001d 00000000 		.4byte	0
+ 332 0021 00000000 		.4byte	.Ldebug_line0
+ 333 0025 02       		.uleb128 0x2
+ 334 0026 01       		.byte	0x1
+ 335 0027 06       		.byte	0x6
+ 336 0028 A3000000 		.4byte	.LASF0
+ 337 002c 02       		.uleb128 0x2
+ 338 002d 01       		.byte	0x1
+ 339 002e 08       		.byte	0x8
+ 340 002f EA040000 		.4byte	.LASF1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 23
+
+
+ 341 0033 02       		.uleb128 0x2
+ 342 0034 02       		.byte	0x2
+ 343 0035 05       		.byte	0x5
+ 344 0036 22050000 		.4byte	.LASF2
+ 345 003a 02       		.uleb128 0x2
+ 346 003b 02       		.byte	0x2
+ 347 003c 07       		.byte	0x7
+ 348 003d 55020000 		.4byte	.LASF3
+ 349 0041 02       		.uleb128 0x2
+ 350 0042 04       		.byte	0x4
+ 351 0043 05       		.byte	0x5
+ 352 0044 29010000 		.4byte	.LASF4
+ 353 0048 02       		.uleb128 0x2
+ 354 0049 04       		.byte	0x4
+ 355 004a 07       		.byte	0x7
+ 356 004b 1A020000 		.4byte	.LASF5
+ 357 004f 02       		.uleb128 0x2
+ 358 0050 08       		.byte	0x8
+ 359 0051 05       		.byte	0x5
+ 360 0052 95000000 		.4byte	.LASF6
+ 361 0056 02       		.uleb128 0x2
+ 362 0057 08       		.byte	0x8
+ 363 0058 07       		.byte	0x7
+ 364 0059 11000000 		.4byte	.LASF7
+ 365 005d 03       		.uleb128 0x3
+ 366 005e 04       		.byte	0x4
+ 367 005f 05       		.byte	0x5
+ 368 0060 696E7400 		.ascii	"int\000"
+ 369 0064 02       		.uleb128 0x2
+ 370 0065 04       		.byte	0x4
+ 371 0066 07       		.byte	0x7
+ 372 0067 EE010000 		.4byte	.LASF8
+ 373 006b 04       		.uleb128 0x4
+ 374 006c 6C010000 		.4byte	.LASF9
+ 375 0070 02       		.byte	0x2
+ 376 0071 B901     		.2byte	0x1b9
+ 377 0073 2C000000 		.4byte	0x2c
+ 378 0077 04       		.uleb128 0x4
+ 379 0078 00000000 		.4byte	.LASF10
+ 380 007c 02       		.byte	0x2
+ 381 007d BA01     		.2byte	0x1ba
+ 382 007f 3A000000 		.4byte	0x3a
+ 383 0083 04       		.uleb128 0x4
+ 384 0084 AD010000 		.4byte	.LASF11
+ 385 0088 02       		.byte	0x2
+ 386 0089 BB01     		.2byte	0x1bb
+ 387 008b 48000000 		.4byte	0x48
+ 388 008f 02       		.uleb128 0x2
+ 389 0090 04       		.byte	0x4
+ 390 0091 04       		.byte	0x4
+ 391 0092 5C040000 		.4byte	.LASF12
+ 392 0096 02       		.uleb128 0x2
+ 393 0097 08       		.byte	0x8
+ 394 0098 04       		.byte	0x4
+ 395 0099 72010000 		.4byte	.LASF13
+ 396 009d 02       		.uleb128 0x2
+ 397 009e 01       		.byte	0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 24
+
+
+ 398 009f 08       		.byte	0x8
+ 399 00a0 A2050000 		.4byte	.LASF14
+ 400 00a4 05       		.uleb128 0x5
+ 401 00a5 6B000000 		.4byte	0x6b
+ 402 00a9 04       		.uleb128 0x4
+ 403 00aa 17030000 		.4byte	.LASF15
+ 404 00ae 02       		.byte	0x2
+ 405 00af 6502     		.2byte	0x265
+ 406 00b1 B5000000 		.4byte	0xb5
+ 407 00b5 05       		.uleb128 0x5
+ 408 00b6 83000000 		.4byte	0x83
+ 409 00ba 04       		.uleb128 0x4
+ 410 00bb C3030000 		.4byte	.LASF16
+ 411 00bf 03       		.byte	0x3
+ 412 00c0 0301     		.2byte	0x103
+ 413 00c2 77000000 		.4byte	0x77
+ 414 00c6 04       		.uleb128 0x4
+ 415 00c7 1D030000 		.4byte	.LASF17
+ 416 00cb 03       		.byte	0x3
+ 417 00cc 0701     		.2byte	0x107
+ 418 00ce 6B000000 		.4byte	0x6b
+ 419 00d2 02       		.uleb128 0x2
+ 420 00d3 04       		.byte	0x4
+ 421 00d4 07       		.byte	0x7
+ 422 00d5 49030000 		.4byte	.LASF18
+ 423 00d9 06       		.uleb128 0x6
+ 424 00da 04       		.byte	0x4
+ 425 00db 07       		.uleb128 0x7
+ 426 00dc 6B000000 		.4byte	0x6b
+ 427 00e0 08       		.uleb128 0x8
+ 428 00e1 04       		.byte	0x4
+ 429 00e2 6B000000 		.4byte	0x6b
+ 430 00e6 09       		.uleb128 0x9
+ 431 00e7 0C       		.byte	0xc
+ 432 00e8 04       		.byte	0x4
+ 433 00e9 6C       		.byte	0x6c
+ 434 00ea 43010000 		.4byte	0x143
+ 435 00ee 0A       		.uleb128 0xa
+ 436 00ef A5060000 		.4byte	.LASF19
+ 437 00f3 04       		.byte	0x4
+ 438 00f4 6E       		.byte	0x6e
+ 439 00f5 77000000 		.4byte	0x77
+ 440 00f9 00       		.byte	0
+ 441 00fa 0A       		.uleb128 0xa
+ 442 00fb F8040000 		.4byte	.LASF20
+ 443 00ff 04       		.byte	0x4
+ 444 0100 6F       		.byte	0x6f
+ 445 0101 77000000 		.4byte	0x77
+ 446 0105 02       		.byte	0x2
+ 447 0106 0A       		.uleb128 0xa
+ 448 0107 FF040000 		.4byte	.LASF21
+ 449 010b 04       		.byte	0x4
+ 450 010c 70       		.byte	0x70
+ 451 010d 77000000 		.4byte	0x77
+ 452 0111 04       		.byte	0x4
+ 453 0112 0A       		.uleb128 0xa
+ 454 0113 06050000 		.4byte	.LASF22
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 25
+
+
+ 455 0117 04       		.byte	0x4
+ 456 0118 71       		.byte	0x71
+ 457 0119 77000000 		.4byte	0x77
+ 458 011d 06       		.byte	0x6
+ 459 011e 0A       		.uleb128 0xa
+ 460 011f 0D050000 		.4byte	.LASF23
+ 461 0123 04       		.byte	0x4
+ 462 0124 72       		.byte	0x72
+ 463 0125 77000000 		.4byte	0x77
+ 464 0129 08       		.byte	0x8
+ 465 012a 0A       		.uleb128 0xa
+ 466 012b 14050000 		.4byte	.LASF24
+ 467 012f 04       		.byte	0x4
+ 468 0130 73       		.byte	0x73
+ 469 0131 6B000000 		.4byte	0x6b
+ 470 0135 0A       		.byte	0xa
+ 471 0136 0A       		.uleb128 0xa
+ 472 0137 1B050000 		.4byte	.LASF25
+ 473 013b 04       		.byte	0x4
+ 474 013c 74       		.byte	0x74
+ 475 013d 6B000000 		.4byte	0x6b
+ 476 0141 0B       		.byte	0xb
+ 477 0142 00       		.byte	0
+ 478 0143 0B       		.uleb128 0xb
+ 479 0144 BB040000 		.4byte	.LASF26
+ 480 0148 04       		.byte	0x4
+ 481 0149 75       		.byte	0x75
+ 482 014a E6000000 		.4byte	0xe6
+ 483 014e 09       		.uleb128 0x9
+ 484 014f 12       		.byte	0x12
+ 485 0150 05       		.byte	0x5
+ 486 0151 7C       		.byte	0x7c
+ 487 0152 F3010000 		.4byte	0x1f3
+ 488 0156 0A       		.uleb128 0xa
+ 489 0157 7C050000 		.4byte	.LASF27
+ 490 015b 05       		.byte	0x5
+ 491 015c 82       		.byte	0x82
+ 492 015d 77000000 		.4byte	0x77
+ 493 0161 00       		.byte	0
+ 494 0162 0A       		.uleb128 0xa
+ 495 0163 9C060000 		.4byte	.LASF28
+ 496 0167 05       		.byte	0x5
+ 497 0168 87       		.byte	0x87
+ 498 0169 BA000000 		.4byte	0xba
+ 499 016d 02       		.byte	0x2
+ 500 016e 0A       		.uleb128 0xa
+ 501 016f 6D070000 		.4byte	.LASF29
+ 502 0173 05       		.byte	0x5
+ 503 0174 8C       		.byte	0x8c
+ 504 0175 6B000000 		.4byte	0x6b
+ 505 0179 04       		.byte	0x4
+ 506 017a 0A       		.uleb128 0xa
+ 507 017b 79030000 		.4byte	.LASF30
+ 508 017f 05       		.byte	0x5
+ 509 0180 91       		.byte	0x91
+ 510 0181 6B000000 		.4byte	0x6b
+ 511 0185 05       		.byte	0x5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 26
+
+
+ 512 0186 0A       		.uleb128 0xa
+ 513 0187 B4010000 		.4byte	.LASF31
+ 514 018b 05       		.byte	0x5
+ 515 018c 96       		.byte	0x96
+ 516 018d 6B000000 		.4byte	0x6b
+ 517 0191 06       		.byte	0x6
+ 518 0192 0A       		.uleb128 0xa
+ 519 0193 EE050000 		.4byte	.LASF32
+ 520 0197 05       		.byte	0x5
+ 521 0198 9B       		.byte	0x9b
+ 522 0199 6B000000 		.4byte	0x6b
+ 523 019d 07       		.byte	0x7
+ 524 019e 0A       		.uleb128 0xa
+ 525 019f 42020000 		.4byte	.LASF33
+ 526 01a3 05       		.byte	0x5
+ 527 01a4 A1       		.byte	0xa1
+ 528 01a5 C6000000 		.4byte	0xc6
+ 529 01a9 08       		.byte	0x8
+ 530 01aa 0A       		.uleb128 0xa
+ 531 01ab E0040000 		.4byte	.LASF34
+ 532 01af 05       		.byte	0x5
+ 533 01b0 A6       		.byte	0xa6
+ 534 01b1 6B000000 		.4byte	0x6b
+ 535 01b5 09       		.byte	0x9
+ 536 01b6 0A       		.uleb128 0xa
+ 537 01b7 39030000 		.4byte	.LASF35
+ 538 01bb 05       		.byte	0x5
+ 539 01bc AD       		.byte	0xad
+ 540 01bd F3010000 		.4byte	0x1f3
+ 541 01c1 0A       		.byte	0xa
+ 542 01c2 0A       		.uleb128 0xa
+ 543 01c3 CC050000 		.4byte	.LASF36
+ 544 01c7 05       		.byte	0x5
+ 545 01c8 B4       		.byte	0xb4
+ 546 01c9 6B000000 		.4byte	0x6b
+ 547 01cd 0B       		.byte	0xb
+ 548 01ce 0A       		.uleb128 0xa
+ 549 01cf 79060000 		.4byte	.LASF37
+ 550 01d3 05       		.byte	0x5
+ 551 01d4 B9       		.byte	0xb9
+ 552 01d5 6B000000 		.4byte	0x6b
+ 553 01d9 0C       		.byte	0xc
+ 554 01da 0A       		.uleb128 0xa
+ 555 01db 07000000 		.4byte	.LASF38
+ 556 01df 05       		.byte	0x5
+ 557 01e0 BF       		.byte	0xbf
+ 558 01e1 77000000 		.4byte	0x77
+ 559 01e5 0E       		.byte	0xe
+ 560 01e6 0A       		.uleb128 0xa
+ 561 01e7 9E030000 		.4byte	.LASF39
+ 562 01eb 05       		.byte	0x5
+ 563 01ec C4       		.byte	0xc4
+ 564 01ed 77000000 		.4byte	0x77
+ 565 01f1 10       		.byte	0x10
+ 566 01f2 00       		.byte	0
+ 567 01f3 0C       		.uleb128 0xc
+ 568 01f4 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 27
+
+
+ 569 01f8 03020000 		.4byte	0x203
+ 570 01fc 0D       		.uleb128 0xd
+ 571 01fd D2000000 		.4byte	0xd2
+ 572 0201 00       		.byte	0
+ 573 0202 00       		.byte	0
+ 574 0203 0B       		.uleb128 0xb
+ 575 0204 68020000 		.4byte	.LASF40
+ 576 0208 05       		.byte	0x5
+ 577 0209 C5       		.byte	0xc5
+ 578 020a 4E010000 		.4byte	0x14e
+ 579 020e 09       		.uleb128 0x9
+ 580 020f 12       		.byte	0x12
+ 581 0210 05       		.byte	0x5
+ 582 0211 CA       		.byte	0xca
+ 583 0212 B7020000 		.4byte	0x2b7
+ 584 0216 0A       		.uleb128 0xa
+ 585 0217 7C050000 		.4byte	.LASF27
+ 586 021b 05       		.byte	0x5
+ 587 021c D0       		.byte	0xd0
+ 588 021d 77000000 		.4byte	0x77
+ 589 0221 00       		.byte	0
+ 590 0222 0A       		.uleb128 0xa
+ 591 0223 9C060000 		.4byte	.LASF28
+ 592 0227 05       		.byte	0x5
+ 593 0228 D5       		.byte	0xd5
+ 594 0229 BA000000 		.4byte	0xba
+ 595 022d 02       		.byte	0x2
+ 596 022e 0A       		.uleb128 0xa
+ 597 022f 6D070000 		.4byte	.LASF29
+ 598 0233 05       		.byte	0x5
+ 599 0234 DA       		.byte	0xda
+ 600 0235 6B000000 		.4byte	0x6b
+ 601 0239 04       		.byte	0x4
+ 602 023a 0A       		.uleb128 0xa
+ 603 023b 79030000 		.4byte	.LASF30
+ 604 023f 05       		.byte	0x5
+ 605 0240 DF       		.byte	0xdf
+ 606 0241 6B000000 		.4byte	0x6b
+ 607 0245 05       		.byte	0x5
+ 608 0246 0A       		.uleb128 0xa
+ 609 0247 B4010000 		.4byte	.LASF31
+ 610 024b 05       		.byte	0x5
+ 611 024c E4       		.byte	0xe4
+ 612 024d 6B000000 		.4byte	0x6b
+ 613 0251 06       		.byte	0x6
+ 614 0252 0A       		.uleb128 0xa
+ 615 0253 EE050000 		.4byte	.LASF32
+ 616 0257 05       		.byte	0x5
+ 617 0258 E9       		.byte	0xe9
+ 618 0259 6B000000 		.4byte	0x6b
+ 619 025d 07       		.byte	0x7
+ 620 025e 0A       		.uleb128 0xa
+ 621 025f 42020000 		.4byte	.LASF33
+ 622 0263 05       		.byte	0x5
+ 623 0264 EF       		.byte	0xef
+ 624 0265 C6000000 		.4byte	0xc6
+ 625 0269 08       		.byte	0x8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 28
+
+
+ 626 026a 0A       		.uleb128 0xa
+ 627 026b E0040000 		.4byte	.LASF34
+ 628 026f 05       		.byte	0x5
+ 629 0270 F4       		.byte	0xf4
+ 630 0271 6B000000 		.4byte	0x6b
+ 631 0275 09       		.byte	0x9
+ 632 0276 0A       		.uleb128 0xa
+ 633 0277 39030000 		.4byte	.LASF35
+ 634 027b 05       		.byte	0x5
+ 635 027c FB       		.byte	0xfb
+ 636 027d F3010000 		.4byte	0x1f3
+ 637 0281 0A       		.byte	0xa
+ 638 0282 0E       		.uleb128 0xe
+ 639 0283 CC050000 		.4byte	.LASF36
+ 640 0287 05       		.byte	0x5
+ 641 0288 0201     		.2byte	0x102
+ 642 028a 6B000000 		.4byte	0x6b
+ 643 028e 0B       		.byte	0xb
+ 644 028f 0E       		.uleb128 0xe
+ 645 0290 79060000 		.4byte	.LASF37
+ 646 0294 05       		.byte	0x5
+ 647 0295 0701     		.2byte	0x107
+ 648 0297 6B000000 		.4byte	0x6b
+ 649 029b 0C       		.byte	0xc
+ 650 029c 0E       		.uleb128 0xe
+ 651 029d 07000000 		.4byte	.LASF38
+ 652 02a1 05       		.byte	0x5
+ 653 02a2 0D01     		.2byte	0x10d
+ 654 02a4 77000000 		.4byte	0x77
+ 655 02a8 0E       		.byte	0xe
+ 656 02a9 0E       		.uleb128 0xe
+ 657 02aa 9E030000 		.4byte	.LASF39
+ 658 02ae 05       		.byte	0x5
+ 659 02af 1201     		.2byte	0x112
+ 660 02b1 77000000 		.4byte	0x77
+ 661 02b5 10       		.byte	0x10
+ 662 02b6 00       		.byte	0
+ 663 02b7 04       		.uleb128 0x4
+ 664 02b8 95020000 		.4byte	.LASF41
+ 665 02bc 05       		.byte	0x5
+ 666 02bd 1301     		.2byte	0x113
+ 667 02bf 0E020000 		.4byte	0x20e
+ 668 02c3 0F       		.uleb128 0xf
+ 669 02c4 D8       		.byte	0xd8
+ 670 02c5 05       		.byte	0x5
+ 671 02c6 1901     		.2byte	0x119
+ 672 02c8 69030000 		.4byte	0x369
+ 673 02cc 0E       		.uleb128 0xe
+ 674 02cd CF000000 		.4byte	.LASF42
+ 675 02d1 05       		.byte	0x5
+ 676 02d2 1E01     		.2byte	0x11e
+ 677 02d4 B7020000 		.4byte	0x2b7
+ 678 02d8 00       		.byte	0
+ 679 02d9 0E       		.uleb128 0xe
+ 680 02da D7000000 		.4byte	.LASF43
+ 681 02de 05       		.byte	0x5
+ 682 02df 2301     		.2byte	0x123
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 29
+
+
+ 683 02e1 B7020000 		.4byte	0x2b7
+ 684 02e5 12       		.byte	0x12
+ 685 02e6 0E       		.uleb128 0xe
+ 686 02e7 DF000000 		.4byte	.LASF44
+ 687 02eb 05       		.byte	0x5
+ 688 02ec 2801     		.2byte	0x128
+ 689 02ee B7020000 		.4byte	0x2b7
+ 690 02f2 24       		.byte	0x24
+ 691 02f3 0E       		.uleb128 0xe
+ 692 02f4 E7000000 		.4byte	.LASF45
+ 693 02f8 05       		.byte	0x5
+ 694 02f9 2D01     		.2byte	0x12d
+ 695 02fb B7020000 		.4byte	0x2b7
+ 696 02ff 36       		.byte	0x36
+ 697 0300 0E       		.uleb128 0xe
+ 698 0301 EF000000 		.4byte	.LASF46
+ 699 0305 05       		.byte	0x5
+ 700 0306 3201     		.2byte	0x132
+ 701 0308 B7020000 		.4byte	0x2b7
+ 702 030c 48       		.byte	0x48
+ 703 030d 0E       		.uleb128 0xe
+ 704 030e F7000000 		.4byte	.LASF47
+ 705 0312 05       		.byte	0x5
+ 706 0313 3701     		.2byte	0x137
+ 707 0315 B7020000 		.4byte	0x2b7
+ 708 0319 5A       		.byte	0x5a
+ 709 031a 0E       		.uleb128 0xe
+ 710 031b FF000000 		.4byte	.LASF48
+ 711 031f 05       		.byte	0x5
+ 712 0320 3C01     		.2byte	0x13c
+ 713 0322 B7020000 		.4byte	0x2b7
+ 714 0326 6C       		.byte	0x6c
+ 715 0327 0E       		.uleb128 0xe
+ 716 0328 07010000 		.4byte	.LASF49
+ 717 032c 05       		.byte	0x5
+ 718 032d 4101     		.2byte	0x141
+ 719 032f B7020000 		.4byte	0x2b7
+ 720 0333 7E       		.byte	0x7e
+ 721 0334 0E       		.uleb128 0xe
+ 722 0335 0F010000 		.4byte	.LASF50
+ 723 0339 05       		.byte	0x5
+ 724 033a 4601     		.2byte	0x146
+ 725 033c B7020000 		.4byte	0x2b7
+ 726 0340 90       		.byte	0x90
+ 727 0341 0E       		.uleb128 0xe
+ 728 0342 17010000 		.4byte	.LASF51
+ 729 0346 05       		.byte	0x5
+ 730 0347 4B01     		.2byte	0x14b
+ 731 0349 B7020000 		.4byte	0x2b7
+ 732 034d A2       		.byte	0xa2
+ 733 034e 0E       		.uleb128 0xe
+ 734 034f 90050000 		.4byte	.LASF52
+ 735 0353 05       		.byte	0x5
+ 736 0354 5001     		.2byte	0x150
+ 737 0356 B7020000 		.4byte	0x2b7
+ 738 035a B4       		.byte	0xb4
+ 739 035b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 30
+
+
+ 740 035c 99050000 		.4byte	.LASF53
+ 741 0360 05       		.byte	0x5
+ 742 0361 5501     		.2byte	0x155
+ 743 0363 B7020000 		.4byte	0x2b7
+ 744 0367 C6       		.byte	0xc6
+ 745 0368 00       		.byte	0
+ 746 0369 04       		.uleb128 0x4
+ 747 036a 1C040000 		.4byte	.LASF54
+ 748 036e 05       		.byte	0x5
+ 749 036f 5601     		.2byte	0x156
+ 750 0371 C3020000 		.4byte	0x2c3
+ 751 0375 0F       		.uleb128 0xf
+ 752 0376 0A       		.byte	0xa
+ 753 0377 05       		.byte	0x5
+ 754 0378 5C01     		.2byte	0x15c
+ 755 037a CD030000 		.4byte	0x3cd
+ 756 037e 10       		.uleb128 0x10
+ 757 037f 72617700 		.ascii	"raw\000"
+ 758 0383 05       		.byte	0x5
+ 759 0384 6101     		.2byte	0x161
+ 760 0386 CD030000 		.4byte	0x3cd
+ 761 038a 00       		.byte	0
+ 762 038b 0E       		.uleb128 0xe
+ 763 038c E9010000 		.4byte	.LASF55
+ 764 0390 05       		.byte	0x5
+ 765 0391 6601     		.2byte	0x166
+ 766 0393 CD030000 		.4byte	0x3cd
+ 767 0397 02       		.byte	0x2
+ 768 0398 0E       		.uleb128 0xe
+ 769 0399 D6010000 		.4byte	.LASF56
+ 770 039d 05       		.byte	0x5
+ 771 039e 6C01     		.2byte	0x16c
+ 772 03a0 F3010000 		.4byte	0x1f3
+ 773 03a4 04       		.byte	0x4
+ 774 03a5 0E       		.uleb128 0xe
+ 775 03a6 50000000 		.4byte	.LASF57
+ 776 03aa 05       		.byte	0x5
+ 777 03ab 7101     		.2byte	0x171
+ 778 03ad BA000000 		.4byte	0xba
+ 779 03b1 06       		.byte	0x6
+ 780 03b2 0E       		.uleb128 0xe
+ 781 03b3 1B060000 		.4byte	.LASF58
+ 782 03b7 05       		.byte	0x5
+ 783 03b8 7601     		.2byte	0x176
+ 784 03ba DD030000 		.4byte	0x3dd
+ 785 03be 08       		.byte	0x8
+ 786 03bf 0E       		.uleb128 0xe
+ 787 03c0 12060000 		.4byte	.LASF59
+ 788 03c4 05       		.byte	0x5
+ 789 03c5 7C01     		.2byte	0x17c
+ 790 03c7 F3010000 		.4byte	0x1f3
+ 791 03cb 09       		.byte	0x9
+ 792 03cc 00       		.byte	0
+ 793 03cd 0C       		.uleb128 0xc
+ 794 03ce 77000000 		.4byte	0x77
+ 795 03d2 DD030000 		.4byte	0x3dd
+ 796 03d6 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 31
+
+
+ 797 03d7 D2000000 		.4byte	0xd2
+ 798 03db 00       		.byte	0
+ 799 03dc 00       		.byte	0
+ 800 03dd 0C       		.uleb128 0xc
+ 801 03de C6000000 		.4byte	0xc6
+ 802 03e2 ED030000 		.4byte	0x3ed
+ 803 03e6 0D       		.uleb128 0xd
+ 804 03e7 D2000000 		.4byte	0xd2
+ 805 03eb 00       		.byte	0
+ 806 03ec 00       		.byte	0
+ 807 03ed 04       		.uleb128 0x4
+ 808 03ee F9050000 		.4byte	.LASF60
+ 809 03f2 05       		.byte	0x5
+ 810 03f3 7D01     		.2byte	0x17d
+ 811 03f5 75030000 		.4byte	0x375
+ 812 03f9 0F       		.uleb128 0xf
+ 813 03fa 78       		.byte	0x78
+ 814 03fb 05       		.byte	0x5
+ 815 03fc 8301     		.2byte	0x183
+ 816 03fe 9F040000 		.4byte	0x49f
+ 817 0402 0E       		.uleb128 0xe
+ 818 0403 CF000000 		.4byte	.LASF42
+ 819 0407 05       		.byte	0x5
+ 820 0408 8801     		.2byte	0x188
+ 821 040a 9F040000 		.4byte	0x49f
+ 822 040e 00       		.byte	0
+ 823 040f 0E       		.uleb128 0xe
+ 824 0410 D7000000 		.4byte	.LASF43
+ 825 0414 05       		.byte	0x5
+ 826 0415 8D01     		.2byte	0x18d
+ 827 0417 9F040000 		.4byte	0x49f
+ 828 041b 0A       		.byte	0xa
+ 829 041c 0E       		.uleb128 0xe
+ 830 041d DF000000 		.4byte	.LASF44
+ 831 0421 05       		.byte	0x5
+ 832 0422 9201     		.2byte	0x192
+ 833 0424 9F040000 		.4byte	0x49f
+ 834 0428 14       		.byte	0x14
+ 835 0429 0E       		.uleb128 0xe
+ 836 042a E7000000 		.4byte	.LASF45
+ 837 042e 05       		.byte	0x5
+ 838 042f 9701     		.2byte	0x197
+ 839 0431 9F040000 		.4byte	0x49f
+ 840 0435 1E       		.byte	0x1e
+ 841 0436 0E       		.uleb128 0xe
+ 842 0437 EF000000 		.4byte	.LASF46
+ 843 043b 05       		.byte	0x5
+ 844 043c 9C01     		.2byte	0x19c
+ 845 043e 9F040000 		.4byte	0x49f
+ 846 0442 28       		.byte	0x28
+ 847 0443 0E       		.uleb128 0xe
+ 848 0444 F7000000 		.4byte	.LASF47
+ 849 0448 05       		.byte	0x5
+ 850 0449 A101     		.2byte	0x1a1
+ 851 044b 9F040000 		.4byte	0x49f
+ 852 044f 32       		.byte	0x32
+ 853 0450 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 32
+
+
+ 854 0451 FF000000 		.4byte	.LASF48
+ 855 0455 05       		.byte	0x5
+ 856 0456 A601     		.2byte	0x1a6
+ 857 0458 9F040000 		.4byte	0x49f
+ 858 045c 3C       		.byte	0x3c
+ 859 045d 0E       		.uleb128 0xe
+ 860 045e 07010000 		.4byte	.LASF49
+ 861 0462 05       		.byte	0x5
+ 862 0463 AB01     		.2byte	0x1ab
+ 863 0465 9F040000 		.4byte	0x49f
+ 864 0469 46       		.byte	0x46
+ 865 046a 0E       		.uleb128 0xe
+ 866 046b 0F010000 		.4byte	.LASF50
+ 867 046f 05       		.byte	0x5
+ 868 0470 B001     		.2byte	0x1b0
+ 869 0472 9F040000 		.4byte	0x49f
+ 870 0476 50       		.byte	0x50
+ 871 0477 0E       		.uleb128 0xe
+ 872 0478 17010000 		.4byte	.LASF51
+ 873 047c 05       		.byte	0x5
+ 874 047d B501     		.2byte	0x1b5
+ 875 047f 9F040000 		.4byte	0x49f
+ 876 0483 5A       		.byte	0x5a
+ 877 0484 0E       		.uleb128 0xe
+ 878 0485 90050000 		.4byte	.LASF52
+ 879 0489 05       		.byte	0x5
+ 880 048a BA01     		.2byte	0x1ba
+ 881 048c 9F040000 		.4byte	0x49f
+ 882 0490 64       		.byte	0x64
+ 883 0491 0E       		.uleb128 0xe
+ 884 0492 99050000 		.4byte	.LASF53
+ 885 0496 05       		.byte	0x5
+ 886 0497 BF01     		.2byte	0x1bf
+ 887 0499 9F040000 		.4byte	0x49f
+ 888 049d 6E       		.byte	0x6e
+ 889 049e 00       		.byte	0
+ 890 049f 0C       		.uleb128 0xc
+ 891 04a0 ED030000 		.4byte	0x3ed
+ 892 04a4 AF040000 		.4byte	0x4af
+ 893 04a8 0D       		.uleb128 0xd
+ 894 04a9 D2000000 		.4byte	0xd2
+ 895 04ad 00       		.byte	0
+ 896 04ae 00       		.byte	0
+ 897 04af 04       		.uleb128 0x4
+ 898 04b0 47050000 		.4byte	.LASF61
+ 899 04b4 05       		.byte	0x5
+ 900 04b5 C001     		.2byte	0x1c0
+ 901 04b7 F9030000 		.4byte	0x3f9
+ 902 04bb 11       		.uleb128 0x11
+ 903 04bc 7C01     		.2byte	0x17c
+ 904 04be 05       		.byte	0x5
+ 905 04bf C701     		.2byte	0x1c7
+ 906 04c1 9A050000 		.4byte	0x59a
+ 907 04c5 0E       		.uleb128 0xe
+ 908 04c6 BC020000 		.4byte	.LASF62
+ 909 04ca 05       		.byte	0x5
+ 910 04cb CD01     		.2byte	0x1cd
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 33
+
+
+ 911 04cd 77000000 		.4byte	0x77
+ 912 04d1 00       		.byte	0
+ 913 04d2 0E       		.uleb128 0xe
+ 914 04d3 F4020000 		.4byte	.LASF63
+ 915 04d7 05       		.byte	0x5
+ 916 04d8 D201     		.2byte	0x1d2
+ 917 04da 77000000 		.4byte	0x77
+ 918 04de 02       		.byte	0x2
+ 919 04df 0E       		.uleb128 0xe
+ 920 04e0 53040000 		.4byte	.LASF64
+ 921 04e4 05       		.byte	0x5
+ 922 04e5 D801     		.2byte	0x1d8
+ 923 04e7 77000000 		.4byte	0x77
+ 924 04eb 04       		.byte	0x4
+ 925 04ec 0E       		.uleb128 0xe
+ 926 04ed DC030000 		.4byte	.LASF65
+ 927 04f1 05       		.byte	0x5
+ 928 04f2 DD01     		.2byte	0x1dd
+ 929 04f4 77000000 		.4byte	0x77
+ 930 04f8 06       		.byte	0x6
+ 931 04f9 0E       		.uleb128 0xe
+ 932 04fa 5C060000 		.4byte	.LASF66
+ 933 04fe 05       		.byte	0x5
+ 934 04ff E201     		.2byte	0x1e2
+ 935 0501 83000000 		.4byte	0x83
+ 936 0505 08       		.byte	0x8
+ 937 0506 0E       		.uleb128 0xe
+ 938 0507 2C020000 		.4byte	.LASF67
+ 939 050b 05       		.byte	0x5
+ 940 050c E701     		.2byte	0x1e7
+ 941 050e 9A050000 		.4byte	0x59a
+ 942 0512 0C       		.byte	0xc
+ 943 0513 0E       		.uleb128 0xe
+ 944 0514 DE010000 		.4byte	.LASF68
+ 945 0518 05       		.byte	0x5
+ 946 0519 EC01     		.2byte	0x1ec
+ 947 051b 9A050000 		.4byte	0x59a
+ 948 051f 10       		.byte	0x10
+ 949 0520 0E       		.uleb128 0xe
+ 950 0521 1F010000 		.4byte	.LASF69
+ 951 0525 05       		.byte	0x5
+ 952 0526 FA01     		.2byte	0x1fa
+ 953 0528 AA050000 		.4byte	0x5aa
+ 954 052c 14       		.byte	0x14
+ 955 052d 0E       		.uleb128 0xe
+ 956 052e DD020000 		.4byte	.LASF70
+ 957 0532 05       		.byte	0x5
+ 958 0533 FF01     		.2byte	0x1ff
+ 959 0535 77000000 		.4byte	0x77
+ 960 0539 20       		.byte	0x20
+ 961 053a 0E       		.uleb128 0xe
+ 962 053b 51010000 		.4byte	.LASF71
+ 963 053f 05       		.byte	0x5
+ 964 0540 0402     		.2byte	0x204
+ 965 0542 6B000000 		.4byte	0x6b
+ 966 0546 22       		.byte	0x22
+ 967 0547 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 34
+
+
+ 968 0548 87050000 		.4byte	.LASF72
+ 969 054c 05       		.byte	0x5
+ 970 054d 0902     		.2byte	0x209
+ 971 054f 69030000 		.4byte	0x369
+ 972 0553 24       		.byte	0x24
+ 973 0554 0E       		.uleb128 0xe
+ 974 0555 B4020000 		.4byte	.LASF73
+ 975 0559 05       		.byte	0x5
+ 976 055a 0E02     		.2byte	0x20e
+ 977 055c AF040000 		.4byte	0x4af
+ 978 0560 FC       		.byte	0xfc
+ 979 0561 12       		.uleb128 0x12
+ 980 0562 FB010000 		.4byte	.LASF74
+ 981 0566 05       		.byte	0x5
+ 982 0567 1302     		.2byte	0x213
+ 983 0569 6B000000 		.4byte	0x6b
+ 984 056d 7401     		.2byte	0x174
+ 985 056f 12       		.uleb128 0x12
+ 986 0570 85000000 		.4byte	.LASF75
+ 987 0574 05       		.byte	0x5
+ 988 0575 1802     		.2byte	0x218
+ 989 0577 6B000000 		.4byte	0x6b
+ 990 057b 7501     		.2byte	0x175
+ 991 057d 12       		.uleb128 0x12
+ 992 057e B2060000 		.4byte	.LASF76
+ 993 0582 05       		.byte	0x5
+ 994 0583 1D02     		.2byte	0x21d
+ 995 0585 77000000 		.4byte	0x77
+ 996 0589 7601     		.2byte	0x176
+ 997 058b 12       		.uleb128 0x12
+ 998 058c 79010000 		.4byte	.LASF77
+ 999 0590 05       		.byte	0x5
+ 1000 0591 2202     		.2byte	0x222
+ 1001 0593 CD030000 		.4byte	0x3cd
+ 1002 0597 7801     		.2byte	0x178
+ 1003 0599 00       		.byte	0
+ 1004 059a 0C       		.uleb128 0xc
+ 1005 059b 83000000 		.4byte	0x83
+ 1006 059f AA050000 		.4byte	0x5aa
+ 1007 05a3 0D       		.uleb128 0xd
+ 1008 05a4 D2000000 		.4byte	0xd2
+ 1009 05a8 00       		.byte	0
+ 1010 05a9 00       		.byte	0
+ 1011 05aa 0C       		.uleb128 0xc
+ 1012 05ab 6B000000 		.4byte	0x6b
+ 1013 05af BA050000 		.4byte	0x5ba
+ 1014 05b3 0D       		.uleb128 0xd
+ 1015 05b4 D2000000 		.4byte	0xd2
+ 1016 05b8 0B       		.byte	0xb
+ 1017 05b9 00       		.byte	0
+ 1018 05ba 04       		.uleb128 0x4
+ 1019 05bb AE030000 		.4byte	.LASF78
+ 1020 05bf 05       		.byte	0x5
+ 1021 05c0 2302     		.2byte	0x223
+ 1022 05c2 BB040000 		.4byte	0x4bb
+ 1023 05c6 0F       		.uleb128 0xf
+ 1024 05c7 1C       		.byte	0x1c
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 35
+
+
+ 1025 05c8 05       		.byte	0x5
+ 1026 05c9 2902     		.2byte	0x229
+ 1027 05cb 45060000 		.4byte	0x645
+ 1028 05cf 0E       		.uleb128 0xe
+ 1029 05d0 55000000 		.4byte	.LASF79
+ 1030 05d4 05       		.byte	0x5
+ 1031 05d5 2E02     		.2byte	0x22e
+ 1032 05d7 45060000 		.4byte	0x645
+ 1033 05db 00       		.byte	0
+ 1034 05dc 0E       		.uleb128 0xe
+ 1035 05dd AC060000 		.4byte	.LASF80
+ 1036 05e1 05       		.byte	0x5
+ 1037 05e2 3302     		.2byte	0x233
+ 1038 05e4 45060000 		.4byte	0x645
+ 1039 05e8 04       		.byte	0x4
+ 1040 05e9 0E       		.uleb128 0xe
+ 1041 05ea C6050000 		.4byte	.LASF81
+ 1042 05ee 05       		.byte	0x5
+ 1043 05ef 3802     		.2byte	0x238
+ 1044 05f1 45060000 		.4byte	0x645
+ 1045 05f5 08       		.byte	0x8
+ 1046 05f6 0E       		.uleb128 0xe
+ 1047 05f7 66010000 		.4byte	.LASF82
+ 1048 05fb 05       		.byte	0x5
+ 1049 05fc 3D02     		.2byte	0x23d
+ 1050 05fe 45060000 		.4byte	0x645
+ 1051 0602 0C       		.byte	0xc
+ 1052 0603 0E       		.uleb128 0xe
+ 1053 0604 C5060000 		.4byte	.LASF83
+ 1054 0608 05       		.byte	0x5
+ 1055 0609 4202     		.2byte	0x242
+ 1056 060b 83000000 		.4byte	0x83
+ 1057 060f 10       		.byte	0x10
+ 1058 0610 0E       		.uleb128 0xe
+ 1059 0611 D1010000 		.4byte	.LASF84
+ 1060 0615 05       		.byte	0x5
+ 1061 0616 4702     		.2byte	0x247
+ 1062 0618 83000000 		.4byte	0x83
+ 1063 061c 14       		.byte	0x14
+ 1064 061d 0E       		.uleb128 0xe
+ 1065 061e 3C050000 		.4byte	.LASF85
+ 1066 0622 05       		.byte	0x5
+ 1067 0623 4C02     		.2byte	0x24c
+ 1068 0625 6B000000 		.4byte	0x6b
+ 1069 0629 18       		.byte	0x18
+ 1070 062a 0E       		.uleb128 0xe
+ 1071 062b A5010000 		.4byte	.LASF86
+ 1072 062f 05       		.byte	0x5
+ 1073 0630 5102     		.2byte	0x251
+ 1074 0632 6B000000 		.4byte	0x6b
+ 1075 0636 19       		.byte	0x19
+ 1076 0637 0E       		.uleb128 0xe
+ 1077 0638 89010000 		.4byte	.LASF87
+ 1078 063c 05       		.byte	0x5
+ 1079 063d 5602     		.2byte	0x256
+ 1080 063f 6B000000 		.4byte	0x6b
+ 1081 0643 1A       		.byte	0x1a
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 36
+
+
+ 1082 0644 00       		.byte	0
+ 1083 0645 08       		.uleb128 0x8
+ 1084 0646 04       		.byte	0x4
+ 1085 0647 A9000000 		.4byte	0xa9
+ 1086 064b 04       		.uleb128 0x4
+ 1087 064c FD020000 		.4byte	.LASF88
+ 1088 0650 05       		.byte	0x5
+ 1089 0651 5702     		.2byte	0x257
+ 1090 0653 C6050000 		.4byte	0x5c6
+ 1091 0657 0F       		.uleb128 0xf
+ 1092 0658 20       		.byte	0x20
+ 1093 0659 05       		.byte	0x5
+ 1094 065a 8202     		.2byte	0x282
+ 1095 065c E3060000 		.4byte	0x6e3
+ 1096 0660 0E       		.uleb128 0xe
+ 1097 0661 43000000 		.4byte	.LASF89
+ 1098 0665 05       		.byte	0x5
+ 1099 0666 8B02     		.2byte	0x28b
+ 1100 0668 E3060000 		.4byte	0x6e3
+ 1101 066c 00       		.byte	0
+ 1102 066d 0E       		.uleb128 0xe
+ 1103 066e E8020000 		.4byte	.LASF90
+ 1104 0672 05       		.byte	0x5
+ 1105 0673 9102     		.2byte	0x291
+ 1106 0675 D9000000 		.4byte	0xd9
+ 1107 0679 04       		.byte	0x4
+ 1108 067a 0E       		.uleb128 0xe
+ 1109 067b 5B010000 		.4byte	.LASF91
+ 1110 067f 05       		.byte	0x5
+ 1111 0680 9702     		.2byte	0x297
+ 1112 0682 EA060000 		.4byte	0x6ea
+ 1113 0686 08       		.byte	0x8
+ 1114 0687 0E       		.uleb128 0xe
+ 1115 0688 2C050000 		.4byte	.LASF92
+ 1116 068c 05       		.byte	0x5
+ 1117 068d 9C02     		.2byte	0x29c
+ 1118 068f D9000000 		.4byte	0xd9
+ 1119 0693 0C       		.byte	0xc
+ 1120 0694 0E       		.uleb128 0xe
+ 1121 0695 35060000 		.4byte	.LASF93
+ 1122 0699 05       		.byte	0x5
+ 1123 069a A302     		.2byte	0x2a3
+ 1124 069c E0000000 		.4byte	0xe0
+ 1125 06a0 10       		.byte	0x10
+ 1126 06a1 0E       		.uleb128 0xe
+ 1127 06a2 6C030000 		.4byte	.LASF94
+ 1128 06a6 05       		.byte	0x5
+ 1129 06a7 A802     		.2byte	0x2a8
+ 1130 06a9 77000000 		.4byte	0x77
+ 1131 06ad 14       		.byte	0x14
+ 1132 06ae 0E       		.uleb128 0xe
+ 1133 06af 29060000 		.4byte	.LASF95
+ 1134 06b3 05       		.byte	0x5
+ 1135 06b4 AF02     		.2byte	0x2af
+ 1136 06b6 77000000 		.4byte	0x77
+ 1137 06ba 16       		.byte	0x16
+ 1138 06bb 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 37
+
+
+ 1139 06bc A5030000 		.4byte	.LASF96
+ 1140 06c0 05       		.byte	0x5
+ 1141 06c1 BA02     		.2byte	0x2ba
+ 1142 06c3 6B000000 		.4byte	0x6b
+ 1143 06c7 18       		.byte	0x18
+ 1144 06c8 0E       		.uleb128 0xe
+ 1145 06c9 41030000 		.4byte	.LASF97
+ 1146 06cd 05       		.byte	0x5
+ 1147 06ce C202     		.2byte	0x2c2
+ 1148 06d0 6B000000 		.4byte	0x6b
+ 1149 06d4 19       		.byte	0x19
+ 1150 06d5 0E       		.uleb128 0xe
+ 1151 06d6 0B020000 		.4byte	.LASF98
+ 1152 06da 05       		.byte	0x5
+ 1153 06db CA02     		.2byte	0x2ca
+ 1154 06dd F0060000 		.4byte	0x6f0
+ 1155 06e1 1C       		.byte	0x1c
+ 1156 06e2 00       		.byte	0
+ 1157 06e3 08       		.uleb128 0x8
+ 1158 06e4 04       		.byte	0x4
+ 1159 06e5 E9060000 		.4byte	0x6e9
+ 1160 06e9 13       		.uleb128 0x13
+ 1161 06ea 08       		.uleb128 0x8
+ 1162 06eb 04       		.byte	0x4
+ 1163 06ec ED030000 		.4byte	0x3ed
+ 1164 06f0 08       		.uleb128 0x8
+ 1165 06f1 04       		.byte	0x4
+ 1166 06f2 43010000 		.4byte	0x143
+ 1167 06f6 04       		.uleb128 0x4
+ 1168 06f7 39040000 		.4byte	.LASF99
+ 1169 06fb 05       		.byte	0x5
+ 1170 06fc CB02     		.2byte	0x2cb
+ 1171 06fe 57060000 		.4byte	0x657
+ 1172 0702 11       		.uleb128 0x11
+ 1173 0703 8001     		.2byte	0x180
+ 1174 0705 05       		.byte	0x5
+ 1175 0706 D102     		.2byte	0x2d1
+ 1176 0708 1A070000 		.4byte	0x71a
+ 1177 070c 0E       		.uleb128 0xe
+ 1178 070d 63060000 		.4byte	.LASF100
+ 1179 0711 05       		.byte	0x5
+ 1180 0712 D602     		.2byte	0x2d6
+ 1181 0714 1A070000 		.4byte	0x71a
+ 1182 0718 00       		.byte	0
+ 1183 0719 00       		.byte	0
+ 1184 071a 0C       		.uleb128 0xc
+ 1185 071b F6060000 		.4byte	0x6f6
+ 1186 071f 2A070000 		.4byte	0x72a
+ 1187 0723 0D       		.uleb128 0xd
+ 1188 0724 D2000000 		.4byte	0xd2
+ 1189 0728 0B       		.byte	0xb
+ 1190 0729 00       		.byte	0
+ 1191 072a 04       		.uleb128 0x4
+ 1192 072b 65050000 		.4byte	.LASF101
+ 1193 072f 05       		.byte	0x5
+ 1194 0730 D702     		.2byte	0x2d7
+ 1195 0732 02070000 		.4byte	0x702
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 38
+
+
+ 1196 0736 14       		.uleb128 0x14
+ 1197 0737 04040000 		.4byte	.LASF105
+ 1198 073b 01       		.byte	0x1
+ 1199 073c E202     		.2byte	0x2e2
+ 1200 073e 03       		.byte	0x3
+ 1201 073f 68070000 		.4byte	0x768
+ 1202 0743 15       		.uleb128 0x15
+ 1203 0744 37020000 		.4byte	.LASF102
+ 1204 0748 01       		.byte	0x1
+ 1205 0749 E602     		.2byte	0x2e6
+ 1206 074b 83000000 		.4byte	0x83
+ 1207 074f 15       		.uleb128 0x15
+ 1208 0750 CF060000 		.4byte	.LASF103
+ 1209 0754 01       		.byte	0x1
+ 1210 0755 E702     		.2byte	0x2e7
+ 1211 0757 83000000 		.4byte	0x83
+ 1212 075b 15       		.uleb128 0x15
+ 1213 075c 4D020000 		.4byte	.LASF104
+ 1214 0760 01       		.byte	0x1
+ 1215 0761 E802     		.2byte	0x2e8
+ 1216 0763 68070000 		.4byte	0x768
+ 1217 0767 00       		.byte	0
+ 1218 0768 08       		.uleb128 0x8
+ 1219 0769 04       		.byte	0x4
+ 1220 076a 6E070000 		.4byte	0x76e
+ 1221 076e 07       		.uleb128 0x7
+ 1222 076f 03020000 		.4byte	0x203
+ 1223 0773 16       		.uleb128 0x16
+ 1224 0774 E8030000 		.4byte	.LASF107
+ 1225 0778 01       		.byte	0x1
+ 1226 0779 7F       		.byte	0x7f
+ 1227 077a 00000000 		.4byte	.LFB1
+ 1228 077e 74000000 		.4byte	.LFE1-.LFB1
+ 1229 0782 01       		.uleb128 0x1
+ 1230 0783 9C       		.byte	0x9c
+ 1231 0784 BE070000 		.4byte	0x7be
+ 1232 0788 17       		.uleb128 0x17
+ 1233 0789 36070000 		.4byte	0x736
+ 1234 078d 08000000 		.4byte	.LBB4
+ 1235 0791 3A000000 		.4byte	.LBE4-.LBB4
+ 1236 0795 01       		.byte	0x1
+ 1237 0796 9A       		.byte	0x9a
+ 1238 0797 18       		.uleb128 0x18
+ 1239 0798 08000000 		.4byte	.LBB5
+ 1240 079c 3A000000 		.4byte	.LBE5-.LBB5
+ 1241 07a0 19       		.uleb128 0x19
+ 1242 07a1 43070000 		.4byte	0x743
+ 1243 07a5 00000000 		.4byte	.LLST0
+ 1244 07a9 19       		.uleb128 0x19
+ 1245 07aa 4F070000 		.4byte	0x74f
+ 1246 07ae 13000000 		.4byte	.LLST1
+ 1247 07b2 19       		.uleb128 0x19
+ 1248 07b3 5B070000 		.4byte	0x75b
+ 1249 07b7 42000000 		.4byte	.LLST2
+ 1250 07bb 00       		.byte	0
+ 1251 07bc 00       		.byte	0
+ 1252 07bd 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 39
+
+
+ 1253 07be 14       		.uleb128 0x14
+ 1254 07bf 82030000 		.4byte	.LASF106
+ 1255 07c3 01       		.byte	0x1
+ 1256 07c4 2203     		.2byte	0x322
+ 1257 07c6 03       		.byte	0x3
+ 1258 07c7 D8070000 		.4byte	0x7d8
+ 1259 07cb 15       		.uleb128 0x15
+ 1260 07cc 4D020000 		.4byte	.LASF104
+ 1261 07d0 01       		.byte	0x1
+ 1262 07d1 2A03     		.2byte	0x32a
+ 1263 07d3 D8070000 		.4byte	0x7d8
+ 1264 07d7 00       		.byte	0
+ 1265 07d8 08       		.uleb128 0x8
+ 1266 07d9 04       		.byte	0x4
+ 1267 07da 03020000 		.4byte	0x203
+ 1268 07de 16       		.uleb128 0x16
+ 1269 07df 28000000 		.4byte	.LASF108
+ 1270 07e3 01       		.byte	0x1
+ 1271 07e4 EE       		.byte	0xee
+ 1272 07e5 00000000 		.4byte	.LFB2
+ 1273 07e9 08010000 		.4byte	.LFE2-.LFB2
+ 1274 07ed 01       		.uleb128 0x1
+ 1275 07ee 9C       		.byte	0x9c
+ 1276 07ef 92080000 		.4byte	0x892
+ 1277 07f3 1A       		.uleb128 0x1a
+ 1278 07f4 6D060000 		.4byte	.LASF123
+ 1279 07f8 01       		.byte	0x1
+ 1280 07f9 F1       		.byte	0xf1
+ 1281 07fa 92080000 		.4byte	0x892
+ 1282 07fe 55000000 		.4byte	.LLST3
+ 1283 0802 1B       		.uleb128 0x1b
+ 1284 0803 36070000 		.4byte	0x736
+ 1285 0807 20000000 		.4byte	.LBB10
+ 1286 080b 36000000 		.4byte	.LBE10-.LBB10
+ 1287 080f 01       		.byte	0x1
+ 1288 0810 0E01     		.2byte	0x10e
+ 1289 0812 3C080000 		.4byte	0x83c
+ 1290 0816 18       		.uleb128 0x18
+ 1291 0817 20000000 		.4byte	.LBB11
+ 1292 081b 36000000 		.4byte	.LBE11-.LBB11
+ 1293 081f 19       		.uleb128 0x19
+ 1294 0820 43070000 		.4byte	0x743
+ 1295 0824 68000000 		.4byte	.LLST4
+ 1296 0828 19       		.uleb128 0x19
+ 1297 0829 4F070000 		.4byte	0x74f
+ 1298 082d 7B000000 		.4byte	.LLST5
+ 1299 0831 19       		.uleb128 0x19
+ 1300 0832 5B070000 		.4byte	0x75b
+ 1301 0836 AA000000 		.4byte	.LLST6
+ 1302 083a 00       		.byte	0
+ 1303 083b 00       		.byte	0
+ 1304 083c 1B       		.uleb128 0x1b
+ 1305 083d BE070000 		.4byte	0x7be
+ 1306 0841 5A000000 		.4byte	.LBB12
+ 1307 0845 82000000 		.4byte	.LBE12-.LBB12
+ 1308 0849 01       		.byte	0x1
+ 1309 084a 2D01     		.2byte	0x12d
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 40
+
+
+ 1310 084c 88080000 		.4byte	0x888
+ 1311 0850 18       		.uleb128 0x18
+ 1312 0851 5A000000 		.4byte	.LBB13
+ 1313 0855 82000000 		.4byte	.LBE13-.LBB13
+ 1314 0859 19       		.uleb128 0x19
+ 1315 085a CB070000 		.4byte	0x7cb
+ 1316 085e BD000000 		.4byte	.LLST7
+ 1317 0862 1C       		.uleb128 0x1c
+ 1318 0863 9E000000 		.4byte	.LVL21
+ 1319 0867 F6080000 		.4byte	0x8f6
+ 1320 086b 1C       		.uleb128 0x1c
+ 1321 086c AA000000 		.4byte	.LVL22
+ 1322 0870 07090000 		.4byte	0x907
+ 1323 0874 1C       		.uleb128 0x1c
+ 1324 0875 AE000000 		.4byte	.LVL23
+ 1325 0879 1D090000 		.4byte	0x91d
+ 1326 087d 1C       		.uleb128 0x1c
+ 1327 087e CC000000 		.4byte	.LVL25
+ 1328 0882 24090000 		.4byte	0x924
+ 1329 0886 00       		.byte	0
+ 1330 0887 00       		.byte	0
+ 1331 0888 1C       		.uleb128 0x1c
+ 1332 0889 5A000000 		.4byte	.LVL19
+ 1333 088d 2B090000 		.4byte	0x92b
+ 1334 0891 00       		.byte	0
+ 1335 0892 08       		.uleb128 0x8
+ 1336 0893 04       		.byte	0x4
+ 1337 0894 98080000 		.4byte	0x898
+ 1338 0898 07       		.uleb128 0x7
+ 1339 0899 4B060000 		.4byte	0x64b
+ 1340 089d 1D       		.uleb128 0x1d
+ 1341 089e 85020000 		.4byte	.LASF109
+ 1342 08a2 05       		.byte	0x5
+ 1343 08a3 2B04     		.2byte	0x42b
+ 1344 08a5 BA050000 		.4byte	0x5ba
+ 1345 08a9 1D       		.uleb128 0x1d
+ 1346 08aa BF010000 		.4byte	.LASF110
+ 1347 08ae 05       		.byte	0x5
+ 1348 08af 2C04     		.2byte	0x42c
+ 1349 08b1 B5080000 		.4byte	0x8b5
+ 1350 08b5 07       		.uleb128 0x7
+ 1351 08b6 2A070000 		.4byte	0x72a
+ 1352 08ba 1D       		.uleb128 0x1d
+ 1353 08bb C5020000 		.4byte	.LASF111
+ 1354 08bf 06       		.byte	0x6
+ 1355 08c0 4905     		.2byte	0x549
+ 1356 08c2 DB000000 		.4byte	0xdb
+ 1357 08c6 1D       		.uleb128 0x1d
+ 1358 08c7 86060000 		.4byte	.LASF112
+ 1359 08cb 06       		.byte	0x6
+ 1360 08cc 5105     		.2byte	0x551
+ 1361 08ce A4000000 		.4byte	0xa4
+ 1362 08d2 1D       		.uleb128 0x1d
+ 1363 08d3 8F010000 		.4byte	.LASF113
+ 1364 08d7 06       		.byte	0x6
+ 1365 08d8 5205     		.2byte	0x552
+ 1366 08da A4000000 		.4byte	0xa4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 41
+
+
+ 1367 08de 1D       		.uleb128 0x1d
+ 1368 08df 32010000 		.4byte	.LASF114
+ 1369 08e3 06       		.byte	0x6
+ 1370 08e4 5405     		.2byte	0x554
+ 1371 08e6 6B000000 		.4byte	0x6b
+ 1372 08ea 1D       		.uleb128 0x1d
+ 1373 08eb 45060000 		.4byte	.LASF115
+ 1374 08ef 06       		.byte	0x6
+ 1375 08f0 5905     		.2byte	0x559
+ 1376 08f2 EA060000 		.4byte	0x6ea
+ 1377 08f6 1E       		.uleb128 0x1e
+ 1378 08f7 52030000 		.4byte	.LASF116
+ 1379 08fb 07       		.byte	0x7
+ 1380 08fc 54       		.byte	0x54
+ 1381 08fd 07090000 		.4byte	0x907
+ 1382 0901 1F       		.uleb128 0x1f
+ 1383 0902 68070000 		.4byte	0x768
+ 1384 0906 00       		.byte	0
+ 1385 0907 1E       		.uleb128 0x1e
+ 1386 0908 AF000000 		.4byte	.LASF117
+ 1387 090c 07       		.byte	0x7
+ 1388 090d 60       		.byte	0x60
+ 1389 090e 1D090000 		.4byte	0x91d
+ 1390 0912 1F       		.uleb128 0x1f
+ 1391 0913 83000000 		.4byte	0x83
+ 1392 0917 1F       		.uleb128 0x1f
+ 1393 0918 83000000 		.4byte	0x83
+ 1394 091c 00       		.byte	0
+ 1395 091d 20       		.uleb128 0x20
+ 1396 091e A0040000 		.4byte	.LASF118
+ 1397 0922 07       		.byte	0x7
+ 1398 0923 53       		.byte	0x53
+ 1399 0924 20       		.uleb128 0x20
+ 1400 0925 A7050000 		.4byte	.LASF119
+ 1401 0929 06       		.byte	0x6
+ 1402 092a 7E       		.byte	0x7e
+ 1403 092b 21       		.uleb128 0x21
+ 1404 092c D3050000 		.4byte	.LASF124
+ 1405 0930 07       		.byte	0x7
+ 1406 0931 44       		.byte	0x44
+ 1407 0932 1F       		.uleb128 0x1f
+ 1408 0933 92080000 		.4byte	0x892
+ 1409 0937 00       		.byte	0
+ 1410 0938 00       		.byte	0
+ 1411              		.section	.debug_abbrev,"",%progbits
+ 1412              	.Ldebug_abbrev0:
+ 1413 0000 01       		.uleb128 0x1
+ 1414 0001 11       		.uleb128 0x11
+ 1415 0002 01       		.byte	0x1
+ 1416 0003 25       		.uleb128 0x25
+ 1417 0004 0E       		.uleb128 0xe
+ 1418 0005 13       		.uleb128 0x13
+ 1419 0006 0B       		.uleb128 0xb
+ 1420 0007 03       		.uleb128 0x3
+ 1421 0008 0E       		.uleb128 0xe
+ 1422 0009 1B       		.uleb128 0x1b
+ 1423 000a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 42
+
+
+ 1424 000b 55       		.uleb128 0x55
+ 1425 000c 17       		.uleb128 0x17
+ 1426 000d 11       		.uleb128 0x11
+ 1427 000e 01       		.uleb128 0x1
+ 1428 000f 10       		.uleb128 0x10
+ 1429 0010 17       		.uleb128 0x17
+ 1430 0011 00       		.byte	0
+ 1431 0012 00       		.byte	0
+ 1432 0013 02       		.uleb128 0x2
+ 1433 0014 24       		.uleb128 0x24
+ 1434 0015 00       		.byte	0
+ 1435 0016 0B       		.uleb128 0xb
+ 1436 0017 0B       		.uleb128 0xb
+ 1437 0018 3E       		.uleb128 0x3e
+ 1438 0019 0B       		.uleb128 0xb
+ 1439 001a 03       		.uleb128 0x3
+ 1440 001b 0E       		.uleb128 0xe
+ 1441 001c 00       		.byte	0
+ 1442 001d 00       		.byte	0
+ 1443 001e 03       		.uleb128 0x3
+ 1444 001f 24       		.uleb128 0x24
+ 1445 0020 00       		.byte	0
+ 1446 0021 0B       		.uleb128 0xb
+ 1447 0022 0B       		.uleb128 0xb
+ 1448 0023 3E       		.uleb128 0x3e
+ 1449 0024 0B       		.uleb128 0xb
+ 1450 0025 03       		.uleb128 0x3
+ 1451 0026 08       		.uleb128 0x8
+ 1452 0027 00       		.byte	0
+ 1453 0028 00       		.byte	0
+ 1454 0029 04       		.uleb128 0x4
+ 1455 002a 16       		.uleb128 0x16
+ 1456 002b 00       		.byte	0
+ 1457 002c 03       		.uleb128 0x3
+ 1458 002d 0E       		.uleb128 0xe
+ 1459 002e 3A       		.uleb128 0x3a
+ 1460 002f 0B       		.uleb128 0xb
+ 1461 0030 3B       		.uleb128 0x3b
+ 1462 0031 05       		.uleb128 0x5
+ 1463 0032 49       		.uleb128 0x49
+ 1464 0033 13       		.uleb128 0x13
+ 1465 0034 00       		.byte	0
+ 1466 0035 00       		.byte	0
+ 1467 0036 05       		.uleb128 0x5
+ 1468 0037 35       		.uleb128 0x35
+ 1469 0038 00       		.byte	0
+ 1470 0039 49       		.uleb128 0x49
+ 1471 003a 13       		.uleb128 0x13
+ 1472 003b 00       		.byte	0
+ 1473 003c 00       		.byte	0
+ 1474 003d 06       		.uleb128 0x6
+ 1475 003e 0F       		.uleb128 0xf
+ 1476 003f 00       		.byte	0
+ 1477 0040 0B       		.uleb128 0xb
+ 1478 0041 0B       		.uleb128 0xb
+ 1479 0042 00       		.byte	0
+ 1480 0043 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 43
+
+
+ 1481 0044 07       		.uleb128 0x7
+ 1482 0045 26       		.uleb128 0x26
+ 1483 0046 00       		.byte	0
+ 1484 0047 49       		.uleb128 0x49
+ 1485 0048 13       		.uleb128 0x13
+ 1486 0049 00       		.byte	0
+ 1487 004a 00       		.byte	0
+ 1488 004b 08       		.uleb128 0x8
+ 1489 004c 0F       		.uleb128 0xf
+ 1490 004d 00       		.byte	0
+ 1491 004e 0B       		.uleb128 0xb
+ 1492 004f 0B       		.uleb128 0xb
+ 1493 0050 49       		.uleb128 0x49
+ 1494 0051 13       		.uleb128 0x13
+ 1495 0052 00       		.byte	0
+ 1496 0053 00       		.byte	0
+ 1497 0054 09       		.uleb128 0x9
+ 1498 0055 13       		.uleb128 0x13
+ 1499 0056 01       		.byte	0x1
+ 1500 0057 0B       		.uleb128 0xb
+ 1501 0058 0B       		.uleb128 0xb
+ 1502 0059 3A       		.uleb128 0x3a
+ 1503 005a 0B       		.uleb128 0xb
+ 1504 005b 3B       		.uleb128 0x3b
+ 1505 005c 0B       		.uleb128 0xb
+ 1506 005d 01       		.uleb128 0x1
+ 1507 005e 13       		.uleb128 0x13
+ 1508 005f 00       		.byte	0
+ 1509 0060 00       		.byte	0
+ 1510 0061 0A       		.uleb128 0xa
+ 1511 0062 0D       		.uleb128 0xd
+ 1512 0063 00       		.byte	0
+ 1513 0064 03       		.uleb128 0x3
+ 1514 0065 0E       		.uleb128 0xe
+ 1515 0066 3A       		.uleb128 0x3a
+ 1516 0067 0B       		.uleb128 0xb
+ 1517 0068 3B       		.uleb128 0x3b
+ 1518 0069 0B       		.uleb128 0xb
+ 1519 006a 49       		.uleb128 0x49
+ 1520 006b 13       		.uleb128 0x13
+ 1521 006c 38       		.uleb128 0x38
+ 1522 006d 0B       		.uleb128 0xb
+ 1523 006e 00       		.byte	0
+ 1524 006f 00       		.byte	0
+ 1525 0070 0B       		.uleb128 0xb
+ 1526 0071 16       		.uleb128 0x16
+ 1527 0072 00       		.byte	0
+ 1528 0073 03       		.uleb128 0x3
+ 1529 0074 0E       		.uleb128 0xe
+ 1530 0075 3A       		.uleb128 0x3a
+ 1531 0076 0B       		.uleb128 0xb
+ 1532 0077 3B       		.uleb128 0x3b
+ 1533 0078 0B       		.uleb128 0xb
+ 1534 0079 49       		.uleb128 0x49
+ 1535 007a 13       		.uleb128 0x13
+ 1536 007b 00       		.byte	0
+ 1537 007c 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 44
+
+
+ 1538 007d 0C       		.uleb128 0xc
+ 1539 007e 01       		.uleb128 0x1
+ 1540 007f 01       		.byte	0x1
+ 1541 0080 49       		.uleb128 0x49
+ 1542 0081 13       		.uleb128 0x13
+ 1543 0082 01       		.uleb128 0x1
+ 1544 0083 13       		.uleb128 0x13
+ 1545 0084 00       		.byte	0
+ 1546 0085 00       		.byte	0
+ 1547 0086 0D       		.uleb128 0xd
+ 1548 0087 21       		.uleb128 0x21
+ 1549 0088 00       		.byte	0
+ 1550 0089 49       		.uleb128 0x49
+ 1551 008a 13       		.uleb128 0x13
+ 1552 008b 2F       		.uleb128 0x2f
+ 1553 008c 0B       		.uleb128 0xb
+ 1554 008d 00       		.byte	0
+ 1555 008e 00       		.byte	0
+ 1556 008f 0E       		.uleb128 0xe
+ 1557 0090 0D       		.uleb128 0xd
+ 1558 0091 00       		.byte	0
+ 1559 0092 03       		.uleb128 0x3
+ 1560 0093 0E       		.uleb128 0xe
+ 1561 0094 3A       		.uleb128 0x3a
+ 1562 0095 0B       		.uleb128 0xb
+ 1563 0096 3B       		.uleb128 0x3b
+ 1564 0097 05       		.uleb128 0x5
+ 1565 0098 49       		.uleb128 0x49
+ 1566 0099 13       		.uleb128 0x13
+ 1567 009a 38       		.uleb128 0x38
+ 1568 009b 0B       		.uleb128 0xb
+ 1569 009c 00       		.byte	0
+ 1570 009d 00       		.byte	0
+ 1571 009e 0F       		.uleb128 0xf
+ 1572 009f 13       		.uleb128 0x13
+ 1573 00a0 01       		.byte	0x1
+ 1574 00a1 0B       		.uleb128 0xb
+ 1575 00a2 0B       		.uleb128 0xb
+ 1576 00a3 3A       		.uleb128 0x3a
+ 1577 00a4 0B       		.uleb128 0xb
+ 1578 00a5 3B       		.uleb128 0x3b
+ 1579 00a6 05       		.uleb128 0x5
+ 1580 00a7 01       		.uleb128 0x1
+ 1581 00a8 13       		.uleb128 0x13
+ 1582 00a9 00       		.byte	0
+ 1583 00aa 00       		.byte	0
+ 1584 00ab 10       		.uleb128 0x10
+ 1585 00ac 0D       		.uleb128 0xd
+ 1586 00ad 00       		.byte	0
+ 1587 00ae 03       		.uleb128 0x3
+ 1588 00af 08       		.uleb128 0x8
+ 1589 00b0 3A       		.uleb128 0x3a
+ 1590 00b1 0B       		.uleb128 0xb
+ 1591 00b2 3B       		.uleb128 0x3b
+ 1592 00b3 05       		.uleb128 0x5
+ 1593 00b4 49       		.uleb128 0x49
+ 1594 00b5 13       		.uleb128 0x13
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 45
+
+
+ 1595 00b6 38       		.uleb128 0x38
+ 1596 00b7 0B       		.uleb128 0xb
+ 1597 00b8 00       		.byte	0
+ 1598 00b9 00       		.byte	0
+ 1599 00ba 11       		.uleb128 0x11
+ 1600 00bb 13       		.uleb128 0x13
+ 1601 00bc 01       		.byte	0x1
+ 1602 00bd 0B       		.uleb128 0xb
+ 1603 00be 05       		.uleb128 0x5
+ 1604 00bf 3A       		.uleb128 0x3a
+ 1605 00c0 0B       		.uleb128 0xb
+ 1606 00c1 3B       		.uleb128 0x3b
+ 1607 00c2 05       		.uleb128 0x5
+ 1608 00c3 01       		.uleb128 0x1
+ 1609 00c4 13       		.uleb128 0x13
+ 1610 00c5 00       		.byte	0
+ 1611 00c6 00       		.byte	0
+ 1612 00c7 12       		.uleb128 0x12
+ 1613 00c8 0D       		.uleb128 0xd
+ 1614 00c9 00       		.byte	0
+ 1615 00ca 03       		.uleb128 0x3
+ 1616 00cb 0E       		.uleb128 0xe
+ 1617 00cc 3A       		.uleb128 0x3a
+ 1618 00cd 0B       		.uleb128 0xb
+ 1619 00ce 3B       		.uleb128 0x3b
+ 1620 00cf 05       		.uleb128 0x5
+ 1621 00d0 49       		.uleb128 0x49
+ 1622 00d1 13       		.uleb128 0x13
+ 1623 00d2 38       		.uleb128 0x38
+ 1624 00d3 05       		.uleb128 0x5
+ 1625 00d4 00       		.byte	0
+ 1626 00d5 00       		.byte	0
+ 1627 00d6 13       		.uleb128 0x13
+ 1628 00d7 26       		.uleb128 0x26
+ 1629 00d8 00       		.byte	0
+ 1630 00d9 00       		.byte	0
+ 1631 00da 00       		.byte	0
+ 1632 00db 14       		.uleb128 0x14
+ 1633 00dc 2E       		.uleb128 0x2e
+ 1634 00dd 01       		.byte	0x1
+ 1635 00de 03       		.uleb128 0x3
+ 1636 00df 0E       		.uleb128 0xe
+ 1637 00e0 3A       		.uleb128 0x3a
+ 1638 00e1 0B       		.uleb128 0xb
+ 1639 00e2 3B       		.uleb128 0x3b
+ 1640 00e3 05       		.uleb128 0x5
+ 1641 00e4 27       		.uleb128 0x27
+ 1642 00e5 19       		.uleb128 0x19
+ 1643 00e6 20       		.uleb128 0x20
+ 1644 00e7 0B       		.uleb128 0xb
+ 1645 00e8 01       		.uleb128 0x1
+ 1646 00e9 13       		.uleb128 0x13
+ 1647 00ea 00       		.byte	0
+ 1648 00eb 00       		.byte	0
+ 1649 00ec 15       		.uleb128 0x15
+ 1650 00ed 34       		.uleb128 0x34
+ 1651 00ee 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 46
+
+
+ 1652 00ef 03       		.uleb128 0x3
+ 1653 00f0 0E       		.uleb128 0xe
+ 1654 00f1 3A       		.uleb128 0x3a
+ 1655 00f2 0B       		.uleb128 0xb
+ 1656 00f3 3B       		.uleb128 0x3b
+ 1657 00f4 05       		.uleb128 0x5
+ 1658 00f5 49       		.uleb128 0x49
+ 1659 00f6 13       		.uleb128 0x13
+ 1660 00f7 00       		.byte	0
+ 1661 00f8 00       		.byte	0
+ 1662 00f9 16       		.uleb128 0x16
+ 1663 00fa 2E       		.uleb128 0x2e
+ 1664 00fb 01       		.byte	0x1
+ 1665 00fc 3F       		.uleb128 0x3f
+ 1666 00fd 19       		.uleb128 0x19
+ 1667 00fe 03       		.uleb128 0x3
+ 1668 00ff 0E       		.uleb128 0xe
+ 1669 0100 3A       		.uleb128 0x3a
+ 1670 0101 0B       		.uleb128 0xb
+ 1671 0102 3B       		.uleb128 0x3b
+ 1672 0103 0B       		.uleb128 0xb
+ 1673 0104 27       		.uleb128 0x27
+ 1674 0105 19       		.uleb128 0x19
+ 1675 0106 11       		.uleb128 0x11
+ 1676 0107 01       		.uleb128 0x1
+ 1677 0108 12       		.uleb128 0x12
+ 1678 0109 06       		.uleb128 0x6
+ 1679 010a 40       		.uleb128 0x40
+ 1680 010b 18       		.uleb128 0x18
+ 1681 010c 9742     		.uleb128 0x2117
+ 1682 010e 19       		.uleb128 0x19
+ 1683 010f 01       		.uleb128 0x1
+ 1684 0110 13       		.uleb128 0x13
+ 1685 0111 00       		.byte	0
+ 1686 0112 00       		.byte	0
+ 1687 0113 17       		.uleb128 0x17
+ 1688 0114 1D       		.uleb128 0x1d
+ 1689 0115 01       		.byte	0x1
+ 1690 0116 31       		.uleb128 0x31
+ 1691 0117 13       		.uleb128 0x13
+ 1692 0118 11       		.uleb128 0x11
+ 1693 0119 01       		.uleb128 0x1
+ 1694 011a 12       		.uleb128 0x12
+ 1695 011b 06       		.uleb128 0x6
+ 1696 011c 58       		.uleb128 0x58
+ 1697 011d 0B       		.uleb128 0xb
+ 1698 011e 59       		.uleb128 0x59
+ 1699 011f 0B       		.uleb128 0xb
+ 1700 0120 00       		.byte	0
+ 1701 0121 00       		.byte	0
+ 1702 0122 18       		.uleb128 0x18
+ 1703 0123 0B       		.uleb128 0xb
+ 1704 0124 01       		.byte	0x1
+ 1705 0125 11       		.uleb128 0x11
+ 1706 0126 01       		.uleb128 0x1
+ 1707 0127 12       		.uleb128 0x12
+ 1708 0128 06       		.uleb128 0x6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 47
+
+
+ 1709 0129 00       		.byte	0
+ 1710 012a 00       		.byte	0
+ 1711 012b 19       		.uleb128 0x19
+ 1712 012c 34       		.uleb128 0x34
+ 1713 012d 00       		.byte	0
+ 1714 012e 31       		.uleb128 0x31
+ 1715 012f 13       		.uleb128 0x13
+ 1716 0130 02       		.uleb128 0x2
+ 1717 0131 17       		.uleb128 0x17
+ 1718 0132 00       		.byte	0
+ 1719 0133 00       		.byte	0
+ 1720 0134 1A       		.uleb128 0x1a
+ 1721 0135 34       		.uleb128 0x34
+ 1722 0136 00       		.byte	0
+ 1723 0137 03       		.uleb128 0x3
+ 1724 0138 0E       		.uleb128 0xe
+ 1725 0139 3A       		.uleb128 0x3a
+ 1726 013a 0B       		.uleb128 0xb
+ 1727 013b 3B       		.uleb128 0x3b
+ 1728 013c 0B       		.uleb128 0xb
+ 1729 013d 49       		.uleb128 0x49
+ 1730 013e 13       		.uleb128 0x13
+ 1731 013f 02       		.uleb128 0x2
+ 1732 0140 17       		.uleb128 0x17
+ 1733 0141 00       		.byte	0
+ 1734 0142 00       		.byte	0
+ 1735 0143 1B       		.uleb128 0x1b
+ 1736 0144 1D       		.uleb128 0x1d
+ 1737 0145 01       		.byte	0x1
+ 1738 0146 31       		.uleb128 0x31
+ 1739 0147 13       		.uleb128 0x13
+ 1740 0148 11       		.uleb128 0x11
+ 1741 0149 01       		.uleb128 0x1
+ 1742 014a 12       		.uleb128 0x12
+ 1743 014b 06       		.uleb128 0x6
+ 1744 014c 58       		.uleb128 0x58
+ 1745 014d 0B       		.uleb128 0xb
+ 1746 014e 59       		.uleb128 0x59
+ 1747 014f 05       		.uleb128 0x5
+ 1748 0150 01       		.uleb128 0x1
+ 1749 0151 13       		.uleb128 0x13
+ 1750 0152 00       		.byte	0
+ 1751 0153 00       		.byte	0
+ 1752 0154 1C       		.uleb128 0x1c
+ 1753 0155 898201   		.uleb128 0x4109
+ 1754 0158 00       		.byte	0
+ 1755 0159 11       		.uleb128 0x11
+ 1756 015a 01       		.uleb128 0x1
+ 1757 015b 31       		.uleb128 0x31
+ 1758 015c 13       		.uleb128 0x13
+ 1759 015d 00       		.byte	0
+ 1760 015e 00       		.byte	0
+ 1761 015f 1D       		.uleb128 0x1d
+ 1762 0160 34       		.uleb128 0x34
+ 1763 0161 00       		.byte	0
+ 1764 0162 03       		.uleb128 0x3
+ 1765 0163 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 48
+
+
+ 1766 0164 3A       		.uleb128 0x3a
+ 1767 0165 0B       		.uleb128 0xb
+ 1768 0166 3B       		.uleb128 0x3b
+ 1769 0167 05       		.uleb128 0x5
+ 1770 0168 49       		.uleb128 0x49
+ 1771 0169 13       		.uleb128 0x13
+ 1772 016a 3F       		.uleb128 0x3f
+ 1773 016b 19       		.uleb128 0x19
+ 1774 016c 3C       		.uleb128 0x3c
+ 1775 016d 19       		.uleb128 0x19
+ 1776 016e 00       		.byte	0
+ 1777 016f 00       		.byte	0
+ 1778 0170 1E       		.uleb128 0x1e
+ 1779 0171 2E       		.uleb128 0x2e
+ 1780 0172 01       		.byte	0x1
+ 1781 0173 3F       		.uleb128 0x3f
+ 1782 0174 19       		.uleb128 0x19
+ 1783 0175 03       		.uleb128 0x3
+ 1784 0176 0E       		.uleb128 0xe
+ 1785 0177 3A       		.uleb128 0x3a
+ 1786 0178 0B       		.uleb128 0xb
+ 1787 0179 3B       		.uleb128 0x3b
+ 1788 017a 0B       		.uleb128 0xb
+ 1789 017b 27       		.uleb128 0x27
+ 1790 017c 19       		.uleb128 0x19
+ 1791 017d 3C       		.uleb128 0x3c
+ 1792 017e 19       		.uleb128 0x19
+ 1793 017f 01       		.uleb128 0x1
+ 1794 0180 13       		.uleb128 0x13
+ 1795 0181 00       		.byte	0
+ 1796 0182 00       		.byte	0
+ 1797 0183 1F       		.uleb128 0x1f
+ 1798 0184 05       		.uleb128 0x5
+ 1799 0185 00       		.byte	0
+ 1800 0186 49       		.uleb128 0x49
+ 1801 0187 13       		.uleb128 0x13
+ 1802 0188 00       		.byte	0
+ 1803 0189 00       		.byte	0
+ 1804 018a 20       		.uleb128 0x20
+ 1805 018b 2E       		.uleb128 0x2e
+ 1806 018c 00       		.byte	0
+ 1807 018d 3F       		.uleb128 0x3f
+ 1808 018e 19       		.uleb128 0x19
+ 1809 018f 03       		.uleb128 0x3
+ 1810 0190 0E       		.uleb128 0xe
+ 1811 0191 3A       		.uleb128 0x3a
+ 1812 0192 0B       		.uleb128 0xb
+ 1813 0193 3B       		.uleb128 0x3b
+ 1814 0194 0B       		.uleb128 0xb
+ 1815 0195 27       		.uleb128 0x27
+ 1816 0196 19       		.uleb128 0x19
+ 1817 0197 3C       		.uleb128 0x3c
+ 1818 0198 19       		.uleb128 0x19
+ 1819 0199 00       		.byte	0
+ 1820 019a 00       		.byte	0
+ 1821 019b 21       		.uleb128 0x21
+ 1822 019c 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 49
+
+
+ 1823 019d 01       		.byte	0x1
+ 1824 019e 3F       		.uleb128 0x3f
+ 1825 019f 19       		.uleb128 0x19
+ 1826 01a0 03       		.uleb128 0x3
+ 1827 01a1 0E       		.uleb128 0xe
+ 1828 01a2 3A       		.uleb128 0x3a
+ 1829 01a3 0B       		.uleb128 0xb
+ 1830 01a4 3B       		.uleb128 0x3b
+ 1831 01a5 0B       		.uleb128 0xb
+ 1832 01a6 27       		.uleb128 0x27
+ 1833 01a7 19       		.uleb128 0x19
+ 1834 01a8 3C       		.uleb128 0x3c
+ 1835 01a9 19       		.uleb128 0x19
+ 1836 01aa 00       		.byte	0
+ 1837 01ab 00       		.byte	0
+ 1838 01ac 00       		.byte	0
+ 1839              		.section	.debug_loc,"",%progbits
+ 1840              	.Ldebug_loc0:
+ 1841              	.LLST0:
+ 1842 0000 1C000000 		.4byte	.LVL1
+ 1843 0004 38000000 		.4byte	.LVL7
+ 1844 0008 0100     		.2byte	0x1
+ 1845 000a 52       		.byte	0x52
+ 1846 000b 00000000 		.4byte	0
+ 1847 000f 00000000 		.4byte	0
+ 1848              	.LLST1:
+ 1849 0013 24000000 		.4byte	.LVL3
+ 1850 0017 2A000000 		.4byte	.LVL4
+ 1851 001b 0100     		.2byte	0x1
+ 1852 001d 53       		.byte	0x53
+ 1853 001e 2A000000 		.4byte	.LVL4
+ 1854 0022 2C000000 		.4byte	.LVL5
+ 1855 0026 0700     		.2byte	0x7
+ 1856 0028 31       		.byte	0x31
+ 1857 0029 71       		.byte	0x71
+ 1858 002a 00       		.sleb128 0
+ 1859 002b 24       		.byte	0x24
+ 1860 002c 31       		.byte	0x31
+ 1861 002d 1C       		.byte	0x1c
+ 1862 002e 9F       		.byte	0x9f
+ 1863 002f 36000000 		.4byte	.LVL6
+ 1864 0033 42000000 		.4byte	.LVL8
+ 1865 0037 0100     		.2byte	0x1
+ 1866 0039 53       		.byte	0x53
+ 1867 003a 00000000 		.4byte	0
+ 1868 003e 00000000 		.4byte	0
+ 1869              	.LLST2:
+ 1870 0042 14000000 		.4byte	.LVL0
+ 1871 0046 20000000 		.4byte	.LVL2
+ 1872 004a 0100     		.2byte	0x1
+ 1873 004c 53       		.byte	0x53
+ 1874 004d 00000000 		.4byte	0
+ 1875 0051 00000000 		.4byte	0
+ 1876              	.LLST3:
+ 1877 0055 18000000 		.4byte	.LVL9
+ 1878 0059 59000000 		.4byte	.LVL19-1
+ 1879 005d 0100     		.2byte	0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 50
+
+
+ 1880 005f 50       		.byte	0x50
+ 1881 0060 00000000 		.4byte	0
+ 1882 0064 00000000 		.4byte	0
+ 1883              	.LLST4:
+ 1884 0068 30000000 		.4byte	.LVL11
+ 1885 006c 4C000000 		.4byte	.LVL17
+ 1886 0070 0100     		.2byte	0x1
+ 1887 0072 52       		.byte	0x52
+ 1888 0073 00000000 		.4byte	0
+ 1889 0077 00000000 		.4byte	0
+ 1890              	.LLST5:
+ 1891 007b 38000000 		.4byte	.LVL13
+ 1892 007f 3E000000 		.4byte	.LVL14
+ 1893 0083 0100     		.2byte	0x1
+ 1894 0085 53       		.byte	0x53
+ 1895 0086 3E000000 		.4byte	.LVL14
+ 1896 008a 40000000 		.4byte	.LVL15
+ 1897 008e 0700     		.2byte	0x7
+ 1898 0090 31       		.byte	0x31
+ 1899 0091 71       		.byte	0x71
+ 1900 0092 00       		.sleb128 0
+ 1901 0093 24       		.byte	0x24
+ 1902 0094 31       		.byte	0x31
+ 1903 0095 1C       		.byte	0x1c
+ 1904 0096 9F       		.byte	0x9f
+ 1905 0097 4A000000 		.4byte	.LVL16
+ 1906 009b 56000000 		.4byte	.LVL18
+ 1907 009f 0100     		.2byte	0x1
+ 1908 00a1 53       		.byte	0x53
+ 1909 00a2 00000000 		.4byte	0
+ 1910 00a6 00000000 		.4byte	0
+ 1911              	.LLST6:
+ 1912 00aa 28000000 		.4byte	.LVL10
+ 1913 00ae 34000000 		.4byte	.LVL12
+ 1914 00b2 0100     		.2byte	0x1
+ 1915 00b4 53       		.byte	0x53
+ 1916 00b5 00000000 		.4byte	0
+ 1917 00b9 00000000 		.4byte	0
+ 1918              	.LLST7:
+ 1919 00bd 66000000 		.4byte	.LVL20
+ 1920 00c1 9D000000 		.4byte	.LVL21-1
+ 1921 00c5 0100     		.2byte	0x1
+ 1922 00c7 50       		.byte	0x50
+ 1923 00c8 B0000000 		.4byte	.LVL24
+ 1924 00cc CB000000 		.4byte	.LVL25-1
+ 1925 00d0 0100     		.2byte	0x1
+ 1926 00d2 50       		.byte	0x50
+ 1927 00d3 CE000000 		.4byte	.LVL26
+ 1928 00d7 DC000000 		.4byte	.LVL27
+ 1929 00db 0100     		.2byte	0x1
+ 1930 00dd 50       		.byte	0x50
+ 1931 00de 00000000 		.4byte	0
+ 1932 00e2 00000000 		.4byte	0
+ 1933              		.section	.debug_aranges,"",%progbits
+ 1934 0000 24000000 		.4byte	0x24
+ 1935 0004 0200     		.2byte	0x2
+ 1936 0006 00000000 		.4byte	.Ldebug_info0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 51
+
+
+ 1937 000a 04       		.byte	0x4
+ 1938 000b 00       		.byte	0
+ 1939 000c 0000     		.2byte	0
+ 1940 000e 0000     		.2byte	0
+ 1941 0010 00000000 		.4byte	.LFB1
+ 1942 0014 74000000 		.4byte	.LFE1-.LFB1
+ 1943 0018 00000000 		.4byte	.LFB2
+ 1944 001c 08010000 		.4byte	.LFE2-.LFB2
+ 1945 0020 00000000 		.4byte	0
+ 1946 0024 00000000 		.4byte	0
+ 1947              		.section	.debug_ranges,"",%progbits
+ 1948              	.Ldebug_ranges0:
+ 1949 0000 00000000 		.4byte	.LFB1
+ 1950 0004 74000000 		.4byte	.LFE1
+ 1951 0008 00000000 		.4byte	.LFB2
+ 1952 000c 08010000 		.4byte	.LFE2
+ 1953 0010 00000000 		.4byte	0
+ 1954 0014 00000000 		.4byte	0
+ 1955              		.section	.debug_line,"",%progbits
+ 1956              	.Ldebug_line0:
+ 1957 0000 3B010000 		.section	.debug_str,"MS",%progbits,1
+ 1957      0200D100 
+ 1957      00000201 
+ 1957      FB0E0D00 
+ 1957      01010101 
+ 1958              	.LASF10:
+ 1959 0000 75696E74 		.ascii	"uint16\000"
+ 1959      313600
+ 1960              	.LASF38:
+ 1961 0007 66696E67 		.ascii	"fingerCap\000"
+ 1961      65724361 
+ 1961      7000
+ 1962              	.LASF7:
+ 1963 0011 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1963      206C6F6E 
+ 1963      6720756E 
+ 1963      7369676E 
+ 1963      65642069 
+ 1964              	.LASF108:
+ 1965 0028 6B65795F 		.ascii	"key_touch_CSDPostMultiScan\000"
+ 1965      746F7563 
+ 1965      685F4353 
+ 1965      44506F73 
+ 1965      744D756C 
+ 1966              	.LASF89:
+ 1967 0043 70747232 		.ascii	"ptr2SnsFlash\000"
+ 1967      536E7346 
+ 1967      6C617368 
+ 1967      00
+ 1968              	.LASF57:
+ 1969 0050 64696666 		.ascii	"diff\000"
+ 1969      00
+ 1970              	.LASF79:
+ 1971 0055 6873696F 		.ascii	"hsiomPtr\000"
+ 1971      6D507472 
+ 1971      00
+ 1972              	.LASF121:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 52
+
+
+ 1973 005e 47656E65 		.ascii	"Generated_Source\\PSoC4\\key_touch_INT.c\000"
+ 1973      72617465 
+ 1973      645F536F 
+ 1973      75726365 
+ 1973      5C50536F 
+ 1974              	.LASF75:
+ 1975 0085 736E7254 		.ascii	"snrTestSensorId\000"
+ 1975      65737453 
+ 1975      656E736F 
+ 1975      72496400 
+ 1976              	.LASF6:
+ 1977 0095 6C6F6E67 		.ascii	"long long int\000"
+ 1977      206C6F6E 
+ 1977      6720696E 
+ 1977      7400
+ 1978              	.LASF0:
+ 1979 00a3 7369676E 		.ascii	"signed char\000"
+ 1979      65642063 
+ 1979      68617200 
+ 1980              	.LASF117:
+ 1981 00af 6B65795F 		.ascii	"key_touch_SsCSDConnectSensorExt\000"
+ 1981      746F7563 
+ 1981      685F5373 
+ 1981      43534443 
+ 1981      6F6E6E65 
+ 1982              	.LASF42:
+ 1983 00cf 62757474 		.ascii	"button0\000"
+ 1983      6F6E3000 
+ 1984              	.LASF43:
+ 1985 00d7 62757474 		.ascii	"button1\000"
+ 1985      6F6E3100 
+ 1986              	.LASF44:
+ 1987 00df 62757474 		.ascii	"button2\000"
+ 1987      6F6E3200 
+ 1988              	.LASF45:
+ 1989 00e7 62757474 		.ascii	"button3\000"
+ 1989      6F6E3300 
+ 1990              	.LASF46:
+ 1991 00ef 62757474 		.ascii	"button4\000"
+ 1991      6F6E3400 
+ 1992              	.LASF47:
+ 1993 00f7 62757474 		.ascii	"button5\000"
+ 1993      6F6E3500 
+ 1994              	.LASF48:
+ 1995 00ff 62757474 		.ascii	"button6\000"
+ 1995      6F6E3600 
+ 1996              	.LASF49:
+ 1997 0107 62757474 		.ascii	"button7\000"
+ 1997      6F6E3700 
+ 1998              	.LASF50:
+ 1999 010f 62757474 		.ascii	"button8\000"
+ 1999      6F6E3800 
+ 2000              	.LASF51:
+ 2001 0117 62757474 		.ascii	"button9\000"
+ 2001      6F6E3900 
+ 2002              	.LASF69:
+ 2003 011f 736E7353 		.ascii	"snsStatus\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 53
+
+
+ 2003      74617475 
+ 2003      7300
+ 2004              	.LASF4:
+ 2005 0129 6C6F6E67 		.ascii	"long int\000"
+ 2005      20696E74 
+ 2005      00
+ 2006              	.LASF114:
+ 2007 0132 6B65795F 		.ascii	"key_touch_requestScanAllWidget\000"
+ 2007      746F7563 
+ 2007      685F7265 
+ 2007      71756573 
+ 2007      74536361 
+ 2008              	.LASF71:
+ 2009 0151 6D6F6443 		.ascii	"modCsdClk\000"
+ 2009      7364436C 
+ 2009      6B00
+ 2010              	.LASF91:
+ 2011 015b 70747232 		.ascii	"ptr2SnsRam\000"
+ 2011      536E7352 
+ 2011      616D00
+ 2012              	.LASF82:
+ 2013 0166 70735074 		.ascii	"psPtr\000"
+ 2013      7200
+ 2014              	.LASF9:
+ 2015 016c 75696E74 		.ascii	"uint8\000"
+ 2015      3800
+ 2016              	.LASF13:
+ 2017 0172 646F7562 		.ascii	"double\000"
+ 2017      6C6500
+ 2018              	.LASF77:
+ 2019 0179 736E7254 		.ascii	"snrTestRawCount\000"
+ 2019      65737452 
+ 2019      6177436F 
+ 2019      756E7400 
+ 2020              	.LASF87:
+ 2021 0189 73686966 		.ascii	"shift\000"
+ 2021      7400
+ 2022              	.LASF113:
+ 2023 018f 6B65795F 		.ascii	"key_touch_sensorIndex\000"
+ 2023      746F7563 
+ 2023      685F7365 
+ 2023      6E736F72 
+ 2023      496E6465 
+ 2024              	.LASF86:
+ 2025 01a5 64725368 		.ascii	"drShift\000"
+ 2025      69667400 
+ 2026              	.LASF11:
+ 2027 01ad 75696E74 		.ascii	"uint32\000"
+ 2027      333200
+ 2028              	.LASF31:
+ 2029 01b4 68797374 		.ascii	"hysteresis\000"
+ 2029      65726573 
+ 2029      697300
+ 2030              	.LASF110:
+ 2031 01bf 6B65795F 		.ascii	"key_touch_dsFlash\000"
+ 2031      746F7563 
+ 2031      685F6473 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 54
+
+
+ 2031      466C6173 
+ 2031      6800
+ 2032              	.LASF84:
+ 2033 01d1 6D61736B 		.ascii	"mask\000"
+ 2033      00
+ 2034              	.LASF56:
+ 2035 01d6 62736C6E 		.ascii	"bslnExt\000"
+ 2035      45787400 
+ 2036              	.LASF68:
+ 2037 01de 77646774 		.ascii	"wdgtStatus\000"
+ 2037      53746174 
+ 2037      757300
+ 2038              	.LASF55:
+ 2039 01e9 62736C6E 		.ascii	"bsln\000"
+ 2039      00
+ 2040              	.LASF8:
+ 2041 01ee 756E7369 		.ascii	"unsigned int\000"
+ 2041      676E6564 
+ 2041      20696E74 
+ 2041      00
+ 2042              	.LASF74:
+ 2043 01fb 736E7254 		.ascii	"snrTestWidgetId\000"
+ 2043      65737457 
+ 2043      69646765 
+ 2043      74496400 
+ 2044              	.LASF98:
+ 2045 020b 70747232 		.ascii	"ptr2NoiseEnvlp\000"
+ 2045      4E6F6973 
+ 2045      65456E76 
+ 2045      6C7000
+ 2046              	.LASF5:
+ 2047 021a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2047      20756E73 
+ 2047      69676E65 
+ 2047      6420696E 
+ 2047      7400
+ 2048              	.LASF67:
+ 2049 022c 77646774 		.ascii	"wdgtEnable\000"
+ 2049      456E6162 
+ 2049      6C6500
+ 2050              	.LASF102:
+ 2051 0237 746D7052 		.ascii	"tmpRawData\000"
+ 2051      61774461 
+ 2051      746100
+ 2052              	.LASF33:
+ 2053 0242 6C6F7742 		.ascii	"lowBslnRst\000"
+ 2053      736C6E52 
+ 2053      737400
+ 2054              	.LASF104:
+ 2055 024d 70747257 		.ascii	"ptrWdgt\000"
+ 2055      64677400 
+ 2056              	.LASF3:
+ 2057 0255 73686F72 		.ascii	"short unsigned int\000"
+ 2057      7420756E 
+ 2057      7369676E 
+ 2057      65642069 
+ 2057      6E7400
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 55
+
+
+ 2058              	.LASF40:
+ 2059 0268 6B65795F 		.ascii	"key_touch_RAM_WD_BASE_STRUCT\000"
+ 2059      746F7563 
+ 2059      685F5241 
+ 2059      4D5F5744 
+ 2059      5F424153 
+ 2060              	.LASF109:
+ 2061 0285 6B65795F 		.ascii	"key_touch_dsRam\000"
+ 2061      746F7563 
+ 2061      685F6473 
+ 2061      52616D00 
+ 2062              	.LASF41:
+ 2063 0295 6B65795F 		.ascii	"key_touch_RAM_WD_BUTTON_STRUCT\000"
+ 2063      746F7563 
+ 2063      685F5241 
+ 2063      4D5F5744 
+ 2063      5F425554 
+ 2064              	.LASF73:
+ 2065 02b4 736E734C 		.ascii	"snsList\000"
+ 2065      69737400 
+ 2066              	.LASF62:
+ 2067 02bc 636F6E66 		.ascii	"configId\000"
+ 2067      69674964 
+ 2067      00
+ 2068              	.LASF111:
+ 2069 02c5 6B65795F 		.ascii	"key_touch_scanFreqIndex\000"
+ 2069      746F7563 
+ 2069      685F7363 
+ 2069      616E4672 
+ 2069      6571496E 
+ 2070              	.LASF70:
+ 2071 02dd 63736430 		.ascii	"csd0Config\000"
+ 2071      436F6E66 
+ 2071      696700
+ 2072              	.LASF90:
+ 2073 02e8 70747232 		.ascii	"ptr2WdgtRam\000"
+ 2073      57646774 
+ 2073      52616D00 
+ 2074              	.LASF63:
+ 2075 02f4 64657669 		.ascii	"deviceId\000"
+ 2075      63654964 
+ 2075      00
+ 2076              	.LASF88:
+ 2077 02fd 6B65795F 		.ascii	"key_touch_FLASH_IO_STRUCT\000"
+ 2077      746F7563 
+ 2077      685F464C 
+ 2077      4153485F 
+ 2077      494F5F53 
+ 2078              	.LASF15:
+ 2079 0317 72656733 		.ascii	"reg32\000"
+ 2079      3200
+ 2080              	.LASF17:
+ 2081 031d 6B65795F 		.ascii	"key_touch_LOW_BSLN_RST_TYPE\000"
+ 2081      746F7563 
+ 2081      685F4C4F 
+ 2081      575F4253 
+ 2081      4C4E5F52 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 56
+
+
+ 2082              	.LASF35:
+ 2083 0339 69646163 		.ascii	"idacMod\000"
+ 2083      4D6F6400 
+ 2084              	.LASF97:
+ 2085 0341 6E756D43 		.ascii	"numCols\000"
+ 2085      6F6C7300 
+ 2086              	.LASF18:
+ 2087 0349 73697A65 		.ascii	"sizetype\000"
+ 2087      74797065 
+ 2087      00
+ 2088              	.LASF116:
+ 2089 0352 6B65795F 		.ascii	"key_touch_SsCSDSetUpIdacs\000"
+ 2089      746F7563 
+ 2089      685F5373 
+ 2089      43534453 
+ 2089      65745570 
+ 2090              	.LASF94:
+ 2091 036c 73746174 		.ascii	"staticConfig\000"
+ 2091      6963436F 
+ 2091      6E666967 
+ 2091      00
+ 2092              	.LASF30:
+ 2093 0379 6E4E6F69 		.ascii	"nNoiseTh\000"
+ 2093      73655468 
+ 2093      00
+ 2094              	.LASF106:
+ 2095 0382 6B65795F 		.ascii	"key_touch_SsCSDInitNextScan\000"
+ 2095      746F7563 
+ 2095      685F5373 
+ 2095      43534449 
+ 2095      6E69744E 
+ 2096              	.LASF39:
+ 2097 039e 73696750 		.ascii	"sigPFC\000"
+ 2097      464300
+ 2098              	.LASF96:
+ 2099 03a5 77646774 		.ascii	"wdgtType\000"
+ 2099      54797065 
+ 2099      00
+ 2100              	.LASF78:
+ 2101 03ae 6B65795F 		.ascii	"key_touch_RAM_STRUCT\000"
+ 2101      746F7563 
+ 2101      685F5241 
+ 2101      4D5F5354 
+ 2101      52554354 
+ 2102              	.LASF16:
+ 2103 03c3 6B65795F 		.ascii	"key_touch_THRESHOLD_TYPE\000"
+ 2103      746F7563 
+ 2103      685F5448 
+ 2103      52455348 
+ 2103      4F4C445F 
+ 2104              	.LASF65:
+ 2105 03dc 7363616E 		.ascii	"scanCounter\000"
+ 2105      436F756E 
+ 2105      74657200 
+ 2106              	.LASF107:
+ 2107 03e8 6B65795F 		.ascii	"key_touch_CSDPostSingleScan\000"
+ 2107      746F7563 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 57
+
+
+ 2107      685F4353 
+ 2107      44506F73 
+ 2107      7453696E 
+ 2108              	.LASF105:
+ 2109 0404 6B65795F 		.ascii	"key_touch_SsCSDPostScan\000"
+ 2109      746F7563 
+ 2109      685F5373 
+ 2109      43534450 
+ 2109      6F737453 
+ 2110              	.LASF54:
+ 2111 041c 6B65795F 		.ascii	"key_touch_RAM_WD_LIST_STRUCT\000"
+ 2111      746F7563 
+ 2111      685F5241 
+ 2111      4D5F5744 
+ 2111      5F4C4953 
+ 2112              	.LASF99:
+ 2113 0439 6B65795F 		.ascii	"key_touch_FLASH_WD_STRUCT\000"
+ 2113      746F7563 
+ 2113      685F464C 
+ 2113      4153485F 
+ 2113      57445F53 
+ 2114              	.LASF64:
+ 2115 0453 74756E65 		.ascii	"tunerCmd\000"
+ 2115      72436D64 
+ 2115      00
+ 2116              	.LASF12:
+ 2117 045c 666C6F61 		.ascii	"float\000"
+ 2117      7400
+ 2118              	.LASF122:
+ 2119 0462 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V2.0\\TOUCH_TEST\\"
+ 2119      6F63616C 
+ 2119      5F73766E 
+ 2119      5C415942 
+ 2119      52333030 
+ 2120 0491 41594252 		.ascii	"AYBR3000.cydsn\000"
+ 2120      33303030 
+ 2120      2E637964 
+ 2120      736E00
+ 2121              	.LASF118:
+ 2122 04a0 6B65795F 		.ascii	"key_touch_SsCSDStartSample\000"
+ 2122      746F7563 
+ 2122      685F5373 
+ 2122      43534453 
+ 2122      74617274 
+ 2123              	.LASF26:
+ 2124 04bb 534D4152 		.ascii	"SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT\000"
+ 2124      5453454E 
+ 2124      53455F43 
+ 2124      53445F4E 
+ 2124      4F495345 
+ 2125              	.LASF34:
+ 2126 04e0 62736C6E 		.ascii	"bslnCoeff\000"
+ 2126      436F6566 
+ 2126      6600
+ 2127              	.LASF1:
+ 2128 04ea 756E7369 		.ascii	"unsigned char\000"
+ 2128      676E6564 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 58
+
+
+ 2128      20636861 
+ 2128      7200
+ 2129              	.LASF20:
+ 2130 04f8 70617261 		.ascii	"param1\000"
+ 2130      6D3100
+ 2131              	.LASF21:
+ 2132 04ff 70617261 		.ascii	"param2\000"
+ 2132      6D3200
+ 2133              	.LASF22:
+ 2134 0506 70617261 		.ascii	"param3\000"
+ 2134      6D3300
+ 2135              	.LASF23:
+ 2136 050d 70617261 		.ascii	"param4\000"
+ 2136      6D3400
+ 2137              	.LASF24:
+ 2138 0514 70617261 		.ascii	"param5\000"
+ 2138      6D3500
+ 2139              	.LASF25:
+ 2140 051b 70617261 		.ascii	"param6\000"
+ 2140      6D3600
+ 2141              	.LASF2:
+ 2142 0522 73686F72 		.ascii	"short int\000"
+ 2142      7420696E 
+ 2142      7400
+ 2143              	.LASF92:
+ 2144 052c 70747232 		.ascii	"ptr2FltrHistory\000"
+ 2144      466C7472 
+ 2144      48697374 
+ 2144      6F727900 
+ 2145              	.LASF85:
+ 2146 053c 6873696F 		.ascii	"hsiomShift\000"
+ 2146      6D536869 
+ 2146      667400
+ 2147              	.LASF61:
+ 2148 0547 6B65795F 		.ascii	"key_touch_RAM_SNS_LIST_STRUCT\000"
+ 2148      746F7563 
+ 2148      685F5241 
+ 2148      4D5F534E 
+ 2148      535F4C49 
+ 2149              	.LASF101:
+ 2150 0565 6B65795F 		.ascii	"key_touch_FLASH_STRUCT\000"
+ 2150      746F7563 
+ 2150      685F464C 
+ 2150      4153485F 
+ 2150      53545255 
+ 2151              	.LASF27:
+ 2152 057c 7265736F 		.ascii	"resolution\000"
+ 2152      6C757469 
+ 2152      6F6E00
+ 2153              	.LASF72:
+ 2154 0587 77646774 		.ascii	"wdgtList\000"
+ 2154      4C697374 
+ 2154      00
+ 2155              	.LASF52:
+ 2156 0590 62757474 		.ascii	"button10\000"
+ 2156      6F6E3130 
+ 2156      00
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 59
+
+
+ 2157              	.LASF53:
+ 2158 0599 62757474 		.ascii	"button11\000"
+ 2158      6F6E3131 
+ 2158      00
+ 2159              	.LASF14:
+ 2160 05a2 63686172 		.ascii	"char\000"
+ 2160      00
+ 2161              	.LASF119:
+ 2162 05a7 6B65795F 		.ascii	"key_touch_SsPostAllWidgetsScan\000"
+ 2162      746F7563 
+ 2162      685F5373 
+ 2162      506F7374 
+ 2162      416C6C57 
+ 2163              	.LASF81:
+ 2164 05c6 64725074 		.ascii	"drPtr\000"
+ 2164      7200
+ 2165              	.LASF36:
+ 2166 05cc 736E7343 		.ascii	"snsClk\000"
+ 2166      6C6B00
+ 2167              	.LASF124:
+ 2168 05d3 6B65795F 		.ascii	"key_touch_CSDDisconnectSns\000"
+ 2168      746F7563 
+ 2168      685F4353 
+ 2168      44446973 
+ 2168      636F6E6E 
+ 2169              	.LASF32:
+ 2170 05ee 6F6E4465 		.ascii	"onDebounce\000"
+ 2170      626F756E 
+ 2170      636500
+ 2171              	.LASF60:
+ 2172 05f9 6B65795F 		.ascii	"key_touch_RAM_SNS_STRUCT\000"
+ 2172      746F7563 
+ 2172      685F5241 
+ 2172      4D5F534E 
+ 2172      535F5354 
+ 2173              	.LASF59:
+ 2174 0612 69646163 		.ascii	"idacComp\000"
+ 2174      436F6D70 
+ 2174      00
+ 2175              	.LASF58:
+ 2176 061b 6E656742 		.ascii	"negBslnRstCnt\000"
+ 2176      736C6E52 
+ 2176      7374436E 
+ 2176      7400
+ 2177              	.LASF95:
+ 2178 0629 746F7461 		.ascii	"totalNumSns\000"
+ 2178      6C4E756D 
+ 2178      536E7300 
+ 2179              	.LASF93:
+ 2180 0635 70747232 		.ascii	"ptr2DebounceArr\000"
+ 2180      4465626F 
+ 2180      756E6365 
+ 2180      41727200 
+ 2181              	.LASF115:
+ 2182 0645 6B65795F 		.ascii	"key_touch_curRamSnsPtr\000"
+ 2182      746F7563 
+ 2182      685F6375 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 60
+
+
+ 2182      7252616D 
+ 2182      536E7350 
+ 2183              	.LASF66:
+ 2184 065c 73746174 		.ascii	"status\000"
+ 2184      757300
+ 2185              	.LASF100:
+ 2186 0663 77646774 		.ascii	"wdgtArray\000"
+ 2186      41727261 
+ 2186      7900
+ 2187              	.LASF123:
+ 2188 066d 63757253 		.ascii	"curSnsIOPtr\000"
+ 2188      6E73494F 
+ 2188      50747200 
+ 2189              	.LASF37:
+ 2190 0679 736E7343 		.ascii	"snsClkSource\000"
+ 2190      6C6B536F 
+ 2190      75726365 
+ 2190      00
+ 2191              	.LASF112:
+ 2192 0686 6B65795F 		.ascii	"key_touch_widgetIndex\000"
+ 2192      746F7563 
+ 2192      685F7769 
+ 2192      64676574 
+ 2192      496E6465 
+ 2193              	.LASF28:
+ 2194 069c 66696E67 		.ascii	"fingerTh\000"
+ 2194      65725468 
+ 2194      00
+ 2195              	.LASF19:
+ 2196 06a5 70617261 		.ascii	"param0\000"
+ 2196      6D3000
+ 2197              	.LASF80:
+ 2198 06ac 70635074 		.ascii	"pcPtr\000"
+ 2198      7200
+ 2199              	.LASF76:
+ 2200 06b2 736E7254 		.ascii	"snrTestScanCounter\000"
+ 2200      65737453 
+ 2200      63616E43 
+ 2200      6F756E74 
+ 2200      657200
+ 2201              	.LASF83:
+ 2202 06c5 6873696F 		.ascii	"hsiomMask\000"
+ 2202      6D4D6173 
+ 2202      6B00
+ 2203              	.LASF103:
+ 2204 06cf 746D704D 		.ascii	"tmpMaxCount\000"
+ 2204      6178436F 
+ 2204      756E7400 
+ 2205              	.LASF120:
+ 2206 06db 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2206      4320342E 
+ 2206      392E3320 
+ 2206      32303135 
+ 2206      30333033 
+ 2207 070e 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 2207      20726576 
+ 2207      6973696F 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccn97zoc.s 			page 61
+
+
+ 2207      6E203232 
+ 2207      31323230 
+ 2208 0741 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 2208      67202D66 
+ 2208      66756E63 
+ 2208      74696F6E 
+ 2208      2D736563 
+ 2209              	.LASF29:
+ 2210 076d 6E6F6973 		.ascii	"noiseTh\000"
+ 2210      65546800 
+ 2211              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

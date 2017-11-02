@@ -1,0 +1,2524 @@
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"A7105_driver.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.buffer_length_ok,"ax",%progbits
+  18              		.align	2
+  19              		.code	16
+  20              		.thumb_func
+  21              		.type	buffer_length_ok, %function
+  22              	buffer_length_ok:
+  23              	.LFB5:
+  24              		.file 1 "A7105_driver.c"
+   1:A7105_driver.c **** /*********************************************************************
+   2:A7105_driver.c **** **    Device:    A7105                                                    
+   3:A7105_driver.c **** **    File:    A7105_driver.c                                                  
+   4:A7105_driver.c **** **                                                                    
+   5:A7105_driver.c **** **    Description:                                                     
+   6:A7105_driver.c **** **    This file is a sample code for your    reference.                    
+   7:A7105_driver.c **** **                                                                    
+   8:A7105_driver.c **** **    Copyright (C) 2008 AMICCOM Corp.                                
+   9:A7105_driver.c **** **                                                                    
+  10:A7105_driver.c **** *********************************************************************/
+  11:A7105_driver.c **** 
+  12:A7105_driver.c **** #include "A7105_driver.h"
+  13:A7105_driver.c **** #include <GIO1_ISR.h>
+  14:A7105_driver.c **** 
+  15:A7105_driver.c **** static Bool buffer_length_ok(uint8 length);
+  16:A7105_driver.c **** static Bool CRC_check_ok(void);
+  17:A7105_driver.c **** 
+  18:A7105_driver.c **** /*********************************************************************
+  19:A7105_driver.c **** * 模块初始化函数
+  20:A7105_driver.c **** *********************************************************************/
+  21:A7105_driver.c **** void A7105_init(void)
+  22:A7105_driver.c **** {
+  23:A7105_driver.c ****     SDIO_DDR_OUT();
+  24:A7105_driver.c ****     SCS_PIN_HIGH();
+  25:A7105_driver.c ****     SCK_PIN_LOW();
+  26:A7105_driver.c ****     SDIO_PIN_HIGH();
+  27:A7105_driver.c ****    
+  28:A7105_driver.c ****     A7105_Reset();        //reset A7105 RF chip
+  29:A7105_driver.c ****     A7105_WriteID();    //write ID code
+  30:A7105_driver.c ****     A7105_Config();        //config A7105 chip
+  31:A7105_driver.c ****     A7105_Calibration();        //calibration IF,vco, vcoc
+  32:A7105_driver.c ****     
+  33:A7105_driver.c ****     StrobeCmd(CMD_STBY);
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 2
+
+
+  34:A7105_driver.c **** 
+  35:A7105_driver.c ****     A7105_WriteReg(TXTEST_REG, 0x17 );                  //    TX power = 0dBm
+  36:A7105_driver.c ****     A7105_WriteReg(DATARATE_REG, 9);                   //    Data rate = 50K
+  37:A7105_driver.c ****     A7105_WriteReg(MODECTRL_REG, 0x62);               //    FIFO mode
+  38:A7105_driver.c ****     A7105_WriteReg(PLL1_REG, 99 );                            // set radio channel,设置信道频率
+  39:A7105_driver.c ****     A7105_WriteReg(CODE1_REG, 0x0F);                       //使能CRC校验
+  40:A7105_driver.c ****     /*这里等待帧格式确定在设置payload length*/
+  41:A7105_driver.c ****     A7105_WriteReg(FIFO1_REG, 20-1); // set FIFO payload length
+  42:A7105_driver.c **** }
+  43:A7105_driver.c **** 
+  44:A7105_driver.c **** /*********************************************************************
+  45:A7105_driver.c **** ** 发送数据
+  46:A7105_driver.c **** *********************************************************************/
+  47:A7105_driver.c **** void send_data_by_A7105(uint8 buffer_length, uint8 send_buffer[]) 
+  48:A7105_driver.c **** {
+  49:A7105_driver.c ****     if (buffer_length_ok(buffer_length) && send_buffer != NULL)
+  50:A7105_driver.c ****     {
+  51:A7105_driver.c ****         StrobeCmd(CMD_TFR);
+  52:A7105_driver.c ****         WriteFIFO(buffer_length, send_buffer); 
+  53:A7105_driver.c ****         
+  54:A7105_driver.c ****         StrobeCmd(CMD_STBY);   //若当前是RX状态,是无法直接切换到TX状态的
+  55:A7105_driver.c ****         StrobeCmd(CMD_TX);
+  56:A7105_driver.c ****         while(RF_WTR());// 浮空输入脚,A7105发送开始拉高,发送结束拉低
+  57:A7105_driver.c ****         //发送完成会自动回到之前的状态StandBy
+  58:A7105_driver.c ****     }
+  59:A7105_driver.c ****     else
+  60:A7105_driver.c ****     {
+  61:A7105_driver.c ****     }
+  62:A7105_driver.c **** }
+  63:A7105_driver.c **** 
+  64:A7105_driver.c **** Bool receive_data_by_A7105(uint8 buffer_length, uint8 receive_buffer[])
+  65:A7105_driver.c **** {
+  66:A7105_driver.c ****     Bool ret = FALSE;
+  67:A7105_driver.c ****     
+  68:A7105_driver.c ****     if (buffer_length_ok(buffer_length) && receive_buffer != NULL)
+  69:A7105_driver.c ****     {
+  70:A7105_driver.c **** GIO1_ClearInterrupt();
+  71:A7105_driver.c **** GIO1_ISR_ClearPending();
+  72:A7105_driver.c **** GIO1_ISR_Enable();
+  73:A7105_driver.c ****         StrobeCmd(CMD_RX);
+  74:A7105_driver.c ****         if (A7105_read_wtr())          // 浮空输入脚,A7105接收开始拉高接收结束拉低
+  75:A7105_driver.c ****         {
+  76:A7105_driver.c ****             A7105_update_wtr(FALSE);
+  77:A7105_driver.c **** GIO1_ISR_Disable();
+  78:A7105_driver.c ****             if (CRC_check_ok())
+  79:A7105_driver.c ****             {
+  80:A7105_driver.c ****                 ReadFIFO(buffer_length, receive_buffer);
+  81:A7105_driver.c ****                 StrobeCmd(CMD_RFR);
+  82:A7105_driver.c ****                 ret = TRUE;
+  83:A7105_driver.c **** 
+  84:A7105_driver.c ****             }
+  85:A7105_driver.c ****             else
+  86:A7105_driver.c ****             {
+  87:A7105_driver.c ****                 
+  88:A7105_driver.c ****             }
+  89:A7105_driver.c ****         }
+  90:A7105_driver.c ****         //接收够payload 长度后,会自动从RX状态返回到STANDBY状态
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 3
+
+
+  91:A7105_driver.c ****     }
+  92:A7105_driver.c ****     else
+  93:A7105_driver.c ****     {
+  94:A7105_driver.c ****     }
+  95:A7105_driver.c **** 
+  96:A7105_driver.c ****     return ret;
+  97:A7105_driver.c **** }
+  98:A7105_driver.c **** 
+  99:A7105_driver.c **** void A7105_sleep(void)
+ 100:A7105_driver.c **** {
+ 101:A7105_driver.c ****     StrobeCmd(CMD_SLEEP);
+ 102:A7105_driver.c **** }
+ 103:A7105_driver.c **** 
+ 104:A7105_driver.c **** void A7105_wakeup(void)
+ 105:A7105_driver.c **** {
+ 106:A7105_driver.c ****     StrobeCmd(CMD_STBY);
+ 107:A7105_driver.c **** }
+ 108:A7105_driver.c **** 
+ 109:A7105_driver.c **** static Bool buffer_length_ok(uint8 length)
+ 110:A7105_driver.c **** {
+  25              		.loc 1 110 0
+  26              		.cfi_startproc
+  27              	.LVL0:
+ 111:A7105_driver.c ****     if (length >= 0 && length <= MAX_BUFFER_SIZE)
+  28              		.loc 1 111 0
+  29 0000 4028     		cmp	r0, #64
+  30 0002 01D8     		bhi	.L3
+ 112:A7105_driver.c ****         return TRUE;
+  31              		.loc 1 112 0
+  32 0004 0120     		mov	r0, #1
+  33              	.LVL1:
+  34 0006 00E0     		b	.L2
+  35              	.LVL2:
+  36              	.L3:
+ 113:A7105_driver.c ****     else
+ 114:A7105_driver.c ****         return FALSE;
+  37              		.loc 1 114 0
+  38 0008 0020     		mov	r0, #0
+  39              	.LVL3:
+  40              	.L2:
+ 115:A7105_driver.c **** }
+  41              		.loc 1 115 0
+  42              		@ sp needed
+  43 000a 7047     		bx	lr
+  44              		.cfi_endproc
+  45              	.LFE5:
+  46              		.size	buffer_length_ok, .-buffer_length_ok
+  47              		.section	.text.CRC_check_ok,"ax",%progbits
+  48              		.align	2
+  49              		.code	16
+  50              		.thumb_func
+  51              		.type	CRC_check_ok, %function
+  52              	CRC_check_ok:
+  53              	.LFB6:
+ 116:A7105_driver.c **** 
+ 117:A7105_driver.c **** static Bool CRC_check_ok(void)
+ 118:A7105_driver.c **** {
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 4
+
+
+  54              		.loc 1 118 0
+  55              		.cfi_startproc
+  56 0000 08B5     		push	{r3, lr}
+  57              		.cfi_def_cfa_offset 8
+  58              		.cfi_offset 3, -8
+  59              		.cfi_offset 14, -4
+ 119:A7105_driver.c ****     uint8 temp;
+ 120:A7105_driver.c ****     
+ 121:A7105_driver.c ****     temp = A7105_ReadReg(MODE_REG);
+  60              		.loc 1 121 0
+  61 0002 0020     		mov	r0, #0
+  62 0004 FFF7FEFF 		bl	A7105_ReadReg
+  63              	.LVL4:
+ 122:A7105_driver.c ****     
+ 123:A7105_driver.c ****     if (temp & 0x20)
+  64              		.loc 1 123 0
+  65 0008 8306     		lsl	r3, r0, #26
+  66 000a 01D5     		bpl	.L6
+ 124:A7105_driver.c ****         return FALSE;
+  67              		.loc 1 124 0
+  68 000c 0020     		mov	r0, #0
+  69              	.LVL5:
+  70 000e 00E0     		b	.L5
+  71              	.LVL6:
+  72              	.L6:
+ 125:A7105_driver.c ****     else
+ 126:A7105_driver.c ****         return TRUE;
+  73              		.loc 1 126 0
+  74 0010 0120     		mov	r0, #1
+  75              	.LVL7:
+  76              	.L5:
+ 127:A7105_driver.c **** }
+  77              		.loc 1 127 0
+  78              		@ sp needed
+  79 0012 08BD     		pop	{r3, pc}
+  80              		.cfi_endproc
+  81              	.LFE6:
+  82              		.size	CRC_check_ok, .-CRC_check_ok
+  83              		.section	.text.A7105_init,"ax",%progbits
+  84              		.align	2
+  85              		.global	A7105_init
+  86              		.code	16
+  87              		.thumb_func
+  88              		.type	A7105_init, %function
+  89              	A7105_init:
+  90              	.LFB0:
+  22:A7105_driver.c ****     SDIO_DDR_OUT();
+  91              		.loc 1 22 0
+  92              		.cfi_startproc
+  93 0000 08B5     		push	{r3, lr}
+  94              		.cfi_def_cfa_offset 8
+  95              		.cfi_offset 3, -8
+  96              		.cfi_offset 14, -4
+  23:A7105_driver.c ****     SCS_PIN_HIGH();
+  97              		.loc 1 23 0
+  98              	@ 23 "A7105_driver.c" 1
+  99 0002 C046     		nop
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 5
+
+
+ 100              	@ 0 "" 2
+  24:A7105_driver.c ****     SCK_PIN_LOW();
+ 101              		.loc 1 24 0
+ 102              		.code	16
+ 103 0004 0120     		mov	r0, #1
+ 104 0006 FFF7FEFF 		bl	SCS_Write
+ 105              	.LVL8:
+  25:A7105_driver.c ****     SDIO_PIN_HIGH();
+ 106              		.loc 1 25 0
+ 107 000a 0020     		mov	r0, #0
+ 108 000c FFF7FEFF 		bl	SCK_Write
+ 109              	.LVL9:
+  26:A7105_driver.c ****    
+ 110              		.loc 1 26 0
+ 111 0010 0120     		mov	r0, #1
+ 112 0012 FFF7FEFF 		bl	SDIO_Write
+ 113              	.LVL10:
+  28:A7105_driver.c ****     A7105_WriteID();    //write ID code
+ 114              		.loc 1 28 0
+ 115 0016 FFF7FEFF 		bl	A7105_Reset
+ 116              	.LVL11:
+  29:A7105_driver.c ****     A7105_Config();        //config A7105 chip
+ 117              		.loc 1 29 0
+ 118 001a FFF7FEFF 		bl	A7105_WriteID
+ 119              	.LVL12:
+  30:A7105_driver.c ****     A7105_Calibration();        //calibration IF,vco, vcoc
+ 120              		.loc 1 30 0
+ 121 001e FFF7FEFF 		bl	A7105_Config
+ 122              	.LVL13:
+  31:A7105_driver.c ****     
+ 123              		.loc 1 31 0
+ 124 0022 FFF7FEFF 		bl	A7105_Calibration
+ 125              	.LVL14:
+  33:A7105_driver.c **** 
+ 126              		.loc 1 33 0
+ 127 0026 A020     		mov	r0, #160
+ 128 0028 FFF7FEFF 		bl	StrobeCmd
+ 129              	.LVL15:
+  35:A7105_driver.c ****     A7105_WriteReg(DATARATE_REG, 9);                   //    Data rate = 50K
+ 130              		.loc 1 35 0
+ 131 002c 2820     		mov	r0, #40
+ 132 002e 1721     		mov	r1, #23
+ 133 0030 FFF7FEFF 		bl	A7105_WriteReg
+ 134              	.LVL16:
+  36:A7105_driver.c ****     A7105_WriteReg(MODECTRL_REG, 0x62);               //    FIFO mode
+ 135              		.loc 1 36 0
+ 136 0034 0E20     		mov	r0, #14
+ 137 0036 0921     		mov	r1, #9
+ 138 0038 FFF7FEFF 		bl	A7105_WriteReg
+ 139              	.LVL17:
+  37:A7105_driver.c ****     A7105_WriteReg(PLL1_REG, 99 );                            // set radio channel,设置信道频率
+ 140              		.loc 1 37 0
+ 141 003c 0120     		mov	r0, #1
+ 142 003e 6221     		mov	r1, #98
+ 143 0040 FFF7FEFF 		bl	A7105_WriteReg
+ 144              	.LVL18:
+  38:A7105_driver.c ****     A7105_WriteReg(CODE1_REG, 0x0F);                       //使能CRC校验
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 6
+
+
+ 145              		.loc 1 38 0
+ 146 0044 0F20     		mov	r0, #15
+ 147 0046 6321     		mov	r1, #99
+ 148 0048 FFF7FEFF 		bl	A7105_WriteReg
+ 149              	.LVL19:
+  39:A7105_driver.c ****     /*这里等待帧格式确定在设置payload length*/
+ 150              		.loc 1 39 0
+ 151 004c 1F20     		mov	r0, #31
+ 152 004e 0F21     		mov	r1, #15
+ 153 0050 FFF7FEFF 		bl	A7105_WriteReg
+ 154              	.LVL20:
+  41:A7105_driver.c **** }
+ 155              		.loc 1 41 0
+ 156 0054 0320     		mov	r0, #3
+ 157 0056 1321     		mov	r1, #19
+ 158 0058 FFF7FEFF 		bl	A7105_WriteReg
+ 159              	.LVL21:
+  42:A7105_driver.c **** 
+ 160              		.loc 1 42 0
+ 161              		@ sp needed
+ 162 005c 08BD     		pop	{r3, pc}
+ 163              		.cfi_endproc
+ 164              	.LFE0:
+ 165              		.size	A7105_init, .-A7105_init
+ 166 005e C046     		.section	.text.send_data_by_A7105,"ax",%progbits
+ 167              		.align	2
+ 168              		.global	send_data_by_A7105
+ 169              		.code	16
+ 170              		.thumb_func
+ 171              		.type	send_data_by_A7105, %function
+ 172              	send_data_by_A7105:
+ 173              	.LFB1:
+  48:A7105_driver.c ****     if (buffer_length_ok(buffer_length) && send_buffer != NULL)
+ 174              		.loc 1 48 0
+ 175              		.cfi_startproc
+ 176              	.LVL22:
+ 177 0000 38B5     		push	{r3, r4, r5, lr}
+ 178              		.cfi_def_cfa_offset 16
+ 179              		.cfi_offset 3, -16
+ 180              		.cfi_offset 4, -12
+ 181              		.cfi_offset 5, -8
+ 182              		.cfi_offset 14, -4
+ 183 0002 041C     		mov	r4, r0
+ 184 0004 0D1C     		mov	r5, r1
+  49:A7105_driver.c ****     {
+ 185              		.loc 1 49 0
+ 186 0006 FFF7FEFF 		bl	buffer_length_ok
+ 187              	.LVL23:
+ 188 000a 0028     		cmp	r0, #0
+ 189 000c 12D0     		beq	.L8
+  49:A7105_driver.c ****     {
+ 190              		.loc 1 49 0 is_stmt 0 discriminator 1
+ 191 000e 002D     		cmp	r5, #0
+ 192 0010 10D0     		beq	.L8
+  51:A7105_driver.c ****         WriteFIFO(buffer_length, send_buffer); 
+ 193              		.loc 1 51 0 is_stmt 1
+ 194 0012 E020     		mov	r0, #224
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 7
+
+
+ 195 0014 FFF7FEFF 		bl	StrobeCmd
+ 196              	.LVL24:
+  52:A7105_driver.c ****         
+ 197              		.loc 1 52 0
+ 198 0018 201C     		mov	r0, r4
+ 199 001a 291C     		mov	r1, r5
+ 200 001c FFF7FEFF 		bl	WriteFIFO
+ 201              	.LVL25:
+  54:A7105_driver.c ****         StrobeCmd(CMD_TX);
+ 202              		.loc 1 54 0
+ 203 0020 A020     		mov	r0, #160
+ 204 0022 FFF7FEFF 		bl	StrobeCmd
+ 205              	.LVL26:
+  55:A7105_driver.c ****         while(RF_WTR());// 浮空输入脚,A7105发送开始拉高,发送结束拉低
+ 206              		.loc 1 55 0
+ 207 0026 D020     		mov	r0, #208
+ 208 0028 FFF7FEFF 		bl	StrobeCmd
+ 209              	.LVL27:
+ 210              	.L10:
+  56:A7105_driver.c ****         //发送完成会自动回到之前的状态StandBy
+ 211              		.loc 1 56 0 discriminator 1
+ 212 002c FFF7FEFF 		bl	GIO1_Read
+ 213              	.LVL28:
+ 214 0030 0028     		cmp	r0, #0
+ 215 0032 FBD1     		bne	.L10
+ 216              	.L8:
+  62:A7105_driver.c **** 
+ 217              		.loc 1 62 0
+ 218              		@ sp needed
+ 219              	.LVL29:
+ 220 0034 38BD     		pop	{r3, r4, r5, pc}
+ 221              		.cfi_endproc
+ 222              	.LFE1:
+ 223              		.size	send_data_by_A7105, .-send_data_by_A7105
+ 224 0036 C046     		.section	.text.receive_data_by_A7105,"ax",%progbits
+ 225              		.align	2
+ 226              		.global	receive_data_by_A7105
+ 227              		.code	16
+ 228              		.thumb_func
+ 229              		.type	receive_data_by_A7105, %function
+ 230              	receive_data_by_A7105:
+ 231              	.LFB2:
+  65:A7105_driver.c ****     Bool ret = FALSE;
+ 232              		.loc 1 65 0
+ 233              		.cfi_startproc
+ 234              	.LVL30:
+ 235 0000 38B5     		push	{r3, r4, r5, lr}
+ 236              		.cfi_def_cfa_offset 16
+ 237              		.cfi_offset 3, -16
+ 238              		.cfi_offset 4, -12
+ 239              		.cfi_offset 5, -8
+ 240              		.cfi_offset 14, -4
+ 241 0002 041C     		mov	r4, r0
+ 242 0004 0D1C     		mov	r5, r1
+ 243              	.LVL31:
+  68:A7105_driver.c ****     {
+ 244              		.loc 1 68 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 8
+
+
+ 245 0006 FFF7FEFF 		bl	buffer_length_ok
+ 246              	.LVL32:
+ 247 000a 0028     		cmp	r0, #0
+ 248 000c 20D0     		beq	.L13
+  68:A7105_driver.c ****     {
+ 249              		.loc 1 68 0 is_stmt 0 discriminator 1
+ 250 000e 002D     		cmp	r5, #0
+ 251 0010 20D0     		beq	.L14
+  70:A7105_driver.c **** GIO1_ISR_ClearPending();
+ 252              		.loc 1 70 0 is_stmt 1
+ 253 0012 FFF7FEFF 		bl	GIO1_ClearInterrupt
+ 254              	.LVL33:
+  71:A7105_driver.c **** GIO1_ISR_Enable();
+ 255              		.loc 1 71 0
+ 256 0016 FFF7FEFF 		bl	GIO1_ISR_ClearPending
+ 257              	.LVL34:
+  72:A7105_driver.c ****         StrobeCmd(CMD_RX);
+ 258              		.loc 1 72 0
+ 259 001a FFF7FEFF 		bl	GIO1_ISR_Enable
+ 260              	.LVL35:
+  73:A7105_driver.c ****         if (A7105_read_wtr())          // 浮空输入脚,A7105接收开始拉高接收结束拉低
+ 261              		.loc 1 73 0
+ 262 001e C020     		mov	r0, #192
+ 263 0020 FFF7FEFF 		bl	StrobeCmd
+ 264              	.LVL36:
+  74:A7105_driver.c ****         {
+ 265              		.loc 1 74 0
+ 266 0024 FFF7FEFF 		bl	A7105_read_wtr
+ 267              	.LVL37:
+ 268 0028 0028     		cmp	r0, #0
+ 269 002a 15D0     		beq	.L15
+  76:A7105_driver.c **** GIO1_ISR_Disable();
+ 270              		.loc 1 76 0
+ 271 002c 0020     		mov	r0, #0
+ 272 002e FFF7FEFF 		bl	A7105_update_wtr
+ 273              	.LVL38:
+  77:A7105_driver.c ****             if (CRC_check_ok())
+ 274              		.loc 1 77 0
+ 275 0032 FFF7FEFF 		bl	GIO1_ISR_Disable
+ 276              	.LVL39:
+  78:A7105_driver.c ****             {
+ 277              		.loc 1 78 0
+ 278 0036 FFF7FEFF 		bl	CRC_check_ok
+ 279              	.LVL40:
+ 280 003a 0028     		cmp	r0, #0
+ 281 003c 0ED0     		beq	.L16
+  80:A7105_driver.c ****                 StrobeCmd(CMD_RFR);
+ 282              		.loc 1 80 0
+ 283 003e 201C     		mov	r0, r4
+ 284 0040 291C     		mov	r1, r5
+ 285 0042 FFF7FEFF 		bl	ReadFIFO
+ 286              	.LVL41:
+  81:A7105_driver.c ****                 ret = TRUE;
+ 287              		.loc 1 81 0
+ 288 0046 F020     		mov	r0, #240
+ 289 0048 FFF7FEFF 		bl	StrobeCmd
+ 290              	.LVL42:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 9
+
+
+  82:A7105_driver.c **** 
+ 291              		.loc 1 82 0
+ 292 004c 0120     		mov	r0, #1
+ 293 004e 06E0     		b	.L12
+ 294              	.LVL43:
+ 295              	.L13:
+  66:A7105_driver.c ****     
+ 296              		.loc 1 66 0
+ 297 0050 0020     		mov	r0, #0
+ 298 0052 04E0     		b	.L12
+ 299              	.L14:
+ 300 0054 0020     		mov	r0, #0
+ 301 0056 02E0     		b	.L12
+ 302              	.L15:
+ 303 0058 0020     		mov	r0, #0
+ 304 005a 00E0     		b	.L12
+ 305              	.L16:
+ 306 005c 0020     		mov	r0, #0
+ 307              	.LVL44:
+ 308              	.L12:
+  97:A7105_driver.c **** 
+ 309              		.loc 1 97 0
+ 310              		@ sp needed
+ 311              	.LVL45:
+ 312 005e 38BD     		pop	{r3, r4, r5, pc}
+ 313              		.cfi_endproc
+ 314              	.LFE2:
+ 315              		.size	receive_data_by_A7105, .-receive_data_by_A7105
+ 316              		.section	.text.A7105_sleep,"ax",%progbits
+ 317              		.align	2
+ 318              		.global	A7105_sleep
+ 319              		.code	16
+ 320              		.thumb_func
+ 321              		.type	A7105_sleep, %function
+ 322              	A7105_sleep:
+ 323              	.LFB3:
+ 100:A7105_driver.c ****     StrobeCmd(CMD_SLEEP);
+ 324              		.loc 1 100 0
+ 325              		.cfi_startproc
+ 326 0000 08B5     		push	{r3, lr}
+ 327              		.cfi_def_cfa_offset 8
+ 328              		.cfi_offset 3, -8
+ 329              		.cfi_offset 14, -4
+ 101:A7105_driver.c **** }
+ 330              		.loc 1 101 0
+ 331 0002 8020     		mov	r0, #128
+ 332 0004 FFF7FEFF 		bl	StrobeCmd
+ 333              	.LVL46:
+ 102:A7105_driver.c **** 
+ 334              		.loc 1 102 0
+ 335              		@ sp needed
+ 336 0008 08BD     		pop	{r3, pc}
+ 337              		.cfi_endproc
+ 338              	.LFE3:
+ 339              		.size	A7105_sleep, .-A7105_sleep
+ 340 000a C046     		.section	.text.A7105_wakeup,"ax",%progbits
+ 341              		.align	2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 10
+
+
+ 342              		.global	A7105_wakeup
+ 343              		.code	16
+ 344              		.thumb_func
+ 345              		.type	A7105_wakeup, %function
+ 346              	A7105_wakeup:
+ 347              	.LFB4:
+ 105:A7105_driver.c ****     StrobeCmd(CMD_STBY);
+ 348              		.loc 1 105 0
+ 349              		.cfi_startproc
+ 350 0000 08B5     		push	{r3, lr}
+ 351              		.cfi_def_cfa_offset 8
+ 352              		.cfi_offset 3, -8
+ 353              		.cfi_offset 14, -4
+ 106:A7105_driver.c **** }
+ 354              		.loc 1 106 0
+ 355 0002 A020     		mov	r0, #160
+ 356 0004 FFF7FEFF 		bl	StrobeCmd
+ 357              	.LVL47:
+ 107:A7105_driver.c **** 
+ 358              		.loc 1 107 0
+ 359              		@ sp needed
+ 360 0008 08BD     		pop	{r3, pc}
+ 361              		.cfi_endproc
+ 362              	.LFE4:
+ 363              		.size	A7105_wakeup, .-A7105_wakeup
+ 364 000a C046     		.text
+ 365              	.Letext0:
+ 366              		.file 2 "types.h"
+ 367              		.file 3 "A7105_firmware_lib.h"
+ 368              		.file 4 "Generated_Source\\PSoC4/SCS.h"
+ 369              		.file 5 "Generated_Source\\PSoC4/SCK.h"
+ 370              		.file 6 "Generated_Source\\PSoC4/SDIO.h"
+ 371              		.file 7 "Generated_Source\\PSoC4/GIO1.h"
+ 372              		.file 8 "Generated_Source\\PSoC4/GIO1_ISR.h"
+ 373              		.section	.debug_info,"",%progbits
+ 374              	.Ldebug_info0:
+ 375 0000 81060000 		.4byte	0x681
+ 376 0004 0400     		.2byte	0x4
+ 377 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 378 000a 04       		.byte	0x4
+ 379 000b 01       		.uleb128 0x1
+ 380 000c 1C050000 		.4byte	.LASF105
+ 381 0010 01       		.byte	0x1
+ 382 0011 BD010000 		.4byte	.LASF106
+ 383 0015 5F010000 		.4byte	.LASF107
+ 384 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 385 001d 00000000 		.4byte	0
+ 386 0021 00000000 		.4byte	.Ldebug_line0
+ 387 0025 02       		.uleb128 0x2
+ 388 0026 04       		.byte	0x4
+ 389 0027 05       		.byte	0x5
+ 390 0028 696E7400 		.ascii	"int\000"
+ 391 002c 03       		.uleb128 0x3
+ 392 002d 04       		.byte	0x4
+ 393 002e 07       		.byte	0x7
+ 394 002f A0010000 		.4byte	.LASF0
+ 395 0033 03       		.uleb128 0x3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 11
+
+
+ 396 0034 01       		.byte	0x1
+ 397 0035 08       		.byte	0x8
+ 398 0036 C5030000 		.4byte	.LASF1
+ 399 003a 03       		.uleb128 0x3
+ 400 003b 02       		.byte	0x2
+ 401 003c 07       		.byte	0x7
+ 402 003d 17020000 		.4byte	.LASF2
+ 403 0041 03       		.uleb128 0x3
+ 404 0042 04       		.byte	0x4
+ 405 0043 07       		.byte	0x7
+ 406 0044 D8010000 		.4byte	.LASF3
+ 407 0048 04       		.uleb128 0x4
+ 408 0049 01       		.byte	0x1
+ 409 004a 02       		.byte	0x2
+ 410 004b 12       		.byte	0x12
+ 411 004c 5D000000 		.4byte	0x5d
+ 412 0050 05       		.uleb128 0x5
+ 413 0051 63030000 		.4byte	.LASF4
+ 414 0055 00       		.sleb128 0
+ 415 0056 05       		.uleb128 0x5
+ 416 0057 28040000 		.4byte	.LASF5
+ 417 005b 01       		.sleb128 1
+ 418 005c 00       		.byte	0
+ 419 005d 06       		.uleb128 0x6
+ 420 005e F5040000 		.4byte	.LASF66
+ 421 0062 02       		.byte	0x2
+ 422 0063 15       		.byte	0x15
+ 423 0064 48000000 		.4byte	0x48
+ 424 0068 03       		.uleb128 0x3
+ 425 0069 01       		.byte	0x1
+ 426 006a 06       		.byte	0x6
+ 427 006b A4000000 		.4byte	.LASF6
+ 428 006f 03       		.uleb128 0x3
+ 429 0070 02       		.byte	0x2
+ 430 0071 05       		.byte	0x5
+ 431 0072 DE030000 		.4byte	.LASF7
+ 432 0076 03       		.uleb128 0x3
+ 433 0077 04       		.byte	0x4
+ 434 0078 05       		.byte	0x5
+ 435 0079 D6000000 		.4byte	.LASF8
+ 436 007d 03       		.uleb128 0x3
+ 437 007e 08       		.byte	0x8
+ 438 007f 05       		.byte	0x5
+ 439 0080 96000000 		.4byte	.LASF9
+ 440 0084 03       		.uleb128 0x3
+ 441 0085 08       		.byte	0x8
+ 442 0086 07       		.byte	0x7
+ 443 0087 55000000 		.4byte	.LASF10
+ 444 008b 03       		.uleb128 0x3
+ 445 008c 04       		.byte	0x4
+ 446 008d 04       		.byte	0x4
+ 447 008e 5D030000 		.4byte	.LASF11
+ 448 0092 03       		.uleb128 0x3
+ 449 0093 08       		.byte	0x8
+ 450 0094 04       		.byte	0x4
+ 451 0095 1C010000 		.4byte	.LASF12
+ 452 0099 03       		.uleb128 0x3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 12
+
+
+ 453 009a 01       		.byte	0x1
+ 454 009b 08       		.byte	0x8
+ 455 009c 58040000 		.4byte	.LASF13
+ 456 00a0 04       		.uleb128 0x4
+ 457 00a1 01       		.byte	0x1
+ 458 00a2 03       		.byte	0x3
+ 459 00a3 17       		.byte	0x17
+ 460 00a4 E1010000 		.4byte	0x1e1
+ 461 00a8 05       		.uleb128 0x5
+ 462 00a9 69030000 		.4byte	.LASF14
+ 463 00ad 00       		.sleb128 0
+ 464 00ae 05       		.uleb128 0x5
+ 465 00af 0A020000 		.4byte	.LASF15
+ 466 00b3 01       		.sleb128 1
+ 467 00b4 05       		.uleb128 0x5
+ 468 00b5 7C000000 		.4byte	.LASF16
+ 469 00b9 02       		.sleb128 2
+ 470 00ba 05       		.uleb128 0x5
+ 471 00bb 8C000000 		.4byte	.LASF17
+ 472 00bf 03       		.sleb128 3
+ 473 00c0 05       		.uleb128 0x5
+ 474 00c1 86030000 		.4byte	.LASF18
+ 475 00c5 04       		.sleb128 4
+ 476 00c6 05       		.uleb128 0x5
+ 477 00c7 9B040000 		.4byte	.LASF19
+ 478 00cb 05       		.sleb128 5
+ 479 00cc 05       		.uleb128 0x5
+ 480 00cd EA010000 		.4byte	.LASF20
+ 481 00d1 06       		.sleb128 6
+ 482 00d2 05       		.uleb128 0x5
+ 483 00d3 42010000 		.4byte	.LASF21
+ 484 00d7 07       		.sleb128 7
+ 485 00d8 05       		.uleb128 0x5
+ 486 00d9 BB040000 		.4byte	.LASF22
+ 487 00dd 08       		.sleb128 8
+ 488 00de 05       		.uleb128 0x5
+ 489 00df E7020000 		.4byte	.LASF23
+ 490 00e3 09       		.sleb128 9
+ 491 00e4 05       		.uleb128 0x5
+ 492 00e5 91020000 		.4byte	.LASF24
+ 493 00e9 0A       		.sleb128 10
+ 494 00ea 05       		.uleb128 0x5
+ 495 00eb 09000000 		.4byte	.LASF25
+ 496 00ef 0B       		.sleb128 11
+ 497 00f0 05       		.uleb128 0x5
+ 498 00f1 A0030000 		.4byte	.LASF26
+ 499 00f5 0C       		.sleb128 12
+ 500 00f6 05       		.uleb128 0x5
+ 501 00f7 00020000 		.4byte	.LASF27
+ 502 00fb 0D       		.sleb128 13
+ 503 00fc 05       		.uleb128 0x5
+ 504 00fd C6040000 		.4byte	.LASF28
+ 505 0101 0E       		.sleb128 14
+ 506 0102 05       		.uleb128 0x5
+ 507 0103 C6000000 		.4byte	.LASF29
+ 508 0107 0F       		.sleb128 15
+ 509 0108 05       		.uleb128 0x5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 13
+
+
+ 510 0109 76040000 		.4byte	.LASF30
+ 511 010d 10       		.sleb128 16
+ 512 010e 05       		.uleb128 0x5
+ 513 010f 42020000 		.4byte	.LASF31
+ 514 0113 11       		.sleb128 17
+ 515 0114 05       		.uleb128 0x5
+ 516 0115 32000000 		.4byte	.LASF32
+ 517 0119 12       		.sleb128 18
+ 518 011a 05       		.uleb128 0x5
+ 519 011b E8030000 		.4byte	.LASF33
+ 520 011f 13       		.sleb128 19
+ 521 0120 05       		.uleb128 0x5
+ 522 0121 89020000 		.4byte	.LASF34
+ 523 0125 14       		.sleb128 20
+ 524 0126 05       		.uleb128 0x5
+ 525 0127 6C000000 		.4byte	.LASF35
+ 526 012b 15       		.sleb128 21
+ 527 012c 05       		.uleb128 0x5
+ 528 012d D3030000 		.4byte	.LASF36
+ 529 0131 16       		.sleb128 22
+ 530 0132 05       		.uleb128 0x5
+ 531 0133 4D010000 		.4byte	.LASF37
+ 532 0137 17       		.sleb128 23
+ 533 0138 05       		.uleb128 0x5
+ 534 0139 CF000000 		.4byte	.LASF38
+ 535 013d 18       		.sleb128 24
+ 536 013e 05       		.uleb128 0x5
+ 537 013f 6A040000 		.4byte	.LASF39
+ 538 0143 19       		.sleb128 25
+ 539 0144 05       		.uleb128 0x5
+ 540 0145 CC010000 		.4byte	.LASF40
+ 541 0149 1A       		.sleb128 26
+ 542 014a 05       		.uleb128 0x5
+ 543 014b 10050000 		.4byte	.LASF41
+ 544 014f 1B       		.sleb128 27
+ 545 0150 05       		.uleb128 0x5
+ 546 0151 72030000 		.4byte	.LASF42
+ 547 0155 1C       		.sleb128 28
+ 548 0156 05       		.uleb128 0x5
+ 549 0157 00000000 		.4byte	.LASF43
+ 550 015b 1D       		.sleb128 29
+ 551 015c 05       		.uleb128 0x5
+ 552 015d BE000000 		.4byte	.LASF44
+ 553 0161 1E       		.sleb128 30
+ 554 0162 05       		.uleb128 0x5
+ 555 0163 13000000 		.4byte	.LASF45
+ 556 0167 1F       		.sleb128 31
+ 557 0168 05       		.uleb128 0x5
+ 558 0169 0B030000 		.4byte	.LASF46
+ 559 016d 20       		.sleb128 32
+ 560 016e 05       		.uleb128 0x5
+ 561 016f 38010000 		.4byte	.LASF47
+ 562 0173 21       		.sleb128 33
+ 563 0174 05       		.uleb128 0x5
+ 564 0175 7E020000 		.4byte	.LASF48
+ 565 0179 22       		.sleb128 34
+ 566 017a 05       		.uleb128 0x5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 14
+
+
+ 567 017b 4A000000 		.4byte	.LASF49
+ 568 017f 23       		.sleb128 35
+ 569 0180 05       		.uleb128 0x5
+ 570 0181 1C040000 		.4byte	.LASF50
+ 571 0185 24       		.sleb128 36
+ 572 0186 05       		.uleb128 0x5
+ 573 0187 2C010000 		.4byte	.LASF51
+ 574 018b 25       		.sleb128 37
+ 575 018c 05       		.uleb128 0x5
+ 576 018d AF040000 		.4byte	.LASF52
+ 577 0191 26       		.sleb128 38
+ 578 0192 05       		.uleb128 0x5
+ 579 0193 06010000 		.4byte	.LASF53
+ 580 0197 27       		.sleb128 39
+ 581 0198 05       		.uleb128 0x5
+ 582 0199 A4040000 		.4byte	.LASF54
+ 583 019d 28       		.sleb128 40
+ 584 019e 05       		.uleb128 0x5
+ 585 019f 28030000 		.4byte	.LASF55
+ 586 01a3 29       		.sleb128 41
+ 587 01a4 05       		.uleb128 0x5
+ 588 01a5 F5010000 		.4byte	.LASF56
+ 589 01a9 2A       		.sleb128 42
+ 590 01aa 05       		.uleb128 0x5
+ 591 01ab 93040000 		.4byte	.LASF57
+ 592 01af 2B       		.sleb128 43
+ 593 01b0 05       		.uleb128 0x5
+ 594 01b1 AD010000 		.4byte	.LASF58
+ 595 01b5 2C       		.sleb128 44
+ 596 01b6 05       		.uleb128 0x5
+ 597 01b7 F2020000 		.4byte	.LASF59
+ 598 01bb 2D       		.sleb128 45
+ 599 01bc 05       		.uleb128 0x5
+ 600 01bd D3040000 		.4byte	.LASF60
+ 601 01c1 2E       		.sleb128 46
+ 602 01c2 05       		.uleb128 0x5
+ 603 01c3 FE020000 		.4byte	.LASF61
+ 604 01c7 2F       		.sleb128 47
+ 605 01c8 05       		.uleb128 0x5
+ 606 01c9 AA030000 		.4byte	.LASF62
+ 607 01cd 30       		.sleb128 48
+ 608 01ce 05       		.uleb128 0x5
+ 609 01cf F1030000 		.4byte	.LASF63
+ 610 01d3 31       		.sleb128 49
+ 611 01d4 05       		.uleb128 0x5
+ 612 01d5 44030000 		.4byte	.LASF64
+ 613 01d9 32       		.sleb128 50
+ 614 01da 05       		.uleb128 0x5
+ 615 01db EA040000 		.4byte	.LASF65
+ 616 01df 33       		.sleb128 51
+ 617 01e0 00       		.byte	0
+ 618 01e1 06       		.uleb128 0x6
+ 619 01e2 89040000 		.4byte	.LASF67
+ 620 01e6 03       		.byte	0x3
+ 621 01e7 4C       		.byte	0x4c
+ 622 01e8 A0000000 		.4byte	0xa0
+ 623 01ec 04       		.uleb128 0x4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 15
+
+
+ 624 01ed 01       		.byte	0x1
+ 625 01ee 03       		.byte	0x3
+ 626 01ef 51       		.byte	0x51
+ 627 01f0 2D020000 		.4byte	0x22d
+ 628 01f4 05       		.uleb128 0x5
+ 629 01f5 28000000 		.4byte	.LASF68
+ 630 01f9 8001     		.sleb128 128
+ 631 01fb 05       		.uleb128 0x5
+ 632 01fc C3020000 		.4byte	.LASF69
+ 633 0200 9001     		.sleb128 144
+ 634 0202 05       		.uleb128 0x5
+ 635 0203 23010000 		.4byte	.LASF70
+ 636 0207 A001     		.sleb128 160
+ 637 0209 05       		.uleb128 0x5
+ 638 020a 74000000 		.4byte	.LASF71
+ 639 020e B001     		.sleb128 176
+ 640 0210 05       		.uleb128 0x5
+ 641 0211 58010000 		.4byte	.LASF72
+ 642 0215 C001     		.sleb128 192
+ 643 0217 05       		.uleb128 0x5
+ 644 0218 21030000 		.4byte	.LASF73
+ 645 021c D001     		.sleb128 208
+ 646 021e 05       		.uleb128 0x5
+ 647 021f 7E030000 		.4byte	.LASF74
+ 648 0223 E001     		.sleb128 224
+ 649 0225 05       		.uleb128 0x5
+ 650 0226 FA040000 		.4byte	.LASF75
+ 651 022a F001     		.sleb128 240
+ 652 022c 00       		.byte	0
+ 653 022d 06       		.uleb128 0x6
+ 654 022e 53030000 		.4byte	.LASF76
+ 655 0232 03       		.byte	0x3
+ 656 0233 5A       		.byte	0x5a
+ 657 0234 EC010000 		.4byte	0x1ec
+ 658 0238 07       		.uleb128 0x7
+ 659 0239 4B020000 		.4byte	.LASF77
+ 660 023d 01       		.byte	0x1
+ 661 023e 6D       		.byte	0x6d
+ 662 023f 5D000000 		.4byte	0x5d
+ 663 0243 00000000 		.4byte	.LFB5
+ 664 0247 0C000000 		.4byte	.LFE5-.LFB5
+ 665 024b 01       		.uleb128 0x1
+ 666 024c 9C       		.byte	0x9c
+ 667 024d 61020000 		.4byte	0x261
+ 668 0251 08       		.uleb128 0x8
+ 669 0252 51040000 		.4byte	.LASF81
+ 670 0256 01       		.byte	0x1
+ 671 0257 6D       		.byte	0x6d
+ 672 0258 33000000 		.4byte	0x33
+ 673 025c 00000000 		.4byte	.LLST0
+ 674 0260 00       		.byte	0
+ 675 0261 07       		.uleb128 0x7
+ 676 0262 B6020000 		.4byte	.LASF78
+ 677 0266 01       		.byte	0x1
+ 678 0267 75       		.byte	0x75
+ 679 0268 5D000000 		.4byte	0x5d
+ 680 026c 00000000 		.4byte	.LFB6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 16
+
+
+ 681 0270 14000000 		.4byte	.LFE6-.LFB6
+ 682 0274 01       		.uleb128 0x1
+ 683 0275 9C       		.byte	0x9c
+ 684 0276 99020000 		.4byte	0x299
+ 685 027a 09       		.uleb128 0x9
+ 686 027b 9B010000 		.4byte	.LASF85
+ 687 027f 01       		.byte	0x1
+ 688 0280 77       		.byte	0x77
+ 689 0281 33000000 		.4byte	0x33
+ 690 0285 3A000000 		.4byte	.LLST1
+ 691 0289 0A       		.uleb128 0xa
+ 692 028a 08000000 		.4byte	.LVL4
+ 693 028e 8A050000 		.4byte	0x58a
+ 694 0292 0B       		.uleb128 0xb
+ 695 0293 01       		.uleb128 0x1
+ 696 0294 50       		.byte	0x50
+ 697 0295 01       		.uleb128 0x1
+ 698 0296 30       		.byte	0x30
+ 699 0297 00       		.byte	0
+ 700 0298 00       		.byte	0
+ 701 0299 0C       		.uleb128 0xc
+ 702 029a 2A020000 		.4byte	.LASF79
+ 703 029e 01       		.byte	0x1
+ 704 029f 15       		.byte	0x15
+ 705 02a0 00000000 		.4byte	.LFB0
+ 706 02a4 5E000000 		.4byte	.LFE0-.LFB0
+ 707 02a8 01       		.uleb128 0x1
+ 708 02a9 9C       		.byte	0x9c
+ 709 02aa AF030000 		.4byte	0x3af
+ 710 02ae 0D       		.uleb128 0xd
+ 711 02af 0A000000 		.4byte	.LVL8
+ 712 02b3 9F050000 		.4byte	0x59f
+ 713 02b7 C1020000 		.4byte	0x2c1
+ 714 02bb 0B       		.uleb128 0xb
+ 715 02bc 01       		.uleb128 0x1
+ 716 02bd 50       		.byte	0x50
+ 717 02be 01       		.uleb128 0x1
+ 718 02bf 31       		.byte	0x31
+ 719 02c0 00       		.byte	0
+ 720 02c1 0D       		.uleb128 0xd
+ 721 02c2 10000000 		.4byte	.LVL9
+ 722 02c6 B0050000 		.4byte	0x5b0
+ 723 02ca D4020000 		.4byte	0x2d4
+ 724 02ce 0B       		.uleb128 0xb
+ 725 02cf 01       		.uleb128 0x1
+ 726 02d0 50       		.byte	0x50
+ 727 02d1 01       		.uleb128 0x1
+ 728 02d2 30       		.byte	0x30
+ 729 02d3 00       		.byte	0
+ 730 02d4 0D       		.uleb128 0xd
+ 731 02d5 16000000 		.4byte	.LVL10
+ 732 02d9 C1050000 		.4byte	0x5c1
+ 733 02dd E7020000 		.4byte	0x2e7
+ 734 02e1 0B       		.uleb128 0xb
+ 735 02e2 01       		.uleb128 0x1
+ 736 02e3 50       		.byte	0x50
+ 737 02e4 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 17
+
+
+ 738 02e5 31       		.byte	0x31
+ 739 02e6 00       		.byte	0
+ 740 02e7 0E       		.uleb128 0xe
+ 741 02e8 1A000000 		.4byte	.LVL11
+ 742 02ec D2050000 		.4byte	0x5d2
+ 743 02f0 0E       		.uleb128 0xe
+ 744 02f1 1E000000 		.4byte	.LVL12
+ 745 02f5 D9050000 		.4byte	0x5d9
+ 746 02f9 0E       		.uleb128 0xe
+ 747 02fa 22000000 		.4byte	.LVL13
+ 748 02fe E0050000 		.4byte	0x5e0
+ 749 0302 0E       		.uleb128 0xe
+ 750 0303 26000000 		.4byte	.LVL14
+ 751 0307 E7050000 		.4byte	0x5e7
+ 752 030b 0D       		.uleb128 0xd
+ 753 030c 2C000000 		.4byte	.LVL15
+ 754 0310 EE050000 		.4byte	0x5ee
+ 755 0314 1F030000 		.4byte	0x31f
+ 756 0318 0B       		.uleb128 0xb
+ 757 0319 01       		.uleb128 0x1
+ 758 031a 50       		.byte	0x50
+ 759 031b 02       		.uleb128 0x2
+ 760 031c 09       		.byte	0x9
+ 761 031d A0       		.byte	0xa0
+ 762 031e 00       		.byte	0
+ 763 031f 0D       		.uleb128 0xd
+ 764 0320 34000000 		.4byte	.LVL16
+ 765 0324 FF050000 		.4byte	0x5ff
+ 766 0328 38030000 		.4byte	0x338
+ 767 032c 0B       		.uleb128 0xb
+ 768 032d 01       		.uleb128 0x1
+ 769 032e 51       		.byte	0x51
+ 770 032f 01       		.uleb128 0x1
+ 771 0330 47       		.byte	0x47
+ 772 0331 0B       		.uleb128 0xb
+ 773 0332 01       		.uleb128 0x1
+ 774 0333 50       		.byte	0x50
+ 775 0334 02       		.uleb128 0x2
+ 776 0335 08       		.byte	0x8
+ 777 0336 28       		.byte	0x28
+ 778 0337 00       		.byte	0
+ 779 0338 0D       		.uleb128 0xd
+ 780 0339 3C000000 		.4byte	.LVL17
+ 781 033d FF050000 		.4byte	0x5ff
+ 782 0341 50030000 		.4byte	0x350
+ 783 0345 0B       		.uleb128 0xb
+ 784 0346 01       		.uleb128 0x1
+ 785 0347 51       		.byte	0x51
+ 786 0348 01       		.uleb128 0x1
+ 787 0349 39       		.byte	0x39
+ 788 034a 0B       		.uleb128 0xb
+ 789 034b 01       		.uleb128 0x1
+ 790 034c 50       		.byte	0x50
+ 791 034d 01       		.uleb128 0x1
+ 792 034e 3E       		.byte	0x3e
+ 793 034f 00       		.byte	0
+ 794 0350 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 18
+
+
+ 795 0351 44000000 		.4byte	.LVL18
+ 796 0355 FF050000 		.4byte	0x5ff
+ 797 0359 69030000 		.4byte	0x369
+ 798 035d 0B       		.uleb128 0xb
+ 799 035e 01       		.uleb128 0x1
+ 800 035f 51       		.byte	0x51
+ 801 0360 02       		.uleb128 0x2
+ 802 0361 08       		.byte	0x8
+ 803 0362 62       		.byte	0x62
+ 804 0363 0B       		.uleb128 0xb
+ 805 0364 01       		.uleb128 0x1
+ 806 0365 50       		.byte	0x50
+ 807 0366 01       		.uleb128 0x1
+ 808 0367 31       		.byte	0x31
+ 809 0368 00       		.byte	0
+ 810 0369 0D       		.uleb128 0xd
+ 811 036a 4C000000 		.4byte	.LVL19
+ 812 036e FF050000 		.4byte	0x5ff
+ 813 0372 82030000 		.4byte	0x382
+ 814 0376 0B       		.uleb128 0xb
+ 815 0377 01       		.uleb128 0x1
+ 816 0378 51       		.byte	0x51
+ 817 0379 02       		.uleb128 0x2
+ 818 037a 08       		.byte	0x8
+ 819 037b 63       		.byte	0x63
+ 820 037c 0B       		.uleb128 0xb
+ 821 037d 01       		.uleb128 0x1
+ 822 037e 50       		.byte	0x50
+ 823 037f 01       		.uleb128 0x1
+ 824 0380 3F       		.byte	0x3f
+ 825 0381 00       		.byte	0
+ 826 0382 0D       		.uleb128 0xd
+ 827 0383 54000000 		.4byte	.LVL20
+ 828 0387 FF050000 		.4byte	0x5ff
+ 829 038b 9A030000 		.4byte	0x39a
+ 830 038f 0B       		.uleb128 0xb
+ 831 0390 01       		.uleb128 0x1
+ 832 0391 51       		.byte	0x51
+ 833 0392 01       		.uleb128 0x1
+ 834 0393 3F       		.byte	0x3f
+ 835 0394 0B       		.uleb128 0xb
+ 836 0395 01       		.uleb128 0x1
+ 837 0396 50       		.byte	0x50
+ 838 0397 01       		.uleb128 0x1
+ 839 0398 4F       		.byte	0x4f
+ 840 0399 00       		.byte	0
+ 841 039a 0A       		.uleb128 0xa
+ 842 039b 5C000000 		.4byte	.LVL21
+ 843 039f FF050000 		.4byte	0x5ff
+ 844 03a3 0B       		.uleb128 0xb
+ 845 03a4 01       		.uleb128 0x1
+ 846 03a5 51       		.byte	0x51
+ 847 03a6 01       		.uleb128 0x1
+ 848 03a7 43       		.byte	0x43
+ 849 03a8 0B       		.uleb128 0xb
+ 850 03a9 01       		.uleb128 0x1
+ 851 03aa 50       		.byte	0x50
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 19
+
+
+ 852 03ab 01       		.uleb128 0x1
+ 853 03ac 33       		.byte	0x33
+ 854 03ad 00       		.byte	0
+ 855 03ae 00       		.byte	0
+ 856 03af 0C       		.uleb128 0xc
+ 857 03b0 5C020000 		.4byte	.LASF80
+ 858 03b4 01       		.byte	0x1
+ 859 03b5 2F       		.byte	0x2f
+ 860 03b6 00000000 		.4byte	.LFB1
+ 861 03ba 36000000 		.4byte	.LFE1-.LFB1
+ 862 03be 01       		.uleb128 0x1
+ 863 03bf 9C       		.byte	0x9c
+ 864 03c0 56040000 		.4byte	0x456
+ 865 03c4 08       		.uleb128 0x8
+ 866 03c5 B0000000 		.4byte	.LASF82
+ 867 03c9 01       		.byte	0x1
+ 868 03ca 2F       		.byte	0x2f
+ 869 03cb 33000000 		.4byte	0x33
+ 870 03cf 58000000 		.4byte	.LLST2
+ 871 03d3 08       		.uleb128 0x8
+ 872 03d4 15030000 		.4byte	.LASF83
+ 873 03d8 01       		.byte	0x1
+ 874 03d9 2F       		.byte	0x2f
+ 875 03da 56040000 		.4byte	0x456
+ 876 03de 79000000 		.4byte	.LLST3
+ 877 03e2 0D       		.uleb128 0xd
+ 878 03e3 0A000000 		.4byte	.LVL23
+ 879 03e7 38020000 		.4byte	0x238
+ 880 03eb F6030000 		.4byte	0x3f6
+ 881 03ef 0B       		.uleb128 0xb
+ 882 03f0 01       		.uleb128 0x1
+ 883 03f1 50       		.byte	0x50
+ 884 03f2 02       		.uleb128 0x2
+ 885 03f3 74       		.byte	0x74
+ 886 03f4 00       		.sleb128 0
+ 887 03f5 00       		.byte	0
+ 888 03f6 0D       		.uleb128 0xd
+ 889 03f7 18000000 		.4byte	.LVL24
+ 890 03fb EE050000 		.4byte	0x5ee
+ 891 03ff 0A040000 		.4byte	0x40a
+ 892 0403 0B       		.uleb128 0xb
+ 893 0404 01       		.uleb128 0x1
+ 894 0405 50       		.byte	0x50
+ 895 0406 02       		.uleb128 0x2
+ 896 0407 09       		.byte	0x9
+ 897 0408 E0       		.byte	0xe0
+ 898 0409 00       		.byte	0
+ 899 040a 0D       		.uleb128 0xd
+ 900 040b 20000000 		.4byte	.LVL25
+ 901 040f 15060000 		.4byte	0x615
+ 902 0413 24040000 		.4byte	0x424
+ 903 0417 0B       		.uleb128 0xb
+ 904 0418 01       		.uleb128 0x1
+ 905 0419 51       		.byte	0x51
+ 906 041a 02       		.uleb128 0x2
+ 907 041b 75       		.byte	0x75
+ 908 041c 00       		.sleb128 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 20
+
+
+ 909 041d 0B       		.uleb128 0xb
+ 910 041e 01       		.uleb128 0x1
+ 911 041f 50       		.byte	0x50
+ 912 0420 02       		.uleb128 0x2
+ 913 0421 74       		.byte	0x74
+ 914 0422 00       		.sleb128 0
+ 915 0423 00       		.byte	0
+ 916 0424 0D       		.uleb128 0xd
+ 917 0425 26000000 		.4byte	.LVL26
+ 918 0429 EE050000 		.4byte	0x5ee
+ 919 042d 38040000 		.4byte	0x438
+ 920 0431 0B       		.uleb128 0xb
+ 921 0432 01       		.uleb128 0x1
+ 922 0433 50       		.byte	0x50
+ 923 0434 02       		.uleb128 0x2
+ 924 0435 09       		.byte	0x9
+ 925 0436 A0       		.byte	0xa0
+ 926 0437 00       		.byte	0
+ 927 0438 0D       		.uleb128 0xd
+ 928 0439 2C000000 		.4byte	.LVL27
+ 929 043d EE050000 		.4byte	0x5ee
+ 930 0441 4C040000 		.4byte	0x44c
+ 931 0445 0B       		.uleb128 0xb
+ 932 0446 01       		.uleb128 0x1
+ 933 0447 50       		.byte	0x50
+ 934 0448 02       		.uleb128 0x2
+ 935 0449 09       		.byte	0x9
+ 936 044a D0       		.byte	0xd0
+ 937 044b 00       		.byte	0
+ 938 044c 0E       		.uleb128 0xe
+ 939 044d 30000000 		.4byte	.LVL28
+ 940 0451 2B060000 		.4byte	0x62b
+ 941 0455 00       		.byte	0
+ 942 0456 0F       		.uleb128 0xf
+ 943 0457 04       		.byte	0x4
+ 944 0458 33000000 		.4byte	0x33
+ 945 045c 10       		.uleb128 0x10
+ 946 045d 06040000 		.4byte	.LASF108
+ 947 0461 01       		.byte	0x1
+ 948 0462 40       		.byte	0x40
+ 949 0463 5D000000 		.4byte	0x5d
+ 950 0467 00000000 		.4byte	.LFB2
+ 951 046b 60000000 		.4byte	.LFE2-.LFB2
+ 952 046f 01       		.uleb128 0x1
+ 953 0470 9C       		.byte	0x9c
+ 954 0471 3E050000 		.4byte	0x53e
+ 955 0475 08       		.uleb128 0x8
+ 956 0476 B0000000 		.4byte	.LASF82
+ 957 047a 01       		.byte	0x1
+ 958 047b 40       		.byte	0x40
+ 959 047c 33000000 		.4byte	0x33
+ 960 0480 A5000000 		.4byte	.LLST4
+ 961 0484 08       		.uleb128 0x8
+ 962 0485 3B000000 		.4byte	.LASF84
+ 963 0489 01       		.byte	0x1
+ 964 048a 40       		.byte	0x40
+ 965 048b 56040000 		.4byte	0x456
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 21
+
+
+ 966 048f C6000000 		.4byte	.LLST5
+ 967 0493 11       		.uleb128 0x11
+ 968 0494 72657400 		.ascii	"ret\000"
+ 969 0498 01       		.byte	0x1
+ 970 0499 42       		.byte	0x42
+ 971 049a 5D000000 		.4byte	0x5d
+ 972 049e F2000000 		.4byte	.LLST6
+ 973 04a2 0D       		.uleb128 0xd
+ 974 04a3 0A000000 		.4byte	.LVL32
+ 975 04a7 38020000 		.4byte	0x238
+ 976 04ab B6040000 		.4byte	0x4b6
+ 977 04af 0B       		.uleb128 0xb
+ 978 04b0 01       		.uleb128 0x1
+ 979 04b1 50       		.byte	0x50
+ 980 04b2 02       		.uleb128 0x2
+ 981 04b3 74       		.byte	0x74
+ 982 04b4 00       		.sleb128 0
+ 983 04b5 00       		.byte	0
+ 984 04b6 0E       		.uleb128 0xe
+ 985 04b7 16000000 		.4byte	.LVL33
+ 986 04bb 36060000 		.4byte	0x636
+ 987 04bf 0E       		.uleb128 0xe
+ 988 04c0 1A000000 		.4byte	.LVL34
+ 989 04c4 41060000 		.4byte	0x641
+ 990 04c8 0E       		.uleb128 0xe
+ 991 04c9 1E000000 		.4byte	.LVL35
+ 992 04cd 48060000 		.4byte	0x648
+ 993 04d1 0D       		.uleb128 0xd
+ 994 04d2 24000000 		.4byte	.LVL36
+ 995 04d6 EE050000 		.4byte	0x5ee
+ 996 04da E5040000 		.4byte	0x4e5
+ 997 04de 0B       		.uleb128 0xb
+ 998 04df 01       		.uleb128 0x1
+ 999 04e0 50       		.byte	0x50
+ 1000 04e1 02       		.uleb128 0x2
+ 1001 04e2 09       		.byte	0x9
+ 1002 04e3 C0       		.byte	0xc0
+ 1003 04e4 00       		.byte	0
+ 1004 04e5 0E       		.uleb128 0xe
+ 1005 04e6 28000000 		.4byte	.LVL37
+ 1006 04ea 4F060000 		.4byte	0x64f
+ 1007 04ee 0D       		.uleb128 0xd
+ 1008 04ef 32000000 		.4byte	.LVL38
+ 1009 04f3 5A060000 		.4byte	0x65a
+ 1010 04f7 01050000 		.4byte	0x501
+ 1011 04fb 0B       		.uleb128 0xb
+ 1012 04fc 01       		.uleb128 0x1
+ 1013 04fd 50       		.byte	0x50
+ 1014 04fe 01       		.uleb128 0x1
+ 1015 04ff 30       		.byte	0x30
+ 1016 0500 00       		.byte	0
+ 1017 0501 0E       		.uleb128 0xe
+ 1018 0502 36000000 		.4byte	.LVL39
+ 1019 0506 6B060000 		.4byte	0x66b
+ 1020 050a 0E       		.uleb128 0xe
+ 1021 050b 3A000000 		.4byte	.LVL40
+ 1022 050f 61020000 		.4byte	0x261
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 22
+
+
+ 1023 0513 0D       		.uleb128 0xd
+ 1024 0514 46000000 		.4byte	.LVL41
+ 1025 0518 72060000 		.4byte	0x672
+ 1026 051c 2D050000 		.4byte	0x52d
+ 1027 0520 0B       		.uleb128 0xb
+ 1028 0521 01       		.uleb128 0x1
+ 1029 0522 51       		.byte	0x51
+ 1030 0523 02       		.uleb128 0x2
+ 1031 0524 75       		.byte	0x75
+ 1032 0525 00       		.sleb128 0
+ 1033 0526 0B       		.uleb128 0xb
+ 1034 0527 01       		.uleb128 0x1
+ 1035 0528 50       		.byte	0x50
+ 1036 0529 02       		.uleb128 0x2
+ 1037 052a 74       		.byte	0x74
+ 1038 052b 00       		.sleb128 0
+ 1039 052c 00       		.byte	0
+ 1040 052d 0A       		.uleb128 0xa
+ 1041 052e 4C000000 		.4byte	.LVL42
+ 1042 0532 EE050000 		.4byte	0x5ee
+ 1043 0536 0B       		.uleb128 0xb
+ 1044 0537 01       		.uleb128 0x1
+ 1045 0538 50       		.byte	0x50
+ 1046 0539 02       		.uleb128 0x2
+ 1047 053a 09       		.byte	0x9
+ 1048 053b F0       		.byte	0xf0
+ 1049 053c 00       		.byte	0
+ 1050 053d 00       		.byte	0
+ 1051 053e 0C       		.uleb128 0xc
+ 1052 053f DB020000 		.4byte	.LASF86
+ 1053 0543 01       		.byte	0x1
+ 1054 0544 63       		.byte	0x63
+ 1055 0545 00000000 		.4byte	.LFB3
+ 1056 0549 0A000000 		.4byte	.LFE3-.LFB3
+ 1057 054d 01       		.uleb128 0x1
+ 1058 054e 9C       		.byte	0x9c
+ 1059 054f 64050000 		.4byte	0x564
+ 1060 0553 0A       		.uleb128 0xa
+ 1061 0554 08000000 		.4byte	.LVL46
+ 1062 0558 EE050000 		.4byte	0x5ee
+ 1063 055c 0B       		.uleb128 0xb
+ 1064 055d 01       		.uleb128 0x1
+ 1065 055e 50       		.byte	0x50
+ 1066 055f 02       		.uleb128 0x2
+ 1067 0560 09       		.byte	0x9
+ 1068 0561 80       		.byte	0x80
+ 1069 0562 00       		.byte	0
+ 1070 0563 00       		.byte	0
+ 1071 0564 0C       		.uleb128 0xc
+ 1072 0565 35020000 		.4byte	.LASF87
+ 1073 0569 01       		.byte	0x1
+ 1074 056a 68       		.byte	0x68
+ 1075 056b 00000000 		.4byte	.LFB4
+ 1076 056f 0A000000 		.4byte	.LFE4-.LFB4
+ 1077 0573 01       		.uleb128 0x1
+ 1078 0574 9C       		.byte	0x9c
+ 1079 0575 8A050000 		.4byte	0x58a
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 23
+
+
+ 1080 0579 0A       		.uleb128 0xa
+ 1081 057a 08000000 		.4byte	.LVL47
+ 1082 057e EE050000 		.4byte	0x5ee
+ 1083 0582 0B       		.uleb128 0xb
+ 1084 0583 01       		.uleb128 0x1
+ 1085 0584 50       		.byte	0x50
+ 1086 0585 02       		.uleb128 0x2
+ 1087 0586 09       		.byte	0x9
+ 1088 0587 A0       		.byte	0xa0
+ 1089 0588 00       		.byte	0
+ 1090 0589 00       		.byte	0
+ 1091 058a 12       		.uleb128 0x12
+ 1092 058b 02050000 		.4byte	.LASF109
+ 1093 058f 03       		.byte	0x3
+ 1094 0590 7C       		.byte	0x7c
+ 1095 0591 33000000 		.4byte	0x33
+ 1096 0595 9F050000 		.4byte	0x59f
+ 1097 0599 13       		.uleb128 0x13
+ 1098 059a 33000000 		.4byte	0x33
+ 1099 059e 00       		.byte	0
+ 1100 059f 14       		.uleb128 0x14
+ 1101 05a0 E0040000 		.4byte	.LASF88
+ 1102 05a4 04       		.byte	0x4
+ 1103 05a5 33       		.byte	0x33
+ 1104 05a6 B0050000 		.4byte	0x5b0
+ 1105 05aa 13       		.uleb128 0x13
+ 1106 05ab 33000000 		.4byte	0x33
+ 1107 05af 00       		.byte	0
+ 1108 05b0 14       		.uleb128 0x14
+ 1109 05b1 7F040000 		.4byte	.LASF89
+ 1110 05b5 05       		.byte	0x5
+ 1111 05b6 33       		.byte	0x33
+ 1112 05b7 C1050000 		.4byte	0x5c1
+ 1113 05bb 13       		.uleb128 0x13
+ 1114 05bc 33000000 		.4byte	0x33
+ 1115 05c0 00       		.byte	0
+ 1116 05c1 14       		.uleb128 0x14
+ 1117 05c2 1D000000 		.4byte	.LASF90
+ 1118 05c6 06       		.byte	0x6
+ 1119 05c7 33       		.byte	0x33
+ 1120 05c8 D2050000 		.4byte	0x5d2
+ 1121 05cc 13       		.uleb128 0x13
+ 1122 05cd 33000000 		.4byte	0x33
+ 1123 05d1 00       		.byte	0
+ 1124 05d2 15       		.uleb128 0x15
+ 1125 05d3 3B040000 		.4byte	.LASF91
+ 1126 05d7 03       		.byte	0x3
+ 1127 05d8 7F       		.byte	0x7f
+ 1128 05d9 15       		.uleb128 0x15
+ 1129 05da 2D040000 		.4byte	.LASF92
+ 1130 05de 03       		.byte	0x3
+ 1131 05df 80       		.byte	0x80
+ 1132 05e0 15       		.uleb128 0x15
+ 1133 05e1 5D040000 		.4byte	.LASF93
+ 1134 05e5 03       		.byte	0x3
+ 1135 05e6 7A       		.byte	0x7a
+ 1136 05e7 15       		.uleb128 0x15
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 24
+
+
+ 1137 05e8 B3030000 		.4byte	.LASF94
+ 1138 05ec 03       		.byte	0x3
+ 1139 05ed 7B       		.byte	0x7b
+ 1140 05ee 14       		.uleb128 0x14
+ 1141 05ef 12010000 		.4byte	.LASF95
+ 1142 05f3 03       		.byte	0x3
+ 1143 05f4 7E       		.byte	0x7e
+ 1144 05f5 FF050000 		.4byte	0x5ff
+ 1145 05f9 13       		.uleb128 0x13
+ 1146 05fa 2D020000 		.4byte	0x22d
+ 1147 05fe 00       		.byte	0
+ 1148 05ff 14       		.uleb128 0x14
+ 1149 0600 6F020000 		.4byte	.LASF96
+ 1150 0604 03       		.byte	0x3
+ 1151 0605 7D       		.byte	0x7d
+ 1152 0606 15060000 		.4byte	0x615
+ 1153 060a 13       		.uleb128 0x13
+ 1154 060b E1010000 		.4byte	0x1e1
+ 1155 060f 13       		.uleb128 0x13
+ 1156 0610 33000000 		.4byte	0x33
+ 1157 0614 00       		.byte	0
+ 1158 0615 14       		.uleb128 0x14
+ 1159 0616 47040000 		.4byte	.LASF97
+ 1160 061a 03       		.byte	0x3
+ 1161 061b 82       		.byte	0x82
+ 1162 061c 2B060000 		.4byte	0x62b
+ 1163 0620 13       		.uleb128 0x13
+ 1164 0621 33000000 		.4byte	0x33
+ 1165 0625 13       		.uleb128 0x13
+ 1166 0626 56040000 		.4byte	0x456
+ 1167 062a 00       		.byte	0
+ 1168 062b 16       		.uleb128 0x16
+ 1169 062c FC030000 		.4byte	.LASF98
+ 1170 0630 07       		.byte	0x7
+ 1171 0631 32       		.byte	0x32
+ 1172 0632 33000000 		.4byte	0x33
+ 1173 0636 16       		.uleb128 0x16
+ 1174 0637 A2020000 		.4byte	.LASF99
+ 1175 063b 07       		.byte	0x7
+ 1176 063c 39       		.byte	0x39
+ 1177 063d 33000000 		.4byte	0x33
+ 1178 0641 15       		.uleb128 0x15
+ 1179 0642 DF000000 		.4byte	.LASF100
+ 1180 0646 08       		.byte	0x8
+ 1181 0647 28       		.byte	0x28
+ 1182 0648 15       		.uleb128 0x15
+ 1183 0649 90030000 		.4byte	.LASF101
+ 1184 064d 08       		.byte	0x8
+ 1185 064e 23       		.byte	0x23
+ 1186 064f 16       		.uleb128 0x16
+ 1187 0650 CC020000 		.4byte	.LASF102
+ 1188 0654 03       		.byte	0x3
+ 1189 0655 85       		.byte	0x85
+ 1190 0656 33000000 		.4byte	0x33
+ 1191 065a 14       		.uleb128 0x14
+ 1192 065b F5000000 		.4byte	.LASF103
+ 1193 065f 03       		.byte	0x3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 25
+
+
+ 1194 0660 86       		.byte	0x86
+ 1195 0661 6B060000 		.4byte	0x66b
+ 1196 0665 13       		.uleb128 0x13
+ 1197 0666 5D000000 		.4byte	0x5d
+ 1198 066a 00       		.byte	0
+ 1199 066b 15       		.uleb128 0x15
+ 1200 066c 33030000 		.4byte	.LASF104
+ 1201 0670 08       		.byte	0x8
+ 1202 0671 25       		.byte	0x25
+ 1203 0672 17       		.uleb128 0x17
+ 1204 0673 99020000 		.4byte	.LASF110
+ 1205 0677 03       		.byte	0x3
+ 1206 0678 83       		.byte	0x83
+ 1207 0679 13       		.uleb128 0x13
+ 1208 067a 33000000 		.4byte	0x33
+ 1209 067e 13       		.uleb128 0x13
+ 1210 067f 56040000 		.4byte	0x456
+ 1211 0683 00       		.byte	0
+ 1212 0684 00       		.byte	0
+ 1213              		.section	.debug_abbrev,"",%progbits
+ 1214              	.Ldebug_abbrev0:
+ 1215 0000 01       		.uleb128 0x1
+ 1216 0001 11       		.uleb128 0x11
+ 1217 0002 01       		.byte	0x1
+ 1218 0003 25       		.uleb128 0x25
+ 1219 0004 0E       		.uleb128 0xe
+ 1220 0005 13       		.uleb128 0x13
+ 1221 0006 0B       		.uleb128 0xb
+ 1222 0007 03       		.uleb128 0x3
+ 1223 0008 0E       		.uleb128 0xe
+ 1224 0009 1B       		.uleb128 0x1b
+ 1225 000a 0E       		.uleb128 0xe
+ 1226 000b 55       		.uleb128 0x55
+ 1227 000c 17       		.uleb128 0x17
+ 1228 000d 11       		.uleb128 0x11
+ 1229 000e 01       		.uleb128 0x1
+ 1230 000f 10       		.uleb128 0x10
+ 1231 0010 17       		.uleb128 0x17
+ 1232 0011 00       		.byte	0
+ 1233 0012 00       		.byte	0
+ 1234 0013 02       		.uleb128 0x2
+ 1235 0014 24       		.uleb128 0x24
+ 1236 0015 00       		.byte	0
+ 1237 0016 0B       		.uleb128 0xb
+ 1238 0017 0B       		.uleb128 0xb
+ 1239 0018 3E       		.uleb128 0x3e
+ 1240 0019 0B       		.uleb128 0xb
+ 1241 001a 03       		.uleb128 0x3
+ 1242 001b 08       		.uleb128 0x8
+ 1243 001c 00       		.byte	0
+ 1244 001d 00       		.byte	0
+ 1245 001e 03       		.uleb128 0x3
+ 1246 001f 24       		.uleb128 0x24
+ 1247 0020 00       		.byte	0
+ 1248 0021 0B       		.uleb128 0xb
+ 1249 0022 0B       		.uleb128 0xb
+ 1250 0023 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 26
+
+
+ 1251 0024 0B       		.uleb128 0xb
+ 1252 0025 03       		.uleb128 0x3
+ 1253 0026 0E       		.uleb128 0xe
+ 1254 0027 00       		.byte	0
+ 1255 0028 00       		.byte	0
+ 1256 0029 04       		.uleb128 0x4
+ 1257 002a 04       		.uleb128 0x4
+ 1258 002b 01       		.byte	0x1
+ 1259 002c 0B       		.uleb128 0xb
+ 1260 002d 0B       		.uleb128 0xb
+ 1261 002e 3A       		.uleb128 0x3a
+ 1262 002f 0B       		.uleb128 0xb
+ 1263 0030 3B       		.uleb128 0x3b
+ 1264 0031 0B       		.uleb128 0xb
+ 1265 0032 01       		.uleb128 0x1
+ 1266 0033 13       		.uleb128 0x13
+ 1267 0034 00       		.byte	0
+ 1268 0035 00       		.byte	0
+ 1269 0036 05       		.uleb128 0x5
+ 1270 0037 28       		.uleb128 0x28
+ 1271 0038 00       		.byte	0
+ 1272 0039 03       		.uleb128 0x3
+ 1273 003a 0E       		.uleb128 0xe
+ 1274 003b 1C       		.uleb128 0x1c
+ 1275 003c 0D       		.uleb128 0xd
+ 1276 003d 00       		.byte	0
+ 1277 003e 00       		.byte	0
+ 1278 003f 06       		.uleb128 0x6
+ 1279 0040 16       		.uleb128 0x16
+ 1280 0041 00       		.byte	0
+ 1281 0042 03       		.uleb128 0x3
+ 1282 0043 0E       		.uleb128 0xe
+ 1283 0044 3A       		.uleb128 0x3a
+ 1284 0045 0B       		.uleb128 0xb
+ 1285 0046 3B       		.uleb128 0x3b
+ 1286 0047 0B       		.uleb128 0xb
+ 1287 0048 49       		.uleb128 0x49
+ 1288 0049 13       		.uleb128 0x13
+ 1289 004a 00       		.byte	0
+ 1290 004b 00       		.byte	0
+ 1291 004c 07       		.uleb128 0x7
+ 1292 004d 2E       		.uleb128 0x2e
+ 1293 004e 01       		.byte	0x1
+ 1294 004f 03       		.uleb128 0x3
+ 1295 0050 0E       		.uleb128 0xe
+ 1296 0051 3A       		.uleb128 0x3a
+ 1297 0052 0B       		.uleb128 0xb
+ 1298 0053 3B       		.uleb128 0x3b
+ 1299 0054 0B       		.uleb128 0xb
+ 1300 0055 27       		.uleb128 0x27
+ 1301 0056 19       		.uleb128 0x19
+ 1302 0057 49       		.uleb128 0x49
+ 1303 0058 13       		.uleb128 0x13
+ 1304 0059 11       		.uleb128 0x11
+ 1305 005a 01       		.uleb128 0x1
+ 1306 005b 12       		.uleb128 0x12
+ 1307 005c 06       		.uleb128 0x6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 27
+
+
+ 1308 005d 40       		.uleb128 0x40
+ 1309 005e 18       		.uleb128 0x18
+ 1310 005f 9742     		.uleb128 0x2117
+ 1311 0061 19       		.uleb128 0x19
+ 1312 0062 01       		.uleb128 0x1
+ 1313 0063 13       		.uleb128 0x13
+ 1314 0064 00       		.byte	0
+ 1315 0065 00       		.byte	0
+ 1316 0066 08       		.uleb128 0x8
+ 1317 0067 05       		.uleb128 0x5
+ 1318 0068 00       		.byte	0
+ 1319 0069 03       		.uleb128 0x3
+ 1320 006a 0E       		.uleb128 0xe
+ 1321 006b 3A       		.uleb128 0x3a
+ 1322 006c 0B       		.uleb128 0xb
+ 1323 006d 3B       		.uleb128 0x3b
+ 1324 006e 0B       		.uleb128 0xb
+ 1325 006f 49       		.uleb128 0x49
+ 1326 0070 13       		.uleb128 0x13
+ 1327 0071 02       		.uleb128 0x2
+ 1328 0072 17       		.uleb128 0x17
+ 1329 0073 00       		.byte	0
+ 1330 0074 00       		.byte	0
+ 1331 0075 09       		.uleb128 0x9
+ 1332 0076 34       		.uleb128 0x34
+ 1333 0077 00       		.byte	0
+ 1334 0078 03       		.uleb128 0x3
+ 1335 0079 0E       		.uleb128 0xe
+ 1336 007a 3A       		.uleb128 0x3a
+ 1337 007b 0B       		.uleb128 0xb
+ 1338 007c 3B       		.uleb128 0x3b
+ 1339 007d 0B       		.uleb128 0xb
+ 1340 007e 49       		.uleb128 0x49
+ 1341 007f 13       		.uleb128 0x13
+ 1342 0080 02       		.uleb128 0x2
+ 1343 0081 17       		.uleb128 0x17
+ 1344 0082 00       		.byte	0
+ 1345 0083 00       		.byte	0
+ 1346 0084 0A       		.uleb128 0xa
+ 1347 0085 898201   		.uleb128 0x4109
+ 1348 0088 01       		.byte	0x1
+ 1349 0089 11       		.uleb128 0x11
+ 1350 008a 01       		.uleb128 0x1
+ 1351 008b 31       		.uleb128 0x31
+ 1352 008c 13       		.uleb128 0x13
+ 1353 008d 00       		.byte	0
+ 1354 008e 00       		.byte	0
+ 1355 008f 0B       		.uleb128 0xb
+ 1356 0090 8A8201   		.uleb128 0x410a
+ 1357 0093 00       		.byte	0
+ 1358 0094 02       		.uleb128 0x2
+ 1359 0095 18       		.uleb128 0x18
+ 1360 0096 9142     		.uleb128 0x2111
+ 1361 0098 18       		.uleb128 0x18
+ 1362 0099 00       		.byte	0
+ 1363 009a 00       		.byte	0
+ 1364 009b 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 28
+
+
+ 1365 009c 2E       		.uleb128 0x2e
+ 1366 009d 01       		.byte	0x1
+ 1367 009e 3F       		.uleb128 0x3f
+ 1368 009f 19       		.uleb128 0x19
+ 1369 00a0 03       		.uleb128 0x3
+ 1370 00a1 0E       		.uleb128 0xe
+ 1371 00a2 3A       		.uleb128 0x3a
+ 1372 00a3 0B       		.uleb128 0xb
+ 1373 00a4 3B       		.uleb128 0x3b
+ 1374 00a5 0B       		.uleb128 0xb
+ 1375 00a6 27       		.uleb128 0x27
+ 1376 00a7 19       		.uleb128 0x19
+ 1377 00a8 11       		.uleb128 0x11
+ 1378 00a9 01       		.uleb128 0x1
+ 1379 00aa 12       		.uleb128 0x12
+ 1380 00ab 06       		.uleb128 0x6
+ 1381 00ac 40       		.uleb128 0x40
+ 1382 00ad 18       		.uleb128 0x18
+ 1383 00ae 9742     		.uleb128 0x2117
+ 1384 00b0 19       		.uleb128 0x19
+ 1385 00b1 01       		.uleb128 0x1
+ 1386 00b2 13       		.uleb128 0x13
+ 1387 00b3 00       		.byte	0
+ 1388 00b4 00       		.byte	0
+ 1389 00b5 0D       		.uleb128 0xd
+ 1390 00b6 898201   		.uleb128 0x4109
+ 1391 00b9 01       		.byte	0x1
+ 1392 00ba 11       		.uleb128 0x11
+ 1393 00bb 01       		.uleb128 0x1
+ 1394 00bc 31       		.uleb128 0x31
+ 1395 00bd 13       		.uleb128 0x13
+ 1396 00be 01       		.uleb128 0x1
+ 1397 00bf 13       		.uleb128 0x13
+ 1398 00c0 00       		.byte	0
+ 1399 00c1 00       		.byte	0
+ 1400 00c2 0E       		.uleb128 0xe
+ 1401 00c3 898201   		.uleb128 0x4109
+ 1402 00c6 00       		.byte	0
+ 1403 00c7 11       		.uleb128 0x11
+ 1404 00c8 01       		.uleb128 0x1
+ 1405 00c9 31       		.uleb128 0x31
+ 1406 00ca 13       		.uleb128 0x13
+ 1407 00cb 00       		.byte	0
+ 1408 00cc 00       		.byte	0
+ 1409 00cd 0F       		.uleb128 0xf
+ 1410 00ce 0F       		.uleb128 0xf
+ 1411 00cf 00       		.byte	0
+ 1412 00d0 0B       		.uleb128 0xb
+ 1413 00d1 0B       		.uleb128 0xb
+ 1414 00d2 49       		.uleb128 0x49
+ 1415 00d3 13       		.uleb128 0x13
+ 1416 00d4 00       		.byte	0
+ 1417 00d5 00       		.byte	0
+ 1418 00d6 10       		.uleb128 0x10
+ 1419 00d7 2E       		.uleb128 0x2e
+ 1420 00d8 01       		.byte	0x1
+ 1421 00d9 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 29
+
+
+ 1422 00da 19       		.uleb128 0x19
+ 1423 00db 03       		.uleb128 0x3
+ 1424 00dc 0E       		.uleb128 0xe
+ 1425 00dd 3A       		.uleb128 0x3a
+ 1426 00de 0B       		.uleb128 0xb
+ 1427 00df 3B       		.uleb128 0x3b
+ 1428 00e0 0B       		.uleb128 0xb
+ 1429 00e1 27       		.uleb128 0x27
+ 1430 00e2 19       		.uleb128 0x19
+ 1431 00e3 49       		.uleb128 0x49
+ 1432 00e4 13       		.uleb128 0x13
+ 1433 00e5 11       		.uleb128 0x11
+ 1434 00e6 01       		.uleb128 0x1
+ 1435 00e7 12       		.uleb128 0x12
+ 1436 00e8 06       		.uleb128 0x6
+ 1437 00e9 40       		.uleb128 0x40
+ 1438 00ea 18       		.uleb128 0x18
+ 1439 00eb 9742     		.uleb128 0x2117
+ 1440 00ed 19       		.uleb128 0x19
+ 1441 00ee 01       		.uleb128 0x1
+ 1442 00ef 13       		.uleb128 0x13
+ 1443 00f0 00       		.byte	0
+ 1444 00f1 00       		.byte	0
+ 1445 00f2 11       		.uleb128 0x11
+ 1446 00f3 34       		.uleb128 0x34
+ 1447 00f4 00       		.byte	0
+ 1448 00f5 03       		.uleb128 0x3
+ 1449 00f6 08       		.uleb128 0x8
+ 1450 00f7 3A       		.uleb128 0x3a
+ 1451 00f8 0B       		.uleb128 0xb
+ 1452 00f9 3B       		.uleb128 0x3b
+ 1453 00fa 0B       		.uleb128 0xb
+ 1454 00fb 49       		.uleb128 0x49
+ 1455 00fc 13       		.uleb128 0x13
+ 1456 00fd 02       		.uleb128 0x2
+ 1457 00fe 17       		.uleb128 0x17
+ 1458 00ff 00       		.byte	0
+ 1459 0100 00       		.byte	0
+ 1460 0101 12       		.uleb128 0x12
+ 1461 0102 2E       		.uleb128 0x2e
+ 1462 0103 01       		.byte	0x1
+ 1463 0104 3F       		.uleb128 0x3f
+ 1464 0105 19       		.uleb128 0x19
+ 1465 0106 03       		.uleb128 0x3
+ 1466 0107 0E       		.uleb128 0xe
+ 1467 0108 3A       		.uleb128 0x3a
+ 1468 0109 0B       		.uleb128 0xb
+ 1469 010a 3B       		.uleb128 0x3b
+ 1470 010b 0B       		.uleb128 0xb
+ 1471 010c 27       		.uleb128 0x27
+ 1472 010d 19       		.uleb128 0x19
+ 1473 010e 49       		.uleb128 0x49
+ 1474 010f 13       		.uleb128 0x13
+ 1475 0110 3C       		.uleb128 0x3c
+ 1476 0111 19       		.uleb128 0x19
+ 1477 0112 01       		.uleb128 0x1
+ 1478 0113 13       		.uleb128 0x13
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 30
+
+
+ 1479 0114 00       		.byte	0
+ 1480 0115 00       		.byte	0
+ 1481 0116 13       		.uleb128 0x13
+ 1482 0117 05       		.uleb128 0x5
+ 1483 0118 00       		.byte	0
+ 1484 0119 49       		.uleb128 0x49
+ 1485 011a 13       		.uleb128 0x13
+ 1486 011b 00       		.byte	0
+ 1487 011c 00       		.byte	0
+ 1488 011d 14       		.uleb128 0x14
+ 1489 011e 2E       		.uleb128 0x2e
+ 1490 011f 01       		.byte	0x1
+ 1491 0120 3F       		.uleb128 0x3f
+ 1492 0121 19       		.uleb128 0x19
+ 1493 0122 03       		.uleb128 0x3
+ 1494 0123 0E       		.uleb128 0xe
+ 1495 0124 3A       		.uleb128 0x3a
+ 1496 0125 0B       		.uleb128 0xb
+ 1497 0126 3B       		.uleb128 0x3b
+ 1498 0127 0B       		.uleb128 0xb
+ 1499 0128 27       		.uleb128 0x27
+ 1500 0129 19       		.uleb128 0x19
+ 1501 012a 3C       		.uleb128 0x3c
+ 1502 012b 19       		.uleb128 0x19
+ 1503 012c 01       		.uleb128 0x1
+ 1504 012d 13       		.uleb128 0x13
+ 1505 012e 00       		.byte	0
+ 1506 012f 00       		.byte	0
+ 1507 0130 15       		.uleb128 0x15
+ 1508 0131 2E       		.uleb128 0x2e
+ 1509 0132 00       		.byte	0
+ 1510 0133 3F       		.uleb128 0x3f
+ 1511 0134 19       		.uleb128 0x19
+ 1512 0135 03       		.uleb128 0x3
+ 1513 0136 0E       		.uleb128 0xe
+ 1514 0137 3A       		.uleb128 0x3a
+ 1515 0138 0B       		.uleb128 0xb
+ 1516 0139 3B       		.uleb128 0x3b
+ 1517 013a 0B       		.uleb128 0xb
+ 1518 013b 27       		.uleb128 0x27
+ 1519 013c 19       		.uleb128 0x19
+ 1520 013d 3C       		.uleb128 0x3c
+ 1521 013e 19       		.uleb128 0x19
+ 1522 013f 00       		.byte	0
+ 1523 0140 00       		.byte	0
+ 1524 0141 16       		.uleb128 0x16
+ 1525 0142 2E       		.uleb128 0x2e
+ 1526 0143 00       		.byte	0
+ 1527 0144 3F       		.uleb128 0x3f
+ 1528 0145 19       		.uleb128 0x19
+ 1529 0146 03       		.uleb128 0x3
+ 1530 0147 0E       		.uleb128 0xe
+ 1531 0148 3A       		.uleb128 0x3a
+ 1532 0149 0B       		.uleb128 0xb
+ 1533 014a 3B       		.uleb128 0x3b
+ 1534 014b 0B       		.uleb128 0xb
+ 1535 014c 27       		.uleb128 0x27
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 31
+
+
+ 1536 014d 19       		.uleb128 0x19
+ 1537 014e 49       		.uleb128 0x49
+ 1538 014f 13       		.uleb128 0x13
+ 1539 0150 3C       		.uleb128 0x3c
+ 1540 0151 19       		.uleb128 0x19
+ 1541 0152 00       		.byte	0
+ 1542 0153 00       		.byte	0
+ 1543 0154 17       		.uleb128 0x17
+ 1544 0155 2E       		.uleb128 0x2e
+ 1545 0156 01       		.byte	0x1
+ 1546 0157 3F       		.uleb128 0x3f
+ 1547 0158 19       		.uleb128 0x19
+ 1548 0159 03       		.uleb128 0x3
+ 1549 015a 0E       		.uleb128 0xe
+ 1550 015b 3A       		.uleb128 0x3a
+ 1551 015c 0B       		.uleb128 0xb
+ 1552 015d 3B       		.uleb128 0x3b
+ 1553 015e 0B       		.uleb128 0xb
+ 1554 015f 27       		.uleb128 0x27
+ 1555 0160 19       		.uleb128 0x19
+ 1556 0161 3C       		.uleb128 0x3c
+ 1557 0162 19       		.uleb128 0x19
+ 1558 0163 00       		.byte	0
+ 1559 0164 00       		.byte	0
+ 1560 0165 00       		.byte	0
+ 1561              		.section	.debug_loc,"",%progbits
+ 1562              	.Ldebug_loc0:
+ 1563              	.LLST0:
+ 1564 0000 00000000 		.4byte	.LVL0
+ 1565 0004 06000000 		.4byte	.LVL1
+ 1566 0008 0100     		.2byte	0x1
+ 1567 000a 50       		.byte	0x50
+ 1568 000b 06000000 		.4byte	.LVL1
+ 1569 000f 08000000 		.4byte	.LVL2
+ 1570 0013 0400     		.2byte	0x4
+ 1571 0015 F3       		.byte	0xf3
+ 1572 0016 01       		.uleb128 0x1
+ 1573 0017 50       		.byte	0x50
+ 1574 0018 9F       		.byte	0x9f
+ 1575 0019 08000000 		.4byte	.LVL2
+ 1576 001d 0A000000 		.4byte	.LVL3
+ 1577 0021 0100     		.2byte	0x1
+ 1578 0023 50       		.byte	0x50
+ 1579 0024 0A000000 		.4byte	.LVL3
+ 1580 0028 0C000000 		.4byte	.LFE5
+ 1581 002c 0400     		.2byte	0x4
+ 1582 002e F3       		.byte	0xf3
+ 1583 002f 01       		.uleb128 0x1
+ 1584 0030 50       		.byte	0x50
+ 1585 0031 9F       		.byte	0x9f
+ 1586 0032 00000000 		.4byte	0
+ 1587 0036 00000000 		.4byte	0
+ 1588              	.LLST1:
+ 1589 003a 08000000 		.4byte	.LVL4
+ 1590 003e 0E000000 		.4byte	.LVL5
+ 1591 0042 0100     		.2byte	0x1
+ 1592 0044 50       		.byte	0x50
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 32
+
+
+ 1593 0045 10000000 		.4byte	.LVL6
+ 1594 0049 12000000 		.4byte	.LVL7
+ 1595 004d 0100     		.2byte	0x1
+ 1596 004f 50       		.byte	0x50
+ 1597 0050 00000000 		.4byte	0
+ 1598 0054 00000000 		.4byte	0
+ 1599              	.LLST2:
+ 1600 0058 00000000 		.4byte	.LVL22
+ 1601 005c 09000000 		.4byte	.LVL23-1
+ 1602 0060 0100     		.2byte	0x1
+ 1603 0062 50       		.byte	0x50
+ 1604 0063 09000000 		.4byte	.LVL23-1
+ 1605 0067 36000000 		.4byte	.LFE1
+ 1606 006b 0400     		.2byte	0x4
+ 1607 006d F3       		.byte	0xf3
+ 1608 006e 01       		.uleb128 0x1
+ 1609 006f 50       		.byte	0x50
+ 1610 0070 9F       		.byte	0x9f
+ 1611 0071 00000000 		.4byte	0
+ 1612 0075 00000000 		.4byte	0
+ 1613              	.LLST3:
+ 1614 0079 00000000 		.4byte	.LVL22
+ 1615 007d 09000000 		.4byte	.LVL23-1
+ 1616 0081 0100     		.2byte	0x1
+ 1617 0083 51       		.byte	0x51
+ 1618 0084 09000000 		.4byte	.LVL23-1
+ 1619 0088 34000000 		.4byte	.LVL29
+ 1620 008c 0100     		.2byte	0x1
+ 1621 008e 55       		.byte	0x55
+ 1622 008f 34000000 		.4byte	.LVL29
+ 1623 0093 36000000 		.4byte	.LFE1
+ 1624 0097 0400     		.2byte	0x4
+ 1625 0099 F3       		.byte	0xf3
+ 1626 009a 01       		.uleb128 0x1
+ 1627 009b 51       		.byte	0x51
+ 1628 009c 9F       		.byte	0x9f
+ 1629 009d 00000000 		.4byte	0
+ 1630 00a1 00000000 		.4byte	0
+ 1631              	.LLST4:
+ 1632 00a5 00000000 		.4byte	.LVL30
+ 1633 00a9 09000000 		.4byte	.LVL32-1
+ 1634 00ad 0100     		.2byte	0x1
+ 1635 00af 50       		.byte	0x50
+ 1636 00b0 09000000 		.4byte	.LVL32-1
+ 1637 00b4 60000000 		.4byte	.LFE2
+ 1638 00b8 0400     		.2byte	0x4
+ 1639 00ba F3       		.byte	0xf3
+ 1640 00bb 01       		.uleb128 0x1
+ 1641 00bc 50       		.byte	0x50
+ 1642 00bd 9F       		.byte	0x9f
+ 1643 00be 00000000 		.4byte	0
+ 1644 00c2 00000000 		.4byte	0
+ 1645              	.LLST5:
+ 1646 00c6 00000000 		.4byte	.LVL30
+ 1647 00ca 09000000 		.4byte	.LVL32-1
+ 1648 00ce 0100     		.2byte	0x1
+ 1649 00d0 51       		.byte	0x51
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 33
+
+
+ 1650 00d1 09000000 		.4byte	.LVL32-1
+ 1651 00d5 5E000000 		.4byte	.LVL45
+ 1652 00d9 0100     		.2byte	0x1
+ 1653 00db 55       		.byte	0x55
+ 1654 00dc 5E000000 		.4byte	.LVL45
+ 1655 00e0 60000000 		.4byte	.LFE2
+ 1656 00e4 0400     		.2byte	0x4
+ 1657 00e6 F3       		.byte	0xf3
+ 1658 00e7 01       		.uleb128 0x1
+ 1659 00e8 51       		.byte	0x51
+ 1660 00e9 9F       		.byte	0x9f
+ 1661 00ea 00000000 		.4byte	0
+ 1662 00ee 00000000 		.4byte	0
+ 1663              	.LLST6:
+ 1664 00f2 06000000 		.4byte	.LVL31
+ 1665 00f6 4C000000 		.4byte	.LVL42
+ 1666 00fa 0200     		.2byte	0x2
+ 1667 00fc 30       		.byte	0x30
+ 1668 00fd 9F       		.byte	0x9f
+ 1669 00fe 4C000000 		.4byte	.LVL42
+ 1670 0102 50000000 		.4byte	.LVL43
+ 1671 0106 0200     		.2byte	0x2
+ 1672 0108 31       		.byte	0x31
+ 1673 0109 9F       		.byte	0x9f
+ 1674 010a 50000000 		.4byte	.LVL43
+ 1675 010e 5E000000 		.4byte	.LVL44
+ 1676 0112 0200     		.2byte	0x2
+ 1677 0114 30       		.byte	0x30
+ 1678 0115 9F       		.byte	0x9f
+ 1679 0116 5E000000 		.4byte	.LVL44
+ 1680 011a 60000000 		.4byte	.LFE2
+ 1681 011e 0100     		.2byte	0x1
+ 1682 0120 50       		.byte	0x50
+ 1683 0121 00000000 		.4byte	0
+ 1684 0125 00000000 		.4byte	0
+ 1685              		.section	.debug_aranges,"",%progbits
+ 1686 0000 4C000000 		.4byte	0x4c
+ 1687 0004 0200     		.2byte	0x2
+ 1688 0006 00000000 		.4byte	.Ldebug_info0
+ 1689 000a 04       		.byte	0x4
+ 1690 000b 00       		.byte	0
+ 1691 000c 0000     		.2byte	0
+ 1692 000e 0000     		.2byte	0
+ 1693 0010 00000000 		.4byte	.LFB5
+ 1694 0014 0C000000 		.4byte	.LFE5-.LFB5
+ 1695 0018 00000000 		.4byte	.LFB6
+ 1696 001c 14000000 		.4byte	.LFE6-.LFB6
+ 1697 0020 00000000 		.4byte	.LFB0
+ 1698 0024 5E000000 		.4byte	.LFE0-.LFB0
+ 1699 0028 00000000 		.4byte	.LFB1
+ 1700 002c 36000000 		.4byte	.LFE1-.LFB1
+ 1701 0030 00000000 		.4byte	.LFB2
+ 1702 0034 60000000 		.4byte	.LFE2-.LFB2
+ 1703 0038 00000000 		.4byte	.LFB3
+ 1704 003c 0A000000 		.4byte	.LFE3-.LFB3
+ 1705 0040 00000000 		.4byte	.LFB4
+ 1706 0044 0A000000 		.4byte	.LFE4-.LFB4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 34
+
+
+ 1707 0048 00000000 		.4byte	0
+ 1708 004c 00000000 		.4byte	0
+ 1709              		.section	.debug_ranges,"",%progbits
+ 1710              	.Ldebug_ranges0:
+ 1711 0000 00000000 		.4byte	.LFB5
+ 1712 0004 0C000000 		.4byte	.LFE5
+ 1713 0008 00000000 		.4byte	.LFB6
+ 1714 000c 14000000 		.4byte	.LFE6
+ 1715 0010 00000000 		.4byte	.LFB0
+ 1716 0014 5E000000 		.4byte	.LFE0
+ 1717 0018 00000000 		.4byte	.LFB1
+ 1718 001c 36000000 		.4byte	.LFE1
+ 1719 0020 00000000 		.4byte	.LFB2
+ 1720 0024 60000000 		.4byte	.LFE2
+ 1721 0028 00000000 		.4byte	.LFB3
+ 1722 002c 0A000000 		.4byte	.LFE3
+ 1723 0030 00000000 		.4byte	.LFB4
+ 1724 0034 0A000000 		.4byte	.LFE4
+ 1725 0038 00000000 		.4byte	0
+ 1726 003c 00000000 		.4byte	0
+ 1727              		.section	.debug_line,"",%progbits
+ 1728              	.Ldebug_line0:
+ 1729 0000 4F010000 		.section	.debug_str,"MS",%progbits,1
+ 1729      02009300 
+ 1729      00000201 
+ 1729      FB0E0D00 
+ 1729      01010101 
+ 1730              	.LASF43:
+ 1731 0000 52535349 		.ascii	"RSSI_REG\000"
+ 1731      5F524547 
+ 1731      00
+ 1732              	.LASF25:
+ 1733 0009 4750494F 		.ascii	"GPIO1_REG\000"
+ 1733      315F5245 
+ 1733      4700
+ 1734              	.LASF45:
+ 1735 0013 434F4445 		.ascii	"CODE1_REG\000"
+ 1735      315F5245 
+ 1735      4700
+ 1736              	.LASF90:
+ 1737 001d 5344494F 		.ascii	"SDIO_Write\000"
+ 1737      5F577269 
+ 1737      746500
+ 1738              	.LASF68:
+ 1739 0028 434D445F 		.ascii	"CMD_SLEEP\000"
+ 1739      534C4545 
+ 1739      5000
+ 1740              	.LASF32:
+ 1741 0032 504C4C34 		.ascii	"PLL4_REG\000"
+ 1741      5F524547 
+ 1741      00
+ 1742              	.LASF84:
+ 1743 003b 72656365 		.ascii	"receive_buffer\000"
+ 1743      6976655F 
+ 1743      62756666 
+ 1743      657200
+ 1744              	.LASF49:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 35
+
+
+ 1745 004a 49464341 		.ascii	"IFCAL2_REG\000"
+ 1745      4C325F52 
+ 1745      454700
+ 1746              	.LASF10:
+ 1747 0055 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1747      206C6F6E 
+ 1747      6720756E 
+ 1747      7369676E 
+ 1747      65642069 
+ 1748              	.LASF35:
+ 1749 006c 5458325F 		.ascii	"TX2_REG\000"
+ 1749      52454700 
+ 1750              	.LASF71:
+ 1751 0074 434D445F 		.ascii	"CMD_PLL\000"
+ 1751      504C4C00 
+ 1752              	.LASF16:
+ 1753 007c 43414C49 		.ascii	"CALIBRATION_REG\000"
+ 1753      42524154 
+ 1753      494F4E5F 
+ 1753      52454700 
+ 1754              	.LASF17:
+ 1755 008c 4649464F 		.ascii	"FIFO1_REG\000"
+ 1755      315F5245 
+ 1755      4700
+ 1756              	.LASF9:
+ 1757 0096 6C6F6E67 		.ascii	"long long int\000"
+ 1757      206C6F6E 
+ 1757      6720696E 
+ 1757      7400
+ 1758              	.LASF6:
+ 1759 00a4 7369676E 		.ascii	"signed char\000"
+ 1759      65642063 
+ 1759      68617200 
+ 1760              	.LASF82:
+ 1761 00b0 62756666 		.ascii	"buffer_length\000"
+ 1761      65725F6C 
+ 1761      656E6774 
+ 1761      6800
+ 1762              	.LASF44:
+ 1763 00be 4144435F 		.ascii	"ADC_REG\000"
+ 1763      52454700 
+ 1764              	.LASF29:
+ 1765 00c6 504C4C31 		.ascii	"PLL1_REG\000"
+ 1765      5F524547 
+ 1765      00
+ 1766              	.LASF38:
+ 1767 00cf 52585F52 		.ascii	"RX_REG\000"
+ 1767      454700
+ 1768              	.LASF8:
+ 1769 00d6 6C6F6E67 		.ascii	"long int\000"
+ 1769      20696E74 
+ 1769      00
+ 1770              	.LASF100:
+ 1771 00df 47494F31 		.ascii	"GIO1_ISR_ClearPending\000"
+ 1771      5F495352 
+ 1771      5F436C65 
+ 1771      61725065 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 36
+
+
+ 1771      6E64696E 
+ 1772              	.LASF103:
+ 1773 00f5 41373130 		.ascii	"A7105_update_wtr\000"
+ 1773      355F7570 
+ 1773      64617465 
+ 1773      5F777472 
+ 1773      00
+ 1774              	.LASF53:
+ 1775 0106 42415454 		.ascii	"BATTERY_REG\000"
+ 1775      4552595F 
+ 1775      52454700 
+ 1776              	.LASF95:
+ 1777 0112 5374726F 		.ascii	"StrobeCmd\000"
+ 1777      6265436D 
+ 1777      6400
+ 1778              	.LASF12:
+ 1779 011c 646F7562 		.ascii	"double\000"
+ 1779      6C6500
+ 1780              	.LASF70:
+ 1781 0123 434D445F 		.ascii	"CMD_STBY\000"
+ 1781      53544259 
+ 1781      00
+ 1782              	.LASF51:
+ 1783 012c 56434F43 		.ascii	"VCOCAL1_REG\000"
+ 1783      414C315F 
+ 1783      52454700 
+ 1784              	.LASF47:
+ 1785 0138 434F4445 		.ascii	"CODE3_REG\000"
+ 1785      335F5245 
+ 1785      4700
+ 1786              	.LASF21:
+ 1787 0142 52434F53 		.ascii	"RCOSC1_REG\000"
+ 1787      43315F52 
+ 1787      454700
+ 1788              	.LASF37:
+ 1789 014d 44454C41 		.ascii	"DELAY2_REG\000"
+ 1789      59325F52 
+ 1789      454700
+ 1790              	.LASF72:
+ 1791 0158 434D445F 		.ascii	"CMD_RX\000"
+ 1791      525800
+ 1792              	.LASF107:
+ 1793 015f 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V1.0\\AYBR3000\\A"
+ 1793      6F63616C 
+ 1793      5F73766E 
+ 1793      5C415942 
+ 1793      52333030 
+ 1794 018d 59425233 		.ascii	"YBR3000.cydsn\000"
+ 1794      3030302E 
+ 1794      63796473 
+ 1794      6E00
+ 1795              	.LASF85:
+ 1796 019b 74656D70 		.ascii	"temp\000"
+ 1796      00
+ 1797              	.LASF0:
+ 1798 01a0 756E7369 		.ascii	"unsigned int\000"
+ 1798      676E6564 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 37
+
+
+ 1798      20696E74 
+ 1798      00
+ 1799              	.LASF58:
+ 1800 01ad 43525953 		.ascii	"CRYSTALTEST_REG\000"
+ 1800      54414C54 
+ 1800      4553545F 
+ 1800      52454700 
+ 1801              	.LASF106:
+ 1802 01bd 41373130 		.ascii	"A7105_driver.c\000"
+ 1802      355F6472 
+ 1802      69766572 
+ 1802      2E6300
+ 1803              	.LASF40:
+ 1804 01cc 52584741 		.ascii	"RXGAIN2_REG\000"
+ 1804      494E325F 
+ 1804      52454700 
+ 1805              	.LASF3:
+ 1806 01d8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1806      20756E73 
+ 1806      69676E65 
+ 1806      6420696E 
+ 1806      7400
+ 1807              	.LASF20:
+ 1808 01ea 4944434F 		.ascii	"IDCODE_REG\000"
+ 1808      44455F52 
+ 1808      454700
+ 1809              	.LASF56:
+ 1810 01f5 52584445 		.ascii	"RXDEM2_REG\000"
+ 1810      4D325F52 
+ 1810      454700
+ 1811              	.LASF27:
+ 1812 0200 434C4F43 		.ascii	"CLOCK_REG\000"
+ 1812      4B5F5245 
+ 1812      4700
+ 1813              	.LASF15:
+ 1814 020a 4D4F4445 		.ascii	"MODECTRL_REG\000"
+ 1814      4354524C 
+ 1814      5F524547 
+ 1814      00
+ 1815              	.LASF2:
+ 1816 0217 73686F72 		.ascii	"short unsigned int\000"
+ 1816      7420756E 
+ 1816      7369676E 
+ 1816      65642069 
+ 1816      6E7400
+ 1817              	.LASF79:
+ 1818 022a 41373130 		.ascii	"A7105_init\000"
+ 1818      355F696E 
+ 1818      697400
+ 1819              	.LASF87:
+ 1820 0235 41373130 		.ascii	"A7105_wakeup\000"
+ 1820      355F7761 
+ 1820      6B657570 
+ 1820      00
+ 1821              	.LASF31:
+ 1822 0242 504C4C33 		.ascii	"PLL3_REG\000"
+ 1822      5F524547 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 38
+
+
+ 1822      00
+ 1823              	.LASF77:
+ 1824 024b 62756666 		.ascii	"buffer_length_ok\000"
+ 1824      65725F6C 
+ 1824      656E6774 
+ 1824      685F6F6B 
+ 1824      00
+ 1825              	.LASF80:
+ 1826 025c 73656E64 		.ascii	"send_data_by_A7105\000"
+ 1826      5F646174 
+ 1826      615F6279 
+ 1826      5F413731 
+ 1826      303500
+ 1827              	.LASF96:
+ 1828 026f 41373130 		.ascii	"A7105_WriteReg\000"
+ 1828      355F5772 
+ 1828      69746552 
+ 1828      656700
+ 1829              	.LASF48:
+ 1830 027e 49464341 		.ascii	"IFCAL1_REG\000"
+ 1830      4C315F52 
+ 1830      454700
+ 1831              	.LASF34:
+ 1832 0289 5458315F 		.ascii	"TX1_REG\000"
+ 1832      52454700 
+ 1833              	.LASF24:
+ 1834 0291 434B4F5F 		.ascii	"CKO_REG\000"
+ 1834      52454700 
+ 1835              	.LASF110:
+ 1836 0299 52656164 		.ascii	"ReadFIFO\000"
+ 1836      4649464F 
+ 1836      00
+ 1837              	.LASF99:
+ 1838 02a2 47494F31 		.ascii	"GIO1_ClearInterrupt\000"
+ 1838      5F436C65 
+ 1838      6172496E 
+ 1838      74657272 
+ 1838      75707400 
+ 1839              	.LASF78:
+ 1840 02b6 4352435F 		.ascii	"CRC_check_ok\000"
+ 1840      63686563 
+ 1840      6B5F6F6B 
+ 1840      00
+ 1841              	.LASF69:
+ 1842 02c3 434D445F 		.ascii	"CMD_IDLE\000"
+ 1842      49444C45 
+ 1842      00
+ 1843              	.LASF102:
+ 1844 02cc 41373130 		.ascii	"A7105_read_wtr\000"
+ 1844      355F7265 
+ 1844      61645F77 
+ 1844      747200
+ 1845              	.LASF86:
+ 1846 02db 41373130 		.ascii	"A7105_sleep\000"
+ 1846      355F736C 
+ 1846      65657000 
+ 1847              	.LASF23:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 39
+
+
+ 1848 02e7 52434F53 		.ascii	"RCOSC3_REG\000"
+ 1848      43335F52 
+ 1848      454700
+ 1849              	.LASF59:
+ 1850 02f2 504C4C54 		.ascii	"PLLTEST_REG\000"
+ 1850      4553545F 
+ 1850      52454700 
+ 1851              	.LASF61:
+ 1852 02fe 56434F54 		.ascii	"VCOTEST2_REG\000"
+ 1852      45535432 
+ 1852      5F524547 
+ 1852      00
+ 1853              	.LASF46:
+ 1854 030b 434F4445 		.ascii	"CODE2_REG\000"
+ 1854      325F5245 
+ 1854      4700
+ 1855              	.LASF83:
+ 1856 0315 73656E64 		.ascii	"send_buffer\000"
+ 1856      5F627566 
+ 1856      66657200 
+ 1857              	.LASF73:
+ 1858 0321 434D445F 		.ascii	"CMD_TX\000"
+ 1858      545800
+ 1859              	.LASF55:
+ 1860 0328 52584445 		.ascii	"RXDEM1_REG\000"
+ 1860      4D315F52 
+ 1860      454700
+ 1861              	.LASF104:
+ 1862 0333 47494F31 		.ascii	"GIO1_ISR_Disable\000"
+ 1862      5F495352 
+ 1862      5F446973 
+ 1862      61626C65 
+ 1862      00
+ 1863              	.LASF64:
+ 1864 0344 46494C54 		.ascii	"FILTERTEST_REG\000"
+ 1864      45525445 
+ 1864      53545F52 
+ 1864      454700
+ 1865              	.LASF76:
+ 1866 0353 41373130 		.ascii	"A7105_CMD\000"
+ 1866      355F434D 
+ 1866      4400
+ 1867              	.LASF11:
+ 1868 035d 666C6F61 		.ascii	"float\000"
+ 1868      7400
+ 1869              	.LASF4:
+ 1870 0363 46414C53 		.ascii	"FALSE\000"
+ 1870      4500
+ 1871              	.LASF14:
+ 1872 0369 4D4F4445 		.ascii	"MODE_REG\000"
+ 1872      5F524547 
+ 1872      00
+ 1873              	.LASF42:
+ 1874 0372 52584741 		.ascii	"RXGAIN4_REG\000"
+ 1874      494E345F 
+ 1874      52454700 
+ 1875              	.LASF74:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 40
+
+
+ 1876 037e 434D445F 		.ascii	"CMD_TFR\000"
+ 1876      54465200 
+ 1877              	.LASF18:
+ 1878 0386 4649464F 		.ascii	"FIFO2_REG\000"
+ 1878      325F5245 
+ 1878      4700
+ 1879              	.LASF101:
+ 1880 0390 47494F31 		.ascii	"GIO1_ISR_Enable\000"
+ 1880      5F495352 
+ 1880      5F456E61 
+ 1880      626C6500 
+ 1881              	.LASF26:
+ 1882 03a0 4750494F 		.ascii	"GPIO2_REG\000"
+ 1882      325F5245 
+ 1882      4700
+ 1883              	.LASF62:
+ 1884 03aa 49464154 		.ascii	"IFAT_REG\000"
+ 1884      5F524547 
+ 1884      00
+ 1885              	.LASF94:
+ 1886 03b3 41373130 		.ascii	"A7105_Calibration\000"
+ 1886      355F4361 
+ 1886      6C696272 
+ 1886      6174696F 
+ 1886      6E00
+ 1887              	.LASF1:
+ 1888 03c5 756E7369 		.ascii	"unsigned char\000"
+ 1888      676E6564 
+ 1888      20636861 
+ 1888      7200
+ 1889              	.LASF36:
+ 1890 03d3 44454C41 		.ascii	"DELAY1_REG\000"
+ 1890      59315F52 
+ 1890      454700
+ 1891              	.LASF7:
+ 1892 03de 73686F72 		.ascii	"short int\000"
+ 1892      7420696E 
+ 1892      7400
+ 1893              	.LASF33:
+ 1894 03e8 504C4C35 		.ascii	"PLL5_REG\000"
+ 1894      5F524547 
+ 1894      00
+ 1895              	.LASF63:
+ 1896 03f1 52534341 		.ascii	"RSCALE_REG\000"
+ 1896      4C455F52 
+ 1896      454700
+ 1897              	.LASF98:
+ 1898 03fc 47494F31 		.ascii	"GIO1_Read\000"
+ 1898      5F526561 
+ 1898      6400
+ 1899              	.LASF108:
+ 1900 0406 72656365 		.ascii	"receive_data_by_A7105\000"
+ 1900      6976655F 
+ 1900      64617461 
+ 1900      5F62795F 
+ 1900      41373130 
+ 1901              	.LASF50:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 41
+
+
+ 1902 041c 56434F43 		.ascii	"VCOCCAL_REG\000"
+ 1902      43414C5F 
+ 1902      52454700 
+ 1903              	.LASF5:
+ 1904 0428 54525545 		.ascii	"TRUE\000"
+ 1904      00
+ 1905              	.LASF92:
+ 1906 042d 41373130 		.ascii	"A7105_WriteID\000"
+ 1906      355F5772 
+ 1906      69746549 
+ 1906      4400
+ 1907              	.LASF91:
+ 1908 043b 41373130 		.ascii	"A7105_Reset\000"
+ 1908      355F5265 
+ 1908      73657400 
+ 1909              	.LASF97:
+ 1910 0447 57726974 		.ascii	"WriteFIFO\000"
+ 1910      65464946 
+ 1910      4F00
+ 1911              	.LASF81:
+ 1912 0451 6C656E67 		.ascii	"length\000"
+ 1912      746800
+ 1913              	.LASF13:
+ 1914 0458 63686172 		.ascii	"char\000"
+ 1914      00
+ 1915              	.LASF93:
+ 1916 045d 41373130 		.ascii	"A7105_Config\000"
+ 1916      355F436F 
+ 1916      6E666967 
+ 1916      00
+ 1917              	.LASF39:
+ 1918 046a 52584741 		.ascii	"RXGAIN1_REG\000"
+ 1918      494E315F 
+ 1918      52454700 
+ 1919              	.LASF30:
+ 1920 0476 504C4C32 		.ascii	"PLL2_REG\000"
+ 1920      5F524547 
+ 1920      00
+ 1921              	.LASF89:
+ 1922 047f 53434B5F 		.ascii	"SCK_Write\000"
+ 1922      57726974 
+ 1922      6500
+ 1923              	.LASF67:
+ 1924 0489 41373130 		.ascii	"A7105_REG\000"
+ 1924      355F5245 
+ 1924      4700
+ 1925              	.LASF57:
+ 1926 0493 4350435F 		.ascii	"CPC_REG\000"
+ 1926      52454700 
+ 1927              	.LASF19:
+ 1928 049b 4649464F 		.ascii	"FIFO_REG\000"
+ 1928      5F524547 
+ 1928      00
+ 1929              	.LASF54:
+ 1930 04a4 54585445 		.ascii	"TXTEST_REG\000"
+ 1930      53545F52 
+ 1930      454700
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 42
+
+
+ 1931              	.LASF52:
+ 1932 04af 56434F43 		.ascii	"VCOCAL2_REG\000"
+ 1932      414C325F 
+ 1932      52454700 
+ 1933              	.LASF22:
+ 1934 04bb 52434F53 		.ascii	"RCOSC2_REG\000"
+ 1934      43325F52 
+ 1934      454700
+ 1935              	.LASF28:
+ 1936 04c6 44415441 		.ascii	"DATARATE_REG\000"
+ 1936      52415445 
+ 1936      5F524547 
+ 1936      00
+ 1937              	.LASF60:
+ 1938 04d3 56434F54 		.ascii	"VCOTEST1_REG\000"
+ 1938      45535431 
+ 1938      5F524547 
+ 1938      00
+ 1939              	.LASF88:
+ 1940 04e0 5343535F 		.ascii	"SCS_Write\000"
+ 1940      57726974 
+ 1940      6500
+ 1941              	.LASF65:
+ 1942 04ea 5245475F 		.ascii	"REG_NUMBER\000"
+ 1942      4E554D42 
+ 1942      455200
+ 1943              	.LASF66:
+ 1944 04f5 426F6F6C 		.ascii	"Bool\000"
+ 1944      00
+ 1945              	.LASF75:
+ 1946 04fa 434D445F 		.ascii	"CMD_RFR\000"
+ 1946      52465200 
+ 1947              	.LASF109:
+ 1948 0502 41373130 		.ascii	"A7105_ReadReg\000"
+ 1948      355F5265 
+ 1948      61645265 
+ 1948      6700
+ 1949              	.LASF41:
+ 1950 0510 52584741 		.ascii	"RXGAIN3_REG\000"
+ 1950      494E335F 
+ 1950      52454700 
+ 1951              	.LASF105:
+ 1952 051c 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1952      4320342E 
+ 1952      392E3320 
+ 1952      32303135 
+ 1952      30333033 
+ 1953 054f 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 1953      20726576 
+ 1953      6973696F 
+ 1953      6E203232 
+ 1953      31323230 
+ 1954 0582 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1954      67202D66 
+ 1954      66756E63 
+ 1954      74696F6E 
+ 1954      2D736563 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccgxZpTV.s 			page 43
+
+
+ 1955              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,0 +1,5 @@
+D:\local_svn\AYBR3000\AYBR3000_V2.0\TOUCH_TEST\AYBR3000.cydsn\AYBR3000.cyprj|f52062f5-5574-47e6-88d3-ed54868c2ade
+D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|bd8d3e1d-698e-4103-828e-59f7506e8fb1
+D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|ef57e52a-91d5-4050-b507-2f149bb5d88c
+D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b3ef7753-f2cc-4682-9feb-e1a6801a1607
+D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|133ef3bf-ba3a-4eaf-9fea-73a0f80912d4

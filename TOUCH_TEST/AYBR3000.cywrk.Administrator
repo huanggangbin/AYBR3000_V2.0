@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="AYBR3000\AYBR3000\TopDesign">
+<ExpandedNodeIds>
+<v>AYBR3000</v>
+<v>AYBR3000\AYBR3000</v>
+<v>AYBR3000\AYBR3000\TopDesign</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Pins</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Analog</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Clocks</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Interrupts</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\System</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Directives</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Flash Security</v>
+<v>AYBR3000\AYBR3000\Header Files\cyapicallbacks.h</v>
+<v>AYBR3000\AYBR3000\Source Files</v>
+<v>AYBR3000\AYBR3000\Source Files\A7105_driver.c</v>
+<v>AYBR3000\AYBR3000\Source Files\A7105_driver.h</v>
+<v>AYBR3000\AYBR3000\Source Files\A7105_firmware_lib.c</v>
+<v>AYBR3000\AYBR3000\Source Files\A7105_firmware_lib.h</v>
+<v>AYBR3000\AYBR3000\Source Files\key.c</v>
+<v>AYBR3000\AYBR3000\Source Files\key.h</v>
+<v>AYBR3000\AYBR3000\Source Files\main.c</v>
+<v>AYBR3000\AYBR3000\Source Files\simple_protocol.c</v>
+<v>AYBR3000\AYBR3000\Source Files\simple_protocol.h</v>
+<v>AYBR3000\AYBR3000\Source Files\timing.c</v>
+<v>AYBR3000\AYBR3000\Source Files\timing.h</v>
+<v>AYBR3000\AYBR3000\Source Files\types.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\Clock_1\Clock_1.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\Clock_1\Clock_1.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\cm0plusgcc.ld</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\Cm0plusIar.icf</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\Cm0plusRealView.scat</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\Cm0plusStart.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\cmsis_armcc.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\cmsis_gcc.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\core_cm0plus.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\core_cm0plus_psoc4.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\core_cmFunc.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\core_cmInstr.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\CyBootAsmGnu.s</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\CyBootAsmIar.s</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\CyBootAsmRv.s</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\CyFlash.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\CyFlash.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\CyLib.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\CyLib.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\cypins.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\cyPm.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\cyPm.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\cytypes.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot\cyutils.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_lfclk\CyLFClk.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_lfclk\CyLFClk.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_BOOT.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_BOOT.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_EZI2C.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_EZI2C.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_EZI2C_BOOT.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_EZI2C_INT.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_EZI2C_PVT.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_PINS.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_PM.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C\EZI2C_PVT.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_SCB_IRQ\EZI2C_SCB_IRQ.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_SCB_IRQ\EZI2C_SCB_IRQ.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_SCBCLK\EZI2C_SCBCLK.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_SCBCLK\EZI2C_SCBCLK.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_scl\EZI2C_scl.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_scl\EZI2C_scl.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_scl\EZI2C_scl_aliases.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_scl\EZI2C_scl_PM.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_sda\EZI2C_sda.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_sda\EZI2C_sda.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_sda\EZI2C_sda_aliases.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_sda\EZI2C_sda_PM.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Configuration.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Control.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Control.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Filter.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Filter.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_INT.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Processing.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Processing.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_RegisterMap.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Sensing.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Sensing.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_SensingCSD_LL.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_SensingCSD_LL.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_SmartSense_LL.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Structure.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Structure.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Tuner.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Tuner.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch_ISR\key_touch_ISR.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch_ISR\key_touch_ISR.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SCK\SCK.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SCK\SCK.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SCK\SCK_aliases.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SCK\SCK_PM.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SCS\SCS.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SCS\SCS.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SCS\SCS_aliases.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SCS\SCS_PM.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SDIO\SDIO.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SDIO\SDIO.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SDIO\SDIO_aliases.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\SDIO\SDIO_PM.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\time_1ms_ISR\time_1ms_ISR.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\time_1ms_ISR\time_1ms_ISR.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\Timer_1\Timer_1.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\Timer_1\Timer_1.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\Timer_1\Timer_1_PM.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\WAKE_UP\WAKE_UP.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\WAKE_UP\WAKE_UP.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\WAKE_UP\WAKE_UP_aliases.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\WAKE_UP\WAKE_UP_PM.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cycodeshareexport.ld</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cycodeshareimport.ld</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cycodeshareimport.scat</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cydevice_trm.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cydevicerv_trm.inc</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cydisabledsheets.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cyfitter.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cyfitter_cfg.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cyfitter_cfg.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cyfittergnu.inc</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cyfitteriar.inc</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cyfitterrv.inc</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cymetadata.c</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\project.h</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>AYBR3000</v>
+<v>AYBR3000\AYBR3000</v>
+<v>AYBR3000\AYBR3000\TopDesign</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Pins</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Analog</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Clocks</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Interrupts</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\System</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Directives</v>
+<v>AYBR3000\AYBR3000\AYBR3000.cydwr\Flash Security</v>
+<v>AYBR3000\AYBR3000\Header Files</v>
+<v>AYBR3000\AYBR3000\Source Files</v>
+<v>AYBR3000\AYBR3000\Source Files\A7105_driver.c</v>
+<v>AYBR3000\AYBR3000\Source Files\A7105_driver.h</v>
+<v>AYBR3000\AYBR3000\Source Files\A7105_firmware_lib.c</v>
+<v>AYBR3000\AYBR3000\Source Files\A7105_firmware_lib.h</v>
+<v>AYBR3000\AYBR3000\Source Files\key.c</v>
+<v>AYBR3000\AYBR3000\Source Files\key.h</v>
+<v>AYBR3000\AYBR3000\Source Files\main.c</v>
+<v>AYBR3000\AYBR3000\Source Files\simple_protocol.c</v>
+<v>AYBR3000\AYBR3000\Source Files\simple_protocol.h</v>
+<v>AYBR3000\AYBR3000\Source Files\timing.c</v>
+<v>AYBR3000\AYBR3000\Source Files\timing.h</v>
+<v>AYBR3000\AYBR3000\Source Files\types.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\Clock_1</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_boot</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\cy_lfclk</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_SCB_IRQ</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_SCBCLK</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_scl</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\EZI2C_sda</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch.h</v>
+<v>AYBR3000\AYBR3000\Generated_Source\PSoC4\key_touch\key_touch_Configuration.h</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>AYBR3000</v>
+<v>AYBR3000\AYBR3000</v>
+<v>AYBR3000\AYBR3000\TopDesign</v>
+<v>AYBR3000\AYBR3000\TopDesign\TopDesign.cysch</v>
+<v>AYBR3000\AYBR3000\TopDesign\TopDesign_01.cymacro</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>AYBR3000</v>
+<v>AYBR3000\AYBR3000</v>
+<v>AYBR3000\AYBR3000\TopDesign</v>
+<v>AYBR3000\AYBR3000\TopDesign\TopDesign.cysch</v>
+<v>AYBR3000\AYBR3000\TopDesign\TopDesign_01.cymacro</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>AYBR3000</v>
+<v>AYBR3000\AYBR3000</v>
+<v>AYBR3000\AYBR3000\CortexM0p</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\A7105_driver.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\A7105_firmware_lib.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\Cm0plusStart.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyLFClk.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_BOOT.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_EZI2C.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_EZI2C_BOOT.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_EZI2C_INT.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_SCB_IRQ.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_SCBCLK.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_scl.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_scl_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_sda.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_sda_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Control.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Filter.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_INT.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_ISR.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Processing.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Sensing.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_SensingCSD_LL.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Structure.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Tuner.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\SCK.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\SCK_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\SCS.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\SCS_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\SDIO.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\SDIO_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\simple_protocol.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\time_1ms_ISR.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\Timer_1.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\Timer_1_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\timing.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\WAKE_UP.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\WAKE_UP_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\AYBR3000.elf</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\AYBR3000.hex</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\AYBR3000.map</v>
+<v>AYBR3000\AYBR3000\AYBR3000.gpdsc</v>
+<v>AYBR3000\AYBR3000\AYBR3000.rpt</v>
+<v>AYBR3000\AYBR3000\AYBR3000_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>AYBR3000</v>
+<v>AYBR3000\AYBR3000</v>
+<v>AYBR3000\AYBR3000\CortexM0p</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\A7105_driver.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\A7105_firmware_lib.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\Cm0plusStart.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyLFClk.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_BOOT.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_EZI2C.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_EZI2C_BOOT.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_EZI2C_INT.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_SCB_IRQ.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_SCBCLK.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_scl.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_scl_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_sda.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\EZI2C_sda_PM.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Control.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Filter.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_INT.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_ISR.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Processing.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_Sensing.lst</v>
+<v>AYBR3000\AYBR3000\CortexM0p\ARM_GCC_493\Debug\Listing Files\key_touch_SensingCSD_LL.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>AYBR3000</v>
+<v>AYBR3000\AYBR3000</v>
+<v>AYBR3000\AYBR3000\PSoC 4 Architecture TRM</v>
+<v>AYBR3000\AYBR3000\PSoC 4000S Family Datasheet</v>
+<v>AYBR3000\AYBR3000\System Reference Guides</v>
+<v>AYBR3000\AYBR3000\System Reference Guides\cy_boot_v5_50</v>
+<v>AYBR3000\AYBR3000\System Reference Guides\cy_lfclk_v1_10</v>
+<v>AYBR3000\AYBR3000\CapSense_P4_v3_10.pdf</v>
+<v>AYBR3000\AYBR3000\cy_clock_v2_20.pdf</v>
+<v>AYBR3000\AYBR3000\cy_isr_v1_70.pdf</v>
+<v>AYBR3000\AYBR3000\cy_pins_v2_20</v>
+<v>AYBR3000\AYBR3000\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>AYBR3000\AYBR3000\SCB_P4_v3_20.pdf</v>
+<v>AYBR3000\AYBR3000\TCPWM_P4_v2_10.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>AYBR3000</v>
+<v>AYBR3000\AYBR3000</v>
+<v>AYBR3000\AYBR3000\PSoC 4 Architecture TRM</v>
+<v>AYBR3000\AYBR3000\PSoC 4000S Family Datasheet</v>
+<v>AYBR3000\AYBR3000\System Reference Guides</v>
+<v>AYBR3000\AYBR3000\System Reference Guides\cy_boot_v5_50</v>
+<v>AYBR3000\AYBR3000\System Reference Guides\cy_lfclk_v1_10</v>
+<v>AYBR3000\AYBR3000\CapSense_P4_v3_10.pdf</v>
+<v>AYBR3000\AYBR3000\cy_clock_v2_20.pdf</v>
+<v>AYBR3000\AYBR3000\cy_isr_v1_70.pdf</v>
+<v>AYBR3000\AYBR3000\cy_pins_v2_20</v>
+<v>AYBR3000\AYBR3000\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>AYBR3000\AYBR3000\SCB_P4_v3_20.pdf</v>
+<v>AYBR3000\AYBR3000\TCPWM_P4_v2_10.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\AYBR3000.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\AYBR3000.cydsn\AYBR3000.cydwr" />
+<name v=".\AYBR3000.cydsn\main.c" />
+<name v=".\AYBR3000.cydsn\A7105_firmware_lib.h" />
+<name v=".\AYBR3000.cydsn\A7105_firmware_lib.c" />
+<name v=".\AYBR3000.cydsn\types.h" />
+<name v=".\AYBR3000.cydsn\A7105_driver.c" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\CyLib.c" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\CyLFClk.c" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\cymetadata.c" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\project.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\SCK.c" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\SCK.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\SDIO.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\cydevice_trm.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\cydevicegnu_trm.inc" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\cydisabledsheets.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\cyfitter.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<name v=".\AYBR3000.cydsn\cyapicallbacks.h" />
+<name v=".\AYBR3000.cydsn\A7105_driver.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\cyfitter_cfg.c" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\CyLib.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\Cm0plusStart.c" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\CyBootAsmGnu.s" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\SDIO.c" />
+<name v=".\AYBR3000.cydsn\simple_protocol.c" />
+<name v=".\AYBR3000.cydsn\simple_protocol.h" />
+<name v=".\AYBR3000.cydsn\timing.h" />
+<name v=".\AYBR3000.cydsn\timing.c" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\Timer_1.c" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\Timer_1.h" />
+<name v=".\AYBR3000.cydsn\key.c" />
+<name v=".\AYBR3000.cydsn\key.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\cytypes.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\key_touch.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\key_touch_ISR.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\key_touch_Tuner.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\key_touch_Configuration.h" />
+<name v=".\AYBR3000.cydsn\Generated_Source\PSoC4\key_touch_Sensing.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1125, 723" SelectedTabbedMdiWindow="d4946e94-729f-4f3b-9108-bc0618964fc1"><DocumentWindow Key="c04ecc4d-ec53-4dfb-9688-95f2cef729a1" Guid="d4946e94-729f-4f3b-9108-bc0618964fc1" /><DocumentWindow Key="2bb2dc7b-b7dd-468b-b72f-a720b7c004ec" Guid="2d6cee11-92a7-4834-be32-2d21c77fad11" /><DocumentWindow Key="5a5969d4-dea8-41cb-a847-e4c4039a206f" Guid="d67267e7-7b7d-4e4b-9e7d-1caafdc6f3e0" /><DocumentWindow Key="a58c684d-0b54-486e-8651-36db03ba194e" Guid="f5d1de38-7e64-45ca-9a68-30ab2e78d910" /><DocumentWindow Key="958f6d82-cfcc-4f8c-b793-909617fa8718" Guid="62ea9333-6767-44cb-86ad-ae40bc68173d" /><DocumentWindow Key="0d569a09-bab4-4f90-9843-b823f274f369" Guid="e4d66eb4-1a3b-45c9-9857-3e400c344ec9" /><DocumentWindow Key="3892787e-76c3-4db6-a161-0c82eec995d5" Guid="b64a8fd8-56ef-47e3-b536-6bf0061d60ef" /><DocumentWindow Key="12002043-de00-4d5e-a9e9-577fcbb7399c" Guid="3d4fb3c4-c6e3-4818-8cde-58215e46102a" /><DocumentWindow Key="e121a4fa-5dff-4b2b-8cd7-0bb5d76436cf" Guid="3e0d0a15-f7e7-4485-a22a-76256e57b8c6" /><DocumentWindow Key="d2629728-15e0-4299-a253-371770264aaf" Guid="e8d8580b-b5f1-460f-9c13-c3183a2bfad9" /><DocumentWindow Key="1db4f2b0-5cb2-4ad3-a2a9-dfe721304c40" Guid="d885fabd-c116-424b-a3e5-813a2108cac0" /><DocumentWindow Key="f285bebe-c4b6-4f61-b064-74c131cc1b1e" Guid="238b7a7d-b9dd-4679-b347-64700978e7a7" /><DocumentWindow Key="aa31820a-d46d-4b1a-8094-b4b1227a3ebb" Guid="3f27a509-e607-44bf-970f-963a62bbd099" /><DocumentWindow Key="418b67a9-9408-4a4d-b9b0-d1ca3e75e534" Guid="e6a8defb-2a68-4075-8ce8-13df17f43dbf" /><DocumentWindow Key="e5d0209f-1b93-4e5a-a0a6-a493c79473df" Guid="440aa6f0-d2b6-4506-a54a-2eddc652cd93" /><DocumentWindow Key="5313c0d7-c88e-44b8-a452-dc6a1b4e2cb4" Guid="707e7cb9-b214-4afc-8ed0-64c9beb30cb6" /><DocumentWindow Key="453cac28-a111-4fa8-9dbf-0d2ea81e8180" Guid="57944b65-5c89-45bb-9f4c-342a6bf08e5a" /><DocumentWindow Key="ecc959b7-af32-49f8-b42c-1b0c9ebf78b7" Guid="908b7a32-181f-4a37-8b18-4fd67b6f879f" /><DocumentWindow Key="9b711d76-27b0-4df7-907e-bd654c2060cb" Guid="ab02ecb1-4657-4e39-8e71-fabc77df1ac6" /><DocumentWindow Key="d15646af-5502-4c6c-921a-4276b43900b9" Guid="b4b3aef8-33dd-4207-b7e9-ac014773ea30" /><DocumentWindow Key="b8a6af50-17a8-42a7-b1af-3a5129f43ee5" Guid="565335b7-95d7-4fa4-8cad-292cb47a2a64" /><DocumentWindow Key="bb6399dd-3ed9-4a1f-9304-65e6dc2e163c" Guid="df074bab-8a6a-47ce-a205-96b5d2286d56" /><DocumentWindow Key="36c70855-f145-4940-af3d-90e89aa292ca" Guid="5e717b3a-68d5-47a4-b6cb-5eff27d78ae4" /><DocumentWindow Key="65d0d567-f38b-426a-8edd-2894fe5d800e" Guid="85987c32-13df-4443-ab2d-d9553ec3fc17" /><DocumentWindow Key="fd374285-b561-410c-b10a-3464dfc19d04" Guid="4e23f057-b3ff-4769-90fe-82e2fdbb80f2" /><DocumentWindow Key="79fc220c-2253-4aac-a17d-7a3fc63fc601" Guid="0e69eb7c-03fb-4480-bfc8-07a015bce1c7" /><DocumentWindow Key="cbd1b9f2-07a0-40bc-9d74-1d1a98923ac8" Guid="fb86e551-e359-4308-ad35-26047da12dc2" /><DocumentWindow Key="d62be75d-79dc-49e1-9518-a53845a6fca8" Guid="a019fcb5-00c6-4855-b032-26e33ee50cab" /><DocumentWindow Key="b0c51986-66f2-4b92-b0e1-85371664943b" Guid="c1e47ef8-281e-4ceb-ab10-b285f64ecbff" /><DocumentWindow Key="bb3d39db-b7a6-433a-8178-e01871fc459d" Guid="0bc957ec-c407-4195-b229-cda437798a21" /><DocumentWindow Key="f9d8a2e7-fc0e-42ce-a03d-6a5e7276a214" Guid="01d802cf-bea5-4fd8-b10d-57b42600cd6f" /><DocumentWindow Key="84dfe996-8176-4113-90db-df95942a0dec" Guid="c794e6eb-f839-4e4b-8597-a96e37bd6538" /><DocumentWindow Key="937b8255-22a5-41b7-8bcd-6e2bb34c67d9" Guid="a441d4b1-7c5d-42ff-8e4d-9a5d2763d94f" /><DocumentWindow Key="7b1612ff-29f9-4d04-a313-6c08a2cd1082" Guid="9f1e9d7b-d245-4bc9-86ee-f1f0f831a7d7" /><DocumentWindow Key="bee07921-4f8a-42b2-a3a6-775242c4e6d4" Guid="08965075-915f-45e6-b0c5-07901ffc779e" /><DocumentWindow Key="fd28f474-9c52-4240-a65f-619ca1384543" Guid="a43d3bd3-4d05-4ae9-8385-492c580d7596" /><DocumentWindow Key="3d71f930-2372-417f-ac53-17d464b90589" Guid="a187ee93-394e-419a-80b0-a8cc6d22b360" /><DocumentWindow Key="e7dc155a-20f0-4267-9516-b586c14c7978" Guid="c02a19a1-2f34-45be-9c04-96f6a6fa9af5" /><DocumentWindow Key="f3d53938-8015-4b24-be28-2bf46bbcb413" Guid="cd832aa6-b857-4dbd-8ff3-fe16812b79ce" /><DocumentWindow Key="1e430e97-a3b5-40a9-b847-4463b4dbdf67" Guid="2c835ef7-3a6b-4108-9b9e-f25b6adf576b" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="03b634e8-e07d-42a2-9585-1535e1b11ebc" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
