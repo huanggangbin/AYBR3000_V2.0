@@ -56,8 +56,9 @@ typedef struct
     uint8 no_use[2];
 }App_frame;
 
-void app_protocol_init(App_frame * pframe);
-void app_protocol_send(App_frame * pframe);
+extern void app_protocol_init(void);
+extern void app_protocol_send(void);
+extern App_frame app_frame;
 
 #endif
 

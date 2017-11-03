@@ -18,7 +18,8 @@ static App_work_event event;
 
 static void app_work_mode_display(void);
 static void app_work_mode_send(void);
-static App_frame app_frame;
+
+
 
 void app_work_mode_init(void)
 {
@@ -45,8 +46,6 @@ void app_work_mode_init(void)
     }
     work_mode = APP_MODE_IDLE;
     previous_mode = APP_MODE_IDLE;
-
-    app_protocol_init(&app_frame);
 }
 
 void app_work_mode_process(void)
@@ -202,8 +201,8 @@ void app_work_mode_event_set(App_work_event e)
 
 static void app_work_mode_display(void)
 {
-    status;
-    work_mode;
+    //status;
+    //work_mode;
 }
 
 static void app_work_mode_send(void)
@@ -236,7 +235,35 @@ static void app_work_mode_send(void)
     
     app_frame.temp =  status[work_mode].wen_du;
     app_frame.ding_shi = status[work_mode].ding_shi;
+    app_frame.func_type = FUNC_CONTROL;
     
-    app_protocol_send(&app_frame);
+    switch(work_mode)
+    {
+        case APP_MODE_IDLE: 
+            app_frame.mutex_func = MUTEX_DAI_JI;
+            break;
+        case APP_MODE_FENG_NUAN: 
+            app_frame.mutex_func = MUTEX_FENG_NUAN;
+            break;
+        case APP_MODE_XIN_FENG_QU_NUAN: 
+            app_frame.mutex_func = MUTEX_XIN_FENG_FENG_NUAN;
+            break;
+        case APP_MODE_XIN_FENG: 
+            app_frame.mutex_func = MUTEX_XIN_FENG;
+            break;
+        case APP_MODE_HUAN_QI: 
+            app_frame.mutex_func = MUTEX_HUAN_QI;
+            break;
+        case APP_MODE_GAN_ZAO: 
+            app_frame.mutex_func = MUTEX_ZHI_NENG_GAN_ZAO;
+            break;
+        case APP_MODE_JING_HUA: 
+            app_frame.mutex_func = MUTEX_ZHI_NENG_JING_HUA;
+            break;
+        case APP_MODE_MU_YU: 
+            app_frame.mutex_func = MUTEX_ZHI_NENG_MU_YU_1;
+            break;
+    }
+    app_protocol_send();
 }
 

@@ -2,6 +2,7 @@
 #define _APP_WORK_H_
 #include "types.h"
 #include "LCD_driver.h"
+#include "app_protocol.h"
 
 //time_manage
 //power_manage

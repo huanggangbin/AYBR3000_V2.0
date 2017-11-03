@@ -1,13 +1,15 @@
 #include "app_protocol.h"
 
-//模块里面尽量不要包含状态!!,如内部定义一个私有结构
 
-void app_protocol_init(App_frame * pframe)
+App_frame app_frame;
+
+void app_protocol_init(void)
 {
-    memset(pframe, 0, sizeof (App_frame));
+    memset(&app_frame, 0, sizeof (App_frame));
 }
 
-void app_protocol_send(App_frame * pframe)
+void app_protocol_send(void)
 {
-    protocol_send((uint8 *)&pframe, sizeof ((App_frame));
+    datalink_protocol_send((uint8 *)&app_frame, sizeof (App_frame));
 }
+

@@ -34,6 +34,7 @@ typedef enum
     
     APP_TIME_CMD_START,
     APP_TIME_CMD_CHANGE,
+    APP_TIME_CMD_END,
     
     APP_TIME_CMD_ADD,
     APP_TIME_CMD_MINUS,
@@ -55,5 +56,6 @@ extern void app_time_init(void);
 extern void app_time_process(void);
 extern void app_time_event_set(App_set_time_command cmd);
 extern bool app_time_mode_busy(void);
+
 #endif
 
