@@ -1722,6 +1722,12 @@
             <name>$PROJ_DIR$\..\User\app_lcd_display.h</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\User\app_lcd_display_config.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\User\app_lcd_display_config.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\User\app_power.c</name>
         </file>
         <file>

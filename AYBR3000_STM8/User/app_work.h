@@ -3,10 +3,7 @@
 #include "types.h"
 #include "LCD_driver.h"
 #include "app_protocol.h"
-
-//time_manage
-//power_manage
-//work_mode_manage
+#include "app_lcd_display.h"
 
 //枚举出所有的工作模式
 typedef enum

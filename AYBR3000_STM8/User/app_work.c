@@ -201,8 +201,67 @@ void app_work_mode_event_set(App_work_event e)
 
 static void app_work_mode_display(void)
 {
-    //status;
-    //work_mode;
+    app_lcd_display_set_work(APP_LCD_WORK_UINT_BAI_DONG, status[work_mode].bai_dong);
+
+    switch(status[work_mode].cf_mode)
+    {
+        case APP_CHUI_FENG_INIT: 
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_QIANG, OFF);
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_RUO, OFF);
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_ZI_DONG, OFF);
+            break;
+        case APP_CHUI_FENG_QIANG: 
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_QIANG, ON);
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_RUO, OFF);
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_ZI_DONG, OFF);
+            break;
+        case APP_CHUI_FENG_RUO: 
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_QIANG, OFF);
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_RUO, ON);
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_ZI_DONG, OFF);
+            break;
+        case APP_CHUI_FENG_ZI_DONG: 
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_QIANG, OFF);
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_RUO, OFF);
+            app_lcd_display_set_work(APP_LCD_WORK_UINT_ZI_DONG, ON);
+            break;
+    }
+    
+    app_lcd_display_set_work =  status[work_mode].wen_du;
+    app_frame.ding_shi = status[work_mode].ding_shi;
+    
+    switch(work_mode)
+    {
+        case APP_MODE_IDLE: 
+            app_frame.mutex_func = MUTEX_DAI_JI;
+            break;
+        case APP_MODE_FENG_NUAN: 
+            app_frame.mutex_func = MUTEX_FENG_NUAN;
+            break;
+        case APP_MODE_XIN_FENG_QU_NUAN: 
+            app_frame.mutex_func = MUTEX_XIN_FENG_FENG_NUAN;
+            break;
+        case APP_MODE_XIN_FENG: 
+            app_frame.mutex_func = MUTEX_XIN_FENG;
+            break;
+        case APP_MODE_HUAN_QI: 
+            app_frame.mutex_func = MUTEX_HUAN_QI;
+            break;
+        case APP_MODE_GAN_ZAO: 
+            app_frame.mutex_func = MUTEX_ZHI_NENG_GAN_ZAO;
+            break;
+        case APP_MODE_JING_HUA: 
+            app_frame.mutex_func = MUTEX_ZHI_NENG_JING_HUA;
+            break;
+        case APP_MODE_MU_YU: 
+            app_frame.mutex_func = MUTEX_ZHI_NENG_MU_YU_1;
+            break;
+    }
+
+    
+    
+    
+    app_lcd_display_set_work(App_lcd_work_unit_index unit, Switch state);
 }
 
 static void app_work_mode_send(void)

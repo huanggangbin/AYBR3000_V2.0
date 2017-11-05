@@ -51,9 +51,19 @@ bool app_time_mode_busy(void)
         return FALSE;
 }
 
+uint8 app_time_get_hour(void)
+{
+    return time.hour;
+}
+uint8 app_time_get_mimute(void)
+{
+    return time.minute;
+}
+
 static void app_time_display(void)
 {
-    //time;
+    
+    app_lcd_display_set_time(App_lcd_time_unit_index unit, App_lcd_time_state state);
 }
 
 static void app_time_send(void)
@@ -184,4 +194,6 @@ static void app_time_mode_deal(void)
             break;
     }
 }
+
+
 

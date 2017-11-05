@@ -15,6 +15,7 @@
 #include "simple_protocol.h"
 #include "task_manager.h"
 #include "app_key.h"
+#include "app_lcd_display.h"
 //睡眠相关的代码参考main_control()
 
 RTC_TimeTypeDef RTC_TIME_USER;
@@ -38,11 +39,12 @@ int main(void)
     app_key_init();
     app_protocol_init();
     datalink_protocol_init();
+    app_lcd_display_init();
     
     task_add(app_key_process, 10);
     task_add(app_time_process, 10);
     task_add(app_work_mode_process, 10);
-    
+    task_add(app_lcd_display_process, 10);
     while(1)
     {
         task_process();
