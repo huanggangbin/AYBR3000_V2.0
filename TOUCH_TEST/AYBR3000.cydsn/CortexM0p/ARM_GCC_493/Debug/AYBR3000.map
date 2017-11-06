@@ -1526,67 +1526,67 @@ END GROUP
  .debug_frame   0x00001efc       0x28 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
  .debug_frame   0x00001f24       0x20 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x3a55
+.debug_str      0x00000000     0x3a8f
  *(.debug_str)
- .debug_str     0x00000000      0xa1a .\CortexM0p\ARM_GCC_493\Debug\main.o
-                                0xaa3 (size before relaxing)
- .debug_str     0x00000a1a      0x389 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
+ .debug_str     0x00000000      0xa20 .\CortexM0p\ARM_GCC_493\Debug\main.o
+                                0xaa9 (size before relaxing)
+ .debug_str     0x00000a20      0x3bd .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
                                 0x551 (size before relaxing)
- .debug_str     0x00000da3       0xc4 .\CortexM0p\ARM_GCC_493\Debug\A7105_firmware_lib.o
+ .debug_str     0x00000ddd       0xc4 .\CortexM0p\ARM_GCC_493\Debug\A7105_firmware_lib.o
                                 0x57b (size before relaxing)
- .debug_str     0x00000e67       0xd7 .\CortexM0p\ARM_GCC_493\Debug\simple_protocol.o
+ .debug_str     0x00000ea1       0xd7 .\CortexM0p\ARM_GCC_493\Debug\simple_protocol.o
                                 0x2a0 (size before relaxing)
- .debug_str     0x00000f3e       0x28 .\CortexM0p\ARM_GCC_493\Debug\timing.o
+ .debug_str     0x00000f78       0x28 .\CortexM0p\ARM_GCC_493\Debug\timing.o
                                 0x19f (size before relaxing)
- .debug_str     0x00000f66       0xc2 .\CortexM0p\ARM_GCC_493\Debug\key.o
-                                0x36c (size before relaxing)
- .debug_str     0x00001028       0x59 .\CortexM0p\ARM_GCC_493\Debug\cymetadata.o
+ .debug_str     0x00000fa0       0xc2 .\CortexM0p\ARM_GCC_493\Debug\key.o
+                                0x372 (size before relaxing)
+ .debug_str     0x00001062       0x59 .\CortexM0p\ARM_GCC_493\Debug\cymetadata.o
                                 0x1c4 (size before relaxing)
- .debug_str     0x00001081      0x150 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
+ .debug_str     0x000010bb      0x150 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
                                 0x2f9 (size before relaxing)
- .debug_str     0x000011d1       0x84 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
+ .debug_str     0x0000120b       0x84 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
                                 0x203 (size before relaxing)
- .debug_str     0x00001255      0x501 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
-                                0x95c (size before relaxing)
- .debug_str     0x00001756      0x12e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
-                                0x7e6 (size before relaxing)
- .debug_str     0x00001884      0x2dc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
-                                0x8c4 (size before relaxing)
- .debug_str     0x00001b60      0x119 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
-                                0x654 (size before relaxing)
- .debug_str     0x00001c79      0x1b2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
-                                0x692 (size before relaxing)
- .debug_str     0x00001e2b      0x450 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                                0xabb (size before relaxing)
- .debug_str     0x0000227b      0x35a .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                                0xaea (size before relaxing)
- .debug_str     0x000025d5      0x40d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+ .debug_str     0x0000128f      0x501 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
+                                0x962 (size before relaxing)
+ .debug_str     0x00001790      0x12e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+                                0x7ec (size before relaxing)
+ .debug_str     0x000018be      0x2dc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+                                0x8ca (size before relaxing)
+ .debug_str     0x00001b9a      0x119 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+                                0x65a (size before relaxing)
+ .debug_str     0x00001cb3      0x1b2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                                0x698 (size before relaxing)
+ .debug_str     0x00001e65      0x450 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                                0xac1 (size before relaxing)
+ .debug_str     0x000022b5      0x35a .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                                0xaf0 (size before relaxing)
+ .debug_str     0x0000260f      0x40d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
                                 0x5ef (size before relaxing)
- .debug_str     0x000029e2       0x8f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+ .debug_str     0x00002a1c       0x8f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
                                 0x225 (size before relaxing)
- .debug_str     0x00002a71       0x6f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+ .debug_str     0x00002aab       0x6f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
                                 0x21e (size before relaxing)
- .debug_str     0x00002ae0       0x6f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+ .debug_str     0x00002b1a       0x6f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
                                 0x21e (size before relaxing)
- .debug_str     0x00002b4f      0x158 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+ .debug_str     0x00002b89      0x158 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
                                 0x344 (size before relaxing)
- .debug_str     0x00002ca7      0x4be .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+ .debug_str     0x00002ce1      0x4be .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
                                 0x70d (size before relaxing)
- .debug_str     0x00003165       0x5f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+ .debug_str     0x0000319f       0x5f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
                                 0x227 (size before relaxing)
- .debug_str     0x000031c4      0x2d0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+ .debug_str     0x000031fe      0x2d0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
                                 0x4a4 (size before relaxing)
- .debug_str     0x00003494      0x133 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+ .debug_str     0x000034ce      0x133 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
                                 0x336 (size before relaxing)
- .debug_str     0x000035c7      0x113 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+ .debug_str     0x00003601      0x113 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
                                 0x2c8 (size before relaxing)
- .debug_str     0x000036da      0x11e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+ .debug_str     0x00003714      0x11e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
                                 0x32f (size before relaxing)
- .debug_str     0x000037f8       0x97 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+ .debug_str     0x00003832       0x97 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
                                 0x2b8 (size before relaxing)
- .debug_str     0x0000388f       0xa9 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
-                                0x6f8 (size before relaxing)
- .debug_str     0x00003938      0x11d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
+ .debug_str     0x000038c9       0xa9 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+                                0x6fe (size before relaxing)
+ .debug_str     0x00003972      0x11d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
                                 0x30c (size before relaxing)
 
 .debug_loc      0x00000000     0x4476

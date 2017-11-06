@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
   30:Generated_Source\PSoC4/key_touch_Tuner.c **** * of the application or use of any product or circuit described herein. Cypress
   31:Generated_Source\PSoC4/key_touch_Tuner.c **** * does not authorize its products for use as critical components in life-support
   32:Generated_Source\PSoC4/key_touch_Tuner.c **** * systems where a malfunction or failure may reasonably be expected to result in
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 2
 
 
   33:Generated_Source\PSoC4/key_touch_Tuner.c **** * significant injury to the user. The inclusion of Cypress' product in a life-
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
   40              		.align	2
   41              	.L2:
   42 000c 00000000 		.word	key_touch_dsRam
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 3
 
 
   43 0010 00000000 		.word	.LANCHOR0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  115:Generated_Source\PSoC4/key_touch_Tuner.c **** uint32 key_touch_RunTuner(void)
  116:Generated_Source\PSoC4/key_touch_Tuner.c **** {
   55              		.loc 1 116 0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 4
 
 
   56              		.cfi_startproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
   91              		.section	.text.key_touch_RunTuner
   92              	.L6:
  135:Generated_Source\PSoC4/key_touch_Tuner.c ****         {
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 5
 
 
  136:Generated_Source\PSoC4/key_touch_Tuner.c ****         case key_touch_TU_CMD_SUSPEND_E:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  130              	.L10:
  152:Generated_Source\PSoC4/key_touch_Tuner.c ****             
  153:Generated_Source\PSoC4/key_touch_Tuner.c ****         case key_touch_TU_CMD_RUN_SNR_TEST_E:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 6
 
 
  154:Generated_Source\PSoC4/key_touch_Tuner.c ****             tunerFsm = TU_FSM_SNR_TEST;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  164 0060 0B43     		orr	r3, r1
  165 0062 9380     		strh	r3, [r2, #4]
  166              	.L13:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 7
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 7
 
 
  175:Generated_Source\PSoC4/key_touch_Tuner.c ****             }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  203 0092 1648     		ldr	r0, .L17+12
  204 0094 4118     		add	r1, r0, r1
  205 0096 C98A     		ldrh	r1, [r1, #22]
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 8
 
 
  191:Generated_Source\PSoC4/key_touch_Tuner.c ****             (sensorId < key_touch_GET_SENSOR_COUNT(widgetId)) &&
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  248 00d2 92B2     		uxth	r2, r2
  249 00d4 0231     		add	r1, r1, #2
  250 00d6 5A52     		strh	r2, [r3, r1]
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 9
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 9
 
 
  203:Generated_Source\PSoC4/key_touch_Tuner.c ****             
@@ -533,12 +533,12 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  289 0006 00000000 		.4byte	.Ldebug_abbrev0
  290 000a 04       		.byte	0x4
  291 000b 01       		.uleb128 0x1
- 292 000c BA050000 		.4byte	.LASF100
+ 292 000c C0050000 		.4byte	.LASF100
  293 0010 01       		.byte	0x1
  294 0011 16010000 		.4byte	.LASF101
- 295 0015 DA030000 		.4byte	.LASF102
+ 295 0015 1C050000 		.4byte	.LASF102
  296 0019 00000000 		.4byte	.Ldebug_ranges0+0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 10
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 10
 
 
  297 001d 00000000 		.4byte	0
@@ -550,11 +550,11 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  303 002c 02       		.uleb128 0x2
  304 002d 01       		.byte	0x1
  305 002e 08       		.byte	0x8
- 306 002f 27040000 		.4byte	.LASF1
+ 306 002f F3030000 		.4byte	.LASF1
  307 0033 02       		.uleb128 0x2
  308 0034 02       		.byte	0x2
  309 0035 05       		.byte	0x5
- 310 0036 35040000 		.4byte	.LASF2
+ 310 0036 01040000 		.4byte	.LASF2
  311 003a 02       		.uleb128 0x2
  312 003b 02       		.byte	0x2
  313 003c 07       		.byte	0x7
@@ -598,13 +598,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  351 0088 02       		.byte	0x2
  352 0089 BB01     		.2byte	0x1bb
  353 008b 48000000 		.4byte	0x48
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 11
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 11
 
 
  354 008f 02       		.uleb128 0x2
  355 0090 04       		.byte	0x4
  356 0091 04       		.byte	0x4
- 357 0092 17040000 		.4byte	.LASF12
+ 357 0092 E3030000 		.4byte	.LASF12
  358 0096 02       		.uleb128 0x2
  359 0097 08       		.byte	0x8
  360 0098 04       		.byte	0x4
@@ -612,9 +612,9 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  362 009d 02       		.uleb128 0x2
  363 009e 01       		.byte	0x1
  364 009f 08       		.byte	0x8
- 365 00a0 9F040000 		.4byte	.LASF14
+ 365 00a0 6B040000 		.4byte	.LASF14
  366 00a4 04       		.uleb128 0x4
- 367 00a5 5D050000 		.4byte	.LASF15
+ 367 00a5 63050000 		.4byte	.LASF15
  368 00a9 02       		.byte	0x2
  369 00aa 5B02     		.2byte	0x25b
  370 00ac 48000000 		.4byte	0x48
@@ -647,22 +647,22 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  397 00e4 B8       		.byte	0xb8
  398 00e5 62010000 		.4byte	0x162
  399 00e9 09       		.uleb128 0x9
- 400 00ea 79040000 		.4byte	.LASF19
+ 400 00ea 45040000 		.4byte	.LASF19
  401 00ee 04       		.byte	0x4
  402 00ef BE       		.byte	0xbe
  403 00f0 77000000 		.4byte	0x77
  404 00f4 00       		.byte	0
  405 00f5 09       		.uleb128 0x9
- 406 00f6 87050000 		.4byte	.LASF20
+ 406 00f6 8D050000 		.4byte	.LASF20
  407 00fa 04       		.byte	0x4
  408 00fb C3       		.byte	0xc3
  409 00fc B9000000 		.4byte	0xb9
  410 0100 02       		.byte	0x2
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 12
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 12
 
 
  411 0101 09       		.uleb128 0x9
- 412 0102 4C060000 		.4byte	.LASF21
+ 412 0102 52060000 		.4byte	.LASF21
  413 0106 04       		.byte	0x4
  414 0107 C8       		.byte	0xc8
  415 0108 6B000000 		.4byte	0x6b
@@ -680,7 +680,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  427 0120 6B000000 		.4byte	0x6b
  428 0124 06       		.byte	0x6
  429 0125 09       		.uleb128 0x9
- 430 0126 AD040000 		.4byte	.LASF24
+ 430 0126 79040000 		.4byte	.LASF24
  431 012a 04       		.byte	0x4
  432 012b D7       		.byte	0xd7
  433 012c 6B000000 		.4byte	0x6b
@@ -692,7 +692,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  439 0138 C5000000 		.4byte	0xc5
  440 013c 08       		.byte	0x8
  441 013d 09       		.uleb128 0x9
- 442 013e 1D040000 		.4byte	.LASF26
+ 442 013e E9030000 		.4byte	.LASF26
  443 0142 04       		.byte	0x4
  444 0143 E2       		.byte	0xe2
  445 0144 6B000000 		.4byte	0x6b
@@ -704,7 +704,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  451 0150 D1000000 		.4byte	0xd1
  452 0154 0A       		.byte	0xa
  453 0155 09       		.uleb128 0x9
- 454 0156 50050000 		.4byte	.LASF28
+ 454 0156 56050000 		.4byte	.LASF28
  455 015a 04       		.byte	0x4
  456 015b EE       		.byte	0xee
  457 015c 6B000000 		.4byte	0x6b
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  465 016d 08       		.uleb128 0x8
  466 016e 90       		.byte	0x90
  467 016f 04       		.byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 13
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 13
 
 
  468 0170 F5       		.byte	0xf5
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  522 01e3 62010000 		.4byte	0x162
  523 01e7 60       		.byte	0x60
  524 01e8 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 14
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 14
 
 
  525 01e9 FB000000 		.4byte	.LASF39
@@ -787,13 +787,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  528 01f0 62010000 		.4byte	0x162
  529 01f4 6C       		.byte	0x6c
  530 01f5 0B       		.uleb128 0xb
- 531 01f6 8D040000 		.4byte	.LASF40
+ 531 01f6 59040000 		.4byte	.LASF40
  532 01fa 04       		.byte	0x4
  533 01fb 2C01     		.2byte	0x12c
  534 01fd 62010000 		.4byte	0x162
  535 0201 78       		.byte	0x78
  536 0202 0B       		.uleb128 0xb
- 537 0203 96040000 		.4byte	.LASF41
+ 537 0203 62040000 		.4byte	.LASF41
  538 0207 04       		.byte	0x4
  539 0208 3101     		.2byte	0x131
  540 020a 62010000 		.4byte	0x162
@@ -834,16 +834,16 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  575 0254 B9000000 		.4byte	0xb9
  576 0258 06       		.byte	0x6
  577 0259 0B       		.uleb128 0xb
- 578 025a DA040000 		.4byte	.LASF46
+ 578 025a A6040000 		.4byte	.LASF46
  579 025e 04       		.byte	0x4
  580 025f 5201     		.2byte	0x152
  581 0261 84020000 		.4byte	0x284
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 15
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 15
 
 
  582 0265 08       		.byte	0x8
  583 0266 0B       		.uleb128 0xb
- 584 0267 D1040000 		.4byte	.LASF47
+ 584 0267 9D040000 		.4byte	.LASF47
  585 026b 04       		.byte	0x4
  586 026c 5801     		.2byte	0x158
  587 026e D1000000 		.4byte	0xd1
@@ -864,7 +864,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  602 0292 00       		.byte	0
  603 0293 00       		.byte	0
  604 0294 04       		.uleb128 0x4
- 605 0295 B8040000 		.4byte	.LASF48
+ 605 0295 84040000 		.4byte	.LASF48
  606 0299 04       		.byte	0x4
  607 029a 5901     		.2byte	0x159
  608 029c 1C020000 		.4byte	0x21c
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  636 02d8 46030000 		.4byte	0x346
  637 02dc 1E       		.byte	0x1e
  638 02dd 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 16
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 16
 
 
  639 02de D3000000 		.4byte	.LASF34
@@ -937,13 +937,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  672 0326 46030000 		.4byte	0x346
  673 032a 5A       		.byte	0x5a
  674 032b 0B       		.uleb128 0xb
- 675 032c 8D040000 		.4byte	.LASF40
+ 675 032c 59040000 		.4byte	.LASF40
  676 0330 04       		.byte	0x4
  677 0331 9601     		.2byte	0x196
  678 0333 46030000 		.4byte	0x346
  679 0337 64       		.byte	0x64
  680 0338 0B       		.uleb128 0xb
- 681 0339 96040000 		.4byte	.LASF41
+ 681 0339 62040000 		.4byte	.LASF41
  682 033d 04       		.byte	0x4
  683 033e 9B01     		.2byte	0x19b
  684 0340 46030000 		.4byte	0x346
@@ -957,8 +957,8 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  692 0354 00       		.byte	0
  693 0355 00       		.byte	0
  694 0356 04       		.uleb128 0x4
- 695 0357 4F040000 		.4byte	.LASF49
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 17
+ 695 0357 1B040000 		.4byte	.LASF49
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 17
 
 
  696 035b 04       		.byte	0x4
@@ -982,7 +982,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  714 0381 77000000 		.4byte	0x77
  715 0385 02       		.byte	0x2
  716 0386 0B       		.uleb128 0xb
- 717 0387 0E040000 		.4byte	.LASF52
+ 717 0387 DA030000 		.4byte	.LASF52
  718 038b 04       		.byte	0x4
  719 038c B401     		.2byte	0x1b4
  720 038e 77000000 		.4byte	0x77
@@ -994,7 +994,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  726 039b 77000000 		.4byte	0x77
  727 039f 06       		.byte	0x6
  728 03a0 0B       		.uleb128 0xb
- 729 03a1 3F050000 		.4byte	.LASF54
+ 729 03a1 0B050000 		.4byte	.LASF54
  730 03a5 04       		.byte	0x4
  731 03a6 BE01     		.2byte	0x1be
  732 03a8 83000000 		.4byte	0x83
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  750 03cf 5E040000 		.4byte	0x45e
  751 03d3 14       		.byte	0x14
  752 03d4 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 18
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 18
 
 
  753 03d5 BA020000 		.4byte	.LASF58
@@ -1039,7 +1039,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  768 03f6 6B000000 		.4byte	0x6b
  769 03fa 23       		.byte	0x23
  770 03fb 0B       		.uleb128 0xb
- 771 03fc 84040000 		.4byte	.LASF61
+ 771 03fc 50040000 		.4byte	.LASF61
  772 0400 04       		.byte	0x4
  773 0401 EA01     		.2byte	0x1ea
  774 0403 10020000 		.4byte	0x210
@@ -1063,7 +1063,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  792 042b 6B000000 		.4byte	0x6b
  793 042f 2D01     		.2byte	0x12d
  794 0431 0F       		.uleb128 0xf
- 795 0432 A7050000 		.4byte	.LASF65
+ 795 0432 AD050000 		.4byte	.LASF65
  796 0436 04       		.byte	0x4
  797 0437 FE01     		.2byte	0x1fe
  798 0439 77000000 		.4byte	0x77
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  807 044e 06       		.uleb128 0x6
  808 044f 83000000 		.4byte	0x83
  809 0453 5E040000 		.4byte	0x45e
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 19
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 19
 
 
  810 0457 07       		.uleb128 0x7
@@ -1121,13 +1121,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  847 04a5 00050000 		.4byte	0x500
  848 04a9 08       		.byte	0x8
  849 04aa 0B       		.uleb128 0xb
- 850 04ab 3F040000 		.4byte	.LASF71
+ 850 04ab 0B040000 		.4byte	.LASF71
  851 04af 04       		.byte	0x4
  852 04b0 7D02     		.2byte	0x27d
  853 04b2 B7000000 		.4byte	0xb7
  854 04b6 0C       		.byte	0xc
  855 04b7 0B       		.uleb128 0xb
- 856 04b8 26050000 		.4byte	.LASF72
+ 856 04b8 F2040000 		.4byte	.LASF72
  857 04bc 04       		.byte	0x4
  858 04bd 8402     		.2byte	0x284
  859 04bf 06050000 		.4byte	0x506
@@ -1138,11 +1138,11 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  864 04ca 8902     		.2byte	0x289
  865 04cc 77000000 		.4byte	0x77
  866 04d0 14       		.byte	0x14
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 20
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 20
 
 
  867 04d1 0B       		.uleb128 0xb
- 868 04d2 02050000 		.4byte	.LASF74
+ 868 04d2 CE040000 		.4byte	.LASF74
  869 04d6 04       		.byte	0x4
  870 04d7 9002     		.2byte	0x290
  871 04d9 77000000 		.4byte	0x77
@@ -1181,7 +1181,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  904 051c AA02     		.2byte	0x2aa
  905 051e 30050000 		.4byte	0x530
  906 0522 0B       		.uleb128 0xb
- 907 0523 46050000 		.4byte	.LASF78
+ 907 0523 12050000 		.4byte	.LASF78
  908 0527 04       		.byte	0x4
  909 0528 AF02     		.2byte	0x2af
  910 052a 30050000 		.4byte	0x530
@@ -1195,10 +1195,10 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  918 053e 0B       		.byte	0xb
  919 053f 00       		.byte	0
  920 0540 04       		.uleb128 0x4
- 921 0541 90050000 		.4byte	.LASF79
+ 921 0541 96050000 		.4byte	.LASF79
  922 0545 04       		.byte	0x4
  923 0546 B002     		.2byte	0x2b0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 21
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 21
 
 
  924 0548 18050000 		.4byte	0x518
@@ -1208,13 +1208,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  928 054f 2E       		.byte	0x2e
  929 0550 79050000 		.4byte	0x579
  930 0554 13       		.uleb128 0x13
- 931 0555 0E050000 		.4byte	.LASF80
+ 931 0555 DA040000 		.4byte	.LASF80
  932 0559 00       		.sleb128 0
  933 055a 13       		.uleb128 0x13
  934 055b 9F020000 		.4byte	.LASF81
  935 055f 01       		.sleb128 1
  936 0560 13       		.uleb128 0x13
- 937 0561 E8040000 		.4byte	.LASF82
+ 937 0561 B4040000 		.4byte	.LASF82
  938 0565 02       		.sleb128 2
  939 0566 13       		.uleb128 0x13
  940 0567 DA020000 		.4byte	.LASF83
@@ -1223,7 +1223,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  943 056d 1D000000 		.4byte	.LASF84
  944 0571 04       		.sleb128 4
  945 0572 13       		.uleb128 0x13
- 946 0573 6F050000 		.4byte	.LASF85
+ 946 0573 75050000 		.4byte	.LASF85
  947 0577 05       		.sleb128 5
  948 0578 00       		.byte	0
  949 0579 0A       		.uleb128 0xa
@@ -1241,7 +1241,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  961 0594 9C       		.byte	0x9c
  962 0595 A5050000 		.4byte	0x5a5
  963 0599 15       		.uleb128 0x15
- 964 059a 66050000 		.4byte	.LASF93
+ 964 059a 6C050000 		.4byte	.LASF93
  965 059e 01       		.byte	0x1
  966 059f 44       		.byte	0x44
  967 05a0 A5050000 		.4byte	0x5a5
@@ -1258,14 +1258,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  978 05b7 83000000 		.4byte	0x83
  979 05bb 00000000 		.4byte	.LFB2
  980 05bf F0000000 		.4byte	.LFE2-.LFB2
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 22
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 22
 
 
  981 05c3 01       		.uleb128 0x1
  982 05c4 9C       		.byte	0x9c
  983 05c5 6B060000 		.4byte	0x66b
  984 05c9 18       		.uleb128 0x18
- 985 05ca A4040000 		.4byte	.LASF87
+ 985 05ca 70040000 		.4byte	.LASF87
  986 05ce 01       		.byte	0x1
  987 05cf 75       		.byte	0x75
  988 05d0 6B000000 		.4byte	0x6b
@@ -1295,13 +1295,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1012 060c 79050000 		.4byte	0x579
  1013 0610 D6000000 		.4byte	.LLST4
  1014 0614 18       		.uleb128 0x18
- 1015 0615 6D040000 		.4byte	.LASF92
+ 1015 0615 39040000 		.4byte	.LASF92
  1016 0619 01       		.byte	0x1
  1017 061a 7A       		.byte	0x7a
  1018 061b 83000000 		.4byte	0x83
  1019 061f E9000000 		.4byte	.LLST5
  1020 0623 15       		.uleb128 0x15
- 1021 0624 66050000 		.4byte	.LASF93
+ 1021 0624 6C050000 		.4byte	.LASF93
  1022 0628 01       		.byte	0x1
  1023 0629 7C       		.byte	0x7c
  1024 062a A5050000 		.4byte	0x5a5
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1035 0647 4E000000 		.4byte	.LVL17
  1036 064b AF060000 		.4byte	0x6af
  1037 064f 19       		.uleb128 0x19
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 23
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 23
 
 
  1038 0650 68000000 		.4byte	.LVL18
@@ -1336,7 +1336,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1050 0671 16       		.uleb128 0x16
  1051 0672 94020000 		.4byte	0x294
  1052 0676 1A       		.uleb128 0x1a
- 1053 0677 36050000 		.4byte	.LASF95
+ 1053 0677 02050000 		.4byte	.LASF95
  1054 067b 01       		.byte	0x1
  1055 067c 33       		.byte	0x33
  1056 067d 83000000 		.4byte	0x83
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1092 0000 01       		.uleb128 0x1
  1093 0001 11       		.uleb128 0x11
  1094 0002 01       		.byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 24
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 24
 
 
  1095 0003 25       		.uleb128 0x25
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1149 0039 0B       		.uleb128 0xb
  1150 003a 0B       		.uleb128 0xb
  1151 003b 00       		.byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 25
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 25
 
 
  1152 003c 00       		.byte	0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1206 0072 3B       		.uleb128 0x3b
  1207 0073 0B       		.uleb128 0xb
  1208 0074 49       		.uleb128 0x49
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 26
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 26
 
 
  1209 0075 13       		.uleb128 0x13
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1263 00ab 05       		.uleb128 0x5
  1264 00ac 01       		.uleb128 0x1
  1265 00ad 13       		.uleb128 0x13
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 27
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 27
 
 
  1266 00ae 00       		.byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1320 00e4 2E       		.uleb128 0x2e
  1321 00e5 01       		.byte	0x1
  1322 00e6 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 28
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 28
 
 
  1323 00e7 19       		.uleb128 0x19
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1377 011e 49       		.uleb128 0x49
  1378 011f 13       		.uleb128 0x13
  1379 0120 11       		.uleb128 0x11
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 29
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 29
 
 
  1380 0121 01       		.uleb128 0x1
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1434 015a 0E       		.uleb128 0xe
  1435 015b 3A       		.uleb128 0x3a
  1436 015c 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 30
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 30
 
 
  1437 015d 3B       		.uleb128 0x3b
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1491 0193 05       		.uleb128 0x5
  1492 0194 00       		.byte	0
  1493 0195 49       		.uleb128 0x49
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 31
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 31
 
 
  1494 0196 13       		.uleb128 0x13
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1548 007d 9F       		.byte	0x9f
  1549 007e 2A000000 		.4byte	.LVL9
  1550 0082 2D000000 		.4byte	.LVL10-1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 32
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 32
 
 
  1551 0086 0100     		.2byte	0x1
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1605 0110 DE000000 		.4byte	.LVL30
  1606 0114 0100     		.2byte	0x1
  1607 0116 55       		.byte	0x55
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 33
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 33
 
 
  1608 0117 DE000000 		.4byte	.LVL30
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1651      685F5455 
  1651      5F434D44 
  1651      5F52554E 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 34
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 34
 
 
  1652              	.LASF7:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1678              	.LASF35:
  1679 00db 62757474 		.ascii	"button5\000"
  1679      6F6E3500 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 35
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 35
 
 
  1680              	.LASF36:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1707      00
  1708              	.LASF11:
  1709 0190 75696E74 		.ascii	"uint32\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 36
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 36
 
 
  1709      333200
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1734              	.LASF25:
  1735 0230 6C6F7742 		.ascii	"lowBslnRst\000"
  1735      736C6E52 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 37
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 37
 
 
  1735      737400
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1759      5F434D44 
  1759      5F524553 
  1760              	.LASF103:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 38
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 38
 
 
  1761 02f5 6B65795F 		.ascii	"key_touch_TuInitialize\000"
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1784              	.LASF42:
  1785 03a3 6B65795F 		.ascii	"key_touch_RAM_WD_LIST_STRUCT\000"
  1785      746F7563 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 39
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 39
 
 
  1785      685F5241 
@@ -2290,184 +2290,185 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 1
  1787      685F464C 
  1787      4153485F 
  1787      57445F53 
- 1788              	.LASF102:
- 1789 03da 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0\\TOUCH_TEST\\AYBR3000.c"
- 1789      59425233 
- 1789      3030305C 
- 1789      41594252 
- 1789      33303030 
- 1790 0409 7964736E 		.ascii	"ydsn\000"
- 1790      00
- 1791              	.LASF52:
- 1792 040e 74756E65 		.ascii	"tunerCmd\000"
- 1792      72436D64 
- 1792      00
- 1793              	.LASF12:
- 1794 0417 666C6F61 		.ascii	"float\000"
- 1794      7400
- 1795              	.LASF26:
- 1796 041d 62736C6E 		.ascii	"bslnCoeff\000"
- 1796      436F6566 
- 1796      6600
- 1797              	.LASF1:
- 1798 0427 756E7369 		.ascii	"unsigned char\000"
- 1798      676E6564 
- 1798      20636861 
- 1798      7200
- 1799              	.LASF2:
- 1800 0435 73686F72 		.ascii	"short int\000"
- 1800      7420696E 
- 1800      7400
- 1801              	.LASF71:
- 1802 043f 70747232 		.ascii	"ptr2FltrHistory\000"
- 1802      466C7472 
- 1802      48697374 
- 1802      6F727900 
- 1803              	.LASF49:
- 1804 044f 6B65795F 		.ascii	"key_touch_RAM_SNS_LIST_STRUCT\000"
- 1804      746F7563 
- 1804      685F5241 
- 1804      4D5F534E 
- 1804      535F4C49 
- 1805              	.LASF92:
- 1806 046d 74756E65 		.ascii	"tunerStatus\000"
- 1806      72537461 
- 1806      74757300 
- 1807              	.LASF19:
- 1808 0479 7265736F 		.ascii	"resolution\000"
- 1808      6C757469 
- 1808      6F6E00
- 1809              	.LASF61:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 40
+ 1788              	.LASF52:
+ 1789 03da 74756E65 		.ascii	"tunerCmd\000"
+ 1789      72436D64 
+ 1789      00
+ 1790              	.LASF12:
+ 1791 03e3 666C6F61 		.ascii	"float\000"
+ 1791      7400
+ 1792              	.LASF26:
+ 1793 03e9 62736C6E 		.ascii	"bslnCoeff\000"
+ 1793      436F6566 
+ 1793      6600
+ 1794              	.LASF1:
+ 1795 03f3 756E7369 		.ascii	"unsigned char\000"
+ 1795      676E6564 
+ 1795      20636861 
+ 1795      7200
+ 1796              	.LASF2:
+ 1797 0401 73686F72 		.ascii	"short int\000"
+ 1797      7420696E 
+ 1797      7400
+ 1798              	.LASF71:
+ 1799 040b 70747232 		.ascii	"ptr2FltrHistory\000"
+ 1799      466C7472 
+ 1799      48697374 
+ 1799      6F727900 
+ 1800              	.LASF49:
+ 1801 041b 6B65795F 		.ascii	"key_touch_RAM_SNS_LIST_STRUCT\000"
+ 1801      746F7563 
+ 1801      685F5241 
+ 1801      4D5F534E 
+ 1801      535F4C49 
+ 1802              	.LASF92:
+ 1803 0439 74756E65 		.ascii	"tunerStatus\000"
+ 1803      72537461 
+ 1803      74757300 
+ 1804              	.LASF19:
+ 1805 0445 7265736F 		.ascii	"resolution\000"
+ 1805      6C757469 
+ 1805      6F6E00
+ 1806              	.LASF61:
+ 1807 0450 77646774 		.ascii	"wdgtList\000"
+ 1807      4C697374 
+ 1807      00
+ 1808              	.LASF40:
+ 1809 0459 62757474 		.ascii	"button10\000"
+ 1809      6F6E3130 
+ 1809      00
+ 1810              	.LASF41:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 40
 
 
- 1810 0484 77646774 		.ascii	"wdgtList\000"
- 1810      4C697374 
- 1810      00
- 1811              	.LASF40:
- 1812 048d 62757474 		.ascii	"button10\000"
- 1812      6F6E3130 
- 1812      00
- 1813              	.LASF41:
- 1814 0496 62757474 		.ascii	"button11\000"
- 1814      6F6E3131 
- 1814      00
- 1815              	.LASF14:
- 1816 049f 63686172 		.ascii	"char\000"
- 1816      00
- 1817              	.LASF87:
- 1818 04a4 63726974 		.ascii	"critSect\000"
- 1818      53656374 
- 1818      00
- 1819              	.LASF24:
- 1820 04ad 6F6E4465 		.ascii	"onDebounce\000"
- 1820      626F756E 
- 1820      636500
- 1821              	.LASF48:
- 1822 04b8 6B65795F 		.ascii	"key_touch_RAM_SNS_STRUCT\000"
- 1822      746F7563 
- 1822      685F5241 
- 1822      4D5F534E 
- 1822      535F5354 
- 1823              	.LASF47:
- 1824 04d1 69646163 		.ascii	"idacComp\000"
- 1824      436F6D70 
- 1824      00
- 1825              	.LASF46:
- 1826 04da 6E656742 		.ascii	"negBslnRstCnt\000"
- 1826      736C6E52 
- 1826      7374436E 
- 1826      7400
- 1827              	.LASF82:
- 1828 04e8 6B65795F 		.ascii	"key_touch_TU_CMD_RESUME_E\000"
- 1828      746F7563 
- 1828      685F5455 
- 1828      5F434D44 
- 1828      5F524553 
- 1829              	.LASF74:
- 1830 0502 746F7461 		.ascii	"totalNumSns\000"
- 1830      6C4E756D 
- 1830      536E7300 
- 1831              	.LASF80:
- 1832 050e 6B65795F 		.ascii	"key_touch_TU_CMD_NONE_E\000"
- 1832      746F7563 
- 1832      685F5455 
- 1832      5F434D44 
- 1832      5F4E4F4E 
- 1833              	.LASF72:
- 1834 0526 70747232 		.ascii	"ptr2DebounceArr\000"
- 1834      4465626F 
- 1834      756E6365 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 41
+ 1811 0462 62757474 		.ascii	"button11\000"
+ 1811      6F6E3131 
+ 1811      00
+ 1812              	.LASF14:
+ 1813 046b 63686172 		.ascii	"char\000"
+ 1813      00
+ 1814              	.LASF87:
+ 1815 0470 63726974 		.ascii	"critSect\000"
+ 1815      53656374 
+ 1815      00
+ 1816              	.LASF24:
+ 1817 0479 6F6E4465 		.ascii	"onDebounce\000"
+ 1817      626F756E 
+ 1817      636500
+ 1818              	.LASF48:
+ 1819 0484 6B65795F 		.ascii	"key_touch_RAM_SNS_STRUCT\000"
+ 1819      746F7563 
+ 1819      685F5241 
+ 1819      4D5F534E 
+ 1819      535F5354 
+ 1820              	.LASF47:
+ 1821 049d 69646163 		.ascii	"idacComp\000"
+ 1821      436F6D70 
+ 1821      00
+ 1822              	.LASF46:
+ 1823 04a6 6E656742 		.ascii	"negBslnRstCnt\000"
+ 1823      736C6E52 
+ 1823      7374436E 
+ 1823      7400
+ 1824              	.LASF82:
+ 1825 04b4 6B65795F 		.ascii	"key_touch_TU_CMD_RESUME_E\000"
+ 1825      746F7563 
+ 1825      685F5455 
+ 1825      5F434D44 
+ 1825      5F524553 
+ 1826              	.LASF74:
+ 1827 04ce 746F7461 		.ascii	"totalNumSns\000"
+ 1827      6C4E756D 
+ 1827      536E7300 
+ 1828              	.LASF80:
+ 1829 04da 6B65795F 		.ascii	"key_touch_TU_CMD_NONE_E\000"
+ 1829      746F7563 
+ 1829      685F5455 
+ 1829      5F434D44 
+ 1829      5F4E4F4E 
+ 1830              	.LASF72:
+ 1831 04f2 70747232 		.ascii	"ptr2DebounceArr\000"
+ 1831      4465626F 
+ 1831      756E6365 
+ 1831      41727200 
+ 1832              	.LASF95:
+ 1833 0502 74756E65 		.ascii	"tunerFsm\000"
+ 1833      7246736D 
+ 1833      00
+ 1834              	.LASF54:
+ 1835 050b 73746174 		.ascii	"status\000"
+ 1835      757300
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 41
 
 
- 1834      41727200 
- 1835              	.LASF95:
- 1836 0536 74756E65 		.ascii	"tunerFsm\000"
- 1836      7246736D 
- 1836      00
- 1837              	.LASF54:
- 1838 053f 73746174 		.ascii	"status\000"
- 1838      757300
- 1839              	.LASF78:
- 1840 0546 77646774 		.ascii	"wdgtArray\000"
- 1840      41727261 
- 1840      7900
+ 1836              	.LASF78:
+ 1837 0512 77646774 		.ascii	"wdgtArray\000"
+ 1837      41727261 
+ 1837      7900
+ 1838              	.LASF102:
+ 1839 051c 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0_lable\\TOUCH_TEST\\AYBR"
+ 1839      59425233 
+ 1839      3030305C 
+ 1839      41594252 
+ 1839      33303030 
+ 1840 054b 33303030 		.ascii	"3000.cydsn\000"
+ 1840      2E637964 
+ 1840      736E00
  1841              	.LASF28:
- 1842 0550 736E7343 		.ascii	"snsClkSource\000"
+ 1842 0556 736E7343 		.ascii	"snsClkSource\000"
  1842      6C6B536F 
  1842      75726365 
  1842      00
  1843              	.LASF15:
- 1844 055d 63797374 		.ascii	"cystatus\000"
+ 1844 0563 63797374 		.ascii	"cystatus\000"
  1844      61747573 
  1844      00
  1845              	.LASF93:
- 1846 0566 70747244 		.ascii	"ptrDsRam\000"
+ 1846 056c 70747244 		.ascii	"ptrDsRam\000"
  1846      7352616D 
  1846      00
  1847              	.LASF85:
- 1848 056f 6B65795F 		.ascii	"key_touch_TU_CMD_PING_E\000"
+ 1848 0575 6B65795F 		.ascii	"key_touch_TU_CMD_PING_E\000"
  1848      746F7563 
  1848      685F5455 
  1848      5F434D44 
  1848      5F50494E 
  1849              	.LASF20:
- 1850 0587 66696E67 		.ascii	"fingerTh\000"
+ 1850 058d 66696E67 		.ascii	"fingerTh\000"
  1850      65725468 
  1850      00
  1851              	.LASF79:
- 1852 0590 6B65795F 		.ascii	"key_touch_FLASH_STRUCT\000"
+ 1852 0596 6B65795F 		.ascii	"key_touch_FLASH_STRUCT\000"
  1852      746F7563 
  1852      685F464C 
  1852      4153485F 
  1852      53545255 
  1853              	.LASF65:
- 1854 05a7 736E7254 		.ascii	"snrTestScanCounter\000"
+ 1854 05ad 736E7254 		.ascii	"snrTestScanCounter\000"
  1854      65737453 
  1854      63616E43 
  1854      6F756E74 
  1854      657200
  1855              	.LASF100:
- 1856 05ba 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1856 05c0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  1856      4320342E 
  1856      392E3320 
  1856      32303135 
  1856      30333033 
- 1857 05ed 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 1857 05f3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
  1857      20726576 
  1857      6973696F 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccqLBHCu.s 			page 42
+
+
  1857      6E203232 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccZGitxV.s 			page 42
-
-
  1857      31323230 
- 1858 0620 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1858 0626 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
  1858      67202D66 
  1858      66756E63 
  1858      74696F6E 
  1858      2D736563 
  1859              	.LASF21:
- 1860 064c 6E6F6973 		.ascii	"noiseTh\000"
+ 1860 0652 6E6F6973 		.ascii	"noiseTh\000"
  1860      65546800 
  1861              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

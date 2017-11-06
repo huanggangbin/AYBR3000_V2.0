@@ -106,13 +106,13 @@ typedef enum
 #define SCK_PIN_LOW()                  (GPIOC->ODR &= ~GPIO_Pin_7)
 
 //数据发送引脚
-#define SDIO_DDR_OUT()              (GPIO_Init(GPIOC, GPIO_Pin_2, GPIO_Mode_Out_PP_High_Fast))
-#define SDIO_PIN_HIGH()             (GPIOC->ODR |= GPIO_Pin_2)
-#define SDIO_PIN_LOW()              (GPIOC->ODR &= ~GPIO_Pin_2)
+#define SDIO_DDR_OUT()              (GPIO_Init(GPIOC, GPIO_Pin_3, GPIO_Mode_Out_PP_High_Fast))
+#define SDIO_PIN_HIGH()             (GPIOC->ODR |= GPIO_Pin_3)
+#define SDIO_PIN_LOW()              (GPIOC->ODR &= ~GPIO_Pin_3)
 
 //数据接收引脚
-#define SDIO_DDR_IN()               (GPIO_Init(GPIOC, GPIO_Pin_2, GPIO_Mode_In_PU_No_IT))
-#define SDIO_IN()                   ((GPIOC->IDR)&GPIO_Pin_2)
+#define SDIO_DDR_IN()               (GPIO_Init(GPIOC, GPIO_Pin_3, GPIO_Mode_In_PU_No_IT))
+#define SDIO_IN()                   ((GPIOC->IDR)&GPIO_Pin_3)
     
 // A7105收发,软件buffer,长度设定
 

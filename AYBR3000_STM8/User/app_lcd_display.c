@@ -35,7 +35,6 @@ void app_lcd_display_process(void)
 {
     App_lcd_index_icon i;
     
-    
     for (i = INDEX_ICON_QIANG; i < INDEX_ICON_NUMBER; i++)
     {
         switch(icons[i].state)
@@ -123,7 +122,6 @@ static void app_lcd_digit_tube_blink(App_lcd_index_digit_tube i)
             digit_tubes[i].blink_state = APP_LCD_BLINK_OFF;
             timing_set_counts(&digit_tubes[i].blink_timing, digit_tubes[i].blink_half_period);
             digit_tubes[i].control_func(VALUE_NULL);
-            
             break;
         case APP_LCD_BLINK_ON: 
             if (timing_count_end(&digit_tubes[i].blink_timing))
@@ -142,6 +140,5 @@ static void app_lcd_digit_tube_blink(App_lcd_index_digit_tube i)
             }
             break;
     }
-    
 }
 

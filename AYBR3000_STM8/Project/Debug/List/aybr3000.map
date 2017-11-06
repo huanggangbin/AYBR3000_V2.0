@@ -1,66 +1,66 @@
 ###############################################################################
 #
-# IAR ELF Linker V3.10.1.201 for STM8                     06/Nov/2017  13:59:54
+# IAR ELF Linker V3.10.1.201 for STM8                     06/Nov/2017  19:39:20
 # Copyright 2010-2017 IAR Systems AB.
 #
 #    Output file  =  
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Exe\aybr3000.out
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Exe\aybr3000.out
 #    Map file     =  
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\List\aybr3000.map
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\List\aybr3000.map
 #    Command line =  
-#        -f C:\Users\Administrator\AppData\Local\Temp\EW6D42.tmp
-#        (D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\A7105_driver.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\A7105_firmware_lib.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_key.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_lcd_display.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_lcd_display_config.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_power.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_protocol.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_time.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_work.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\datalink_protocol.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\LCD_driver.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\LCD_firmware.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\main.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\main_control.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\RTC_driver.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\simple_protocol.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_adc.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_aes.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_beep.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_clk.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_comp.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_dac.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_dma.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_exti.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_flash.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_gpio.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_i2c.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_irtim.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_it.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_itc.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_iwdg.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_lcd.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_pwr.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_rst.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_rtc.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_spi.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_syscfg.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim1.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim2.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim3.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim4.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim5.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_usart.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_wfe.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_wwdg.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\system.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\task_manager.o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\timing.o
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW2822.tmp
+#        (D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\A7105_driver.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\A7105_firmware_lib.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\app_key.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\app_lcd_display.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\app_lcd_display_config.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\app_power.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\app_protocol.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\app_time.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\app_work.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\datalink_protocol.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\LCD_driver.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\LCD_firmware.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\main.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\main_control.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\RTC_driver.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\simple_protocol.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_adc.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_aes.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_beep.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_clk.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_comp.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_dac.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_dma.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_exti.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_flash.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_gpio.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_i2c.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_irtim.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_it.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_itc.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_iwdg.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_lcd.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_pwr.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_rst.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_rtc.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_spi.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_syscfg.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim1.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim2.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim3.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim4.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim5.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_usart.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_wfe.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_wwdg.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\system.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\task_manager.o
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj\timing.o
 #        --redirect _Printf=_PrintfSmall --redirect _Scanf=_ScanfSmall -o
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Exe\aybr3000.out
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Exe\aybr3000.out
 #        --map
-#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\List\aybr3000.map
+#        D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\List\aybr3000.map
 #        --config "D:\Program Files (x86)\IAR Systems\Embedded Workbench
 #        8.0\stm8\config\lnkstm8l052c6.icf" --config_def _CSTACK_SIZE=0x100
 #        --config_def _HEAP_SIZE=0x100 --entry __iar_program_start --debug_lib)
@@ -354,7 +354,7 @@ Copy (__iar_copy_init2)
 
     Module                    ro code  ro data  rw data
     ------                    -------  -------  -------
-D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj: [1]
+D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj: [1]
     A7105_driver.o                165
     A7105_firmware_lib.o          674       55        1
     LCD_driver.o                  484      230      356
@@ -729,7 +729,7 @@ value_define            0x0000a0   0x54  Data  Gb  LCD_driver.o [1]
 work_mode               0x00041d    0x1  Data  Lc  app_work.o [1]
 
 
-[1] = D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj
+[1] = D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\Debug\Obj
 [2] = command line
 [3] = dbgstm8smd.a
 [4] = dlstm8smn.a
