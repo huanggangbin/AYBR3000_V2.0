@@ -46,10 +46,6 @@ Archive member included because of file (symbol)
                               .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o) (key_touch_CSDPostSingleScan)
 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
                               .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o) (CySysFlashSetWaitCycles)
-D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
-                              .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o) (SmartSense_TunePrescalers)
-D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
-                              .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o) (SmartSense_UpdateThresholds)
 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
                               .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o) (__aeabi_uidiv)
 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
@@ -71,7 +67,7 @@ Allocating common symbols
 Common symbol       size              file
 
 EZI2C_offsetBuf1    0x2               .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
-key_touch_dsRam     0x17c             .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+key_touch_dsRam     0x134             .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
 EZI2C_indexBuf1     0x2               .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
 EZI2C_fsmState      0x1               .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
 EZI2C_protectBuf1   0x2               .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
@@ -153,11 +149,11 @@ Discarded input sections
  .text.key_touch_Resume
                 0x00000000       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
  .text.key_touch_ProcessWidget
-                0x00000000       0x54 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
+                0x00000000       0x58 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
  .text.key_touch_ProcessWidgetExt
-                0x00000000       0x54 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
+                0x00000000       0x60 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
  .text.key_touch_ProcessSensorExt
-                0x00000000       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
+                0x00000000       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
  .text.key_touch_Sleep
                 0x00000000        0x4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
  .text.key_touch_Wakeup
@@ -166,7 +162,7 @@ Discarded input sections
  .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
  .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
  .text.key_touch_DpProcessCsdSensorRawCountsExt
-                0x00000000       0x50 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
  .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
  .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
  .text.DsParseParamId
@@ -178,7 +174,7 @@ Discarded input sections
  .text.key_touch_IsAnyWidgetActive
                 0x00000000       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
  .text.key_touch_IsSensorActive
-                0x00000000       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
  .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
  .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
  .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
@@ -186,31 +182,25 @@ Discarded input sections
  .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
  .text.key_touch_FtInitializeBaseline
                 0x00000000       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
- .text.key_touch_RunNoiseEnvelope
-                0x00000000       0x2c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
- .text.key_touch_InitializeNoiseEnvelope
-                0x00000000       0x2c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
  .text.key_touch_UpdateSensorBaseline
-                0x00000000       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
- .text.key_touch_UpdateWidgetBaseline
                 0x00000000       0x2c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+ .text.key_touch_UpdateWidgetBaseline
+                0x00000000       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
  .text.key_touch_UpdateAllBaselines
                 0x00000000       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
  .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
  .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
  .text.key_touch_SetPinState
-                0x00000000       0x8c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x00000000       0x90 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
  .text.key_touch_SsIsrInitialize
                 0x00000000        0x8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+ .text.key_touch_SsSetSnsClockDivider
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
  .text.key_touch_SsSetClockDividers
                 0x00000000       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
- .text.key_touch_CalibrateWidget
-                0x00000000       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
- .text.key_touch_CalibrateAllWidgets
-                0x00000000       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
  .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
  .text.key_touch_SsCSDDisconnectSnsExt
-                0x00000000       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
  .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
  .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
  .text.Timer_1_Stop
@@ -525,12 +515,6 @@ Discarded input sections
                 0x00000000       0xf4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
  .text.CySysSFlashWriteUserRow
                 0x00000000       0xec .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
- .text          0x00000000        0x0 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .data          0x00000000        0x0 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .bss           0x00000000        0x0 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .text          0x00000000        0x0 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
- .data          0x00000000        0x0 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
- .bss           0x00000000        0x0 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
  .data          0x00000000        0x0 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
  .bss           0x00000000        0x0 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
  .data          0x00000000        0x0 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
@@ -611,7 +595,7 @@ END GROUP
                 0x00000000                CY_APPL_LOADABLE = 0x0
                 0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
                 0x00000000                CY_APP_FOR_STACK_AND_COPIER = 0x0
-                0x20000450                PROVIDE (__cy_heap_start, _end)
+                0x20000378                PROVIDE (__cy_heap_start, _end)
                 0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
                 0x20000800                PROVIDE (__cy_stack, (ORIGIN (ram) + 0x800))
                 0x20000600                PROVIDE (__cy_heap_end, (__cy_stack - 0x200))
@@ -624,7 +608,7 @@ END GROUP
                 0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
                 0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
 
-.text           0x00000000     0x2f72
+.text           0x00000000     0x2c6e
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -741,330 +725,308 @@ END GROUP
  .text.key_touch_DpInitialize
                 0x00000ff8       0x5c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
                 0x00000ff8                key_touch_DpInitialize
- .text.key_touch_DpUpdateThresholds
-                0x00001054       0x34 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
-                0x00001054                key_touch_DpUpdateThresholds
  .text.key_touch_DpUpdateDifferences
-                0x00001088       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
-                0x00001088                key_touch_DpUpdateDifferences
+                0x00001054       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+                0x00001054                key_touch_DpUpdateDifferences
  .text.key_touch_DpProcessCsdWidgetRawCounts
-                0x0000109c       0x5c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
-                0x0000109c                key_touch_DpProcessCsdWidgetRawCounts
+                0x00001068       0x3c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+                0x00001068                key_touch_DpProcessCsdWidgetRawCounts
  .text.key_touch_DpProcessButton
-                0x000010f8       0x64 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
-                0x000010f8                key_touch_DpProcessButton
+                0x000010a4       0x64 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+                0x000010a4                key_touch_DpProcessButton
  .text.key_touch_DpProcessCsdWidgetStatus
-                0x0000115c       0x58 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
-                0x0000115c                key_touch_DpProcessCsdWidgetStatus
+                0x00001108       0x58 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+                0x00001108                key_touch_DpProcessCsdWidgetStatus
  .text.key_touch_DsInitialize
-                0x000011b4       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
-                0x000011b4                key_touch_DsInitialize
+                0x00001160       0x78 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+                0x00001160                key_touch_DsInitialize
  .text.key_touch_IsWidgetActive
-                0x00001224       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
-                0x00001224                key_touch_IsWidgetActive
+                0x000011d8       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+                0x000011d8                key_touch_IsWidgetActive
  .text.key_touch_TuInitialize
-                0x00001248       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
-                0x00001248                key_touch_TuInitialize
+                0x000011fc       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+                0x000011fc                key_touch_TuInitialize
  .text.key_touch_RunTuner
-                0x0000125c       0xe8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
-                0x0000125c                key_touch_RunTuner
+                0x00001210       0xf0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+                0x00001210                key_touch_RunTuner
  .text.key_touch_FtInitialize
-                0x00001344       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
-                0x00001344                key_touch_FtInitialize
+                0x00001300       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                0x00001300                key_touch_FtInitialize
  .text.key_touch_FtInitializeBaselineChannel
-                0x0000138c       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
-                0x0000138c                key_touch_FtInitializeBaselineChannel
+                0x00001328       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                0x00001328                key_touch_FtInitializeBaselineChannel
  .text.key_touch_InitializeSensorBaseline
-                0x000013a8       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
-                0x000013a8                key_touch_InitializeSensorBaseline
+                0x00001344       0x3c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                0x00001344                key_touch_InitializeSensorBaseline
  .text.key_touch_InitializeWidgetBaseline
-                0x000013d8       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
-                0x000013d8                key_touch_InitializeWidgetBaseline
+                0x00001380       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                0x00001380                key_touch_InitializeWidgetBaseline
  .text.key_touch_InitializeAllBaselines
-                0x000013fc       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
-                0x000013fc                key_touch_InitializeAllBaselines
+                0x000013a8       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                0x000013a8                key_touch_InitializeAllBaselines
  .text.key_touch_FtIIR1stOrder
-                0x00001414       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
-                0x00001414                key_touch_FtIIR1stOrder
+                0x000013c0       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                0x000013c0                key_touch_FtIIR1stOrder
  .text.key_touch_FtUpdateBaseline
-                0x00001428       0x94 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
-                0x00001428                key_touch_FtUpdateBaseline
- .text.key_touch_SsSetDirectClockMode
-                0x000014bc       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x000013d4       0x94 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                0x000013d4                key_touch_FtUpdateBaseline
  .text.key_touch_IsBusy
-                0x000014d0       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x000014d0                key_touch_IsBusy
+                0x00001468       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x00001468                key_touch_IsBusy
  .text.key_touch_SetupWidget
-                0x000014e0       0x44 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x000014e0                key_touch_SetupWidget
+                0x00001478       0x44 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x00001478                key_touch_SetupWidget
  .text.key_touch_Scan
-                0x00001524       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x00001524                key_touch_Scan
+                0x000014bc       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x000014bc                key_touch_Scan
  .text.key_touch_ScanAllWidgets
-                0x00001540       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x00001540                key_touch_ScanAllWidgets
+                0x000014d8       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x000014d8                key_touch_ScanAllWidgets
  .text.key_touch_SsPostAllWidgetsScan
-                0x00001588       0x68 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x00001588                key_touch_SsPostAllWidgetsScan
+                0x00001520       0x68 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x00001520                key_touch_SsPostAllWidgetsScan
  .text.key_touch_SsSetModClkClockDivider
-                0x000015f0       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x000015f0                key_touch_SsSetModClkClockDivider
- .text.key_touch_SsSetSnsClockDivider
-                0x00001620       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x00001620                key_touch_SsSetSnsClockDivider
+                0x00001588       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x00001588                key_touch_SsSetModClkClockDivider
+ .text.key_touch_CalibrateWidget
+                0x000015b8       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x000015b8                key_touch_CalibrateWidget
+ .text.key_touch_CalibrateAllWidgets
+                0x000015d4       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x000015d4                key_touch_CalibrateAllWidgets
  .text.key_touch_SsClearCSDSensors
-                0x00001634       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x00001634                key_touch_SsClearCSDSensors
+                0x000015f0       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x000015f0                key_touch_SsClearCSDSensors
  .text.key_touch_SsCSDGetColSnsClkDivider
-                0x0000166c       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x0000166c                key_touch_SsCSDGetColSnsClkDivider
+                0x00001630        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x00001630                key_touch_SsCSDGetColSnsClkDivider
  .text.key_touch_SsCSDCalcPrsSize
-                0x0000167c       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x0000167c                key_touch_SsCSDCalcPrsSize
+                0x0000163c       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x0000163c                key_touch_SsCSDCalcPrsSize
  .text.key_touch_SsSetWidgetSenseClkSrc
-                0x000016a4       0xd8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
- .text.key_touch_SsAutoTune
-                0x0000177c      0x140 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x0000177c                key_touch_SsAutoTune
+                0x00001664       0xd8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
  .text.key_touch_SsInitializeSourceSenseClk
-                0x000018bc       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x000018bc                key_touch_SsInitializeSourceSenseClk
+                0x0000173c       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x0000173c                key_touch_SsInitializeSourceSenseClk
  .text.key_touch_SsInitialize
-                0x000018dc       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x000018dc                key_touch_SsInitialize
+                0x00001760       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x00001760                key_touch_SsInitialize
  .text.key_touch_SsCSDSetFilterDelay
-                0x000018ec       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001770       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
  .text.key_touch_SsCSDConfigIDACs
-                0x00001900       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001784       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
  .text.key_touch_SsCSDRestoreIdacMode
-                0x0000191c       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x000017a0       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
  .text.key_touch_SsCSDCalibrateCheck
-                0x0000194c       0x44 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x000017d0       0x44 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
  .text.key_touch_SsCSDSetModeSnsClockDivider
-                0x00001990       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001990                key_touch_SsCSDSetModeSnsClockDivider
+                0x00001814       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001814                key_touch_SsCSDSetModeSnsClockDivider
  .text.key_touch_SsCSDInitialize
-                0x000019a0      0x120 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x000019a0                key_touch_SsCSDInitialize
+                0x00001824      0x120 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001824                key_touch_SsCSDInitialize
  .text.key_touch_SsCSDSetUpIdacs
-                0x00001ac0       0x44 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001ac0                key_touch_SsCSDSetUpIdacs
+                0x00001944       0x44 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001944                key_touch_SsCSDSetUpIdacs
  .text.key_touch_SsCSDGetNumberOfConversions
-                0x00001b04       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001b04                key_touch_SsCSDGetNumberOfConversions
+                0x00001988       0x34 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001988                key_touch_SsCSDGetNumberOfConversions
  .text.key_touch_SsCSDConfigClock
-                0x00001b44       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001b44                key_touch_SsCSDConfigClock
+                0x000019bc       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x000019bc                key_touch_SsCSDConfigClock
  .text.key_touch_SsCSDCalculateScanDuration
-                0x00001b8c       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001b8c                key_touch_SsCSDCalculateScanDuration
+                0x000019fc       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x000019fc                key_touch_SsCSDCalculateScanDuration
  .text.key_touch_SsCSDStartSample
-                0x00001ba8      0x10c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001ba8                key_touch_SsCSDStartSample
+                0x00001a20      0x10c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001a20                key_touch_SsCSDStartSample
  .text.key_touch_CSDScanExt
-                0x00001cb4       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001cb4                key_touch_CSDScanExt
+                0x00001b2c       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001b2c                key_touch_CSDScanExt
  .text.key_touch_CSDConnectSns
-                0x00001cd0       0x34 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001cd0                key_touch_CSDConnectSns
+                0x00001b48       0x34 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001b48                key_touch_CSDConnectSns
  .text.key_touch_CSDScan
-                0x00001d04       0x6c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001d04                key_touch_CSDScan
+                0x00001b7c       0x78 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001b7c                key_touch_CSDScan
  .text.key_touch_SsCSDConnectSensorExt
-                0x00001d70       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001d70                key_touch_SsCSDConnectSensorExt
+                0x00001bf4       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001bf4                key_touch_SsCSDConnectSensorExt
  .text.key_touch_CSDDisconnectSns
-                0x00001d94       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001d94                key_touch_CSDDisconnectSns
+                0x00001c1c       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001c1c                key_touch_CSDDisconnectSns
  .text.key_touch_SsCSDElectrodeCheck
-                0x00001dd4       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001dd4                key_touch_SsCSDElectrodeCheck
+                0x00001c5c       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001c5c                key_touch_SsCSDElectrodeCheck
  .text.key_touch_CSDSetupWidget
-                0x00001df8       0x50 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001df8                key_touch_CSDSetupWidget
+                0x00001c80       0x58 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001c80                key_touch_CSDSetupWidget
  .text.key_touch_CSDSetupWidgetExt
-                0x00001e48       0x68 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001e48                key_touch_CSDSetupWidgetExt
+                0x00001cd8       0x6c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001cd8                key_touch_CSDSetupWidgetExt
  .text.key_touch_SsCSDSetSingleIdacMode
-                0x00001eb0       0x2c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001eb0                key_touch_SsCSDSetSingleIdacMode
+                0x00001d44       0x2c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001d44                key_touch_SsCSDSetSingleIdacMode
  .text.key_touch_SsCSDCalibrateOneSensor
-                0x00001edc       0xe0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001d70       0xe8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
  .text.key_touch_CSDCalibrateWidget
-                0x00001fbc       0xf8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                0x00001fbc                key_touch_CSDCalibrateWidget
+                0x00001e58      0x108 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x00001e58                key_touch_CSDCalibrateWidget
  .text.Timer_1_WriteCounter
-                0x000020b4       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                0x000020b4                Timer_1_WriteCounter
+                0x00001f60       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x00001f60                Timer_1_WriteCounter
  .text.Timer_1_WritePeriod
-                0x000020c4       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                0x000020c4                Timer_1_WritePeriod
+                0x00001f70       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x00001f70                Timer_1_WritePeriod
  .text.Timer_1_TriggerCommand
-                0x000020d4       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                0x000020d4                Timer_1_TriggerCommand
+                0x00001f80       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x00001f80                Timer_1_TriggerCommand
  .text.Timer_1_Enable
-                0x000020f0       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                0x000020f0                Timer_1_Enable
+                0x00001f9c       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x00001f9c                Timer_1_Enable
  .text.Timer_1_SetInterruptMode
-                0x00002114        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                0x00002114                Timer_1_SetInterruptMode
+                0x00001fc0        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x00001fc0                Timer_1_SetInterruptMode
  .text.Timer_1_Init
-                0x00002120       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                0x00002120                Timer_1_Init
+                0x00001fcc       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x00001fcc                Timer_1_Init
  .text.Timer_1_Start
-                0x00002150       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                0x00002150                Timer_1_Start
+                0x00001ffc       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x00001ffc                Timer_1_Start
  .text.Timer_1_ClearInterrupt
-                0x00002170        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                0x00002170                Timer_1_ClearInterrupt
+                0x0000201c        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x0000201c                Timer_1_ClearInterrupt
  .text.SDIO_Write
-                0x0000217c       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
-                0x0000217c                SDIO_Write
+                0x00002028       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+                0x00002028                SDIO_Write
  .text.SDIO_Read
-                0x00002194       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
-                0x00002194                SDIO_Read
+                0x00002040       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+                0x00002040                SDIO_Read
  .text.SCK_Write
-                0x000021a4       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
-                0x000021a4                SCK_Write
+                0x00002050       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+                0x00002050                SCK_Write
  .text.SCS_Write
-                0x000021bc       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
-                0x000021bc                SCS_Write
+                0x00002068       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+                0x00002068                SCS_Write
  .text.key_touch_ISR_SetVector
-                0x000021d4        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
-                0x000021d4                key_touch_ISR_SetVector
+                0x00002080        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+                0x00002080                key_touch_ISR_SetVector
  .text.key_touch_ISR_SetPriority
-                0x000021e0       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
-                0x000021e0                key_touch_ISR_SetPriority
+                0x0000208c       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+                0x0000208c                key_touch_ISR_SetPriority
  .text.key_touch_ISR_Enable
-                0x00002204       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
-                0x00002204                key_touch_ISR_Enable
+                0x000020b0       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+                0x000020b0                key_touch_ISR_Enable
  .text.key_touch_ISR_Disable
-                0x00002214       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
-                0x00002214                key_touch_ISR_Disable
+                0x000020c0       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+                0x000020c0                key_touch_ISR_Disable
  .text.key_touch_ISR_StartEx
-                0x00002224       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
-                0x00002224                key_touch_ISR_StartEx
+                0x000020d0       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+                0x000020d0                key_touch_ISR_StartEx
  .text.CySysClkImoDisableWcoLock
-                0x00002240       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x00002240                CySysClkImoDisableWcoLock
+                0x000020ec       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x000020ec                CySysClkImoDisableWcoLock
  .text.CySysClkImoGetWcoLock
-                0x00002254       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x00002254                CySysClkImoGetWcoLock
+                0x00002100       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x00002100                CySysClkImoGetWcoLock
  .text.CyIntEnable
-                0x00002268       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x00002268                CyIntEnable
+                0x00002114       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x00002114                CyIntEnable
  .text.CyIntDisable
-                0x0000227c       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x0000227c                CyIntDisable
+                0x00002128       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x00002128                CyIntDisable
  .text.CyIntClearPending
-                0x00002290       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x00002290                CyIntClearPending
- .text.CyHalt   0x000022a4        0x4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x000022a4                CyHalt
+                0x0000213c       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x0000213c                CyIntClearPending
+ .text.CyHalt   0x00002150        0x4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x00002150                CyHalt
  .text.CyIntSetVector
-                0x000022a8       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x000022a8                CyIntSetVector
+                0x00002154       0x24 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x00002154                CyIntSetVector
  .text.CyIntSetPriority
-                0x000022cc       0x4c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x000022cc                CyIntSetPriority
- .text.CyDelay  0x00002318       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x00002318                CyDelay
+                0x00002178       0x4c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x00002178                CyIntSetPriority
+ .text.CyDelay  0x000021c4       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x000021c4                CyDelay
  .text.CySysClkImoEnableWcoLock
-                0x00002348       0xcc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x00002348                CySysClkImoEnableWcoLock
+                0x000021f4       0xcc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x000021f4                CySysClkImoEnableWcoLock
  .text.CySysClkWriteImoFreq
-                0x00002414       0xd8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x00002414                CySysClkWriteImoFreq
+                0x000022c0       0xd8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x000022c0                CySysClkWriteImoFreq
  .text.CySysPmSleep
-                0x000024ec       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
-                0x000024ec                CySysPmSleep
+                0x00002398       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+                0x00002398                CySysPmSleep
  .text.CySysClkWcoEnabled
-                0x00002508       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
-                0x00002508                CySysClkWcoEnabled
+                0x000023b4       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+                0x000023b4                CySysClkWcoEnabled
  .text.CySysWdtDisable
-                0x0000251c       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
-                0x0000251c                CySysWdtDisable
+                0x000023c8       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+                0x000023c8                CySysWdtDisable
  .text.time_1ms_ISR_SetVector
-                0x0000252c        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
-                0x0000252c                time_1ms_ISR_SetVector
+                0x000023d8        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+                0x000023d8                time_1ms_ISR_SetVector
  .text.time_1ms_ISR_SetPriority
-                0x00002538       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
-                0x00002538                time_1ms_ISR_SetPriority
+                0x000023e4       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+                0x000023e4                time_1ms_ISR_SetPriority
  .text.time_1ms_ISR_Enable
-                0x00002558       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
-                0x00002558                time_1ms_ISR_Enable
+                0x00002404       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+                0x00002404                time_1ms_ISR_Enable
  .text.time_1ms_ISR_Disable
-                0x00002568       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
-                0x00002568                time_1ms_ISR_Disable
+                0x00002414       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+                0x00002414                time_1ms_ISR_Disable
  .text.time_1ms_ISR_StartEx
-                0x00002578       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
-                0x00002578                time_1ms_ISR_StartEx
+                0x00002424       0x1c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+                0x00002424                time_1ms_ISR_StartEx
  .text.EZI2C_ScbEnableIntr
-                0x00002594        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+                0x00002440        0xc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
  .text.EZI2C_Init
-                0x000025a0        0x8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
-                0x000025a0                EZI2C_Init
+                0x0000244c        0x8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+                0x0000244c                EZI2C_Init
  .text.EZI2C_Enable
-                0x000025a8       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
-                0x000025a8                EZI2C_Enable
+                0x00002454       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+                0x00002454                EZI2C_Enable
  .text.EZI2C_Start
-                0x000025c0       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
-                0x000025c0                EZI2C_Start
+                0x0000246c       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+                0x0000246c                EZI2C_Start
  .text.EZI2C_EzI2CInit
-                0x000025e0       0xc4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
-                0x000025e0                EZI2C_EzI2CInit
+                0x0000248c       0xc4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+                0x0000248c                EZI2C_EzI2CInit
  .text.EZI2C_EzI2CSetBuffer1
-                0x000026a4       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
-                0x000026a4                EZI2C_EzI2CSetBuffer1
+                0x00002550       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+                0x00002550                EZI2C_EzI2CSetBuffer1
  .text.EZI2C_EZI2C_STRETCH_ISR
-                0x000026d4      0x348 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
-                0x000026d4                EZI2C_EZI2C_STRETCH_ISR
- *fill*         0x00002a1c        0x4 
- .text          0x00002a20       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
-                0x00002a20                CyDelayCycles
-                0x00002a32                CyEnterCriticalSection
-                0x00002a3a                CyExitCriticalSection
+                0x00002580      0x348 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+                0x00002580                EZI2C_EZI2C_STRETCH_ISR
+ .text          0x000028c8       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
+                0x000028c8                CyDelayCycles
+                0x000028da                CyEnterCriticalSection
+                0x000028e2                CyExitCriticalSection
  .text.key_touch_CSDPostSingleScan
-                0x00002a40       0x74 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
-                0x00002a40                key_touch_CSDPostSingleScan
+                0x000028e8       0x78 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+                0x000028e8                key_touch_CSDPostSingleScan
  .text.key_touch_CSDPostMultiScan
-                0x00002ab4      0x108 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
-                0x00002ab4                key_touch_CSDPostMultiScan
+                0x00002960      0x11c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+                0x00002960                key_touch_CSDPostMultiScan
  .text.CySysFlashSetWaitCycles
-                0x00002bbc       0x54 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
-                0x00002bbc                CySysFlashSetWaitCycles
- .text.SmartSense_TunePrescalers
-                0x00002c10       0x68 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
-                0x00002c10                SmartSense_TunePrescalers
- .text.SmartSense_TuneSensitivity
-                0x00002c78       0x74 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
-                0x00002c78                SmartSense_TuneSensitivity
- .text.SmartSense_UpdateThresholds
-                0x00002cec       0x40 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
-                0x00002cec                SmartSense_UpdateThresholds
- .text.SmartSense_InitializeNoiseEnvelope
-                0x00002d2c       0x18 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
-                0x00002d2c                SmartSense_InitializeNoiseEnvelope
- .text.SmartSense_RunNoiseEnvelope
-                0x00002d44       0x8e D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
-                0x00002d44                SmartSense_RunNoiseEnvelope
- *fill*         0x00002dd2        0x2 
- .text          0x00002dd4      0x120 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
-                0x00002dd4                __aeabi_uidiv
-                0x00002dd4                __udivsi3
-                0x00002ee0                __aeabi_uidivmod
- .text          0x00002ef4        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
-                0x00002ef4                __aeabi_idiv0
-                0x00002ef4                __aeabi_ldiv0
- .text.__errno  0x00002ef8        0xc d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
-                0x00002ef8                __errno
+                0x00002a7c       0x54 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
+                0x00002a7c                CySysFlashSetWaitCycles
+ .text          0x00002ad0      0x120 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+                0x00002ad0                __aeabi_uidiv
+                0x00002ad0                __udivsi3
+                0x00002bdc                __aeabi_uidivmod
+ .text          0x00002bf0        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x00002bf0                __aeabi_idiv0
+                0x00002bf0                __aeabi_ldiv0
+ .text.__errno  0x00002bf4        0xc d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x00002bf4                __errno
  .text.__libc_init_array
-                0x00002f04       0x4c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
-                0x00002f04                __libc_init_array
- .text.memcpy   0x00002f50       0x12 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
-                0x00002f50                memcpy
- .text.memset   0x00002f62       0x10 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
-                0x00002f62                memset
+                0x00002c00       0x4c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x00002c00                __libc_init_array
+ .text.memcpy   0x00002c4c       0x12 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+                0x00002c4c                memcpy
+ .text.memset   0x00002c5e       0x10 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x00002c5e                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -1077,90 +1039,91 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00002f74        0x0
+.v4_bx          0x00002c70        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00002f74        0x0
+.iplt           0x00002c70        0x0
  .iplt          0x00000000        0x0 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00002f74        0x4
+.eh_frame       0x00002c70        0x4
  *(.eh_frame)
- .eh_frame      0x00002f74        0x0 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
- .eh_frame      0x00002f74        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
-                0x00002f78                PROVIDE (__exidx_start, .)
+ .eh_frame      0x00002c70        0x0 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .eh_frame      0x00002c70        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+                0x00002c74                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00002f78                __exidx_end = .
+                0x00002c74                __exidx_end = .
 
-.rodata         0x00002f78      0x480
+.rodata         0x00002c74      0x40c
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00002f78       0x30 .\CortexM0p\ARM_GCC_493\Debug\main.o
- .rodata        0x00002fa8       0x30 .\CortexM0p\ARM_GCC_493\Debug\key.o
- .rodata        0x00002fd8      0x3b4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
-                0x00002fe4                key_touch_dsFlash
-                0x0000323c                key_touch_ioList
- .rodata        0x0000338c       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
- .rodata        0x000033a4        0x1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x000033a4                key_touch_scanFreqIndex
- *fill*         0x000033a5        0x3 
- .rodata        0x000033a8       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                0x000033a8                cyImoFreqMhz2DpllOffset
+ .rodata        0x00002c74       0x30 .\CortexM0p\ARM_GCC_493\Debug\main.o
+ .rodata        0x00002ca4       0x30 .\CortexM0p\ARM_GCC_493\Debug\key.o
+ .rodata        0x00002cd4      0x33c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+                0x00002ce0                key_touch_dsFlash
+                0x00002ec0                key_touch_ioList
+ .rodata        0x00003010       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+ .rodata        0x00003028        0x1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x00003028                key_touch_scanFreqIndex
+ *fill*         0x00003029        0x3 
+ .rodata        0x0000302c       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x0000302c                cyImoFreqMhz2DpllOffset
  .rodata.str1.1
-                0x000033c0        0x2 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
-                0x000033c4                . = ALIGN (0x4)
- *fill*         0x000033c2        0x2 
+                0x00003044        0x2 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x00003048                . = ALIGN (0x4)
+ *fill*         0x00003046        0x2 
  *(.init)
- .init          0x000033c4        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
-                0x000033c4                _init
- .init          0x000033c8        0x8 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
-                0x000033d0                . = ALIGN (0x4)
-                0x000033d0                __preinit_array_start = .
+ .init          0x00003048        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+                0x00003048                _init
+ .init          0x0000304c        0x8 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+                0x00003054                . = ALIGN (0x4)
+                0x00003054                __preinit_array_start = .
  *(.preinit_array)
-                0x000033d0                __preinit_array_end = .
-                0x000033d0                . = ALIGN (0x4)
-                0x000033d0                __init_array_start = .
+                0x00003054                __preinit_array_end = .
+                0x00003054                . = ALIGN (0x4)
+                0x00003054                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x000033d0        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
- .init_array    0x000033d4        0x4 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
-                0x000033d8                __init_array_end = .
-                0x000033d8                . = ALIGN (0x4)
+ .init_array    0x00003054        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .init_array    0x00003058        0x4 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
+                0x0000305c                __init_array_end = .
+                0x0000305c                . = ALIGN (0x4)
  *(.fini)
- .fini          0x000033d8        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
-                0x000033d8                _fini
- .fini          0x000033dc        0x8 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
-                0x000033e4                . = ALIGN (0x4)
-                0x000033e4                __fini_array_start = .
+ .fini          0x0000305c        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+                0x0000305c                _fini
+ .fini          0x00003060        0x8 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+                0x00003068                . = ALIGN (0x4)
+                0x00003068                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x000033e4        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .fini_array    0x00003068        0x4 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x000033e8                __fini_array_end = .
-                0x000033e8                . = ALIGN (0x4)
+                0x0000306c                __fini_array_end = .
+                0x0000306c                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x000033e8                . = ALIGN (0x4)
+                0x0000306c                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x000033e8                . = ALIGN (0x4)
-                0x000033e8                __cy_regions = .
-                0x000033e8        0x4 LONG 0x33f8 __cy_region_init_ram
-                0x000033ec        0x4 LONG 0x20000088 __cy_region_start_data
-                0x000033f0        0x4 LONG 0xb0 __cy_region_init_size_ram
-                0x000033f4        0x4 LONG 0x318 __cy_region_zero_size_ram
-                0x000033f8                __cy_regions_end = .
-                0x000033f8                . = ALIGN (0x8)
-                0x000033f8                _etext = .
+                0x0000306c                . = ALIGN (0x4)
+                0x0000306c                __cy_regions = .
+                0x0000306c        0x4 LONG 0x3080 __cy_region_init_ram
+                0x00003070        0x4 LONG 0x20000088 __cy_region_start_data
+                0x00003074        0x4 LONG 0xb0 __cy_region_init_size_ram
+                0x00003078        0x4 LONG 0x240 __cy_region_zero_size_ram
+                0x0000307c                __cy_regions_end = .
+                0x00003080                . = ALIGN (0x8)
+ *fill*         0x0000307c        0x4 
+                0x00003080                _etext = .
 
 .cy_checksum_exclude
-                0x000033f8        0x0
+                0x00003080        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x20000000       0x80
@@ -1173,7 +1136,7 @@ END GROUP
  *(.noinit)
  .noinit        0x20000080        0x4 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
 
-.data           0x20000088       0xb0 load address 0x000033f8
+.data           0x20000088       0xb0 load address 0x00003080
                 0x20000088                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x20000088        0x0 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
@@ -1218,10 +1181,10 @@ END GROUP
  *(.ram)
                 0x20000138                _edata = .
 
-.igot.plt       0x20000138        0x0 load address 0x000034a8
+.igot.plt       0x20000138        0x0 load address 0x00003130
  .igot.plt      0x00000000        0x0 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
 
-.bss            0x20000138      0x318 load address 0x000034a8
+.bss            0x20000138      0x240 load address 0x00003130
                 0x20000138                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -1251,55 +1214,54 @@ END GROUP
                 0x200001c8                key_changed
  .bss           0x200001d4        0x1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
  *fill*         0x200001d5        0x3 
- .bss           0x200001d8       0xc0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
- .bss           0x20000298        0x4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
- .bss           0x2000029c        0x4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x2000029c                key_touch_requestScanAllWidget
-                0x2000029d                key_touch_widgetIndex
-                0x2000029e                key_touch_prescalersTuningDone
-                0x2000029f                key_touch_sensorIndex
- .bss           0x200002a0        0x1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
- .bss           0x200002a1        0x1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                0x200002a1                Timer_1_initVar
- *fill*         0x200002a2        0x2 
- .bss           0x200002a4        0x8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
-                0x200002a4                EZI2C_initVar
-                0x200002a8                EZI2C_customIntrHandler
- .bss           0x200002ac        0x2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+ .bss           0x200001d8       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+ .bss           0x20000208        0x4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+ .bss           0x2000020c        0x3 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x2000020c                key_touch_requestScanAllWidget
+                0x2000020d                key_touch_widgetIndex
+                0x2000020e                key_touch_sensorIndex
+ .bss           0x2000020f        0x1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+ .bss           0x20000210        0x1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x20000210                Timer_1_initVar
+ *fill*         0x20000211        0x3 
+ .bss           0x20000214        0x8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+                0x20000214                EZI2C_initVar
+                0x20000218                EZI2C_customIntrHandler
+ .bss           0x2000021c        0x2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
  *(COMMON)
- *fill*         0x200002ae        0x2 
- COMMON         0x200002b0        0x6 .\CortexM0p\ARM_GCC_493\Debug\main.o
-                0x200002b0                match_code_wait
- *fill*         0x200002b6        0x2 
- COMMON         0x200002b8      0x17c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
-                0x200002b8                key_touch_dsRam
- COMMON         0x20000434        0x8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                0x20000434                key_touch_curSnsIOPtr
-                0x20000438                key_touch_curRamSnsPtr
- COMMON         0x2000043c       0x12 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
-                0x2000043c                EZI2C_offsetBuf1
-                0x2000043e                EZI2C_indexBuf1
-                0x20000440                EZI2C_fsmState
-                0x20000442                EZI2C_protectBuf1
-                0x20000444                EZI2C_curStatus
-                0x20000448                EZI2C_dataBuffer1
-                0x2000044c                EZI2C_bufSizeBuf1
-                0x20000450                . = ALIGN (0x8)
- *fill*         0x2000044e        0x2 
+ *fill*         0x2000021e        0x2 
+ COMMON         0x20000220        0x6 .\CortexM0p\ARM_GCC_493\Debug\main.o
+                0x20000220                match_code_wait
+ *fill*         0x20000226        0x2 
+ COMMON         0x20000228      0x134 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+                0x20000228                key_touch_dsRam
+ COMMON         0x2000035c        0x8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x2000035c                key_touch_curSnsIOPtr
+                0x20000360                key_touch_curRamSnsPtr
+ COMMON         0x20000364       0x12 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+                0x20000364                EZI2C_offsetBuf1
+                0x20000366                EZI2C_indexBuf1
+                0x20000368                EZI2C_fsmState
+                0x2000036a                EZI2C_protectBuf1
+                0x2000036c                EZI2C_curStatus
+                0x20000370                EZI2C_dataBuffer1
+                0x20000374                EZI2C_bufSizeBuf1
+                0x20000378                . = ALIGN (0x8)
+ *fill*         0x20000376        0x2 
  *(.ram.b)
-                0x20000450                _end = .
-                0x20000450                __end = .
-                0x20000450                PROVIDE (end, .)
-                0x20000450                PROVIDE (__bss_end__, .)
-                0x000033f8                __cy_region_init_ram = LOADADDR (.data)
+                0x20000378                _end = .
+                0x20000378                __end = .
+                0x20000378                PROVIDE (end, .)
+                0x20000378                PROVIDE (__bss_end__, .)
+                0x00003080                __cy_region_init_ram = LOADADDR (.data)
                 0x000000b0                __cy_region_init_size_ram = (_edata - ADDR (.data))
-                0x00000318                __cy_region_zero_size_ram = (_end - _edata)
+                0x00000240                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x20000450       0x80 load address 0x000034a8
-                0x20000450                . = _end
-                0x200004d0                . = (. + 0x80)
- *fill*         0x20000450       0x80 
-                0x200004d0                __cy_heap_limit = .
+.heap           0x20000378       0x80 load address 0x00003130
+                0x20000378                . = _end
+                0x200003f8                . = (. + 0x80)
+ *fill*         0x20000378       0x80 
+                0x200003f8                __cy_heap_limit = .
 
 .stack          0x20000600      0x200
                 0x20000600                __cy_stack_limit = .
@@ -1335,7 +1297,7 @@ END GROUP
                 0x90600000        0x4 .\CortexM0p\ARM_GCC_493\Debug\cymetadata.o
                 0x90600000                cy_meta_chipprotect
 
-.rel.dyn        0x000034a8        0x0 load address 0x90600004
+.rel.dyn        0x00003130        0x0 load address 0x90600004
  .rel.iplt      0x00000000        0x0 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
 
 .stab
@@ -1356,7 +1318,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0xd28
+.debug_aranges  0x00000000      0xca8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x58 .\CortexM0p\ARM_GCC_493\Debug\main.o
@@ -1379,92 +1341,86 @@ END GROUP
  .debug_aranges
                 0x00000270       0x68 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
  .debug_aranges
-                0x000002d8       0x50 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+                0x000002d8       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
  .debug_aranges
-                0x00000328       0x50 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+                0x00000320       0x50 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
  .debug_aranges
-                0x00000378       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+                0x00000370       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
  .debug_aranges
-                0x000003a0       0x80 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                0x00000398       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
  .debug_aranges
-                0x00000420       0xb8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+                0x00000408       0xa8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
  .debug_aranges
-                0x000004d8       0xd0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                0x000004b0       0xd0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
  .debug_aranges
-                0x000005a8      0x158 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                0x00000580      0x158 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
  .debug_aranges
-                0x00000700       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+                0x000006d8       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
  .debug_aranges
-                0x00000748       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+                0x00000720       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
  .debug_aranges
-                0x00000790       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+                0x00000768       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
  .debug_aranges
-                0x000007d8       0x80 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+                0x000007b0       0x80 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
  .debug_aranges
-                0x00000858      0x190 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                0x00000830      0x190 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
  .debug_aranges
-                0x000009e8       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+                0x000009c0       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
  .debug_aranges
-                0x00000a18       0xd8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+                0x000009f0       0xd8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
  .debug_aranges
-                0x00000af0       0x80 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+                0x00000ac8       0x80 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
  .debug_aranges
-                0x00000b70       0x60 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+                0x00000b48       0x60 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
  .debug_aranges
-                0x00000bd0       0x50 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+                0x00000ba8       0x50 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
  .debug_aranges
-                0x00000c20       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+                0x00000bf8       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
  .debug_aranges
-                0x00000c40       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
+                0x00000c18       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
  .debug_aranges
-                0x00000c60       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+                0x00000c38       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
  .debug_aranges
-                0x00000c88       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
- .debug_aranges
-                0x00000cd0       0x28 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .debug_aranges
-                0x00000cf8       0x30 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
+                0x00000c60       0x48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0xc6eb
+.debug_info     0x00000000     0xb6d0
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0xe13 .\CortexM0p\ARM_GCC_493\Debug\main.o
- .debug_info    0x00000e13      0x629 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
- .debug_info    0x0000143c      0xaa3 .\CortexM0p\ARM_GCC_493\Debug\A7105_firmware_lib.o
- .debug_info    0x00001edf      0x28a .\CortexM0p\ARM_GCC_493\Debug\simple_protocol.o
- .debug_info    0x00002169      0x158 .\CortexM0p\ARM_GCC_493\Debug\timing.o
- .debug_info    0x000022c1      0x42d .\CortexM0p\ARM_GCC_493\Debug\key.o
- .debug_info    0x000026ee       0xfe .\CortexM0p\ARM_GCC_493\Debug\cymetadata.o
- .debug_info    0x000027ec      0x399 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
- .debug_info    0x00002b85      0x163 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
- .debug_info    0x00002ce8      0xbb5 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
- .debug_info    0x0000389d      0xccf .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
- .debug_info    0x0000456c      0xd48 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
- .debug_info    0x000052b4      0x762 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
- .debug_info    0x00005a16      0xab5 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
- .debug_info    0x000064cb     0x1177 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
- .debug_info    0x00007642     0x10ec .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
- .debug_info    0x0000872e      0x8f1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
- .debug_info    0x0000901f      0x19d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
- .debug_info    0x000091bc      0x19d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
- .debug_info    0x00009359      0x19b .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
- .debug_info    0x000094f4      0x300 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
- .debug_info    0x000097f4      0xbe1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
- .debug_info    0x0000a3d5      0x17b .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
- .debug_info    0x0000a550      0x43f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
- .debug_info    0x0000a98f      0x300 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
- .debug_info    0x0000ac8f      0x297 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
- .debug_info    0x0000af26      0x347 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
- .debug_info    0x0000b26d      0x1df .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
- .debug_info    0x0000b44c       0x8c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
- .debug_info    0x0000b4d8      0x939 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
- .debug_info    0x0000be11      0x435 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
- .debug_info    0x0000c246      0x24c D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .debug_info    0x0000c492      0x259 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
+ .debug_info    0x00000000      0xdf4 .\CortexM0p\ARM_GCC_493\Debug\main.o
+ .debug_info    0x00000df4      0x629 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
+ .debug_info    0x0000141d      0xaa3 .\CortexM0p\ARM_GCC_493\Debug\A7105_firmware_lib.o
+ .debug_info    0x00001ec0      0x28a .\CortexM0p\ARM_GCC_493\Debug\simple_protocol.o
+ .debug_info    0x0000214a      0x158 .\CortexM0p\ARM_GCC_493\Debug\timing.o
+ .debug_info    0x000022a2      0x42d .\CortexM0p\ARM_GCC_493\Debug\key.o
+ .debug_info    0x000026cf       0xfe .\CortexM0p\ARM_GCC_493\Debug\cymetadata.o
+ .debug_info    0x000027cd      0x399 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
+ .debug_info    0x00002b66      0x163 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
+ .debug_info    0x00002cc9      0xb3e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
+ .debug_info    0x00003807      0xa79 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+ .debug_info    0x00004280      0xbd1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+ .debug_info    0x00004e51      0x6c8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+ .debug_info    0x00005519      0x8c3 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+ .debug_info    0x00005ddc      0xe9c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+ .debug_info    0x00006c78     0x1008 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+ .debug_info    0x00007c80      0x8f1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+ .debug_info    0x00008571      0x19d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+ .debug_info    0x0000870e      0x19d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+ .debug_info    0x000088ab      0x19b .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+ .debug_info    0x00008a46      0x300 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+ .debug_info    0x00008d46      0xbe1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+ .debug_info    0x00009927      0x17b .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+ .debug_info    0x00009aa2      0x43f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+ .debug_info    0x00009ee1      0x300 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+ .debug_info    0x0000a1e1      0x297 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+ .debug_info    0x0000a478      0x347 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+ .debug_info    0x0000a7bf      0x1df .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+ .debug_info    0x0000a99e       0x82 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
+ .debug_info    0x0000aa20      0x87b .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+ .debug_info    0x0000b29b      0x435 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
 
-.debug_abbrev   0x00000000     0x32df
+.debug_abbrev   0x00000000     0x3091
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x2ec .\CortexM0p\ARM_GCC_493\Debug\main.o
  .debug_abbrev  0x000002ec      0x166 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
@@ -1476,31 +1432,29 @@ END GROUP
  .debug_abbrev  0x00000aff      0x1df .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
  .debug_abbrev  0x00000cde       0xe2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
  .debug_abbrev  0x00000dc0      0x280 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
- .debug_abbrev  0x00001040      0x204 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
- .debug_abbrev  0x00001244      0x237 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
- .debug_abbrev  0x0000147b      0x19a .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
- .debug_abbrev  0x00001615      0x2c8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
- .debug_abbrev  0x000018dd      0x2ec .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
- .debug_abbrev  0x00001bc9      0x298 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
- .debug_abbrev  0x00001e61      0x133 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
- .debug_abbrev  0x00001f94       0xc8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
- .debug_abbrev  0x0000205c       0xc8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
- .debug_abbrev  0x00002124       0xc8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
- .debug_abbrev  0x000021ec      0x1b4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
- .debug_abbrev  0x000023a0      0x236 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
- .debug_abbrev  0x000025d6       0xc6 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
- .debug_abbrev  0x0000269c      0x1b6 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
- .debug_abbrev  0x00002852      0x1b4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
- .debug_abbrev  0x00002a06      0x143 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
- .debug_abbrev  0x00002b49      0x170 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
- .debug_abbrev  0x00002cb9       0xc6 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
- .debug_abbrev  0x00002d7f       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00002d93      0x1ad .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
- .debug_abbrev  0x00002f40      0x1dd .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
- .debug_abbrev  0x0000311d      0x112 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .debug_abbrev  0x0000322f       0xb0 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
+ .debug_abbrev  0x00001040      0x1f1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+ .debug_abbrev  0x00001231      0x226 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+ .debug_abbrev  0x00001457      0x19a .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+ .debug_abbrev  0x000015f1      0x2a1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+ .debug_abbrev  0x00001892      0x2ab .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+ .debug_abbrev  0x00001b3d      0x298 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+ .debug_abbrev  0x00001dd5      0x133 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+ .debug_abbrev  0x00001f08       0xc8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+ .debug_abbrev  0x00001fd0       0xc8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+ .debug_abbrev  0x00002098       0xc8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+ .debug_abbrev  0x00002160      0x1b4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+ .debug_abbrev  0x00002314      0x236 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+ .debug_abbrev  0x0000254a       0xc6 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+ .debug_abbrev  0x00002610      0x1b6 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+ .debug_abbrev  0x000027c6      0x1b4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+ .debug_abbrev  0x0000297a      0x143 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+ .debug_abbrev  0x00002abd      0x170 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+ .debug_abbrev  0x00002c2d       0xc6 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+ .debug_abbrev  0x00002cf3       0x14 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00002d07      0x1ad .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+ .debug_abbrev  0x00002eb4      0x1dd .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
 
-.debug_line     0x00000000     0x37eb
+.debug_line     0x00000000     0x347f
  *(.debug_line)
  .debug_line    0x00000000      0x314 .\CortexM0p\ARM_GCC_493\Debug\main.o
  .debug_line    0x00000314      0x132 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
@@ -1511,32 +1465,30 @@ END GROUP
  .debug_line    0x0000093e       0x51 .\CortexM0p\ARM_GCC_493\Debug\cymetadata.o
  .debug_line    0x0000098f      0x260 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
  .debug_line    0x00000bef       0xc1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
- .debug_line    0x00000cb0      0x244 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
- .debug_line    0x00000ef4      0x32e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
- .debug_line    0x00001222      0x1dc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
- .debug_line    0x000013fe      0x135 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
- .debug_line    0x00001533      0x234 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
- .debug_line    0x00001767      0x3d3 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
- .debug_line    0x00001b3a      0x3ee .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
- .debug_line    0x00001f28      0x37b .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
- .debug_line    0x000022a3       0xbc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
- .debug_line    0x0000235f       0xbb .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
- .debug_line    0x0000241a       0xba .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
- .debug_line    0x000024d4      0x159 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
- .debug_line    0x0000262d      0x4c7 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
- .debug_line    0x00002af4       0x98 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
- .debug_line    0x00002b8c      0x284 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
- .debug_line    0x00002e10      0x158 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
- .debug_line    0x00002f68      0x128 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
- .debug_line    0x00003090      0x103 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
- .debug_line    0x00003193      0x13a .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
- .debug_line    0x000032cd       0x68 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
- .debug_line    0x00003335      0x13f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
- .debug_line    0x00003474      0x1e1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
- .debug_line    0x00003655       0xb2 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .debug_line    0x00003707       0xe4 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
+ .debug_line    0x00000cb0      0x228 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
+ .debug_line    0x00000ed8      0x2df .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+ .debug_line    0x000011b7      0x1c0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+ .debug_line    0x00001377      0x118 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+ .debug_line    0x0000148f      0x1e1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+ .debug_line    0x00001670      0x331 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+ .debug_line    0x000019a1      0x3ce .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+ .debug_line    0x00001d6f      0x37b .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+ .debug_line    0x000020ea       0xbc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+ .debug_line    0x000021a6       0xbb .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+ .debug_line    0x00002261       0xba .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+ .debug_line    0x0000231b      0x159 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+ .debug_line    0x00002474      0x4c7 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+ .debug_line    0x0000293b       0x98 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+ .debug_line    0x000029d3      0x284 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+ .debug_line    0x00002c57      0x158 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+ .debug_line    0x00002daf      0x128 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+ .debug_line    0x00002ed7      0x103 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+ .debug_line    0x00002fda      0x13a .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+ .debug_line    0x00003114       0x68 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyBootAsmGnu.o)
+ .debug_line    0x0000317c      0x122 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+ .debug_line    0x0000329e      0x1e1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
 
-.debug_frame    0x00000000     0x2094
+.debug_frame    0x00000000     0x1f44
  *(.debug_frame)
  .debug_frame   0x00000000       0xf0 .\CortexM0p\ARM_GCC_493\Debug\main.o
  .debug_frame   0x000000f0       0xd0 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
@@ -1546,104 +1498,98 @@ END GROUP
  .debug_frame   0x000003fc       0xa4 .\CortexM0p\ARM_GCC_493\Debug\key.o
  .debug_frame   0x000004a0       0xbc .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
  .debug_frame   0x0000055c       0x74 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
- .debug_frame   0x000005d0      0x11c .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
- .debug_frame   0x000006ec       0xf4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
- .debug_frame   0x000007e0       0xbc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
- .debug_frame   0x0000089c       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
- .debug_frame   0x000008dc      0x198 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
- .debug_frame   0x00000a74      0x218 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
- .debug_frame   0x00000c8c      0x298 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
- .debug_frame   0x00000f24      0x390 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
- .debug_frame   0x000012b4       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
- .debug_frame   0x00001324       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
- .debug_frame   0x00001394       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
- .debug_frame   0x00001404      0x110 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
- .debug_frame   0x00001514      0x410 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
- .debug_frame   0x00001924       0x58 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
- .debug_frame   0x0000197c      0x1dc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
- .debug_frame   0x00001b58      0x110 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
- .debug_frame   0x00001c68       0xe8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
- .debug_frame   0x00001d50       0xa8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
- .debug_frame   0x00001df8       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
- .debug_frame   0x00001e28       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
- .debug_frame   0x00001e68       0xa8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
- .debug_frame   0x00001f10       0x50 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .debug_frame   0x00001f60       0x58 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
- .debug_frame   0x00001fb8       0x20 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x00001fd8       0x20 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x00001ff8       0x28 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x00002020       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x0000204c       0x28 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
- .debug_frame   0x00002074       0x20 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x000005d0      0x124 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
+ .debug_frame   0x000006f4       0xd4 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+ .debug_frame   0x000007c8       0xbc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+ .debug_frame   0x00000884       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+ .debug_frame   0x000008c4      0x144 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+ .debug_frame   0x00000a08      0x1dc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+ .debug_frame   0x00000be4      0x298 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+ .debug_frame   0x00000e7c      0x390 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+ .debug_frame   0x0000120c       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+ .debug_frame   0x0000127c       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+ .debug_frame   0x000012ec       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+ .debug_frame   0x0000135c      0x110 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+ .debug_frame   0x0000146c      0x410 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+ .debug_frame   0x0000187c       0x58 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+ .debug_frame   0x000018d4      0x1dc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+ .debug_frame   0x00001ab0      0x110 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+ .debug_frame   0x00001bc0       0xe8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+ .debug_frame   0x00001ca8       0xa8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+ .debug_frame   0x00001d50       0x30 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+ .debug_frame   0x00001d80       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+ .debug_frame   0x00001dc0       0xa8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
+ .debug_frame   0x00001e68       0x20 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00001e88       0x20 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00001ea8       0x28 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00001ed0       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00001efc       0x28 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x00001f24       0x20 d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x405f
+.debug_str      0x00000000     0x3a55
  *(.debug_str)
- .debug_str     0x00000000      0xa32 .\CortexM0p\ARM_GCC_493\Debug\main.o
+ .debug_str     0x00000000      0xa1a .\CortexM0p\ARM_GCC_493\Debug\main.o
+                                0xaa3 (size before relaxing)
+ .debug_str     0x00000a1a      0x389 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
+                                0x551 (size before relaxing)
+ .debug_str     0x00000da3       0xc4 .\CortexM0p\ARM_GCC_493\Debug\A7105_firmware_lib.o
+                                0x57b (size before relaxing)
+ .debug_str     0x00000e67       0xd7 .\CortexM0p\ARM_GCC_493\Debug\simple_protocol.o
+                                0x2a0 (size before relaxing)
+ .debug_str     0x00000f3e       0x28 .\CortexM0p\ARM_GCC_493\Debug\timing.o
+                                0x19f (size before relaxing)
+ .debug_str     0x00000f66       0xc2 .\CortexM0p\ARM_GCC_493\Debug\key.o
+                                0x36c (size before relaxing)
+ .debug_str     0x00001028       0x59 .\CortexM0p\ARM_GCC_493\Debug\cymetadata.o
+                                0x1c4 (size before relaxing)
+ .debug_str     0x00001081      0x150 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
+                                0x2f9 (size before relaxing)
+ .debug_str     0x000011d1       0x84 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
+                                0x203 (size before relaxing)
+ .debug_str     0x00001255      0x501 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
+                                0x95c (size before relaxing)
+ .debug_str     0x00001756      0x12e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+                                0x7e6 (size before relaxing)
+ .debug_str     0x00001884      0x2dc .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+                                0x8c4 (size before relaxing)
+ .debug_str     0x00001b60      0x119 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+                                0x654 (size before relaxing)
+ .debug_str     0x00001c79      0x1b2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+                                0x692 (size before relaxing)
+ .debug_str     0x00001e2b      0x450 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
                                 0xabb (size before relaxing)
- .debug_str     0x00000a32      0x389 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
-                                0x55b (size before relaxing)
- .debug_str     0x00000dbb       0xc4 .\CortexM0p\ARM_GCC_493\Debug\A7105_firmware_lib.o
-                                0x585 (size before relaxing)
- .debug_str     0x00000e7f       0xd7 .\CortexM0p\ARM_GCC_493\Debug\simple_protocol.o
-                                0x2aa (size before relaxing)
- .debug_str     0x00000f56       0x64 .\CortexM0p\ARM_GCC_493\Debug\timing.o
-                                0x1a7 (size before relaxing)
- .debug_str     0x00000fba       0xc2 .\CortexM0p\ARM_GCC_493\Debug\key.o
-                                0x376 (size before relaxing)
- .debug_str     0x0000107c       0x59 .\CortexM0p\ARM_GCC_493\Debug\cymetadata.o
-                                0x1ce (size before relaxing)
- .debug_str     0x000010d5      0x150 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
-                                0x303 (size before relaxing)
- .debug_str     0x00001225       0x84 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
-                                0x20d (size before relaxing)
- .debug_str     0x000012a9      0x55d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
-                                0x9d0 (size before relaxing)
- .debug_str     0x00001806      0x1db .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
-                                0x910 (size before relaxing)
- .debug_str     0x000019e1      0x42e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
-                                0xa93 (size before relaxing)
- .debug_str     0x00001e0f      0x119 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
-                                0x6d1 (size before relaxing)
- .debug_str     0x00001f28      0x212 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
-                                0x814 (size before relaxing)
- .debug_str     0x0000213a      0x572 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
-                                0xc51 (size before relaxing)
- .debug_str     0x000026ac      0x35a .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
-                                0xba5 (size before relaxing)
- .debug_str     0x00002a06      0x40d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
-                                0x5f9 (size before relaxing)
- .debug_str     0x00002e13       0x8f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
-                                0x22f (size before relaxing)
- .debug_str     0x00002ea2       0x6f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
-                                0x228 (size before relaxing)
- .debug_str     0x00002f11       0x6f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
-                                0x228 (size before relaxing)
- .debug_str     0x00002f80      0x158 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
-                                0x34e (size before relaxing)
- .debug_str     0x000030d8      0x4be .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
-                                0x717 (size before relaxing)
- .debug_str     0x00003596       0x5f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
-                                0x231 (size before relaxing)
- .debug_str     0x000035f5      0x2d0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
-                                0x4ae (size before relaxing)
- .debug_str     0x000038c5      0x133 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
-                                0x340 (size before relaxing)
- .debug_str     0x000039f8      0x113 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
-                                0x2d2 (size before relaxing)
- .debug_str     0x00003b0b      0x11e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
-                                0x339 (size before relaxing)
- .debug_str     0x00003c29       0x97 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
-                                0x2c2 (size before relaxing)
- .debug_str     0x00003cc0       0xa9 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
-                                0x775 (size before relaxing)
- .debug_str     0x00003d69      0x11d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
-                                0x316 (size before relaxing)
- .debug_str     0x00003e86      0x166 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
-                                0x2b2 (size before relaxing)
- .debug_str     0x00003fec       0x73 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
-                                0x30e (size before relaxing)
+ .debug_str     0x0000227b      0x35a .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+                                0xaea (size before relaxing)
+ .debug_str     0x000025d5      0x40d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+                                0x5ef (size before relaxing)
+ .debug_str     0x000029e2       0x8f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+                                0x225 (size before relaxing)
+ .debug_str     0x00002a71       0x6f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+                                0x21e (size before relaxing)
+ .debug_str     0x00002ae0       0x6f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+                                0x21e (size before relaxing)
+ .debug_str     0x00002b4f      0x158 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+                                0x344 (size before relaxing)
+ .debug_str     0x00002ca7      0x4be .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+                                0x70d (size before relaxing)
+ .debug_str     0x00003165       0x5f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+                                0x227 (size before relaxing)
+ .debug_str     0x000031c4      0x2d0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+                                0x4a4 (size before relaxing)
+ .debug_str     0x00003494      0x133 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+                                0x336 (size before relaxing)
+ .debug_str     0x000035c7      0x113 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+                                0x2c8 (size before relaxing)
+ .debug_str     0x000036da      0x11e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+                                0x32f (size before relaxing)
+ .debug_str     0x000037f8       0x97 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+                                0x2b8 (size before relaxing)
+ .debug_str     0x0000388f       0xa9 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+                                0x6f8 (size before relaxing)
+ .debug_str     0x00003938      0x11d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
+                                0x30c (size before relaxing)
 
-.debug_loc      0x00000000     0x4ba7
+.debug_loc      0x00000000     0x4476
  *(.debug_loc)
  .debug_loc     0x00000000       0xf8 .\CortexM0p\ARM_GCC_493\Debug\main.o
  .debug_loc     0x000000f8      0x129 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
@@ -1653,34 +1599,32 @@ END GROUP
  .debug_loc     0x0000075b      0x19b .\CortexM0p\ARM_GCC_493\Debug\key.o
  .debug_loc     0x000008f6      0x14f .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
  .debug_loc     0x00000a45       0x35 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
- .debug_loc     0x00000a7a      0x40d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
- .debug_loc     0x00000e87      0x5c9 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
- .debug_loc     0x00001450      0x3c5 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
- .debug_loc     0x00001815      0x13d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
- .debug_loc     0x00001952      0x8c1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
- .debug_loc     0x00002213      0x724 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
- .debug_loc     0x00002937      0x857 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
- .debug_loc     0x0000318e      0x547 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
- .debug_loc     0x000036d5       0xa2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
- .debug_loc     0x00003777       0xa2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
- .debug_loc     0x00003819       0x81 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
- .debug_loc     0x0000389a       0x82 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
- .debug_loc     0x0000391c      0x5e3 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
- .debug_loc     0x00003eff       0x47 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
- .debug_loc     0x00003f46      0x323 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
- .debug_loc     0x00004269       0x82 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
- .debug_loc     0x000042eb       0x7e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
- .debug_loc     0x00004369       0xe1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
- .debug_loc     0x0000444a      0x132 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
- .debug_loc     0x0000457c       0xe6 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
- .debug_loc     0x00004662      0x1c8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
- .debug_loc     0x0000482a      0x229 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .debug_loc     0x00004a53      0x154 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
+ .debug_loc     0x00000a7a      0x421 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
+ .debug_loc     0x00000e9b      0x50f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+ .debug_loc     0x000013aa      0x3c5 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+ .debug_loc     0x0000176f      0x13d .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+ .debug_loc     0x000018ac      0x67f .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+ .debug_loc     0x00001f2b      0x671 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+ .debug_loc     0x0000259c      0x83e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+ .debug_loc     0x00002dda      0x547 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+ .debug_loc     0x00003321       0xa2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+ .debug_loc     0x000033c3       0xa2 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+ .debug_loc     0x00003465       0x81 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+ .debug_loc     0x000034e6       0x82 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+ .debug_loc     0x00003568      0x5e3 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+ .debug_loc     0x00003b4b       0x47 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+ .debug_loc     0x00003b92      0x323 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+ .debug_loc     0x00003eb5       0x82 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+ .debug_loc     0x00003f37       0x7e .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+ .debug_loc     0x00003fb5       0xe1 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+ .debug_loc     0x00004096      0x132 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+ .debug_loc     0x000041c8       0xe6 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+ .debug_loc     0x000042ae      0x1c8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
 
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0xb00
+.debug_ranges   0x00000000      0xaa0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x48 .\CortexM0p\ARM_GCC_493\Debug\main.o
  .debug_ranges  0x00000048       0x40 .\CortexM0p\ARM_GCC_493\Debug\A7105_driver.o
@@ -1691,28 +1635,26 @@ END GROUP
  .debug_ranges  0x00000178       0x38 .\CortexM0p\ARM_GCC_493\Debug\Cm0plusStart.o
  .debug_ranges  0x000001b0       0x28 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyfitter_cfg.o)
  .debug_ranges  0x000001d8       0x58 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Control.o)
- .debug_ranges  0x00000230       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
- .debug_ranges  0x00000270       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
- .debug_ranges  0x000002b0       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
- .debug_ranges  0x000002c8       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
- .debug_ranges  0x00000338       0xa8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
- .debug_ranges  0x000003e0       0xc0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
- .debug_ranges  0x000004a0      0x148 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
- .debug_ranges  0x000005e8       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
- .debug_ranges  0x00000620       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
- .debug_ranges  0x00000658       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
- .debug_ranges  0x00000690       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
- .debug_ranges  0x00000700      0x180 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
- .debug_ranges  0x00000880       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
- .debug_ranges  0x000008a0       0xc8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
- .debug_ranges  0x00000968       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
- .debug_ranges  0x000009d8       0x50 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
- .debug_ranges  0x00000a28       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
- .debug_ranges  0x00000a68       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
- .debug_ranges  0x00000a78       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
- .debug_ranges  0x00000a90       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
- .debug_ranges  0x00000ac8       0x18 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .debug_ranges  0x00000ae0       0x20 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
+ .debug_ranges  0x00000230       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Processing.o)
+ .debug_ranges  0x00000268       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Structure.o)
+ .debug_ranges  0x000002a8       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Tuner.o)
+ .debug_ranges  0x000002c0       0x60 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Filter.o)
+ .debug_ranges  0x00000320       0x98 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_Sensing.o)
+ .debug_ranges  0x000003b8       0xc0 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_SensingCSD_LL.o)
+ .debug_ranges  0x00000478      0x148 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(Timer_1.o)
+ .debug_ranges  0x000005c0       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SDIO.o)
+ .debug_ranges  0x000005f8       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCK.o)
+ .debug_ranges  0x00000630       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(SCS.o)
+ .debug_ranges  0x00000668       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_ISR.o)
+ .debug_ranges  0x000006d8      0x180 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLib.o)
+ .debug_ranges  0x00000858       0x20 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(cyPm.o)
+ .debug_ranges  0x00000878       0xc8 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyLFClk.o)
+ .debug_ranges  0x00000940       0x70 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(time_1ms_ISR.o)
+ .debug_ranges  0x000009b0       0x50 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C.o)
+ .debug_ranges  0x00000a00       0x40 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C.o)
+ .debug_ranges  0x00000a40       0x10 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
+ .debug_ranges  0x00000a50       0x18 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
+ .debug_ranges  0x00000a68       0x38 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 .\CortexM0p\ARM_GCC_493\Debug\main.o
@@ -1746,8 +1688,6 @@ END GROUP
  .comment       0x00000000       0x71 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(EZI2C_EZI2C_INT.o)
  .comment       0x00000000       0x71 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(key_touch_INT.o)
  .comment       0x00000000       0x71 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
- .comment       0x00000000       0x71 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
- .comment       0x00000000       0x71 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
 
 .debug_weaknames
  *(.debug_weaknames)
@@ -1836,29 +1776,25 @@ END GROUP
  .ARM.attributes
                 0x00000631       0x32 .\CortexM0p\ARM_GCC_493\Debug\AYBR3000.a(CyFlash.o)
  .ARM.attributes
-                0x00000663       0x32 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_LL_v3_10.o)
+                0x00000663       0x1e d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
  .ARM.attributes
-                0x00000695       0x32 D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_P4_v3_10\PSoC4\Library\Capsense_P4Library_GCCp.a(CapSense_SmartSense_SL_v3_10.o)
+                0x00000681       0x1e d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x000006c7       0x1e d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+                0x0000069f       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
  .ARM.attributes
-                0x000006e5       0x1e d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x000006cb       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
  .ARM.attributes
-                0x00000703       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x000006f7       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
  .ARM.attributes
-                0x0000072f       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+                0x00000723       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
  .ARM.attributes
-                0x0000075b       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x0000074f       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
  .ARM.attributes
-                0x00000787       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x0000077b       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
  .ARM.attributes
-                0x000007b3       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
+                0x000007a7       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
  .ARM.attributes
-                0x000007df       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
- .ARM.attributes
-                0x0000080b       0x2c d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
- .ARM.attributes
-                0x00000837       0x1e d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+                0x000007d3       0x1e d:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
 
 /DISCARD/
  *(.note.GNU-stack)

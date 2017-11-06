@@ -58,7 +58,7 @@ typedef struct
 
 extern void app_protocol_init(void);
 extern void app_protocol_send(void);
-extern App_frame app_frame;
+extern App_frame app_frame_send;
 
 #endif
 

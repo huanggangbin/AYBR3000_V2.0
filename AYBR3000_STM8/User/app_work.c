@@ -285,61 +285,61 @@ static void app_work_mode_display(void)
 
 static void app_work_mode_send(void)
 {
-    app_frame.non_mutex_func.bai_dong = (uint8)status[work_mode].bai_dong;
+    app_frame_send.non_mutex_func.bai_dong = (uint8)status[work_mode].bai_dong;
 
     switch(status[work_mode].cf_mode)
     {
         case APP_CHUI_FENG_INIT: 
-            app_frame.non_mutex_func.qiang = 0;
-            app_frame.non_mutex_func.ruo = 0;
-            app_frame.non_mutex_func.zi_dong = 0;
+            app_frame_send.non_mutex_func.qiang = 0;
+            app_frame_send.non_mutex_func.ruo = 0;
+            app_frame_send.non_mutex_func.zi_dong = 0;
             break;
         case APP_CHUI_FENG_QIANG: 
-            app_frame.non_mutex_func.qiang = 1;
-            app_frame.non_mutex_func.ruo = 0;
-            app_frame.non_mutex_func.zi_dong = 0;
+            app_frame_send.non_mutex_func.qiang = 1;
+            app_frame_send.non_mutex_func.ruo = 0;
+            app_frame_send.non_mutex_func.zi_dong = 0;
             break;
         case APP_CHUI_FENG_RUO: 
-            app_frame.non_mutex_func.qiang = 0;
-            app_frame.non_mutex_func.ruo = 1;
-            app_frame.non_mutex_func.zi_dong = 0;
+            app_frame_send.non_mutex_func.qiang = 0;
+            app_frame_send.non_mutex_func.ruo = 1;
+            app_frame_send.non_mutex_func.zi_dong = 0;
             break;
         case APP_CHUI_FENG_ZI_DONG: 
-            app_frame.non_mutex_func.qiang = 0;
-            app_frame.non_mutex_func.ruo = 0;
-            app_frame.non_mutex_func.zi_dong = 1;
+            app_frame_send.non_mutex_func.qiang = 0;
+            app_frame_send.non_mutex_func.ruo = 0;
+            app_frame_send.non_mutex_func.zi_dong = 1;
             break;
     }
     
-    app_frame.temp =  status[work_mode].wen_du;
-    app_frame.ding_shi = status[work_mode].ding_shi;
-    app_frame.func_type = FUNC_CONTROL;
+    app_frame_send.temp =  status[work_mode].wen_du;
+    app_frame_send.ding_shi = status[work_mode].ding_shi;
+    app_frame_send.func_type = FUNC_CONTROL;
     
     switch(work_mode)
     {
         case APP_MODE_IDLE: 
-            app_frame.mutex_func = MUTEX_DAI_JI;
+            app_frame_send.mutex_func = MUTEX_DAI_JI;
             break;
         case APP_MODE_FENG_NUAN: 
-            app_frame.mutex_func = MUTEX_FENG_NUAN;
+            app_frame_send.mutex_func = MUTEX_FENG_NUAN;
             break;
         case APP_MODE_XIN_FENG_QU_NUAN: 
-            app_frame.mutex_func = MUTEX_XIN_FENG_FENG_NUAN;
+            app_frame_send.mutex_func = MUTEX_XIN_FENG_FENG_NUAN;
             break;
         case APP_MODE_XIN_FENG: 
-            app_frame.mutex_func = MUTEX_XIN_FENG;
+            app_frame_send.mutex_func = MUTEX_XIN_FENG;
             break;
         case APP_MODE_HUAN_QI: 
-            app_frame.mutex_func = MUTEX_HUAN_QI;
+            app_frame_send.mutex_func = MUTEX_HUAN_QI;
             break;
         case APP_MODE_GAN_ZAO: 
-            app_frame.mutex_func = MUTEX_ZHI_NENG_GAN_ZAO;
+            app_frame_send.mutex_func = MUTEX_ZHI_NENG_GAN_ZAO;
             break;
         case APP_MODE_JING_HUA: 
-            app_frame.mutex_func = MUTEX_ZHI_NENG_JING_HUA;
+            app_frame_send.mutex_func = MUTEX_ZHI_NENG_JING_HUA;
             break;
         case APP_MODE_MU_YU: 
-            app_frame.mutex_func = MUTEX_ZHI_NENG_MU_YU_1;
+            app_frame_send.mutex_func = MUTEX_ZHI_NENG_MU_YU_1;
             break;
     }
     app_protocol_send();

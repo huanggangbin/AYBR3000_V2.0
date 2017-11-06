@@ -85,8 +85,8 @@ static void app_time_display(void)
 
 static void app_time_send(void)
 {
-    app_frame.time_hour = time.hour;
-    app_frame.time_minute = time.minute;
+    app_frame_send.time_hour = time.hour;
+    app_frame_send.time_minute = time.minute;
 }
 
 static void app_time_normal_command_deal(void)

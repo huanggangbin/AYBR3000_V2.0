@@ -1,0 +1,4 @@
+---- app_protocol_init Matches (3 in 3 files) ----
+App_protocol.c (user):void app_protocol_init(void)
+App_protocol.h (user):extern void app_protocol_init(void);
+Main.c (user):    app_protocol_init();

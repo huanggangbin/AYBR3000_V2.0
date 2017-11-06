@@ -28,7 +28,6 @@
 #include "key_touch_Configuration.h"
 #include "key_touch_SensingCSD_LL.h"
 #include "key_touch_RegisterMap.h"
-#include "key_touch_SmartSense_LL.h"
 #include "EZI2C.h"
 #include "EZI2C_PINS.h"
 #include "EZI2C_PVT.h"

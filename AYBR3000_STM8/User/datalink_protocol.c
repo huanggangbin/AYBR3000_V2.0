@@ -39,41 +39,41 @@ void datalink_protocol_process(void)
 
 bool datalink_protocol_send(uint8 * data, uint8 length)
 {
-	uint8 i, check_sum = 0;
+    uint8 i, check_sum = 0;
     uint8 * buffer = (uint8 *)&send_frame;
     
-	if (data == NULL)
-		return FALSE;
-	if (length >10)
-		return FALSE;
-	
+    if (data == NULL)
+        return FALSE;
+    if (length >10)
+        return FALSE;
+    
     for (i = 0; i < length; i++)
-    	send_frame.data[i] = data[i];
+        send_frame.data[i] = data[i];
     
     //check_sumµÄÌí¼Ó
-    for (i = 0; i < length + PROTOCOL_HEAD_LENGTH - 1; i++)
+    for (i = 0; i < length + PROTOCOL_HEAD_LENGTH; i++)
         check_sum += buffer[i];
 
-    buffer[length + PROTOCOL_HEAD_LENGTH - 1] = ~check_sum + 1;
+    buffer[length + PROTOCOL_HEAD_LENGTH] = ~check_sum + 1;
 
-	send_data_by_A7105(sizeof(App_protocol), (uint8 *)&send_frame);
-	
-	return TRUE;
+    send_data_by_A7105(sizeof(App_protocol), (uint8 *)&send_frame);
+
+    return TRUE;
 }
 
 bool datalink_protocol_receive(uint8 * data, uint8 length)
 {
-	uint8 i;
+    uint8 i;
 
-	if (data == NULL)
-		return FALSE;
-	if (length >10)
-		return FALSE;
-		
-	for (i = 0; i < length; i++)
-	{
-		
-	}
+    if (data == NULL)
+        return FALSE;
+    if (length >10)
+        return FALSE;
+        
+    for (i = 0; i < length; i++)
+    {
+        
+    }
         return TRUE;
 }
 
