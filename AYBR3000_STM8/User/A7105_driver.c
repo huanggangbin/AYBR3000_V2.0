@@ -36,7 +36,7 @@ void A7105_init(void)
     A7105_WriteReg(TXTEST_REG, 0x17 );                  //TX power = 0dBm
     A7105_WriteReg(DATARATE_REG, 9);                    //Data rate = 50K
     A7105_WriteReg(MODECTRL_REG, 0x62);                 //FIFO mode
-    A7105_WriteReg(PLL1_REG, 58 );                      //set radio channel,设置信道频率
+    A7105_WriteReg(PLL1_REG, 56 );                      //set radio channel,设置信道频率
     A7105_WriteReg(CODE1_REG, 0x0F);                    //使能CRC校验
     /*这里等待帧格式确定在设置payload length*/
     A7105_WriteReg(FIFO1_REG, 20 - 1);                  // set FIFO payload length
