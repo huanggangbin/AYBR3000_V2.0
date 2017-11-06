@@ -1,66 +1,66 @@
 ###############################################################################
 #
-# IAR ELF Linker V3.10.1.201 for STM8                     05/Nov/2017  14:11:07
+# IAR ELF Linker V3.10.1.201 for STM8                     06/Nov/2017  11:33:38
 # Copyright 2010-2017 IAR Systems AB.
 #
 #    Output file  =  
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Exe\aybr3000.out
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Exe\aybr3000.out
 #    Map file     =  
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\List\aybr3000.map
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\List\aybr3000.map
 #    Command line =  
-#        -f C:\Users\Administrator\AppData\Local\Temp\EWC37C.tmp
-#        (D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\A7105_driver.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\A7105_firmware_lib.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_key.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_lcd_display.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_lcd_display_config.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_power.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_protocol.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_time.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_work.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\datalink_protocol.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\LCD_driver.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\LCD_firmware.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\main.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\main_control.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\RTC_driver.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\simple_protocol.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_adc.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_aes.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_beep.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_clk.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_comp.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_dac.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_dma.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_exti.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_flash.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_gpio.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_i2c.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_irtim.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_it.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_itc.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_iwdg.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_lcd.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_pwr.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_rst.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_rtc.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_spi.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_syscfg.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim1.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim2.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim3.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim4.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim5.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_usart.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_wfe.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_wwdg.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\system.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\task_manager.o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\timing.o
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW8384.tmp
+#        (D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\A7105_driver.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\A7105_firmware_lib.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_key.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_lcd_display.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_lcd_display_config.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_power.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_protocol.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_time.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\app_work.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\datalink_protocol.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\LCD_driver.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\LCD_firmware.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\main.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\main_control.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\RTC_driver.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\simple_protocol.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_adc.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_aes.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_beep.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_clk.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_comp.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_dac.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_dma.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_exti.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_flash.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_gpio.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_i2c.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_irtim.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_it.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_itc.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_iwdg.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_lcd.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_pwr.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_rst.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_rtc.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_spi.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_syscfg.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim1.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim2.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim3.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim4.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_tim5.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_usart.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_wfe.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\stm8l15x_wwdg.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\system.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\task_manager.o
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj\timing.o
 #        --redirect _Printf=_PrintfSmall --redirect _Scanf=_ScanfSmall -o
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Exe\aybr3000.out
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Exe\aybr3000.out
 #        --map
-#        D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\List\aybr3000.map
+#        D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\List\aybr3000.map
 #        --config "D:\Program Files (x86)\IAR Systems\Embedded Workbench
 #        8.0\stm8\config\lnkstm8l052c6.icf" --config_def _CSTACK_SIZE=0x100
 #        --config_def _HEAP_SIZE=0x100 --entry __iar_program_start --debug_lib)
@@ -123,48 +123,49 @@ initialize by copy {
   .vregs             uninit   0x000000     0xc  vregs.o [4]
                             - 0x00000c     0xc
 
-"P2", part 1 of 2:                       0x160
-  P2-1                        0x00000c   0x160  <Init block>
+"P2", part 1 of 2:                       0x17b
+  P2-1                        0x00000c   0x17b  <Init block>
     .near.data       inited   0x00000c    0x20  app_lcd_display_config.o [1]
-    .near.data       inited   0x00002c     0x6  app_lcd_display_config.o [1]
-    .near.data       inited   0x000032     0xa  app_lcd_display_config.o [1]
-    .near.data       inited   0x00003c    0x50  app_work.o [1]
-    .near.data       inited   0x00008c    0x4d  LCD_driver.o [1]
-    .near.data       inited   0x0000d9    0x22  LCD_driver.o [1]
-    .near.data       inited   0x0000fb    0x70  LCD_driver.o [1]
-    .near.data       inited   0x00016b     0x1  simple_protocol.o [1]
-                            - 0x00016c   0x160
+    .near.data       inited   0x00002c    0x10  app_lcd_display_config.o [1]
+    .near.data       inited   0x00003c     0xa  app_time.o [1]
+    .near.data       inited   0x000046    0x50  app_work.o [1]
+    .near.data       inited   0x000096     0xa  app_work.o [1]
+    .near.data       inited   0x0000a0    0x54  LCD_driver.o [1]
+    .near.data       inited   0x0000f4    0x22  LCD_driver.o [1]
+    .near.data       inited   0x000116    0x70  LCD_driver.o [1]
+    .near.data       inited   0x000186     0x1  simple_protocol.o [1]
+                            - 0x000187   0x17b
 
-"P2", part 2 of 2:                       0x22d
-  .near.bss          zero     0x00016c    0xa0  app_lcd_display.o [1]
-  .near.bss          zero     0x00020c    0x7d  task_manager.o [1]
-  .near.bss          zero     0x000289    0x70  LCD_driver.o [1]
-  .near.bss          zero     0x0002f9    0x20  app_work.o [1]
-  .near.bss          zero     0x000319    0x18  simple_protocol.o [1]
-  .near.bss          zero     0x000331    0x14  datalink_protocol.o [1]
-  .near.bss          zero     0x000345    0x14  datalink_protocol.o [1]
-  .near.bss          zero     0x000359     0xe  LCD_driver.o [1]
-  .near.bss          zero     0x000367     0x9  app_lcd_display.o [1]
-  .near.bss          zero     0x000370     0x9  app_protocol.o [1]
-  .near.bss          zero     0x000379     0x5  simple_protocol.o [1]
-  .near.bss          zero     0x00037e     0x5  simple_protocol.o [1]
-  .near.bss          zero     0x000383     0x2  app_time.o [1]
-  .near.bss          zero     0x000385     0x2  app_time.o [1]
-  .near.bss          zero     0x000387     0x2  app_time.o [1]
-  .near.bss          zero     0x000389     0x2  simple_protocol.o [1]
-  .near.bss          zero     0x00038b     0x2  stm8l15x_it.o [1]
-  .near.bss          zero     0x00038d     0x2  timing.o [1]
-  .near.bss          zero     0x00038f     0x1  A7105_firmware_lib.o [1]
-  .near.bss          zero     0x000390     0x1  app_key.o [1]
-  .near.bss          zero     0x000391     0x1  app_time.o [1]
-  .near.bss          zero     0x000392     0x1  app_work.o [1]
-  .near.bss          zero     0x000393     0x1  app_work.o [1]
-  .near.bss          zero     0x000394     0x1  app_work.o [1]
-  .near.bss          zero     0x000395     0x1  simple_protocol.o [1]
-  .near.bss          zero     0x000396     0x1  simple_protocol.o [1]
-  .near.bss          zero     0x000397     0x1  simple_protocol.o [1]
-  .near.bss          zero     0x000398     0x1  simple_protocol.o [1]
-                            - 0x000399   0x22d
+"P2", part 2 of 2:                       0x294
+  .near.bss          zero     0x000187    0xb0  app_lcd_display.o [1]
+  .near.bss          zero     0x000237    0x7d  task_manager.o [1]
+  .near.bss          zero     0x0002b4    0x70  LCD_driver.o [1]
+  .near.bss          zero     0x000324    0x60  app_lcd_display.o [1]
+  .near.bss          zero     0x000384    0x20  app_work.o [1]
+  .near.bss          zero     0x0003a4    0x18  simple_protocol.o [1]
+  .near.bss          zero     0x0003bc    0x14  datalink_protocol.o [1]
+  .near.bss          zero     0x0003d0    0x14  datalink_protocol.o [1]
+  .near.bss          zero     0x0003e4     0xe  LCD_driver.o [1]
+  .near.bss          zero     0x0003f2     0x9  app_protocol.o [1]
+  .near.bss          zero     0x0003fb     0x5  simple_protocol.o [1]
+  .near.bss          zero     0x000400     0x5  simple_protocol.o [1]
+  .near.bss          zero     0x000405     0x2  app_time.o [1]
+  .near.bss          zero     0x000407     0x2  app_time.o [1]
+  .near.bss          zero     0x000409     0x2  app_time.o [1]
+  .near.bss          zero     0x00040b     0x2  simple_protocol.o [1]
+  .near.bss          zero     0x00040d     0x2  stm8l15x_it.o [1]
+  .near.bss          zero     0x00040f     0x2  timing.o [1]
+  .near.bss          zero     0x000411     0x1  A7105_firmware_lib.o [1]
+  .near.bss          zero     0x000412     0x1  app_key.o [1]
+  .near.bss          zero     0x000413     0x1  app_time.o [1]
+  .near.bss          zero     0x000414     0x1  app_work.o [1]
+  .near.bss          zero     0x000415     0x1  app_work.o [1]
+  .near.bss          zero     0x000416     0x1  app_work.o [1]
+  .near.bss          zero     0x000417     0x1  simple_protocol.o [1]
+  .near.bss          zero     0x000418     0x1  simple_protocol.o [1]
+  .near.bss          zero     0x000419     0x1  simple_protocol.o [1]
+  .near.bss          zero     0x00041a     0x1  simple_protocol.o [1]
+                            - 0x00041b   0x294
 
 "A1":                                    0x100
   CSTACK                      0x000700   0x100  <Block>
@@ -176,148 +177,156 @@ initialize by copy {
     .intvec          const    0x008000    0x80  interrupt.o [4]
                             - 0x008080    0x80
 
-"P3-P5":                                0x1fdd
+"P3-P5":                                0x259e
   .near_func.text    ro code  0x008080   0x3e1  app_work.o [1]
-  .near_func.text    ro code  0x008461   0x1bd  app_lcd_display.o [1]
-  .near_func.text    ro code  0x00861e   0x1a7  simple_protocol.o [1]
-  .near_func.text    ro code  0x0087c5   0x1a4  LCD_driver.o [1]
-  Initializer bytes  const    0x008969   0x160  <for P2-1>
-  .near_func.text    ro code  0x008ac9   0x149  A7105_firmware_lib.o [1]
-  .near_func.text    ro code  0x008c12   0x131  app_work.o [1]
-  .near_func.text    ro code  0x008d43   0x10d  stm8l15x_exti.o [1]
-  .near_func.text    ro code  0x008e50    0xfa  app_key.o [1]
-  .near_func.text    ro code  0x008f4a    0xcd  app_work.o [1]
-  .near_func.text    ro code  0x009017    0xc7  app_time.o [1]
-  .near_func.text    ro code  0x0090de    0xba  A7105_firmware_lib.o [1]
-  .near_func.text    ro code  0x009198    0xb1  app_time.o [1]
-  .near_func.text    ro code  0x009249    0xb1  simple_protocol.o [1]
-  .near_func.text    ro code  0x0092fa    0xa3  system.o [1]
-  .near_func.text    ro code  0x00939d    0x98  stm8l15x_clk.o [1]
-  .near_func.text    ro code  0x009435    0x8e  stm8l15x_gpio.o [1]
-  .near_func.text    ro code  0x0094c3    0x89  stm8l15x_clk.o [1]
-  .near_func.text    ro code  0x00954c    0x87  stm8l15x_lcd.o [1]
-  .near_func.text    ro code  0x0095d3    0x84  vreg_util.o [4]
-  .near_func.text    ro code  0x009657    0x82  datalink_protocol.o [1]
-  .near_func.text    ro code  0x0096d9    0x7e  task_manager.o [1]
-  .near_func.text    ro code  0x009757    0x75  task_manager.o [1]
-  .near_func.text    ro code  0x0097cc    0x65  LCD_driver.o [1]
-  .near_func.text    ro code  0x009831    0x63  A7105_driver.o [1]
-  .near_func.text    ro code  0x009894    0x62  app_lcd_display.o [1]
-  .near_func.text    ro code  0x0098f6    0x5b  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009951    0x59  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x0099aa    0x4d  main.o [1]
-  .near_func.text    ro code  0x0099f7    0x4b  LCD_firmware.o [1]
-  .near_func.text    ro code  0x009a42    0x39  A7105_driver.o [1]
-  .near_func.text    ro code  0x009a7b    0x37  A7105_firmware_lib.o [1]
-  .near_func.text    ro code  0x009ab2    0x36  LCD_firmware.o [1]
-  .near_func.text    ro code  0x009ae8    0x35  LCD_driver.o [1]
-  .near_func.text    ro code  0x009b1d    0x35  stm8l15x_it.o [1]
-  .near.rodata       const    0x009b52    0x33  A7105_firmware_lib.o [1]
-  .near_func.text    ro code  0x009b85    0x33  datalink_protocol.o [1]
-  .near_func.text    ro code  0x009bb8    0x31  system.o [1]
-  .near_func.text    ro code  0x009be9    0x30  A7105_firmware_lib.o [1]
-  .near_func.text    ro code  0x009c19    0x2b  short.o [4]
-  .near_func.text    ro code  0x009c44    0x29  system.o [1]
-  .near_func.text    ro code  0x009c6d    0x28  timing.o [1]
-  .near_func.text    ro code  0x009c95    0x28  init_small.o [4]
-  .near_func.text    ro code  0x009cbd    0x22  timing.o [1]
-  .near_func.text    ro code  0x009cdf    0x21  stm8l15x_exti.o [1]
-  .near_func.text    ro code  0x009d00    0x21  stm8l15x_exti.o [1]
-  .iar.init_table    const    0x009d21    0x12  - Linker created -
-  .near_func.text    ro code  0x009d33    0x1e  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x009d51    0x1e  init_small.o [4]
-  .near_func.text    ro code  0x009d6f    0x1c  A7105_firmware_lib.o [1]
-  .near_func.text    ro code  0x009d8b    0x1c  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x009da7    0x1a  stm8l15x_tim4.o [1]
-  .near_func.text    ro code  0x009dc1    0x19  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x009dda    0x19  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x009df3    0x18  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x009e0b    0x17  app_time.o [1]
-  .near_func.text    ro code  0x009e22    0x16  A7105_firmware_lib.o [1]
-  .near_func.text    ro code  0x009e38    0x16  memset.o [4]
-  .near_func.text    ro code  0x009e4e    0x15  app_time.o [1]
-  .near_func.text    ro code  0x009e63    0x14  init.o [4]
-  .near_func.text    ro code  0x009e77    0x14  __dbg_xxexit.o [3]
-  .near_func.text    ro code  0x009e8b    0x13  stm8l15x_clk.o [1]
-  .near_func.text    ro code  0x009e9e    0x13  stm8l15x_lcd.o [1]
-  .near_func.text    ro code  0x009eb1    0x13  stm8l15x_lcd.o [1]
-  .near_func.text    ro code  0x009ec4    0x13  stm8l15x_lcd.o [1]
-  .near_func.text    ro code  0x009ed7    0x13  cstartup.o [4]
-  .near_func.text    ro code  0x009eea    0x11  simple_protocol.o [1]
-  .near_func.text    ro code  0x009efb    0x11  stm8l15x_tim4.o [1]
-  .near_func.text    ro code  0x009f0c     0xd  app_protocol.o [1]
-  .near_func.text    ro code  0x009f19     0xd  stm8l15x_lcd.o [1]
-  .near_func.text    ro code  0x009f26     0xd  stm8l15x_tim4.o [1]
-  .near_func.text    ro code  0x009f33     0xd  stm8l15x_tim4.o [1]
-  .near_func.text    ro code  0x009f40     0xd  task_manager.o [1]
-  .near_func.text    ro code  0x009f4d     0xc  main.o [1]
-  .near_func.text    ro code  0x009f59     0xc  stm8l15x_lcd.o [1]
-  .near_func.text    ro code  0x009f65     0xb  app_time.o [1]
-  .near_func.text    ro code  0x009f70     0xb  app_time.o [1]
-  .near_func.text    ro code  0x009f7b     0xa  stm8l15x_clk.o [1]
-  .near_func.text    ro code  0x009f85     0x9  A7105_driver.o [1]
-  .near_func.text    ro code  0x009f8e     0x9  stm8l15x_rtc.o [1]
-  .near_func.text    ro code  0x009f97     0x8  app_protocol.o [1]
-  .near_func.text    ro code  0x009f9f     0x8  task_manager.o [1]
-  .near_func.text    ro code  0x009fa7     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fae     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fb5     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fbc     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fc3     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fca     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fd1     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fd8     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fdf     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fe6     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009fed     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009ff4     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x009ffb     0x7  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x00a002     0x6  app_lcd_display_config.o [1]
-  .near_func.text    ro code  0x00a008     0x5  stm8l15x_tim4.o [1]
-  .near_func.text    ro code  0x00a00d     0x5  cexit.o [4]
-  .near.rodata       const    0x00a012     0x4  A7105_firmware_lib.o [1]
-  .near_func.text    ro code  0x00a016     0x4  A7105_firmware_lib.o [1]
-  .near_func.text    ro code  0x00a01a     0x4  app_time.o [1]
-  .near_func.text    ro code  0x00a01e     0x4  app_time.o [1]
-  .near_func.text    ro code  0x00a022     0x4  app_time.o [1]
-  .near_func.text    ro code  0x00a026     0x4  app_work.o [1]
-  .near_func.text    ro code  0x00a02a     0x4  stm8l15x_tim4.o [1]
-  .near_func.text    ro code  0x00a02e     0x4  timing.o [1]
-  .near_func.text    ro code  0x00a032     0x3  interrupt.o [4]
-  .near_func.text    ro code  0x00a035     0x3  low_level_init.o [4]
-  .near_func.text    ro code  0x00a038     0x3  exit.o [4]
-  .near_func.text    ro code  0x00a03b     0x3  unhandled_exception.o [4]
-  .near_func.text    ro code  0x00a03e     0x2  A7105_firmware_lib.o [1]
-  .near.rodata       const    0x00a040     0x1  app_time.o [1]
-  .near_func.text    ro code  0x00a041     0x1  app_key.o [1]
-  .near_func.text    ro code  0x00a042     0x1  app_time.o [1]
-  .near_func.text    ro code  0x00a043     0x1  app_work.o [1]
-  .near_func.text    ro code  0x00a044     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a045     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a046     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a047     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a048     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a049     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a04a     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a04b     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a04c     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a04d     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a04e     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a04f     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a050     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a051     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a052     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a053     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a054     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a055     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a056     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a057     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a058     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a059     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a05a     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a05b     0x1  stm8l15x_it.o [1]
-  .near_func.text    ro code  0x00a05c     0x1  __dbg_break.o [3]
-                            - 0x00a05d  0x1fdd
+  .near_func.text    ro code  0x008461   0x31f  app_time.o [1]
+  .near_func.text    ro code  0x008780   0x2a3  app_work.o [1]
+  .near_func.text    ro code  0x008a23   0x1a7  simple_protocol.o [1]
+  Initializer bytes  const    0x008bca   0x17b  <for P2-1>
+  .near_func.text    ro code  0x008d45   0x156  app_lcd_display.o [1]
+  .near_func.text    ro code  0x008e9b   0x149  A7105_firmware_lib.o [1]
+  .near_func.text    ro code  0x008fe4   0x148  app_lcd_display.o [1]
+  .near_func.text    ro code  0x00912c   0x131  app_work.o [1]
+  .near_func.text    ro code  0x00925d   0x11f  LCD_driver.o [1]
+  .near_func.text    ro code  0x00937c   0x10d  stm8l15x_exti.o [1]
+  .near_func.text    ro code  0x009489   0x104  app_key.o [1]
+  .near_func.text    ro code  0x00958d    0xcd  app_work.o [1]
+  .near_func.text    ro code  0x00965a    0xcc  app_lcd_display.o [1]
+  .near_func.text    ro code  0x009726    0xba  A7105_firmware_lib.o [1]
+  .near_func.text    ro code  0x0097e0    0xb1  app_lcd_display.o [1]
+  .near_func.text    ro code  0x009891    0xb1  simple_protocol.o [1]
+  .near_func.text    ro code  0x009942    0xa3  system.o [1]
+  .near_func.text    ro code  0x0099e5    0x98  stm8l15x_clk.o [1]
+  .near_func.text    ro code  0x009a7d    0x8e  stm8l15x_gpio.o [1]
+  .near_func.text    ro code  0x009b0b    0x89  stm8l15x_clk.o [1]
+  .near_func.text    ro code  0x009b94    0x87  stm8l15x_lcd.o [1]
+  .near_func.text    ro code  0x009c1b    0x85  LCD_driver.o [1]
+  .near_func.text    ro code  0x009ca0    0x84  vreg_util.o [4]
+  .near_func.text    ro code  0x009d24    0x82  datalink_protocol.o [1]
+  .near_func.text    ro code  0x009da6    0x7e  task_manager.o [1]
+  .near_func.text    ro code  0x009e24    0x75  task_manager.o [1]
+  .near_func.text    ro code  0x009e99    0x63  A7105_driver.o [1]
+  .near_func.text    ro code  0x009efc    0x4d  main.o [1]
+  .near_func.text    ro code  0x009f49    0x4b  LCD_firmware.o [1]
+  .near_func.text    ro code  0x009f94    0x39  A7105_driver.o [1]
+  .near_func.text    ro code  0x009fcd    0x38  LCD_driver.o [1]
+  .near_func.text    ro code  0x00a005    0x37  A7105_firmware_lib.o [1]
+  .near_func.text    ro code  0x00a03c    0x36  LCD_firmware.o [1]
+  .near_func.text    ro code  0x00a072    0x35  stm8l15x_it.o [1]
+  .near.rodata       const    0x00a0a7    0x33  A7105_firmware_lib.o [1]
+  .near_func.text    ro code  0x00a0da    0x33  datalink_protocol.o [1]
+  .near_func.text    ro code  0x00a10d    0x32  app_lcd_display.o [1]
+  .near_func.text    ro code  0x00a13f    0x31  system.o [1]
+  .near_func.text    ro code  0x00a170    0x30  A7105_firmware_lib.o [1]
+  .near_func.text    ro code  0x00a1a0    0x2b  short.o [4]
+  .near_func.text    ro code  0x00a1cb    0x29  system.o [1]
+  .near_func.text    ro code  0x00a1f4    0x28  timing.o [1]
+  .near_func.text    ro code  0x00a21c    0x28  init_small.o [4]
+  .near_func.text    ro code  0x00a244    0x22  timing.o [1]
+  .near_func.text    ro code  0x00a266    0x21  stm8l15x_exti.o [1]
+  .near_func.text    ro code  0x00a287    0x21  stm8l15x_exti.o [1]
+  .iar.init_table    const    0x00a2a8    0x12  - Linker created -
+  .near_func.text    ro code  0x00a2ba    0x1e  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a2d8    0x1e  init_small.o [4]
+  .near_func.text    ro code  0x00a2f6    0x1c  A7105_firmware_lib.o [1]
+  .near_func.text    ro code  0x00a312    0x1c  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a32e    0x1a  stm8l15x_tim4.o [1]
+  .near_func.text    ro code  0x00a348    0x19  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a361    0x19  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a37a    0x18  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a392    0x16  A7105_firmware_lib.o [1]
+  .near_func.text    ro code  0x00a3a8    0x16  app_lcd_display.o [1]
+  .near_func.text    ro code  0x00a3be    0x16  memset.o [4]
+  .near_func.text    ro code  0x00a3d4    0x15  app_time.o [1]
+  .near_func.text    ro code  0x00a3e9    0x14  init.o [4]
+  .near_func.text    ro code  0x00a3fd    0x14  __dbg_xxexit.o [3]
+  .near_func.text    ro code  0x00a411    0x13  stm8l15x_clk.o [1]
+  .near_func.text    ro code  0x00a424    0x13  stm8l15x_lcd.o [1]
+  .near_func.text    ro code  0x00a437    0x13  stm8l15x_lcd.o [1]
+  .near_func.text    ro code  0x00a44a    0x13  stm8l15x_lcd.o [1]
+  .near_func.text    ro code  0x00a45d    0x13  cstartup.o [4]
+  .near_func.text    ro code  0x00a470    0x11  simple_protocol.o [1]
+  .near_func.text    ro code  0x00a481    0x11  stm8l15x_tim4.o [1]
+  .near_func.text    ro code  0x00a492     0xd  app_protocol.o [1]
+  .near_func.text    ro code  0x00a49f     0xd  stm8l15x_lcd.o [1]
+  .near_func.text    ro code  0x00a4ac     0xd  stm8l15x_tim4.o [1]
+  .near_func.text    ro code  0x00a4b9     0xd  stm8l15x_tim4.o [1]
+  .near_func.text    ro code  0x00a4c6     0xd  task_manager.o [1]
+  .near_func.text    ro code  0x00a4d3     0xc  main.o [1]
+  .near_func.text    ro code  0x00a4df     0xc  stm8l15x_lcd.o [1]
+  .near_func.text    ro code  0x00a4eb     0xb  app_time.o [1]
+  .near_func.text    ro code  0x00a4f6     0xa  stm8l15x_clk.o [1]
+  .near_func.text    ro code  0x00a500     0x9  A7105_driver.o [1]
+  .near_func.text    ro code  0x00a509     0x9  stm8l15x_rtc.o [1]
+  .near_func.text    ro code  0x00a512     0x8  app_protocol.o [1]
+  .near_func.text    ro code  0x00a51a     0x8  LCD_driver.o [1]
+  .near_func.text    ro code  0x00a522     0x8  task_manager.o [1]
+  .near_func.text    ro code  0x00a52a     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a531     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a538     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a53f     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a546     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a54d     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a554     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a55b     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a562     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a569     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a570     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a577     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a57e     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a585     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a58c     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a593     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a59a     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a5a1     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a5a8     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a5af     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a5b6     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a5bd     0x7  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a5c4     0x6  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a5ca     0x6  app_lcd_display_config.o [1]
+  .near_func.text    ro code  0x00a5d0     0x5  stm8l15x_tim4.o [1]
+  .near_func.text    ro code  0x00a5d5     0x5  cexit.o [4]
+  .near.rodata       const    0x00a5da     0x4  A7105_firmware_lib.o [1]
+  .near_func.text    ro code  0x00a5de     0x4  A7105_firmware_lib.o [1]
+  .near_func.text    ro code  0x00a5e2     0x4  app_time.o [1]
+  .near_func.text    ro code  0x00a5e6     0x4  app_work.o [1]
+  .near_func.text    ro code  0x00a5ea     0x4  stm8l15x_tim4.o [1]
+  .near_func.text    ro code  0x00a5ee     0x4  timing.o [1]
+  .near_func.text    ro code  0x00a5f2     0x3  app_lcd_display.o [1]
+  .near_func.text    ro code  0x00a5f5     0x3  interrupt.o [4]
+  .near_func.text    ro code  0x00a5f8     0x3  low_level_init.o [4]
+  .near_func.text    ro code  0x00a5fb     0x3  exit.o [4]
+  .near_func.text    ro code  0x00a5fe     0x3  unhandled_exception.o [4]
+  .near_func.text    ro code  0x00a601     0x2  A7105_firmware_lib.o [1]
+  .near.rodata       const    0x00a603     0x1  app_time.o [1]
+  .near_func.text    ro code  0x00a604     0x1  app_key.o [1]
+  .near_func.text    ro code  0x00a605     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a606     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a607     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a608     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a609     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a60a     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a60b     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a60c     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a60d     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a60e     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a60f     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a610     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a611     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a612     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a613     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a614     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a615     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a616     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a617     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a618     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a619     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a61a     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a61b     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a61c     0x1  stm8l15x_it.o [1]
+  .near_func.text    ro code  0x00a61d     0x1  __dbg_break.o [3]
+                            - 0x00a61e  0x259e
 
 
 *******************************************************************************
@@ -327,14 +336,14 @@ initialize by copy {
           Address   Size
           -------   ----
 Zero (__iar_zero_init2)
-    1 destination range, total size 0x22d:
-          0x00016c  0x22d
+    1 destination range, total size 0x294:
+          0x000187  0x294
 
 Copy (__iar_copy_init2)
-    1 source range, total size 0x160:
-          0x008969  0x160
-    1 destination range, total size 0x160:
-          0x00000c  0x160
+    1 source range, total size 0x17b:
+          0x008bca  0x17b
+    1 destination range, total size 0x17b:
+          0x00000c  0x17b
 
 
 
@@ -344,17 +353,17 @@ Copy (__iar_copy_init2)
 
     Module                    ro code  ro data  rw data
     ------                    -------  -------  -------
-D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj: [1]
+D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj: [1]
     A7105_driver.o                165
     A7105_firmware_lib.o          674       55        1
-    LCD_driver.o                  574      223      349
+    LCD_driver.o                  484      230      356
     LCD_firmware.o                129
-    app_key.o                     251                 1
-    app_lcd_display.o             543               169
-    app_lcd_display_config.o      277       48       48
+    app_key.o                     261                 1
+    app_lcd_display.o           1 126               272
+    app_lcd_display_config.o      166       48       48
     app_protocol.o                 21                 9
-    app_time.o                    455        1        7
-    app_work.o                  1 508       80      115
+    app_time.o                    835       11       17
+    app_work.o                  2 182       90      125
     datalink_protocol.o           181                40
     main.o                         89
     simple_protocol.o             617        1       41
@@ -369,7 +378,7 @@ D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj: [1]
     task_manager.o                264               125
     timing.o                       78                 2
     ---------------------------------------------------
-    Total:                      7 387      408      909
+    Total:                      8 833      435    1 039
 
 command line: [2]
     ---------------------------------------------------
@@ -399,7 +408,7 @@ dlstm8smn.a: [4]
 
     Linker created                          18      256
 -------------------------------------------------------
-    Grand Total:                7 731      554    1 177
+    Grand Total:                9 177      581    1 307
 
 
 *******************************************************************************
@@ -408,8 +417,8 @@ dlstm8smn.a: [4]
 
 Entry                    Address   Size  Type      Object
 -----                    -------   ----  ----      ------
-.iar.init_table$$Base   0x009d21          --   Gb  - Linker created -
-.iar.init_table$$Limit  0x009d33          --   Gb  - Linker created -
+.iar.init_table$$Base   0x00a2a8          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00a2ba          --   Gb  - Linker created -
 ?b0                     0x000000         Data  Gb  vregs.o [4]
 ?b1                     0x000001         Data  Gb  vregs.o [4]
 ?b10                    0x00000a         Data  Gb  vregs.o [4]
@@ -425,283 +434,307 @@ Entry                    Address   Size  Type      Object
 ?e0                     0x000001         Data  Gb  vregs.o [4]
 ?e1                     0x000005         Data  Gb  vregs.o [4]
 ?e2                     0x000009         Data  Gb  vregs.o [4]
-?epilogue_l2            0x00964f         Code  Gb  vreg_util.o [4]
-?epilogue_w4            0x009653         Code  Gb  vreg_util.o [4]
+?epilogue_l2            0x009d1c         Code  Gb  vreg_util.o [4]
+?epilogue_w4            0x009d20         Code  Gb  vreg_util.o [4]
 ?l0                     0x000000         Data  Gb  vregs.o [4]
 ?l1                     0x000004         Data  Gb  vregs.o [4]
 ?l2                     0x000008         Data  Gb  vregs.o [4]
-?mul16_x_x_w0           0x009c19         Code  Gb  short.o [4]
-?pop_l0                 0x009626         Code  Gb  vreg_util.o [4]
-?pop_l1                 0x009631         Code  Gb  vreg_util.o [4]
-?pop_l2                 0x00963c         Code  Gb  vreg_util.o [4]
-?pop_w4                 0x0095eb         Code  Gb  vreg_util.o [4]
-?push_l0                0x0095fa         Code  Gb  vreg_util.o [4]
-?push_l1                0x0095ff         Code  Gb  vreg_util.o [4]
-?push_l2                0x009604         Code  Gb  vreg_util.o [4]
-?push_w4                0x0095d3         Code  Gb  vreg_util.o [4]
-?sll16_x_x_a            0x009c37         Code  Gb  short.o [4]
-?srl16_x_x_4            0x009c3f         Code  Gb  short.o [4]
+?mul16_x_x_w0           0x00a1a0         Code  Gb  short.o [4]
+?pop_l0                 0x009cf3         Code  Gb  vreg_util.o [4]
+?pop_l1                 0x009cfe         Code  Gb  vreg_util.o [4]
+?pop_l2                 0x009d09         Code  Gb  vreg_util.o [4]
+?pop_w4                 0x009cb8         Code  Gb  vreg_util.o [4]
+?push_l0                0x009cc7         Code  Gb  vreg_util.o [4]
+?push_l1                0x009ccc         Code  Gb  vreg_util.o [4]
+?push_l2                0x009cd1         Code  Gb  vreg_util.o [4]
+?push_w4                0x009ca0         Code  Gb  vreg_util.o [4]
+?sll16_x_x_a            0x00a1be         Code  Gb  short.o [4]
+?srl16_x_x_4            0x00a1c6         Code  Gb  short.o [4]
 ?w0                     0x000000         Data  Gb  vregs.o [4]
 ?w1                     0x000002         Data  Gb  vregs.o [4]
 ?w2                     0x000004         Data  Gb  vregs.o [4]
 ?w3                     0x000006         Data  Gb  vregs.o [4]
 ?w4                     0x000008         Data  Gb  vregs.o [4]
 ?w5                     0x00000a         Data  Gb  vregs.o [4]
-A7105_Calibration       0x0090de   0xba  Code  Gb  A7105_firmware_lib.o [1]
-A7105_Config            0x008b79   0x55  Code  Gb  A7105_firmware_lib.o [1]
+A7105_Calibration       0x009726   0xba  Code  Gb  A7105_firmware_lib.o [1]
+A7105_Config            0x008f4b   0x55  Code  Gb  A7105_firmware_lib.o [1]
 A7105_GIOx_interrupt_switch
-                        0x009d6f   0x1c  Code  Gb  A7105_firmware_lib.o [1]
-A7105_ReadReg           0x008b31   0x12  Code  Gb  A7105_firmware_lib.o [1]
-A7105_Reset             0x008b73    0x6  Code  Gb  A7105_firmware_lib.o [1]
-A7105_WriteID           0x008b4f   0x24  Code  Gb  A7105_firmware_lib.o [1]
-A7105_WriteReg          0x008ac9   0x15  Code  Gb  A7105_firmware_lib.o [1]
-A7105_init              0x009831   0x63  Code  Gb  A7105_driver.o [1]
-A7105_update_wtr        0x00a016    0x4  Code  Gb  A7105_firmware_lib.o [1]
-A7105_wtr_status        0x00038f    0x1  Data  Gb  A7105_firmware_lib.o [1]
-ADC1_COMP_IRQHandler    0x00a051    0x1  Code  Gb  stm8l15x_it.o [1]
-ByteRead                0x008ade   0x53  Code  Lc  A7105_firmware_lib.o [1]
-ByteSend                0x009be9   0x30  Code  Lc  A7105_firmware_lib.o [1]
-CLK_GetFlagStatus       0x00939d   0x98  Code  Gb  stm8l15x_clk.o [1]
-CLK_LSEConfig           0x009e8b   0x13  Code  Gb  stm8l15x_clk.o [1]
+                        0x00a2f6   0x1c  Code  Gb  A7105_firmware_lib.o [1]
+A7105_ReadReg           0x008f03   0x12  Code  Gb  A7105_firmware_lib.o [1]
+A7105_Reset             0x008f45    0x6  Code  Gb  A7105_firmware_lib.o [1]
+A7105_WriteID           0x008f21   0x24  Code  Gb  A7105_firmware_lib.o [1]
+A7105_WriteReg          0x008e9b   0x15  Code  Gb  A7105_firmware_lib.o [1]
+A7105_init              0x009e99   0x63  Code  Gb  A7105_driver.o [1]
+A7105_update_wtr        0x00a5de    0x4  Code  Gb  A7105_firmware_lib.o [1]
+A7105_wtr_status        0x000411    0x1  Data  Gb  A7105_firmware_lib.o [1]
+ADC1_COMP_IRQHandler    0x00a612    0x1  Code  Gb  stm8l15x_it.o [1]
+ByteRead                0x008eb0   0x53  Code  Lc  A7105_firmware_lib.o [1]
+ByteSend                0x00a170   0x30  Code  Lc  A7105_firmware_lib.o [1]
+CLK_GetFlagStatus       0x0099e5   0x98  Code  Gb  stm8l15x_clk.o [1]
+CLK_LSEConfig           0x00a411   0x13  Code  Gb  stm8l15x_clk.o [1]
 CLK_PeripheralClockConfig
-                        0x0094c3   0x89  Code  Gb  stm8l15x_clk.o [1]
-CLK_RTCClockConfig      0x009f7b    0xa  Code  Gb  stm8l15x_clk.o [1]
+                        0x009b0b   0x89  Code  Gb  stm8l15x_clk.o [1]
+CLK_RTCClockConfig      0x00a4f6    0xa  Code  Gb  stm8l15x_clk.o [1]
 CSTACK$$Base            0x000700          --   Gb  - Linker created -
 CSTACK$$Limit           0x000800          --   Gb  - Linker created -
-Clock_Configuration     0x009bb8   0x31  Code  Gb  system.o [1]
+Clock_Configuration     0x00a13f   0x31  Code  Gb  system.o [1]
 DMA1_CHANNEL0_1_IRQHandler
-                        0x00a046    0x1  Code  Gb  stm8l15x_it.o [1]
+                        0x00a607    0x1  Code  Gb  stm8l15x_it.o [1]
 DMA1_CHANNEL2_3_IRQHandler
-                        0x00a047    0x1  Code  Gb  stm8l15x_it.o [1]
-EXTI0_IRQHandler        0x009df3   0x18  Code  Gb  stm8l15x_it.o [1]
-EXTI1_IRQHandler        0x009d8b   0x1c  Code  Gb  stm8l15x_it.o [1]
-EXTI2_IRQHandler        0x00a04b    0x1  Code  Gb  stm8l15x_it.o [1]
-EXTI3_IRQHandler        0x009dda   0x19  Code  Gb  stm8l15x_it.o [1]
-EXTI4_IRQHandler        0x00a04c    0x1  Code  Gb  stm8l15x_it.o [1]
-EXTI5_IRQHandler        0x00a04d    0x1  Code  Gb  stm8l15x_it.o [1]
-EXTI6_IRQHandler        0x00a04e    0x1  Code  Gb  stm8l15x_it.o [1]
-EXTI7_IRQHandler        0x009d33   0x1e  Code  Gb  stm8l15x_it.o [1]
-EXTIB_G_IRQHandler      0x00a049    0x1  Code  Gb  stm8l15x_it.o [1]
-EXTID_H_IRQHandler      0x00a04a    0x1  Code  Gb  stm8l15x_it.o [1]
-EXTIE_F_PVD_IRQHandler  0x00a048    0x1  Code  Gb  stm8l15x_it.o [1]
-EXTI_ClearITPendingBit  0x009d00   0x21  Code  Gb  stm8l15x_exti.o [1]
-EXTI_DeInit             0x009cdf   0x21  Code  Gb  stm8l15x_exti.o [1]
-EXTI_SetPinSensitivity  0x008d43  0x10d  Code  Gb  stm8l15x_exti.o [1]
-Error_State             0x00a03e    0x2  Code  Lc  A7105_firmware_lib.o [1]
-FLASH_IRQHandler        0x00a045    0x1  Code  Gb  stm8l15x_it.o [1]
-GPIO_Configuration      0x0092fa   0xa3  Code  Gb  system.o [1]
-GPIO_Init               0x009435   0x8e  Code  Gb  stm8l15x_gpio.o [1]
-I2C1_SPI2_IRQHandler    0x00a05b    0x1  Code  Gb  stm8l15x_it.o [1]
-ID_Tab                  0x00a012    0x4  Data  Gb  A7105_firmware_lib.o [1]
+                        0x00a608    0x1  Code  Gb  stm8l15x_it.o [1]
+EXTI0_IRQHandler        0x00a37a   0x18  Code  Gb  stm8l15x_it.o [1]
+EXTI1_IRQHandler        0x00a312   0x1c  Code  Gb  stm8l15x_it.o [1]
+EXTI2_IRQHandler        0x00a60c    0x1  Code  Gb  stm8l15x_it.o [1]
+EXTI3_IRQHandler        0x00a361   0x19  Code  Gb  stm8l15x_it.o [1]
+EXTI4_IRQHandler        0x00a60d    0x1  Code  Gb  stm8l15x_it.o [1]
+EXTI5_IRQHandler        0x00a60e    0x1  Code  Gb  stm8l15x_it.o [1]
+EXTI6_IRQHandler        0x00a60f    0x1  Code  Gb  stm8l15x_it.o [1]
+EXTI7_IRQHandler        0x00a2ba   0x1e  Code  Gb  stm8l15x_it.o [1]
+EXTIB_G_IRQHandler      0x00a60a    0x1  Code  Gb  stm8l15x_it.o [1]
+EXTID_H_IRQHandler      0x00a60b    0x1  Code  Gb  stm8l15x_it.o [1]
+EXTIE_F_PVD_IRQHandler  0x00a609    0x1  Code  Gb  stm8l15x_it.o [1]
+EXTI_ClearITPendingBit  0x00a287   0x21  Code  Gb  stm8l15x_exti.o [1]
+EXTI_DeInit             0x00a266   0x21  Code  Gb  stm8l15x_exti.o [1]
+EXTI_SetPinSensitivity  0x00937c  0x10d  Code  Gb  stm8l15x_exti.o [1]
+Error_State             0x00a601    0x2  Code  Lc  A7105_firmware_lib.o [1]
+FLASH_IRQHandler        0x00a606    0x1  Code  Gb  stm8l15x_it.o [1]
+GPIO_Configuration      0x009942   0xa3  Code  Gb  system.o [1]
+GPIO_Init               0x009a7d   0x8e  Code  Gb  stm8l15x_gpio.o [1]
+I2C1_SPI2_IRQHandler    0x00a61c    0x1  Code  Gb  stm8l15x_it.o [1]
+ID_Tab                  0x00a5da    0x4  Data  Gb  A7105_firmware_lib.o [1]
 INTVEC$$Base            0x008000          --   Gb  - Linker created -
 INTVEC$$Limit           0x008080          --   Gb  - Linker created -
-LCD_AES_IRQHandler      0x00a04f    0x1  Code  Gb  stm8l15x_it.o [1]
-LCD_Cmd                 0x009f19    0xd  Code  Gb  stm8l15x_lcd.o [1]
-LCD_ContrastConfig      0x009ec4   0x13  Code  Gb  stm8l15x_lcd.o [1]
-LCD_DeadTimeConfig      0x009eb1   0x13  Code  Gb  stm8l15x_lcd.o [1]
-LCD_GLASS_Init          0x0099f7   0x4b  Code  Gb  LCD_firmware.o [1]
-LCD_GLASS_Refresh       0x009ab2   0x36  Code  Gb  LCD_firmware.o [1]
-LCD_Init                0x00954c   0x87  Code  Gb  stm8l15x_lcd.o [1]
-LCD_PortMaskConfig      0x009f59    0xc  Code  Gb  stm8l15x_lcd.o [1]
+LCD_AES_IRQHandler      0x00a610    0x1  Code  Gb  stm8l15x_it.o [1]
+LCD_Cmd                 0x00a49f    0xd  Code  Gb  stm8l15x_lcd.o [1]
+LCD_ContrastConfig      0x00a44a   0x13  Code  Gb  stm8l15x_lcd.o [1]
+LCD_DeadTimeConfig      0x00a437   0x13  Code  Gb  stm8l15x_lcd.o [1]
+LCD_GLASS_Init          0x009f49   0x4b  Code  Gb  LCD_firmware.o [1]
+LCD_GLASS_Refresh       0x00a03c   0x36  Code  Gb  LCD_firmware.o [1]
+LCD_Init                0x009b94   0x87  Code  Gb  stm8l15x_lcd.o [1]
+LCD_PortMaskConfig      0x00a4df    0xc  Code  Gb  stm8l15x_lcd.o [1]
 LCD_PulseOnDurationConfig
-                        0x009e9e   0x13  Code  Gb  stm8l15x_lcd.o [1]
-LCD_driver_init         0x0097cc   0x65  Code  Gb  LCD_driver.o [1]
-RTC_CSSLSE_IRQHandler   0x009dc1   0x19  Code  Gb  stm8l15x_it.o [1]
-RTC_ClearITPendingBit   0x009f8e    0x9  Code  Gb  stm8l15x_rtc.o [1]
-Region$$Table$$Base     0x009d21          --   Gb  - Linker created -
-Region$$Table$$Limit    0x009d33          --   Gb  - Linker created -
-SPI1_IRQHandler         0x00a058    0x1  Code  Gb  stm8l15x_it.o [1]
+                        0x00a424   0x13  Code  Gb  stm8l15x_lcd.o [1]
+LCD_driver_init         0x00a002    0x3  Code  Gb  LCD_driver.o [1]
+LCD_driver_refresh      0x00a51a    0x8  Code  Gb  LCD_driver.o [1]
+RTC_CSSLSE_IRQHandler   0x00a348   0x19  Code  Gb  stm8l15x_it.o [1]
+RTC_ClearITPendingBit   0x00a509    0x9  Code  Gb  stm8l15x_rtc.o [1]
+Region$$Table$$Base     0x00a2a8          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00a2ba          --   Gb  - Linker created -
+SPI1_IRQHandler         0x00a619    0x1  Code  Gb  stm8l15x_it.o [1]
 SWITCH_CSS_BREAK_DAC_IRQHandler
-                        0x00a050    0x1  Code  Gb  stm8l15x_it.o [1]
-SelVCOBand              0x008bce   0x44  Code  Lc  A7105_firmware_lib.o [1]
-StrobeCmd               0x008b43    0xc  Code  Gb  A7105_firmware_lib.o [1]
-TIM1_CC_IRQHandler      0x00a057    0x1  Code  Gb  stm8l15x_it.o [1]
+                        0x00a611    0x1  Code  Gb  stm8l15x_it.o [1]
+SelVCOBand              0x008fa0   0x44  Code  Lc  A7105_firmware_lib.o [1]
+StrobeCmd               0x008f15    0xc  Code  Gb  A7105_firmware_lib.o [1]
+TIM1_CC_IRQHandler      0x00a618    0x1  Code  Gb  stm8l15x_it.o [1]
 TIM1_UPD_OVF_TRG_COM_IRQHandler
-                        0x00a056    0x1  Code  Gb  stm8l15x_it.o [1]
+                        0x00a617    0x1  Code  Gb  stm8l15x_it.o [1]
 TIM2_CC_USART2_RX_IRQHandler
-                        0x00a053    0x1  Code  Gb  stm8l15x_it.o [1]
+                        0x00a614    0x1  Code  Gb  stm8l15x_it.o [1]
 TIM2_UPD_OVF_TRG_BRK_USART2_TX_IRQHandler
-                        0x00a052    0x1  Code  Gb  stm8l15x_it.o [1]
+                        0x00a613    0x1  Code  Gb  stm8l15x_it.o [1]
 TIM3_CC_USART3_RX_IRQHandler
-                        0x00a055    0x1  Code  Gb  stm8l15x_it.o [1]
+                        0x00a616    0x1  Code  Gb  stm8l15x_it.o [1]
 TIM3_UPD_OVF_TRG_BRK_USART3_TX_IRQHandler
-                        0x00a054    0x1  Code  Gb  stm8l15x_it.o [1]
-TIM4_ARRPreloadConfig   0x009f26    0xd  Code  Gb  stm8l15x_tim4.o [1]
-TIM4_ClearFlag          0x00a008    0x5  Code  Gb  stm8l15x_tim4.o [1]
-TIM4_Cmd                0x009f33    0xd  Code  Gb  stm8l15x_tim4.o [1]
-TIM4_Configuration      0x009c44   0x29  Code  Gb  system.o [1]
-TIM4_ITConfig           0x009da7   0x1a  Code  Gb  stm8l15x_tim4.o [1]
-TIM4_SetCounter         0x00a02a    0x4  Code  Gb  stm8l15x_tim4.o [1]
-TIM4_TimeBaseInit       0x009efb   0x11  Code  Gb  stm8l15x_tim4.o [1]
+                        0x00a615    0x1  Code  Gb  stm8l15x_it.o [1]
+TIM4_ARRPreloadConfig   0x00a4ac    0xd  Code  Gb  stm8l15x_tim4.o [1]
+TIM4_ClearFlag          0x00a5d0    0x5  Code  Gb  stm8l15x_tim4.o [1]
+TIM4_Cmd                0x00a4b9    0xd  Code  Gb  stm8l15x_tim4.o [1]
+TIM4_Configuration      0x00a1cb   0x29  Code  Gb  system.o [1]
+TIM4_ITConfig           0x00a32e   0x1a  Code  Gb  stm8l15x_tim4.o [1]
+TIM4_SetCounter         0x00a5ea    0x4  Code  Gb  stm8l15x_tim4.o [1]
+TIM4_TimeBaseInit       0x00a481   0x11  Code  Gb  stm8l15x_tim4.o [1]
 TIM4_UPD_OVF_TRG_IRQHandler
-                        0x009b1d   0x35  Code  Gb  stm8l15x_it.o [1]
+                        0x00a072   0x35  Code  Gb  stm8l15x_it.o [1]
 TIM4_UPD_OVF_TRG_IRQHandler::count_1000ms
-                        0x00038b    0x2  Data  Lc  stm8l15x_it.o [1]
-TRAP_IRQHandler         0x00a044    0x1  Code  Gb  stm8l15x_it.o [1]
+                        0x00040d    0x2  Data  Lc  stm8l15x_it.o [1]
+TRAP_IRQHandler         0x00a605    0x1  Code  Gb  stm8l15x_it.o [1]
 USART1_RX_TIM5_CC_IRQHandler
-                        0x00a05a    0x1  Code  Gb  stm8l15x_it.o [1]
+                        0x00a61b    0x1  Code  Gb  stm8l15x_it.o [1]
 USART1_TX_TIM5_UPD_OVF_TRG_BRK_IRQHandler
-                        0x00a059    0x1  Code  Gb  stm8l15x_it.o [1]
-Wait_Bit_n_clear        0x009e22   0x16  Code  Lc  A7105_firmware_lib.o [1]
-WriteFIFO               0x009a7b   0x37  Code  Gb  A7105_firmware_lib.o [1]
-__DebugBreak            0x00a05c    0x1  Code  Gb  __dbg_break.o [3]
-__exit                  0x009e77   0x14  Code  Gb  __dbg_xxexit.o [3]
-__iar_copy_init2        0x009c95         Code  Gb  init_small.o [4]
-__iar_data_init2        0x009e63   0x14  Code  Gb  init.o [4]
-__iar_program_start     0x009ed7         Code  Gb  cstartup.o [4]
+                        0x00a61a    0x1  Code  Gb  stm8l15x_it.o [1]
+Wait_Bit_n_clear        0x00a392   0x16  Code  Lc  A7105_firmware_lib.o [1]
+WriteFIFO               0x00a005   0x37  Code  Gb  A7105_firmware_lib.o [1]
+__DebugBreak            0x00a61d    0x1  Code  Gb  __dbg_break.o [3]
+__exit                  0x00a3fd   0x14  Code  Gb  __dbg_xxexit.o [3]
+__iar_copy_init2        0x00a21c         Code  Gb  init_small.o [4]
+__iar_data_init2        0x00a3e9   0x14  Code  Gb  init.o [4]
+__iar_program_start     0x00a45d         Code  Gb  cstartup.o [4]
 __iar_unhandled_exception
-                        0x00a03b         Code  Gb  unhandled_exception.o [4]
-__iar_zero_init2        0x009d51         Code  Gb  init_small.o [4]
+                        0x00a5fe         Code  Gb  unhandled_exception.o [4]
+__iar_zero_init2        0x00a2d8         Code  Gb  init_small.o [4]
 __intvec                0x008000         Data  Gb  interrupt.o [4]
-__low_level_init        0x00a035    0x3  Code  Gb  low_level_init.o [4]
-_exit                   0x00a00d         Code  Gb  cexit.o [4]
-_interrupt_1            0x00a044         Code  Gb  stm8l15x_it.o [1]
-_interrupt_10           0x009df3         Code  Gb  stm8l15x_it.o [1]
-_interrupt_11           0x009d8b         Code  Gb  stm8l15x_it.o [1]
-_interrupt_12           0x00a04b         Code  Gb  stm8l15x_it.o [1]
-_interrupt_13           0x009dda         Code  Gb  stm8l15x_it.o [1]
-_interrupt_14           0x00a04c         Code  Gb  stm8l15x_it.o [1]
-_interrupt_15           0x00a04d         Code  Gb  stm8l15x_it.o [1]
-_interrupt_16           0x00a04e         Code  Gb  stm8l15x_it.o [1]
-_interrupt_17           0x009d33         Code  Gb  stm8l15x_it.o [1]
-_interrupt_18           0x00a04f         Code  Gb  stm8l15x_it.o [1]
-_interrupt_19           0x00a050         Code  Gb  stm8l15x_it.o [1]
-_interrupt_20           0x00a051         Code  Gb  stm8l15x_it.o [1]
-_interrupt_21           0x00a052         Code  Gb  stm8l15x_it.o [1]
-_interrupt_22           0x00a053         Code  Gb  stm8l15x_it.o [1]
-_interrupt_23           0x00a054         Code  Gb  stm8l15x_it.o [1]
-_interrupt_24           0x00a055         Code  Gb  stm8l15x_it.o [1]
-_interrupt_25           0x00a056         Code  Gb  stm8l15x_it.o [1]
-_interrupt_26           0x00a057         Code  Gb  stm8l15x_it.o [1]
-_interrupt_27           0x009b1d         Code  Gb  stm8l15x_it.o [1]
-_interrupt_28           0x00a058         Code  Gb  stm8l15x_it.o [1]
-_interrupt_29           0x00a059         Code  Gb  stm8l15x_it.o [1]
-_interrupt_3            0x00a045         Code  Gb  stm8l15x_it.o [1]
-_interrupt_30           0x00a05a         Code  Gb  stm8l15x_it.o [1]
-_interrupt_31           0x00a05b         Code  Gb  stm8l15x_it.o [1]
-_interrupt_4            0x00a046         Code  Gb  stm8l15x_it.o [1]
-_interrupt_5            0x00a047         Code  Gb  stm8l15x_it.o [1]
-_interrupt_6            0x009dc1         Code  Gb  stm8l15x_it.o [1]
-_interrupt_7            0x00a048         Code  Gb  stm8l15x_it.o [1]
-_interrupt_8            0x00a049         Code  Gb  stm8l15x_it.o [1]
-_interrupt_9            0x00a04a         Code  Gb  stm8l15x_it.o [1]
-add_period              0x00a040    0x1  Data  Lc  app_time.o [1]
-app_frame               0x000370    0x9  Data  Gb  app_protocol.o [1]
-app_key_init            0x00a041    0x1  Code  Gb  app_key.o [1]
-app_key_process         0x008e50   0xfa  Code  Gb  app_key.o [1]
-app_lcd_display_init    0x009894   0x62  Code  Gb  app_lcd_display.o [1]
+__low_level_init        0x00a5f8    0x3  Code  Gb  low_level_init.o [4]
+_exit                   0x00a5d5         Code  Gb  cexit.o [4]
+_interrupt_1            0x00a605         Code  Gb  stm8l15x_it.o [1]
+_interrupt_10           0x00a37a         Code  Gb  stm8l15x_it.o [1]
+_interrupt_11           0x00a312         Code  Gb  stm8l15x_it.o [1]
+_interrupt_12           0x00a60c         Code  Gb  stm8l15x_it.o [1]
+_interrupt_13           0x00a361         Code  Gb  stm8l15x_it.o [1]
+_interrupt_14           0x00a60d         Code  Gb  stm8l15x_it.o [1]
+_interrupt_15           0x00a60e         Code  Gb  stm8l15x_it.o [1]
+_interrupt_16           0x00a60f         Code  Gb  stm8l15x_it.o [1]
+_interrupt_17           0x00a2ba         Code  Gb  stm8l15x_it.o [1]
+_interrupt_18           0x00a610         Code  Gb  stm8l15x_it.o [1]
+_interrupt_19           0x00a611         Code  Gb  stm8l15x_it.o [1]
+_interrupt_20           0x00a612         Code  Gb  stm8l15x_it.o [1]
+_interrupt_21           0x00a613         Code  Gb  stm8l15x_it.o [1]
+_interrupt_22           0x00a614         Code  Gb  stm8l15x_it.o [1]
+_interrupt_23           0x00a615         Code  Gb  stm8l15x_it.o [1]
+_interrupt_24           0x00a616         Code  Gb  stm8l15x_it.o [1]
+_interrupt_25           0x00a617         Code  Gb  stm8l15x_it.o [1]
+_interrupt_26           0x00a618         Code  Gb  stm8l15x_it.o [1]
+_interrupt_27           0x00a072         Code  Gb  stm8l15x_it.o [1]
+_interrupt_28           0x00a619         Code  Gb  stm8l15x_it.o [1]
+_interrupt_29           0x00a61a         Code  Gb  stm8l15x_it.o [1]
+_interrupt_3            0x00a606         Code  Gb  stm8l15x_it.o [1]
+_interrupt_30           0x00a61b         Code  Gb  stm8l15x_it.o [1]
+_interrupt_31           0x00a61c         Code  Gb  stm8l15x_it.o [1]
+_interrupt_4            0x00a607         Code  Gb  stm8l15x_it.o [1]
+_interrupt_5            0x00a608         Code  Gb  stm8l15x_it.o [1]
+_interrupt_6            0x00a348         Code  Gb  stm8l15x_it.o [1]
+_interrupt_7            0x00a609         Code  Gb  stm8l15x_it.o [1]
+_interrupt_8            0x00a60a         Code  Gb  stm8l15x_it.o [1]
+_interrupt_9            0x00a60b         Code  Gb  stm8l15x_it.o [1]
+add_period              0x00a603    0x1  Data  Lc  app_time.o [1]
+app_frame               0x0003f2    0x9  Data  Gb  app_protocol.o [1]
+app_key_init            0x00a604    0x1  Code  Gb  app_key.o [1]
+app_key_process         0x009489  0x104  Code  Gb  app_key.o [1]
+app_lcd_digit_tube_blink
+                        0x008d45  0x156  Code  Lc  app_lcd_display.o [1]
+app_lcd_display_init    0x00965a   0xcc  Code  Gb  app_lcd_display.o [1]
 app_lcd_display_process
-                        0x008618    0x6  Code  Gb  app_lcd_display.o [1]
-app_lcd_time_process    0x008495  0x183  Code  Lc  app_lcd_display.o [1]
-app_lcd_work_process    0x008461   0x34  Code  Lc  app_lcd_display.o [1]
-app_protocol_init       0x009f0c    0xd  Code  Gb  app_protocol.o [1]
-app_protocol_send       0x009f97    0x8  Code  Gb  app_protocol.o [1]
-app_time_display        0x00a042    0x1  Code  Lc  app_time.o [1]
-app_time_event_set      0x00a01a    0x4  Code  Gb  app_time.o [1]
-app_time_get_hour       0x00a01e    0x4  Code  Gb  app_time.o [1]
-app_time_get_mimute     0x00a022    0x4  Code  Gb  app_time.o [1]
-app_time_init           0x009e4e   0x15  Code  Gb  app_time.o [1]
-app_time_mode_busy      0x009f65    0xb  Code  Gb  app_time.o [1]
-app_time_mode_deal      0x009017   0xc7  Code  Lc  app_time.o [1]
+                        0x0097e0   0xb1  Code  Gb  app_lcd_display.o [1]
+app_lcd_display_refresh
+                        0x00a5f2    0x3  Code  Gb  app_lcd_display.o [1]
+app_lcd_display_set_digit_tube
+                        0x00a10d   0x32  Code  Gb  app_lcd_display.o [1]
+app_lcd_display_set_icon
+                        0x00a3a8   0x16  Code  Gb  app_lcd_display.o [1]
+app_lcd_icon_blink      0x008fe4  0x148  Code  Lc  app_lcd_display.o [1]
+app_protocol_init       0x00a492    0xd  Code  Gb  app_protocol.o [1]
+app_protocol_send       0x00a512    0x8  Code  Gb  app_protocol.o [1]
+app_time_display        0x008461  0x198  Code  Lc  app_time.o [1]
+app_time_display::number_to_tube
+                        0x00003c    0xa  Data  Lc  app_time.o [1]
+app_time_event_set      0x00a5e2    0x4  Code  Gb  app_time.o [1]
+app_time_init           0x00a3d4   0x15  Code  Gb  app_time.o [1]
+app_time_mode_busy      0x00a4eb    0xb  Code  Gb  app_time.o [1]
+app_time_mode_deal      0x008604   0xc7  Code  Lc  app_time.o [1]
 app_time_mode_deal{1}{2}::fast_mode_count
-                        0x000387    0x2  Data  Lc  app_time.o [1]
+                        0x000409    0x2  Data  Lc  app_time.o [1]
 app_time_normal_command_deal
-                        0x009198   0xb1  Code  Lc  app_time.o [1]
-app_time_process        0x009e0b   0x17  Code  Gb  app_time.o [1]
-app_time_send           0x009f70    0xb  Code  Lc  app_time.o [1]
-app_work_mode_display   0x00a043    0x1  Code  Lc  app_work.o [1]
+                        0x0086cb   0x9f  Code  Lc  app_time.o [1]
+app_time_process        0x00876a   0x16  Code  Gb  app_time.o [1]
+app_time_send           0x0085f9    0xb  Code  Lc  app_time.o [1]
+app_work_mode_display   0x008780  0x2a3  Code  Lc  app_work.o [1]
+app_work_mode_display::number_to_tube
+                        0x000096    0xa  Data  Lc  app_work.o [1]
 app_work_mode_event_set
-                        0x00a026    0x4  Code  Gb  app_work.o [1]
-app_work_mode_init      0x008f4a   0xcd  Code  Gb  app_work.o [1]
+                        0x00a5e6    0x4  Code  Gb  app_work.o [1]
+app_work_mode_init      0x00958d   0xcd  Code  Gb  app_work.o [1]
 app_work_mode_process   0x008080  0x3e1  Code  Gb  app_work.o [1]
-app_work_mode_send      0x008c12  0x131  Code  Lc  app_work.o [1]
-buffer_length_ok        0x009f85    0x9  Code  Lc  A7105_driver.o [1]
-check_sum               0x000396    0x1  Data  Lc  simple_protocol.o [1]
-command                 0x000391    0x1  Data  Lc  app_time.o [1]
+app_work_mode_send      0x00912c  0x131  Code  Lc  app_work.o [1]
+buffer_length_ok        0x00a500    0x9  Code  Lc  A7105_driver.o [1]
+check_sum               0x000418    0x1  Data  Lc  simple_protocol.o [1]
+command                 0x000413    0x1  Data  Lc  app_time.o [1]
 control_func_ZN_gan_zao
-                        0x009fe6    0x7  Code  Lc  app_lcd_display_config.o [1]
+                        0x00a577    0x7  Code  Lc  app_lcd_display_config.o [1]
 control_func_ZN_jing_hua
-                        0x009fed    0x7  Code  Lc  app_lcd_display_config.o [1]
-control_func_ZN_mu_yu   0x009ff4    0x7  Code  Lc  app_lcd_display_config.o [1]
-control_func_bai_dong   0x009fdf    0x7  Code  Lc  app_lcd_display_config.o [1]
-control_func_colon      0x009ffb    0x7  Code  Lc  app_lcd_display_config.o [1]
+                        0x00a57e    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_ZN_mu_yu   0x00a585    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_bai_dong   0x00a570    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_colon      0x00a58c    0x7  Code  Lc  app_lcd_display_config.o [1]
 control_func_ding_shi_100
-                        0x009fbc    0x7  Code  Lc  app_lcd_display_config.o [1]
-control_func_feng_nuan  0x009fc3    0x7  Code  Lc  app_lcd_display_config.o [1]
-control_func_hour       0x009951   0x59  Code  Lc  app_lcd_display_config.o [1]
-control_func_huan_qi    0x009fca    0x7  Code  Lc  app_lcd_display_config.o [1]
-control_func_line       0x009fae    0x7  Code  Lc  app_lcd_display_config.o [1]
-control_func_minute     0x0098f6   0x5b  Code  Lc  app_lcd_display_config.o [1]
-control_func_qiang      0x00a002    0x6  Code  Lc  app_lcd_display_config.o [1]
+                        0x00a546    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_ding_shi_ones
+                        0x00a5bd    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_ding_shi_shi_jian
+                        0x00a54d    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_ding_shi_tens
+                        0x00a5b6    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_feng_nuan  0x00a554    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_hour_ones  0x00a593    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_hour_tens  0x00a5ca    0x6  Code  Lc  app_lcd_display_config.o [1]
+control_func_huan_qi    0x00a55b    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_line       0x00a538    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_minute_ones
+                        0x00a5a1    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_minute_tens
+                        0x00a59a    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_qiang      0x00a5c4    0x6  Code  Lc  app_lcd_display_config.o [1]
+control_func_ruo        0x00a52a    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_wen_du_ones
+                        0x00a5af    0x7  Code  Lc  app_lcd_display_config.o [1]
 control_func_wen_du_she_ding
-                        0x009fb5    0x7  Code  Lc  app_lcd_display_config.o [1]
-control_func_xin_feng   0x009fd8    0x7  Code  Lc  app_lcd_display_config.o [1]
+                        0x00a53f    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_wen_du_tens
+                        0x00a5a8    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_xin_feng   0x00a569    0x7  Code  Lc  app_lcd_display_config.o [1]
 control_func_xin_feng_qu_nuan
-                        0x009fd1    0x7  Code  Lc  app_lcd_display_config.o [1]
-control_func_zi_dong    0x009fa7    0x7  Code  Lc  app_lcd_display_config.o [1]
-count                   0x000395    0x1  Data  Lc  simple_protocol.o [1]
-counter                 0x00038d    0x2  Data  Gb  timing.o [1]
-data_received_flag      0x000397    0x1  Data  Lc  simple_protocol.o [1]
-datalink_protocol_init  0x009b85   0x33  Code  Gb  datalink_protocol.o [1]
-datalink_protocol_send  0x009657   0x82  Code  Gb  datalink_protocol.o [1]
-digital_tube_set        0x0088c9   0x85  Code  Gb  LCD_driver.o [1]
-event                   0x000394    0x1  Data  Lc  app_work.o [1]
-exit                    0x00a038    0x3  Code  Gb  exit.o [4]
-header_time             0x000379    0x5  Data  Lc  simple_protocol.o [1]
-icon_set                0x00894e   0x1b  Code  Gb  LCD_driver.o [1]
-icons                   0x0000d9   0x22  Data  Gb  LCD_driver.o [1]
-idle_flag               0x00016b    0x1  Data  Lc  simple_protocol.o [1]
-idle_time               0x00037e    0x5  Data  Lc  simple_protocol.o [1]
-key                     0x000390    0x1  Data  Lc  app_key.o [1]
-lcd_ram_buffer          0x000359    0xe  Data  Lc  LCD_driver.o [1]
-main                    0x0099aa   0x4d  Code  Gb  main.o [1]
-mcu_init                0x009f4d    0xc  Code  Gb  main.o [1]
-memset                  0x009e38   0x16  Code  Gb  memset.o [4]
-mode_configs            0x00003c   0x50  Data  Lc  app_work.o [1]
-number_to_value         0x000032    0xa  Data  Lc  app_lcd_display_config.o [1]
-parameters_Config       0x009b52   0x33  Data  Gb  A7105_firmware_lib.o [1]
-previous_mode           0x000393    0x1  Data  Lc  app_work.o [1]
-ram_offset              0x000289   0x70  Data  Gb  LCD_driver.o [1]
-ram_offset_init         0x009ae8   0x35  Code  Lc  LCD_driver.o [1]
-receive_buffer          0x000319   0x18  Data  Gb  simple_protocol.o [1]
-receive_byte            0x009249   0xb1  Code  Lc  simple_protocol.o [1]
-receive_byte::bit       0x000398    0x1  Data  Lc  simple_protocol.o [1]
-receive_deal            0x00861e  0x1a7  Code  Gb  simple_protocol.o [1]
-receive_frame           0x000345   0x14  Data  Lc  datalink_protocol.o [1]
-receive_state           0x000389    0x2  Data  Lc  simple_protocol.o [1]
-segment_set             0x0087c5  0x104  Code  Lc  LCD_driver.o [1]
-send_data_by_A7105      0x009a42   0x39  Code  Gb  A7105_driver.o [1]
-send_frame              0x000331   0x14  Data  Lc  datalink_protocol.o [1]
+                        0x00a562    0x7  Code  Lc  app_lcd_display_config.o [1]
+control_func_zi_dong    0x00a531    0x7  Code  Lc  app_lcd_display_config.o [1]
+count                   0x000417    0x1  Data  Lc  simple_protocol.o [1]
+counter                 0x00040f    0x2  Data  Gb  timing.o [1]
+data_received_flag      0x000419    0x1  Data  Lc  simple_protocol.o [1]
+datalink_protocol_init  0x00a0da   0x33  Code  Gb  datalink_protocol.o [1]
+datalink_protocol_send  0x009d24   0x82  Code  Gb  datalink_protocol.o [1]
+digit_tube_ctrl_func    0x00002c   0x10  Data  Gb  app_lcd_display_config.o [1]
+digit_tubes             0x000324   0x60  Data  Lc  app_lcd_display.o [1]
+digital_tube_set        0x009c1b   0x85  Code  Gb  LCD_driver.o [1]
+event                   0x000416    0x1  Data  Lc  app_work.o [1]
+exit                    0x00a5fb    0x3  Code  Gb  exit.o [4]
+header_time             0x0003fb    0x5  Data  Lc  simple_protocol.o [1]
+icon_ctrl_func          0x00000c   0x20  Data  Gb  app_lcd_display_config.o [1]
+icon_set                0x009361   0x1b  Code  Gb  LCD_driver.o [1]
+icons                   0x000187   0xb0  Data  Lc  app_lcd_display.o [1]
+icons                   0x0000f4   0x22  Data  Lc  LCD_driver.o [1]
+idle_flag               0x000186    0x1  Data  Lc  simple_protocol.o [1]
+idle_time               0x000400    0x5  Data  Lc  simple_protocol.o [1]
+key                     0x000412    0x1  Data  Lc  app_key.o [1]
+lcd_ram_buffer          0x0003e4    0xe  Data  Lc  LCD_driver.o [1]
+main                    0x009efc   0x4d  Code  Gb  main.o [1]
+mcu_init                0x00a4d3    0xc  Code  Gb  main.o [1]
+memset                  0x00a3be   0x16  Code  Gb  memset.o [4]
+mode_configs            0x000046   0x50  Data  Lc  app_work.o [1]
+parameters_Config       0x00a0a7   0x33  Data  Gb  A7105_firmware_lib.o [1]
+previous_mode           0x000415    0x1  Data  Lc  app_work.o [1]
+ram_offset              0x0002b4   0x70  Data  Gb  LCD_driver.o [1]
+ram_offset_init         0x009fcd   0x35  Code  Lc  LCD_driver.o [1]
+receive_buffer          0x0003a4   0x18  Data  Gb  simple_protocol.o [1]
+receive_byte            0x009891   0xb1  Code  Lc  simple_protocol.o [1]
+receive_byte::bit       0x00041a    0x1  Data  Lc  simple_protocol.o [1]
+receive_deal            0x008a23  0x1a7  Code  Gb  simple_protocol.o [1]
+receive_frame           0x0003d0   0x14  Data  Lc  datalink_protocol.o [1]
+receive_state           0x00040b    0x2  Data  Lc  simple_protocol.o [1]
+segment_set             0x00925d  0x104  Code  Lc  LCD_driver.o [1]
+send_data_by_A7105      0x009f94   0x39  Code  Gb  A7105_driver.o [1]
+send_frame              0x0003bc   0x14  Data  Lc  datalink_protocol.o [1]
 simple_protocol_data_received
-                        0x009eea   0x11  Code  Gb  simple_protocol.o [1]
-status                  0x0002f9   0x20  Data  Lc  app_work.o [1]
-task_1ms_updater        0x009f9f    0x8  Code  Gb  task_manager.o [1]
-task_add                0x009757   0x75  Code  Gb  task_manager.o [1]
-task_init               0x009f40    0xd  Code  Gb  task_manager.o [1]
-task_manager            0x00020c   0x7d  Data  Lc  task_manager.o [1]
-task_process            0x0096d9   0x7e  Code  Gb  task_manager.o [1]
-time                    0x000385    0x2  Data  Lc  app_time.o [1]
-time_set_mode           0x000383    0x2  Data  Lc  app_time.o [1]
-time_unit               0x00016c   0xa0  Data  Lc  app_lcd_display.o [1]
-time_unit_ctrl_func     0x00002c    0x6  Data  Gb  app_lcd_display_config.o [1]
-timing_count_end        0x009c6d   0x28  Code  Gb  timing.o [1]
-timing_get_count        0x00a02e    0x4  Code  Lc  timing.o [1]
-timing_set_counts       0x009cbd   0x22  Code  Gb  timing.o [1]
-tubes                   0x0000fb   0x70  Data  Gb  LCD_driver.o [1]
-value_define            0x00008c   0x4d  Data  Gb  LCD_driver.o [1]
-work_mode               0x000392    0x1  Data  Lc  app_work.o [1]
-work_unit               0x000367    0x9  Data  Lc  app_lcd_display.o [1]
-work_unit_ctrl_func     0x00000c   0x20  Data  Gb  app_lcd_display_config.o [1]
+                        0x00a470   0x11  Code  Gb  simple_protocol.o [1]
+status                  0x000384   0x20  Data  Lc  app_work.o [1]
+task_1ms_updater        0x00a522    0x8  Code  Gb  task_manager.o [1]
+task_add                0x009e24   0x75  Code  Gb  task_manager.o [1]
+task_init               0x00a4c6    0xd  Code  Gb  task_manager.o [1]
+task_manager            0x000237   0x7d  Data  Lc  task_manager.o [1]
+task_process            0x009da6   0x7e  Code  Gb  task_manager.o [1]
+time                    0x000407    0x2  Data  Lc  app_time.o [1]
+time_set_mode           0x000405    0x2  Data  Lc  app_time.o [1]
+timing_count_end        0x00a1f4   0x28  Code  Gb  timing.o [1]
+timing_get_count        0x00a5ee    0x4  Code  Lc  timing.o [1]
+timing_set_counts       0x00a244   0x22  Code  Gb  timing.o [1]
+tubes                   0x000116   0x70  Data  Gb  LCD_driver.o [1]
+value_define            0x0000a0   0x54  Data  Gb  LCD_driver.o [1]
+work_mode               0x000414    0x1  Data  Lc  app_work.o [1]
 
 
-[1] = D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj
+[1] = D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\Debug\Obj
 [2] = command line
 [3] = dbgstm8smd.a
 [4] = dlstm8smn.a
 
-  7 731 bytes of readonly  code memory
-    554 bytes of readonly  data memory
-  1 177 bytes of readwrite data memory
+  9 177 bytes of readonly  code memory
+    581 bytes of readonly  data memory
+  1 307 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

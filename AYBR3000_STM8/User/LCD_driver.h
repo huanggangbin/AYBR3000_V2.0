@@ -47,6 +47,7 @@ typedef enum
 typedef enum
 {
     VALUE_NULL,
+    VALUE_INIT,
     VALUE_0,
     VALUE_1,
     VALUE_2,

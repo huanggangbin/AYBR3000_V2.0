@@ -4,6 +4,7 @@
 #include "stddef.h"
 #include "stm8l15x.h"
 /*!< Unsigned integer types  */
+typedef signed char int8;
 typedef unsigned char    uint8;
 typedef unsigned short    uint16;
 typedef unsigned long    uint32;

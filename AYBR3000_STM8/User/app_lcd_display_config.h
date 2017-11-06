@@ -2,41 +2,46 @@
 #define _APP_LCD_DISPLAY_CONFIG_H_
 #include "types.h"
 #include "LCD_driver.h"
-#include "app_time.h"
 
 typedef enum
 {
-    APP_LCD_WORK_UINT_QIANG,
-    APP_LCD_WORK_UINT_RUO,
-    APP_LCD_WORK_UINT_ZI_DONG,
-    APP_LCD_WORK_UINT_BAI_DONG_UNUSED,
-    APP_LCD_WORK_UINT_LINE,
-    APP_LCD_WORK_UINT_WEN_DU_SHE_DING,
-    APP_LCD_WORK_UINT_DING_SHI_100,
-    APP_LCD_WORK_UNIT_DING_SHI_SHI_JIAN,
-    APP_LCD_WORK_UINT_FENG_NUAN,
-    APP_LCD_WORK_UINT_HUAN_QI,
-    APP_LCD_WORK_UINT_XIN_FENG_QU_NUAN,
-    APP_LCD_WORK_UINT_XIN_FENG,
-    APP_LCD_WORK_UINT_BAI_DONG,
-    APP_LCD_WORK_UINT_ZN_GAN_ZAO,
-    APP_LCD_WORK_UINT_ZN_JING_HUA,
-    APP_LCD_WORK_UINT_ZN_MU_YU,
-    APP_LCD_WORK_UNIT_NUMBER,
-}App_lcd_work_unit_index;
+    INDEX_ICON_QIANG,
+    INDEX_ICON_RUO,
+    INDEX_ICON_ZI_DONG,
+    INDEX_ICON_LINE,
+    INDEX_ICON_WEN_DU_SHE_DING,
+    INDEX_ICON_DING_SHI_100,
+    INDEX_ICON_DING_SHI_SHI_JIAN,
+    INDEX_ICON_FENG_NUAN,
+    INDEX_ICON_HUAN_QI,
+    INDEX_ICON_XIN_FENG_QU_NUAN,
+    INDEX_ICON_XIN_FENG,
+    INDEX_ICON_BAI_DONG,
+    INDEX_ICON_ZN_GAN_ZAO,
+    INDEX_ICON_ZN_JING_HUA,
+    INDEX_ICON_ZN_MU_YU,
+    INDEX_ICON_COLON,
+    INDEX_ICON_NUMBER,
+}App_lcd_index_icon;
 
 typedef enum
 {
-    APP_LCD_TIME_UNIT_COLON,
-    APP_LCD_TIME_UNIT_HOUR,
-    APP_LCD_TIME_UNIT_MINUTE,
-    APP_LCD_TIME_UNIT_NUMBER,
-}App_lcd_time_unit_index;
+    INDEX_DIGIT_TUBE_HOUR_TENS,
+    INDEX_DIGIT_TUBE_HOUR_ONES,
+    INDEX_DIGIT_TUBE_MINUTE_TENS,
+    INDEX_DIGIT_TUBE_MINUTE_ONES,
+    INDEX_DIGIT_TUBE_WENDU_TENS,
+    INDEX_DIGIT_TUBE_WENDU_ONES,
+    INDEX_DIGIT_TUBE_DINGSHI_TENS,
+    INDEX_DIGIT_TUBE_DiNGSHI_ONES,
+    INDEX_DIGIT_TUBE_NUMBER,
+}App_lcd_index_digit_tube;
 
-#define APP_LCD_GET_TIME_HOUR()     app_time_get_hour()
-#define APP_LCD_GET_TIME_MINUTE()       app_time_get_mimute()
-typedef void (* App_lcd_ctrl_func)(Switch s);
+typedef void (* App_lcd_icon_ctrl_func)(Switch s);
+typedef void (* App_lcd_Tube_ctrl_func)(Tube_value v);
 
-extern App_lcd_ctrl_func work_unit_ctrl_func[APP_LCD_WORK_UNIT_NUMBER];
-extern App_lcd_ctrl_func time_unit_ctrl_func[APP_LCD_TIME_UNIT_NUMBER];
+extern App_lcd_icon_ctrl_func icon_ctrl_func[INDEX_ICON_NUMBER];
+extern App_lcd_Tube_ctrl_func digit_tube_ctrl_func[INDEX_DIGIT_TUBE_NUMBER];
+
 #endif
+

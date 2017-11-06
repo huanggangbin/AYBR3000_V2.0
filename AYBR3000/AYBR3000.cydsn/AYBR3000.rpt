@@ -1,12 +1,12 @@
-Loading plugins phase: Elapsed time ==> 0s.725ms
+Loading plugins phase: Elapsed time ==> 0s.690ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -d CY8C4024LQI-S412 -s D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -d CY8C4024LQI-S412 -s D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 2s.148ms
+Elaboration phase: Elapsed time ==> 3s.784ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.044ms
+HDL generation phase: Elapsed time ==> 0s.092ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -24,23 +24,23 @@ HDL generation phase: Elapsed time ==> 0s.044ms
 ======================================================================
 Compiling:  AYBR3000.v
 Program  :   D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 AYBR3000.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 AYBR3000.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  AYBR3000.v
 Program  :   D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 AYBR3000.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 AYBR3000.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  AYBR3000.v
 Program  :   vlogfe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 -verilog AYBR3000.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 -verilog AYBR3000.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Wed Nov 01 20:27:18 2017
+Mon Nov 06 11:30:19 2017
 
 
 ======================================================================
@@ -50,7 +50,7 @@ Options  :    -yv2 -q10 AYBR3000.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Wed Nov 01 20:27:18 2017
+Mon Nov 06 11:30:19 2017
 
 Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'
 Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
@@ -79,11 +79,11 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  AYBR3000.v
 Program  :   tovif
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 -verilog AYBR3000.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 -verilog AYBR3000.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Wed Nov 01 20:27:18 2017
+Mon Nov 06 11:30:19 2017
 
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -94,9 +94,9 @@ Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\c
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\codegentemp\AYBR3000.ctl'.
+Linking 'D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\codegentemp\AYBR3000.ctl'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
-Linking 'D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\codegentemp\AYBR3000.v'.
+Linking 'D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\codegentemp\AYBR3000.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
@@ -107,11 +107,11 @@ tovif:  No errors.
 ======================================================================
 Compiling:  AYBR3000.v
 Program  :   topld
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 -verilog AYBR3000.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 -verilog AYBR3000.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Wed Nov 01 20:27:18 2017
+Mon Nov 06 11:30:19 2017
 
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -122,9 +122,9 @@ Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\c
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\codegentemp\AYBR3000.ctl'.
+Linking 'D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\codegentemp\AYBR3000.ctl'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
-Linking 'D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\codegentemp\AYBR3000.v'.
+Linking 'D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\codegentemp\AYBR3000.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'.
 Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
@@ -235,16 +235,16 @@ topld:  No errors.
 
 CYPRESS_DIR    : D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp
 Warp Program   : D:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
-Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 AYBR3000.v -verilog
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -dcpsoc3 AYBR3000.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 0s.542ms
+Warp synthesis phase: Elapsed time ==> 0s.727ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.0.0.432, Family: PSoC3, Started at: Wednesday, 01 November 2017 20:27:18
-Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\local_svn\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -d CY8C4024LQI-S412 AYBR3000.v -verilog
+cyp3fit: V4.0.0.432, Family: PSoC3, Started at: Monday, 06 November 2017 11:30:20
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\AYBR3000\AYBR3000_V2.0\AYBR3000\AYBR3000.cydsn\AYBR3000.cyprj -d CY8C4024LQI-S412 AYBR3000.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.020ms
+Design parsing phase: Elapsed time ==> 0s.027ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -987,20 +987,20 @@ LP Comparator                 :    0 :    2 :    2 :  0.00 %
 DAC                           :      :      :      :        
   7-bit IDAC                  :    2 :    0 :    2 : 100.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.027ms
-Tech Mapping phase: Elapsed time ==> 0s.049ms
+Technology Mapping: Elapsed time ==> 0s.035ms
+Tech Mapping phase: Elapsed time ==> 0s.059ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 <CYPRESSTAG name="Analog Placement">
-Elapsed time ==> 0.2145649s
+Elapsed time ==> 0.2818259s
 </CYPRESSTAG>
-Analog Placement phase: Elapsed time ==> 0s.439ms
+Analog Placement phase: Elapsed time ==> 0s.498ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 <CYPRESSTAG name="Analog Routing">
-Route success=True, Iterations=1 Elapsed=0.0065845 secs
+Route success=True, Iterations=1 Elapsed=0.0096305 secs
 </CYPRESSTAG>
-Analog Routing phase: Elapsed time ==> 0s.008ms
+Analog Routing phase: Elapsed time ==> 0s.012ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -1085,7 +1085,7 @@ Map of item to net {
 }
 Mux Info {
 }
-Analog Code Generation phase: Elapsed time ==> 0s.053ms
+Analog Code Generation phase: Elapsed time ==> 0s.045ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
@@ -1096,14 +1096,14 @@ I2076: Total run-time: 0.2 sec.
 <CYPRESSTAG name="PLD Packing Summary">
 No PLDs were packed.
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.000ms
+PLD Packing: Elapsed time ==> 0s.005ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.020ms
+Partitioning: Elapsed time ==> 0s.027ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -1963,19 +1963,19 @@ Port | Pin | Fixed |      Type |       Drive Mode |                Name | Connec
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.003ms
-Digital Placement phase: Elapsed time ==> 1s.162ms
+Digital component placer commit/Report: Elapsed time ==> 0s.004ms
+Digital Placement phase: Elapsed time ==> 0s.614ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Info: pft.M0077: There is no timing information available for the selected device. Static timing checks will not be applied and digital routing will not be timing-driven. (App=cydsfit)
 Routing successful.
-Digital Routing phase: Elapsed time ==> 0s.366ms
+Digital Routing phase: Elapsed time ==> 1s.170ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.199ms
+Bitstream Generation phase: Elapsed time ==> 0s.246ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
-Bitstream Verification phase: Elapsed time ==> 0s.004ms
+Bitstream Verification phase: Elapsed time ==> 0s.005ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 No timing parameter file available for CY8C4024LQI-S412
@@ -1985,11 +1985,11 @@ Static timing analysis phase: Elapsed time ==> 0s.005ms
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.261ms
+Design database save phase: Elapsed time ==> 0s.300ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 2s.603ms
+cydsfit: Elapsed time ==> 3s.025ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 2s.605ms
-API generation phase: Elapsed time ==> 2s.828ms
-Dependency generation phase: Elapsed time ==> 0s.031ms
-Cleanup phase: Elapsed time ==> 0s.001ms
+Fitter phase: Elapsed time ==> 3s.031ms
+API generation phase: Elapsed time ==> 3s.872ms
+Dependency generation phase: Elapsed time ==> 0s.025ms
+Cleanup phase: Elapsed time ==> 0s.000ms

@@ -25,6 +25,7 @@ typedef enum
     VALUE_COMBINE_WA_DA,
     VALUE_COMBINE_WM_DM,
     VALUE_COMBINE_DM_DIAN_YUAN,
+    VALUE_CONBINE_QIANG_RUO_DIAN_YUAN,
     VALUE_NUMBER
 }Key_value;
 
@@ -119,12 +120,19 @@ void app_key_process(void)
                 break;
             case VALUE_COMBINE_WA_DA:
                 //发送配网报文
+                nop();
                 break;
             case VALUE_COMBINE_WM_DM:
                 //发送解绑报文
+                nop();
                 break;
             case VALUE_COMBINE_DM_DIAN_YUAN:
                 //恢复出厂设置
+                nop();
+                break;
+            case VALUE_CONBINE_QIANG_RUO_DIAN_YUAN:
+                //发送对码命令
+                nop();
                 break;
             default :
                 break;

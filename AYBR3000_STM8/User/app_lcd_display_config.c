@@ -1,10 +1,15 @@
 #include "app_lcd_display_config.h"
 
+App_lcd_icon_ctrl_func icon_ctrl_func[INDEX_ICON_NUMBER];
+App_lcd_Tube_ctrl_func digit_tube_ctrl_func[INDEX_DIGIT_TUBE_NUMBER];
+
 static void control_func_qiang(Switch s);
+static void control_func_ruo(Switch s);
 static void control_func_zi_dong(Switch s);
 static void control_func_line(Switch s);
-static void control_func_ding_shi_100(Switch s);
 static void control_func_wen_du_she_ding(Switch s);
+static void control_func_ding_shi_100(Switch s);
+static void control_func_ding_shi_shi_jian(Switch s);
 static void control_func_feng_nuan(Switch s);
 static void control_func_huan_qi(Switch s);
 static void control_func_xin_feng_qu_nuan(Switch s);
@@ -14,16 +19,16 @@ static void control_func_ZN_gan_zao(Switch s);
 static void control_func_ZN_jing_hua(Switch s);
 static void control_func_ZN_mu_yu(Switch s);
 static void control_func_colon(Switch s);
-static void control_func_hour(Switch s);
-static void control_func_minute(Switch s);
 
-App_lcd_ctrl_func work_unit_ctrl_func[APP_LCD_WORK_UNIT_NUMBER] = 
+App_lcd_icon_ctrl_func icon_ctrl_func[INDEX_ICON_NUMBER] = 
 {
-    control_func_qiang,
+    control_func_qiang,                                              
+    control_func_ruo,
     control_func_zi_dong,
     control_func_line,
-    control_func_ding_shi_100,
     control_func_wen_du_she_ding,
+    control_func_ding_shi_100,
+    control_func_ding_shi_shi_jian,
     control_func_feng_nuan,
     control_func_huan_qi,
     control_func_xin_feng_qu_nuan,
@@ -32,13 +37,28 @@ App_lcd_ctrl_func work_unit_ctrl_func[APP_LCD_WORK_UNIT_NUMBER] =
     control_func_ZN_gan_zao,
     control_func_ZN_jing_hua,
     control_func_ZN_mu_yu,
+    control_func_colon,
 };
 
-App_lcd_ctrl_func time_unit_ctrl_func[APP_LCD_TIME_UNIT_NUMBER] =
+static void control_func_hour_tens(Tube_value v);
+static void control_func_hour_ones(Tube_value v);
+static void control_func_minute_tens(Tube_value v);
+static void control_func_minute_ones(Tube_value v);
+static void control_func_wen_du_tens(Tube_value v);
+static void control_func_wen_du_ones(Tube_value v);
+static void control_func_ding_shi_tens(Tube_value v);
+static void control_func_ding_shi_ones(Tube_value v);
+
+App_lcd_Tube_ctrl_func digit_tube_ctrl_func[INDEX_DIGIT_TUBE_NUMBER] =
 {
-    control_func_colon,
-    control_func_hour,
-    control_func_minute,
+    control_func_hour_tens,             
+    control_func_hour_ones,
+    control_func_minute_tens,
+    control_func_minute_ones,
+    control_func_wen_du_tens,
+    control_func_wen_du_ones,
+    control_func_ding_shi_tens,
+    control_func_ding_shi_ones,
 };
 
 static void control_func_qiang(Switch s)
@@ -109,42 +129,39 @@ static void control_func_colon(Switch s)
     icon_set(ICON17, s);
 }
 
-static Tube_value number_to_value[10] = {VALUE_0, VALUE_1, VALUE_2, VALUE_3, VALUE_4, VALUE_5, VALUE_6, VALUE_7, VALUE_8, VALUE_9};
-static void control_func_hour(Switch s)
+static void control_func_hour_tens(Tube_value v)
 {
-    uint8 ones_place, tens_place;
-    
-    ones_place = APP_LCD_GET_TIME_HOUR() % 10;
-    tens_place = APP_LCD_GET_TIME_HOUR() / 10;
-    
-    if (s == ON)
-    {   
-        digital_tube_set(TUBE1, number_to_value[tens_place]);
-        digital_tube_set(TUBE2, number_to_value[ones_place]);
-    }
-    else
-    {
-        digital_tube_set(TUBE1, VALUE_NULL);
-        digital_tube_set(TUBE2, VALUE_NULL);
-    }
-}
-static void control_func_minute(Switch s)
-{
-    uint8 ones_place, tens_place;
-    
-    ones_place = APP_LCD_GET_TIME_MINUTE() % 10;
-    tens_place = APP_LCD_GET_TIME_MINUTE() / 10;
-    
-    if (s == ON)
-    {   
-        digital_tube_set(TUBE3, number_to_value[tens_place]);
-        digital_tube_set(TUBE4, number_to_value[ones_place]);
-    }
-    else
-    {
-        digital_tube_set(TUBE3, VALUE_NULL);
-        digital_tube_set(TUBE4, VALUE_NULL);
-    }
+    digital_tube_set(TUBE1, v);
 }
 
+static void control_func_hour_ones(Tube_value v)
+{
+    digital_tube_set(TUBE2, v);
+}
 
+static void control_func_minute_tens(Tube_value v)
+{
+    digital_tube_set(TUBE3, v);
+}
+
+static void control_func_minute_ones(Tube_value v)
+{
+    digital_tube_set(TUBE4, v);
+}
+static void control_func_wen_du_tens(Tube_value v)
+{
+   digital_tube_set(TUBE5, v);
+}
+static void control_func_wen_du_ones(Tube_value v)
+{
+   digital_tube_set(TUBE6, v);
+}
+static void control_func_ding_shi_tens(Tube_value v)
+{
+    digital_tube_set(TUBE7, v);
+}
+
+static void control_func_ding_shi_ones(Tube_value v)
+{
+    digital_tube_set(TUBE8, v);
+}

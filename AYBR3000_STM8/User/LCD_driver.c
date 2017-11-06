@@ -9,18 +9,6 @@ static void ram_offset_init(void);
 void LCD_driver_init(void)
 {
     ram_offset_init();
-    icon_set(ICON5, ON);//横线
-    icon_set(ICON6, ON);//温度设定
-    icon_set(ICON8, ON);//时间设定
-    digital_tube_set(TUBE1, VALUE_1);
-    digital_tube_set(TUBE2, VALUE_2);
-    digital_tube_set(TUBE3, VALUE_0);
-    digital_tube_set(TUBE4, VALUE_0);
-    digital_tube_set(TUBE5, VALUE_NULL);
-    digital_tube_set(TUBE6, VALUE_NULL);
-    digital_tube_set(TUBE7, VALUE_NULL);
-    digital_tube_set(TUBE8, VALUE_NULL);
-    LCD_GLASS_Refresh(lcd_ram_buffer, 14);
 }
 
 static void ram_offset_init(void)
@@ -38,6 +26,7 @@ static void ram_offset_init(void)
 Switch value_define[VALUE_NUMS][POINT_NUMBERS] = 
 {
     //A    B    C    D    E    F    G
+    {OFF, OFF, OFF, OFF, OFF, OFF,   OFF},       // 数码管灭
     {OFF, OFF, OFF, OFF, OFF, ON,   OFF},       // 数码管'-'
     {ON,  ON,   ON,  ON,  ON,   OFF,   ON},       // 数码管'0'
     {OFF,ON,   ON,  OFF, OFF,  OFF,  OFF},      // 数码管'1'
@@ -51,7 +40,7 @@ Switch value_define[VALUE_NUMS][POINT_NUMBERS] =
     {ON,  ON,  ON,  ON,  OFF,  ON,   ON},      // 数码管'9'
 };
 
-Point icons[ICON_NUMBERS] = {
+static Point icons[ICON_NUMBERS] = {
     {1, 5},       // T1
     {2, 5},       // T2
     {3, 5},       // T3
