@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
   30:Generated_Source\PSoC4/key_touch_Control.c **** * of the application or use of any product or circuit described herein. Cypress
   31:Generated_Source\PSoC4/key_touch_Control.c **** * does not authorize its products for use as critical components in life-support
   32:Generated_Source\PSoC4/key_touch_Control.c **** * systems where a malfunction or failure may reasonably be expected to result in
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 2
 
 
   33:Generated_Source\PSoC4/key_touch_Control.c **** * significant injury to the user. The inclusion of Cypress' product in a life-
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
   87:Generated_Source\PSoC4/key_touch_Control.c **** *    3. If SmartSense Auto-tuning is selected for the CSD Tuning mode in the 
   88:Generated_Source\PSoC4/key_touch_Control.c **** *       Basic tab, the auto-tuning algorithm is executed to set the optimal 
   89:Generated_Source\PSoC4/key_touch_Control.c **** *       values for the hardware parameters of the widgets/sensors.
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 3
 
 
   90:Generated_Source\PSoC4/key_touch_Control.c **** *    4. Calibrate the sensors and find the optimal values for IDACs of each 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  144:Generated_Source\PSoC4/key_touch_Control.c ****     {
  145:Generated_Source\PSoC4/key_touch_Control.c ****         /* Put CPU into sleep mode while scanning */
  146:Generated_Source\PSoC4/key_touch_Control.c ****         interruptState = CyEnterCriticalSection();
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 4
 
 
  147:Generated_Source\PSoC4/key_touch_Control.c ****         while(key_touch_NOT_BUSY != key_touch_IsBusy())
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
   31              		.cfi_offset 14, -4
  196:Generated_Source\PSoC4/key_touch_Control.c ****     cystatus result;
  197:Generated_Source\PSoC4/key_touch_Control.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 5
 
 
  198:Generated_Source\PSoC4/key_touch_Control.c ****     /* The Data Structure and Tuner are initialized only once */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  116:Generated_Source\PSoC4/key_touch_Control.c ****     cystatus result;
   72              		.loc 1 116 0
   73              		.cfi_startproc
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 6
 
 
   74 0000 38B5     		push	{r3, r4, r5, lr}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  118 002a 201C     		mov	r0, r4
  119 002c FFF7FEFF 		bl	CyExitCriticalSection
  120              	.LVL14:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 7
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 7
 
 
  153:Generated_Source\PSoC4/key_touch_Control.c ****         }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  222:Generated_Source\PSoC4/key_touch_Control.c **** *  executed when the component is stopped. Once stopped, the hardware block may 
  223:Generated_Source\PSoC4/key_touch_Control.c **** *  be reconfigured by the application program for any other special usage. The 
  224:Generated_Source\PSoC4/key_touch_Control.c **** *  component operation can be resumed by calling the key_touch_Resume() 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 8
 
 
  225:Generated_Source\PSoC4/key_touch_Control.c **** *  function or the component can be reset by calling the 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  253:Generated_Source\PSoC4/key_touch_Control.c **** /*******************************************************************************
  254:Generated_Source\PSoC4/key_touch_Control.c **** * Function Name: key_touch_Resume
  255:Generated_Source\PSoC4/key_touch_Control.c **** ****************************************************************************//**
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 9
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 9
 
 
  256:Generated_Source\PSoC4/key_touch_Control.c **** *
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  209              	.LVL25:
  286:Generated_Source\PSoC4/key_touch_Control.c **** 
  287:Generated_Source\PSoC4/key_touch_Control.c ****     return result;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 10
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 10
 
 
  288:Generated_Source\PSoC4/key_touch_Control.c **** }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  324:Generated_Source\PSoC4/key_touch_Control.c **** *******************************************************************************/
  325:Generated_Source\PSoC4/key_touch_Control.c **** cystatus key_touch_ProcessAllWidgets(void)
  326:Generated_Source\PSoC4/key_touch_Control.c **** {
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 11
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 11
 
 
  228              		.loc 1 326 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  265              		.loc 1 342 0
  266 002a 281C     		mov	r0, r5
  267              	.LVL30:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 12
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 12
 
 
  268 002c 311C     		mov	r1, r6
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  292 0040 00000000 		.word	key_touch_dsFlash
  293 0044 00000000 		.word	key_touch_dsRam
  294              		.cfi_endproc
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 13
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 13
 
 
  295              	.LFE5:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  309              		.cfi_def_cfa_offset 16
  310              		.cfi_offset 4, -16
  311              		.cfi_offset 5, -12
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 14
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 14
 
 
  312              		.cfi_offset 6, -8
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  426:Generated_Source\PSoC4/key_touch_Control.c ****         ptrFlashWdgt = &key_touch_dsFlash.wdgtArray[widgetId];
  350              		.loc 1 426 0
  351 0030 C300     		lsl	r3, r0, #3
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 15
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 15
 
 
  352 0032 1B1A     		sub	r3, r3, r0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  374              	.LVL47:
  375 004c 70BD     		pop	{r4, r5, r6, pc}
  376              	.L31:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 16
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 16
 
 
  377 004e C046     		.align	2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  498:Generated_Source\PSoC4/key_touch_Control.c **** *  Specify the type of widget processing that needs to be executed for the 
  499:Generated_Source\PSoC4/key_touch_Control.c **** *  specified widget:
  500:Generated_Source\PSoC4/key_touch_Control.c **** *    1.	Bits [31..6] - Reserved
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 17
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 17
 
 
  501:Generated_Source\PSoC4/key_touch_Control.c **** *    2.	Bits [5..0] - key_touch_PROCESS_ALL - Execute all tasks
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  533:Generated_Source\PSoC4/key_touch_Control.c ****         ptrFlashWdgt = &key_touch_dsFlash.wdgtArray[widgetId];
  414              		.loc 1 533 0
  415 0010 C200     		lsl	r2, r0, #3
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 18
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 18
 
 
  416 0012 121A     		sub	r2, r2, r0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  559:Generated_Source\PSoC4/key_touch_Control.c ****                     #endif /* (key_touch_ENABLE == key_touch_TST_BSLN_DUPLICATION_EN) */
  560:Generated_Source\PSoC4/key_touch_Control.c **** 
  561:Generated_Source\PSoC4/key_touch_Control.c ****                     /* Move to the next sensor and filter history objects */
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 19
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 19
 
 
  562:Generated_Source\PSoC4/key_touch_Control.c ****                     ptrSns++;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  587:Generated_Source\PSoC4/key_touch_Control.c ****                 {
  588:Generated_Source\PSoC4/key_touch_Control.c ****                     result = key_touch_DpProcessCsxSensorRawCountsExt(ptrFlashWdgt, ptrSns, fltrHis
  589:Generated_Source\PSoC4/key_touch_Control.c ****                     
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 20
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 20
 
 
  590:Generated_Source\PSoC4/key_touch_Control.c ****                     #if (key_touch_ENABLE == key_touch_TST_BSLN_DUPLICATION_EN)
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  491              		.thumb_func
  492              		.type	key_touch_ProcessSensorExt, %function
  493              	key_touch_ProcessSensorExt:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 21
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 21
 
 
  494              	.LFB8:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  678:Generated_Source\PSoC4/key_touch_Control.c **** *    5. Bit [2] - key_touch_PROCESS_DIFFCOUNTS - Updates Difference Count
  679:Generated_Source\PSoC4/key_touch_Control.c **** *    6. Bit [1] - key_touch_PROCESS_BASELINE - Updates Baseline
  680:Generated_Source\PSoC4/key_touch_Control.c **** *    7. Bit [0] - key_touch_PROCESS_FILTER - Runs Firmware Filter
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 22
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 22
 
 
  681:Generated_Source\PSoC4/key_touch_Control.c **** *
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  528 0022 C268     		ldr	r2, [r0, #12]
  529              	.LVL70:
  702:Generated_Source\PSoC4/key_touch_Control.c ****         ptrSns = ptrFlashWdgt->ptr2SnsRam;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 23
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 23
 
 
  530              		.loc 1 702 0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  730:Generated_Source\PSoC4/key_touch_Control.c ****                 #endif /* #if (0u != key_touch_REGULAR_RC_FILTER_EN) */
  731:Generated_Source\PSoC4/key_touch_Control.c **** 
  732:Generated_Source\PSoC4/key_touch_Control.c ****                 result = key_touch_DpProcessCsxSensorRawCountsExt(ptrFlashWdgt, ptrSns, fltrHistV, 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 24
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 24
 
 
  733:Generated_Source\PSoC4/key_touch_Control.c ****                 break;
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  767:Generated_Source\PSoC4/key_touch_Control.c **** }
  576              		.loc 1 767 0
  577              		@ sp needed
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 25
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 25
 
 
  578 0000 7047     		bx	lr
@@ -1498,17 +1498,17 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  615              		.section	.debug_info,"",%progbits
  616              	.Ldebug_info0:
  617 0000 3A0B0000 		.4byte	0xb3a
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 26
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 26
 
 
  618 0004 0400     		.2byte	0x4
  619 0006 00000000 		.4byte	.Ldebug_abbrev0
  620 000a 04       		.byte	0x4
  621 000b 01       		.uleb128 0x1
- 622 000c B2080000 		.4byte	.LASF135
+ 622 000c B8080000 		.4byte	.LASF135
  623 0010 01       		.byte	0x1
- 624 0011 4B080000 		.4byte	.LASF136
- 625 0015 2F050000 		.4byte	.LASF137
+ 624 0011 51080000 		.4byte	.LASF136
+ 625 0015 89070000 		.4byte	.LASF137
  626 0019 00000000 		.4byte	.Ldebug_ranges0+0
  627 001d 00000000 		.4byte	0
  628 0021 00000000 		.4byte	.Ldebug_line0
@@ -1519,11 +1519,11 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  633 002c 02       		.uleb128 0x2
  634 002d 01       		.byte	0x1
  635 002e 08       		.byte	0x8
- 636 002f B3050000 		.4byte	.LASF1
+ 636 002f 7F050000 		.4byte	.LASF1
  637 0033 02       		.uleb128 0x2
  638 0034 02       		.byte	0x2
  639 0035 05       		.byte	0x5
- 640 0036 C1050000 		.4byte	.LASF2
+ 640 0036 8D050000 		.4byte	.LASF2
  641 003a 02       		.uleb128 0x2
  642 003b 02       		.byte	0x2
  643 003c 07       		.byte	0x7
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  672 0071 B901     		.2byte	0x1b9
  673 0073 2C000000 		.4byte	0x2c
  674 0077 04       		.uleb128 0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 27
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 27
 
 
  675 0078 00000000 		.4byte	.LASF10
@@ -1573,7 +1573,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  684 008f 02       		.uleb128 0x2
  685 0090 04       		.byte	0x4
  686 0091 04       		.byte	0x4
- 687 0092 6C050000 		.4byte	.LASF12
+ 687 0092 38050000 		.4byte	.LASF12
  688 0096 02       		.uleb128 0x2
  689 0097 08       		.byte	0x8
  690 0098 04       		.byte	0x4
@@ -1581,9 +1581,9 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  692 009d 02       		.uleb128 0x2
  693 009e 01       		.byte	0x1
  694 009f 08       		.byte	0x8
- 695 00a0 C6060000 		.4byte	.LASF14
+ 695 00a0 92060000 		.4byte	.LASF14
  696 00a4 04       		.uleb128 0x4
- 697 00a5 CA070000 		.4byte	.LASF15
+ 697 00a5 D0070000 		.4byte	.LASF15
  698 00a9 02       		.byte	0x2
  699 00aa 5B02     		.2byte	0x25b
  700 00ac 48000000 		.4byte	0x48
@@ -1612,26 +1612,26 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  723 00da 19050000 		.4byte	.LASF19
  724 00de 01       		.sleb128 1
  725 00df 07       		.uleb128 0x7
- 726 00e0 6D060000 		.4byte	.LASF20
+ 726 00e0 39060000 		.4byte	.LASF20
  727 00e4 02       		.sleb128 2
  728 00e5 07       		.uleb128 0x7
- 729 00e6 98070000 		.4byte	.LASF21
+ 729 00e6 64070000 		.4byte	.LASF21
  730 00ea 03       		.sleb128 3
  731 00eb 07       		.uleb128 0x7
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 28
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 28
 
 
- 732 00ec 72050000 		.4byte	.LASF22
+ 732 00ec 3E050000 		.4byte	.LASF22
  733 00f0 04       		.sleb128 4
  734 00f1 07       		.uleb128 0x7
- 735 00f2 44090000 		.4byte	.LASF23
+ 735 00f2 4A090000 		.4byte	.LASF23
  736 00f6 05       		.sleb128 5
  737 00f7 07       		.uleb128 0x7
- 738 00f8 49060000 		.4byte	.LASF24
+ 738 00f8 15060000 		.4byte	.LASF24
  739 00fc 06       		.sleb128 6
  740 00fd 00       		.byte	0
  741 00fe 08       		.uleb128 0x8
- 742 00ff D3070000 		.4byte	.LASF25
+ 742 00ff D9070000 		.4byte	.LASF25
  743 0103 04       		.byte	0x4
  744 0104 56       		.byte	0x56
  745 0105 D1000000 		.4byte	0xd1
@@ -1647,10 +1647,10 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  755 0118 3A020000 		.4byte	.LASF27
  756 011c 01       		.sleb128 1
  757 011d 07       		.uleb128 0x7
- 758 011e CB050000 		.4byte	.LASF28
+ 758 011e 97050000 		.4byte	.LASF28
  759 0122 02       		.sleb128 2
  760 0123 07       		.uleb128 0x7
- 761 0124 F8050000 		.4byte	.LASF29
+ 761 0124 C4050000 		.4byte	.LASF29
  762 0128 03       		.sleb128 3
  763 0129 00       		.byte	0
  764 012a 09       		.uleb128 0x9
@@ -1666,19 +1666,19 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  774 013d B8       		.byte	0xb8
  775 013e BB010000 		.4byte	0x1bb
  776 0142 0C       		.uleb128 0xc
- 777 0143 62060000 		.4byte	.LASF30
+ 777 0143 2E060000 		.4byte	.LASF30
  778 0147 04       		.byte	0x4
  779 0148 BE       		.byte	0xbe
  780 0149 77000000 		.4byte	0x77
  781 014d 00       		.byte	0
  782 014e 0C       		.uleb128 0xc
- 783 014f 17080000 		.4byte	.LASF31
+ 783 014f 1D080000 		.4byte	.LASF31
  784 0153 04       		.byte	0x4
  785 0154 C3       		.byte	0xc3
  786 0155 B9000000 		.4byte	0xb9
  787 0159 02       		.byte	0x2
  788 015a 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 29
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 29
 
 
  789 015b B0020000 		.4byte	.LASF32
@@ -1699,7 +1699,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  804 0179 6B000000 		.4byte	0x6b
  805 017d 06       		.byte	0x6
  806 017e 0C       		.uleb128 0xc
- 807 017f EB060000 		.4byte	.LASF35
+ 807 017f B7060000 		.4byte	.LASF35
  808 0183 04       		.byte	0x4
  809 0184 D7       		.byte	0xd7
  810 0185 6B000000 		.4byte	0x6b
@@ -1711,7 +1711,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  816 0191 C5000000 		.4byte	0xc5
  817 0195 08       		.byte	0x8
  818 0196 0C       		.uleb128 0xc
- 819 0197 8F050000 		.4byte	.LASF37
+ 819 0197 5B050000 		.4byte	.LASF37
  820 019b 04       		.byte	0x4
  821 019c E2       		.byte	0xe2
  822 019d 6B000000 		.4byte	0x6b
@@ -1723,7 +1723,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  828 01a9 2A010000 		.4byte	0x12a
  829 01ad 0A       		.byte	0xa
  830 01ae 0C       		.uleb128 0xc
- 831 01af BD070000 		.4byte	.LASF39
+ 831 01af C3070000 		.4byte	.LASF39
  832 01b3 04       		.byte	0x4
  833 01b4 EE       		.byte	0xee
  834 01b5 6B000000 		.4byte	0x6b
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  843 01c7 90       		.byte	0x90
  844 01c8 04       		.byte	0x4
  845 01c9 F5       		.byte	0xf5
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 30
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 30
 
 
  846 01ca 69020000 		.4byte	0x269
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  900 0240 60       		.byte	0x60
  901 0241 0D       		.uleb128 0xd
  902 0242 3C010000 		.4byte	.LASF50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 31
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 31
 
 
  903 0246 04       		.byte	0x4
@@ -1806,13 +1806,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  905 0249 BB010000 		.4byte	0x1bb
  906 024d 6C       		.byte	0x6c
  907 024e 0D       		.uleb128 0xd
- 908 024f B4060000 		.4byte	.LASF51
+ 908 024f 80060000 		.4byte	.LASF51
  909 0253 04       		.byte	0x4
  910 0254 2C01     		.2byte	0x12c
  911 0256 BB010000 		.4byte	0x1bb
  912 025a 78       		.byte	0x78
  913 025b 0D       		.uleb128 0xd
- 914 025c BD060000 		.4byte	.LASF52
+ 914 025c 89060000 		.4byte	.LASF52
  915 0260 04       		.byte	0x4
  916 0261 3101     		.2byte	0x131
  917 0263 BB010000 		.4byte	0x1bb
@@ -1853,16 +1853,16 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  952 02ad B9000000 		.4byte	0xb9
  953 02b1 06       		.byte	0x6
  954 02b2 0D       		.uleb128 0xd
- 955 02b3 18070000 		.4byte	.LASF57
+ 955 02b3 E4060000 		.4byte	.LASF57
  956 02b7 04       		.byte	0x4
  957 02b8 5201     		.2byte	0x152
  958 02ba DD020000 		.4byte	0x2dd
  959 02be 08       		.byte	0x8
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 32
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 32
 
 
  960 02bf 0D       		.uleb128 0xd
- 961 02c0 0F070000 		.4byte	.LASF58
+ 961 02c0 DB060000 		.4byte	.LASF58
  962 02c4 04       		.byte	0x4
  963 02c5 5801     		.2byte	0x158
  964 02c7 2A010000 		.4byte	0x12a
@@ -1883,7 +1883,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  979 02eb 00       		.byte	0
  980 02ec 00       		.byte	0
  981 02ed 04       		.uleb128 0x4
- 982 02ee F6060000 		.4byte	.LASF59
+ 982 02ee C2060000 		.4byte	.LASF59
  983 02f2 04       		.byte	0x4
  984 02f3 5901     		.2byte	0x159
  985 02f5 75020000 		.4byte	0x275
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1014 0335 1E       		.byte	0x1e
  1015 0336 0D       		.uleb128 0xd
  1016 0337 14010000 		.4byte	.LASF45
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 33
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 33
 
 
  1017 033b 04       		.byte	0x4
@@ -1956,13 +1956,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1049 037f 9F030000 		.4byte	0x39f
  1050 0383 5A       		.byte	0x5a
  1051 0384 0D       		.uleb128 0xd
- 1052 0385 B4060000 		.4byte	.LASF51
+ 1052 0385 80060000 		.4byte	.LASF51
  1053 0389 04       		.byte	0x4
  1054 038a 9601     		.2byte	0x196
  1055 038c 9F030000 		.4byte	0x39f
  1056 0390 64       		.byte	0x64
  1057 0391 0D       		.uleb128 0xd
- 1058 0392 BD060000 		.4byte	.LASF52
+ 1058 0392 89060000 		.4byte	.LASF52
  1059 0396 04       		.byte	0x4
  1060 0397 9B01     		.2byte	0x19b
  1061 0399 9F030000 		.4byte	0x39f
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1071 03af 04       		.uleb128 0x4
  1072 03b0 E1040000 		.4byte	.LASF60
  1073 03b4 04       		.byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 34
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 34
 
 
  1074 03b5 9C01     		.2byte	0x19c
@@ -2001,7 +2001,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1091 03da 77000000 		.4byte	0x77
  1092 03de 02       		.byte	0x2
  1093 03df 0D       		.uleb128 0xd
- 1094 03e0 63050000 		.4byte	.LASF63
+ 1094 03e0 2F050000 		.4byte	.LASF63
  1095 03e4 04       		.byte	0x4
  1096 03e5 B401     		.2byte	0x1b4
  1097 03e7 77000000 		.4byte	0x77
@@ -2013,7 +2013,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1103 03f4 77000000 		.4byte	0x77
  1104 03f8 06       		.byte	0x6
  1105 03f9 0D       		.uleb128 0xd
- 1106 03fa 87070000 		.4byte	.LASF65
+ 1106 03fa 53070000 		.4byte	.LASF65
  1107 03fe 04       		.byte	0x4
  1108 03ff BE01     		.2byte	0x1be
  1109 0401 83000000 		.4byte	0x83
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1128 042c 14       		.byte	0x14
  1129 042d 0D       		.uleb128 0xd
  1130 042e D4030000 		.4byte	.LASF69
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 35
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 35
 
 
  1131 0432 04       		.byte	0x4
@@ -2058,7 +2058,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1145 044f 6B000000 		.4byte	0x6b
  1146 0453 23       		.byte	0x23
  1147 0454 0D       		.uleb128 0xd
- 1148 0455 8A060000 		.4byte	.LASF72
+ 1148 0455 56060000 		.4byte	.LASF72
  1149 0459 04       		.byte	0x4
  1150 045a EA01     		.2byte	0x1ea
  1151 045c 69020000 		.4byte	0x269
@@ -2082,7 +2082,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1169 0484 6B000000 		.4byte	0x6b
  1170 0488 2D01     		.2byte	0x12d
  1171 048a 11       		.uleb128 0x11
- 1172 048b 8D080000 		.4byte	.LASF76
+ 1172 048b 93080000 		.4byte	.LASF76
  1173 048f 04       		.byte	0x4
  1174 0490 FE01     		.2byte	0x1fe
  1175 0492 77000000 		.4byte	0x77
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1185 04a8 83000000 		.4byte	0x83
  1186 04ac B7040000 		.4byte	0x4b7
  1187 04b0 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 36
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 36
 
 
  1188 04b1 B0000000 		.4byte	0xb0
@@ -2140,13 +2140,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1224 04fe 59050000 		.4byte	0x559
  1225 0502 08       		.byte	0x8
  1226 0503 0D       		.uleb128 0xd
- 1227 0504 E8050000 		.4byte	.LASF82
+ 1227 0504 B4050000 		.4byte	.LASF82
  1228 0508 04       		.byte	0x4
  1229 0509 7D02     		.2byte	0x27d
  1230 050b B7000000 		.4byte	0xb7
  1231 050f 0C       		.byte	0xc
  1232 0510 0D       		.uleb128 0xd
- 1233 0511 4B070000 		.4byte	.LASF83
+ 1233 0511 17070000 		.4byte	.LASF83
  1234 0515 04       		.byte	0x4
  1235 0516 8402     		.2byte	0x284
  1236 0518 5F050000 		.4byte	0x55f
@@ -2158,10 +2158,10 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1242 0525 77000000 		.4byte	0x77
  1243 0529 14       		.byte	0x14
  1244 052a 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 37
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 37
 
 
- 1245 052b 26070000 		.4byte	.LASF85
+ 1245 052b F2060000 		.4byte	.LASF85
  1246 052f 04       		.byte	0x4
  1247 0530 9002     		.2byte	0x290
  1248 0532 77000000 		.4byte	0x77
@@ -2200,7 +2200,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1281 0575 AA02     		.2byte	0x2aa
  1282 0577 89050000 		.4byte	0x589
  1283 057b 0D       		.uleb128 0xd
- 1284 057c 8E070000 		.4byte	.LASF89
+ 1284 057c 5A070000 		.4byte	.LASF89
  1285 0580 04       		.byte	0x4
  1286 0581 AF02     		.2byte	0x2af
  1287 0583 89050000 		.4byte	0x589
@@ -2214,11 +2214,11 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1295 0597 0B       		.byte	0xb
  1296 0598 00       		.byte	0
  1297 0599 04       		.uleb128 0x4
- 1298 059a 76080000 		.4byte	.LASF90
+ 1298 059a 7C080000 		.4byte	.LASF90
  1299 059e 04       		.byte	0x4
  1300 059f B002     		.2byte	0x2b0
  1301 05a1 71050000 		.4byte	0x571
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 38
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 38
 
 
  1302 05a5 0E       		.uleb128 0xe
@@ -2227,7 +2227,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1305 05a8 E502     		.2byte	0x2e5
  1306 05aa BC050000 		.4byte	0x5bc
  1307 05ae 0D       		.uleb128 0xd
- 1308 05af B5070000 		.4byte	.LASF91
+ 1308 05af 81070000 		.4byte	.LASF91
  1309 05b3 04       		.byte	0x4
  1310 05b4 E702     		.2byte	0x2e7
  1311 05b6 77000000 		.4byte	0x77
@@ -2244,7 +2244,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1322 05cb ED02     		.2byte	0x2ed
  1323 05cd DF050000 		.4byte	0x5df
  1324 05d1 0D       		.uleb128 0xd
- 1325 05d2 A4050000 		.4byte	.LASF93
+ 1325 05d2 70050000 		.4byte	.LASF93
  1326 05d6 04       		.byte	0x4
  1327 05d7 F202     		.2byte	0x2f2
  1328 05d9 DF050000 		.4byte	0x5df
@@ -2273,12 +2273,12 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1351 060a FD02     		.2byte	0x2fd
  1352 060c B7000000 		.4byte	0xb7
  1353 0610 16       		.uleb128 0x16
- 1354 0611 A0080000 		.4byte	.LASF95
+ 1354 0611 A6080000 		.4byte	.LASF95
  1355 0615 04       		.byte	0x4
  1356 0616 0203     		.2byte	0x302
  1357 0618 1D060000 		.4byte	0x61d
  1358 061c 00       		.byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 39
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 39
 
 
  1359 061d 12       		.uleb128 0x12
@@ -2290,7 +2290,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1365 0629 0303     		.2byte	0x303
  1366 062b FB050000 		.4byte	0x5fb
  1367 062f 17       		.uleb128 0x17
- 1368 0630 5B070000 		.4byte	.LASF97
+ 1368 0630 27070000 		.4byte	.LASF97
  1369 0634 01       		.byte	0x1
  1370 0635 C2       		.byte	0xc2
  1371 0636 A4000000 		.4byte	0xa4
@@ -2300,7 +2300,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1375 0643 9C       		.byte	0x9c
  1376 0644 7A060000 		.4byte	0x67a
  1377 0648 18       		.uleb128 0x18
- 1378 0649 AB080000 		.4byte	.LASF99
+ 1378 0649 B1080000 		.4byte	.LASF99
  1379 064d 01       		.byte	0x1
  1380 064e C4       		.byte	0xc4
  1381 064f A4000000 		.4byte	0xa4
@@ -2330,7 +2330,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1405 068e 9C       		.byte	0x9c
  1406 068f 2B070000 		.4byte	0x72b
  1407 0693 1A       		.uleb128 0x1a
- 1408 0694 AB080000 		.4byte	.LASF99
+ 1408 0694 B1080000 		.4byte	.LASF99
  1409 0698 01       		.byte	0x1
  1410 0699 75       		.byte	0x75
  1411 069a A4000000 		.4byte	0xa4
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1413 06a2 1A       		.uleb128 0x1a
  1414 06a3 08030000 		.4byte	.LASF100
  1415 06a7 01       		.byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 40
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 40
 
 
  1416 06a8 76       		.byte	0x76
@@ -2395,10 +2395,10 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1467 0726 EB0A0000 		.4byte	0xaeb
  1468 072a 00       		.byte	0
  1469 072b 17       		.uleb128 0x17
- 1470 072c 08080000 		.4byte	.LASF101
+ 1470 072c 0E080000 		.4byte	.LASF101
  1471 0730 01       		.byte	0x1
  1472 0731 EC       		.byte	0xec
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 41
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 41
 
 
  1473 0732 A4000000 		.4byte	0xa4
@@ -2408,7 +2408,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1477 073f 9C       		.byte	0x9c
  1478 0740 51070000 		.4byte	0x751
  1479 0744 1D       		.uleb128 0x1d
- 1480 0745 AB080000 		.4byte	.LASF99
+ 1480 0745 B1080000 		.4byte	.LASF99
  1481 0749 01       		.byte	0x1
  1482 074a EE       		.byte	0xee
  1483 074b A4000000 		.4byte	0xa4
@@ -2425,7 +2425,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1494 0766 9C       		.byte	0x9c
  1495 0767 95070000 		.4byte	0x795
  1496 076b 1F       		.uleb128 0x1f
- 1497 076c AB080000 		.4byte	.LASF99
+ 1497 076c B1080000 		.4byte	.LASF99
  1498 0770 01       		.byte	0x1
  1499 0771 1301     		.2byte	0x113
  1500 0773 A4000000 		.4byte	0xa4
@@ -2442,7 +2442,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1511 0790 950A0000 		.4byte	0xa95
  1512 0794 00       		.byte	0
  1513 0795 1E       		.uleb128 0x1e
- 1514 0796 2D060000 		.4byte	.LASF103
+ 1514 0796 F9050000 		.4byte	.LASF103
  1515 079a 01       		.byte	0x1
  1516 079b 4501     		.2byte	0x145
  1517 079d A4000000 		.4byte	0xa4
@@ -2458,10 +2458,10 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1527 07b7 83000000 		.4byte	0x83
  1528 07bb 73000000 		.4byte	.LLST2
  1529 07bf 20       		.uleb128 0x20
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 42
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 42
 
 
- 1530 07c0 AB080000 		.4byte	.LASF99
+ 1530 07c0 B1080000 		.4byte	.LASF99
  1531 07c4 01       		.byte	0x1
  1532 07c5 4801     		.2byte	0x148
  1533 07c7 A4000000 		.4byte	0xa4
@@ -2518,14 +2518,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1584 082f 23       		.uleb128 0x23
  1585 0830 F4030000 		.4byte	.LASF108
  1586 0834 01       		.byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 43
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 43
 
 
  1587 0835 9901     		.2byte	0x199
  1588 0837 83000000 		.4byte	0x83
  1589 083b E5000000 		.4byte	.LLST5
  1590 083f 20       		.uleb128 0x20
- 1591 0840 AB080000 		.4byte	.LASF99
+ 1591 0840 B1080000 		.4byte	.LASF99
  1592 0844 01       		.byte	0x1
  1593 0845 9B01     		.2byte	0x19b
  1594 0847 A4000000 		.4byte	0xa4
@@ -2565,7 +2565,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1628 0888 00       		.byte	0
  1629 0889 00       		.byte	0
  1630 088a 1E       		.uleb128 0x1e
- 1631 088b CB060000 		.4byte	.LASF107
+ 1631 088b 97060000 		.4byte	.LASF107
  1632 088f 01       		.byte	0x1
  1633 0890 0702     		.2byte	0x207
  1634 0892 A4000000 		.4byte	0xa4
@@ -2578,13 +2578,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1641 08a5 F4030000 		.4byte	.LASF108
  1642 08a9 01       		.byte	0x1
  1643 08aa 0702     		.2byte	0x207
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 44
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 44
 
 
  1644 08ac 83000000 		.4byte	0x83
  1645 08b0 64010000 		.4byte	.LLST8
  1646 08b4 23       		.uleb128 0x23
- 1647 08b5 E6060000 		.4byte	.LASF109
+ 1647 08b5 B2060000 		.4byte	.LASF109
  1648 08b9 01       		.byte	0x1
  1649 08ba 0702     		.2byte	0x207
  1650 08bc 83000000 		.4byte	0x83
@@ -2596,7 +2596,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1656 08cc 83000000 		.4byte	0x83
  1657 08d0 D3010000 		.4byte	.LLST10
  1658 08d4 20       		.uleb128 0x20
- 1659 08d5 AB080000 		.4byte	.LASF99
+ 1659 08d5 B1080000 		.4byte	.LASF99
  1660 08d9 01       		.byte	0x1
  1661 08da 0A02     		.2byte	0x20a
  1662 08dc A4000000 		.4byte	0xa4
@@ -2620,7 +2620,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1680 090c 59050000 		.4byte	0x559
  1681 0910 9A020000 		.4byte	.LLST14
  1682 0914 24       		.uleb128 0x24
- 1683 0915 99050000 		.4byte	.LASF115
+ 1683 0915 65050000 		.4byte	.LASF115
  1684 0919 01       		.byte	0x1
  1685 091a 1002     		.2byte	0x210
  1686 091c 83000000 		.4byte	0x83
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1698 0934 1C       		.uleb128 0x1c
  1699 0935 01       		.uleb128 0x1
  1700 0936 52       		.byte	0x52
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 45
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 45
 
 
  1701 0937 03       		.uleb128 0x3
@@ -2676,7 +2676,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1733 095d 00       		.byte	0
  1734 095e 00       		.byte	0
  1735 095f 1E       		.uleb128 0x1e
- 1736 0960 20080000 		.4byte	.LASF113
+ 1736 0960 26080000 		.4byte	.LASF113
  1737 0964 01       		.byte	0x1
  1738 0965 B102     		.2byte	0x2b1
  1739 0967 A4000000 		.4byte	0xa4
@@ -2698,16 +2698,16 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1755 0991 83000000 		.4byte	0x83
  1756 0995 00030000 		.4byte	.LLST16
  1757 0999 23       		.uleb128 0x23
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 46
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 46
 
 
- 1758 099a E6060000 		.4byte	.LASF109
+ 1758 099a B2060000 		.4byte	.LASF109
  1759 099e 01       		.byte	0x1
  1760 099f B102     		.2byte	0x2b1
  1761 09a1 83000000 		.4byte	0x83
  1762 09a5 3A030000 		.4byte	.LLST17
  1763 09a9 20       		.uleb128 0x20
- 1764 09aa AB080000 		.4byte	.LASF99
+ 1764 09aa B1080000 		.4byte	.LASF99
  1765 09ae 01       		.byte	0x1
  1766 09af B302     		.2byte	0x2b3
  1767 09b1 A4000000 		.4byte	0xa4
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1812 0a05 00       		.sleb128 0
  1813 0a06 22       		.byte	0x22
  1814 0a07 23       		.byte	0x23
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 47
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 47
 
 
  1815 0a08 0C       		.uleb128 0xc
@@ -2799,7 +2799,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1850 0a2b 00       		.byte	0
  1851 0a2c 00       		.byte	0
  1852 0a2d 25       		.uleb128 0x25
- 1853 0a2e 3B080000 		.4byte	.LASF116
+ 1853 0a2e 41080000 		.4byte	.LASF116
  1854 0a32 01       		.byte	0x1
  1855 0a33 FD02     		.2byte	0x2fd
  1856 0a35 00000000 		.4byte	.LFB9
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1869 0a52 AF030000 		.4byte	.LASF118
  1870 0a56 01       		.byte	0x1
  1871 0a57 43       		.byte	0x43
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 48
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 48
 
 
  1872 0a58 6B000000 		.4byte	0x6b
@@ -2846,7 +2846,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1894 0a8c 05       		.byte	0x5
  1895 0a8d 53       		.byte	0x53
  1896 0a8e 28       		.uleb128 0x28
- 1897 0a8f 70070000 		.4byte	.LASF123
+ 1897 0a8f 3C070000 		.4byte	.LASF123
  1898 0a93 06       		.byte	0x6
  1899 0a94 66       		.byte	0x66
  1900 0a95 29       		.uleb128 0x29
@@ -2855,12 +2855,12 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1903 0a9b 79       		.byte	0x79
  1904 0a9c A4000000 		.4byte	0xa4
  1905 0aa0 29       		.uleb128 0x29
- 1906 0aa1 EA070000 		.4byte	.LASF125
+ 1906 0aa1 F0070000 		.4byte	.LASF125
  1907 0aa5 07       		.byte	0x7
  1908 0aa6 6C       		.byte	0x6c
  1909 0aa7 A4000000 		.4byte	0xa4
  1910 0aab 29       		.uleb128 0x29
- 1911 0aac 32070000 		.4byte	.LASF126
+ 1911 0aac FE060000 		.4byte	.LASF126
  1912 0ab0 07       		.byte	0x7
  1913 0ab1 5C       		.byte	0x5c
  1914 0ab2 A4000000 		.4byte	0xa4
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1926 0acd 08       		.byte	0x8
  1927 0ace E6       		.byte	0xe6
  1928 0acf D90A0000 		.4byte	0xad9
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 49
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 49
 
 
  1929 0ad3 2B       		.uleb128 0x2b
@@ -2890,11 +2890,11 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1935 0adf 5D       		.byte	0x5d
  1936 0ae0 83000000 		.4byte	0x83
  1937 0ae4 28       		.uleb128 0x28
- 1938 0ae5 16060000 		.4byte	.LASF130
+ 1938 0ae5 E2050000 		.4byte	.LASF130
  1939 0ae9 0A       		.byte	0xa
  1940 0aea 53       		.byte	0x53
  1941 0aeb 28       		.uleb128 0x28
- 1942 0aec 93060000 		.4byte	.LASF131
+ 1942 0aec 5F060000 		.4byte	.LASF131
  1943 0af0 0A       		.byte	0xa
  1944 0af1 42       		.byte	0x42
  1945 0af2 2C       		.uleb128 0x2c
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  1983 0002 01       		.byte	0x1
  1984 0003 25       		.uleb128 0x25
  1985 0004 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 50
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 50
 
 
  1986 0005 13       		.uleb128 0x13
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2040 003b 00       		.byte	0
  2041 003c 00       		.byte	0
  2042 003d 06       		.uleb128 0x6
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 51
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 51
 
 
  2043 003e 04       		.uleb128 0x4
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2097 0074 01       		.byte	0x1
  2098 0075 0B       		.uleb128 0xb
  2099 0076 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 52
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 52
 
 
  2100 0077 3A       		.uleb128 0x3a
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2154 00ad 03       		.uleb128 0x3
  2155 00ae 08       		.uleb128 0x8
  2156 00af 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 53
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 53
 
 
  2157 00b0 0B       		.uleb128 0xb
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2211 00e6 0B       		.uleb128 0xb
  2212 00e7 0B       		.uleb128 0xb
  2213 00e8 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 54
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 54
 
 
  2214 00e9 0B       		.uleb128 0xb
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2268 011f 9742     		.uleb128 0x2117
  2269 0121 19       		.uleb128 0x19
  2270 0122 01       		.uleb128 0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 55
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 55
 
 
  2271 0123 13       		.uleb128 0x13
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2325 015d 8A8201   		.uleb128 0x410a
  2326 0160 00       		.byte	0
  2327 0161 02       		.uleb128 0x2
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 56
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 56
 
 
  2328 0162 18       		.uleb128 0x18
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2382 019a 3B       		.uleb128 0x3b
  2383 019b 05       		.uleb128 0x5
  2384 019c 49       		.uleb128 0x49
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 57
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 57
 
 
  2385 019d 13       		.uleb128 0x13
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2439 01d5 03       		.uleb128 0x3
  2440 01d6 0E       		.uleb128 0xe
  2441 01d7 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 58
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 58
 
 
  2442 01d8 0B       		.uleb128 0xb
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2496 020f 3A       		.uleb128 0x3a
  2497 0210 0B       		.uleb128 0xb
  2498 0211 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 59
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 59
 
 
  2499 0212 05       		.uleb128 0x5
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2553 0248 27       		.uleb128 0x27
  2554 0249 19       		.uleb128 0x19
  2555 024a 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 60
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 60
 
 
  2556 024b 19       		.uleb128 0x19
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2610              	.Ldebug_loc0:
  2611              	.LLST0:
  2612 0000 08000000 		.4byte	.LVL5
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 61
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 61
 
 
  2613 0004 0D000000 		.4byte	.LVL6-1
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2667 0096 0A000000 		.4byte	.LVL27
  2668 009a 0200     		.2byte	0x2
  2669 009c 30       		.byte	0x30
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 62
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 62
 
 
  2670 009d 9F       		.byte	0x9f
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2724 0128 42000000 		.4byte	.LVL44
  2725 012c 44000000 		.4byte	.LVL45
  2726 0130 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 63
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 63
 
 
  2727 0132 50       		.byte	0x50
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2781 01bd 50000000 		.4byte	.LVL63
  2782 01c1 60000000 		.4byte	.LFE7
  2783 01c5 0400     		.2byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 64
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 64
 
 
  2784 01c7 F3       		.byte	0xf3
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2838 0253 0100     		.2byte	0x1
  2839 0255 50       		.byte	0x50
  2840 0256 00000000 		.4byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 65
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 65
 
 
  2841 025a 00000000 		.4byte	0
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2895 02e3 3A000000 		.4byte	.LVL78
  2896 02e7 0100     		.2byte	0x1
  2897 02e9 50       		.byte	0x50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 66
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 66
 
 
  2898 02ea 3A000000 		.4byte	.LVL78
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  2952 0369 3A000000 		.4byte	.LVL78
  2953 036d 40000000 		.4byte	.LFE8
  2954 0371 0400     		.2byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 67
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 67
 
 
  2955 0373 F3       		.byte	0xf3
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3009 03e4 9F       		.byte	0x9f
  3010 03e5 00000000 		.4byte	0
  3011 03e9 00000000 		.4byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 68
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 68
 
 
  3012              	.LLST20:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3066 0060 00000000 		.4byte	0
  3067 0064 00000000 		.4byte	0
  3068              		.section	.debug_ranges,"",%progbits
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 69
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 69
 
 
  3069              	.Ldebug_ranges0:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3104      685F5475 
  3104      496E6974 
  3104      69616C69 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 70
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 70
 
 
  3105              	.LASF124:
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3131              	.LASF45:
  3132 0114 62757474 		.ascii	"button4\000"
  3132      6F6E3400 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 71
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 71
 
 
  3133              	.LASF46:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3160      6C6500
  3161              	.LASF138:
  3162 01ce 6B65795F 		.ascii	"key_touch_DpProcessCsdWidgetRawCounts\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 72
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 72
 
 
  3162      746F7563 
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3186 0291 62736C6E 		.ascii	"bsln\000"
  3186      00
  3187              	.LASF105:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 73
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 73
 
 
  3188 0296 70747246 		.ascii	"ptrFlashWdgt\000"
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3209              	.LASF128:
  3210 0351 43795379 		.ascii	"CySysPmSleep\000"
  3210      73506D53 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 74
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 74
 
 
  3210      6C656570 
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3234      00
  3235              	.LASF18:
  3236 03fd 6B65795F 		.ascii	"key_touch_LOW_BSLN_RST_TYPE\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 75
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 75
 
 
  3236      746F7563 
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3258      685F5448 
  3258      52455348 
  3258      4F4C445F 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 76
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 76
 
 
  3259              	.LASF64:
@@ -4529,285 +4529,286 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 1
  3268      685F5744 
  3268      5F425554 
  3268      544F4E5F 
- 3269              	.LASF137:
- 3270 052f 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0\\TOUCH_TEST\\AYBR3000.c"
- 3270      59425233 
- 3270      3030305C 
- 3270      41594252 
- 3270      33303030 
- 3271 055e 7964736E 		.ascii	"ydsn\000"
- 3271      00
- 3272              	.LASF63:
- 3273 0563 74756E65 		.ascii	"tunerCmd\000"
- 3273      72436D64 
- 3273      00
- 3274              	.LASF12:
- 3275 056c 666C6F61 		.ascii	"float\000"
- 3275      7400
- 3276              	.LASF22:
- 3277 0572 6B65795F 		.ascii	"key_touch_WD_MATRIX_BUTTON_E\000"
- 3277      746F7563 
- 3277      685F5744 
- 3277      5F4D4154 
- 3277      5249585F 
- 3278              	.LASF37:
- 3279 058f 62736C6E 		.ascii	"bslnCoeff\000"
- 3279      436F6566 
- 3279      6600
- 3280              	.LASF115:
- 3281 0599 69735072 		.ascii	"isProxWdgt\000"
- 3281      6F785764 
- 3281      677400
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 77
+ 3269              	.LASF63:
+ 3270 052f 74756E65 		.ascii	"tunerCmd\000"
+ 3270      72436D64 
+ 3270      00
+ 3271              	.LASF12:
+ 3272 0538 666C6F61 		.ascii	"float\000"
+ 3272      7400
+ 3273              	.LASF22:
+ 3274 053e 6B65795F 		.ascii	"key_touch_WD_MATRIX_BUTTON_E\000"
+ 3274      746F7563 
+ 3274      685F5744 
+ 3274      5F4D4154 
+ 3274      5249585F 
+ 3275              	.LASF37:
+ 3276 055b 62736C6E 		.ascii	"bslnCoeff\000"
+ 3276      436F6566 
+ 3276      6600
+ 3277              	.LASF115:
+ 3278 0565 69735072 		.ascii	"isProxWdgt\000"
+ 3278      6F785764 
+ 3278      677400
+ 3279              	.LASF93:
+ 3280 0570 72656775 		.ascii	"regularChannel\000"
+ 3280      6C617243 
+ 3280      68616E6E 
+ 3280      656C00
+ 3281              	.LASF1:
+ 3282 057f 756E7369 		.ascii	"unsigned char\000"
+ 3282      676E6564 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 77
 
 
- 3282              	.LASF93:
- 3283 05a4 72656775 		.ascii	"regularChannel\000"
- 3283      6C617243 
- 3283      68616E6E 
- 3283      656C00
- 3284              	.LASF1:
- 3285 05b3 756E7369 		.ascii	"unsigned char\000"
- 3285      676E6564 
- 3285      20636861 
- 3285      7200
- 3286              	.LASF2:
- 3287 05c1 73686F72 		.ascii	"short int\000"
- 3287      7420696E 
- 3287      7400
- 3288              	.LASF28:
- 3289 05cb 6B65795F 		.ascii	"key_touch_SENSE_METHOD_CSX_E\000"
- 3289      746F7563 
- 3289      685F5345 
- 3289      4E53455F 
- 3289      4D455448 
- 3290              	.LASF82:
- 3291 05e8 70747232 		.ascii	"ptr2FltrHistory\000"
- 3291      466C7472 
- 3291      48697374 
- 3291      6F727900 
- 3292              	.LASF29:
- 3293 05f8 6B65795F 		.ascii	"key_touch_SENSE_METHOD_BIST_E\000"
- 3293      746F7563 
- 3293      685F5345 
- 3293      4E53455F 
- 3293      4D455448 
- 3294              	.LASF130:
- 3295 0616 6B65795F 		.ascii	"key_touch_FtInitialize\000"
- 3295      746F7563 
- 3295      685F4674 
- 3295      496E6974 
- 3295      69616C69 
- 3296              	.LASF103:
- 3297 062d 6B65795F 		.ascii	"key_touch_ProcessAllWidgets\000"
- 3297      746F7563 
- 3297      685F5072 
- 3297      6F636573 
- 3297      73416C6C 
- 3298              	.LASF24:
- 3299 0649 6B65795F 		.ascii	"key_touch_WD_PROXIMITY_E\000"
- 3299      746F7563 
- 3299      685F5744 
- 3299      5F50524F 
- 3299      58494D49 
- 3300              	.LASF30:
- 3301 0662 7265736F 		.ascii	"resolution\000"
- 3301      6C757469 
- 3301      6F6E00
- 3302              	.LASF20:
- 3303 066d 6B65795F 		.ascii	"key_touch_WD_LINEAR_SLIDER_E\000"
- 3303      746F7563 
- 3303      685F5744 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 78
+ 3282      20636861 
+ 3282      7200
+ 3283              	.LASF2:
+ 3284 058d 73686F72 		.ascii	"short int\000"
+ 3284      7420696E 
+ 3284      7400
+ 3285              	.LASF28:
+ 3286 0597 6B65795F 		.ascii	"key_touch_SENSE_METHOD_CSX_E\000"
+ 3286      746F7563 
+ 3286      685F5345 
+ 3286      4E53455F 
+ 3286      4D455448 
+ 3287              	.LASF82:
+ 3288 05b4 70747232 		.ascii	"ptr2FltrHistory\000"
+ 3288      466C7472 
+ 3288      48697374 
+ 3288      6F727900 
+ 3289              	.LASF29:
+ 3290 05c4 6B65795F 		.ascii	"key_touch_SENSE_METHOD_BIST_E\000"
+ 3290      746F7563 
+ 3290      685F5345 
+ 3290      4E53455F 
+ 3290      4D455448 
+ 3291              	.LASF130:
+ 3292 05e2 6B65795F 		.ascii	"key_touch_FtInitialize\000"
+ 3292      746F7563 
+ 3292      685F4674 
+ 3292      496E6974 
+ 3292      69616C69 
+ 3293              	.LASF103:
+ 3294 05f9 6B65795F 		.ascii	"key_touch_ProcessAllWidgets\000"
+ 3294      746F7563 
+ 3294      685F5072 
+ 3294      6F636573 
+ 3294      73416C6C 
+ 3295              	.LASF24:
+ 3296 0615 6B65795F 		.ascii	"key_touch_WD_PROXIMITY_E\000"
+ 3296      746F7563 
+ 3296      685F5744 
+ 3296      5F50524F 
+ 3296      58494D49 
+ 3297              	.LASF30:
+ 3298 062e 7265736F 		.ascii	"resolution\000"
+ 3298      6C757469 
+ 3298      6F6E00
+ 3299              	.LASF20:
+ 3300 0639 6B65795F 		.ascii	"key_touch_WD_LINEAR_SLIDER_E\000"
+ 3300      746F7563 
+ 3300      685F5744 
+ 3300      5F4C494E 
+ 3300      4541525F 
+ 3301              	.LASF72:
+ 3302 0656 77646774 		.ascii	"wdgtList\000"
+ 3302      4C697374 
+ 3302      00
+ 3303              	.LASF131:
+ 3304 065f 6B65795F 		.ascii	"key_touch_InitializeAllBaselines\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 78
 
 
- 3303      5F4C494E 
- 3303      4541525F 
- 3304              	.LASF72:
- 3305 068a 77646774 		.ascii	"wdgtList\000"
- 3305      4C697374 
- 3305      00
- 3306              	.LASF131:
- 3307 0693 6B65795F 		.ascii	"key_touch_InitializeAllBaselines\000"
- 3307      746F7563 
- 3307      685F496E 
- 3307      69746961 
- 3307      6C697A65 
- 3308              	.LASF51:
- 3309 06b4 62757474 		.ascii	"button10\000"
- 3309      6F6E3130 
- 3309      00
- 3310              	.LASF52:
- 3311 06bd 62757474 		.ascii	"button11\000"
- 3311      6F6E3131 
- 3311      00
- 3312              	.LASF14:
- 3313 06c6 63686172 		.ascii	"char\000"
- 3313      00
- 3314              	.LASF107:
- 3315 06cb 6B65795F 		.ascii	"key_touch_ProcessWidgetExt\000"
- 3315      746F7563 
- 3315      685F5072 
- 3315      6F636573 
- 3315      73576964 
- 3316              	.LASF109:
- 3317 06e6 6D6F6465 		.ascii	"mode\000"
- 3317      00
- 3318              	.LASF35:
- 3319 06eb 6F6E4465 		.ascii	"onDebounce\000"
- 3319      626F756E 
- 3319      636500
- 3320              	.LASF59:
- 3321 06f6 6B65795F 		.ascii	"key_touch_RAM_SNS_STRUCT\000"
- 3321      746F7563 
- 3321      685F5241 
- 3321      4D5F534E 
- 3321      535F5354 
- 3322              	.LASF58:
- 3323 070f 69646163 		.ascii	"idacComp\000"
- 3323      436F6D70 
- 3323      00
- 3324              	.LASF57:
- 3325 0718 6E656742 		.ascii	"negBslnRstCnt\000"
- 3325      736C6E52 
- 3325      7374436E 
- 3325      7400
- 3326              	.LASF85:
- 3327 0726 746F7461 		.ascii	"totalNumSns\000"
- 3327      6C4E756D 
- 3327      536E7300 
- 3328              	.LASF126:
- 3329 0732 6B65795F 		.ascii	"key_touch_ScanAllWidgets\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 79
+ 3304      746F7563 
+ 3304      685F496E 
+ 3304      69746961 
+ 3304      6C697A65 
+ 3305              	.LASF51:
+ 3306 0680 62757474 		.ascii	"button10\000"
+ 3306      6F6E3130 
+ 3306      00
+ 3307              	.LASF52:
+ 3308 0689 62757474 		.ascii	"button11\000"
+ 3308      6F6E3131 
+ 3308      00
+ 3309              	.LASF14:
+ 3310 0692 63686172 		.ascii	"char\000"
+ 3310      00
+ 3311              	.LASF107:
+ 3312 0697 6B65795F 		.ascii	"key_touch_ProcessWidgetExt\000"
+ 3312      746F7563 
+ 3312      685F5072 
+ 3312      6F636573 
+ 3312      73576964 
+ 3313              	.LASF109:
+ 3314 06b2 6D6F6465 		.ascii	"mode\000"
+ 3314      00
+ 3315              	.LASF35:
+ 3316 06b7 6F6E4465 		.ascii	"onDebounce\000"
+ 3316      626F756E 
+ 3316      636500
+ 3317              	.LASF59:
+ 3318 06c2 6B65795F 		.ascii	"key_touch_RAM_SNS_STRUCT\000"
+ 3318      746F7563 
+ 3318      685F5241 
+ 3318      4D5F534E 
+ 3318      535F5354 
+ 3319              	.LASF58:
+ 3320 06db 69646163 		.ascii	"idacComp\000"
+ 3320      436F6D70 
+ 3320      00
+ 3321              	.LASF57:
+ 3322 06e4 6E656742 		.ascii	"negBslnRstCnt\000"
+ 3322      736C6E52 
+ 3322      7374436E 
+ 3322      7400
+ 3323              	.LASF85:
+ 3324 06f2 746F7461 		.ascii	"totalNumSns\000"
+ 3324      6C4E756D 
+ 3324      536E7300 
+ 3325              	.LASF126:
+ 3326 06fe 6B65795F 		.ascii	"key_touch_ScanAllWidgets\000"
+ 3326      746F7563 
+ 3326      685F5363 
+ 3326      616E416C 
+ 3326      6C576964 
+ 3327              	.LASF83:
+ 3328 0717 70747232 		.ascii	"ptr2DebounceArr\000"
+ 3328      4465626F 
+ 3328      756E6365 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 79
 
 
- 3329      746F7563 
- 3329      685F5363 
- 3329      616E416C 
- 3329      6C576964 
- 3330              	.LASF83:
- 3331 074b 70747232 		.ascii	"ptr2DebounceArr\000"
- 3331      4465626F 
- 3331      756E6365 
- 3331      41727200 
- 3332              	.LASF97:
- 3333 075b 6B65795F 		.ascii	"key_touch_Initialize\000"
- 3333      746F7563 
- 3333      685F496E 
- 3333      69746961 
- 3333      6C697A65 
- 3334              	.LASF123:
- 3335 0770 6B65795F 		.ascii	"key_touch_DpInitialize\000"
- 3335      746F7563 
- 3335      685F4470 
- 3335      496E6974 
- 3335      69616C69 
- 3336              	.LASF65:
- 3337 0787 73746174 		.ascii	"status\000"
- 3337      757300
- 3338              	.LASF89:
- 3339 078e 77646774 		.ascii	"wdgtArray\000"
- 3339      41727261 
- 3339      7900
- 3340              	.LASF21:
- 3341 0798 6B65795F 		.ascii	"key_touch_WD_RADIAL_SLIDER_E\000"
- 3341      746F7563 
- 3341      685F5744 
- 3341      5F524144 
- 3341      49414C5F 
- 3342              	.LASF91:
- 3343 07b5 6E6F7455 		.ascii	"notUsed\000"
- 3343      73656400 
+ 3328      41727200 
+ 3329              	.LASF97:
+ 3330 0727 6B65795F 		.ascii	"key_touch_Initialize\000"
+ 3330      746F7563 
+ 3330      685F496E 
+ 3330      69746961 
+ 3330      6C697A65 
+ 3331              	.LASF123:
+ 3332 073c 6B65795F 		.ascii	"key_touch_DpInitialize\000"
+ 3332      746F7563 
+ 3332      685F4470 
+ 3332      496E6974 
+ 3332      69616C69 
+ 3333              	.LASF65:
+ 3334 0753 73746174 		.ascii	"status\000"
+ 3334      757300
+ 3335              	.LASF89:
+ 3336 075a 77646774 		.ascii	"wdgtArray\000"
+ 3336      41727261 
+ 3336      7900
+ 3337              	.LASF21:
+ 3338 0764 6B65795F 		.ascii	"key_touch_WD_RADIAL_SLIDER_E\000"
+ 3338      746F7563 
+ 3338      685F5744 
+ 3338      5F524144 
+ 3338      49414C5F 
+ 3339              	.LASF91:
+ 3340 0781 6E6F7455 		.ascii	"notUsed\000"
+ 3340      73656400 
+ 3341              	.LASF137:
+ 3342 0789 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0_lable\\TOUCH_TEST\\AYBR"
+ 3342      59425233 
+ 3342      3030305C 
+ 3342      41594252 
+ 3342      33303030 
+ 3343 07b8 33303030 		.ascii	"3000.cydsn\000"
+ 3343      2E637964 
+ 3343      736E00
  3344              	.LASF39:
- 3345 07bd 736E7343 		.ascii	"snsClkSource\000"
+ 3345 07c3 736E7343 		.ascii	"snsClkSource\000"
  3345      6C6B536F 
  3345      75726365 
  3345      00
  3346              	.LASF15:
- 3347 07ca 63797374 		.ascii	"cystatus\000"
+ 3347 07d0 63797374 		.ascii	"cystatus\000"
  3347      61747573 
  3347      00
  3348              	.LASF25:
- 3349 07d3 6B65795F 		.ascii	"key_touch_WD_TYPE_ENUM\000"
+ 3349 07d9 6B65795F 		.ascii	"key_touch_WD_TYPE_ENUM\000"
  3349      746F7563 
  3349      685F5744 
  3349      5F545950 
  3349      455F454E 
  3350              	.LASF125:
- 3351 07ea 6B65795F 		.ascii	"key_touch_CalibrateAllWidgets\000"
+ 3351 07f0 6B65795F 		.ascii	"key_touch_CalibrateAllWidgets\000"
  3351      746F7563 
  3351      685F4361 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 80
+
+
  3351      6C696272 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 80
-
-
  3351      61746541 
  3352              	.LASF101:
- 3353 0808 6B65795F 		.ascii	"key_touch_Stop\000"
+ 3353 080e 6B65795F 		.ascii	"key_touch_Stop\000"
  3353      746F7563 
  3353      685F5374 
  3353      6F7000
  3354              	.LASF31:
- 3355 0817 66696E67 		.ascii	"fingerTh\000"
+ 3355 081d 66696E67 		.ascii	"fingerTh\000"
  3355      65725468 
  3355      00
  3356              	.LASF113:
- 3357 0820 6B65795F 		.ascii	"key_touch_ProcessSensorExt\000"
+ 3357 0826 6B65795F 		.ascii	"key_touch_ProcessSensorExt\000"
  3357      746F7563 
  3357      685F5072 
  3357      6F636573 
  3357      7353656E 
  3358              	.LASF116:
- 3359 083b 6B65795F 		.ascii	"key_touch_Sleep\000"
+ 3359 0841 6B65795F 		.ascii	"key_touch_Sleep\000"
  3359      746F7563 
  3359      685F536C 
  3359      65657000 
  3360              	.LASF136:
- 3361 084b 47656E65 		.ascii	"Generated_Source\\PSoC4\\key_touch_Control.c\000"
+ 3361 0851 47656E65 		.ascii	"Generated_Source\\PSoC4\\key_touch_Control.c\000"
  3361      72617465 
  3361      645F536F 
  3361      75726365 
  3361      5C50536F 
  3362              	.LASF90:
- 3363 0876 6B65795F 		.ascii	"key_touch_FLASH_STRUCT\000"
+ 3363 087c 6B65795F 		.ascii	"key_touch_FLASH_STRUCT\000"
  3363      746F7563 
  3363      685F464C 
  3363      4153485F 
  3363      53545255 
  3364              	.LASF76:
- 3365 088d 736E7254 		.ascii	"snrTestScanCounter\000"
+ 3365 0893 736E7254 		.ascii	"snrTestScanCounter\000"
  3365      65737453 
  3365      63616E43 
  3365      6F756E74 
  3365      657200
  3366              	.LASF95:
- 3367 08a0 70747252 		.ascii	"ptrRegular\000"
+ 3367 08a6 70747252 		.ascii	"ptrRegular\000"
  3367      6567756C 
  3367      617200
  3368              	.LASF99:
- 3369 08ab 72657375 		.ascii	"result\000"
+ 3369 08b1 72657375 		.ascii	"result\000"
  3369      6C7400
  3370              	.LASF135:
- 3371 08b2 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 3371 08b8 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  3371      4320342E 
  3371      392E3320 
  3371      32303135 
  3371      30333033 
- 3372 08e5 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 3372 08eb 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
  3372      20726576 
  3372      6973696F 
  3372      6E203232 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cclfeNhA.s 			page 81
+
+
  3372      31323230 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccpoFZHr.s 			page 81
-
-
- 3373 0918 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 3373 091e 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
  3373      67202D66 
  3373      66756E63 
  3373      74696F6E 
  3373      2D736563 
  3374              	.LASF23:
- 3375 0944 6B65795F 		.ascii	"key_touch_WD_TOUCHPAD_E\000"
+ 3375 094a 6B65795F 		.ascii	"key_touch_WD_TOUCHPAD_E\000"
  3375      746F7563 
  3375      685F5744 
  3375      5F544F55 

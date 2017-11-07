@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\settings\aybr3000.Debug.general.xcl" --backend -f "D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\settings\aybr3000.Debug.driver.xcl" 
+"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\settings\aybr3000.Debug.general.xcl" --backend -f "D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\settings\aybr3000.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\settings\aybr3000.Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\settings\aybr3000.Debug.driver.xcl" 
+"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\settings\aybr3000.Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\settings\aybr3000.Debug.driver.xcl" 
 
 @echo off 
 :end

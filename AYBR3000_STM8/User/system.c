@@ -80,7 +80,7 @@ void GPIO_Key_Sleep_Set(void)
     GPIOG->ODR &= ~GPIO_Pin_7;
     GPIOG->ODR &= ~GPIO_Pin_6;
     GPIOG->ODR &= ~GPIO_Pin_5;
-    GPIOG->ODR &= ~GPIO_Pin_4;
+    GPIOG->ODR &= ~GPIO_Pin_3;
 
     // 配置为悬浮中断输入
     GPIO_Init(GPIOC, GPIO_Pin_3, GPIO_Mode_In_FL_IT);
@@ -108,7 +108,7 @@ void GPIO_Key_WakeUp_Set(void)
     GPIOG->ODR |= GPIO_Pin_7;
     GPIOG->ODR |= GPIO_Pin_6;
     GPIOG->ODR |= GPIO_Pin_5;
-    GPIOG->ODR |= GPIO_Pin_4;
+    GPIOG->ODR |= GPIO_Pin_3;
 
     // 配置为悬浮不带中断输入
     GPIO_Init(GPIOC, GPIO_Pin_3, GPIO_Mode_In_FL_No_IT);
@@ -139,11 +139,11 @@ void GPIO_Configuration(void)
     //A7105的4根数据线
     GPIOA->ODR &= ~GPIO_Pin_0;
     GPIOD->ODR &= ~GPIO_Pin_7;
-    GPIOC->ODR &= ~GPIO_Pin_2;
+    GPIOC->ODR &= ~GPIO_Pin_3;
     GPIOC->ODR &= ~GPIO_Pin_7;
     GPIO_Init(GPIOA, GPIO_Pin_3, GPIO_Mode_Out_PP_High_Fast);    //SCS
     GPIO_Init(GPIOD, GPIO_Pin_7, GPIO_Mode_In_PU_IT);   //GIO1
-    GPIO_Init(GPIOC, GPIO_Pin_2, GPIO_Mode_In_PU_No_IT);   //SDIO
+    GPIO_Init(GPIOC, GPIO_Pin_3, GPIO_Mode_In_PU_No_IT);   //SDIO
     GPIO_Init(GPIOC, GPIO_Pin_7, GPIO_Mode_Out_PP_High_Fast);   //SCK
     //唤醒口，低电平有效 
     GPIOE->ODR |= GPIO_Pin_7;

@@ -49,7 +49,11 @@
         <MultiCoreRunAll>1</MultiCoreRunAll>
     </Simulator>
     <DebugChecksum>
+<<<<<<< HEAD
         <Checksum>4120098947</Checksum>
+=======
+        <Checksum>2462021317</Checksum>
+>>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
     </DebugChecksum>
     <CallStack>
         <ShowArgs>0</ShowArgs>

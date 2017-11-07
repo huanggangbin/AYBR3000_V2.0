@@ -539,9 +539,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button0 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON0_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON0_FINGER_TH             (120u)
-#define key_touch_BUTTON0_NOISE_TH              (60u)
-#define key_touch_BUTTON0_NNOISE_TH             (60u)
+#define key_touch_BUTTON0_FINGER_TH             (100u)
+#define key_touch_BUTTON0_NOISE_TH              (50u)
+#define key_touch_BUTTON0_NNOISE_TH             (50u)
 #define key_touch_BUTTON0_HYSTERESIS            (7u)
 #define key_touch_BUTTON0_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON0_LOW_BSLN_RST          (30u)
@@ -559,9 +559,15 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button1 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON1_RESOLUTION            (key_touch_RES12BIT)
+<<<<<<< HEAD
 #define key_touch_BUTTON1_FINGER_TH             (150u)
 #define key_touch_BUTTON1_NOISE_TH              (75u)
 #define key_touch_BUTTON1_NNOISE_TH             (75u)
+=======
+#define key_touch_BUTTON1_FINGER_TH             (70u)
+#define key_touch_BUTTON1_NOISE_TH              (35u)
+#define key_touch_BUTTON1_NNOISE_TH             (35u)
+>>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
 #define key_touch_BUTTON1_HYSTERESIS            (6u)
 #define key_touch_BUTTON1_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON1_LOW_BSLN_RST          (30u)
@@ -579,10 +585,17 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button2 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON2_RESOLUTION            (key_touch_RES12BIT)
+<<<<<<< HEAD
 #define key_touch_BUTTON2_FINGER_TH             (100u)
 #define key_touch_BUTTON2_NOISE_TH              (50u)
 #define key_touch_BUTTON2_NNOISE_TH             (50u)
 #define key_touch_BUTTON2_HYSTERESIS            (6u)
+=======
+#define key_touch_BUTTON2_FINGER_TH             (80u)
+#define key_touch_BUTTON2_NOISE_TH              (40u)
+#define key_touch_BUTTON2_NNOISE_TH             (40u)
+#define key_touch_BUTTON2_HYSTERESIS            (5u)
+>>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
 #define key_touch_BUTTON2_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON2_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON2_BSLN_COEFF            (100u)
@@ -599,9 +612,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button3 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON3_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON3_FINGER_TH             (84u)
-#define key_touch_BUTTON3_NOISE_TH              (42u)
-#define key_touch_BUTTON3_NNOISE_TH             (42u)
+#define key_touch_BUTTON3_FINGER_TH             (50u)
+#define key_touch_BUTTON3_NOISE_TH              (25u)
+#define key_touch_BUTTON3_NNOISE_TH             (25u)
 #define key_touch_BUTTON3_HYSTERESIS            (4u)
 #define key_touch_BUTTON3_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON3_LOW_BSLN_RST          (30u)
@@ -619,9 +632,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button4 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON4_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON4_FINGER_TH             (100u)
-#define key_touch_BUTTON4_NOISE_TH              (50u)
-#define key_touch_BUTTON4_NNOISE_TH             (50u)
+#define key_touch_BUTTON4_FINGER_TH             (55u)
+#define key_touch_BUTTON4_NOISE_TH              (28u)
+#define key_touch_BUTTON4_NNOISE_TH             (28u)
 #define key_touch_BUTTON4_HYSTERESIS            (4u)
 #define key_touch_BUTTON4_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON4_LOW_BSLN_RST          (30u)
@@ -639,9 +652,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button5 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON5_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON5_FINGER_TH             (100u)
-#define key_touch_BUTTON5_NOISE_TH              (50u)
-#define key_touch_BUTTON5_NNOISE_TH             (50u)
+#define key_touch_BUTTON5_FINGER_TH             (60u)
+#define key_touch_BUTTON5_NOISE_TH              (30u)
+#define key_touch_BUTTON5_NNOISE_TH             (30u)
 #define key_touch_BUTTON5_HYSTERESIS            (4u)
 #define key_touch_BUTTON5_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON5_LOW_BSLN_RST          (30u)
@@ -659,9 +672,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button6 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON6_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON6_FINGER_TH             (120u)
-#define key_touch_BUTTON6_NOISE_TH              (60u)
-#define key_touch_BUTTON6_NNOISE_TH             (60u)
+#define key_touch_BUTTON6_FINGER_TH             (100u)
+#define key_touch_BUTTON6_NOISE_TH              (50u)
+#define key_touch_BUTTON6_NNOISE_TH             (50u)
 #define key_touch_BUTTON6_HYSTERESIS            (7u)
 #define key_touch_BUTTON6_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON6_LOW_BSLN_RST          (30u)
@@ -679,9 +692,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button7 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON7_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON7_FINGER_TH             (140u)
-#define key_touch_BUTTON7_NOISE_TH              (70u)
-#define key_touch_BUTTON7_NNOISE_TH             (70u)
+#define key_touch_BUTTON7_FINGER_TH             (78u)
+#define key_touch_BUTTON7_NOISE_TH              (39u)
+#define key_touch_BUTTON7_NNOISE_TH             (39u)
 #define key_touch_BUTTON7_HYSTERESIS            (6u)
 #define key_touch_BUTTON7_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON7_LOW_BSLN_RST          (30u)
@@ -699,9 +712,15 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button8 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON8_RESOLUTION            (key_touch_RES12BIT)
+<<<<<<< HEAD
 #define key_touch_BUTTON8_FINGER_TH             (150u)
 #define key_touch_BUTTON8_NOISE_TH              (75u)
 #define key_touch_BUTTON8_NNOISE_TH             (75u)
+=======
+#define key_touch_BUTTON8_FINGER_TH             (100u)
+#define key_touch_BUTTON8_NOISE_TH              (50u)
+#define key_touch_BUTTON8_NNOISE_TH             (50u)
+>>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
 #define key_touch_BUTTON8_HYSTERESIS            (6u)
 #define key_touch_BUTTON8_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON8_LOW_BSLN_RST          (30u)
@@ -719,9 +738,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button9 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON9_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON9_FINGER_TH             (100u)
-#define key_touch_BUTTON9_NOISE_TH              (50u)
-#define key_touch_BUTTON9_NNOISE_TH             (50u)
+#define key_touch_BUTTON9_FINGER_TH             (56u)
+#define key_touch_BUTTON9_NOISE_TH              (28u)
+#define key_touch_BUTTON9_NNOISE_TH             (28u)
 #define key_touch_BUTTON9_HYSTERESIS            (4u)
 #define key_touch_BUTTON9_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON9_LOW_BSLN_RST          (30u)
@@ -739,9 +758,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button10 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON10_RESOLUTION           (key_touch_RES12BIT)
-#define key_touch_BUTTON10_FINGER_TH            (100u)
-#define key_touch_BUTTON10_NOISE_TH             (50u)
-#define key_touch_BUTTON10_NNOISE_TH            (50u)
+#define key_touch_BUTTON10_FINGER_TH            (78u)
+#define key_touch_BUTTON10_NOISE_TH             (39u)
+#define key_touch_BUTTON10_NNOISE_TH            (39u)
 #define key_touch_BUTTON10_HYSTERESIS           (5u)
 #define key_touch_BUTTON10_ON_DEBOUNCE          (3u)
 #define key_touch_BUTTON10_LOW_BSLN_RST         (30u)
@@ -759,9 +778,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button11 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON11_RESOLUTION           (key_touch_RES12BIT)
-#define key_touch_BUTTON11_FINGER_TH            (100u)
-#define key_touch_BUTTON11_NOISE_TH             (50u)
-#define key_touch_BUTTON11_NNOISE_TH            (50u)
+#define key_touch_BUTTON11_FINGER_TH            (70u)
+#define key_touch_BUTTON11_NOISE_TH             (35u)
+#define key_touch_BUTTON11_NNOISE_TH            (35u)
 #define key_touch_BUTTON11_HYSTERESIS           (4u)
 #define key_touch_BUTTON11_ON_DEBOUNCE          (3u)
 #define key_touch_BUTTON11_LOW_BSLN_RST         (30u)
