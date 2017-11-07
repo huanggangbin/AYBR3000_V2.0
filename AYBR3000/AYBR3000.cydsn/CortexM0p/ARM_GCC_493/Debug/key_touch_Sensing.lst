@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
   30:Generated_Source\PSoC4/key_touch_Sensing.c **** * materials described herein. Cypress does not assume any liability arising out
   31:Generated_Source\PSoC4/key_touch_Sensing.c **** * of the application or use of any product or circuit described herein. Cypress
   32:Generated_Source\PSoC4/key_touch_Sensing.c **** * does not authorize its products for use as critical components in life-support
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 2
 
 
   33:Generated_Source\PSoC4/key_touch_Sensing.c **** * systems where a malfunction or failure may reasonably be expected to result in
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
   87:Generated_Source\PSoC4/key_touch_Sensing.c **** #define key_touch_MOD_CSD_CLK_12000KHZ                   (12000uL)
   88:Generated_Source\PSoC4/key_touch_Sensing.c **** #define key_touch_MOD_CSD_CLK_24000KHZ                   (24000uL)
   89:Generated_Source\PSoC4/key_touch_Sensing.c **** #define key_touch_MOD_CSD_CLK_48000KHZ                   (48000uL)
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 3
 
 
   90:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  144:Generated_Source\PSoC4/key_touch_Sensing.c ****      (key_touch_ENABLE == key_touch_ADC_EN))
  145:Generated_Source\PSoC4/key_touch_Sensing.c ****     #if (key_touch_ENABLE == key_touch_CSD_EN)
  146:Generated_Source\PSoC4/key_touch_Sensing.c ****         static void key_touch_SsCSDDisableMode(void);
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 4
 
 
  147:Generated_Source\PSoC4/key_touch_Sensing.c ****     #endif /* (key_touch_ENABLE == key_touch_CSD_EN) */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  201:Generated_Source\PSoC4/key_touch_Sensing.c **** #endif /* ((key_touch_ENABLE == key_touch_CSD_CSX_EN) || \
  202:Generated_Source\PSoC4/key_touch_Sensing.c ****            (key_touch_ENABLE == key_touch_SELF_TEST_EN) || \
  203:Generated_Source\PSoC4/key_touch_Sensing.c ****            (key_touch_ENABLE == key_touch_ADC_EN))) */
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 5
 
 
  204:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  258:Generated_Source\PSoC4/key_touch_Sensing.c **** /*  Pointer to Flash structure to hold Sns electrode that was connected previously  */
  259:Generated_Source\PSoC4/key_touch_Sensing.c **** #if (key_touch_ENABLE == key_touch_CSD2X_EN)
  260:Generated_Source\PSoC4/key_touch_Sensing.c ****     key_touch_FLASH_IO_STRUCT const *key_touch_curSnsIOPtr0;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 6
 
 
  261:Generated_Source\PSoC4/key_touch_Sensing.c ****     key_touch_FLASH_IO_STRUCT const *key_touch_curSnsIOPtr1;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
   48              		.type	key_touch_SetupWidget, %function
   49              	key_touch_SetupWidget:
   50              	.LFB2:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 7
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 7
 
 
  293:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  340:Generated_Source\PSoC4/key_touch_Sensing.c **** 
  341:Generated_Source\PSoC4/key_touch_Sensing.c ****     if (key_touch_WDGT_SW_STS_BUSY == (key_touch_dsRam.status & key_touch_WDGT_SW_STS_BUSY))
   58              		.loc 1 341 0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 8
 
 
   59 0002 0F4B     		ldr	r3, .L10
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
   92              		.loc 1 355 0
   93 0032 0024     		mov	r4, #0
   94              	.L5:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 9
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 9
 
 
   95              	.LVL1:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  406:Generated_Source\PSoC4/key_touch_Sensing.c **** }
  103              		.loc 1 406 0
  104 003c 201C     		mov	r0, r4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 10
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 10
 
 
  105              		@ sp needed
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  130              		.loc 1 435 0
  131 0002 054B     		ldr	r3, .L15
  132 0004 9B68     		ldr	r3, [r3, #8]
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 11
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 11
 
 
  133 0006 DB03     		lsl	r3, r3, #15
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  475:Generated_Source\PSoC4/key_touch_Sensing.c ****     #endif  /* (key_touch_ENABLE == key_touch_CSD2X_EN) */
  476:Generated_Source\PSoC4/key_touch_Sensing.c ****     }
  477:Generated_Source\PSoC4/key_touch_Sensing.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 12
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 12
 
 
  478:Generated_Source\PSoC4/key_touch_Sensing.c ****     return (scanStatus);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  169              		.cfi_offset 14, -4
  170              	.LVL7:
  509:Generated_Source\PSoC4/key_touch_Sensing.c ****     cystatus scanStatus = CYRET_UNKNOWN;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 13
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 13
 
 
  510:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  196 0024 1A70     		strb	r2, [r3]
  197 0026 02E0     		b	.L22
  198              	.L21:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 14
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 14
 
 
  539:Generated_Source\PSoC4/key_touch_Sensing.c ****                     }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  227              	.L26:
  228              		.align	2
  229              	.L25:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 15
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 15
 
 
  230 0040 00000000 		.word	key_touch_dsRam
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  603:Generated_Source\PSoC4/key_touch_Sensing.c ****             key_touch_immunity[key_touch_FREQ_CHANNEL_1] =
  604:Generated_Source\PSoC4/key_touch_Sensing.c ****             key_touch_immunity[key_touch_FREQ_CHANNEL_0] + key_touch_FREQUENCY_OFFSET_5;
  605:Generated_Source\PSoC4/key_touch_Sensing.c ****             key_touch_immunity[key_touch_FREQ_CHANNEL_2] =
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 16
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 16
 
 
  606:Generated_Source\PSoC4/key_touch_Sensing.c ****             key_touch_immunity[key_touch_FREQ_CHANNEL_0] + key_touch_FREQUENCY_OFFSET_10;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  660:Generated_Source\PSoC4/key_touch_Sensing.c ****         /*
  661:Generated_Source\PSoC4/key_touch_Sensing.c ****          * CSD hardware block is initialized in the Setup Widget based
  662:Generated_Source\PSoC4/key_touch_Sensing.c ****          * on widget sensing method. Release previously captured HW resources
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 17
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 17
 
 
  663:Generated_Source\PSoC4/key_touch_Sensing.c ****          * if it is second call of key_touch_Start() function.
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  717:Generated_Source\PSoC4/key_touch_Sensing.c **** *  Specify the ID number of the sensor within the widget to change its pin
  718:Generated_Source\PSoC4/key_touch_Sensing.c **** *  state.
  719:Generated_Source\PSoC4/key_touch_Sensing.c **** *  A macro for the sensor ID within a specified widget can be found in the
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 18
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 18
 
 
  720:Generated_Source\PSoC4/key_touch_Sensing.c **** *  key_touch Configuration header file defined as
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  765:Generated_Source\PSoC4/key_touch_Sensing.c ****                                     key_touch_dsFlash.wdgtArray[wdgtIndex].ptr2SnsFlash + snsIndex;
  766:Generated_Source\PSoC4/key_touch_Sensing.c ****             /* There are no ganged pins */
  767:Generated_Source\PSoC4/key_touch_Sensing.c ****             tempVal = 1u;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 19
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 19
 
 
  768:Generated_Source\PSoC4/key_touch_Sensing.c ****         }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  285 002e 28D0     		beq	.L31
  286 0030 2AE0     		b	.L27
  287              	.L30:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 20
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 20
 
 
  788:Generated_Source\PSoC4/key_touch_Sensing.c ****             {
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  324              		.loc 1 805 0
  325 005e FFF7FEFF 		bl	CyEnterCriticalSection
  326              	.LVL28:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 21
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 21
 
 
  806:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  834:Generated_Source\PSoC4/key_touch_Sensing.c ****                     key_touch_CSDConnectSns(curSnsIOPtr);
  353              		.loc 1 834 0
  354 0082 201C     		mov	r0, r4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 22
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 22
 
 
  355 0084 FFF7FEFF 		bl	key_touch_CSDConnectSns
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  866:Generated_Source\PSoC4/key_touch_Sensing.c **** #if ((key_touch_ENABLE == key_touch_CSD_CSX_EN) || \
  867:Generated_Source\PSoC4/key_touch_Sensing.c ****      (key_touch_ENABLE == key_touch_SELF_TEST_EN) || \
  868:Generated_Source\PSoC4/key_touch_Sensing.c ****      (key_touch_ENABLE == key_touch_ADC_EN))
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 23
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 23
 
 
  869:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  923:Generated_Source\PSoC4/key_touch_Sensing.c ****         }
  924:Generated_Source\PSoC4/key_touch_Sensing.c ****     #endif /* (key_touch_ENABLE == key_touch_CSD_EN) */
  925:Generated_Source\PSoC4/key_touch_Sensing.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 24
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 24
 
 
  926:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  980:Generated_Source\PSoC4/key_touch_Sensing.c ****     * \param mode Specifies the scan mode:
  981:Generated_Source\PSoC4/key_touch_Sensing.c ****     *           -  (1) key_touch_SENSE_METHOD_CSD_E
  982:Generated_Source\PSoC4/key_touch_Sensing.c ****     *           -  (2) key_touch_SENSE_METHOD_CSX_E
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 25
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 25
 
 
  983:Generated_Source\PSoC4/key_touch_Sensing.c ****     *           -  (3) key_touch_SENSE_METHOD_BIST_E
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1037:Generated_Source\PSoC4/key_touch_Sensing.c ****                     /* Initialize CSX mode to guarantee configured CSX mode */
 1038:Generated_Source\PSoC4/key_touch_Sensing.c ****                     key_touch_BistInitialize();
 1039:Generated_Source\PSoC4/key_touch_Sensing.c ****                     key_touch_currentSenseMethod = key_touch_SENSE_METHOD_BIST_E;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 26
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 26
 
 
 1040:Generated_Source\PSoC4/key_touch_Sensing.c ****                 #endif /* (key_touch_ENABLE == key_touch_CSX_EN) */
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1094:Generated_Source\PSoC4/key_touch_Sensing.c ****             regValue &= ~(ioPtr->mask);
 1095:Generated_Source\PSoC4/key_touch_Sensing.c ****             CY_SET_REG32 (ioPtr->drPtr, regValue);
 1096:Generated_Source\PSoC4/key_touch_Sensing.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 27
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 27
 
 
 1097:Generated_Source\PSoC4/key_touch_Sensing.c ****             /*  Get next electrode  */
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1151:Generated_Source\PSoC4/key_touch_Sensing.c ****         #if ((key_touch_ENABLE == key_touch_CSD_EN) && \
 1152:Generated_Source\PSoC4/key_touch_Sensing.c ****              (key_touch_ENABLE == key_touch_CSD_SHIELD_EN) &&  \
 1153:Generated_Source\PSoC4/key_touch_Sensing.c ****              (key_touch_SNS_CONNECTION_SHIELD == key_touch_CSD_INACTIVE_SNS_CONNECTION))
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 28
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 28
 
 
 1154:Generated_Source\PSoC4/key_touch_Sensing.c ****             key_touch_SsSetIOsInDefaultState();
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  388 0006 0133     		add	r3, r3, #1
  389 0008 DBB2     		uxtb	r3, r3
  390 000a 5370     		strb	r3, [r2, #1]
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 29
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 29
 
 
 1198:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1222:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1223:Generated_Source\PSoC4/key_touch_Sensing.c ****                     /* All widgets are totally processed. Reset BUSY flag */
 1224:Generated_Source\PSoC4/key_touch_Sensing.c ****                     key_touch_dsRam.status &= ~key_touch_SW_STS_BUSY;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 30
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 30
 
 
  421              		.loc 1 1224 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1247:Generated_Source\PSoC4/key_touch_Sensing.c ****                 if ((key_touch_TOTAL_SLOTS - 1u) > key_touch_slotIndex)
 1248:Generated_Source\PSoC4/key_touch_Sensing.c ****                 {
 1249:Generated_Source\PSoC4/key_touch_Sensing.c ****                     key_touch_slotIndex++;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 31
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 31
 
 
 1250:Generated_Source\PSoC4/key_touch_Sensing.c ****                     postScanStatus = key_touch_SetupWidget((uint32)key_touch_slotIndex);
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  466              		.align	2
  467              		.global	key_touch_SsIsrInitialize
  468              		.code	16
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 32
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 32
 
 
  469              		.thumb_func
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1317:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1318:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1319:Generated_Source\PSoC4/key_touch_Sensing.c **** /*******************************************************************************
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 33
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 33
 
 
 1320:Generated_Source\PSoC4/key_touch_Sensing.c **** * Function Name: key_touch_SsSetModClkClockDivider
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1354:Generated_Source\PSoC4/key_touch_Sensing.c ****     {
 1355:Generated_Source\PSoC4/key_touch_Sensing.c ****         /*  Wait until previous modulator clock start command has finished. */
 1356:Generated_Source\PSoC4/key_touch_Sensing.c ****     }
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 34
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 34
 
 
 1357:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1386:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1387:Generated_Source\PSoC4/key_touch_Sensing.c **** /*******************************************************************************
 1388:Generated_Source\PSoC4/key_touch_Sensing.c **** * Function Name: key_touch_SsSetSnsClockDivider
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 35
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 35
 
 
 1389:Generated_Source\PSoC4/key_touch_Sensing.c **** ****************************************************************************//**
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1424:Generated_Source\PSoC4/key_touch_Sensing.c ****                      ((uint32)key_touch_SNSCLK_CMD_DISABLE_MASK));
 1425:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1426:Generated_Source\PSoC4/key_touch_Sensing.c ****         /*
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 36
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 36
 
 
 1427:Generated_Source\PSoC4/key_touch_Sensing.c ****          * Set divider value for sense clock.
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  575              		.thumb_func
  576              		.type	key_touch_SsSetClockDividers, %function
  577              	key_touch_SsSetClockDividers:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 37
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 37
 
 
  578              	.LFB11:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  603 0012 C046     		.section	.text.key_touch_CalibrateWidget,"ax",%progbits
  604              		.align	2
  605              		.global	key_touch_CalibrateWidget
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 38
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 38
 
 
  606              		.code	16
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1536:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1537:Generated_Source\PSoC4/key_touch_Sensing.c ****         do
 1538:Generated_Source\PSoC4/key_touch_Sensing.c ****         {
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 39
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 39
 
 
 1539:Generated_Source\PSoC4/key_touch_Sensing.c ****             if (key_touch_TOTAL_WIDGETS <= wdgtIndex)
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1574:Generated_Source\PSoC4/key_touch_Sensing.c ****                 #if (key_touch_ENABLE == key_touch_CSX_IDAC_AUTOCAL_EN)
 1575:Generated_Source\PSoC4/key_touch_Sensing.c ****                     if (key_touch_SENSE_METHOD_CSX_E ==
 1576:Generated_Source\PSoC4/key_touch_Sensing.c ****                         key_touch_GET_SENSE_METHOD(&key_touch_dsFlash.wdgtArray[wdgtIndex]))
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 40
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 40
 
 
 1577:Generated_Source\PSoC4/key_touch_Sensing.c ****                     {
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  656              	.LFB13:
 1613:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1614:Generated_Source\PSoC4/key_touch_Sensing.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 41
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 41
 
 
 1615:Generated_Source\PSoC4/key_touch_Sensing.c ****     /*******************************************************************************
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  677              	.LVL69:
  678 000e 0543     		orr	r5, r0
  679              	.LVL70:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 42
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 42
 
 
 1645:Generated_Source\PSoC4/key_touch_Sensing.c ****         {
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1676:Generated_Source\PSoC4/key_touch_Sensing.c ****             uint32 emptySlot;
 1677:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1678:Generated_Source\PSoC4/key_touch_Sensing.c ****             /* Make sure that sense clocks are equal on both CSD blocks */
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 43
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 43
 
 
 1679:Generated_Source\PSoC4/key_touch_Sensing.c ****             for (widgetIndex = 0u; widgetIndex < key_touch_TOTAL_WIDGETS; widgetIndex++)
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1733:Generated_Source\PSoC4/key_touch_Sensing.c ****                                         ptrCSD1Wdgt->snsClk = ptrCSD0Wdgt->rowSnsClk;
 1734:Generated_Source\PSoC4/key_touch_Sensing.c ****                                     }
 1735:Generated_Source\PSoC4/key_touch_Sensing.c ****                                 }
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 44
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 44
 
 
 1736:Generated_Source\PSoC4/key_touch_Sensing.c ****                             }
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1790:Generated_Source\PSoC4/key_touch_Sensing.c ****         *  For CSDv1: Resets PRS bit in key_touch_configCsd variable;
 1791:Generated_Source\PSoC4/key_touch_Sensing.c ****         *
 1792:Generated_Source\PSoC4/key_touch_Sensing.c ****         *******************************************************************************/
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 45
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 45
 
 
 1793:Generated_Source\PSoC4/key_touch_Sensing.c ****         static void key_touch_SsSetCSD0DirectClockMode(void)
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1847:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1848:Generated_Source\PSoC4/key_touch_Sensing.c ****     /*******************************************************************************
 1849:Generated_Source\PSoC4/key_touch_Sensing.c ****     * Function Name: key_touch_SsAutoTune
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 46
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 46
 
 
 1850:Generated_Source\PSoC4/key_touch_Sensing.c ****     ****************************************************************************//**
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1904:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 1905:Generated_Source\PSoC4/key_touch_Sensing.c ****         /* If both CSD and CSX are enabled, calibrate widget using sensing method */
 1906:Generated_Source\PSoC4/key_touch_Sensing.c ****         #if (key_touch_ENABLE == key_touch_CSD_CSX_EN)
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 47
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 47
 
 
 1907:Generated_Source\PSoC4/key_touch_Sensing.c ****             /* Initialize CSD mode */
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 1961:Generated_Source\PSoC4/key_touch_Sensing.c ****                 #else
 1962:Generated_Source\PSoC4/key_touch_Sensing.c ****                     ptrWdgt->snsClk = (uint8)((uint32)autoTuneConfig.snsClkInputClock /
 1963:Generated_Source\PSoC4/key_touch_Sensing.c ****                                       key_touch_CALIBRATION_FREQ_KHZ);
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 48
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 48
 
 
 1964:Generated_Source\PSoC4/key_touch_Sensing.c ****                 #endif /*  (key_touch_ENABLE == key_touch_CSD_COMMON_SNS_CLK_EN) */
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2018:Generated_Source\PSoC4/key_touch_Sensing.c ****                             #else
 2019:Generated_Source\PSoC4/key_touch_Sensing.c ****                                 /* Sense clock never equals to Modulator clock for chained dividers
 2020:Generated_Source\PSoC4/key_touch_Sensing.c ****                             #endif /* (key_touch_ENABLE == key_touch_CSDV2) */
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 49
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 49
 
 
 2021:Generated_Source\PSoC4/key_touch_Sensing.c ****                         #endif /* (key_touch_ENABLE == key_touch_CSDV2) */
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2075:Generated_Source\PSoC4/key_touch_Sensing.c ****         #endif /* (key_touch_ENABLE == key_touch_CSD2X_EN) */
 2076:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 2077:Generated_Source\PSoC4/key_touch_Sensing.c ****         /* Set flag to indicate that calibration in PWM mode has been performed */
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 50
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 50
 
 
 2078:Generated_Source\PSoC4/key_touch_Sensing.c ****         key_touch_prescalersTuningDone = 1u;
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2132:Generated_Source\PSoC4/key_touch_Sensing.c ****                     autoTuneStatus |= key_touch_CSDCalibrateWidget(wdgtIndex, key_touch_CSD_AUTOTUN
 2133:Generated_Source\PSoC4/key_touch_Sensing.c ****                 #endif /* (key_touch_ENABLE == key_touch_CSD2X_EN) */
 2134:Generated_Source\PSoC4/key_touch_Sensing.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 51
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 51
 
 
 2135:Generated_Source\PSoC4/key_touch_Sensing.c ****                 /* Find resolution */
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2189:Generated_Source\PSoC4/key_touch_Sensing.c ****         *  If Compensation IDAC is disabled the function loads trim values for IDAC1 only.
 2190:Generated_Source\PSoC4/key_touch_Sensing.c ****         *
 2191:Generated_Source\PSoC4/key_touch_Sensing.c ****         *******************************************************************************/
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 52
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 52
 
 
 2192:Generated_Source\PSoC4/key_touch_Sensing.c ****         static void key_touch_SsTrimIdacsSinking(void)
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2246:Generated_Source\PSoC4/key_touch_Sensing.c ****         }
 2247:Generated_Source\PSoC4/key_touch_Sensing.c ****     #endif /* ((key_touch_ENABLE == key_touch_CSX_EN) || \
 2248:Generated_Source\PSoC4/key_touch_Sensing.c ****                (key_touch_IDAC_SINKING == key_touch_CSD_IDAC_CONFIG)) */
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 53
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 53
 
 
 2249:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2303:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 2304:Generated_Source\PSoC4/key_touch_Sensing.c ****                 /* Mod iDAC Sourcing Mode */
 2305:Generated_Source\PSoC4/key_touch_Sensing.c ****                 trimValue = CY_GET_REG32(key_touch_TRIM1_PTR) & ~key_touch_IDAC_TRIM1_MOD_SRC_MASK;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 54
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 54
 
 
 2306:Generated_Source\PSoC4/key_touch_Sensing.c ****                 trimValue |= ((uint32)CY_GET_REG8(key_touch_SFLASH_TRIM1_PTR) &
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2360:Generated_Source\PSoC4/key_touch_Sensing.c ****     *
 2361:Generated_Source\PSoC4/key_touch_Sensing.c ****     * \brief
 2362:Generated_Source\PSoC4/key_touch_Sensing.c ****     *  This function changes the IMO frequency.
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 55
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 55
 
 
 2363:Generated_Source\PSoC4/key_touch_Sensing.c ****     *
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2417:Generated_Source\PSoC4/key_touch_Sensing.c ****         #endif /* (key_touch_ENABLE == key_touch_TST_WDGT_CRC_EN) */
 2418:Generated_Source\PSoC4/key_touch_Sensing.c ****     }
 2419:Generated_Source\PSoC4/key_touch_Sensing.c **** }
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 56
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 56
 
 
 2420:Generated_Source\PSoC4/key_touch_Sensing.c **** #endif /* ((key_touch_ENABLE == key_touch_CSD_EN) ||\
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2474:Generated_Source\PSoC4/key_touch_Sensing.c ****             lfsrScale = 0u;
 2475:Generated_Source\PSoC4/key_touch_Sensing.c ****             (void)wdgtIndex; /* This parameter is unused in such configurations */
 2476:Generated_Source\PSoC4/key_touch_Sensing.c ****         #endif /* (key_touch_CLK_SOURCE_PRSAUTO == key_touch_CSD_SNS_CLK_SOURCE) */
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 57
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 57
 
 
 2477:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2531:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 2532:Generated_Source\PSoC4/key_touch_Sensing.c ****         #if(key_touch_CLK_SOURCE_PRSAUTO == key_touch_CSX_TX_CLK_SOURCE)
 2533:Generated_Source\PSoC4/key_touch_Sensing.c ****             uint32 conversionsNum;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 58
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 58
 
 
 2534:Generated_Source\PSoC4/key_touch_Sensing.c ****             uint32 snsClkDivider;
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2588:Generated_Source\PSoC4/key_touch_Sensing.c ****     {
 2589:Generated_Source\PSoC4/key_touch_Sensing.c ****         lfsrSize = key_touch_CLK_SOURCE_SSC4;
 2590:Generated_Source\PSoC4/key_touch_Sensing.c ****     }
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 59
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 59
 
 
 2591:Generated_Source\PSoC4/key_touch_Sensing.c ****     else if((key_touch_SNSCLK_SSC3_THRESHOLD <= snsClkDivider) &&
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2645:Generated_Source\PSoC4/key_touch_Sensing.c **** *           mode parameters can take the following values:
 2646:Generated_Source\PSoC4/key_touch_Sensing.c **** *           key_touch_CLK_SOURCE_DIRECT The spreadspectrum is not used.
 2647:Generated_Source\PSoC4/key_touch_Sensing.c **** *           key_touch_CLK_SOURCE_SSC1   The length of LFSR sequence is 3 cycles.
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 60
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 60
 
 
 2648:Generated_Source\PSoC4/key_touch_Sensing.c **** *           key_touch_CLK_SOURCE_SSC2   The length of LFSR sequence is 7 cycles.
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2702:Generated_Source\PSoC4/key_touch_Sensing.c ****             lfsrScale++;
 2703:Generated_Source\PSoC4/key_touch_Sensing.c ****             lfsrDither <<=1uL;
 2704:Generated_Source\PSoC4/key_touch_Sensing.c ****         }
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 61
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 61
 
 
 2705:Generated_Source\PSoC4/key_touch_Sensing.c **** 
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2750:Generated_Source\PSoC4/key_touch_Sensing.c ****             uint32 pinIndex;
 2751:Generated_Source\PSoC4/key_touch_Sensing.c ****         #endif /* (key_touch_ENABLE == key_touch_CSD_GANGED_SNS_EN)  */
 2752:Generated_Source\PSoC4/key_touch_Sensing.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 62
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 62
 
 
 2753:Generated_Source\PSoC4/key_touch_Sensing.c ****         #if (key_touch_ENABLE == key_touch_CSD_GANGED_SNS_EN)
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2790:Generated_Source\PSoC4/key_touch_Sensing.c ****                         }
 2791:Generated_Source\PSoC4/key_touch_Sensing.c ****                         else
 2792:Generated_Source\PSoC4/key_touch_Sensing.c ****                         {
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 63
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 63
 
 
 2793:Generated_Source\PSoC4/key_touch_Sensing.c ****                             /* Disable sensor */
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  769              		.align	2
  770              		.global	key_touch_SsCSDGetColSnsClkDivider
  771              		.code	16
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 64
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 64
 
 
  772              		.thumb_func
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  785              		@ sp needed
  786 0006 7047     		bx	lr
  787              	.L67:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 65
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 65
 
 
  788              		.align	2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
 2885:Generated_Source\PSoC4/key_touch_Sensing.c **** 
 2886:Generated_Source\PSoC4/key_touch_Sensing.c ****             return (retVal);
 2887:Generated_Source\PSoC4/key_touch_Sensing.c ****         }
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 66
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 66
 
 
 2888:Generated_Source\PSoC4/key_touch_Sensing.c ****     #endif /* (key_touch_ENABLE == (key_touch_CSD_MATRIX_WIDGET_EN | key_touch_CSD_TOUCHPAD_WIDGET_
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  816 000e 05D3     		bcc	.L70
 2927:Generated_Source\PSoC4/key_touch_Sensing.c ****             {
 2928:Generated_Source\PSoC4/key_touch_Sensing.c ****                 /* Set PRS12 mode */
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 67
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 67
 
 
 2929:Generated_Source\PSoC4/key_touch_Sensing.c ****                 prsSize = key_touch_PRS_12_CONFIG;
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  854              	.LFB15:
 2445:Generated_Source\PSoC4/key_touch_Sensing.c ****         uint8 lfsrSize;
  855              		.loc 1 2445 0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 68
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 68
 
 
  856              		.cfi_startproc
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  903              	.LVL97:
 2592:Generated_Source\PSoC4/key_touch_Sensing.c ****             (0uL == (conversionsNum % key_touch_SNSCLK_SSC3_PERIOD)))
  904              		.loc 1 2592 0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 69
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 69
 
 
  905 003a 0029     		cmp	r1, #0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  950 0070 06E0     		b	.L74
  951              	.LVL105:
  952              	.L85:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 70
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 70
 
 
 2601:Generated_Source\PSoC4/key_touch_Sensing.c ****     }
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  999 009a 0020     		mov	r0, #0
  1000              	.L78:
  1001              	.LVL115:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 71
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 71
 
 
 2694:Generated_Source\PSoC4/key_touch_Sensing.c ****     {
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1046 00c8 DBB2     		uxtb	r3, r3
  1047              	.LVL124:
  1048              	.LBE9:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 72
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 72
 
 
  1049              	.LBE8:
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1097 0014 FFF7FEFF 		bl	key_touch_SsSetWidgetSenseClkSrc
  1098              	.LVL131:
 2399:Generated_Source\PSoC4/key_touch_Sensing.c ****     {
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 73
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 73
 
 
  1099              		.loc 1 2399 0
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1147              		.global	key_touch_requestScanAllWidget
  1148              		.global	key_touch_sensorIndex
  1149              		.global	key_touch_widgetIndex
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 74
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 74
 
 
  1150              		.global	key_touch_scanFreqIndex
@@ -4418,42 +4418,42 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1184 000b 01       		.uleb128 0x1
  1185 000c 00000000 		.4byte	.LASF159
  1186 0010 01       		.byte	0x1
- 1187 0011 4C060000 		.4byte	.LASF160
- 1188 0015 F1050000 		.4byte	.LASF161
+ 1187 0011 46060000 		.4byte	.LASF160
+ 1188 0015 98030000 		.4byte	.LASF161
  1189 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1190 001d 00000000 		.4byte	0
  1191 0021 00000000 		.4byte	.Ldebug_line0
  1192 0025 02       		.uleb128 0x2
  1193 0026 01       		.byte	0x1
  1194 0027 06       		.byte	0x6
- 1195 0028 C4090000 		.4byte	.LASF0
+ 1195 0028 BE090000 		.4byte	.LASF0
  1196 002c 02       		.uleb128 0x2
  1197 002d 01       		.byte	0x1
  1198 002e 08       		.byte	0x8
- 1199 002f 96080000 		.4byte	.LASF1
+ 1199 002f 90080000 		.4byte	.LASF1
  1200 0033 02       		.uleb128 0x2
  1201 0034 02       		.byte	0x2
  1202 0035 05       		.byte	0x5
- 1203 0036 26070000 		.4byte	.LASF2
+ 1203 0036 20070000 		.4byte	.LASF2
  1204 003a 02       		.uleb128 0x2
  1205 003b 02       		.byte	0x2
  1206 003c 07       		.byte	0x7
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 75
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 75
 
 
- 1207 003d D5090000 		.4byte	.LASF3
+ 1207 003d CF090000 		.4byte	.LASF3
  1208 0041 02       		.uleb128 0x2
  1209 0042 04       		.byte	0x4
  1210 0043 05       		.byte	0x5
- 1211 0044 49070000 		.4byte	.LASF4
+ 1211 0044 43070000 		.4byte	.LASF4
  1212 0048 02       		.uleb128 0x2
  1213 0049 04       		.byte	0x4
  1214 004a 07       		.byte	0x7
- 1215 004b 2D080000 		.4byte	.LASF5
+ 1215 004b 27080000 		.4byte	.LASF5
  1216 004f 02       		.uleb128 0x2
  1217 0050 08       		.byte	0x8
  1218 0051 05       		.byte	0x5
- 1219 0052 DA040000 		.4byte	.LASF6
+ 1219 0052 0C050000 		.4byte	.LASF6
  1220 0056 02       		.uleb128 0x2
  1221 0057 08       		.byte	0x8
  1222 0058 07       		.byte	0x7
@@ -4467,17 +4467,17 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1230 0066 07       		.byte	0x7
  1231 0067 8D010000 		.4byte	.LASF8
  1232 006b 04       		.uleb128 0x4
- 1233 006c 0C0A0000 		.4byte	.LASF9
+ 1233 006c 060A0000 		.4byte	.LASF9
  1234 0070 02       		.byte	0x2
  1235 0071 B901     		.2byte	0x1b9
  1236 0073 2C000000 		.4byte	0x2c
  1237 0077 04       		.uleb128 0x4
- 1238 0078 4D040000 		.4byte	.LASF10
+ 1238 0078 7F040000 		.4byte	.LASF10
  1239 007c 02       		.byte	0x2
  1240 007d BA01     		.2byte	0x1ba
  1241 007f 3A000000 		.4byte	0x3a
  1242 0083 04       		.uleb128 0x4
- 1243 0084 A8050000 		.4byte	.LASF11
+ 1243 0084 DA050000 		.4byte	.LASF11
  1244 0088 02       		.byte	0x2
  1245 0089 BB01     		.2byte	0x1bb
  1246 008b 48000000 		.4byte	0x48
@@ -4488,30 +4488,30 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1251 0096 02       		.uleb128 0x2
  1252 0097 08       		.byte	0x8
  1253 0098 04       		.byte	0x4
- 1254 0099 120A0000 		.4byte	.LASF13
+ 1254 0099 0C0A0000 		.4byte	.LASF13
  1255 009d 02       		.uleb128 0x2
  1256 009e 01       		.byte	0x1
  1257 009f 08       		.byte	0x8
- 1258 00a0 D1030000 		.4byte	.LASF14
+ 1258 00a0 03040000 		.4byte	.LASF14
  1259 00a4 04       		.uleb128 0x4
- 1260 00a5 8D080000 		.4byte	.LASF15
+ 1260 00a5 87080000 		.4byte	.LASF15
  1261 00a9 02       		.byte	0x2
  1262 00aa 5B02     		.2byte	0x25b
  1263 00ac 48000000 		.4byte	0x48
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 76
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 76
 
 
  1264 00b0 05       		.uleb128 0x5
  1265 00b1 6B000000 		.4byte	0x6b
  1266 00b5 04       		.uleb128 0x4
- 1267 00b6 80060000 		.4byte	.LASF16
+ 1267 00b6 7A060000 		.4byte	.LASF16
  1268 00ba 02       		.byte	0x2
  1269 00bb 6502     		.2byte	0x265
  1270 00bd C1000000 		.4byte	0xc1
  1271 00c1 05       		.uleb128 0x5
  1272 00c2 83000000 		.4byte	0x83
  1273 00c6 04       		.uleb128 0x4
- 1274 00c7 92050000 		.4byte	.LASF17
+ 1274 00c7 C4050000 		.4byte	.LASF17
  1275 00cb 02       		.byte	0x2
  1276 00cc 7502     		.2byte	0x275
  1277 00ce D2000000 		.4byte	0xd2
@@ -4520,7 +4520,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1280 00d4 D8000000 		.4byte	0xd8
  1281 00d8 07       		.uleb128 0x7
  1282 00d9 04       		.uleb128 0x4
- 1283 00da 30070000 		.4byte	.LASF18
+ 1283 00da 2A070000 		.4byte	.LASF18
  1284 00de 03       		.byte	0x3
  1285 00df 0301     		.2byte	0x103
  1286 00e1 77000000 		.4byte	0x77
@@ -4544,7 +4544,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1304 0106 0C010000 		.4byte	.LASF22
  1305 010a 02       		.sleb128 2
  1306 010b 09       		.uleb128 0x9
- 1307 010c ED060000 		.4byte	.LASF23
+ 1307 010c E7060000 		.4byte	.LASF23
  1308 0110 03       		.sleb128 3
  1309 0111 00       		.byte	0
  1310 0112 0A       		.uleb128 0xa
@@ -4553,28 +4553,28 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1313 0115 7C       		.byte	0x7c
  1314 0116 93010000 		.4byte	0x193
  1315 011a 0B       		.uleb128 0xb
- 1316 011b 97040000 		.4byte	.LASF24
+ 1316 011b C9040000 		.4byte	.LASF24
  1317 011f 04       		.byte	0x4
  1318 0120 82       		.byte	0x82
  1319 0121 77000000 		.4byte	0x77
  1320 0125 00       		.byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 77
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 77
 
 
  1321 0126 0B       		.uleb128 0xb
- 1322 0127 7C080000 		.4byte	.LASF25
+ 1322 0127 76080000 		.4byte	.LASF25
  1323 012b 04       		.byte	0x4
  1324 012c 87       		.byte	0x87
  1325 012d D9000000 		.4byte	0xd9
  1326 0131 02       		.byte	0x2
  1327 0132 0B       		.uleb128 0xb
- 1328 0133 C9030000 		.4byte	.LASF26
+ 1328 0133 FB030000 		.4byte	.LASF26
  1329 0137 04       		.byte	0x4
  1330 0138 8C       		.byte	0x8c
  1331 0139 6B000000 		.4byte	0x6b
  1332 013d 04       		.byte	0x4
  1333 013e 0B       		.uleb128 0xb
- 1334 013f 7E050000 		.4byte	.LASF27
+ 1334 013f B0050000 		.4byte	.LASF27
  1335 0143 04       		.byte	0x4
  1336 0144 91       		.byte	0x91
  1337 0145 6B000000 		.4byte	0x6b
@@ -4586,13 +4586,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1343 0151 6B000000 		.4byte	0x6b
  1344 0155 06       		.byte	0x6
  1345 0156 0B       		.uleb128 0xb
- 1346 0157 0D050000 		.4byte	.LASF29
+ 1346 0157 3F050000 		.4byte	.LASF29
  1347 015b 04       		.byte	0x4
  1348 015c 9B       		.byte	0x9b
  1349 015d 6B000000 		.4byte	0x6b
  1350 0161 07       		.byte	0x7
  1351 0162 0B       		.uleb128 0xb
- 1352 0163 98030000 		.4byte	.LASF30
+ 1352 0163 CA030000 		.4byte	.LASF30
  1353 0167 04       		.byte	0x4
  1354 0168 A1       		.byte	0xa1
  1355 0169 E5000000 		.4byte	0xe5
@@ -4604,13 +4604,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1361 0175 6B000000 		.4byte	0x6b
  1362 0179 09       		.byte	0x9
  1363 017a 0B       		.uleb128 0xb
- 1364 017b 4E080000 		.4byte	.LASF32
+ 1364 017b 48080000 		.4byte	.LASF32
  1365 017f 04       		.byte	0x4
  1366 0180 AD       		.byte	0xad
  1367 0181 93010000 		.4byte	0x193
  1368 0185 0A       		.byte	0xa
  1369 0186 0B       		.uleb128 0xb
- 1370 0187 E0060000 		.4byte	.LASF33
+ 1370 0187 DA060000 		.4byte	.LASF33
  1371 018b 04       		.byte	0x4
  1372 018c B2       		.byte	0xb2
  1373 018d 6B000000 		.4byte	0x6b
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1375 0192 00       		.byte	0
  1376 0193 0C       		.uleb128 0xc
  1377 0194 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 78
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 78
 
 
  1378 0198 A3010000 		.4byte	0x1a3
@@ -4629,9 +4629,9 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1383 01a3 02       		.uleb128 0x2
  1384 01a4 04       		.byte	0x4
  1385 01a5 07       		.byte	0x7
- 1386 01a6 1C080000 		.4byte	.LASF34
+ 1386 01a6 16080000 		.4byte	.LASF34
  1387 01aa 0E       		.uleb128 0xe
- 1388 01ab 55090000 		.4byte	.LASF35
+ 1388 01ab 4F090000 		.4byte	.LASF35
  1389 01af 04       		.byte	0x4
  1390 01b0 B3       		.byte	0xb3
  1391 01b1 12010000 		.4byte	0x112
@@ -4641,25 +4641,25 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1395 01b8 B8       		.byte	0xb8
  1396 01b9 36020000 		.4byte	0x236
  1397 01bd 0B       		.uleb128 0xb
- 1398 01be 97040000 		.4byte	.LASF24
+ 1398 01be C9040000 		.4byte	.LASF24
  1399 01c2 04       		.byte	0x4
  1400 01c3 BE       		.byte	0xbe
  1401 01c4 77000000 		.4byte	0x77
  1402 01c8 00       		.byte	0
  1403 01c9 0B       		.uleb128 0xb
- 1404 01ca 7C080000 		.4byte	.LASF25
+ 1404 01ca 76080000 		.4byte	.LASF25
  1405 01ce 04       		.byte	0x4
  1406 01cf C3       		.byte	0xc3
  1407 01d0 D9000000 		.4byte	0xd9
  1408 01d4 02       		.byte	0x2
  1409 01d5 0B       		.uleb128 0xb
- 1410 01d6 C9030000 		.4byte	.LASF26
+ 1410 01d6 FB030000 		.4byte	.LASF26
  1411 01da 04       		.byte	0x4
  1412 01db C8       		.byte	0xc8
  1413 01dc 6B000000 		.4byte	0x6b
  1414 01e0 04       		.byte	0x4
  1415 01e1 0B       		.uleb128 0xb
- 1416 01e2 7E050000 		.4byte	.LASF27
+ 1416 01e2 B0050000 		.4byte	.LASF27
  1417 01e6 04       		.byte	0x4
  1418 01e7 CD       		.byte	0xcd
  1419 01e8 6B000000 		.4byte	0x6b
@@ -4671,14 +4671,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1425 01f4 6B000000 		.4byte	0x6b
  1426 01f8 06       		.byte	0x6
  1427 01f9 0B       		.uleb128 0xb
- 1428 01fa 0D050000 		.4byte	.LASF29
+ 1428 01fa 3F050000 		.4byte	.LASF29
  1429 01fe 04       		.byte	0x4
  1430 01ff D7       		.byte	0xd7
  1431 0200 6B000000 		.4byte	0x6b
  1432 0204 07       		.byte	0x7
  1433 0205 0B       		.uleb128 0xb
- 1434 0206 98030000 		.4byte	.LASF30
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 79
+ 1434 0206 CA030000 		.4byte	.LASF30
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 79
 
 
  1435 020a 04       		.byte	0x4
@@ -4692,13 +4692,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1443 0218 6B000000 		.4byte	0x6b
  1444 021c 09       		.byte	0x9
  1445 021d 0B       		.uleb128 0xb
- 1446 021e 4E080000 		.4byte	.LASF32
+ 1446 021e 48080000 		.4byte	.LASF32
  1447 0222 04       		.byte	0x4
  1448 0223 E9       		.byte	0xe9
  1449 0224 93010000 		.4byte	0x193
  1450 0228 0A       		.byte	0xa
  1451 0229 0B       		.uleb128 0xb
- 1452 022a E0060000 		.4byte	.LASF33
+ 1452 022a DA060000 		.4byte	.LASF33
  1453 022e 04       		.byte	0x4
  1454 022f EE       		.byte	0xee
  1455 0230 6B000000 		.4byte	0x6b
@@ -4715,90 +4715,90 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1466 0244 F5       		.byte	0xf5
  1467 0245 E4020000 		.4byte	0x2e4
  1468 0249 0B       		.uleb128 0xb
- 1469 024a A3070000 		.4byte	.LASF37
+ 1469 024a 9D070000 		.4byte	.LASF37
  1470 024e 04       		.byte	0x4
  1471 024f FA       		.byte	0xfa
  1472 0250 36020000 		.4byte	0x236
  1473 0254 00       		.byte	0
  1474 0255 0B       		.uleb128 0xb
- 1475 0256 AB070000 		.4byte	.LASF38
+ 1475 0256 A5070000 		.4byte	.LASF38
  1476 025a 04       		.byte	0x4
  1477 025b FF       		.byte	0xff
  1478 025c 36020000 		.4byte	0x236
  1479 0260 0C       		.byte	0xc
  1480 0261 0F       		.uleb128 0xf
- 1481 0262 B3070000 		.4byte	.LASF39
+ 1481 0262 AD070000 		.4byte	.LASF39
  1482 0266 04       		.byte	0x4
  1483 0267 0401     		.2byte	0x104
  1484 0269 36020000 		.4byte	0x236
  1485 026d 18       		.byte	0x18
  1486 026e 0F       		.uleb128 0xf
- 1487 026f BB070000 		.4byte	.LASF40
+ 1487 026f B5070000 		.4byte	.LASF40
  1488 0273 04       		.byte	0x4
  1489 0274 0901     		.2byte	0x109
  1490 0276 36020000 		.4byte	0x236
  1491 027a 24       		.byte	0x24
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 80
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 80
 
 
  1492 027b 0F       		.uleb128 0xf
- 1493 027c C3070000 		.4byte	.LASF41
+ 1493 027c BD070000 		.4byte	.LASF41
  1494 0280 04       		.byte	0x4
  1495 0281 0E01     		.2byte	0x10e
  1496 0283 36020000 		.4byte	0x236
  1497 0287 30       		.byte	0x30
  1498 0288 0F       		.uleb128 0xf
- 1499 0289 CB070000 		.4byte	.LASF42
+ 1499 0289 C5070000 		.4byte	.LASF42
  1500 028d 04       		.byte	0x4
  1501 028e 1301     		.2byte	0x113
  1502 0290 36020000 		.4byte	0x236
  1503 0294 3C       		.byte	0x3c
  1504 0295 0F       		.uleb128 0xf
- 1505 0296 D3070000 		.4byte	.LASF43
+ 1505 0296 CD070000 		.4byte	.LASF43
  1506 029a 04       		.byte	0x4
  1507 029b 1801     		.2byte	0x118
  1508 029d 36020000 		.4byte	0x236
  1509 02a1 48       		.byte	0x48
  1510 02a2 0F       		.uleb128 0xf
- 1511 02a3 DB070000 		.4byte	.LASF44
+ 1511 02a3 D5070000 		.4byte	.LASF44
  1512 02a7 04       		.byte	0x4
  1513 02a8 1D01     		.2byte	0x11d
  1514 02aa 36020000 		.4byte	0x236
  1515 02ae 54       		.byte	0x54
  1516 02af 0F       		.uleb128 0xf
- 1517 02b0 E3070000 		.4byte	.LASF45
+ 1517 02b0 DD070000 		.4byte	.LASF45
  1518 02b4 04       		.byte	0x4
  1519 02b5 2201     		.2byte	0x122
  1520 02b7 36020000 		.4byte	0x236
  1521 02bb 60       		.byte	0x60
  1522 02bc 0F       		.uleb128 0xf
- 1523 02bd EB070000 		.4byte	.LASF46
+ 1523 02bd E5070000 		.4byte	.LASF46
  1524 02c1 04       		.byte	0x4
  1525 02c2 2701     		.2byte	0x127
  1526 02c4 36020000 		.4byte	0x236
  1527 02c8 6C       		.byte	0x6c
  1528 02c9 0F       		.uleb128 0xf
- 1529 02ca AD0A0000 		.4byte	.LASF47
+ 1529 02ca A70A0000 		.4byte	.LASF47
  1530 02ce 04       		.byte	0x4
  1531 02cf 2C01     		.2byte	0x12c
  1532 02d1 36020000 		.4byte	0x236
  1533 02d5 78       		.byte	0x78
  1534 02d6 0F       		.uleb128 0xf
- 1535 02d7 B60A0000 		.4byte	.LASF48
+ 1535 02d7 B00A0000 		.4byte	.LASF48
  1536 02db 04       		.byte	0x4
  1537 02dc 3101     		.2byte	0x131
  1538 02de 36020000 		.4byte	0x236
  1539 02e2 84       		.byte	0x84
  1540 02e3 00       		.byte	0
  1541 02e4 04       		.uleb128 0x4
- 1542 02e5 F0040000 		.4byte	.LASF49
+ 1542 02e5 22050000 		.4byte	.LASF49
  1543 02e9 04       		.byte	0x4
  1544 02ea 3201     		.2byte	0x132
  1545 02ec 41020000 		.4byte	0x241
  1546 02f0 10       		.uleb128 0x10
  1547 02f1 0A       		.byte	0xa
  1548 02f2 04       		.byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 81
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 81
 
 
  1549 02f3 3801     		.2byte	0x138
@@ -4810,31 +4810,31 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1555 0301 48030000 		.4byte	0x348
  1556 0305 00       		.byte	0
  1557 0306 0F       		.uleb128 0xf
- 1558 0307 D0090000 		.4byte	.LASF50
+ 1558 0307 CA090000 		.4byte	.LASF50
  1559 030b 04       		.byte	0x4
  1560 030c 4201     		.2byte	0x142
  1561 030e 48030000 		.4byte	0x348
  1562 0312 02       		.byte	0x2
  1563 0313 0F       		.uleb128 0xf
- 1564 0314 85080000 		.4byte	.LASF51
+ 1564 0314 7F080000 		.4byte	.LASF51
  1565 0318 04       		.byte	0x4
  1566 0319 4801     		.2byte	0x148
  1567 031b 93010000 		.4byte	0x193
  1568 031f 04       		.byte	0x4
  1569 0320 0F       		.uleb128 0xf
- 1570 0321 8F070000 		.4byte	.LASF52
+ 1570 0321 89070000 		.4byte	.LASF52
  1571 0325 04       		.byte	0x4
  1572 0326 4D01     		.2byte	0x14d
  1573 0328 D9000000 		.4byte	0xd9
  1574 032c 06       		.byte	0x6
  1575 032d 0F       		.uleb128 0xf
- 1576 032e 190A0000 		.4byte	.LASF53
+ 1576 032e 130A0000 		.4byte	.LASF53
  1577 0332 04       		.byte	0x4
  1578 0333 5201     		.2byte	0x152
  1579 0335 58030000 		.4byte	0x358
  1580 0339 08       		.byte	0x8
  1581 033a 0F       		.uleb128 0xf
- 1582 033b CB040000 		.4byte	.LASF54
+ 1582 033b FD040000 		.4byte	.LASF54
  1583 033f 04       		.byte	0x4
  1584 0340 5801     		.2byte	0x158
  1585 0342 93010000 		.4byte	0x193
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1603 0369 D2000000 		.4byte	.LASF55
  1604 036d 04       		.byte	0x4
  1605 036e 5901     		.2byte	0x159
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 82
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 82
 
 
  1606 0370 F0020000 		.4byte	0x2f0
@@ -4868,76 +4868,76 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1610 0377 5F01     		.2byte	0x15f
  1611 0379 1A040000 		.4byte	0x41a
  1612 037d 0F       		.uleb128 0xf
- 1613 037e A3070000 		.4byte	.LASF37
+ 1613 037e 9D070000 		.4byte	.LASF37
  1614 0382 04       		.byte	0x4
  1615 0383 6401     		.2byte	0x164
  1616 0385 1A040000 		.4byte	0x41a
  1617 0389 00       		.byte	0
  1618 038a 0F       		.uleb128 0xf
- 1619 038b AB070000 		.4byte	.LASF38
+ 1619 038b A5070000 		.4byte	.LASF38
  1620 038f 04       		.byte	0x4
  1621 0390 6901     		.2byte	0x169
  1622 0392 1A040000 		.4byte	0x41a
  1623 0396 0A       		.byte	0xa
  1624 0397 0F       		.uleb128 0xf
- 1625 0398 B3070000 		.4byte	.LASF39
+ 1625 0398 AD070000 		.4byte	.LASF39
  1626 039c 04       		.byte	0x4
  1627 039d 6E01     		.2byte	0x16e
  1628 039f 1A040000 		.4byte	0x41a
  1629 03a3 14       		.byte	0x14
  1630 03a4 0F       		.uleb128 0xf
- 1631 03a5 BB070000 		.4byte	.LASF40
+ 1631 03a5 B5070000 		.4byte	.LASF40
  1632 03a9 04       		.byte	0x4
  1633 03aa 7301     		.2byte	0x173
  1634 03ac 1A040000 		.4byte	0x41a
  1635 03b0 1E       		.byte	0x1e
  1636 03b1 0F       		.uleb128 0xf
- 1637 03b2 C3070000 		.4byte	.LASF41
+ 1637 03b2 BD070000 		.4byte	.LASF41
  1638 03b6 04       		.byte	0x4
  1639 03b7 7801     		.2byte	0x178
  1640 03b9 1A040000 		.4byte	0x41a
  1641 03bd 28       		.byte	0x28
  1642 03be 0F       		.uleb128 0xf
- 1643 03bf CB070000 		.4byte	.LASF42
+ 1643 03bf C5070000 		.4byte	.LASF42
  1644 03c3 04       		.byte	0x4
  1645 03c4 7D01     		.2byte	0x17d
  1646 03c6 1A040000 		.4byte	0x41a
  1647 03ca 32       		.byte	0x32
  1648 03cb 0F       		.uleb128 0xf
- 1649 03cc D3070000 		.4byte	.LASF43
+ 1649 03cc CD070000 		.4byte	.LASF43
  1650 03d0 04       		.byte	0x4
  1651 03d1 8201     		.2byte	0x182
  1652 03d3 1A040000 		.4byte	0x41a
  1653 03d7 3C       		.byte	0x3c
  1654 03d8 0F       		.uleb128 0xf
- 1655 03d9 DB070000 		.4byte	.LASF44
+ 1655 03d9 D5070000 		.4byte	.LASF44
  1656 03dd 04       		.byte	0x4
  1657 03de 8701     		.2byte	0x187
  1658 03e0 1A040000 		.4byte	0x41a
  1659 03e4 46       		.byte	0x46
  1660 03e5 0F       		.uleb128 0xf
- 1661 03e6 E3070000 		.4byte	.LASF45
+ 1661 03e6 DD070000 		.4byte	.LASF45
  1662 03ea 04       		.byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 83
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 83
 
 
  1663 03eb 8C01     		.2byte	0x18c
  1664 03ed 1A040000 		.4byte	0x41a
  1665 03f1 50       		.byte	0x50
  1666 03f2 0F       		.uleb128 0xf
- 1667 03f3 EB070000 		.4byte	.LASF46
+ 1667 03f3 E5070000 		.4byte	.LASF46
  1668 03f7 04       		.byte	0x4
  1669 03f8 9101     		.2byte	0x191
  1670 03fa 1A040000 		.4byte	0x41a
  1671 03fe 5A       		.byte	0x5a
  1672 03ff 0F       		.uleb128 0xf
- 1673 0400 AD0A0000 		.4byte	.LASF47
+ 1673 0400 A70A0000 		.4byte	.LASF47
  1674 0404 04       		.byte	0x4
  1675 0405 9601     		.2byte	0x196
  1676 0407 1A040000 		.4byte	0x41a
  1677 040b 64       		.byte	0x64
  1678 040c 0F       		.uleb128 0xf
- 1679 040d B60A0000 		.4byte	.LASF48
+ 1679 040d B00A0000 		.4byte	.LASF48
  1680 0411 04       		.byte	0x4
  1681 0412 9B01     		.2byte	0x19b
  1682 0414 1A040000 		.4byte	0x41a
@@ -4951,7 +4951,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1690 0428 00       		.byte	0
  1691 0429 00       		.byte	0
  1692 042a 04       		.uleb128 0x4
- 1693 042b 72090000 		.4byte	.LASF56
+ 1693 042b 6C090000 		.4byte	.LASF56
  1694 042f 04       		.byte	0x4
  1695 0430 9C01     		.2byte	0x19c
  1696 0432 74030000 		.4byte	0x374
@@ -4961,24 +4961,24 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1700 043a A301     		.2byte	0x1a3
  1701 043c 22050000 		.4byte	0x522
  1702 0440 0F       		.uleb128 0xf
- 1703 0441 99060000 		.4byte	.LASF57
+ 1703 0441 93060000 		.4byte	.LASF57
  1704 0445 04       		.byte	0x4
  1705 0446 A901     		.2byte	0x1a9
  1706 0448 77000000 		.4byte	0x77
  1707 044c 00       		.byte	0
  1708 044d 0F       		.uleb128 0xf
- 1709 044e 760A0000 		.4byte	.LASF58
+ 1709 044e 700A0000 		.4byte	.LASF58
  1710 0452 04       		.byte	0x4
  1711 0453 AE01     		.2byte	0x1ae
  1712 0455 77000000 		.4byte	0x77
  1713 0459 02       		.byte	0x2
  1714 045a 0F       		.uleb128 0xf
- 1715 045b 94070000 		.4byte	.LASF59
+ 1715 045b 8E070000 		.4byte	.LASF59
  1716 045f 04       		.byte	0x4
  1717 0460 B401     		.2byte	0x1b4
  1718 0462 77000000 		.4byte	0x77
  1719 0466 04       		.byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 84
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 84
 
 
  1720 0467 0F       		.uleb128 0xf
@@ -4988,31 +4988,31 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1724 046f 77000000 		.4byte	0x77
  1725 0473 06       		.byte	0x6
  1726 0474 0F       		.uleb128 0xf
- 1727 0475 A2040000 		.4byte	.LASF61
+ 1727 0475 D4040000 		.4byte	.LASF61
  1728 0479 04       		.byte	0x4
  1729 047a BE01     		.2byte	0x1be
  1730 047c 83000000 		.4byte	0x83
  1731 0480 08       		.byte	0x8
  1732 0481 0F       		.uleb128 0xf
- 1733 0482 84070000 		.4byte	.LASF62
+ 1733 0482 7E070000 		.4byte	.LASF62
  1734 0486 04       		.byte	0x4
  1735 0487 C301     		.2byte	0x1c3
  1736 0489 22050000 		.4byte	0x522
  1737 048d 0C       		.byte	0xc
  1738 048e 0F       		.uleb128 0xf
- 1739 048f F3070000 		.4byte	.LASF63
+ 1739 048f ED070000 		.4byte	.LASF63
  1740 0493 04       		.byte	0x4
  1741 0494 C801     		.2byte	0x1c8
  1742 0496 22050000 		.4byte	0x522
  1743 049a 10       		.byte	0x10
  1744 049b 0F       		.uleb128 0xf
- 1745 049c C7060000 		.4byte	.LASF64
+ 1745 049c C1060000 		.4byte	.LASF64
  1746 04a0 04       		.byte	0x4
  1747 04a1 D601     		.2byte	0x1d6
  1748 04a3 32050000 		.4byte	0x532
  1749 04a7 14       		.byte	0x14
  1750 04a8 0F       		.uleb128 0xf
- 1751 04a9 87050000 		.4byte	.LASF65
+ 1751 04a9 B9050000 		.4byte	.LASF65
  1752 04ad 04       		.byte	0x4
  1753 04ae DB01     		.2byte	0x1db
  1754 04b0 77000000 		.4byte	0x77
@@ -5030,7 +5030,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1766 04ca 6B000000 		.4byte	0x6b
  1767 04ce 23       		.byte	0x23
  1768 04cf 0F       		.uleb128 0xf
- 1769 04d0 4E050000 		.4byte	.LASF68
+ 1769 04d0 80050000 		.4byte	.LASF68
  1770 04d4 04       		.byte	0x4
  1771 04d5 EA01     		.2byte	0x1ea
  1772 04d7 E4020000 		.4byte	0x2e4
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1774 04dc 0F       		.uleb128 0xf
  1775 04dd BC020000 		.4byte	.LASF69
  1776 04e1 04       		.byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 85
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 85
 
 
  1777 04e2 EF01     		.2byte	0x1ef
@@ -5057,13 +5057,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1790 04ff 6B000000 		.4byte	0x6b
  1791 0503 2D01     		.2byte	0x12d
  1792 0505 13       		.uleb128 0x13
- 1793 0506 86060000 		.4byte	.LASF72
+ 1793 0506 80060000 		.4byte	.LASF72
  1794 050a 04       		.byte	0x4
  1795 050b FE01     		.2byte	0x1fe
  1796 050d 77000000 		.4byte	0x77
  1797 0511 2E01     		.2byte	0x12e
  1798 0513 13       		.uleb128 0x13
- 1799 0514 6E050000 		.4byte	.LASF73
+ 1799 0514 A0050000 		.4byte	.LASF73
  1800 0518 04       		.byte	0x4
  1801 0519 0302     		.2byte	0x203
  1802 051b 48030000 		.4byte	0x348
@@ -5094,16 +5094,16 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1827 0551 0A02     		.2byte	0x20a
  1828 0553 CD050000 		.4byte	0x5cd
  1829 0557 0F       		.uleb128 0xf
- 1830 0558 9F050000 		.4byte	.LASF75
+ 1830 0558 D1050000 		.4byte	.LASF75
  1831 055c 04       		.byte	0x4
  1832 055d 0F02     		.2byte	0x20f
  1833 055f CD050000 		.4byte	0x5cd
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 86
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 86
 
 
  1834 0563 00       		.byte	0
  1835 0564 0F       		.uleb128 0xf
- 1836 0565 D4040000 		.4byte	.LASF76
+ 1836 0565 06050000 		.4byte	.LASF76
  1837 0569 04       		.byte	0x4
  1838 056a 1402     		.2byte	0x214
  1839 056c CD050000 		.4byte	0x5cd
@@ -5115,31 +5115,31 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1845 0579 CD050000 		.4byte	0x5cd
  1846 057d 08       		.byte	0x8
  1847 057e 0F       		.uleb128 0xf
- 1848 057f 9D070000 		.4byte	.LASF78
+ 1848 057f 97070000 		.4byte	.LASF78
  1849 0583 04       		.byte	0x4
  1850 0584 1E02     		.2byte	0x21e
  1851 0586 CD050000 		.4byte	0x5cd
  1852 058a 0C       		.byte	0xc
  1853 058b 0F       		.uleb128 0xf
- 1854 058c 90090000 		.4byte	.LASF79
+ 1854 058c 8A090000 		.4byte	.LASF79
  1855 0590 04       		.byte	0x4
  1856 0591 2302     		.2byte	0x223
  1857 0593 83000000 		.4byte	0x83
  1858 0597 10       		.byte	0x10
  1859 0598 0F       		.uleb128 0xf
- 1860 0599 D6050000 		.4byte	.LASF80
+ 1860 0599 08060000 		.4byte	.LASF80
  1861 059d 04       		.byte	0x4
  1862 059e 2802     		.2byte	0x228
  1863 05a0 83000000 		.4byte	0x83
  1864 05a4 14       		.byte	0x14
  1865 05a5 0F       		.uleb128 0xf
- 1866 05a6 23040000 		.4byte	.LASF81
+ 1866 05a6 55040000 		.4byte	.LASF81
  1867 05aa 04       		.byte	0x4
  1868 05ab 2D02     		.2byte	0x22d
  1869 05ad 6B000000 		.4byte	0x6b
  1870 05b1 18       		.byte	0x18
  1871 05b2 0F       		.uleb128 0xf
- 1872 05b3 25080000 		.4byte	.LASF82
+ 1872 05b3 1F080000 		.4byte	.LASF82
  1873 05b7 04       		.byte	0x4
  1874 05b8 3202     		.2byte	0x232
  1875 05ba 6B000000 		.4byte	0x6b
@@ -5155,10 +5155,10 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1885 05ce 04       		.byte	0x4
  1886 05cf B5000000 		.4byte	0xb5
  1887 05d3 04       		.uleb128 0x4
- 1888 05d4 7D040000 		.4byte	.LASF84
+ 1888 05d4 AF040000 		.4byte	.LASF84
  1889 05d8 04       		.byte	0x4
  1890 05d9 3802     		.2byte	0x238
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 87
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 87
 
 
  1891 05db 4E050000 		.4byte	0x54e
@@ -5168,43 +5168,43 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1895 05e2 6302     		.2byte	0x263
  1896 05e4 5E060000 		.4byte	0x65e
  1897 05e8 0F       		.uleb128 0xf
- 1898 05e9 E8090000 		.4byte	.LASF85
+ 1898 05e9 E2090000 		.4byte	.LASF85
  1899 05ed 04       		.byte	0x4
  1900 05ee 6C02     		.2byte	0x26c
  1901 05f0 5E060000 		.4byte	0x65e
  1902 05f4 00       		.byte	0
  1903 05f5 0F       		.uleb128 0xf
- 1904 05f6 C0080000 		.4byte	.LASF86
+ 1904 05f6 BA080000 		.4byte	.LASF86
  1905 05fa 04       		.byte	0x4
  1906 05fb 7202     		.2byte	0x272
  1907 05fd 65060000 		.4byte	0x665
  1908 0601 04       		.byte	0x4
  1909 0602 0F       		.uleb128 0xf
- 1910 0603 A2060000 		.4byte	.LASF87
+ 1910 0603 9C060000 		.4byte	.LASF87
  1911 0607 04       		.byte	0x4
  1912 0608 7802     		.2byte	0x278
  1913 060a 67060000 		.4byte	0x667
  1914 060e 08       		.byte	0x8
  1915 060f 0F       		.uleb128 0xf
- 1916 0610 AF050000 		.4byte	.LASF88
+ 1916 0610 E1050000 		.4byte	.LASF88
  1917 0614 04       		.byte	0x4
  1918 0615 7D02     		.2byte	0x27d
  1919 0617 65060000 		.4byte	0x665
  1920 061b 0C       		.byte	0xc
  1921 061c 0F       		.uleb128 0xf
- 1922 061d 56080000 		.4byte	.LASF89
+ 1922 061d 50080000 		.4byte	.LASF89
  1923 0621 04       		.byte	0x4
  1924 0622 8402     		.2byte	0x284
  1925 0624 6D060000 		.4byte	0x66d
  1926 0628 10       		.byte	0x10
  1927 0629 0F       		.uleb128 0xf
- 1928 062a A4080000 		.4byte	.LASF90
+ 1928 062a 9E080000 		.4byte	.LASF90
  1929 062e 04       		.byte	0x4
  1930 062f 8902     		.2byte	0x289
  1931 0631 77000000 		.4byte	0x77
  1932 0635 14       		.byte	0x14
  1933 0636 0F       		.uleb128 0xf
- 1934 0637 A3030000 		.4byte	.LASF91
+ 1934 0637 D5030000 		.4byte	.LASF91
  1935 063b 04       		.byte	0x4
  1936 063c 9002     		.2byte	0x290
  1937 063e 77000000 		.4byte	0x77
@@ -5216,9 +5216,9 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1943 064b 6B000000 		.4byte	0x6b
  1944 064f 18       		.byte	0x18
  1945 0650 0F       		.uleb128 0xf
- 1946 0651 E8040000 		.4byte	.LASF93
+ 1946 0651 1A050000 		.4byte	.LASF93
  1947 0655 04       		.byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 88
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 88
 
 
  1948 0656 A302     		.2byte	0x2a3
@@ -5238,7 +5238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1962 066e 04       		.byte	0x4
  1963 066f 6B000000 		.4byte	0x6b
  1964 0673 04       		.uleb128 0x4
- 1965 0674 63040000 		.4byte	.LASF94
+ 1965 0674 95040000 		.4byte	.LASF94
  1966 0678 04       		.byte	0x4
  1967 0679 A402     		.2byte	0x2a4
  1968 067b DF050000 		.4byte	0x5df
@@ -5267,7 +5267,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  1991 06ad B002     		.2byte	0x2b0
  1992 06af 7F060000 		.4byte	0x67f
  1993 06b3 16       		.uleb128 0x16
- 1994 06b4 370A0000 		.4byte	.LASF162
+ 1994 06b4 310A0000 		.4byte	.LASF162
  1995 06b8 01       		.byte	0x1
  1996 06b9 2101     		.2byte	0x121
  1997 06bb 83000000 		.4byte	0x83
@@ -5276,9 +5276,9 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2000 06c7 01       		.uleb128 0x1
  2001 06c8 9C       		.byte	0x9c
  2002 06c9 17       		.uleb128 0x17
- 2003 06ca FE070000 		.4byte	.LASF97
+ 2003 06ca F8070000 		.4byte	.LASF97
  2004 06ce 01       		.byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 89
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 89
 
 
  2005 06cf 5101     		.2byte	0x151
@@ -5289,13 +5289,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2010 06de 9C       		.byte	0x9c
  2011 06df 0D070000 		.4byte	0x70d
  2012 06e3 18       		.uleb128 0x18
- 2013 06e4 42060000 		.4byte	.LASF102
+ 2013 06e4 3C060000 		.4byte	.LASF102
  2014 06e8 01       		.byte	0x1
  2015 06e9 5101     		.2byte	0x151
  2016 06eb 83000000 		.4byte	0x83
  2017 06ef 00000000 		.4byte	.LLST0
  2018 06f3 19       		.uleb128 0x19
- 2019 06f4 A00A0000 		.4byte	.LASF99
+ 2019 06f4 9A0A0000 		.4byte	.LASF99
  2020 06f8 01       		.byte	0x1
  2021 06f9 5301     		.2byte	0x153
  2022 06fb A4000000 		.4byte	0xa4
@@ -5305,7 +5305,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2026 0708 F40D0000 		.4byte	0xdf4
  2027 070c 00       		.byte	0
  2028 070d 17       		.uleb128 0x17
- 2029 070e B1080000 		.4byte	.LASF98
+ 2029 070e AB080000 		.4byte	.LASF98
  2030 0712 01       		.byte	0x1
  2031 0713 AF01     		.2byte	0x1af
  2032 0715 A4000000 		.4byte	0xa4
@@ -5325,7 +5325,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2046 073c 050E0000 		.4byte	0xe05
  2047 0740 00       		.byte	0
  2048 0741 17       		.uleb128 0x17
- 2049 0742 29060000 		.4byte	.LASF101
+ 2049 0742 23060000 		.4byte	.LASF101
  2050 0746 01       		.byte	0x1
  2051 0747 FB01     		.2byte	0x1fb
  2052 0749 A4000000 		.4byte	0xa4
@@ -5338,13 +5338,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2059 075c EB000000 		.4byte	.LASF100
  2060 0760 01       		.byte	0x1
  2061 0761 FD01     		.2byte	0x1fd
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 90
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 90
 
 
  2062 0763 A4000000 		.4byte	0xa4
  2063 0767 5E000000 		.4byte	.LLST3
  2064 076b 19       		.uleb128 0x19
- 2065 076c 42060000 		.4byte	.LASF102
+ 2065 076c 3C060000 		.4byte	.LASF102
  2066 0770 01       		.byte	0x1
  2067 0771 FF01     		.2byte	0x1ff
  2068 0773 83000000 		.4byte	0x83
@@ -5365,7 +5365,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2083 0794 0D070000 		.4byte	0x70d
  2084 0798 00       		.byte	0
  2085 0799 1D       		.uleb128 0x1d
- 2086 079a FE080000 		.4byte	.LASF110
+ 2086 079a F8080000 		.4byte	.LASF110
  2087 079e 01       		.byte	0x1
  2088 079f E202     		.2byte	0x2e2
  2089 07a1 00000000 		.4byte	.LFB6
@@ -5374,31 +5374,31 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2092 07aa 9C       		.byte	0x9c
  2093 07ab 64080000 		.4byte	0x864
  2094 07af 18       		.uleb128 0x18
- 2095 07b0 42060000 		.4byte	.LASF102
+ 2095 07b0 3C060000 		.4byte	.LASF102
  2096 07b4 01       		.byte	0x1
  2097 07b5 E202     		.2byte	0x2e2
  2098 07b7 83000000 		.4byte	0x83
  2099 07bb BF000000 		.4byte	.LLST5
  2100 07bf 18       		.uleb128 0x18
- 2101 07c0 77060000 		.4byte	.LASF103
+ 2101 07c0 71060000 		.4byte	.LASF103
  2102 07c4 01       		.byte	0x1
  2103 07c5 E202     		.2byte	0x2e2
  2104 07c7 83000000 		.4byte	0x83
  2105 07cb E0000000 		.4byte	.LLST6
  2106 07cf 18       		.uleb128 0x18
- 2107 07d0 33090000 		.4byte	.LASF104
+ 2107 07d0 2D090000 		.4byte	.LASF104
  2108 07d4 01       		.byte	0x1
  2109 07d5 E202     		.2byte	0x2e2
  2110 07d7 83000000 		.4byte	0x83
  2111 07db 01010000 		.4byte	.LLST7
  2112 07df 19       		.uleb128 0x19
- 2113 07e0 9A090000 		.4byte	.LASF105
+ 2113 07e0 94090000 		.4byte	.LASF105
  2114 07e4 01       		.byte	0x1
  2115 07e5 E402     		.2byte	0x2e4
  2116 07e7 64080000 		.4byte	0x864
  2117 07eb 54010000 		.4byte	.LLST8
  2118 07ef 19       		.uleb128 0x19
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 91
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 91
 
 
  2119 07f0 13030000 		.4byte	.LASF106
@@ -5453,19 +5453,19 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2168 086a 1F       		.uleb128 0x1f
  2169 086b D3050000 		.4byte	0x5d3
  2170 086f 1D       		.uleb128 0x1d
- 2171 0870 2E040000 		.4byte	.LASF111
+ 2171 0870 60040000 		.4byte	.LASF111
  2172 0874 01       		.byte	0x1
  2173 0875 A004     		.2byte	0x4a0
  2174 0877 00000000 		.4byte	.LFB7
  2175 087b 68000000 		.4byte	.LFE7-.LFB7
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 92
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 92
 
 
  2176 087f 01       		.uleb128 0x1
  2177 0880 9C       		.byte	0x9c
  2178 0881 A8080000 		.4byte	0x8a8
  2179 0885 19       		.uleb128 0x19
- 2180 0886 D1060000 		.4byte	.LASF112
+ 2180 0886 CB060000 		.4byte	.LASF112
  2181 088a 01       		.byte	0x1
  2182 088b A904     		.2byte	0x4a9
  2183 088d A4000000 		.4byte	0xa4
@@ -5478,7 +5478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2190 08a3 0D070000 		.4byte	0x70d
  2191 08a7 00       		.byte	0
  2192 08a8 1D       		.uleb128 0x1d
- 2193 08a9 CC080000 		.4byte	.LASF113
+ 2193 08a9 C6080000 		.4byte	.LASF113
  2194 08ad 01       		.byte	0x1
  2195 08ae 1C05     		.2byte	0x51c
  2196 08b0 00000000 		.4byte	.LFB8
@@ -5487,7 +5487,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2199 08b9 9C       		.byte	0x9c
  2200 08ba E0080000 		.4byte	0x8e0
  2201 08be 18       		.uleb128 0x18
- 2202 08bf 46080000 		.4byte	.LASF114
+ 2202 08bf 40080000 		.4byte	.LASF114
  2203 08c3 01       		.byte	0x1
  2204 08c4 1C05     		.2byte	0x51c
  2205 08c6 C6000000 		.4byte	0xc6
@@ -5505,7 +5505,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2217 08de 00       		.byte	0
  2218 08df 00       		.byte	0
  2219 08e0 1D       		.uleb128 0x1d
- 2220 08e1 A9040000 		.4byte	.LASF115
+ 2220 08e1 DB040000 		.4byte	.LASF115
  2221 08e5 01       		.byte	0x1
  2222 08e6 3805     		.2byte	0x538
  2223 08e8 00000000 		.4byte	.LFB9
@@ -5518,13 +5518,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2230 08fb 01       		.byte	0x1
  2231 08fc 3805     		.2byte	0x538
  2232 08fe 83000000 		.4byte	0x83
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 93
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 93
 
 
  2233 0902 5A020000 		.4byte	.LLST15
  2234 0906 00       		.byte	0
  2235 0907 1D       		.uleb128 0x1d
- 2236 0908 14090000 		.4byte	.LASF117
+ 2236 0908 0E090000 		.4byte	.LASF117
  2237 090c 01       		.byte	0x1
  2238 090d 7C05     		.2byte	0x57c
  2239 090f 00000000 		.4byte	.LFB10
@@ -5533,13 +5533,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2242 0918 9C       		.byte	0x9c
  2243 0919 3E090000 		.4byte	0x93e
  2244 091d 18       		.uleb128 0x18
- 2245 091e A6090000 		.4byte	.LASF118
+ 2245 091e A0090000 		.4byte	.LASF118
  2246 0922 01       		.byte	0x1
  2247 0923 7C05     		.2byte	0x57c
  2248 0925 83000000 		.4byte	0x83
  2249 0929 88020000 		.4byte	.LLST16
  2250 092d 19       		.uleb128 0x19
- 2251 092e 000A0000 		.4byte	.LASF119
+ 2251 092e FA090000 		.4byte	.LASF119
  2252 0932 01       		.byte	0x1
  2253 0933 7F05     		.2byte	0x57f
  2254 0935 83000000 		.4byte	0x83
@@ -5555,7 +5555,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2264 094f 9C       		.byte	0x9c
  2265 0950 9A090000 		.4byte	0x99a
  2266 0954 18       		.uleb128 0x18
- 2267 0955 A6090000 		.4byte	.LASF118
+ 2267 0955 A0090000 		.4byte	.LASF118
  2268 0959 01       		.byte	0x1
  2269 095a D005     		.2byte	0x5d0
  2270 095c 83000000 		.4byte	0x83
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2287 0986 01       		.uleb128 0x1
  2288 0987 51       		.byte	0x51
  2289 0988 00       		.byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 94
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 94
 
 
  2290 0989 1E       		.uleb128 0x1e
@@ -5593,7 +5593,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2299 0998 00       		.byte	0
  2300 0999 00       		.byte	0
  2301 099a 17       		.uleb128 0x17
- 2302 099b AD060000 		.4byte	.LASF121
+ 2302 099b A7060000 		.4byte	.LASF121
  2303 099f 01       		.byte	0x1
  2304 09a0 FD05     		.2byte	0x5fd
  2305 09a2 A4000000 		.4byte	0xa4
@@ -5603,13 +5603,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2309 09af 9C       		.byte	0x9c
  2310 09b0 EC090000 		.4byte	0x9ec
  2311 09b4 18       		.uleb128 0x18
- 2312 09b5 42060000 		.4byte	.LASF102
+ 2312 09b5 3C060000 		.4byte	.LASF102
  2313 09b9 01       		.byte	0x1
  2314 09ba FD05     		.2byte	0x5fd
  2315 09bc 83000000 		.4byte	0x83
  2316 09c0 2C030000 		.4byte	.LLST20
  2317 09c4 19       		.uleb128 0x19
- 2318 09c5 3E050000 		.4byte	.LASF122
+ 2318 09c5 70050000 		.4byte	.LASF122
  2319 09c9 01       		.byte	0x1
  2320 09ca FF05     		.2byte	0x5ff
  2321 09cc A4000000 		.4byte	0xa4
@@ -5633,12 +5633,12 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2339 09ea 00       		.byte	0
  2340 09eb 00       		.byte	0
  2341 09ec 17       		.uleb128 0x17
- 2342 09ed 05040000 		.4byte	.LASF123
+ 2342 09ed 37040000 		.4byte	.LASF123
  2343 09f1 01       		.byte	0x1
  2344 09f2 6806     		.2byte	0x668
  2345 09f4 A4000000 		.4byte	0xa4
  2346 09f8 00000000 		.4byte	.LFB13
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 95
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 95
 
 
  2347 09fc 1A000000 		.4byte	.LFE13-.LFB13
@@ -5646,13 +5646,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2349 0a01 9C       		.byte	0x9c
  2350 0a02 370A0000 		.4byte	0xa37
  2351 0a06 19       		.uleb128 0x19
- 2352 0a07 3E050000 		.4byte	.LASF122
+ 2352 0a07 70050000 		.4byte	.LASF122
  2353 0a0b 01       		.byte	0x1
  2354 0a0c 6A06     		.2byte	0x66a
  2355 0a0e A4000000 		.4byte	0xa4
  2356 0a12 98030000 		.4byte	.LLST22
  2357 0a16 19       		.uleb128 0x19
- 2358 0a17 42060000 		.4byte	.LASF102
+ 2358 0a17 3C060000 		.4byte	.LASF102
  2359 0a1b 01       		.byte	0x1
  2360 0a1c 6B06     		.2byte	0x66b
  2361 0a1e 83000000 		.4byte	0x83
@@ -5669,7 +5669,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2372 0a35 00       		.byte	0
  2373 0a36 00       		.byte	0
  2374 0a37 1D       		.uleb128 0x1d
- 2375 0a38 39090000 		.4byte	.LASF124
+ 2375 0a38 33090000 		.4byte	.LASF124
  2376 0a3c 01       		.byte	0x1
  2377 0a3d B80A     		.2byte	0xab8
  2378 0a3f 00000000 		.4byte	.LFB18
@@ -5678,19 +5678,19 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2381 0a48 9C       		.byte	0x9c
  2382 0a49 980A0000 		.4byte	0xa98
  2383 0a4d 19       		.uleb128 0x19
- 2384 0a4e 42060000 		.4byte	.LASF102
+ 2384 0a4e 3C060000 		.4byte	.LASF102
  2385 0a52 01       		.byte	0x1
  2386 0a53 BA0A     		.2byte	0xaba
  2387 0a55 83000000 		.4byte	0x83
  2388 0a59 E1030000 		.4byte	.LLST24
  2389 0a5d 19       		.uleb128 0x19
- 2390 0a5e 77060000 		.4byte	.LASF103
+ 2390 0a5e 71060000 		.4byte	.LASF103
  2391 0a62 01       		.byte	0x1
  2392 0a63 BB0A     		.2byte	0xabb
  2393 0a65 83000000 		.4byte	0x83
  2394 0a69 00040000 		.4byte	.LLST25
  2395 0a6d 19       		.uleb128 0x19
- 2396 0a6e 9A090000 		.4byte	.LASF105
+ 2396 0a6e 94090000 		.4byte	.LASF105
  2397 0a72 01       		.byte	0x1
  2398 0a73 C70A     		.2byte	0xac7
  2399 0a75 64080000 		.4byte	0x864
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2401 0a7d 1E       		.uleb128 0x1e
  2402 0a7e 20000000 		.4byte	.LVL78
  2403 0a82 640E0000 		.4byte	0xe64
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 96
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 96
 
 
  2404 0a86 1C       		.uleb128 0x1c
@@ -5730,13 +5730,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2430 0aad 9C       		.byte	0x9c
  2431 0aae D10A0000 		.4byte	0xad1
  2432 0ab2 18       		.uleb128 0x18
- 2433 0ab3 42060000 		.4byte	.LASF102
+ 2433 0ab3 3C060000 		.4byte	.LASF102
  2434 0ab7 01       		.byte	0x1
  2435 0ab8 090B     		.2byte	0xb09
  2436 0aba 83000000 		.4byte	0x83
  2437 0abe 32040000 		.4byte	.LLST27
  2438 0ac2 20       		.uleb128 0x20
- 2439 0ac3 3F080000 		.4byte	.LASF126
+ 2439 0ac3 39080000 		.4byte	.LASF126
  2440 0ac7 01       		.byte	0x1
  2441 0ac8 0B0B     		.2byte	0xb0b
  2442 0aca 83000000 		.4byte	0x83
@@ -5754,28 +5754,28 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2454 0ae6 9C       		.byte	0x9c
  2455 0ae7 290B0000 		.4byte	0xb29
  2456 0aeb 18       		.uleb128 0x18
- 2457 0aec 480A0000 		.4byte	.LASF128
+ 2457 0aec 420A0000 		.4byte	.LASF128
  2458 0af0 01       		.byte	0x1
  2459 0af1 5E0B     		.2byte	0xb5e
  2460 0af3 83000000 		.4byte	0x83
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 97
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 97
 
 
  2461 0af7 53040000 		.4byte	.LLST28
  2462 0afb 18       		.uleb128 0x18
- 2463 0afc 97040000 		.4byte	.LASF24
+ 2463 0afc C9040000 		.4byte	.LASF24
  2464 0b00 01       		.byte	0x1
  2465 0b01 5E0B     		.2byte	0xb5e
  2466 0b03 83000000 		.4byte	0x83
  2467 0b07 8D040000 		.4byte	.LLST29
  2468 0b0b 19       		.uleb128 0x19
- 2469 0b0c 14080000 		.4byte	.LASF129
+ 2469 0b0c 0E080000 		.4byte	.LASF129
  2470 0b10 01       		.byte	0x1
  2471 0b11 600B     		.2byte	0xb60
  2472 0b13 83000000 		.4byte	0x83
  2473 0b17 AE040000 		.4byte	.LLST30
  2474 0b1b 21       		.uleb128 0x21
- 2475 0b1c 680A0000 		.4byte	.LASF130
+ 2475 0b1c 620A0000 		.4byte	.LASF130
  2476 0b20 01       		.byte	0x1
  2477 0b21 610B     		.2byte	0xb61
  2478 0b23 83000000 		.4byte	0x83
@@ -5789,12 +5789,12 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2486 0b35 03       		.byte	0x3
  2487 0b36 5F0B0000 		.4byte	0xb5f
  2488 0b3a 23       		.uleb128 0x23
- 2489 0b3b 480A0000 		.4byte	.LASF128
+ 2489 0b3b 420A0000 		.4byte	.LASF128
  2490 0b3f 01       		.byte	0x1
  2491 0b40 140A     		.2byte	0xa14
  2492 0b42 83000000 		.4byte	0x83
  2493 0b46 23       		.uleb128 0x23
- 2494 0b47 54040000 		.4byte	.LASF131
+ 2494 0b47 86040000 		.4byte	.LASF131
  2495 0b4b 01       		.byte	0x1
  2496 0b4c 140A     		.2byte	0xa14
  2497 0b4e 83000000 		.4byte	0x83
@@ -5805,20 +5805,20 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2502 0b5a 6B000000 		.4byte	0x6b
  2503 0b5e 00       		.byte	0
  2504 0b5f 22       		.uleb128 0x22
- 2505 0b60 AF030000 		.4byte	.LASF133
+ 2505 0b60 E1030000 		.4byte	.LASF133
  2506 0b64 01       		.byte	0x1
  2507 0b65 5F0A     		.2byte	0xa5f
  2508 0b67 6B000000 		.4byte	0x6b
  2509 0b6b 03       		.byte	0x3
  2510 0b6c AD0B0000 		.4byte	0xbad
  2511 0b70 23       		.uleb128 0x23
- 2512 0b71 480A0000 		.4byte	.LASF128
+ 2512 0b71 420A0000 		.4byte	.LASF128
  2513 0b75 01       		.byte	0x1
  2514 0b76 5F0A     		.2byte	0xa5f
  2515 0b78 83000000 		.4byte	0x83
  2516 0b7c 23       		.uleb128 0x23
  2517 0b7d 0A030000 		.4byte	.LASF134
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 98
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 98
 
 
  2518 0b81 01       		.byte	0x1
@@ -5835,13 +5835,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2529 0b9a 620A     		.2byte	0xa62
  2530 0b9c 83000000 		.4byte	0x83
  2531 0ba0 24       		.uleb128 0x24
- 2532 0ba1 F5090000 		.4byte	.LASF137
+ 2532 0ba1 EF090000 		.4byte	.LASF137
  2533 0ba5 01       		.byte	0x1
  2534 0ba6 630A     		.2byte	0xa63
  2535 0ba8 83000000 		.4byte	0x83
  2536 0bac 00       		.byte	0
  2537 0bad 25       		.uleb128 0x25
- 2538 0bae 7F0A0000 		.4byte	.LASF163
+ 2538 0bae 790A0000 		.4byte	.LASF163
  2539 0bb2 01       		.byte	0x1
  2540 0bb3 8C09     		.2byte	0x98c
  2541 0bb5 00000000 		.4byte	.LFB15
@@ -5850,7 +5850,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2544 0bbe 9C       		.byte	0x9c
  2545 0bbf E40C0000 		.4byte	0xce4
  2546 0bc3 18       		.uleb128 0x18
- 2547 0bc4 42060000 		.4byte	.LASF102
+ 2547 0bc4 3C060000 		.4byte	.LASF102
  2548 0bc8 01       		.byte	0x1
  2549 0bc9 8C09     		.2byte	0x98c
  2550 0bcb 83000000 		.4byte	0x83
@@ -5873,16 +5873,16 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2567 0bf9 8F09     		.2byte	0x98f
  2568 0bfb 6B000000 		.4byte	0x6b
  2569 0bff 19       		.uleb128 0x19
- 2570 0c00 54040000 		.4byte	.LASF131
+ 2570 0c00 86040000 		.4byte	.LASF131
  2571 0c04 01       		.byte	0x1
  2572 0c05 9309     		.2byte	0x993
  2573 0c07 83000000 		.4byte	0x83
  2574 0c0b 21050000 		.4byte	.LLST34
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 99
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 99
 
 
  2575 0c0f 19       		.uleb128 0x19
- 2576 0c10 480A0000 		.4byte	.LASF128
+ 2576 0c10 420A0000 		.4byte	.LASF128
  2577 0c14 01       		.byte	0x1
  2578 0c15 9509     		.2byte	0x995
  2579 0c17 83000000 		.4byte	0x83
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2629 0ca5 1B       		.uleb128 0x1b
  2630 0ca6 08000000 		.4byte	.LVL92
  2631 0caa 980A0000 		.4byte	0xa98
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 100
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 100
 
 
  2632 0cae BA0C0000 		.4byte	0xcba
@@ -5990,7 +5990,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2678 0cfb 9C       		.byte	0x9c
  2679 0cfc 310D0000 		.4byte	0xd31
  2680 0d00 19       		.uleb128 0x19
- 2681 0d01 42060000 		.4byte	.LASF102
+ 2681 0d01 3C060000 		.4byte	.LASF102
  2682 0d05 01       		.byte	0x1
  2683 0d06 5C09     		.2byte	0x95c
  2684 0d08 83000000 		.4byte	0x83
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2686 0d10 19       		.uleb128 0x19
  2687 0d11 83020000 		.4byte	.LASF138
  2688 0d15 01       		.byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 101
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 101
 
 
  2689 0d16 5D09     		.2byte	0x95d
@@ -6016,7 +6016,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2701 0d2f 00       		.byte	0
  2702 0d30 00       		.byte	0
  2703 0d31 17       		.uleb128 0x17
- 2704 0d32 BF050000 		.4byte	.LASF140
+ 2704 0d32 F1050000 		.4byte	.LASF140
  2705 0d36 01       		.byte	0x1
  2706 0d37 5302     		.2byte	0x253
  2707 0d39 A4000000 		.4byte	0xa4
@@ -6039,26 +6039,26 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2724 0d66 940E0000 		.4byte	0xe94
  2725 0d6a 00       		.byte	0
  2726 0d6b 2A       		.uleb128 0x2a
- 2727 0d6c 270A0000 		.4byte	.LASF142
+ 2727 0d6c 210A0000 		.4byte	.LASF142
  2728 0d70 04       		.byte	0x4
  2729 0d71 0404     		.2byte	0x404
  2730 0d73 42050000 		.4byte	0x542
  2731 0d77 2A       		.uleb128 0x2a
- 2732 0d78 560A0000 		.4byte	.LASF143
+ 2732 0d78 500A0000 		.4byte	.LASF143
  2733 0d7c 04       		.byte	0x4
  2734 0d7d 0504     		.2byte	0x405
  2735 0d7f 830D0000 		.4byte	0xd83
  2736 0d83 1F       		.uleb128 0x1f
  2737 0d84 A7060000 		.4byte	0x6a7
  2738 0d88 2B       		.uleb128 0x2b
- 2739 0d89 E6080000 		.4byte	.LASF144
+ 2739 0d89 E0080000 		.4byte	.LASF144
  2740 0d8d 01       		.byte	0x1
  2741 0d8e D4       		.byte	0xd4
  2742 0d8f 990D0000 		.4byte	0xd99
  2743 0d93 05       		.uleb128 0x5
  2744 0d94 03       		.byte	0x3
  2745 0d95 00000000 		.4byte	key_touch_scanFreqIndex
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 102
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 102
 
 
  2746 0d99 1F       		.uleb128 0x1f
@@ -6088,7 +6088,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2770 0dcc 03       		.byte	0x3
  2771 0dcd 00000000 		.4byte	key_touch_requestScanAllWidget
  2772 0dd1 2B       		.uleb128 0x2b
- 2773 0dd2 57050000 		.4byte	.LASF148
+ 2773 0dd2 89050000 		.4byte	.LASF148
  2774 0dd6 01       		.byte	0x1
  2775 0dd7 EB       		.byte	0xeb
  2776 0dd8 67060000 		.4byte	0x667
@@ -6096,7 +6096,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2778 0ddd 03       		.byte	0x3
  2779 0dde 00000000 		.4byte	key_touch_curRamSnsPtr
  2780 0de2 2C       		.uleb128 0x2c
- 2781 0de3 DB050000 		.4byte	.LASF149
+ 2781 0de3 0D060000 		.4byte	.LASF149
  2782 0de7 01       		.byte	0x1
  2783 0de8 0701     		.2byte	0x107
  2784 0dea 64080000 		.4byte	0x864
@@ -6104,7 +6104,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2786 0def 03       		.byte	0x3
  2787 0df0 00000000 		.4byte	key_touch_curSnsIOPtr
  2788 0df4 2D       		.uleb128 0x2d
- 2789 0df5 EC030000 		.4byte	.LASF150
+ 2789 0df5 1E040000 		.4byte	.LASF150
  2790 0df9 05       		.byte	0x5
  2791 0dfa 3A       		.byte	0x3a
  2792 0dfb 050E0000 		.4byte	0xe05
@@ -6116,15 +6116,15 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2798 0e0a 05       		.byte	0x5
  2799 0e0b 3C       		.byte	0x3c
  2800 0e0c 30       		.uleb128 0x30
- 2801 0e0d AD090000 		.4byte	.LASF164
+ 2801 0e0d A7090000 		.4byte	.LASF164
  2802 0e11 06       		.byte	0x6
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 103
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 103
 
 
  2803 0e12 E5       		.byte	0xe5
  2804 0e13 6B000000 		.4byte	0x6b
  2805 0e17 2D       		.uleb128 0x2d
- 2806 0e18 D6030000 		.4byte	.LASF151
+ 2806 0e18 08040000 		.4byte	.LASF151
  2807 0e1c 06       		.byte	0x6
  2808 0e1d E6       		.byte	0xe6
  2809 0e1e 280E0000 		.4byte	0xe28
@@ -6132,7 +6132,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2811 0e23 6B000000 		.4byte	0x6b
  2812 0e27 00       		.byte	0
  2813 0e28 2D       		.uleb128 0x2d
- 2814 0e29 52070000 		.4byte	.LASF152
+ 2814 0e29 4C070000 		.4byte	.LASF152
  2815 0e2d 05       		.byte	0x5
  2816 0e2e 43       		.byte	0x43
  2817 0e2f 390E0000 		.4byte	0xe39
@@ -6140,7 +6140,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2819 0e34 64080000 		.4byte	0x864
  2820 0e38 00       		.byte	0
  2821 0e39 2D       		.uleb128 0x2d
- 2822 0e3a 66080000 		.4byte	.LASF153
+ 2822 0e3a 60080000 		.4byte	.LASF153
  2823 0e3e 07       		.byte	0x7
  2824 0e3f 18       		.byte	0x18
  2825 0e40 4A0E0000 		.4byte	0xe4a
@@ -6159,7 +6159,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2838 0e5f 83000000 		.4byte	0x83
  2839 0e63 00       		.byte	0
  2840 0e64 2D       		.uleb128 0x2d
- 2841 0e65 0B070000 		.4byte	.LASF154
+ 2841 0e65 05070000 		.4byte	.LASF154
  2842 0e69 05       		.byte	0x5
  2843 0e6a 44       		.byte	0x44
  2844 0e6b 750E0000 		.4byte	0xe75
@@ -6167,7 +6167,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2846 0e70 64080000 		.4byte	0x864
  2847 0e74 00       		.byte	0
  2848 0e75 31       		.uleb128 0x31
- 2849 0e76 18050000 		.4byte	.LASF156
+ 2849 0e76 4A050000 		.4byte	.LASF156
  2850 0e7a 05       		.byte	0x5
  2851 0e7b 5D       		.byte	0x5d
  2852 0e7c 83000000 		.4byte	0x83
@@ -6178,12 +6178,12 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2857 0e8a 83000000 		.4byte	0x83
  2858 0e8e 2E       		.uleb128 0x2e
  2859 0e8f 83000000 		.4byte	0x83
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 104
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 104
 
 
  2860 0e93 00       		.byte	0
  2861 0e94 2F       		.uleb128 0x2f
- 2862 0e95 6A070000 		.4byte	.LASF158
+ 2862 0e95 64070000 		.4byte	.LASF158
  2863 0e99 05       		.byte	0x5
  2864 0e9a 52       		.byte	0x52
  2865 0e9b 00       		.byte	0
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2914 002e 3A       		.uleb128 0x3a
  2915 002f 0B       		.uleb128 0xb
  2916 0030 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 105
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 105
 
 
  2917 0031 05       		.uleb128 0x5
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  2971 0067 0B       		.uleb128 0xb
  2972 0068 3A       		.uleb128 0x3a
  2973 0069 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 106
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 106
 
 
  2974 006a 3B       		.uleb128 0x3b
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3028 00a0 00       		.byte	0
  3029 00a1 03       		.uleb128 0x3
  3030 00a2 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 107
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 107
 
 
  3031 00a3 3A       		.uleb128 0x3a
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3085 00d9 03       		.uleb128 0x3
  3086 00da 0E       		.uleb128 0xe
  3087 00db 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 108
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 108
 
 
  3088 00dc 0B       		.uleb128 0xb
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3142 0113 0B       		.uleb128 0xb
  3143 0114 3B       		.uleb128 0x3b
  3144 0115 05       		.uleb128 0x5
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 109
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 109
 
 
  3145 0116 27       		.uleb128 0x27
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3199 014f 00       		.byte	0
  3200 0150 1B       		.uleb128 0x1b
  3201 0151 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 110
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 110
 
 
  3202 0154 01       		.byte	0x1
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3256 0190 00       		.byte	0
  3257 0191 49       		.uleb128 0x49
  3258 0192 13       		.uleb128 0x13
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 111
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 111
 
 
  3259 0193 00       		.byte	0
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3313 01c9 03       		.uleb128 0x3
  3314 01ca 0E       		.uleb128 0xe
  3315 01cb 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 112
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 112
 
 
  3316 01cc 0B       		.uleb128 0xb
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3370 0203 59       		.uleb128 0x59
  3371 0204 05       		.uleb128 0x5
  3372 0205 01       		.uleb128 0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 113
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 113
 
 
  3373 0206 13       		.uleb128 0x13
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3427 023c 3B       		.uleb128 0x3b
  3428 023d 0B       		.uleb128 0xb
  3429 023e 49       		.uleb128 0x49
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 114
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 114
 
 
  3430 023f 13       		.uleb128 0x13
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3484 0275 19       		.uleb128 0x19
  3485 0276 03       		.uleb128 0x3
  3486 0277 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 115
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 115
 
 
  3487 0278 3A       		.uleb128 0x3a
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3541 0000 00000000 		.4byte	.LVL0
  3542 0004 3B000000 		.4byte	.LVL2-1
  3543 0008 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 116
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 116
 
 
  3544 000a 50       		.byte	0x50
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3598 0094 0300     		.2byte	0x3
  3599 0096 09       		.byte	0x9
  3600 0097 FF       		.byte	0xff
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 117
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 117
 
 
  3601 0098 9F       		.byte	0x9f
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3655 011a 5E000000 		.4byte	.LVL27
  3656 011e 61000000 		.4byte	.LVL28-1
  3657 0122 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 118
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 118
 
 
  3658 0124 52       		.byte	0x52
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3712              	.LLST11:
  3713 01ae 16000000 		.4byte	.LVL19
  3714 01b2 88000000 		.4byte	.LVL35
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 119
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 119
 
 
  3715 01b6 0600     		.2byte	0x6
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3769 022e 0100     		.2byte	0x1
  3770 0230 54       		.byte	0x54
  3771 0231 00000000 		.4byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 120
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 120
 
 
  3772 0235 00000000 		.4byte	0
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3826 02b2 00000000 		.4byte	0
  3827              	.LLST17:
  3828 02b6 04000000 		.4byte	.LVL50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 121
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 121
 
 
  3829 02ba 06000000 		.4byte	.LVL51
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3883 0342 0C000000 		.4byte	.LVL63
  3884 0346 0E000000 		.4byte	.LVL64
  3885 034a 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 122
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 122
 
 
  3886 034c 50       		.byte	0x50
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3940 03d6 0100     		.2byte	0x1
  3941 03d8 54       		.byte	0x54
  3942 03d9 00000000 		.4byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 123
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 123
 
 
  3943 03dd 00000000 		.4byte	0
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  3997 0468 F3       		.byte	0xf3
  3998 0469 01       		.uleb128 0x1
  3999 046a 50       		.byte	0x50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 124
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 124
 
 
  4000 046b 9F       		.byte	0x9f
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4054 04ed 07000000 		.4byte	.LVL92-1
  4055 04f1 D0000000 		.4byte	.LVL127
  4056 04f5 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 125
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 125
 
 
  4057 04f7 56       		.byte	0x56
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4111 0585 11000000 		.4byte	.LVL94-1
  4112 0589 0100     		.2byte	0x1
  4113 058b 50       		.byte	0x50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 126
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 126
 
 
  4114 058c 11000000 		.4byte	.LVL94-1
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4168 061d C8000000 		.4byte	.LVL123
  4169 0621 0100     		.2byte	0x1
  4170 0623 50       		.byte	0x50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 127
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 127
 
 
  4171 0624 00000000 		.4byte	0
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4225 0058 00000000 		.4byte	.LFB11
  4226 005c 12000000 		.4byte	.LFE11-.LFB11
  4227 0060 00000000 		.4byte	.LFB12
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 128
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 128
 
 
  4228 0064 1C000000 		.4byte	.LFE12-.LFB12
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4282 008c 0E000000 		.4byte	.LFE5
  4283 0090 00000000 		.4byte	0
  4284 0094 00000000 		.4byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 129
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 129
 
 
  4285              		.section	.debug_line,"",%progbits
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4303      685F5345 
  4303      4E53455F 
  4303      4D455448 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 130
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 130
 
 
  4304              	.LASF70:
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4325 01f6 6C667372 		.ascii	"lfsrScale\000"
  4325      5363616C 
  4325      6500
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 131
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 131
 
 
  4326              	.LASF108:
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4349 02b2 77646774 		.ascii	"wdgtArray\000"
  4349      41727261 
  4349      7900
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 132
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 132
 
 
  4350              	.LASF69:
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4373      7200
  4374              	.LASF36:
  4375 0367 6B65795F 		.ascii	"key_touch_RAM_WD_BUTTON_STRUCT\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 133
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 133
 
 
  4375      746F7563 
@@ -7932,576 +7932,574 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 1
  4379 038d 68797374 		.ascii	"hysteresis\000"
  4379      65726573 
  4379      697300
- 4380              	.LASF30:
- 4381 0398 6C6F7742 		.ascii	"lowBslnRst\000"
- 4381      736C6E52 
- 4381      737400
- 4382              	.LASF91:
- 4383 03a3 746F7461 		.ascii	"totalNumSns\000"
- 4383      6C4E756D 
- 4383      536E7300 
- 4384              	.LASF133:
- 4385 03af 6B65795F 		.ascii	"key_touch_SsCalcLfsrScale\000"
- 4385      746F7563 
- 4385      685F5373 
- 4385      43616C63 
- 4385      4C667372 
- 4386              	.LASF26:
- 4387 03c9 6E6F6973 		.ascii	"noiseTh\000"
- 4387      65546800 
- 4388              	.LASF14:
- 4389 03d1 63686172 		.ascii	"char\000"
- 4389      00
- 4390              	.LASF151:
- 4391 03d6 43794578 		.ascii	"CyExitCriticalSection\000"
- 4391      69744372 
- 4391      69746963 
- 4391      616C5365 
- 4391      6374696F 
- 4392              	.LASF150:
- 4393 03ec 6B65795F 		.ascii	"key_touch_CSDSetupWidget\000"
- 4393      746F7563 
- 4393      685F4353 
- 4393      44536574 
- 4393      75705769 
- 4394              	.LASF123:
- 4395 0405 6B65795F 		.ascii	"key_touch_CalibrateAllWidgets\000"
- 4395      746F7563 
- 4395      685F4361 
- 4395      6C696272 
- 4395      61746541 
- 4396              	.LASF81:
- 4397 0423 6873696F 		.ascii	"hsiomShift\000"
- 4397      6D536869 
- 4397      667400
- 4398              	.LASF111:
- 4399 042e 6B65795F 		.ascii	"key_touch_SsPostAllWidgetsScan\000"
- 4399      746F7563 
- 4399      685F5373 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 134
+ 4380              	.LASF161:
+ 4381 0398 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\AYBR3000.cyd"
+ 4381      59425233 
+ 4381      3030305C 
+ 4381      41594252 
+ 4381      33303030 
+ 4382 03c7 736E00   		.ascii	"sn\000"
+ 4383              	.LASF30:
+ 4384 03ca 6C6F7742 		.ascii	"lowBslnRst\000"
+ 4384      736C6E52 
+ 4384      737400
+ 4385              	.LASF91:
+ 4386 03d5 746F7461 		.ascii	"totalNumSns\000"
+ 4386      6C4E756D 
+ 4386      536E7300 
+ 4387              	.LASF133:
+ 4388 03e1 6B65795F 		.ascii	"key_touch_SsCalcLfsrScale\000"
+ 4388      746F7563 
+ 4388      685F5373 
+ 4388      43616C63 
+ 4388      4C667372 
+ 4389              	.LASF26:
+ 4390 03fb 6E6F6973 		.ascii	"noiseTh\000"
+ 4390      65546800 
+ 4391              	.LASF14:
+ 4392 0403 63686172 		.ascii	"char\000"
+ 4392      00
+ 4393              	.LASF151:
+ 4394 0408 43794578 		.ascii	"CyExitCriticalSection\000"
+ 4394      69744372 
+ 4394      69746963 
+ 4394      616C5365 
+ 4394      6374696F 
+ 4395              	.LASF150:
+ 4396 041e 6B65795F 		.ascii	"key_touch_CSDSetupWidget\000"
+ 4396      746F7563 
+ 4396      685F4353 
+ 4396      44536574 
+ 4396      75705769 
+ 4397              	.LASF123:
+ 4398 0437 6B65795F 		.ascii	"key_touch_CalibrateAllWidgets\000"
+ 4398      746F7563 
+ 4398      685F4361 
+ 4398      6C696272 
+ 4398      61746541 
+ 4399              	.LASF81:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 134
 
 
- 4399      506F7374 
- 4399      416C6C57 
- 4400              	.LASF10:
- 4401 044d 75696E74 		.ascii	"uint16\000"
- 4401      313600
- 4402              	.LASF131:
- 4403 0454 636F6E76 		.ascii	"conversionsNum\000"
- 4403      65727369 
- 4403      6F6E734E 
- 4403      756D00
- 4404              	.LASF94:
- 4405 0463 6B65795F 		.ascii	"key_touch_FLASH_WD_STRUCT\000"
- 4405      746F7563 
- 4405      685F464C 
- 4405      4153485F 
- 4405      57445F53 
- 4406              	.LASF84:
- 4407 047d 6B65795F 		.ascii	"key_touch_FLASH_IO_STRUCT\000"
- 4407      746F7563 
- 4407      685F464C 
- 4407      4153485F 
- 4407      494F5F53 
- 4408              	.LASF24:
- 4409 0497 7265736F 		.ascii	"resolution\000"
- 4409      6C757469 
- 4409      6F6E00
- 4410              	.LASF61:
- 4411 04a2 73746174 		.ascii	"status\000"
- 4411      757300
- 4412              	.LASF115:
- 4413 04a9 6B65795F 		.ascii	"key_touch_SsSetModClkClockDivider\000"
- 4413      746F7563 
- 4413      685F5373 
- 4413      5365744D 
- 4413      6F64436C 
- 4414              	.LASF54:
- 4415 04cb 69646163 		.ascii	"idacComp\000"
- 4415      436F6D70 
- 4415      00
- 4416              	.LASF76:
- 4417 04d4 70635074 		.ascii	"pcPtr\000"
- 4417      7200
- 4418              	.LASF6:
- 4419 04da 6C6F6E67 		.ascii	"long long int\000"
- 4419      206C6F6E 
- 4419      6720696E 
- 4419      7400
- 4420              	.LASF93:
- 4421 04e8 6E756D43 		.ascii	"numCols\000"
- 4421      6F6C7300 
- 4422              	.LASF49:
- 4423 04f0 6B65795F 		.ascii	"key_touch_RAM_WD_LIST_STRUCT\000"
- 4423      746F7563 
- 4423      685F5241 
- 4423      4D5F5744 
- 4423      5F4C4953 
- 4424              	.LASF29:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 135
+ 4400 0455 6873696F 		.ascii	"hsiomShift\000"
+ 4400      6D536869 
+ 4400      667400
+ 4401              	.LASF111:
+ 4402 0460 6B65795F 		.ascii	"key_touch_SsPostAllWidgetsScan\000"
+ 4402      746F7563 
+ 4402      685F5373 
+ 4402      506F7374 
+ 4402      416C6C57 
+ 4403              	.LASF10:
+ 4404 047f 75696E74 		.ascii	"uint16\000"
+ 4404      313600
+ 4405              	.LASF131:
+ 4406 0486 636F6E76 		.ascii	"conversionsNum\000"
+ 4406      65727369 
+ 4406      6F6E734E 
+ 4406      756D00
+ 4407              	.LASF94:
+ 4408 0495 6B65795F 		.ascii	"key_touch_FLASH_WD_STRUCT\000"
+ 4408      746F7563 
+ 4408      685F464C 
+ 4408      4153485F 
+ 4408      57445F53 
+ 4409              	.LASF84:
+ 4410 04af 6B65795F 		.ascii	"key_touch_FLASH_IO_STRUCT\000"
+ 4410      746F7563 
+ 4410      685F464C 
+ 4410      4153485F 
+ 4410      494F5F53 
+ 4411              	.LASF24:
+ 4412 04c9 7265736F 		.ascii	"resolution\000"
+ 4412      6C757469 
+ 4412      6F6E00
+ 4413              	.LASF61:
+ 4414 04d4 73746174 		.ascii	"status\000"
+ 4414      757300
+ 4415              	.LASF115:
+ 4416 04db 6B65795F 		.ascii	"key_touch_SsSetModClkClockDivider\000"
+ 4416      746F7563 
+ 4416      685F5373 
+ 4416      5365744D 
+ 4416      6F64436C 
+ 4417              	.LASF54:
+ 4418 04fd 69646163 		.ascii	"idacComp\000"
+ 4418      436F6D70 
+ 4418      00
+ 4419              	.LASF76:
+ 4420 0506 70635074 		.ascii	"pcPtr\000"
+ 4420      7200
+ 4421              	.LASF6:
+ 4422 050c 6C6F6E67 		.ascii	"long long int\000"
+ 4422      206C6F6E 
+ 4422      6720696E 
+ 4422      7400
+ 4423              	.LASF93:
+ 4424 051a 6E756D43 		.ascii	"numCols\000"
+ 4424      6F6C7300 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 135
 
 
- 4425 050d 6F6E4465 		.ascii	"onDebounce\000"
- 4425      626F756E 
- 4425      636500
- 4426              	.LASF156:
- 4427 0518 6B65795F 		.ascii	"key_touch_SsCSDGetNumberOfConversions\000"
- 4427      746F7563 
- 4427      685F5373 
- 4427      43534447 
- 4427      65744E75 
- 4428              	.LASF122:
- 4429 053e 63616C69 		.ascii	"calibrateStatus\000"
- 4429      62726174 
- 4429      65537461 
- 4429      74757300 
- 4430              	.LASF68:
- 4431 054e 77646774 		.ascii	"wdgtList\000"
- 4431      4C697374 
- 4431      00
- 4432              	.LASF148:
- 4433 0557 6B65795F 		.ascii	"key_touch_curRamSnsPtr\000"
- 4433      746F7563 
- 4433      685F6375 
- 4433      7252616D 
- 4433      536E7350 
- 4434              	.LASF73:
- 4435 056e 736E7254 		.ascii	"snrTestRawCount\000"
- 4435      65737452 
- 4435      6177436F 
- 4435      756E7400 
- 4436              	.LASF27:
- 4437 057e 6E4E6F69 		.ascii	"nNoiseTh\000"
- 4437      73655468 
- 4437      00
- 4438              	.LASF65:
- 4439 0587 63736430 		.ascii	"csd0Config\000"
- 4439      436F6E66 
- 4439      696700
- 4440              	.LASF17:
- 4441 0592 63796973 		.ascii	"cyisraddress\000"
- 4441      72616464 
- 4441      72657373 
- 4441      00
- 4442              	.LASF75:
- 4443 059f 6873696F 		.ascii	"hsiomPtr\000"
- 4443      6D507472 
- 4443      00
- 4444              	.LASF11:
- 4445 05a8 75696E74 		.ascii	"uint32\000"
- 4445      333200
- 4446              	.LASF88:
- 4447 05af 70747232 		.ascii	"ptr2FltrHistory\000"
- 4447      466C7472 
- 4447      48697374 
- 4447      6F727900 
- 4448              	.LASF140:
- 4449 05bf 6B65795F 		.ascii	"key_touch_SsInitialize\000"
- 4449      746F7563 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 136
+ 4425              	.LASF49:
+ 4426 0522 6B65795F 		.ascii	"key_touch_RAM_WD_LIST_STRUCT\000"
+ 4426      746F7563 
+ 4426      685F5241 
+ 4426      4D5F5744 
+ 4426      5F4C4953 
+ 4427              	.LASF29:
+ 4428 053f 6F6E4465 		.ascii	"onDebounce\000"
+ 4428      626F756E 
+ 4428      636500
+ 4429              	.LASF156:
+ 4430 054a 6B65795F 		.ascii	"key_touch_SsCSDGetNumberOfConversions\000"
+ 4430      746F7563 
+ 4430      685F5373 
+ 4430      43534447 
+ 4430      65744E75 
+ 4431              	.LASF122:
+ 4432 0570 63616C69 		.ascii	"calibrateStatus\000"
+ 4432      62726174 
+ 4432      65537461 
+ 4432      74757300 
+ 4433              	.LASF68:
+ 4434 0580 77646774 		.ascii	"wdgtList\000"
+ 4434      4C697374 
+ 4434      00
+ 4435              	.LASF148:
+ 4436 0589 6B65795F 		.ascii	"key_touch_curRamSnsPtr\000"
+ 4436      746F7563 
+ 4436      685F6375 
+ 4436      7252616D 
+ 4436      536E7350 
+ 4437              	.LASF73:
+ 4438 05a0 736E7254 		.ascii	"snrTestRawCount\000"
+ 4438      65737452 
+ 4438      6177436F 
+ 4438      756E7400 
+ 4439              	.LASF27:
+ 4440 05b0 6E4E6F69 		.ascii	"nNoiseTh\000"
+ 4440      73655468 
+ 4440      00
+ 4441              	.LASF65:
+ 4442 05b9 63736430 		.ascii	"csd0Config\000"
+ 4442      436F6E66 
+ 4442      696700
+ 4443              	.LASF17:
+ 4444 05c4 63796973 		.ascii	"cyisraddress\000"
+ 4444      72616464 
+ 4444      72657373 
+ 4444      00
+ 4445              	.LASF75:
+ 4446 05d1 6873696F 		.ascii	"hsiomPtr\000"
+ 4446      6D507472 
+ 4446      00
+ 4447              	.LASF11:
+ 4448 05da 75696E74 		.ascii	"uint32\000"
+ 4448      333200
+ 4449              	.LASF88:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 136
 
 
- 4449      685F5373 
- 4449      496E6974 
- 4449      69616C69 
- 4450              	.LASF80:
- 4451 05d6 6D61736B 		.ascii	"mask\000"
- 4451      00
- 4452              	.LASF149:
- 4453 05db 6B65795F 		.ascii	"key_touch_curSnsIOPtr\000"
- 4453      746F7563 
- 4453      685F6375 
- 4453      72536E73 
- 4453      494F5074 
- 4454              	.LASF161:
- 4455 05f1 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0_lable\\AYBR3000\\AYBR30"
- 4455      59425233 
- 4455      3030305C 
- 4455      41594252 
- 4455      33303030 
- 4456 0620 30302E63 		.ascii	"00.cydsn\000"
- 4456      7964736E 
- 4456      00
+ 4450 05e1 70747232 		.ascii	"ptr2FltrHistory\000"
+ 4450      466C7472 
+ 4450      48697374 
+ 4450      6F727900 
+ 4451              	.LASF140:
+ 4452 05f1 6B65795F 		.ascii	"key_touch_SsInitialize\000"
+ 4452      746F7563 
+ 4452      685F5373 
+ 4452      496E6974 
+ 4452      69616C69 
+ 4453              	.LASF80:
+ 4454 0608 6D61736B 		.ascii	"mask\000"
+ 4454      00
+ 4455              	.LASF149:
+ 4456 060d 6B65795F 		.ascii	"key_touch_curSnsIOPtr\000"
+ 4456      746F7563 
+ 4456      685F6375 
+ 4456      72536E73 
+ 4456      494F5074 
  4457              	.LASF101:
- 4458 0629 6B65795F 		.ascii	"key_touch_ScanAllWidgets\000"
+ 4458 0623 6B65795F 		.ascii	"key_touch_ScanAllWidgets\000"
  4458      746F7563 
  4458      685F5363 
  4458      616E416C 
  4458      6C576964 
  4459              	.LASF102:
- 4460 0642 77646774 		.ascii	"wdgtIndex\000"
+ 4460 063c 77646774 		.ascii	"wdgtIndex\000"
  4460      496E6465 
  4460      7800
  4461              	.LASF160:
- 4462 064c 47656E65 		.ascii	"Generated_Source\\PSoC4\\key_touch_Sensing.c\000"
+ 4462 0646 47656E65 		.ascii	"Generated_Source\\PSoC4\\key_touch_Sensing.c\000"
  4462      72617465 
  4462      645F536F 
  4462      75726365 
  4462      5C50536F 
  4463              	.LASF103:
- 4464 0677 736E7349 		.ascii	"snsIndex\000"
+ 4464 0671 736E7349 		.ascii	"snsIndex\000"
  4464      6E646578 
  4464      00
  4465              	.LASF16:
- 4466 0680 72656733 		.ascii	"reg32\000"
+ 4466 067a 72656733 		.ascii	"reg32\000"
  4466      3200
  4467              	.LASF72:
- 4468 0686 736E7254 		.ascii	"snrTestScanCounter\000"
+ 4468 0680 736E7254 		.ascii	"snrTestScanCounter\000"
  4468      65737453 
  4468      63616E43 
  4468      6F756E74 
  4468      657200
  4469              	.LASF57:
- 4470 0699 636F6E66 		.ascii	"configId\000"
+ 4470 0693 636F6E66 		.ascii	"configId\000"
  4470      69674964 
  4470      00
  4471              	.LASF87:
- 4472 06a2 70747232 		.ascii	"ptr2SnsRam\000"
+ 4472 069c 70747232 		.ascii	"ptr2SnsRam\000"
  4472      536E7352 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 137
-
-
  4472      616D00
  4473              	.LASF121:
- 4474 06ad 6B65795F 		.ascii	"key_touch_CalibrateWidget\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 137
+
+
+ 4474 06a7 6B65795F 		.ascii	"key_touch_CalibrateWidget\000"
  4474      746F7563 
  4474      685F4361 
  4474      6C696272 
  4474      61746557 
  4475              	.LASF64:
- 4476 06c7 736E7353 		.ascii	"snsStatus\000"
+ 4476 06c1 736E7353 		.ascii	"snsStatus\000"
  4476      74617475 
  4476      7300
  4477              	.LASF112:
- 4478 06d1 706F7374 		.ascii	"postScanStatus\000"
+ 4478 06cb 706F7374 		.ascii	"postScanStatus\000"
  4478      5363616E 
  4478      53746174 
  4478      757300
  4479              	.LASF33:
- 4480 06e0 736E7343 		.ascii	"snsClkSource\000"
+ 4480 06da 736E7343 		.ascii	"snsClkSource\000"
  4480      6C6B536F 
  4480      75726365 
  4480      00
  4481              	.LASF23:
- 4482 06ed 6B65795F 		.ascii	"key_touch_SENSE_METHOD_BIST_E\000"
+ 4482 06e7 6B65795F 		.ascii	"key_touch_SENSE_METHOD_BIST_E\000"
  4482      746F7563 
  4482      685F5345 
  4482      4E53455F 
  4482      4D455448 
  4483              	.LASF154:
- 4484 070b 6B65795F 		.ascii	"key_touch_CSDDisconnectSns\000"
+ 4484 0705 6B65795F 		.ascii	"key_touch_CSDDisconnectSns\000"
  4484      746F7563 
  4484      685F4353 
  4484      44446973 
  4484      636F6E6E 
  4485              	.LASF2:
- 4486 0726 73686F72 		.ascii	"short int\000"
+ 4486 0720 73686F72 		.ascii	"short int\000"
  4486      7420696E 
  4486      7400
  4487              	.LASF18:
- 4488 0730 6B65795F 		.ascii	"key_touch_THRESHOLD_TYPE\000"
+ 4488 072a 6B65795F 		.ascii	"key_touch_THRESHOLD_TYPE\000"
  4488      746F7563 
  4488      685F5448 
  4488      52455348 
  4488      4F4C445F 
  4489              	.LASF4:
- 4490 0749 6C6F6E67 		.ascii	"long int\000"
+ 4490 0743 6C6F6E67 		.ascii	"long int\000"
  4490      20696E74 
  4490      00
  4491              	.LASF152:
- 4492 0752 6B65795F 		.ascii	"key_touch_CSDConnectSns\000"
+ 4492 074c 6B65795F 		.ascii	"key_touch_CSDConnectSns\000"
  4492      746F7563 
  4492      685F4353 
  4492      44436F6E 
  4492      6E656374 
  4493              	.LASF158:
- 4494 076a 6B65795F 		.ascii	"key_touch_SsCSDInitialize\000"
+ 4494 0764 6B65795F 		.ascii	"key_touch_SsCSDInitialize\000"
  4494      746F7563 
  4494      685F5373 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 138
-
-
  4494      43534449 
  4494      6E697469 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 138
+
+
  4495              	.LASF62:
- 4496 0784 77646774 		.ascii	"wdgtEnable\000"
+ 4496 077e 77646774 		.ascii	"wdgtEnable\000"
  4496      456E6162 
  4496      6C6500
  4497              	.LASF52:
- 4498 078f 64696666 		.ascii	"diff\000"
+ 4498 0789 64696666 		.ascii	"diff\000"
  4498      00
  4499              	.LASF59:
- 4500 0794 74756E65 		.ascii	"tunerCmd\000"
+ 4500 078e 74756E65 		.ascii	"tunerCmd\000"
  4500      72436D64 
  4500      00
  4501              	.LASF78:
- 4502 079d 70735074 		.ascii	"psPtr\000"
+ 4502 0797 70735074 		.ascii	"psPtr\000"
  4502      7200
  4503              	.LASF37:
- 4504 07a3 62757474 		.ascii	"button0\000"
+ 4504 079d 62757474 		.ascii	"button0\000"
  4504      6F6E3000 
  4505              	.LASF38:
- 4506 07ab 62757474 		.ascii	"button1\000"
+ 4506 07a5 62757474 		.ascii	"button1\000"
  4506      6F6E3100 
  4507              	.LASF39:
- 4508 07b3 62757474 		.ascii	"button2\000"
+ 4508 07ad 62757474 		.ascii	"button2\000"
  4508      6F6E3200 
  4509              	.LASF40:
- 4510 07bb 62757474 		.ascii	"button3\000"
+ 4510 07b5 62757474 		.ascii	"button3\000"
  4510      6F6E3300 
  4511              	.LASF41:
- 4512 07c3 62757474 		.ascii	"button4\000"
+ 4512 07bd 62757474 		.ascii	"button4\000"
  4512      6F6E3400 
  4513              	.LASF42:
- 4514 07cb 62757474 		.ascii	"button5\000"
+ 4514 07c5 62757474 		.ascii	"button5\000"
  4514      6F6E3500 
  4515              	.LASF43:
- 4516 07d3 62757474 		.ascii	"button6\000"
+ 4516 07cd 62757474 		.ascii	"button6\000"
  4516      6F6E3600 
  4517              	.LASF44:
- 4518 07db 62757474 		.ascii	"button7\000"
+ 4518 07d5 62757474 		.ascii	"button7\000"
  4518      6F6E3700 
  4519              	.LASF45:
- 4520 07e3 62757474 		.ascii	"button8\000"
+ 4520 07dd 62757474 		.ascii	"button8\000"
  4520      6F6E3800 
  4521              	.LASF46:
- 4522 07eb 62757474 		.ascii	"button9\000"
+ 4522 07e5 62757474 		.ascii	"button9\000"
  4522      6F6E3900 
  4523              	.LASF63:
- 4524 07f3 77646774 		.ascii	"wdgtStatus\000"
+ 4524 07ed 77646774 		.ascii	"wdgtStatus\000"
  4524      53746174 
  4524      757300
  4525              	.LASF97:
- 4526 07fe 6B65795F 		.ascii	"key_touch_SetupWidget\000"
+ 4526 07f8 6B65795F 		.ascii	"key_touch_SetupWidget\000"
  4526      746F7563 
  4526      685F5365 
  4526      74757057 
  4526      69646765 
  4527              	.LASF129:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 139
-
-
- 4528 0814 70727353 		.ascii	"prsSize\000"
+ 4528 080e 70727353 		.ascii	"prsSize\000"
  4528      697A6500 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 139
+
+
  4529              	.LASF34:
- 4530 081c 73697A65 		.ascii	"sizetype\000"
+ 4530 0816 73697A65 		.ascii	"sizetype\000"
  4530      74797065 
  4530      00
  4531              	.LASF82:
- 4532 0825 64725368 		.ascii	"drShift\000"
+ 4532 081f 64725368 		.ascii	"drShift\000"
  4532      69667400 
  4533              	.LASF5:
- 4534 082d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4534 0827 6C6F6E67 		.ascii	"long unsigned int\000"
  4534      20756E73 
  4534      69676E65 
  4534      6420696E 
  4534      7400
  4535              	.LASF126:
- 4536 083f 72657456 		.ascii	"retVal\000"
+ 4536 0839 72657456 		.ascii	"retVal\000"
  4536      616C00
  4537              	.LASF114:
- 4538 0846 61646472 		.ascii	"address\000"
+ 4538 0840 61646472 		.ascii	"address\000"
  4538      65737300 
  4539              	.LASF32:
- 4540 084e 69646163 		.ascii	"idacMod\000"
+ 4540 0848 69646163 		.ascii	"idacMod\000"
  4540      4D6F6400 
  4541              	.LASF89:
- 4542 0856 70747232 		.ascii	"ptr2DebounceArr\000"
+ 4542 0850 70747232 		.ascii	"ptr2DebounceArr\000"
  4542      4465626F 
  4542      756E6365 
  4542      41727200 
  4543              	.LASF153:
- 4544 0866 6B65795F 		.ascii	"key_touch_ISR_StartEx\000"
+ 4544 0860 6B65795F 		.ascii	"key_touch_ISR_StartEx\000"
  4544      746F7563 
  4544      685F4953 
  4544      525F5374 
  4544      61727445 
  4545              	.LASF25:
- 4546 087c 66696E67 		.ascii	"fingerTh\000"
+ 4546 0876 66696E67 		.ascii	"fingerTh\000"
  4546      65725468 
  4546      00
  4547              	.LASF51:
- 4548 0885 62736C6E 		.ascii	"bslnExt\000"
+ 4548 087f 62736C6E 		.ascii	"bslnExt\000"
  4548      45787400 
  4549              	.LASF15:
- 4550 088d 63797374 		.ascii	"cystatus\000"
+ 4550 0887 63797374 		.ascii	"cystatus\000"
  4550      61747573 
  4550      00
  4551              	.LASF1:
- 4552 0896 756E7369 		.ascii	"unsigned char\000"
+ 4552 0890 756E7369 		.ascii	"unsigned char\000"
  4552      676E6564 
  4552      20636861 
  4552      7200
  4553              	.LASF90:
- 4554 08a4 73746174 		.ascii	"staticConfig\000"
+ 4554 089e 73746174 		.ascii	"staticConfig\000"
  4554      6963436F 
  4554      6E666967 
  4554      00
  4555              	.LASF98:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 140
-
-
- 4556 08b1 6B65795F 		.ascii	"key_touch_Scan\000"
+ 4556 08ab 6B65795F 		.ascii	"key_touch_Scan\000"
  4556      746F7563 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 140
+
+
  4556      685F5363 
  4556      616E00
  4557              	.LASF86:
- 4558 08c0 70747232 		.ascii	"ptr2WdgtRam\000"
+ 4558 08ba 70747232 		.ascii	"ptr2WdgtRam\000"
  4558      57646774 
  4558      52616D00 
  4559              	.LASF113:
- 4560 08cc 6B65795F 		.ascii	"key_touch_SsIsrInitialize\000"
+ 4560 08c6 6B65795F 		.ascii	"key_touch_SsIsrInitialize\000"
  4560      746F7563 
  4560      685F5373 
  4560      49737249 
  4560      6E697469 
  4561              	.LASF144:
- 4562 08e6 6B65795F 		.ascii	"key_touch_scanFreqIndex\000"
+ 4562 08e0 6B65795F 		.ascii	"key_touch_scanFreqIndex\000"
  4562      746F7563 
  4562      685F7363 
  4562      616E4672 
  4562      6571496E 
  4563              	.LASF110:
- 4564 08fe 6B65795F 		.ascii	"key_touch_SetPinState\000"
+ 4564 08f8 6B65795F 		.ascii	"key_touch_SetPinState\000"
  4564      746F7563 
  4564      685F5365 
  4564      7450696E 
  4564      53746174 
  4565              	.LASF117:
- 4566 0914 6B65795F 		.ascii	"key_touch_SsSetSnsClockDivider\000"
+ 4566 090e 6B65795F 		.ascii	"key_touch_SsSetSnsClockDivider\000"
  4566      746F7563 
  4566      685F5373 
  4566      53657453 
  4566      6E73436C 
  4567              	.LASF104:
- 4568 0933 73746174 		.ascii	"state\000"
+ 4568 092d 73746174 		.ascii	"state\000"
  4568      6500
  4569              	.LASF124:
- 4570 0939 6B65795F 		.ascii	"key_touch_SsClearCSDSensors\000"
+ 4570 0933 6B65795F 		.ascii	"key_touch_SsClearCSDSensors\000"
  4570      746F7563 
  4570      685F5373 
  4570      436C6561 
  4570      72435344 
  4571              	.LASF35:
- 4572 0955 6B65795F 		.ascii	"key_touch_RAM_WD_BASE_STRUCT\000"
+ 4572 094f 6B65795F 		.ascii	"key_touch_RAM_WD_BASE_STRUCT\000"
  4572      746F7563 
  4572      685F5241 
  4572      4D5F5744 
  4572      5F424153 
  4573              	.LASF56:
- 4574 0972 6B65795F 		.ascii	"key_touch_RAM_SNS_LIST_STRUCT\000"
+ 4574 096c 6B65795F 		.ascii	"key_touch_RAM_SNS_LIST_STRUCT\000"
  4574      746F7563 
  4574      685F5241 
  4574      4D5F534E 
  4574      535F4C49 
  4575              	.LASF79:
- 4576 0990 6873696F 		.ascii	"hsiomMask\000"
+ 4576 098a 6873696F 		.ascii	"hsiomMask\000"
  4576      6D4D6173 
  4576      6B00
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 141
-
-
  4577              	.LASF105:
- 4578 099a 63757253 		.ascii	"curSnsIOPtr\000"
+ 4578 0994 63757253 		.ascii	"curSnsIOPtr\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 141
+
+
  4578      6E73494F 
  4578      50747200 
  4579              	.LASF118:
- 4580 09a6 736E7343 		.ascii	"snsClk\000"
+ 4580 09a0 736E7343 		.ascii	"snsClk\000"
  4580      6C6B00
  4581              	.LASF164:
- 4582 09ad 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 4582 09a7 4379456E 		.ascii	"CyEnterCriticalSection\000"
  4582      74657243 
  4582      72697469 
  4582      63616C53 
  4582      65637469 
  4583              	.LASF0:
- 4584 09c4 7369676E 		.ascii	"signed char\000"
+ 4584 09be 7369676E 		.ascii	"signed char\000"
  4584      65642063 
  4584      68617200 
  4585              	.LASF50:
- 4586 09d0 62736C6E 		.ascii	"bsln\000"
+ 4586 09ca 62736C6E 		.ascii	"bsln\000"
  4586      00
  4587              	.LASF3:
- 4588 09d5 73686F72 		.ascii	"short unsigned int\000"
+ 4588 09cf 73686F72 		.ascii	"short unsigned int\000"
  4588      7420756E 
  4588      7369676E 
  4588      65642069 
  4588      6E7400
  4589              	.LASF85:
- 4590 09e8 70747232 		.ascii	"ptr2SnsFlash\000"
+ 4590 09e2 70747232 		.ascii	"ptr2SnsFlash\000"
  4590      536E7346 
  4590      6C617368 
  4590      00
  4591              	.LASF137:
- 4592 09f5 6C667372 		.ascii	"lfsrDither\000"
+ 4592 09ef 6C667372 		.ascii	"lfsrDither\000"
  4592      44697468 
  4592      657200
  4593              	.LASF119:
- 4594 0a00 6E657752 		.ascii	"newRegValue\000"
+ 4594 09fa 6E657752 		.ascii	"newRegValue\000"
  4594      65675661 
  4594      6C756500 
  4595              	.LASF9:
- 4596 0a0c 75696E74 		.ascii	"uint8\000"
+ 4596 0a06 75696E74 		.ascii	"uint8\000"
  4596      3800
  4597              	.LASF13:
- 4598 0a12 646F7562 		.ascii	"double\000"
+ 4598 0a0c 646F7562 		.ascii	"double\000"
  4598      6C6500
  4599              	.LASF53:
- 4600 0a19 6E656742 		.ascii	"negBslnRstCnt\000"
+ 4600 0a13 6E656742 		.ascii	"negBslnRstCnt\000"
  4600      736C6E52 
  4600      7374436E 
  4600      7400
  4601              	.LASF142:
- 4602 0a27 6B65795F 		.ascii	"key_touch_dsRam\000"
+ 4602 0a21 6B65795F 		.ascii	"key_touch_dsRam\000"
  4602      746F7563 
  4602      685F6473 
  4602      52616D00 
  4603              	.LASF162:
- 4604 0a37 6B65795F 		.ascii	"key_touch_IsBusy\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccPYRpEO.s 			page 142
-
-
+ 4604 0a31 6B65795F 		.ascii	"key_touch_IsBusy\000"
  4604      746F7563 
  4604      685F4973 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccSm96aT.s 			page 142
+
+
  4604      42757379 
  4604      00
  4605              	.LASF128:
- 4606 0a48 736E7343 		.ascii	"snsClkDivider\000"
+ 4606 0a42 736E7343 		.ascii	"snsClkDivider\000"
  4606      6C6B4469 
  4606      76696465 
  4606      7200
  4607              	.LASF143:
- 4608 0a56 6B65795F 		.ascii	"key_touch_dsFlash\000"
+ 4608 0a50 6B65795F 		.ascii	"key_touch_dsFlash\000"
  4608      746F7563 
  4608      685F6473 
  4608      466C6173 
  4608      6800
  4609              	.LASF130:
- 4610 0a68 6D6F6443 		.ascii	"modClkDivider\000"
+ 4610 0a62 6D6F6443 		.ascii	"modClkDivider\000"
  4610      6C6B4469 
  4610      76696465 
  4610      7200
  4611              	.LASF58:
- 4612 0a76 64657669 		.ascii	"deviceId\000"
+ 4612 0a70 64657669 		.ascii	"deviceId\000"
  4612      63654964 
  4612      00
  4613              	.LASF163:
- 4614 0a7f 6B65795F 		.ascii	"key_touch_SsSetWidgetSenseClkSrc\000"
+ 4614 0a79 6B65795F 		.ascii	"key_touch_SsSetWidgetSenseClkSrc\000"
  4614      746F7563 
  4614      685F5373 
  4614      53657457 
  4614      69646765 
  4615              	.LASF99:
- 4616 0aa0 77696467 		.ascii	"widgetStatus\000"
+ 4616 0a9a 77696467 		.ascii	"widgetStatus\000"
  4616      65745374 
  4616      61747573 
  4616      00
  4617              	.LASF47:
- 4618 0aad 62757474 		.ascii	"button10\000"
+ 4618 0aa7 62757474 		.ascii	"button10\000"
  4618      6F6E3130 
  4618      00
  4619              	.LASF48:
- 4620 0ab6 62757474 		.ascii	"button11\000"
+ 4620 0ab0 62757474 		.ascii	"button11\000"
  4620      6F6E3131 
  4620      00
  4621              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

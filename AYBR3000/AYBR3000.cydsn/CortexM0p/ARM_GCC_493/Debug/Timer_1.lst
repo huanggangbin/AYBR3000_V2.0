@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
   30:Generated_Source\PSoC4/Timer_1.c **** *
   31:Generated_Source\PSoC4/Timer_1.c **** * Parameters:
   32:Generated_Source\PSoC4/Timer_1.c **** *  None
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 2
 
 
   33:Generated_Source\PSoC4/Timer_1.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
   87:Generated_Source\PSoC4/Timer_1.c **** 
   88:Generated_Source\PSoC4/Timer_1.c ****     #if (Timer_1__PWM_SEL == Timer_1_CONFIG)
   89:Generated_Source\PSoC4/Timer_1.c ****         Timer_1_CONTROL_REG = Timer_1_CTRL_PWM_BASE_CONFIG;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 3
 
 
   90:Generated_Source\PSoC4/Timer_1.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  144:Generated_Source\PSoC4/Timer_1.c **** 
  145:Generated_Source\PSoC4/Timer_1.c ****         /* Set other values from customizer */
  146:Generated_Source\PSoC4/Timer_1.c ****         Timer_1_WritePeriod(Timer_1_PWM_PERIOD_VALUE );
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 4
 
 
  147:Generated_Source\PSoC4/Timer_1.c ****         Timer_1_WriteCompare(Timer_1_PWM_COMPARE_VALUE);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  201:Generated_Source\PSoC4/Timer_1.c ****         #endif /* (0u != Timer_1_QUAD_AUTO_START) */
  202:Generated_Source\PSoC4/Timer_1.c ****     #endif  /* (Timer_1__QUAD == Timer_1_CONFIG) */
  203:Generated_Source\PSoC4/Timer_1.c **** }
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 5
 
 
  204:Generated_Source\PSoC4/Timer_1.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
   26              		.loc 1 257 0
   27              		.cfi_startproc
   28 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 6
 
 
   29              		.cfi_def_cfa_offset 8
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  279:Generated_Source\PSoC4/Timer_1.c **** *   Values:
  280:Generated_Source\PSoC4/Timer_1.c **** *   - Timer_1_MODE_TIMER_COMPARE - Timer / Counter with
  281:Generated_Source\PSoC4/Timer_1.c **** *                                                 compare capability
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 7
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 7
 
 
  282:Generated_Source\PSoC4/Timer_1.c **** *         - Timer_1_MODE_TIMER_CAPTURE - Timer / Counter with
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
   94 0024 FFFFFFF8 		.word	-117440513
   95              		.cfi_endproc
   96              	.LFE5:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 8
 
 
   97              		.size	Timer_1_SetMode, .-Timer_1_SetMode
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  122 0010 1A60     		str	r2, [r3]
  333:Generated_Source\PSoC4/Timer_1.c ****     Timer_1_CONTROL_REG |= qdMode;
  123              		.loc 1 333 0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 9
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 9
 
 
  124 0012 1A68     		ldr	r2, [r3]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  362:Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  363:Generated_Source\PSoC4/Timer_1.c **** void Timer_1_SetPrescaler(uint32 prescaler)
  364:Generated_Source\PSoC4/Timer_1.c **** {
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 10
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 10
 
 
  150              		.loc 1 364 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  375:Generated_Source\PSoC4/Timer_1.c **** 
  376:Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
  377:Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_SetOneShot
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 11
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 11
 
 
  378:Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  220 001e FFF7FEFF 		bl	CyExitCriticalSection
  221              	.LVL17:
  406:Generated_Source\PSoC4/Timer_1.c **** }
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 12
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 12
 
 
  222              		.loc 1 406 0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  442:Generated_Source\PSoC4/Timer_1.c **** *     - PWM_MODE_ASYM       - Setting for asymmetric PWM.  Should be combined
  443:Generated_Source\PSoC4/Timer_1.c **** *                             with up/down 1 mode
  444:Generated_Source\PSoC4/Timer_1.c **** *
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 13
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 13
 
 
  445:Generated_Source\PSoC4/Timer_1.c **** * Return:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  472:Generated_Source\PSoC4/Timer_1.c **** *  (Level sensitive signal).
  473:Generated_Source\PSoC4/Timer_1.c **** 
  474:Generated_Source\PSoC4/Timer_1.c **** *
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 14
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 14
 
 
  475:Generated_Source\PSoC4/Timer_1.c **** * Parameters:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  300              		.align	2
  301              	.L20:
  302 0024 00010640 		.word	1074135296
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 15
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 15
 
 
  303              		.cfi_endproc
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  328 000c 0821     		mov	r1, #8
  329 000e 8A43     		bic	r2, r1
  330 0010 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 16
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 16
 
 
  526:Generated_Source\PSoC4/Timer_1.c ****     Timer_1_CONTROL_REG |= ((uint32)((stopOnKillEnable & Timer_1_1BIT_MASK)  <<
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  551:Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
  552:Generated_Source\PSoC4/Timer_1.c **** void Timer_1_SetPWMDeadTime(uint32 deadTime)
  553:Generated_Source\PSoC4/Timer_1.c **** {
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 17
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 17
 
 
  360              		.loc 1 553 0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  404              	Timer_1_SetPWMInvert:
  405              	.LFB13:
  564:Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 18
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 18
 
 
  565:Generated_Source\PSoC4/Timer_1.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  430              	.LVL35:
  595:Generated_Source\PSoC4/Timer_1.c **** }
  431              		.loc 1 595 0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 19
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 19
 
 
  432              		@ sp needed
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  463 000a C046     		.align	2
  464              	.L32:
  465 000c 08010640 		.word	1074135304
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 20
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 20
 
 
  466              		.cfi_endproc
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  500              	Timer_1_SetCounterMode:
  501              	.LFB16:
  639:Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 21
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 21
 
 
  640:Generated_Source\PSoC4/Timer_1.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  672:Generated_Source\PSoC4/Timer_1.c **** 
  673:Generated_Source\PSoC4/Timer_1.c ****     CyExitCriticalSection(enableInterrupts);
  524              		.loc 1 673 0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 22
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 22
 
 
  525 0018 FFF7FEFF 		bl	CyExitCriticalSection
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  556              		@ sp needed
  557 0008 7047     		bx	lr
  558              	.L42:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 23
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 23
 
 
  559 000a C046     		.align	2
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  593              		.code	16
  594              		.thumb_func
  595              		.type	Timer_1_SetCompareSwap, %function
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 24
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 24
 
 
  596              	Timer_1_SetCompareSwap:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  620 0018 1C60     		str	r4, [r3]
  747:Generated_Source\PSoC4/Timer_1.c **** 
  748:Generated_Source\PSoC4/Timer_1.c ****     CyExitCriticalSection(enableInterrupts);
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 25
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 25
 
 
  621              		.loc 1 748 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  654              	.L51:
  655 000a C046     		.align	2
  656              	.L50:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 26
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 26
 
 
  657 000c 18010640 		.word	1074135320
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  691              		.type	Timer_1_SetPeriodSwap, %function
  692              	Timer_1_SetPeriodSwap:
  693              	.LFB22:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 27
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 27
 
 
  790:Generated_Source\PSoC4/Timer_1.c **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  718 001c 1C60     		str	r4, [r3]
  820:Generated_Source\PSoC4/Timer_1.c ****                                                             Timer_1_RELOAD_PERIOD_SHIFT));
  821:Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 28
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 28
 
 
  822:Generated_Source\PSoC4/Timer_1.c ****     CyExitCriticalSection(enableInterrupts);
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  852:Generated_Source\PSoC4/Timer_1.c ****         uint32 currentMode;
  853:Generated_Source\PSoC4/Timer_1.c ****     #endif /* (Timer_1_CY_TCPWM_4000) */
  854:Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 29
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 29
 
 
  855:Generated_Source\PSoC4/Timer_1.c ****     #if (Timer_1_CY_TCPWM_4000)
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  885:Generated_Source\PSoC4/Timer_1.c **** *  Up counting mode (except 0xFFFFu), and the decremented value in the 
  886:Generated_Source\PSoC4/Timer_1.c **** *  Down counting mode (except 0x0u).
  887:Generated_Source\PSoC4/Timer_1.c **** *
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 30
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 30
 
 
  888:Generated_Source\PSoC4/Timer_1.c **** * Parameters:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  780 000c 0C010640 		.word	1074135308
  781              		.cfi_endproc
  782              	.LFE24:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 31
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 31
 
 
  783              		.size	Timer_1_ReadCompare, .-Timer_1_ReadCompare
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  971:Generated_Source\PSoC4/Timer_1.c ****         else
  972:Generated_Source\PSoC4/Timer_1.c ****         {
  973:Generated_Source\PSoC4/Timer_1.c ****         }
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 32
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 32
 
 
  974:Generated_Source\PSoC4/Timer_1.c ****     #endif /* (Timer_1_CY_TCPWM_4000) */
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
 1002:Generated_Source\PSoC4/Timer_1.c ****     #if (Timer_1_CY_TCPWM_4000)
 1003:Generated_Source\PSoC4/Timer_1.c ****         uint32 currentMode;
 1004:Generated_Source\PSoC4/Timer_1.c ****         uint32 regVal;
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 33
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 33
 
 
 1005:Generated_Source\PSoC4/Timer_1.c ****     #endif /* (Timer_1_CY_TCPWM_4000) */
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
 1036:Generated_Source\PSoC4/Timer_1.c **** *  Reads the captured counter value. This API is applicable only for
 1037:Generated_Source\PSoC4/Timer_1.c **** *  Timer/Counter with the capture mode and Quadrature Decoder modes.
 1038:Generated_Source\PSoC4/Timer_1.c **** *
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 34
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 34
 
 
 1039:Generated_Source\PSoC4/Timer_1.c **** * Parameters:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
 1068:Generated_Source\PSoC4/Timer_1.c **** {
  869              		.loc 1 1068 0
  870              		.cfi_startproc
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 35
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 35
 
 
 1069:Generated_Source\PSoC4/Timer_1.c ****     return (Timer_1_COMP_CAP_BUF_REG & Timer_1_16BIT_MASK);
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  898              		.cfi_def_cfa_offset 8
  899              		.cfi_offset 4, -8
  900              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 36
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 36
 
 
  901 0002 041C     		mov	r4, r0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
 1114:Generated_Source\PSoC4/Timer_1.c **** *
 1115:Generated_Source\PSoC4/Timer_1.c **** * Parameters:
 1116:Generated_Source\PSoC4/Timer_1.c **** *  triggerMode: Enumerated trigger mode value
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 37
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 37
 
 
 1117:Generated_Source\PSoC4/Timer_1.c **** *   Values:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  970              		.cfi_endproc
  971              	.LFE30:
  972              		.size	Timer_1_SetReloadMode, .-Timer_1_SetReloadMode
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 38
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 38
 
 
  973              		.section	.text.Timer_1_SetStartMode,"ax",%progbits
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
 1167:Generated_Source\PSoC4/Timer_1.c ****     Timer_1_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Timer_1_START_SHIFT));
  998              		.loc 1 1167 0
  999 0012 1A68     		ldr	r2, [r3]
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 39
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 39
 
 
  1000 0014 2402     		lsl	r4, r4, #8
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1028              	.LVL70:
  1029 0000 10B5     		push	{r4, lr}
  1030              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 40
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 40
 
 
  1031              		.cfi_offset 4, -8
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
 1209:Generated_Source\PSoC4/Timer_1.c **** * Summary:
 1210:Generated_Source\PSoC4/Timer_1.c **** *  Sets the count trigger mode. For Quadrature Decoder mode this is the phiA
 1211:Generated_Source\PSoC4/Timer_1.c **** *  input.
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 41
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 41
 
 
 1212:Generated_Source\PSoC4/Timer_1.c **** *
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1100              		.align	2
  1101              	.L89:
  1102 0020 24010640 		.word	1074135332
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 42
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 42
 
 
  1103              		.cfi_endproc
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
 1268:Generated_Source\PSoC4/Timer_1.c **** 
 1269:Generated_Source\PSoC4/Timer_1.c ****     enableInterrupts = CyEnterCriticalSection();
  1125              		.loc 1 1269 0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 43
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 43
 
 
  1126 0006 FFF7FEFF 		bl	CyEnterCriticalSection
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1171 0010 FFF7FEFF 		bl	CyExitCriticalSection
  1172              	.LVL84:
  194:Generated_Source\PSoC4/Timer_1.c ****         #endif /* (0u == Timer_1_TC_START_SIGNAL_PRESENT) */
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 44
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 44
 
 
  1173              		.loc 1 194 0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1203 0006 1B68     		ldr	r3, [r3]
  1204 0008 0120     		mov	r0, #1
  1205 000a 1840     		and	r0, r3
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 45
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 45
 
 
 1296:Generated_Source\PSoC4/Timer_1.c ****     return ((Timer_1_STATUS_REG >> Timer_1_RUNNING_STATUS_SHIFT) |
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1234 0004 7047     		bx	lr
  1235              	.L102:
  1236 0006 C046     		.align	2
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 46
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 46
 
 
  1237              	.L101:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1284 0028 00010640 		.word	1074135296
  1285 002c 24010640 		.word	1074135332
  1286              		.cfi_endproc
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 47
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 47
 
 
  1287              	.LFE1:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1335              	Timer_1_GetInterruptSourceMasked:
  1336              	.LFB37:
 1323:Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 48
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 48
 
 
 1324:Generated_Source\PSoC4/Timer_1.c **** 
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
 1355:Generated_Source\PSoC4/Timer_1.c **** * Parameters:
 1356:Generated_Source\PSoC4/Timer_1.c **** *  None
 1357:Generated_Source\PSoC4/Timer_1.c **** *
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 49
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 49
 
 
 1358:Generated_Source\PSoC4/Timer_1.c **** * Return:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
 1389:Generated_Source\PSoC4/Timer_1.c **** {
  1383              		.loc 1 1389 0
  1384              		.cfi_startproc
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 50
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 50
 
 
  1385              	.LVL92:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1414              		@ sp needed
  1415 0004 7047     		bx	lr
  1416              	.L121:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 51
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 51
 
 
  1417 0006 C046     		.align	2
@@ -3025,48 +3025,48 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1438 0006 00000000 		.4byte	.Ldebug_abbrev0
  1439 000a 04       		.byte	0x4
  1440 000b 01       		.uleb128 0x1
- 1441 000c 65050000 		.4byte	.LASF76
+ 1441 000c 5B050000 		.4byte	.LASF76
  1442 0010 01       		.byte	0x1
- 1443 0011 CB010000 		.4byte	.LASF77
- 1444 0015 06000000 		.4byte	.LASF78
+ 1443 0011 C1010000 		.4byte	.LASF77
+ 1444 0015 00000000 		.4byte	.LASF78
  1445 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1446 001d 00000000 		.4byte	0
  1447 0021 00000000 		.4byte	.Ldebug_line0
  1448 0025 02       		.uleb128 0x2
  1449 0026 01       		.byte	0x1
  1450 0027 06       		.byte	0x6
- 1451 0028 C4000000 		.4byte	.LASF0
+ 1451 0028 B4000000 		.4byte	.LASF0
  1452 002c 02       		.uleb128 0x2
  1453 002d 01       		.byte	0x1
  1454 002e 08       		.byte	0x8
- 1455 002f 1E040000 		.4byte	.LASF1
+ 1455 002f 14040000 		.4byte	.LASF1
  1456 0033 02       		.uleb128 0x2
  1457 0034 02       		.byte	0x2
  1458 0035 05       		.byte	0x5
- 1459 0036 50040000 		.4byte	.LASF2
+ 1459 0036 46040000 		.4byte	.LASF2
  1460 003a 02       		.uleb128 0x2
  1461 003b 02       		.byte	0x2
  1462 003c 07       		.byte	0x7
- 1463 003d 81020000 		.4byte	.LASF3
+ 1463 003d 77020000 		.4byte	.LASF3
  1464 0041 02       		.uleb128 0x2
  1465 0042 04       		.byte	0x4
  1466 0043 05       		.byte	0x5
- 1467 0044 FB000000 		.4byte	.LASF4
+ 1467 0044 EB000000 		.4byte	.LASF4
  1468 0048 02       		.uleb128 0x2
  1469 0049 04       		.byte	0x4
  1470 004a 07       		.byte	0x7
- 1471 004b 08020000 		.4byte	.LASF5
+ 1471 004b FE010000 		.4byte	.LASF5
  1472 004f 02       		.uleb128 0x2
  1473 0050 08       		.byte	0x8
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 52
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 52
 
 
  1474 0051 05       		.byte	0x5
- 1475 0052 B6000000 		.4byte	.LASF6
+ 1475 0052 A6000000 		.4byte	.LASF6
  1476 0056 02       		.uleb128 0x2
  1477 0057 08       		.byte	0x8
  1478 0058 07       		.byte	0x7
- 1479 0059 8B000000 		.4byte	.LASF7
+ 1479 0059 7B000000 		.4byte	.LASF7
  1480 005d 03       		.uleb128 0x3
  1481 005e 04       		.byte	0x4
  1482 005f 05       		.byte	0x5
@@ -3074,31 +3074,31 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1484 0064 02       		.uleb128 0x2
  1485 0065 04       		.byte	0x4
  1486 0066 07       		.byte	0x7
- 1487 0067 BE010000 		.4byte	.LASF8
+ 1487 0067 B4010000 		.4byte	.LASF8
  1488 006b 04       		.uleb128 0x4
- 1489 006c 0F010000 		.4byte	.LASF9
+ 1489 006c FF000000 		.4byte	.LASF9
  1490 0070 02       		.byte	0x2
  1491 0071 B901     		.2byte	0x1b9
  1492 0073 2C000000 		.4byte	0x2c
  1493 0077 04       		.uleb128 0x4
- 1494 0078 78010000 		.4byte	.LASF10
+ 1494 0078 68010000 		.4byte	.LASF10
  1495 007c 02       		.byte	0x2
  1496 007d BB01     		.2byte	0x1bb
  1497 007f 48000000 		.4byte	0x48
  1498 0083 02       		.uleb128 0x2
  1499 0084 04       		.byte	0x4
  1500 0085 04       		.byte	0x4
- 1501 0086 D0030000 		.4byte	.LASF11
+ 1501 0086 C6030000 		.4byte	.LASF11
  1502 008a 02       		.uleb128 0x2
  1503 008b 08       		.byte	0x8
  1504 008c 04       		.byte	0x4
- 1505 008d 15010000 		.4byte	.LASF12
+ 1505 008d 05010000 		.4byte	.LASF12
  1506 0091 02       		.uleb128 0x2
  1507 0092 01       		.byte	0x1
  1508 0093 08       		.byte	0x8
- 1509 0094 AA040000 		.4byte	.LASF13
+ 1509 0094 A0040000 		.4byte	.LASF13
  1510 0098 04       		.uleb128 0x4
- 1511 0099 24030000 		.4byte	.LASF14
+ 1511 0099 1A030000 		.4byte	.LASF14
  1512 009d 02       		.byte	0x2
  1513 009e 6502     		.2byte	0x265
  1514 00a0 A4000000 		.4byte	0xa4
@@ -3107,9 +3107,9 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1517 00a9 02       		.uleb128 0x2
  1518 00aa 04       		.byte	0x4
  1519 00ab 07       		.byte	0x7
- 1520 00ac 2A030000 		.4byte	.LASF15
+ 1520 00ac 20030000 		.4byte	.LASF15
  1521 00b0 06       		.uleb128 0x6
- 1522 00b1 48020000 		.4byte	.LASF16
+ 1522 00b1 3E020000 		.4byte	.LASF16
  1523 00b5 01       		.byte	0x1
  1524 00b6 0001     		.2byte	0x100
  1525 00b8 00000000 		.4byte	.LFB4
@@ -3118,10 +3118,10 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1528 00c1 9C       		.byte	0x9c
  1529 00c2 E9000000 		.4byte	0xe9
  1530 00c6 07       		.uleb128 0x7
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 53
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 53
 
 
- 1531 00c7 25050000 		.4byte	.LASF18
+ 1531 00c7 1B050000 		.4byte	.LASF18
  1532 00cb 01       		.byte	0x1
  1533 00cc 0201     		.2byte	0x102
  1534 00ce 6B000000 		.4byte	0x6b
@@ -3134,7 +3134,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1541 00e4 E3080000 		.4byte	0x8e3
  1542 00e8 00       		.byte	0
  1543 00e9 06       		.uleb128 0x6
- 1544 00ea EB020000 		.4byte	.LASF17
+ 1544 00ea E1020000 		.4byte	.LASF17
  1545 00ee 01       		.byte	0x1
  1546 00ef 2501     		.2byte	0x125
  1547 00f1 00000000 		.4byte	.LFB5
@@ -3143,13 +3143,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1550 00fa 9C       		.byte	0x9c
  1551 00fb 32010000 		.4byte	0x132
  1552 00ff 09       		.uleb128 0x9
- 1553 0100 AF040000 		.4byte	.LASF20
+ 1553 0100 A5040000 		.4byte	.LASF20
  1554 0104 01       		.byte	0x1
  1555 0105 2501     		.2byte	0x125
  1556 0107 77000000 		.4byte	0x77
  1557 010b 13000000 		.4byte	.LLST1
  1558 010f 07       		.uleb128 0x7
- 1559 0110 25050000 		.4byte	.LASF18
+ 1559 0110 1B050000 		.4byte	.LASF18
  1560 0114 01       		.byte	0x1
  1561 0115 2701     		.2byte	0x127
  1562 0117 6B000000 		.4byte	0x6b
@@ -3162,7 +3162,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1569 012d E3080000 		.4byte	0x8e3
  1570 0131 00       		.byte	0
  1571 0132 06       		.uleb128 0x6
- 1572 0133 4A030000 		.4byte	.LASF19
+ 1572 0133 40030000 		.4byte	.LASF19
  1573 0137 01       		.byte	0x1
  1574 0138 4601     		.2byte	0x146
  1575 013a 00000000 		.4byte	.LFB6
@@ -3171,14 +3171,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1578 0143 9C       		.byte	0x9c
  1579 0144 7B010000 		.4byte	0x17b
  1580 0148 09       		.uleb128 0x9
- 1581 0149 AF000000 		.4byte	.LASF21
+ 1581 0149 9F000000 		.4byte	.LASF21
  1582 014d 01       		.byte	0x1
  1583 014e 4601     		.2byte	0x146
  1584 0150 77000000 		.4byte	0x77
  1585 0154 52000000 		.4byte	.LLST3
  1586 0158 07       		.uleb128 0x7
- 1587 0159 25050000 		.4byte	.LASF18
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 54
+ 1587 0159 1B050000 		.4byte	.LASF18
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 54
 
 
  1588 015d 01       		.byte	0x1
@@ -3193,7 +3193,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1597 0176 E3080000 		.4byte	0x8e3
  1598 017a 00       		.byte	0
  1599 017b 06       		.uleb128 0x6
- 1600 017c 90030000 		.4byte	.LASF22
+ 1600 017c 86030000 		.4byte	.LASF22
  1601 0180 01       		.byte	0x1
  1602 0181 6B01     		.2byte	0x16b
  1603 0183 00000000 		.4byte	.LFB7
@@ -3202,13 +3202,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1606 018c 9C       		.byte	0x9c
  1607 018d C4010000 		.4byte	0x1c4
  1608 0191 09       		.uleb128 0x9
- 1609 0192 D6030000 		.4byte	.LASF23
+ 1609 0192 CC030000 		.4byte	.LASF23
  1610 0196 01       		.byte	0x1
  1611 0197 6B01     		.2byte	0x16b
  1612 0199 77000000 		.4byte	0x77
  1613 019d 91000000 		.4byte	.LLST5
  1614 01a1 07       		.uleb128 0x7
- 1615 01a2 25050000 		.4byte	.LASF18
+ 1615 01a2 1B050000 		.4byte	.LASF18
  1616 01a6 01       		.byte	0x1
  1617 01a7 6D01     		.2byte	0x16d
  1618 01a9 6B000000 		.4byte	0x6b
@@ -3221,7 +3221,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1625 01bf E3080000 		.4byte	0x8e3
  1626 01c3 00       		.byte	0
  1627 01c4 06       		.uleb128 0x6
- 1628 01c5 CA020000 		.4byte	.LASF24
+ 1628 01c5 C0020000 		.4byte	.LASF24
  1629 01c9 01       		.byte	0x1
  1630 01ca 8B01     		.2byte	0x18b
  1631 01cc 00000000 		.4byte	.LFB8
@@ -3230,15 +3230,15 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1634 01d5 9C       		.byte	0x9c
  1635 01d6 0D020000 		.4byte	0x20d
  1636 01da 09       		.uleb128 0x9
- 1637 01db DD020000 		.4byte	.LASF25
+ 1637 01db D3020000 		.4byte	.LASF25
  1638 01df 01       		.byte	0x1
  1639 01e0 8B01     		.2byte	0x18b
  1640 01e2 77000000 		.4byte	0x77
  1641 01e6 D0000000 		.4byte	.LLST7
  1642 01ea 07       		.uleb128 0x7
- 1643 01eb 25050000 		.4byte	.LASF18
+ 1643 01eb 1B050000 		.4byte	.LASF18
  1644 01ef 01       		.byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 55
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 55
 
 
  1645 01f0 8D01     		.2byte	0x18d
@@ -3252,7 +3252,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1653 0208 E3080000 		.4byte	0x8e3
  1654 020c 00       		.byte	0
  1655 020d 06       		.uleb128 0x6
- 1656 020e 08050000 		.4byte	.LASF26
+ 1656 020e FE040000 		.4byte	.LASF26
  1657 0212 01       		.byte	0x1
  1658 0213 C101     		.2byte	0x1c1
  1659 0215 00000000 		.4byte	.LFB9
@@ -3261,14 +3261,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1662 021e 9C       		.byte	0x9c
  1663 021f 34020000 		.4byte	0x234
  1664 0223 09       		.uleb128 0x9
- 1665 0224 1A020000 		.4byte	.LASF27
+ 1665 0224 10020000 		.4byte	.LASF27
  1666 0228 01       		.byte	0x1
  1667 0229 C101     		.2byte	0x1c1
  1668 022b 77000000 		.4byte	0x77
  1669 022f 0F010000 		.4byte	.LLST9
  1670 0233 00       		.byte	0
  1671 0234 06       		.uleb128 0x6
- 1672 0235 7F040000 		.4byte	.LASF28
+ 1672 0235 75040000 		.4byte	.LASF28
  1673 0239 01       		.byte	0x1
  1674 023a E501     		.2byte	0x1e5
  1675 023c 00000000 		.4byte	.LFB10
@@ -3277,13 +3277,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1678 0245 9C       		.byte	0x9c
  1679 0246 7D020000 		.4byte	0x27d
  1680 024a 09       		.uleb128 0x9
- 1681 024b 4B050000 		.4byte	.LASF29
+ 1681 024b 41050000 		.4byte	.LASF29
  1682 024f 01       		.byte	0x1
  1683 0250 E501     		.2byte	0x1e5
  1684 0252 77000000 		.4byte	0x77
  1685 0256 30010000 		.4byte	.LLST10
  1686 025a 07       		.uleb128 0x7
- 1687 025b 25050000 		.4byte	.LASF18
+ 1687 025b 1B050000 		.4byte	.LASF18
  1688 025f 01       		.byte	0x1
  1689 0260 E701     		.2byte	0x1e7
  1690 0262 6B000000 		.4byte	0x6b
@@ -3296,9 +3296,9 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1697 0278 E3080000 		.4byte	0x8e3
  1698 027c 00       		.byte	0
  1699 027d 06       		.uleb128 0x6
- 1700 027e 31010000 		.4byte	.LASF30
+ 1700 027e 21010000 		.4byte	.LASF30
  1701 0282 01       		.byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 56
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 56
 
 
  1702 0283 0702     		.2byte	0x207
@@ -3308,13 +3308,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1706 028e 9C       		.byte	0x9c
  1707 028f C6020000 		.4byte	0x2c6
  1708 0293 09       		.uleb128 0x9
- 1709 0294 2C040000 		.4byte	.LASF31
+ 1709 0294 22040000 		.4byte	.LASF31
  1710 0298 01       		.byte	0x1
  1711 0299 0702     		.2byte	0x207
  1712 029b 77000000 		.4byte	0x77
  1713 029f 6F010000 		.4byte	.LLST12
  1714 02a3 07       		.uleb128 0x7
- 1715 02a4 25050000 		.4byte	.LASF18
+ 1715 02a4 1B050000 		.4byte	.LASF18
  1716 02a8 01       		.byte	0x1
  1717 02a9 0902     		.2byte	0x209
  1718 02ab 6B000000 		.4byte	0x6b
@@ -3327,7 +3327,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1725 02c1 E3080000 		.4byte	0x8e3
  1726 02c5 00       		.byte	0
  1727 02c6 06       		.uleb128 0x6
- 1728 02c7 68040000 		.4byte	.LASF32
+ 1728 02c7 5E040000 		.4byte	.LASF32
  1729 02cb 01       		.byte	0x1
  1730 02cc 2802     		.2byte	0x228
  1731 02ce 00000000 		.4byte	.LFB12
@@ -3336,13 +3336,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1734 02d7 9C       		.byte	0x9c
  1735 02d8 0F030000 		.4byte	0x30f
  1736 02dc 09       		.uleb128 0x9
- 1737 02dd A5010000 		.4byte	.LASF33
+ 1737 02dd 9B010000 		.4byte	.LASF33
  1738 02e1 01       		.byte	0x1
  1739 02e2 2802     		.2byte	0x228
  1740 02e4 77000000 		.4byte	0x77
  1741 02e8 AE010000 		.4byte	.LLST14
  1742 02ec 07       		.uleb128 0x7
- 1743 02ed 25050000 		.4byte	.LASF18
+ 1743 02ed 1B050000 		.4byte	.LASF18
  1744 02f1 01       		.byte	0x1
  1745 02f2 2A02     		.2byte	0x22a
  1746 02f4 6B000000 		.4byte	0x6b
@@ -3355,10 +3355,10 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1753 030a E3080000 		.4byte	0x8e3
  1754 030e 00       		.byte	0
  1755 030f 06       		.uleb128 0x6
- 1756 0310 55020000 		.4byte	.LASF34
+ 1756 0310 4B020000 		.4byte	.LASF34
  1757 0314 01       		.byte	0x1
  1758 0315 4902     		.2byte	0x249
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 57
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 57
 
 
  1759 0317 00000000 		.4byte	.LFB13
@@ -3367,13 +3367,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1762 0320 9C       		.byte	0x9c
  1763 0321 58030000 		.4byte	0x358
  1764 0325 09       		.uleb128 0x9
- 1765 0326 A0010000 		.4byte	.LASF35
+ 1765 0326 96010000 		.4byte	.LASF35
  1766 032a 01       		.byte	0x1
  1767 032b 4902     		.2byte	0x249
  1768 032d 77000000 		.4byte	0x77
  1769 0331 ED010000 		.4byte	.LLST16
  1770 0335 07       		.uleb128 0x7
- 1771 0336 25050000 		.4byte	.LASF18
+ 1771 0336 1B050000 		.4byte	.LASF18
  1772 033a 01       		.byte	0x1
  1773 033b 4B02     		.2byte	0x24b
  1774 033d 6B000000 		.4byte	0x6b
@@ -3386,7 +3386,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1781 0353 E3080000 		.4byte	0x8e3
  1782 0357 00       		.byte	0
  1783 0358 06       		.uleb128 0x6
- 1784 0359 1C010000 		.4byte	.LASF36
+ 1784 0359 0C010000 		.4byte	.LASF36
  1785 035d 01       		.byte	0x1
  1786 035e 6702     		.2byte	0x267
  1787 0360 00000000 		.4byte	.LFB14
@@ -3395,14 +3395,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1790 0369 9C       		.byte	0x9c
  1791 036a 7F030000 		.4byte	0x37f
  1792 036e 09       		.uleb128 0x9
- 1793 036f 00000000 		.4byte	.LASF37
+ 1793 036f 6F010000 		.4byte	.LASF37
  1794 0373 01       		.byte	0x1
  1795 0374 6702     		.2byte	0x267
  1796 0376 77000000 		.4byte	0x77
  1797 037a 2C020000 		.4byte	.LLST18
  1798 037e 00       		.byte	0
  1799 037f 0A       		.uleb128 0xa
- 1800 0380 A5030000 		.4byte	.LASF42
+ 1800 0380 9B030000 		.4byte	.LASF42
  1801 0384 01       		.byte	0x1
  1802 0385 7B02     		.2byte	0x27b
  1803 0387 77000000 		.4byte	0x77
@@ -3411,25 +3411,25 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1806 0393 01       		.uleb128 0x1
  1807 0394 9C       		.byte	0x9c
  1808 0395 06       		.uleb128 0x6
- 1809 0396 6A020000 		.4byte	.LASF38
+ 1809 0396 60020000 		.4byte	.LASF38
  1810 039a 01       		.byte	0x1
  1811 039b 9802     		.2byte	0x298
  1812 039d 00000000 		.4byte	.LFB16
  1813 03a1 28000000 		.4byte	.LFE16-.LFB16
  1814 03a5 01       		.uleb128 0x1
  1815 03a6 9C       		.byte	0x9c
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 58
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 58
 
 
  1816 03a7 DE030000 		.4byte	0x3de
  1817 03ab 09       		.uleb128 0x9
- 1818 03ac E1040000 		.4byte	.LASF39
+ 1818 03ac D7040000 		.4byte	.LASF39
  1819 03b0 01       		.byte	0x1
  1820 03b1 9802     		.2byte	0x298
  1821 03b3 77000000 		.4byte	0x77
  1822 03b7 4D020000 		.4byte	.LLST19
  1823 03bb 07       		.uleb128 0x7
- 1824 03bc 25050000 		.4byte	.LASF18
+ 1824 03bc 1B050000 		.4byte	.LASF18
  1825 03c0 01       		.byte	0x1
  1826 03c1 9A02     		.2byte	0x29a
  1827 03c3 6B000000 		.4byte	0x6b
@@ -3442,7 +3442,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1834 03d9 E3080000 		.4byte	0x8e3
  1835 03dd 00       		.byte	0
  1836 03de 06       		.uleb128 0x6
- 1837 03df E7000000 		.4byte	.LASF40
+ 1837 03df D7000000 		.4byte	.LASF40
  1838 03e3 01       		.byte	0x1
  1839 03e4 B502     		.2byte	0x2b5
  1840 03e6 00000000 		.4byte	.LFB17
@@ -3451,14 +3451,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1843 03ef 9C       		.byte	0x9c
  1844 03f0 05040000 		.4byte	0x405
  1845 03f4 09       		.uleb128 0x9
- 1846 03f5 84000000 		.4byte	.LASF41
+ 1846 03f5 74000000 		.4byte	.LASF41
  1847 03f9 01       		.byte	0x1
  1848 03fa B502     		.2byte	0x2b5
  1849 03fc 77000000 		.4byte	0x77
  1850 0400 8C020000 		.4byte	.LLST21
  1851 0404 00       		.byte	0
  1852 0405 0A       		.uleb128 0xa
- 1853 0406 3D040000 		.4byte	.LASF43
+ 1853 0406 33040000 		.4byte	.LASF43
  1854 040a 01       		.byte	0x1
  1855 040b C902     		.2byte	0x2c9
  1856 040d 77000000 		.4byte	0x77
@@ -3467,7 +3467,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1859 0419 01       		.uleb128 0x1
  1860 041a 9C       		.byte	0x9c
  1861 041b 06       		.uleb128 0x6
- 1862 041c 6D000000 		.4byte	.LASF44
+ 1862 041c 5D000000 		.4byte	.LASF44
  1863 0420 01       		.byte	0x1
  1864 0421 E302     		.2byte	0x2e3
  1865 0423 00000000 		.4byte	.LFB19
@@ -3476,16 +3476,16 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1868 042c 9C       		.byte	0x9c
  1869 042d 64040000 		.4byte	0x464
  1870 0431 09       		.uleb128 0x9
- 1871 0432 5A050000 		.4byte	.LASF45
+ 1871 0432 50050000 		.4byte	.LASF45
  1872 0436 01       		.byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 59
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 59
 
 
  1873 0437 E302     		.2byte	0x2e3
  1874 0439 77000000 		.4byte	0x77
  1875 043d AD020000 		.4byte	.LLST22
  1876 0441 07       		.uleb128 0x7
- 1877 0442 25050000 		.4byte	.LASF18
+ 1877 0442 1B050000 		.4byte	.LASF18
  1878 0446 01       		.byte	0x1
  1879 0447 E502     		.2byte	0x2e5
  1880 0449 6B000000 		.4byte	0x6b
@@ -3498,7 +3498,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1887 045f E3080000 		.4byte	0x8e3
  1888 0463 00       		.byte	0
  1889 0464 06       		.uleb128 0x6
- 1890 0465 D0000000 		.4byte	.LASF46
+ 1890 0465 C0000000 		.4byte	.LASF46
  1891 0469 01       		.byte	0x1
  1892 046a FE02     		.2byte	0x2fe
  1893 046c 00000000 		.4byte	.LFB20
@@ -3507,14 +3507,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1896 0475 9C       		.byte	0x9c
  1897 0476 8B040000 		.4byte	0x48b
  1898 047a 09       		.uleb128 0x9
- 1899 047b 1B050000 		.4byte	.LASF47
+ 1899 047b 11050000 		.4byte	.LASF47
  1900 047f 01       		.byte	0x1
  1901 0480 FE02     		.2byte	0x2fe
  1902 0482 77000000 		.4byte	0x77
  1903 0486 EC020000 		.4byte	.LLST24
  1904 048a 00       		.byte	0
  1905 048b 0A       		.uleb128 0xa
- 1906 048c FB020000 		.4byte	.LASF48
+ 1906 048c F1020000 		.4byte	.LASF48
  1907 0490 01       		.byte	0x1
  1908 0491 1203     		.2byte	0x312
  1909 0493 77000000 		.4byte	0x77
@@ -3523,7 +3523,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1912 049f 01       		.uleb128 0x1
  1913 04a0 9C       		.byte	0x9c
  1914 04a1 06       		.uleb128 0x6
- 1915 04a2 72030000 		.4byte	.LASF49
+ 1915 04a2 68030000 		.4byte	.LASF49
  1916 04a6 01       		.byte	0x1
  1917 04a7 2C03     		.2byte	0x32c
  1918 04a9 00000000 		.4byte	.LFB22
@@ -3532,16 +3532,16 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1921 04b2 9C       		.byte	0x9c
  1922 04b3 EA040000 		.4byte	0x4ea
  1923 04b7 09       		.uleb128 0x9
- 1924 04b8 5A050000 		.4byte	.LASF45
+ 1924 04b8 50050000 		.4byte	.LASF45
  1925 04bc 01       		.byte	0x1
  1926 04bd 2C03     		.2byte	0x32c
  1927 04bf 77000000 		.4byte	0x77
  1928 04c3 0D030000 		.4byte	.LLST25
  1929 04c7 07       		.uleb128 0x7
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 60
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 60
 
 
- 1930 04c8 25050000 		.4byte	.LASF18
+ 1930 04c8 1B050000 		.4byte	.LASF18
  1931 04cc 01       		.byte	0x1
  1932 04cd 2E03     		.2byte	0x32e
  1933 04cf 6B000000 		.4byte	0x6b
@@ -3554,7 +3554,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1940 04e5 E3080000 		.4byte	0x8e3
  1941 04e9 00       		.byte	0
  1942 04ea 06       		.uleb128 0x6
- 1943 04eb 8B010000 		.4byte	.LASF50
+ 1943 04eb 81010000 		.4byte	.LASF50
  1944 04ef 01       		.byte	0x1
  1945 04f0 5103     		.2byte	0x351
  1946 04f2 00000000 		.4byte	.LFB23
@@ -3563,14 +3563,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1949 04fb 9C       		.byte	0x9c
  1950 04fc 11050000 		.4byte	0x511
  1951 0500 09       		.uleb128 0x9
- 1952 0501 88030000 		.4byte	.LASF51
+ 1952 0501 7E030000 		.4byte	.LASF51
  1953 0505 01       		.byte	0x1
  1954 0506 5103     		.2byte	0x351
  1955 0508 77000000 		.4byte	0x77
  1956 050c 4C030000 		.4byte	.LLST27
  1957 0510 00       		.byte	0
  1958 0511 0A       		.uleb128 0xa
- 1959 0512 B4040000 		.4byte	.LASF52
+ 1959 0512 AA040000 		.4byte	.LASF52
  1960 0516 01       		.byte	0x1
  1961 0517 8403     		.2byte	0x384
  1962 0519 77000000 		.4byte	0x77
@@ -3579,7 +3579,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1965 0525 01       		.uleb128 0x1
  1966 0526 9C       		.byte	0x9c
  1967 0527 06       		.uleb128 0x6
- 1968 0528 E0030000 		.4byte	.LASF53
+ 1968 0528 D6030000 		.4byte	.LASF53
  1969 052c 01       		.byte	0x1
  1970 052d BA03     		.2byte	0x3ba
  1971 052f 00000000 		.4byte	.LFB25
@@ -3588,17 +3588,17 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1974 0538 9C       		.byte	0x9c
  1975 0539 4E050000 		.4byte	0x54e
  1976 053d 09       		.uleb128 0x9
- 1977 053e 04010000 		.4byte	.LASF54
+ 1977 053e F4000000 		.4byte	.LASF54
  1978 0542 01       		.byte	0x1
  1979 0543 BA03     		.2byte	0x3ba
  1980 0545 77000000 		.4byte	0x77
  1981 0549 6D030000 		.4byte	.LLST28
  1982 054d 00       		.byte	0
  1983 054e 0A       		.uleb128 0xa
- 1984 054f 07040000 		.4byte	.LASF55
+ 1984 054f FD030000 		.4byte	.LASF55
  1985 0553 01       		.byte	0x1
  1986 0554 E803     		.2byte	0x3e8
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 61
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 61
 
 
  1987 0556 77000000 		.4byte	0x77
@@ -3607,7 +3607,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1990 0562 01       		.uleb128 0x1
  1991 0563 9C       		.byte	0x9c
  1992 0564 0A       		.uleb128 0xa
- 1993 0565 EC010000 		.4byte	.LASF56
+ 1993 0565 E2010000 		.4byte	.LASF56
  1994 0569 01       		.byte	0x1
  1995 056a 1604     		.2byte	0x416
  1996 056c 77000000 		.4byte	0x77
@@ -3616,7 +3616,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  1999 0578 01       		.uleb128 0x1
  2000 0579 9C       		.byte	0x9c
  2001 057a 0A       		.uleb128 0xa
- 2002 057b 61010000 		.4byte	.LASF57
+ 2002 057b 51010000 		.4byte	.LASF57
  2003 057f 01       		.byte	0x1
  2004 0580 2B04     		.2byte	0x42b
  2005 0582 77000000 		.4byte	0x77
@@ -3625,7 +3625,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2008 058e 01       		.uleb128 0x1
  2009 058f 9C       		.byte	0x9c
  2010 0590 06       		.uleb128 0x6
- 2011 0591 33030000 		.4byte	.LASF58
+ 2011 0591 29030000 		.4byte	.LASF58
  2012 0595 01       		.byte	0x1
  2013 0596 4604     		.2byte	0x446
  2014 0598 00000000 		.4byte	.LFB29
@@ -3634,13 +3634,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2017 05a1 9C       		.byte	0x9c
  2018 05a2 D9050000 		.4byte	0x5d9
  2019 05a6 09       		.uleb128 0x9
- 2020 05a7 7F010000 		.4byte	.LASF59
+ 2020 05a7 75010000 		.4byte	.LASF59
  2021 05ab 01       		.byte	0x1
  2022 05ac 4604     		.2byte	0x446
  2023 05ae 77000000 		.4byte	0x77
  2024 05b2 8E030000 		.4byte	.LLST29
  2025 05b6 07       		.uleb128 0x7
- 2026 05b7 25050000 		.4byte	.LASF18
+ 2026 05b7 1B050000 		.4byte	.LASF18
  2027 05bb 01       		.byte	0x1
  2028 05bc 4804     		.2byte	0x448
  2029 05be 6B000000 		.4byte	0x6b
@@ -3653,25 +3653,25 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2036 05d4 E3080000 		.4byte	0x8e3
  2037 05d8 00       		.byte	0
  2038 05d9 06       		.uleb128 0x6
- 2039 05da 5C030000 		.4byte	.LASF60
+ 2039 05da 52030000 		.4byte	.LASF60
  2040 05de 01       		.byte	0x1
  2041 05df 6704     		.2byte	0x467
  2042 05e1 00000000 		.4byte	.LFB30
  2043 05e5 24000000 		.4byte	.LFE30-.LFB30
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 62
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 62
 
 
  2044 05e9 01       		.uleb128 0x1
  2045 05ea 9C       		.byte	0x9c
  2046 05eb 22060000 		.4byte	0x622
  2047 05ef 09       		.uleb128 0x9
- 2048 05f0 7F010000 		.4byte	.LASF59
+ 2048 05f0 75010000 		.4byte	.LASF59
  2049 05f4 01       		.byte	0x1
  2050 05f5 6704     		.2byte	0x467
  2051 05f7 77000000 		.4byte	0x77
  2052 05fb CD030000 		.4byte	.LLST31
  2053 05ff 07       		.uleb128 0x7
- 2054 0600 25050000 		.4byte	.LASF18
+ 2054 0600 1B050000 		.4byte	.LASF18
  2055 0604 01       		.byte	0x1
  2056 0605 6904     		.2byte	0x469
  2057 0607 6B000000 		.4byte	0x6b
@@ -3684,7 +3684,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2064 061d E3080000 		.4byte	0x8e3
  2065 0621 00       		.byte	0
  2066 0622 06       		.uleb128 0x6
- 2067 0623 94020000 		.4byte	.LASF61
+ 2067 0623 8A020000 		.4byte	.LASF61
  2068 0627 01       		.byte	0x1
  2069 0628 8804     		.2byte	0x488
  2070 062a 00000000 		.4byte	.LFB31
@@ -3693,13 +3693,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2073 0633 9C       		.byte	0x9c
  2074 0634 6B060000 		.4byte	0x66b
  2075 0638 09       		.uleb128 0x9
- 2076 0639 7F010000 		.4byte	.LASF59
+ 2076 0639 75010000 		.4byte	.LASF59
  2077 063d 01       		.byte	0x1
  2078 063e 8804     		.2byte	0x488
  2079 0640 77000000 		.4byte	0x77
  2080 0644 0C040000 		.4byte	.LLST33
  2081 0648 07       		.uleb128 0x7
- 2082 0649 25050000 		.4byte	.LASF18
+ 2082 0649 1B050000 		.4byte	.LASF18
  2083 064d 01       		.byte	0x1
  2084 064e 8A04     		.2byte	0x48a
  2085 0650 6B000000 		.4byte	0x6b
@@ -3712,25 +3712,25 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2092 0666 E3080000 		.4byte	0x8e3
  2093 066a 00       		.byte	0
  2094 066b 06       		.uleb128 0x6
- 2095 066c 96040000 		.4byte	.LASF62
+ 2095 066c 8C040000 		.4byte	.LASF62
  2096 0670 01       		.byte	0x1
  2097 0671 A804     		.2byte	0x4a8
  2098 0673 00000000 		.4byte	.LFB32
  2099 0677 24000000 		.4byte	.LFE32-.LFB32
  2100 067b 01       		.uleb128 0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 63
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 63
 
 
  2101 067c 9C       		.byte	0x9c
  2102 067d B4060000 		.4byte	0x6b4
  2103 0681 09       		.uleb128 0x9
- 2104 0682 7F010000 		.4byte	.LASF59
+ 2104 0682 75010000 		.4byte	.LASF59
  2105 0686 01       		.byte	0x1
  2106 0687 A804     		.2byte	0x4a8
  2107 0689 77000000 		.4byte	0x77
  2108 068d 4B040000 		.4byte	.LLST35
  2109 0691 07       		.uleb128 0x7
- 2110 0692 25050000 		.4byte	.LASF18
+ 2110 0692 1B050000 		.4byte	.LASF18
  2111 0696 01       		.byte	0x1
  2112 0697 AA04     		.2byte	0x4aa
  2113 0699 6B000000 		.4byte	0x6b
@@ -3743,7 +3743,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2120 06af E3080000 		.4byte	0x8e3
  2121 06b3 00       		.byte	0
  2122 06b4 06       		.uleb128 0x6
- 2123 06b5 58000000 		.4byte	.LASF63
+ 2123 06b5 48000000 		.4byte	.LASF63
  2124 06b9 01       		.byte	0x1
  2125 06ba C904     		.2byte	0x4c9
  2126 06bc 00000000 		.4byte	.LFB33
@@ -3752,13 +3752,13 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2129 06c5 9C       		.byte	0x9c
  2130 06c6 FD060000 		.4byte	0x6fd
  2131 06ca 09       		.uleb128 0x9
- 2132 06cb 7F010000 		.4byte	.LASF59
+ 2132 06cb 75010000 		.4byte	.LASF59
  2133 06cf 01       		.byte	0x1
  2134 06d0 C904     		.2byte	0x4c9
  2135 06d2 77000000 		.4byte	0x77
  2136 06d6 8A040000 		.4byte	.LLST37
  2137 06da 07       		.uleb128 0x7
- 2138 06db 25050000 		.4byte	.LASF18
+ 2138 06db 1B050000 		.4byte	.LASF18
  2139 06df 01       		.byte	0x1
  2140 06e0 CB04     		.2byte	0x4cb
  2141 06e2 6B000000 		.4byte	0x6b
@@ -3771,31 +3771,31 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2148 06f8 E3080000 		.4byte	0x8e3
  2149 06fc 00       		.byte	0
  2150 06fd 06       		.uleb128 0x6
- 2151 06fe 4A010000 		.4byte	.LASF64
+ 2151 06fe 3A010000 		.4byte	.LASF64
  2152 0702 01       		.byte	0x1
  2153 0703 F104     		.2byte	0x4f1
  2154 0705 00000000 		.4byte	.LFB34
  2155 0709 1C000000 		.4byte	.LFE34-.LFB34
  2156 070d 01       		.uleb128 0x1
  2157 070e 9C       		.byte	0x9c
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 64
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 64
 
 
  2158 070f 56070000 		.4byte	0x756
  2159 0713 09       		.uleb128 0x9
- 2160 0714 A0010000 		.4byte	.LASF35
+ 2160 0714 96010000 		.4byte	.LASF35
  2161 0718 01       		.byte	0x1
  2162 0719 F104     		.2byte	0x4f1
  2163 071b 77000000 		.4byte	0x77
  2164 071f C9040000 		.4byte	.LLST39
  2165 0723 09       		.uleb128 0x9
- 2166 0724 00020000 		.4byte	.LASF65
+ 2166 0724 F6010000 		.4byte	.LASF65
  2167 0728 01       		.byte	0x1
  2168 0729 F104     		.2byte	0x4f1
  2169 072b 77000000 		.4byte	0x77
  2170 072f F5040000 		.4byte	.LLST40
  2171 0733 07       		.uleb128 0x7
- 2172 0734 25050000 		.4byte	.LASF18
+ 2172 0734 1B050000 		.4byte	.LASF18
  2173 0738 01       		.byte	0x1
  2174 0739 F304     		.2byte	0x4f3
  2175 073b 6B000000 		.4byte	0x6b
@@ -3808,7 +3808,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2182 0751 E3080000 		.4byte	0x8e3
  2183 0755 00       		.byte	0
  2184 0756 0B       		.uleb128 0xb
- 2185 0757 F8030000 		.4byte	.LASF66
+ 2185 0757 EE030000 		.4byte	.LASF66
  2186 075b 01       		.byte	0x1
  2187 075c B1       		.byte	0xb1
  2188 075d 00000000 		.4byte	.LFB2
@@ -3817,7 +3817,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2191 0766 9C       		.byte	0x9c
  2192 0767 A1070000 		.4byte	0x7a1
  2193 076b 0C       		.uleb128 0xc
- 2194 076c 25050000 		.4byte	.LASF18
+ 2194 076c 1B050000 		.4byte	.LASF18
  2195 0770 01       		.byte	0x1
  2196 0771 B3       		.byte	0xb3
  2197 0772 6B000000 		.4byte	0x6b
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2212 0799 48       		.byte	0x48
  2213 079a 0E       		.uleb128 0xe
  2214 079b 01       		.uleb128 0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 65
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 65
 
 
  2215 079c 50       		.byte	0x50
@@ -3847,7 +3847,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2218 079f 00       		.byte	0
  2219 07a0 00       		.byte	0
  2220 07a1 0A       		.uleb128 0xa
- 2221 07a2 11030000 		.4byte	.LASF67
+ 2221 07a2 07030000 		.4byte	.LASF67
  2222 07a6 01       		.byte	0x1
  2223 07a7 0E05     		.2byte	0x50e
  2224 07a9 77000000 		.4byte	0x77
@@ -3856,7 +3856,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2227 07b5 01       		.uleb128 0x1
  2228 07b6 9C       		.byte	0x9c
  2229 07b7 06       		.uleb128 0x6
- 2230 07b8 C8040000 		.4byte	.LASF68
+ 2230 07b8 BE040000 		.4byte	.LASF68
  2231 07bc 01       		.byte	0x1
  2232 07bd 2705     		.2byte	0x527
  2233 07bf 00000000 		.4byte	.LFB36
@@ -3865,7 +3865,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2236 07c8 9C       		.byte	0x9c
  2237 07c9 DC070000 		.4byte	0x7dc
  2238 07cd 0F       		.uleb128 0xf
- 2239 07ce 5A040000 		.4byte	.LASF69
+ 2239 07ce 50040000 		.4byte	.LASF69
  2240 07d2 01       		.byte	0x1
  2241 07d3 2705     		.2byte	0x527
  2242 07d5 77000000 		.4byte	0x77
@@ -3873,7 +3873,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2244 07da 50       		.byte	0x50
  2245 07db 00       		.byte	0
  2246 07dc 0B       		.uleb128 0xb
- 2247 07dd A2000000 		.4byte	.LASF70
+ 2247 07dd 92000000 		.4byte	.LASF70
  2248 07e1 01       		.byte	0x1
  2249 07e2 26       		.byte	0x26
  2250 07e3 00000000 		.4byte	.LFB1
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2269 0811 0E       		.uleb128 0xe
  2270 0812 01       		.uleb128 0x1
  2271 0813 50       		.byte	0x50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 66
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 66
 
 
  2272 0814 03       		.uleb128 0x3
@@ -3916,7 +3916,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2284 0827 00       		.byte	0
  2285 0828 00       		.byte	0
  2286 0829 0B       		.uleb128 0xb
- 2287 082a 23020000 		.4byte	.LASF71
+ 2287 082a 19020000 		.4byte	.LASF71
  2288 082e 01       		.byte	0x1
  2289 082f E6       		.byte	0xe6
  2290 0830 00000000 		.4byte	.LFB3
@@ -3932,7 +3932,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2300 084c 56070000 		.4byte	0x756
  2301 0850 00       		.byte	0
  2302 0851 0A       		.uleb128 0xa
- 2303 0852 A9020000 		.4byte	.LASF72
+ 2303 0852 9F020000 		.4byte	.LASF72
  2304 0856 01       		.byte	0x1
  2305 0857 3E05     		.2byte	0x53e
  2306 0859 77000000 		.4byte	0x77
@@ -3941,7 +3941,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2309 0865 01       		.uleb128 0x1
  2310 0866 9C       		.byte	0x9c
  2311 0867 0A       		.uleb128 0xa
- 2312 0868 ED040000 		.4byte	.LASF73
+ 2312 0868 E3040000 		.4byte	.LASF73
  2313 086c 01       		.byte	0x1
  2314 086d 5505     		.2byte	0x555
  2315 086f 77000000 		.4byte	0x77
@@ -3950,7 +3950,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2318 087b 01       		.uleb128 0x1
  2319 087c 9C       		.byte	0x9c
  2320 087d 06       		.uleb128 0x6
- 2321 087e B9030000 		.4byte	.LASF74
+ 2321 087e AF030000 		.4byte	.LASF74
  2322 0882 01       		.byte	0x1
  2323 0883 6C05     		.2byte	0x56c
  2324 0885 00000000 		.4byte	.LFB39
@@ -3958,11 +3958,11 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2326 088d 01       		.uleb128 0x1
  2327 088e 9C       		.byte	0x9c
  2328 088f A2080000 		.4byte	0x8a2
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 67
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 67
 
 
  2329 0893 0F       		.uleb128 0xf
- 2330 0894 5A040000 		.4byte	.LASF69
+ 2330 0894 50040000 		.4byte	.LASF69
  2331 0898 01       		.byte	0x1
  2332 0899 6C05     		.2byte	0x56c
  2333 089b 77000000 		.4byte	0x77
@@ -3970,7 +3970,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2335 08a0 50       		.byte	0x50
  2336 08a1 00       		.byte	0
  2337 08a2 06       		.uleb128 0x6
- 2338 08a3 36050000 		.4byte	.LASF75
+ 2338 08a3 2C050000 		.4byte	.LASF75
  2339 08a7 01       		.byte	0x1
  2340 08a8 8305     		.2byte	0x583
  2341 08aa 00000000 		.4byte	.LFB40
@@ -3979,7 +3979,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2344 08b3 9C       		.byte	0x9c
  2345 08b4 C7080000 		.4byte	0x8c7
  2346 08b8 0F       		.uleb128 0xf
- 2347 08b9 5A040000 		.4byte	.LASF69
+ 2347 08b9 50040000 		.4byte	.LASF69
  2348 08bd 01       		.byte	0x1
  2349 08be 8305     		.2byte	0x583
  2350 08c0 77000000 		.4byte	0x77
@@ -3987,7 +3987,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2352 08c5 50       		.byte	0x50
  2353 08c6 00       		.byte	0
  2354 08c7 11       		.uleb128 0x11
- 2355 08c8 AE010000 		.4byte	.LASF79
+ 2355 08c8 A4010000 		.4byte	.LASF79
  2356 08cc 01       		.byte	0x1
  2357 08cd 15       		.byte	0x15
  2358 08ce 6B000000 		.4byte	0x6b
@@ -3995,12 +3995,12 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2360 08d3 03       		.byte	0x3
  2361 08d4 00000000 		.4byte	Timer_1_initVar
  2362 08d8 12       		.uleb128 0x12
- 2363 08d9 31020000 		.4byte	.LASF80
+ 2363 08d9 27020000 		.4byte	.LASF80
  2364 08dd 03       		.byte	0x3
  2365 08de E5       		.byte	0xe5
  2366 08df 6B000000 		.4byte	0x6b
  2367 08e3 13       		.uleb128 0x13
- 2368 08e4 42000000 		.4byte	.LASF81
+ 2368 08e4 32000000 		.4byte	.LASF81
  2369 08e8 03       		.byte	0x3
  2370 08e9 E6       		.byte	0xe6
  2371 08ea 14       		.uleb128 0x14
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2383 0006 0B       		.uleb128 0xb
  2384 0007 03       		.uleb128 0x3
  2385 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 68
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 68
 
 
  2386 0009 1B       		.uleb128 0x1b
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2440 003f 01       		.byte	0x1
  2441 0040 3F       		.uleb128 0x3f
  2442 0041 19       		.uleb128 0x19
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 69
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 69
 
 
  2443 0042 03       		.uleb128 0x3
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2497 007b 13       		.uleb128 0x13
  2498 007c 02       		.uleb128 0x2
  2499 007d 17       		.uleb128 0x17
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 70
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 70
 
 
  2500 007e 00       		.byte	0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2554 00b6 00       		.byte	0
  2555 00b7 03       		.uleb128 0x3
  2556 00b8 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 71
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 71
 
 
  2557 00b9 3A       		.uleb128 0x3a
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2611 00f6 11       		.uleb128 0x11
  2612 00f7 34       		.uleb128 0x34
  2613 00f8 00       		.byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 72
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 72
 
 
  2614 00f9 03       		.uleb128 0x3
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2668 012f 13       		.uleb128 0x13
  2669 0130 00       		.byte	0
  2670 0131 00       		.byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 73
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 73
 
 
  2671 0132 00       		.byte	0
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2725 007e 08000000 		.4byte	.LVL7
  2726 0082 1B000000 		.4byte	.LVL9-1
  2727 0086 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 74
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 74
 
 
  2728 0088 50       		.byte	0x50
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2782 010f 00000000 		.4byte	.LVL18
  2783 0113 04000000 		.4byte	.LVL19
  2784 0117 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 75
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 75
 
 
  2785 0119 50       		.byte	0x50
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2839 019b 08000000 		.4byte	.LVL25
  2840 019f 21000000 		.4byte	.LVL27-1
  2841 01a3 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 76
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 76
 
 
  2842 01a5 50       		.byte	0x50
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2896 022c 00000000 		.4byte	.LVL36
  2897 0230 02000000 		.4byte	.LVL37
  2898 0234 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 77
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 77
 
 
  2899 0236 50       		.byte	0x50
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  2953 02b8 07000000 		.4byte	.LVL45-1
  2954 02bc 16000000 		.4byte	.LVL46
  2955 02c0 0100     		.2byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 78
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 78
 
 
  2956 02c2 54       		.byte	0x54
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  3010 0344 00000000 		.4byte	0
  3011 0348 00000000 		.4byte	0
  3012              	.LLST27:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 79
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 79
 
 
  3013 034c 00000000 		.4byte	.LVL54
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  3067 03d1 07000000 		.4byte	.LVL63-1
  3068 03d5 0100     		.2byte	0x1
  3069 03d7 50       		.byte	0x50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 80
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 80
 
 
  3070 03d8 07000000 		.4byte	.LVL63-1
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  3124 0461 16000000 		.4byte	.LVL72
  3125 0465 24000000 		.4byte	.LFE32
  3126 0469 0400     		.2byte	0x4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 81
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 81
 
 
  3127 046b F3       		.byte	0xf3
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  3181 04ed 00000000 		.4byte	0
  3182 04f1 00000000 		.4byte	0
  3183              	.LLST40:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 82
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 82
 
 
  3184 04f5 00000000 		.4byte	.LVL78
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  3238 004c 28000000 		.4byte	.LFE11-.LFB11
  3239 0050 00000000 		.4byte	.LFB12
  3240 0054 2C000000 		.4byte	.LFE12-.LFB12
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 83
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 83
 
 
  3241 0058 00000000 		.4byte	.LFB13
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  3295 0130 00000000 		.4byte	.LFB37
  3296 0134 0C000000 		.4byte	.LFE37-.LFB37
  3297 0138 00000000 		.4byte	.LFB38
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 84
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 84
 
 
  3298 013c 0C000000 		.4byte	.LFE38-.LFB38
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  3352 00b4 10000000 		.4byte	.LFE26
  3353 00b8 00000000 		.4byte	.LFB27
  3354 00bc 10000000 		.4byte	.LFE27
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 85
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 85
 
 
  3355 00c0 00000000 		.4byte	.LFB28
@@ -5082,457 +5082,454 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 1
  3391      00000201 
  3391      FB0E0D00 
  3391      01010101 
- 3392              	.LASF37:
- 3393 0000 636F756E 		.ascii	"count\000"
- 3393      7400
- 3394              	.LASF78:
- 3395 0006 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\A"
- 3395      6F63616C 
- 3395      5F73766E 
- 3395      5C415942 
- 3395      52333030 
- 3396 0034 59425233 		.ascii	"YBR3000.cydsn\000"
- 3396      3030302E 
- 3396      63796473 
- 3396      6E00
- 3397              	.LASF81:
- 3398 0042 43794578 		.ascii	"CyExitCriticalSection\000"
- 3398      69744372 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 86
+ 3392              	.LASF78:
+ 3393 0000 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\AYBR3000.cyd"
+ 3393      59425233 
+ 3393      3030305C 
+ 3393      41594252 
+ 3393      33303030 
+ 3394 002f 736E00   		.ascii	"sn\000"
+ 3395              	.LASF81:
+ 3396 0032 43794578 		.ascii	"CyExitCriticalSection\000"
+ 3396      69744372 
+ 3396      69746963 
+ 3396      616C5365 
+ 3396      6374696F 
+ 3397              	.LASF63:
+ 3398 0048 54696D65 		.ascii	"Timer_1_SetCountMode\000"
+ 3398      725F315F 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 86
 
 
- 3398      69746963 
- 3398      616C5365 
- 3398      6374696F 
- 3399              	.LASF63:
- 3400 0058 54696D65 		.ascii	"Timer_1_SetCountMode\000"
+ 3398      53657443 
+ 3398      6F756E74 
+ 3398      4D6F6465 
+ 3399              	.LASF44:
+ 3400 005d 54696D65 		.ascii	"Timer_1_SetCompareSwap\000"
  3400      725F315F 
  3400      53657443 
- 3400      6F756E74 
- 3400      4D6F6465 
- 3401              	.LASF44:
- 3402 006d 54696D65 		.ascii	"Timer_1_SetCompareSwap\000"
- 3402      725F315F 
- 3402      53657443 
- 3402      6F6D7061 
- 3402      72655377 
- 3403              	.LASF41:
- 3404 0084 70657269 		.ascii	"period\000"
- 3404      6F6400
- 3405              	.LASF7:
- 3406 008b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 3406      206C6F6E 
- 3406      6720756E 
- 3406      7369676E 
- 3406      65642069 
- 3407              	.LASF70:
- 3408 00a2 54696D65 		.ascii	"Timer_1_Init\000"
- 3408      725F315F 
- 3408      496E6974 
- 3408      00
- 3409              	.LASF21:
- 3410 00af 71644D6F 		.ascii	"qdMode\000"
- 3410      646500
- 3411              	.LASF6:
- 3412 00b6 6C6F6E67 		.ascii	"long long int\000"
- 3412      206C6F6E 
- 3412      6720696E 
- 3412      7400
- 3413              	.LASF0:
- 3414 00c4 7369676E 		.ascii	"signed char\000"
- 3414      65642063 
- 3414      68617200 
- 3415              	.LASF46:
- 3416 00d0 54696D65 		.ascii	"Timer_1_WritePeriodBuf\000"
+ 3400      6F6D7061 
+ 3400      72655377 
+ 3401              	.LASF41:
+ 3402 0074 70657269 		.ascii	"period\000"
+ 3402      6F6400
+ 3403              	.LASF7:
+ 3404 007b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3404      206C6F6E 
+ 3404      6720756E 
+ 3404      7369676E 
+ 3404      65642069 
+ 3405              	.LASF70:
+ 3406 0092 54696D65 		.ascii	"Timer_1_Init\000"
+ 3406      725F315F 
+ 3406      496E6974 
+ 3406      00
+ 3407              	.LASF21:
+ 3408 009f 71644D6F 		.ascii	"qdMode\000"
+ 3408      646500
+ 3409              	.LASF6:
+ 3410 00a6 6C6F6E67 		.ascii	"long long int\000"
+ 3410      206C6F6E 
+ 3410      6720696E 
+ 3410      7400
+ 3411              	.LASF0:
+ 3412 00b4 7369676E 		.ascii	"signed char\000"
+ 3412      65642063 
+ 3412      68617200 
+ 3413              	.LASF46:
+ 3414 00c0 54696D65 		.ascii	"Timer_1_WritePeriodBuf\000"
+ 3414      725F315F 
+ 3414      57726974 
+ 3414      65506572 
+ 3414      696F6442 
+ 3415              	.LASF40:
+ 3416 00d7 54696D65 		.ascii	"Timer_1_WritePeriod\000"
  3416      725F315F 
  3416      57726974 
  3416      65506572 
- 3416      696F6442 
- 3417              	.LASF40:
- 3418 00e7 54696D65 		.ascii	"Timer_1_WritePeriod\000"
- 3418      725F315F 
- 3418      57726974 
- 3418      65506572 
- 3418      696F6400 
- 3419              	.LASF4:
- 3420 00fb 6C6F6E67 		.ascii	"long int\000"
- 3420      20696E74 
- 3420      00
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 87
+ 3416      696F6400 
+ 3417              	.LASF4:
+ 3418 00eb 6C6F6E67 		.ascii	"long int\000"
+ 3418      20696E74 
+ 3418      00
+ 3419              	.LASF54:
+ 3420 00f4 636F6D70 		.ascii	"compareBuf\000"
+ 3420      61726542 
+ 3420      756600
+ 3421              	.LASF9:
+ 3422 00ff 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 87
 
 
- 3421              	.LASF54:
- 3422 0104 636F6D70 		.ascii	"compareBuf\000"
- 3422      61726542 
- 3422      756600
- 3423              	.LASF9:
- 3424 010f 75696E74 		.ascii	"uint8\000"
- 3424      3800
- 3425              	.LASF12:
- 3426 0115 646F7562 		.ascii	"double\000"
- 3426      6C6500
- 3427              	.LASF36:
- 3428 011c 54696D65 		.ascii	"Timer_1_WriteCounter\000"
+ 3422      3800
+ 3423              	.LASF12:
+ 3424 0105 646F7562 		.ascii	"double\000"
+ 3424      6C6500
+ 3425              	.LASF36:
+ 3426 010c 54696D65 		.ascii	"Timer_1_WriteCounter\000"
+ 3426      725F315F 
+ 3426      57726974 
+ 3426      65436F75 
+ 3426      6E746572 
+ 3427              	.LASF30:
+ 3428 0121 54696D65 		.ascii	"Timer_1_SetPWMStopOnKill\000"
  3428      725F315F 
- 3428      57726974 
- 3428      65436F75 
- 3428      6E746572 
- 3429              	.LASF30:
- 3430 0131 54696D65 		.ascii	"Timer_1_SetPWMStopOnKill\000"
+ 3428      53657450 
+ 3428      574D5374 
+ 3428      6F704F6E 
+ 3429              	.LASF64:
+ 3430 013a 54696D65 		.ascii	"Timer_1_TriggerCommand\000"
  3430      725F315F 
- 3430      53657450 
- 3430      574D5374 
- 3430      6F704F6E 
- 3431              	.LASF64:
- 3432 014a 54696D65 		.ascii	"Timer_1_TriggerCommand\000"
+ 3430      54726967 
+ 3430      67657243 
+ 3430      6F6D6D61 
+ 3431              	.LASF57:
+ 3432 0151 54696D65 		.ascii	"Timer_1_ReadCaptureBuf\000"
  3432      725F315F 
- 3432      54726967 
- 3432      67657243 
- 3432      6F6D6D61 
- 3433              	.LASF57:
- 3434 0161 54696D65 		.ascii	"Timer_1_ReadCaptureBuf\000"
- 3434      725F315F 
- 3434      52656164 
- 3434      43617074 
- 3434      75726542 
- 3435              	.LASF10:
- 3436 0178 75696E74 		.ascii	"uint32\000"
- 3436      333200
+ 3432      52656164 
+ 3432      43617074 
+ 3432      75726542 
+ 3433              	.LASF10:
+ 3434 0168 75696E74 		.ascii	"uint32\000"
+ 3434      333200
+ 3435              	.LASF37:
+ 3436 016f 636F756E 		.ascii	"count\000"
+ 3436      7400
  3437              	.LASF59:
- 3438 017f 74726967 		.ascii	"triggerMode\000"
+ 3438 0175 74726967 		.ascii	"triggerMode\000"
  3438      6765724D 
  3438      6F646500 
  3439              	.LASF50:
- 3440 018b 54696D65 		.ascii	"Timer_1_WriteCompare\000"
+ 3440 0181 54696D65 		.ascii	"Timer_1_WriteCompare\000"
  3440      725F315F 
  3440      57726974 
  3440      65436F6D 
  3440      70617265 
  3441              	.LASF35:
- 3442 01a0 6D61736B 		.ascii	"mask\000"
+ 3442 0196 6D61736B 		.ascii	"mask\000"
  3442      00
  3443              	.LASF33:
- 3444 01a5 64656164 		.ascii	"deadTime\000"
+ 3444 019b 64656164 		.ascii	"deadTime\000"
  3444      54696D65 
  3444      00
  3445              	.LASF79:
- 3446 01ae 54696D65 		.ascii	"Timer_1_initVar\000"
+ 3446 01a4 54696D65 		.ascii	"Timer_1_initVar\000"
  3446      725F315F 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 88
-
-
  3446      696E6974 
  3446      56617200 
  3447              	.LASF8:
- 3448 01be 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 88
+
+
+ 3448 01b4 756E7369 		.ascii	"unsigned int\000"
  3448      676E6564 
  3448      20696E74 
  3448      00
  3449              	.LASF77:
- 3450 01cb 47656E65 		.ascii	"Generated_Source\\PSoC4\\Timer_1.c\000"
+ 3450 01c1 47656E65 		.ascii	"Generated_Source\\PSoC4\\Timer_1.c\000"
  3450      72617465 
  3450      645F536F 
  3450      75726365 
  3450      5C50536F 
  3451              	.LASF56:
- 3452 01ec 54696D65 		.ascii	"Timer_1_ReadCapture\000"
+ 3452 01e2 54696D65 		.ascii	"Timer_1_ReadCapture\000"
  3452      725F315F 
  3452      52656164 
  3452      43617074 
  3452      75726500 
  3453              	.LASF65:
- 3454 0200 636F6D6D 		.ascii	"command\000"
+ 3454 01f6 636F6D6D 		.ascii	"command\000"
  3454      616E6400 
  3455              	.LASF5:
- 3456 0208 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3456 01fe 6C6F6E67 		.ascii	"long unsigned int\000"
  3456      20756E73 
  3456      69676E65 
  3456      6420696E 
  3456      7400
  3457              	.LASF27:
- 3458 021a 6D6F6465 		.ascii	"modeMask\000"
+ 3458 0210 6D6F6465 		.ascii	"modeMask\000"
  3458      4D61736B 
  3458      00
  3459              	.LASF71:
- 3460 0223 54696D65 		.ascii	"Timer_1_Start\000"
+ 3460 0219 54696D65 		.ascii	"Timer_1_Start\000"
  3460      725F315F 
  3460      53746172 
  3460      7400
  3461              	.LASF80:
- 3462 0231 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 3462 0227 4379456E 		.ascii	"CyEnterCriticalSection\000"
  3462      74657243 
  3462      72697469 
  3462      63616C53 
  3462      65637469 
  3463              	.LASF16:
- 3464 0248 54696D65 		.ascii	"Timer_1_Stop\000"
+ 3464 023e 54696D65 		.ascii	"Timer_1_Stop\000"
  3464      725F315F 
  3464      53746F70 
  3464      00
  3465              	.LASF34:
- 3466 0255 54696D65 		.ascii	"Timer_1_SetPWMInvert\000"
+ 3466 024b 54696D65 		.ascii	"Timer_1_SetPWMInvert\000"
  3466      725F315F 
  3466      53657450 
  3466      574D496E 
  3466      76657274 
  3467              	.LASF38:
- 3468 026a 54696D65 		.ascii	"Timer_1_SetCounterMode\000"
+ 3468 0260 54696D65 		.ascii	"Timer_1_SetCounterMode\000"
  3468      725F315F 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 89
-
-
  3468      53657443 
  3468      6F756E74 
  3468      65724D6F 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 89
+
+
  3469              	.LASF3:
- 3470 0281 73686F72 		.ascii	"short unsigned int\000"
+ 3470 0277 73686F72 		.ascii	"short unsigned int\000"
  3470      7420756E 
  3470      7369676E 
  3470      65642069 
  3470      6E7400
  3471              	.LASF61:
- 3472 0294 54696D65 		.ascii	"Timer_1_SetStartMode\000"
+ 3472 028a 54696D65 		.ascii	"Timer_1_SetStartMode\000"
  3472      725F315F 
  3472      53657453 
  3472      74617274 
  3472      4D6F6465 
  3473              	.LASF72:
- 3474 02a9 54696D65 		.ascii	"Timer_1_GetInterruptSourceMasked\000"
+ 3474 029f 54696D65 		.ascii	"Timer_1_GetInterruptSourceMasked\000"
  3474      725F315F 
  3474      47657449 
  3474      6E746572 
  3474      72757074 
  3475              	.LASF24:
- 3476 02ca 54696D65 		.ascii	"Timer_1_SetOneShot\000"
+ 3476 02c0 54696D65 		.ascii	"Timer_1_SetOneShot\000"
  3476      725F315F 
  3476      5365744F 
  3476      6E655368 
  3476      6F7400
  3477              	.LASF25:
- 3478 02dd 6F6E6553 		.ascii	"oneShotEnable\000"
+ 3478 02d3 6F6E6553 		.ascii	"oneShotEnable\000"
  3478      686F7445 
  3478      6E61626C 
  3478      6500
  3479              	.LASF17:
- 3480 02eb 54696D65 		.ascii	"Timer_1_SetMode\000"
+ 3480 02e1 54696D65 		.ascii	"Timer_1_SetMode\000"
  3480      725F315F 
  3480      5365744D 
  3480      6F646500 
  3481              	.LASF48:
- 3482 02fb 54696D65 		.ascii	"Timer_1_ReadPeriodBuf\000"
+ 3482 02f1 54696D65 		.ascii	"Timer_1_ReadPeriodBuf\000"
  3482      725F315F 
  3482      52656164 
  3482      50657269 
  3482      6F644275 
  3483              	.LASF67:
- 3484 0311 54696D65 		.ascii	"Timer_1_ReadStatus\000"
+ 3484 0307 54696D65 		.ascii	"Timer_1_ReadStatus\000"
  3484      725F315F 
  3484      52656164 
  3484      53746174 
  3484      757300
  3485              	.LASF14:
- 3486 0324 72656733 		.ascii	"reg32\000"
+ 3486 031a 72656733 		.ascii	"reg32\000"
  3486      3200
  3487              	.LASF15:
- 3488 032a 73697A65 		.ascii	"sizetype\000"
+ 3488 0320 73697A65 		.ascii	"sizetype\000"
  3488      74797065 
  3488      00
  3489              	.LASF58:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 90
-
-
- 3490 0333 54696D65 		.ascii	"Timer_1_SetCaptureMode\000"
+ 3490 0329 54696D65 		.ascii	"Timer_1_SetCaptureMode\000"
  3490      725F315F 
  3490      53657443 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 90
+
+
  3490      61707475 
  3490      72654D6F 
  3491              	.LASF19:
- 3492 034a 54696D65 		.ascii	"Timer_1_SetQDMode\000"
+ 3492 0340 54696D65 		.ascii	"Timer_1_SetQDMode\000"
  3492      725F315F 
  3492      53657451 
  3492      444D6F64 
  3492      6500
  3493              	.LASF60:
- 3494 035c 54696D65 		.ascii	"Timer_1_SetReloadMode\000"
+ 3494 0352 54696D65 		.ascii	"Timer_1_SetReloadMode\000"
  3494      725F315F 
  3494      53657452 
  3494      656C6F61 
  3494      644D6F64 
  3495              	.LASF49:
- 3496 0372 54696D65 		.ascii	"Timer_1_SetPeriodSwap\000"
+ 3496 0368 54696D65 		.ascii	"Timer_1_SetPeriodSwap\000"
  3496      725F315F 
  3496      53657450 
  3496      6572696F 
  3496      64537761 
  3497              	.LASF51:
- 3498 0388 636F6D70 		.ascii	"compare\000"
+ 3498 037e 636F6D70 		.ascii	"compare\000"
  3498      61726500 
  3499              	.LASF22:
- 3500 0390 54696D65 		.ascii	"Timer_1_SetPrescaler\000"
+ 3500 0386 54696D65 		.ascii	"Timer_1_SetPrescaler\000"
  3500      725F315F 
  3500      53657450 
  3500      72657363 
  3500      616C6572 
  3501              	.LASF42:
- 3502 03a5 54696D65 		.ascii	"Timer_1_ReadCounter\000"
+ 3502 039b 54696D65 		.ascii	"Timer_1_ReadCounter\000"
  3502      725F315F 
  3502      52656164 
  3502      436F756E 
  3502      74657200 
  3503              	.LASF74:
- 3504 03b9 54696D65 		.ascii	"Timer_1_ClearInterrupt\000"
+ 3504 03af 54696D65 		.ascii	"Timer_1_ClearInterrupt\000"
  3504      725F315F 
  3504      436C6561 
  3504      72496E74 
  3504      65727275 
  3505              	.LASF11:
- 3506 03d0 666C6F61 		.ascii	"float\000"
+ 3506 03c6 666C6F61 		.ascii	"float\000"
  3506      7400
  3507              	.LASF23:
- 3508 03d6 70726573 		.ascii	"prescaler\000"
+ 3508 03cc 70726573 		.ascii	"prescaler\000"
  3508      63616C65 
  3508      7200
  3509              	.LASF53:
- 3510 03e0 54696D65 		.ascii	"Timer_1_WriteCompareBuf\000"
+ 3510 03d6 54696D65 		.ascii	"Timer_1_WriteCompareBuf\000"
  3510      725F315F 
  3510      57726974 
  3510      65436F6D 
  3510      70617265 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 91
-
-
  3511              	.LASF66:
- 3512 03f8 54696D65 		.ascii	"Timer_1_Enable\000"
+ 3512 03ee 54696D65 		.ascii	"Timer_1_Enable\000"
  3512      725F315F 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 91
+
+
  3512      456E6162 
  3512      6C6500
  3513              	.LASF55:
- 3514 0407 54696D65 		.ascii	"Timer_1_ReadCompareBuf\000"
+ 3514 03fd 54696D65 		.ascii	"Timer_1_ReadCompareBuf\000"
  3514      725F315F 
  3514      52656164 
  3514      436F6D70 
  3514      61726542 
  3515              	.LASF1:
- 3516 041e 756E7369 		.ascii	"unsigned char\000"
+ 3516 0414 756E7369 		.ascii	"unsigned char\000"
  3516      676E6564 
  3516      20636861 
  3516      7200
  3517              	.LASF31:
- 3518 042c 73746F70 		.ascii	"stopOnKillEnable\000"
+ 3518 0422 73746F70 		.ascii	"stopOnKillEnable\000"
  3518      4F6E4B69 
  3518      6C6C456E 
  3518      61626C65 
  3518      00
  3519              	.LASF43:
- 3520 043d 54696D65 		.ascii	"Timer_1_ReadPeriod\000"
+ 3520 0433 54696D65 		.ascii	"Timer_1_ReadPeriod\000"
  3520      725F315F 
  3520      52656164 
  3520      50657269 
  3520      6F6400
  3521              	.LASF2:
- 3522 0450 73686F72 		.ascii	"short int\000"
+ 3522 0446 73686F72 		.ascii	"short int\000"
  3522      7420696E 
  3522      7400
  3523              	.LASF69:
- 3524 045a 696E7465 		.ascii	"interruptMask\000"
+ 3524 0450 696E7465 		.ascii	"interruptMask\000"
  3524      72727570 
  3524      744D6173 
  3524      6B00
  3525              	.LASF32:
- 3526 0468 54696D65 		.ascii	"Timer_1_SetPWMDeadTime\000"
+ 3526 045e 54696D65 		.ascii	"Timer_1_SetPWMDeadTime\000"
  3526      725F315F 
  3526      53657450 
  3526      574D4465 
  3526      61645469 
  3527              	.LASF28:
- 3528 047f 54696D65 		.ascii	"Timer_1_SetPWMSyncKill\000"
+ 3528 0475 54696D65 		.ascii	"Timer_1_SetPWMSyncKill\000"
  3528      725F315F 
  3528      53657450 
  3528      574D5379 
  3528      6E634B69 
  3529              	.LASF62:
- 3530 0496 54696D65 		.ascii	"Timer_1_SetStopMode\000"
+ 3530 048c 54696D65 		.ascii	"Timer_1_SetStopMode\000"
  3530      725F315F 
  3530      53657453 
  3530      746F704D 
  3530      6F646500 
  3531              	.LASF13:
- 3532 04aa 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 92
-
-
+ 3532 04a0 63686172 		.ascii	"char\000"
  3532      00
  3533              	.LASF20:
- 3534 04af 6D6F6465 		.ascii	"mode\000"
+ 3534 04a5 6D6F6465 		.ascii	"mode\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 92
+
+
  3534      00
  3535              	.LASF52:
- 3536 04b4 54696D65 		.ascii	"Timer_1_ReadCompare\000"
+ 3536 04aa 54696D65 		.ascii	"Timer_1_ReadCompare\000"
  3536      725F315F 
  3536      52656164 
  3536      436F6D70 
  3536      61726500 
  3537              	.LASF68:
- 3538 04c8 54696D65 		.ascii	"Timer_1_SetInterruptMode\000"
+ 3538 04be 54696D65 		.ascii	"Timer_1_SetInterruptMode\000"
  3538      725F315F 
  3538      53657449 
  3538      6E746572 
  3538      72757074 
  3539              	.LASF39:
- 3540 04e1 636F756E 		.ascii	"counterMode\000"
+ 3540 04d7 636F756E 		.ascii	"counterMode\000"
  3540      7465724D 
  3540      6F646500 
  3541              	.LASF73:
- 3542 04ed 54696D65 		.ascii	"Timer_1_GetInterruptSource\000"
+ 3542 04e3 54696D65 		.ascii	"Timer_1_GetInterruptSource\000"
  3542      725F315F 
  3542      47657449 
  3542      6E746572 
  3542      72757074 
  3543              	.LASF26:
- 3544 0508 54696D65 		.ascii	"Timer_1_SetPWMMode\000"
+ 3544 04fe 54696D65 		.ascii	"Timer_1_SetPWMMode\000"
  3544      725F315F 
  3544      53657450 
  3544      574D4D6F 
  3544      646500
  3545              	.LASF47:
- 3546 051b 70657269 		.ascii	"periodBuf\000"
+ 3546 0511 70657269 		.ascii	"periodBuf\000"
  3546      6F644275 
  3546      6600
  3547              	.LASF18:
- 3548 0525 656E6162 		.ascii	"enableInterrupts\000"
+ 3548 051b 656E6162 		.ascii	"enableInterrupts\000"
  3548      6C65496E 
  3548      74657272 
  3548      75707473 
  3548      00
  3549              	.LASF75:
- 3550 0536 54696D65 		.ascii	"Timer_1_SetInterrupt\000"
+ 3550 052c 54696D65 		.ascii	"Timer_1_SetInterrupt\000"
  3550      725F315F 
  3550      53657449 
  3550      6E746572 
  3550      72757074 
  3551              	.LASF29:
- 3552 054b 73796E63 		.ascii	"syncKillEnable\000"
+ 3552 0541 73796E63 		.ascii	"syncKillEnable\000"
  3552      4B696C6C 
  3552      456E6162 
  3552      6C6500
  3553              	.LASF45:
- 3554 055a 73776170 		.ascii	"swapEnable\000"
+ 3554 0550 73776170 		.ascii	"swapEnable\000"
  3554      456E6162 
  3554      6C6500
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cct9d84c.s 			page 93
-
-
  3555              	.LASF76:
- 3556 0565 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 3556 055b 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  3556      4320342E 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cc8BpyYs.s 			page 93
+
+
  3556      392E3320 
  3556      32303135 
  3556      30333033 
- 3557 0598 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 3557 058e 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
  3557      20726576 
  3557      6973696F 
  3557      6E203232 
  3557      31323230 
- 3558 05cb 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 3558 05c1 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
  3558      67202D66 
  3558      66756E63 
  3558      74696F6E 
