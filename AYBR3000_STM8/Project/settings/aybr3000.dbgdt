@@ -715,7 +715,7 @@
                     <item>time</item>
                     <item>mode_configs</item>
                     <item>send_frame</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
