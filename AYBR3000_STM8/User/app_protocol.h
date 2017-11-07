@@ -10,8 +10,6 @@ typedef enum
     FUNC_READ_STATE,
     FUNC_CONTROL,
     FUNC_MATCH_CODE,
-    FUNC_CONNECT_NET,
-    FUNC_DISCONNECT_NET,
 }Send_function_type;
 
 typedef struct

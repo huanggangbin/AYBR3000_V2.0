@@ -119,14 +119,12 @@ void app_key_process(void)
                 app_time_event_set(APP_TIME_CMD_FAST_STOP);
                 break;
             case VALUE_COMBINE_WA_DA:
-                app_frame_send.func_type = FUNC_CONNECT_NET;
-                app_protocol_send();
                 //发送配网报文
+                nop();
                 break;
             case VALUE_COMBINE_WM_DM:
-                app_frame_send.func_type = FUNC_DISCONNECT_NET;
-                app_protocol_send();
                 //发送解绑报文
+                nop();
                 break;
             case VALUE_COMBINE_DM_DIAN_YUAN:
                 //恢复出厂设置

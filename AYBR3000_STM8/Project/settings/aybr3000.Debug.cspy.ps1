@@ -23,9 +23,9 @@ param([String]$debugfile = "");
 
 if ($debugfile -eq "")
 {
-& "D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\settings\aybr3000.Debug.general.xcl" --backend -f "D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\settings\aybr3000.Debug.driver.xcl" 
+& "D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\settings\aybr3000.Debug.general.xcl" --backend -f "D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\settings\aybr3000.Debug.driver.xcl" 
 }
 else
 {
-& "D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\settings\aybr3000.Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\AYBR3000\AYBR3000_V2.0_lable\AYBR3000_STM8\Project\settings\aybr3000.Debug.driver.xcl" 
+& "D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\settings\aybr3000.Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\AYBR3000\AYBR3000_V2.0\AYBR3000_STM8\Project\settings\aybr3000.Debug.driver.xcl" 
 }

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 1
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -62,11 +58,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
   31:key_config.c  ****     pin_dian_yuan,
   32:key_config.c  ****     pin_feng_nuan, 
   33:key_config.c  ****     pin_wendu_jia,
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 2
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 2
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 2
 
 
   34:key_config.c  ****     pin_wendu_jian,
@@ -126,11 +118,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
   88:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON5_WDGT_ID))
   89:key_config.c  ****         return LEVEL_HIGH;
   90:key_config.c  ****     else
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 3
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 3
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 3
 
 
   91:key_config.c  ****         return LEVEL_LOW;
@@ -190,11 +178,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
   33 0004 FFF7FEFF 		bl	key_touch_IsWidgetActive
   34              	.LVL0:
   35 0008 0028     		cmp	r0, #0
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 4
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 4
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 4
 
 
   36 000a 01D0     		beq	.L3
@@ -254,11 +238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
   81              		.size	pin_bai_dong, .-pin_bai_dong
   82              		.section	.text.pin_dingshi_jian,"ax",%progbits
   83              		.align	2
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 5
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 5
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 5
 
 
   84              		.code	16
@@ -318,11 +298,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  131 0008 0028     		cmp	r0, #0
  132 000a 01D0     		beq	.L12
  113:key_config.c  ****     else
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 6
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 6
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 6
 
 
  133              		.loc 1 113 0
@@ -382,11 +358,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  180              		.code	16
  181              		.thumb_func
  182              		.type	pin_huan_qi, %function
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 7
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 7
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 7
 
 
  183              	pin_huan_qi:
@@ -446,11 +418,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  229              		.loc 1 89 0
  230 000c 0120     		mov	r0, #1
  231 000e 00E0     		b	.L20
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 8
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 8
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 8
 
 
  232              	.L21:
@@ -510,11 +478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  279              	pin_wendu_jian:
  280              	.LFB38:
   71:key_config.c  ****     if (key_touch_IsWidgetActive(key_touch_BUTTON3_WDGT_ID))
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 9
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 9
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 9
 
 
  281              		.loc 1 71 0
@@ -574,11 +538,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  328              	.L30:
   67:key_config.c  **** }
  329              		.loc 1 67 0
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 10
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 10
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 10
 
 
  330 0010 0020     		mov	r0, #0
@@ -638,11 +598,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  377              		.loc 1 47 0
  378              		.cfi_startproc
  379 0000 08B5     		push	{r3, lr}
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 11
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 11
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 11
 
 
  380              		.cfi_def_cfa_offset 8
@@ -702,52 +658,48 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  430 0006 00000000 		.4byte	.Ldebug_abbrev0
  431 000a 04       		.byte	0x4
  432 000b 01       		.uleb128 0x1
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 12
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 12
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 12
 
 
- 433 000c 50020000 		.4byte	.LASF44
+ 433 000c 4A020000 		.4byte	.LASF44
  434 0010 01       		.byte	0x1
- 435 0011 78000000 		.4byte	.LASF45
- 436 0015 DA000000 		.4byte	.LASF46
+ 435 0011 AA000000 		.4byte	.LASF45
+ 436 0015 47000000 		.4byte	.LASF46
  437 0019 00000000 		.4byte	.Ldebug_ranges0+0
  438 001d 00000000 		.4byte	0
  439 0021 00000000 		.4byte	.Ldebug_line0
  440 0025 02       		.uleb128 0x2
  441 0026 01       		.byte	0x1
  442 0027 06       		.byte	0x6
- 443 0028 FA020000 		.4byte	.LASF0
+ 443 0028 F4020000 		.4byte	.LASF0
  444 002c 02       		.uleb128 0x2
  445 002d 01       		.byte	0x1
  446 002e 08       		.byte	0x8
- 447 002f B1000000 		.4byte	.LASF1
+ 447 002f E3000000 		.4byte	.LASF1
  448 0033 02       		.uleb128 0x2
  449 0034 02       		.byte	0x2
  450 0035 05       		.byte	0x5
- 451 0036 24020000 		.4byte	.LASF2
+ 451 0036 1E020000 		.4byte	.LASF2
  452 003a 02       		.uleb128 0x2
  453 003b 02       		.byte	0x2
  454 003c 07       		.byte	0x7
- 455 003d 50000000 		.4byte	.LASF3
+ 455 003d 82000000 		.4byte	.LASF3
  456 0041 02       		.uleb128 0x2
  457 0042 04       		.byte	0x4
  458 0043 05       		.byte	0x5
- 459 0044 47000000 		.4byte	.LASF4
+ 459 0044 79000000 		.4byte	.LASF4
  460 0048 02       		.uleb128 0x2
  461 0049 04       		.byte	0x4
  462 004a 07       		.byte	0x7
- 463 004b 79010000 		.4byte	.LASF5
+ 463 004b 0C010000 		.4byte	.LASF5
  464 004f 02       		.uleb128 0x2
  465 0050 08       		.byte	0x8
  466 0051 05       		.byte	0x5
- 467 0052 EF010000 		.4byte	.LASF6
+ 467 0052 E9010000 		.4byte	.LASF6
  468 0056 02       		.uleb128 0x2
  469 0057 08       		.byte	0x8
  470 0058 07       		.byte	0x7
- 471 0059 A3010000 		.4byte	.LASF7
+ 471 0059 9D010000 		.4byte	.LASF7
  472 005d 03       		.uleb128 0x3
  473 005e 04       		.byte	0x4
  474 005f 05       		.byte	0x5
@@ -755,40 +707,36 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  476 0064 02       		.uleb128 0x2
  477 0065 04       		.byte	0x4
  478 0066 07       		.byte	0x7
- 479 0067 8B010000 		.4byte	.LASF8
+ 479 0067 85010000 		.4byte	.LASF8
  480 006b 04       		.uleb128 0x4
- 481 006c 3C020000 		.4byte	.LASF9
+ 481 006c 36020000 		.4byte	.LASF9
  482 0070 02       		.byte	0x2
  483 0071 B901     		.2byte	0x1b9
  484 0073 2C000000 		.4byte	0x2c
  485 0077 04       		.uleb128 0x4
- 486 0078 59010000 		.4byte	.LASF10
+ 486 0078 65010000 		.4byte	.LASF10
  487 007c 02       		.byte	0x2
  488 007d BB01     		.2byte	0x1bb
  489 007f 48000000 		.4byte	0x48
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 13
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 13
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 13
 
 
  490 0083 02       		.uleb128 0x2
  491 0084 04       		.byte	0x4
  492 0085 04       		.byte	0x4
- 493 0086 AB000000 		.4byte	.LASF11
+ 493 0086 DD000000 		.4byte	.LASF11
  494 008a 02       		.uleb128 0x2
  495 008b 08       		.byte	0x8
  496 008c 04       		.byte	0x4
- 497 008d 06030000 		.4byte	.LASF12
+ 497 008d 00030000 		.4byte	.LASF12
  498 0091 02       		.uleb128 0x2
  499 0092 01       		.byte	0x1
  500 0093 08       		.byte	0x8
- 501 0094 E2020000 		.4byte	.LASF13
+ 501 0094 DC020000 		.4byte	.LASF13
  502 0098 02       		.uleb128 0x2
  503 0099 04       		.byte	0x4
  504 009a 07       		.byte	0x7
- 505 009b D8010000 		.4byte	.LASF14
+ 505 009b D2010000 		.4byte	.LASF14
  506 009f 05       		.uleb128 0x5
  507 00a0 01       		.byte	0x1
  508 00a1 03       		.byte	0x3
@@ -798,11 +746,11 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  512 00a8 19000000 		.4byte	.LASF15
  513 00ac 00       		.sleb128 0
  514 00ad 06       		.uleb128 0x6
- 515 00ae 2E010000 		.4byte	.LASF16
+ 515 00ae 3A010000 		.4byte	.LASF16
  516 00b2 01       		.sleb128 1
  517 00b3 00       		.byte	0
  518 00b4 07       		.uleb128 0x7
- 519 00b5 F4020000 		.4byte	.LASF17
+ 519 00b5 EE020000 		.4byte	.LASF17
  520 00b9 03       		.byte	0x3
  521 00ba 21       		.byte	0x21
  522 00bb 9F000000 		.4byte	0x9f
@@ -822,54 +770,50 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  536 00d8 14       		.byte	0x14
  537 00d9 2C010000 		.4byte	0x12c
  538 00dd 06       		.uleb128 0x6
- 539 00de 0D030000 		.4byte	.LASF19
+ 539 00de 07030000 		.4byte	.LASF19
  540 00e2 00       		.sleb128 0
  541 00e3 06       		.uleb128 0x6
- 542 00e4 1B030000 		.4byte	.LASF20
+ 542 00e4 15030000 		.4byte	.LASF20
  543 00e8 01       		.sleb128 1
  544 00e9 06       		.uleb128 0x6
- 545 00ea BF000000 		.4byte	.LASF21
+ 545 00ea F1000000 		.4byte	.LASF21
  546 00ee 02       		.sleb128 2
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 14
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 14
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 14
 
 
  547 00ef 06       		.uleb128 0x6
  548 00f0 23000000 		.4byte	.LASF22
  549 00f4 03       		.sleb128 3
  550 00f5 06       		.uleb128 0x6
- 551 00f6 17020000 		.4byte	.LASF23
+ 551 00f6 11020000 		.4byte	.LASF23
  552 00fa 04       		.sleb128 4
  553 00fb 06       		.uleb128 0x6
- 554 00fc E7020000 		.4byte	.LASF24
+ 554 00fc E1020000 		.4byte	.LASF24
  555 0100 05       		.sleb128 5
  556 0101 06       		.uleb128 0x6
  557 0102 00000000 		.4byte	.LASF25
  558 0106 06       		.sleb128 6
  559 0107 06       		.uleb128 0x6
- 560 0108 96000000 		.4byte	.LASF26
+ 560 0108 C8000000 		.4byte	.LASF26
  561 010c 07       		.sleb128 7
  562 010d 06       		.uleb128 0x6
- 563 010e BA010000 		.4byte	.LASF27
+ 563 010e B4010000 		.4byte	.LASF27
  564 0112 08       		.sleb128 8
  565 0113 06       		.uleb128 0x6
- 566 0114 85000000 		.4byte	.LASF28
+ 566 0114 B7000000 		.4byte	.LASF28
  567 0118 09       		.sleb128 9
  568 0119 06       		.uleb128 0x6
- 569 011a FD010000 		.4byte	.LASF29
+ 569 011a F7010000 		.4byte	.LASF29
  570 011e 0A       		.sleb128 10
  571 011f 06       		.uleb128 0x6
- 572 0120 CD000000 		.4byte	.LASF30
+ 572 0120 FF000000 		.4byte	.LASF30
  573 0124 0B       		.sleb128 11
  574 0125 06       		.uleb128 0x6
  575 0126 32000000 		.4byte	.LASF31
  576 012a 0C       		.sleb128 12
  577 012b 00       		.byte	0
  578 012c 0A       		.uleb128 0xa
- 579 012d 0A020000 		.4byte	.LASF32
+ 579 012d 04020000 		.4byte	.LASF32
  580 0131 01       		.byte	0x1
  581 0132 86       		.byte	0x86
  582 0133 B4000000 		.4byte	0xb4
@@ -889,16 +833,12 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  596 0153 00       		.byte	0
  597 0154 00       		.byte	0
  598 0155 0A       		.uleb128 0xa
- 599 0156 29030000 		.4byte	.LASF33
+ 599 0156 23030000 		.4byte	.LASF33
  600 015a 01       		.byte	0x1
  601 015b 7E       		.byte	0x7e
  602 015c B4000000 		.4byte	0xb4
  603 0160 00000000 		.4byte	.LFB45
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 15
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 15
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 15
 
 
  604 0164 14000000 		.4byte	.LFE45-.LFB45
@@ -916,7 +856,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  616 017c 00       		.byte	0
  617 017d 00       		.byte	0
  618 017e 0A       		.uleb128 0xa
- 619 017f 48010000 		.4byte	.LASF34
+ 619 017f 54010000 		.4byte	.LASF34
  620 0183 01       		.byte	0x1
  621 0184 76       		.byte	0x76
  622 0185 B4000000 		.4byte	0xb4
@@ -936,7 +876,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  636 01a5 00       		.byte	0
  637 01a6 00       		.byte	0
  638 01a7 0A       		.uleb128 0xa
- 639 01a8 12010000 		.4byte	.LASF35
+ 639 01a8 1E010000 		.4byte	.LASF35
  640 01ac 01       		.byte	0x1
  641 01ad 6E       		.byte	0x6e
  642 01ae B4000000 		.4byte	0xb4
@@ -956,13 +896,9 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  656 01ce 00       		.byte	0
  657 01cf 00       		.byte	0
  658 01d0 0A       		.uleb128 0xa
- 659 01d1 63000000 		.4byte	.LASF36
+ 659 01d1 95000000 		.4byte	.LASF36
  660 01d5 01       		.byte	0x1
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 16
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 16
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 16
 
 
  661 01d6 66       		.byte	0x66
@@ -983,7 +919,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  676 01f7 00       		.byte	0
  677 01f8 00       		.byte	0
  678 01f9 0A       		.uleb128 0xa
- 679 01fa 22010000 		.4byte	.LASF37
+ 679 01fa 2E010000 		.4byte	.LASF37
  680 01fe 01       		.byte	0x1
  681 01ff 5E       		.byte	0x5e
  682 0200 B4000000 		.4byte	0xb4
@@ -1003,7 +939,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  696 0220 00       		.byte	0
  697 0221 00       		.byte	0
  698 0222 0A       		.uleb128 0xa
- 699 0223 CA010000 		.4byte	.LASF38
+ 699 0223 C4010000 		.4byte	.LASF38
  700 0227 01       		.byte	0x1
  701 0228 56       		.byte	0x56
  702 0229 B4000000 		.4byte	0xb4
@@ -1022,11 +958,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  715 0248 35       		.byte	0x35
  716 0249 00       		.byte	0
  717 024a 00       		.byte	0
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 17
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 17
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 17
 
 
  718 024b 0A       		.uleb128 0xa
@@ -1050,7 +982,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  736 0272 00       		.byte	0
  737 0273 00       		.byte	0
  738 0274 0A       		.uleb128 0xa
- 739 0275 39010000 		.4byte	.LASF40
+ 739 0275 45010000 		.4byte	.LASF40
  740 0279 01       		.byte	0x1
  741 027a 46       		.byte	0x46
  742 027b B4000000 		.4byte	0xb4
@@ -1070,7 +1002,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  756 029b 00       		.byte	0
  757 029c 00       		.byte	0
  758 029d 0A       		.uleb128 0xa
- 759 029e 2E020000 		.4byte	.LASF41
+ 759 029e 28020000 		.4byte	.LASF41
  760 02a2 01       		.byte	0x1
  761 02a3 3E       		.byte	0x3e
  762 02a4 B4000000 		.4byte	0xb4
@@ -1086,18 +1018,14 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  772 02c0 01       		.uleb128 0x1
  773 02c1 50       		.byte	0x50
  774 02c2 01       		.uleb128 0x1
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 18
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 18
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 18
 
 
  775 02c3 32       		.byte	0x32
  776 02c4 00       		.byte	0
  777 02c5 00       		.byte	0
  778 02c6 0A       		.uleb128 0xa
- 779 02c7 E1010000 		.4byte	.LASF42
+ 779 02c7 DB010000 		.4byte	.LASF42
  780 02cb 01       		.byte	0x1
  781 02cc 36       		.byte	0x36
  782 02cd B4000000 		.4byte	0xb4
@@ -1117,7 +1045,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  796 02ed 00       		.byte	0
  797 02ee 00       		.byte	0
  798 02ef 0A       		.uleb128 0xa
- 799 02f0 42020000 		.4byte	.LASF43
+ 799 02f0 3C020000 		.4byte	.LASF43
  800 02f4 01       		.byte	0x1
  801 02f5 2E       		.byte	0x2e
  802 02f6 B4000000 		.4byte	0xb4
@@ -1144,22 +1072,18 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  823 0326 0B       		.byte	0xb
  824 0327 00       		.byte	0
  825 0328 0F       		.uleb128 0xf
- 826 0329 98010000 		.4byte	.LASF47
+ 826 0329 92010000 		.4byte	.LASF47
  827 032d 01       		.byte	0x1
  828 032e 1D       		.byte	0x1d
  829 032f 18030000 		.4byte	0x318
  830 0333 05       		.uleb128 0x5
  831 0334 03       		.byte	0x3
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 19
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 19
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 19
 
 
  832 0335 00000000 		.4byte	input_pins
  833 0339 10       		.uleb128 0x10
- 834 033a 60010000 		.4byte	.LASF48
+ 834 033a 6C010000 		.4byte	.LASF48
  835 033e 05       		.byte	0x5
  836 033f 1904     		.2byte	0x419
  837 0341 77000000 		.4byte	0x77
@@ -1214,11 +1138,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  886 002a 16       		.uleb128 0x16
  887 002b 00       		.byte	0
  888 002c 03       		.uleb128 0x3
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 20
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 20
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 20
 
 
  889 002d 0E       		.uleb128 0xe
@@ -1278,11 +1198,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  943 0063 15       		.uleb128 0x15
  944 0064 00       		.byte	0
  945 0065 27       		.uleb128 0x27
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 21
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 21
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 21
 
 
  946 0066 19       		.uleb128 0x19
@@ -1342,11 +1258,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  1000 00a2 13       		.uleb128 0x13
  1001 00a3 00       		.byte	0
  1002 00a4 00       		.byte	0
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 22
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 22
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 22
 
 
  1003 00a5 0E       		.uleb128 0xe
@@ -1406,11 +1318,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  1057 0000 74000000 		.4byte	0x74
  1058 0004 0200     		.2byte	0x2
  1059 0006 00000000 		.4byte	.Ldebug_info0
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 23
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 23
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 23
 
 
  1060 000a 04       		.byte	0x4
@@ -1470,11 +1378,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  1114 0058 00000000 		.4byte	.LFB35
  1115 005c 14000000 		.4byte	.LFE35
  1116 0060 00000000 		.4byte	0
-<<<<<<< HEAD
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 24
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 24
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 24
 
 
  1117 0064 00000000 		.4byte	0
@@ -1511,7 +1415,6 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  1132 003d 50696E5F 		.ascii	"Pin_input\000"
  1132      696E7075 
  1132      7400
-<<<<<<< HEAD
  1133              	.LASF46:
  1134 0047 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\AYBR3000.cyd"
  1134      59425233 
@@ -1535,73 +1438,44 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  1141      66656E67 
  1141      5F71755F 
  1141      6E75616E 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 25
-=======
- 1133              	.LASF4:
- 1134 0047 6C6F6E67 		.ascii	"long int\000"
- 1134      20696E74 
- 1134      00
- 1135              	.LASF3:
- 1136 0050 73686F72 		.ascii	"short unsigned int\000"
- 1136      7420756E 
- 1136      7369676E 
- 1136      65642069 
- 1136      6E7400
- 1137              	.LASF36:
- 1138 0063 70696E5F 		.ascii	"pin_xin_feng_qu_nuan\000"
- 1138      78696E5F 
- 1138      66656E67 
- 1138      5F71755F 
- 1138      6E75616E 
- 1139              	.LASF45:
- 1140 0078 6B65795F 		.ascii	"key_config.c\000"
- 1140      636F6E66 
- 1140      69672E63 
- 1140      00
- 1141              	.LASF28:
- 1142 0085 4B45595F 		.ascii	"KEY_DINGSHI_JIAN\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 25
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 25
 
 
- 1142      44494E47 
- 1142      5348495F 
- 1142      4A49414E 
- 1142      00
- 1143              	.LASF26:
- 1144 0096 4B45595F 		.ascii	"KEY_XIN_FENG_QU_NUAN\000"
- 1144      58494E5F 
- 1144      46454E47 
- 1144      5F51555F 
- 1144      4E55414E 
- 1145              	.LASF11:
- 1146 00ab 666C6F61 		.ascii	"float\000"
- 1146      7400
- 1147              	.LASF1:
- 1148 00b1 756E7369 		.ascii	"unsigned char\000"
- 1148      676E6564 
- 1148      20636861 
- 1148      7200
- 1149              	.LASF21:
- 1150 00bf 4B45595F 		.ascii	"KEY_WENDU_JIA\000"
- 1150      57454E44 
- 1150      555F4A49 
- 1150      4100
- 1151              	.LASF30:
- 1152 00cd 4B45595F 		.ascii	"KEY_ZHI_NENG\000"
- 1152      5A48495F 
- 1152      4E454E47 
- 1152      00
- 1153              	.LASF46:
- 1154 00da 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0_lable\\AYBR3000\\AYBR30"
- 1154      59425233 
- 1154      3030305C 
- 1154      41594252 
- 1154      33303030 
- 1155 0109 30302E63 		.ascii	"00.cydsn\000"
- 1155      7964736E 
+ 1142              	.LASF45:
+ 1143 00aa 6B65795F 		.ascii	"key_config.c\000"
+ 1143      636F6E66 
+ 1143      69672E63 
+ 1143      00
+ 1144              	.LASF28:
+ 1145 00b7 4B45595F 		.ascii	"KEY_DINGSHI_JIAN\000"
+ 1145      44494E47 
+ 1145      5348495F 
+ 1145      4A49414E 
+ 1145      00
+ 1146              	.LASF26:
+ 1147 00c8 4B45595F 		.ascii	"KEY_XIN_FENG_QU_NUAN\000"
+ 1147      58494E5F 
+ 1147      46454E47 
+ 1147      5F51555F 
+ 1147      4E55414E 
+ 1148              	.LASF11:
+ 1149 00dd 666C6F61 		.ascii	"float\000"
+ 1149      7400
+ 1150              	.LASF1:
+ 1151 00e3 756E7369 		.ascii	"unsigned char\000"
+ 1151      676E6564 
+ 1151      20636861 
+ 1151      7200
+ 1152              	.LASF21:
+ 1153 00f1 4B45595F 		.ascii	"KEY_WENDU_JIA\000"
+ 1153      57454E44 
+ 1153      555F4A49 
+ 1153      4100
+ 1154              	.LASF30:
+ 1155 00ff 4B45595F 		.ascii	"KEY_ZHI_NENG\000"
+ 1155      5A48495F 
+ 1155      4E454E47 
  1155      00
-<<<<<<< HEAD
  1156              	.LASF5:
  1157 010c 6C6F6E67 		.ascii	"long unsigned int\000"
  1157      20756E73 
@@ -1624,186 +1498,149 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 1
  1164              	.LASF40:
  1165 0145 70696E5F 		.ascii	"pin_wendu_jian\000"
  1165      77656E64 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 26
-=======
- 1156              	.LASF35:
- 1157 0112 70696E5F 		.ascii	"pin_dingshi_jia\000"
- 1157      64696E67 
- 1157      7368695F 
- 1157      6A696100 
- 1158              	.LASF37:
- 1159 0122 70696E5F 		.ascii	"pin_huan_qi\000"
- 1159      6875616E 
- 1159      5F716900 
- 1160              	.LASF16:
- 1161 012e 4C455645 		.ascii	"LEVEL_HIGH\000"
- 1161      4C5F4849 
- 1161      474800
- 1162              	.LASF40:
- 1163 0139 70696E5F 		.ascii	"pin_wendu_jian\000"
- 1163      77656E64 
- 1163      755F6A69 
- 1163      616E00
- 1164              	.LASF34:
- 1165 0148 70696E5F 		.ascii	"pin_dingshi_jian\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 26
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 26
 
 
- 1165      64696E67 
- 1165      7368695F 
- 1165      6A69616E 
- 1165      00
- 1166              	.LASF10:
- 1167 0159 75696E74 		.ascii	"uint32\000"
- 1167      333200
- 1168              	.LASF48:
- 1169 0160 6B65795F 		.ascii	"key_touch_IsWidgetActive\000"
- 1169      746F7563 
- 1169      685F4973 
- 1169      57696467 
- 1169      65744163 
- 1170              	.LASF5:
- 1171 0179 6C6F6E67 		.ascii	"long unsigned int\000"
- 1171      20756E73 
- 1171      69676E65 
- 1171      6420696E 
- 1171      7400
+ 1165      755F6A69 
+ 1165      616E00
+ 1166              	.LASF34:
+ 1167 0154 70696E5F 		.ascii	"pin_dingshi_jian\000"
+ 1167      64696E67 
+ 1167      7368695F 
+ 1167      6A69616E 
+ 1167      00
+ 1168              	.LASF10:
+ 1169 0165 75696E74 		.ascii	"uint32\000"
+ 1169      333200
+ 1170              	.LASF48:
+ 1171 016c 6B65795F 		.ascii	"key_touch_IsWidgetActive\000"
+ 1171      746F7563 
+ 1171      685F4973 
+ 1171      57696467 
+ 1171      65744163 
  1172              	.LASF8:
- 1173 018b 756E7369 		.ascii	"unsigned int\000"
+ 1173 0185 756E7369 		.ascii	"unsigned int\000"
  1173      676E6564 
  1173      20696E74 
  1173      00
  1174              	.LASF47:
- 1175 0198 696E7075 		.ascii	"input_pins\000"
+ 1175 0192 696E7075 		.ascii	"input_pins\000"
  1175      745F7069 
  1175      6E7300
  1176              	.LASF7:
- 1177 01a3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1177 019d 6C6F6E67 		.ascii	"long long unsigned int\000"
  1177      206C6F6E 
  1177      6720756E 
  1177      7369676E 
  1177      65642069 
  1178              	.LASF27:
- 1179 01ba 4B45595F 		.ascii	"KEY_DINGSHI_JIA\000"
+ 1179 01b4 4B45595F 		.ascii	"KEY_DINGSHI_JIA\000"
  1179      44494E47 
  1179      5348495F 
  1179      4A494100 
  1180              	.LASF38:
- 1181 01ca 70696E5F 		.ascii	"pin_qiang_ruo\000"
+ 1181 01c4 70696E5F 		.ascii	"pin_qiang_ruo\000"
  1181      7169616E 
  1181      675F7275 
  1181      6F00
  1182              	.LASF14:
- 1183 01d8 73697A65 		.ascii	"sizetype\000"
+ 1183 01d2 73697A65 		.ascii	"sizetype\000"
  1183      74797065 
  1183      00
  1184              	.LASF42:
- 1185 01e1 70696E5F 		.ascii	"pin_feng_nuan\000"
+ 1185 01db 70696E5F 		.ascii	"pin_feng_nuan\000"
  1185      66656E67 
  1185      5F6E7561 
  1185      6E00
  1186              	.LASF6:
- 1187 01ef 6C6F6E67 		.ascii	"long long int\000"
+ 1187 01e9 6C6F6E67 		.ascii	"long long int\000"
  1187      206C6F6E 
  1187      6720696E 
-<<<<<<< HEAD
  1187      7400
  1188              	.LASF29:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 27
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 27
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 27
 
 
- 1187      7400
- 1188              	.LASF29:
- 1189 01fd 4B45595F 		.ascii	"KEY_BAI_DONG\000"
+ 1189 01f7 4B45595F 		.ascii	"KEY_BAI_DONG\000"
  1189      4241495F 
  1189      444F4E47 
  1189      00
  1190              	.LASF32:
- 1191 020a 70696E5F 		.ascii	"pin_zhi_neng\000"
+ 1191 0204 70696E5F 		.ascii	"pin_zhi_neng\000"
  1191      7A68695F 
  1191      6E656E67 
  1191      00
  1192              	.LASF23:
- 1193 0217 4B45595F 		.ascii	"KEY_XIN_FENG\000"
+ 1193 0211 4B45595F 		.ascii	"KEY_XIN_FENG\000"
  1193      58494E5F 
  1193      46454E47 
  1193      00
  1194              	.LASF2:
- 1195 0224 73686F72 		.ascii	"short int\000"
+ 1195 021e 73686F72 		.ascii	"short int\000"
  1195      7420696E 
  1195      7400
  1196              	.LASF41:
- 1197 022e 70696E5F 		.ascii	"pin_wendu_jia\000"
+ 1197 0228 70696E5F 		.ascii	"pin_wendu_jia\000"
  1197      77656E64 
  1197      755F6A69 
  1197      6100
  1198              	.LASF9:
- 1199 023c 75696E74 		.ascii	"uint8\000"
+ 1199 0236 75696E74 		.ascii	"uint8\000"
  1199      3800
  1200              	.LASF43:
- 1201 0242 70696E5F 		.ascii	"pin_dian_yuan\000"
+ 1201 023c 70696E5F 		.ascii	"pin_dian_yuan\000"
  1201      6469616E 
  1201      5F797561 
  1201      6E00
  1202              	.LASF44:
- 1203 0250 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1203 024a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  1203      4320342E 
  1203      392E3320 
  1203      32303135 
  1203      30333033 
- 1204 0283 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 1204 027d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
  1204      20726576 
  1204      6973696F 
  1204      6E203232 
  1204      31323230 
- 1205 02b6 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1205 02b0 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
  1205      67202D66 
  1205      66756E63 
  1205      74696F6E 
  1205      2D736563 
  1206              	.LASF13:
- 1207 02e2 63686172 		.ascii	"char\000"
+ 1207 02dc 63686172 		.ascii	"char\000"
  1207      00
  1208              	.LASF24:
- 1209 02e7 4B45595F 		.ascii	"KEY_QING_RUO\000"
+ 1209 02e1 4B45595F 		.ascii	"KEY_QING_RUO\000"
  1209      51494E47 
  1209      5F52554F 
  1209      00
-<<<<<<< HEAD
  1210              	.LASF17:
  1211 02ee 4C657665 		.ascii	"Level\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cci4Z2J2.s 			page 28
-=======
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\cczzgyXV.s 			page 28
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccC7aETy.s 			page 28
 
 
- 1210              	.LASF17:
- 1211 02f4 4C657665 		.ascii	"Level\000"
  1211      6C00
  1212              	.LASF0:
- 1213 02fa 7369676E 		.ascii	"signed char\000"
+ 1213 02f4 7369676E 		.ascii	"signed char\000"
  1213      65642063 
  1213      68617200 
  1214              	.LASF12:
- 1215 0306 646F7562 		.ascii	"double\000"
+ 1215 0300 646F7562 		.ascii	"double\000"
  1215      6C6500
  1216              	.LASF19:
- 1217 030d 4B45595F 		.ascii	"KEY_DIAN_YUAN\000"
+ 1217 0307 4B45595F 		.ascii	"KEY_DIAN_YUAN\000"
  1217      4449414E 
  1217      5F595541 
  1217      4E00
  1218              	.LASF20:
- 1219 031b 4B45595F 		.ascii	"KEY_FENG_NUAN\000"
+ 1219 0315 4B45595F 		.ascii	"KEY_FENG_NUAN\000"
  1219      46454E47 
  1219      5F4E5541 
  1219      4E00
  1220              	.LASF33:
- 1221 0329 70696E5F 		.ascii	"pin_bai_dong\000"
+ 1221 0323 70696E5F 		.ascii	"pin_bai_dong\000"
  1221      6261695F 
  1221      646F6E67 
  1221      00

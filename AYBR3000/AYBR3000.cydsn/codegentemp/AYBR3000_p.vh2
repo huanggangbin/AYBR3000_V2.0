@@ -1,9 +1,5 @@
 -- Project:   AYBR3000
-<<<<<<< HEAD
--- Generated: 11/07/2017 08:58:06
-=======
--- Generated: 11/06/2017 19:55:28
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+-- Generated: 11/07/2017 10:39:39
 -- PSoC Creator  4.0
 
 ENTITY AYBR3000 IS

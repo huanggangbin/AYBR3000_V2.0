@@ -73,7 +73,7 @@ void TIM4_Configuration(void)
     TIM4_Cmd(ENABLE);
     
 }
-/*
+
 void GPIO_Key_Sleep_Set(void) 
 {
     
@@ -119,7 +119,6 @@ void GPIO_Key_WakeUp_Set(void)
 
     GPIO_Init(GPIOF, GPIO_Pin_7, GPIO_Mode_In_FL_No_IT);        // SDO
 }
-*/
 
 void GPIO_Configuration(void) 
 {

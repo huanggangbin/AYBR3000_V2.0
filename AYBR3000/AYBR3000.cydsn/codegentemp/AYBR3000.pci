@@ -1,9 +1,5 @@
 # AYBR3000
-<<<<<<< HEAD
-# 2017-11-07 00:58:06Z
-=======
-# 2017-11-06 11:55:28Z
->>>>>>> 4c7b40fa6c7e535dc9be1e8f046258a33ae3ec0e
+# 2017-11-07 02:39:39Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
