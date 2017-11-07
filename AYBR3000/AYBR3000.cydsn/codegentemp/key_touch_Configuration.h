@@ -559,9 +559,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button1 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON1_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON1_FINGER_TH             (100u)
-#define key_touch_BUTTON1_NOISE_TH              (50u)
-#define key_touch_BUTTON1_NNOISE_TH             (50u)
+#define key_touch_BUTTON1_FINGER_TH             (150u)
+#define key_touch_BUTTON1_NOISE_TH              (75u)
+#define key_touch_BUTTON1_NNOISE_TH             (75u)
 #define key_touch_BUTTON1_HYSTERESIS            (6u)
 #define key_touch_BUTTON1_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON1_LOW_BSLN_RST          (30u)
@@ -579,9 +579,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button2 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON2_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON2_FINGER_TH             (530u)
-#define key_touch_BUTTON2_NOISE_TH              (200u)
-#define key_touch_BUTTON2_NNOISE_TH             (200u)
+#define key_touch_BUTTON2_FINGER_TH             (100u)
+#define key_touch_BUTTON2_NOISE_TH              (50u)
+#define key_touch_BUTTON2_NNOISE_TH             (50u)
 #define key_touch_BUTTON2_HYSTERESIS            (6u)
 #define key_touch_BUTTON2_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON2_LOW_BSLN_RST          (30u)
@@ -699,9 +699,9 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 * Button8 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON8_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON8_FINGER_TH             (240u)
-#define key_touch_BUTTON8_NOISE_TH              (120u)
-#define key_touch_BUTTON8_NNOISE_TH             (120u)
+#define key_touch_BUTTON8_FINGER_TH             (150u)
+#define key_touch_BUTTON8_NOISE_TH              (75u)
+#define key_touch_BUTTON8_NNOISE_TH             (75u)
 #define key_touch_BUTTON8_HYSTERESIS            (6u)
 #define key_touch_BUTTON8_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON8_LOW_BSLN_RST          (30u)

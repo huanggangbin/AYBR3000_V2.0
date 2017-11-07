@@ -26,20 +26,20 @@ void A7105_init(void)
     SDIO_PIN_HIGH();
     A7105_GIOx_interrupt_switch(OFF);
    
-    A7105_Reset();        //reset A7105 RF chip
-    A7105_WriteID();    //write ID code
-    A7105_Config();        //config A7105 chip
-    A7105_Calibration();        //calibration IF,vco, vcoc
+    A7105_Reset();          //reset A7105 RF chip
+    A7105_WriteID();        //write ID code
+    A7105_Config();         //config A7105 chip
+    A7105_Calibration();    //calibration IF,vco, vcoc
     
     StrobeCmd(CMD_STBY);
 
-    A7105_WriteReg(TXTEST_REG, 0x17 );                  //    TX power = 0dBm
-    A7105_WriteReg(DATARATE_REG, 9);                   //    Data rate = 50K
-    A7105_WriteReg(MODECTRL_REG, 0x62);               //    FIFO mode
-    A7105_WriteReg(PLL1_REG, 56 );                            // set radio channel,设置信道频率
-    A7105_WriteReg(CODE1_REG, 0x0F);                       //使能CRC校验
+    A7105_WriteReg(TXTEST_REG, 0x17 );                  //TX power = 0dBm
+    A7105_WriteReg(DATARATE_REG, 9);                    //Data rate = 50K
+    A7105_WriteReg(MODECTRL_REG, 0x62);                 //FIFO mode
+    A7105_WriteReg(PLL1_REG, 56 );                      //set radio channel,设置信道频率
+    A7105_WriteReg(CODE1_REG, 0x0F);                    //使能CRC校验
     /*这里等待帧格式确定在设置payload length*/
-    A7105_WriteReg(FIFO1_REG, 20 - 1); // set FIFO payload length
+    A7105_WriteReg(FIFO1_REG, 20 - 1);                  // set FIFO payload length
 }
 
 /*********************************************************************
@@ -52,10 +52,10 @@ void send_data_by_A7105(uint8 buffer_length, uint8 send_buffer[])
         StrobeCmd(CMD_TFR);
         WriteFIFO(buffer_length, send_buffer); 
         
-        StrobeCmd(CMD_STBY);   //若当前是RX状态,是无法直接切换到TX状态的
+        StrobeCmd(CMD_STBY);        //若当前是RX状态,是无法直接切换到TX状态的
         StrobeCmd(CMD_TX);
-        while(RF_WTR());// 浮空输入脚,A7105发送开始拉高,发送结束拉低
-        //发送完成会自动回到之前的状态StandBy
+        while(RF_WTR());            // 浮空输入脚,A7105发送开始拉高,发送结束拉低
+                                    //发送完成会自动回到之前的状态StandBy
     }
     else
     {
@@ -81,7 +81,6 @@ bool receive_data_by_A7105(uint8 buffer_length, uint8 receive_buffer[])
                 ReadFIFO(buffer_length, receive_buffer);
                 StrobeCmd(CMD_RFR);
                 ret = TRUE;
-
             }
             else
             {
