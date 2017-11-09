@@ -173,27 +173,9 @@ typedef struct
     uint8  idacMod [key_touch_NUM_SCAN_FREQS];
 
     /**
-     *  Specifies the sense clock divider. Present only if individual clock dividers are enabled.
-     *  Specifies the sense clock divider for the Column sensors for the Matrix Buttons and Touchpad widgets.
-     *  Sets Tx clock divider for the CSX Widgets.
-     */
-    uint8  snsClk;
-
-    /**
      *  Register for internal use
      */
     uint8  snsClkSource;
-
-    /**
-     *  Widget Finger capacitance parameter. Available only if the SmartSense is enabled.
-     *  Not used for the CSX Widgets.
-     */
-    uint16 fingerCap;
-
-    /**
-     *  The 75% of signal per user-defined finger capacitance
-     */
-    uint16 sigPFC;
 } key_touch_RAM_WD_BASE_STRUCT;
 
 /***************************************************************************//**
@@ -251,27 +233,9 @@ typedef struct
     uint8  idacMod [key_touch_NUM_SCAN_FREQS];
 
     /**
-     *  Specifies the sense clock divider. Present only if individual clock dividers are enabled.
-     *  Specifies the sense clock divider for the Column sensors for the Matrix Buttons and Touchpad widgets.
-     *  Sets Tx clock divider for the CSX Widgets.
-     */
-    uint8  snsClk;
-
-    /**
      *  Register for internal use
      */
     uint8  snsClkSource;
-
-    /**
-     *  Widget Finger capacitance parameter. Available only if the SmartSense is enabled.
-     *  Not used for the CSX Widgets.
-     */
-    uint16 fingerCap;
-
-    /**
-     *  The 75% of signal per user-defined finger capacitance
-     */
-    uint16 sigPFC;
 } key_touch_RAM_WD_BUTTON_STRUCT;
 
 
@@ -516,6 +480,11 @@ typedef struct
     uint8  modCsdClk;
 
     /**
+     *  The global sense clock divider for the CSD widgets.
+     */
+    uint8  snsCsdClk;
+
+    /**
      *  RAM Widget Objects.
      */
     key_touch_RAM_WD_LIST_STRUCT wdgtList;
@@ -704,14 +673,6 @@ typedef struct
      *  For CSX Button, Touchpad and Matrix Button, the number of the Rx electrodes.
      */
     uint8  numCols;
-
-    /**
-     *  The pointer to the array with the sensor noise envelope data.
-     *  Set to the valid value only for the CSD widgets.
-     *  For the CSX widgets this pointer is set to NULL.
-     *  The pointed array is not part of the data structure.
-     */
-    SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT * ptr2NoiseEnvlp;
 } key_touch_FLASH_WD_STRUCT;
 
 

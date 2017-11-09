@@ -14,7 +14,7 @@
 
 static Key_event_handler event_handlers[KEY_NUMBER][KEY_EVENT_NUMBER - 1];     //KEY_STUCK不需要event handler
 
-#define  KEY_COMBINE_MAX_NUMBER 3u
+#define  KEY_COMBINE_MAX_NUMBER 4u
 static uint8 combine_key_number = 0;
 
 static Key_combine combine_keys[KEY_COMBINE_MAX_NUMBER];

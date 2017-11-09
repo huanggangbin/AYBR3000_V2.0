@@ -36,6 +36,7 @@ APP_KEY_HANDLER_DEFINE(long_release_ding_shi_jian, VALUE_LONG_RELEASE_DING_SHI_J
 APP_KEY_HANDLER_DEFINE(combine_wen_jia_ding_jia, VALUE_COMBINE_WA_DA);
 APP_KEY_HANDLER_DEFINE(combine_wen_jian_ding_jian, VALUE_COMBINE_WM_DM);
 APP_KEY_HANDLER_DEFINE(combine_ding_jian_dian_yuan, VALUE_COMBINE_DM_DIAN_YUAN);
+APP_KEY_HANDLER_DEFINE(combine_qiang_ruo_dian_yuan, VALUE_CONBINE_QIANG_RUO_DIAN_YUAN);
 
 void app_init(void)
 {
@@ -62,6 +63,7 @@ void app_init(void)
     key_add_combine_handler(KEY_WENDU_JIA, KEY_DINGSHI_JIA, APP_KEY_HANDlER(combine_wen_jia_ding_jia));
     key_add_combine_handler(KEY_WENDU_JIAN, KEY_DINGSHI_JIAN, APP_KEY_HANDlER(combine_wen_jian_ding_jian));
     key_add_combine_handler(KEY_DINGSHI_JIAN, KEY_DIAN_YUAN, APP_KEY_HANDlER(combine_ding_jian_dian_yuan));
+    key_add_combine_handler(KEY_QING_RUO, KEY_DIAN_YUAN, APP_KEY_HANDlER(combine_qiang_ruo_dian_yuan));
 }
 
 

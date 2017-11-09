@@ -84,22 +84,6 @@ static uint8 key_touch_debounceButton10[key_touch_BUTTON10_NUM_SENSORS];
 static uint8 key_touch_debounceButton11[key_touch_BUTTON11_NUM_SENSORS];
 
 
-/***************************************************************************//**
-* Declare Noise Envelope data structures
-*******************************************************************************/
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton0[key_touch_BUTTON0_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton1[key_touch_BUTTON1_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton2[key_touch_BUTTON2_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton3[key_touch_BUTTON3_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton4[key_touch_BUTTON4_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton5[key_touch_BUTTON5_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton6[key_touch_BUTTON6_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton7[key_touch_BUTTON7_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton8[key_touch_BUTTON8_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton9[key_touch_BUTTON9_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton10[key_touch_BUTTON10_NUM_SENSORS];
-static SMARTSENSE_CSD_NOISE_ENVELOPE_STRUCT key_touch_noiseEnvlpButton11[key_touch_BUTTON11_NUM_SENSORS];
-
 /*******************************************************************************
 * Define and initialize the Flash Data Structure
 *******************************************************************************/
@@ -127,7 +111,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON0_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON0_NUM_SENSORS,
-            key_touch_noiseEnvlpButton0,
         },
         { /* Button1 */
             &key_touch_ioList[1u],
@@ -139,7 +122,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON1_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON1_NUM_SENSORS,
-            key_touch_noiseEnvlpButton1,
         },
         { /* Button2 */
             &key_touch_ioList[2u],
@@ -151,7 +133,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON2_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON2_NUM_SENSORS,
-            key_touch_noiseEnvlpButton2,
         },
         { /* Button3 */
             &key_touch_ioList[3u],
@@ -163,7 +144,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON3_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON3_NUM_SENSORS,
-            key_touch_noiseEnvlpButton3,
         },
         { /* Button4 */
             &key_touch_ioList[4u],
@@ -175,7 +155,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON4_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON4_NUM_SENSORS,
-            key_touch_noiseEnvlpButton4,
         },
         { /* Button5 */
             &key_touch_ioList[5u],
@@ -187,7 +166,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON5_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON5_NUM_SENSORS,
-            key_touch_noiseEnvlpButton5,
         },
         { /* Button6 */
             &key_touch_ioList[6u],
@@ -199,7 +177,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON6_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON6_NUM_SENSORS,
-            key_touch_noiseEnvlpButton6,
         },
         { /* Button7 */
             &key_touch_ioList[7u],
@@ -211,7 +188,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON7_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON7_NUM_SENSORS,
-            key_touch_noiseEnvlpButton7,
         },
         { /* Button8 */
             &key_touch_ioList[8u],
@@ -223,7 +199,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON8_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON8_NUM_SENSORS,
-            key_touch_noiseEnvlpButton8,
         },
         { /* Button9 */
             &key_touch_ioList[9u],
@@ -235,7 +210,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON9_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON9_NUM_SENSORS,
-            key_touch_noiseEnvlpButton9,
         },
         { /* Button10 */
             &key_touch_ioList[10u],
@@ -247,7 +221,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON10_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON10_NUM_SENSORS,
-            key_touch_noiseEnvlpButton10,
         },
         { /* Button11 */
             &key_touch_ioList[11u],
@@ -259,7 +232,6 @@ const key_touch_FLASH_STRUCT key_touch_dsFlash =
             key_touch_BUTTON11_NUM_SENSORS,
             (uint8)key_touch_WD_BUTTON_E,
             key_touch_BUTTON11_NUM_SENSORS,
-            key_touch_noiseEnvlpButton11,
         },
     },
 };
@@ -424,10 +396,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON0_IDAC_MOD0,
         },
-        key_touch_BUTTON0_SNS_CLK,
         key_touch_BUTTON0_SNS_CLK_SOURCE,
-        key_touch_BUTTON0_FINGER_CAP,
-        key_touch_BUTTON0_SIGPFC,
     },
     { /* Button1 */
         key_touch_BUTTON1_RESOLUTION,
@@ -441,10 +410,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON1_IDAC_MOD0,
         },
-        key_touch_BUTTON1_SNS_CLK,
         key_touch_BUTTON1_SNS_CLK_SOURCE,
-        key_touch_BUTTON1_FINGER_CAP,
-        key_touch_BUTTON1_SIGPFC,
     },
     { /* Button2 */
         key_touch_BUTTON2_RESOLUTION,
@@ -458,10 +424,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON2_IDAC_MOD0,
         },
-        key_touch_BUTTON2_SNS_CLK,
         key_touch_BUTTON2_SNS_CLK_SOURCE,
-        key_touch_BUTTON2_FINGER_CAP,
-        key_touch_BUTTON2_SIGPFC,
     },
     { /* Button3 */
         key_touch_BUTTON3_RESOLUTION,
@@ -475,10 +438,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON3_IDAC_MOD0,
         },
-        key_touch_BUTTON3_SNS_CLK,
         key_touch_BUTTON3_SNS_CLK_SOURCE,
-        key_touch_BUTTON3_FINGER_CAP,
-        key_touch_BUTTON3_SIGPFC,
     },
     { /* Button4 */
         key_touch_BUTTON4_RESOLUTION,
@@ -492,10 +452,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON4_IDAC_MOD0,
         },
-        key_touch_BUTTON4_SNS_CLK,
         key_touch_BUTTON4_SNS_CLK_SOURCE,
-        key_touch_BUTTON4_FINGER_CAP,
-        key_touch_BUTTON4_SIGPFC,
     },
     { /* Button5 */
         key_touch_BUTTON5_RESOLUTION,
@@ -509,10 +466,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON5_IDAC_MOD0,
         },
-        key_touch_BUTTON5_SNS_CLK,
         key_touch_BUTTON5_SNS_CLK_SOURCE,
-        key_touch_BUTTON5_FINGER_CAP,
-        key_touch_BUTTON5_SIGPFC,
     },
     { /* Button6 */
         key_touch_BUTTON6_RESOLUTION,
@@ -526,10 +480,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON6_IDAC_MOD0,
         },
-        key_touch_BUTTON6_SNS_CLK,
         key_touch_BUTTON6_SNS_CLK_SOURCE,
-        key_touch_BUTTON6_FINGER_CAP,
-        key_touch_BUTTON6_SIGPFC,
     },
     { /* Button7 */
         key_touch_BUTTON7_RESOLUTION,
@@ -543,10 +494,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON7_IDAC_MOD0,
         },
-        key_touch_BUTTON7_SNS_CLK,
         key_touch_BUTTON7_SNS_CLK_SOURCE,
-        key_touch_BUTTON7_FINGER_CAP,
-        key_touch_BUTTON7_SIGPFC,
     },
     { /* Button8 */
         key_touch_BUTTON8_RESOLUTION,
@@ -560,10 +508,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON8_IDAC_MOD0,
         },
-        key_touch_BUTTON8_SNS_CLK,
         key_touch_BUTTON8_SNS_CLK_SOURCE,
-        key_touch_BUTTON8_FINGER_CAP,
-        key_touch_BUTTON8_SIGPFC,
     },
     { /* Button9 */
         key_touch_BUTTON9_RESOLUTION,
@@ -577,10 +522,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON9_IDAC_MOD0,
         },
-        key_touch_BUTTON9_SNS_CLK,
         key_touch_BUTTON9_SNS_CLK_SOURCE,
-        key_touch_BUTTON9_FINGER_CAP,
-        key_touch_BUTTON9_SIGPFC,
     },
     { /* Button10 */
         key_touch_BUTTON10_RESOLUTION,
@@ -594,10 +536,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON10_IDAC_MOD0,
         },
-        key_touch_BUTTON10_SNS_CLK,
         key_touch_BUTTON10_SNS_CLK_SOURCE,
-        key_touch_BUTTON10_FINGER_CAP,
-        key_touch_BUTTON10_SIGPFC,
     },
     { /* Button11 */
         key_touch_BUTTON11_RESOLUTION,
@@ -611,10 +550,7 @@ static const key_touch_RAM_WD_LIST_STRUCT key_touch_ramWidgetInit =
         {
             key_touch_BUTTON11_IDAC_MOD0,
         },
-        key_touch_BUTTON11_SNS_CLK,
         key_touch_BUTTON11_SNS_CLK_SOURCE,
-        key_touch_BUTTON11_FINGER_CAP,
-        key_touch_BUTTON11_SIGPFC,
     },
 };
 

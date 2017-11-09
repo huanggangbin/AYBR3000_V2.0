@@ -3,7 +3,8 @@
 #include "types.h"
 #include "timing.h"
 #include "LCD_driver.h"
-
+#include "app_protocol.h"
+#include "app_lcd_display.h"  
 //时间设置模式定义
 typedef enum
 {
@@ -33,6 +34,7 @@ typedef enum
     
     APP_TIME_CMD_START,
     APP_TIME_CMD_CHANGE,
+    APP_TIME_CMD_END,
     
     APP_TIME_CMD_ADD,
     APP_TIME_CMD_MINUS,
@@ -54,5 +56,6 @@ extern void app_time_init(void);
 extern void app_time_process(void);
 extern void app_time_event_set(App_set_time_command cmd);
 extern bool app_time_mode_busy(void);
+
 #endif
 

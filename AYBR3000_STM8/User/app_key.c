@@ -25,6 +25,7 @@ typedef enum
     VALUE_COMBINE_WA_DA,
     VALUE_COMBINE_WM_DM,
     VALUE_COMBINE_DM_DIAN_YUAN,
+    VALUE_CONBINE_QIANG_RUO_DIAN_YUAN,
     VALUE_NUMBER
 }Key_value;
 
@@ -32,7 +33,6 @@ static Key_value key;
 
 void app_key_init(void)
 {
-    ;
 }
 
 void app_key_process(void)
@@ -41,6 +41,23 @@ void app_key_process(void)
     {
         key = (Key_value)receive_buffer[2];
 
+
+        //定时模式下,异常按键处理
+        if (app_time_mode_busy())
+        {
+            if (key != VALUE_SHORT_PRESS_WENDU_JIA
+                && key != VALUE_SHORT_PRESS_DINGSHI_JIA
+                && key != VALUE_SHORT_PRESS_DINGSHI_JIAN
+                && key != VALUE_COMBINE_WA_DA
+                && key != VALUE_COMBINE_WM_DM
+                && key != VALUE_COMBINE_DM_DIAN_YUAN)
+            {
+                app_time_event_set(APP_TIME_CMD_END);
+                return;
+            }
+        }
+        
+        //正常按键处理
         switch(key)
         {
             case VALUE_SHORT_PRESS_DIAN_YUAN:
@@ -56,7 +73,6 @@ void app_key_process(void)
                     app_work_mode_event_set(APP_EVENT_WEN_DU_JIA);
                 break;
             case VALUE_SHORT_PRESS_WENDU_JIAN:
-                if (!app_time_mode_busy())
                     app_work_mode_event_set(APP_EVENT_WEN_DU_JIAN);
                 break;
             case VALUE_SHORT_PRESS_DINGSHI_JIA: 
@@ -104,12 +120,19 @@ void app_key_process(void)
                 break;
             case VALUE_COMBINE_WA_DA:
                 //发送配网报文
+                nop();
                 break;
             case VALUE_COMBINE_WM_DM:
                 //发送解绑报文
+                nop();
                 break;
             case VALUE_COMBINE_DM_DIAN_YUAN:
                 //恢复出厂设置
+                nop();
+                break;
+            case VALUE_CONBINE_QIANG_RUO_DIAN_YUAN:
+                //发送对码命令
+                nop();
                 break;
             default :
                 break;

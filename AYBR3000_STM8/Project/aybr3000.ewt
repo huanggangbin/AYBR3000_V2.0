@@ -2214,16 +2214,22 @@
             <name>$PROJ_DIR$\..\User\app_lcd_display.h</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\User\app_lcd_display_config.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\User\app_lcd_display_config.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\User\app_power.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\User\app_power.h</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\User\app_send.c</name>
+            <name>$PROJ_DIR$\..\User\app_protocol.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\User\app_send.h</name>
+            <name>$PROJ_DIR$\..\User\app_protocol.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\User\app_time.c</name>
@@ -2236,6 +2242,12 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\User\app_work.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\User\datalink_protocol.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\User\datalink_protocol.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\User\LCD_driver.c</name>
@@ -2253,13 +2265,13 @@
             <name>$PROJ_DIR$\..\User\main.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\User\main_control.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\User\main_control.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\User\maindef.h</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\User\protocol.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\User\protocol.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\User\RTC_driver.c</name>

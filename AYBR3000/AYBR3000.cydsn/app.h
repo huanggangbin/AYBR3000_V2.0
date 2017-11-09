@@ -48,6 +48,7 @@ typedef enum
     VALUE_COMBINE_WA_DA,
     VALUE_COMBINE_WM_DM,
     VALUE_COMBINE_DM_DIAN_YUAN,
+    VALUE_CONBINE_QIANG_RUO_DIAN_YUAN,
     VALUE_NUMBER
 }Key_value;
 extern void app_init(void);   

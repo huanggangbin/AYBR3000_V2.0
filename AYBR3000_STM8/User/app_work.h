@@ -2,18 +2,16 @@
 #define _APP_WORK_H_
 #include "types.h"
 #include "LCD_driver.h"
-
-//time_manage
-//power_manage
-//work_mode_manage
+#include "app_protocol.h"
+#include "app_lcd_display.h"
 
 //枚举出所有的工作模式
 typedef enum
 {
     APP_MODE_IDLE,
     APP_MODE_FENG_NUAN,
-    APP_MODE_XIN_FENG_QU_NUAN,
     APP_MODE_XIN_FENG,
+    APP_MODE_XIN_FENG_QU_NUAN,
     APP_MODE_HUAN_QI,
     APP_MODE_GAN_ZAO,
     APP_MODE_JING_HUA,
@@ -37,6 +35,7 @@ typedef enum
     APP_EVENT_DING_SHI_JIA,
     APP_EVENT_DING_SHI_JIAN,
 }App_work_event;
+
 //模式状态记录
 typedef enum
 {
@@ -65,8 +64,8 @@ typedef enum
 typedef struct 
 {
     FunctionalState state;                
-    uint8 high;
     uint8 low;
+    uint8 high;
     uint8 init;
 }App_value_config;
 
@@ -81,6 +80,5 @@ typedef struct
 extern void app_work_mode_init(void);
 extern void app_work_mode_process(void);
 extern void app_work_mode_event_set(App_work_event e);
-
 #endif
 

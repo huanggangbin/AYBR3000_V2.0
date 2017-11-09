@@ -1,5 +1,6 @@
 #ifndef _SIMPLE_PROTOCOL_H_
 #define _SIMPLE_PROTOCOL_H_
+
 #include "stm8l15x.h"
 #include "timing.h"
 #include "types.h"

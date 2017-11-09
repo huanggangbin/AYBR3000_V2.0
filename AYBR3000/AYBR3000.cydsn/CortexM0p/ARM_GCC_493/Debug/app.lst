@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
   39              		@ sp needed
   40 000e 08BD     		pop	{r3, pc}
   41              	.L3:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 2
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 2
 
 
   42              		.align	2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
   94 0004 0223     		mov	r3, #2
   95 0006 0370     		strb	r3, [r0]
   96 0008 0121     		mov	r1, #1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 3
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 3
 
 
   97 000a FFF7FEFF 		bl	simple_protocol_send
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  149              		.cfi_def_cfa_offset 8
  150              		.cfi_offset 3, -8
  151              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 4
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 4
 
 
  152              		.loc 1 20 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  205              	.LFB41:
   22:app.c         **** APP_KEY_HANDLER_DEFINE(short_press_huan_qi, VALUE_SHORT_PRESS_HUAN_QI);
  206              		.loc 1 22 0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 5
 
 
  207              		.cfi_startproc
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  260              		.global	app_key_short_press_ding_shi_jia_handler
  261              		.code	16
  262              		.thumb_func
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 6
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 6
 
 
  263              		.type	app_key_short_press_ding_shi_jia_handler, %function
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  315              		.cfi_endproc
  316              	.LFE44:
  317              		.size	app_key_short_press_ding_shi_jian_handler, .-app_key_short_press_ding_shi_jian_handler
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 7
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 7
 
 
  318              		.section	.text.app_key_short_press_bai_dong_handler,"ax",%progbits
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  370 000e 08BD     		pop	{r3, pc}
  371              	.L36:
  372              		.align	2
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 8
 
 
  373              	.L35:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  424 0004 0D23     		mov	r3, #13
  425 0006 0370     		strb	r3, [r0]
  426 0008 0121     		mov	r1, #1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 9
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 9
 
 
  427 000a FFF7FEFF 		bl	simple_protocol_send
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  478 0000 08B5     		push	{r3, lr}
  479              		.cfi_def_cfa_offset 8
  480              		.cfi_offset 3, -8
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 10
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 10
 
 
  481              		.cfi_offset 14, -4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  534              	app_key_combine_wen_jia_ding_jia_handler:
  535              	.LFB52:
   35:app.c         **** 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 11
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 11
 
 
   36:app.c         **** APP_KEY_HANDLER_DEFINE(combine_wen_jia_ding_jia, VALUE_COMBINE_WA_DA);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  588              		.section	.text.app_key_combine_ding_jian_dian_yuan_handler,"ax",%progbits
  589              		.align	2
  590              		.global	app_key_combine_ding_jian_dian_yuan_handler
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 12
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 12
 
 
  591              		.code	16
@@ -689,2367 +689,2474 @@ ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 1
  615              		.cfi_endproc
  616              	.LFE54:
  617              		.size	app_key_combine_ding_jian_dian_yuan_handler, .-app_key_combine_ding_jian_dian_yuan_handler
- 618              		.section	.text.app_init,"ax",%progbits
+ 618              		.section	.text.app_key_combine_qiang_ruo_dian_yuan_handler,"ax",%progbits
  619              		.align	2
- 620              		.global	app_init
+ 620              		.global	app_key_combine_qiang_ruo_dian_yuan_handler
  621              		.code	16
  622              		.thumb_func
- 623              		.type	app_init, %function
- 624              	app_init:
+ 623              		.type	app_key_combine_qiang_ruo_dian_yuan_handler, %function
+ 624              	app_key_combine_qiang_ruo_dian_yuan_handler:
  625              	.LFB55:
-  39:app.c         **** 
-  40:app.c         **** void app_init(void)
-  41:app.c         **** {
- 626              		.loc 1 41 0
+  39:app.c         **** APP_KEY_HANDLER_DEFINE(combine_qiang_ruo_dian_yuan, VALUE_CONBINE_QIANG_RUO_DIAN_YUAN);
+ 626              		.loc 1 39 0
  627              		.cfi_startproc
  628 0000 08B5     		push	{r3, lr}
  629              		.cfi_def_cfa_offset 8
  630              		.cfi_offset 3, -8
  631              		.cfi_offset 14, -4
-  42:app.c         ****     key_add_event_handler(KEY_DIAN_YUAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_dian_yu
- 632              		.loc 1 42 0
- 633 0002 0020     		mov	r0, #0
- 634 0004 0021     		mov	r1, #0
- 635 0006 314A     		ldr	r2, .L62
- 636 0008 FFF7FEFF 		bl	key_add_event_handler
- 637              	.LVL20:
-  43:app.c         ****     key_add_event_handler(KEY_FENG_NUAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_feng_nu
- 638              		.loc 1 43 0
- 639 000c 0120     		mov	r0, #1
- 640 000e 0021     		mov	r1, #0
- 641 0010 2F4A     		ldr	r2, .L62+4
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 13
-
-
- 642 0012 FFF7FEFF 		bl	key_add_event_handler
- 643              	.LVL21:
-  44:app.c         ****     key_add_event_handler(KEY_WENDU_JIA, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_wen_du_
- 644              		.loc 1 44 0
- 645 0016 0220     		mov	r0, #2
- 646 0018 0021     		mov	r1, #0
- 647 001a 2E4A     		ldr	r2, .L62+8
- 648 001c FFF7FEFF 		bl	key_add_event_handler
- 649              	.LVL22:
-  45:app.c         ****     key_add_event_handler(KEY_WENDU_JIAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_wen_du
- 650              		.loc 1 45 0
- 651 0020 0320     		mov	r0, #3
- 652 0022 0021     		mov	r1, #0
- 653 0024 2C4A     		ldr	r2, .L62+12
- 654 0026 FFF7FEFF 		bl	key_add_event_handler
- 655              	.LVL23:
-  46:app.c         ****     key_add_event_handler(KEY_XIN_FENG, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_xin_feng
- 656              		.loc 1 46 0
- 657 002a 0420     		mov	r0, #4
- 658 002c 0021     		mov	r1, #0
- 659 002e 2B4A     		ldr	r2, .L62+16
- 660 0030 FFF7FEFF 		bl	key_add_event_handler
- 661              	.LVL24:
-  47:app.c         ****     key_add_event_handler(KEY_QING_RUO, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_qiang_ru
- 662              		.loc 1 47 0
- 663 0034 0520     		mov	r0, #5
- 664 0036 0021     		mov	r1, #0
- 665 0038 294A     		ldr	r2, .L62+20
- 666 003a FFF7FEFF 		bl	key_add_event_handler
- 667              	.LVL25:
-  48:app.c         ****     key_add_event_handler(KEY_HUAN_QI, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_huan_qi))
- 668              		.loc 1 48 0
- 669 003e 0620     		mov	r0, #6
- 670 0040 0021     		mov	r1, #0
- 671 0042 284A     		ldr	r2, .L62+24
- 672 0044 FFF7FEFF 		bl	key_add_event_handler
- 673              	.LVL26:
-  49:app.c         ****     key_add_event_handler(KEY_XIN_FENG_QU_NUAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_
- 674              		.loc 1 49 0
- 675 0048 0720     		mov	r0, #7
- 676 004a 0021     		mov	r1, #0
- 677 004c 264A     		ldr	r2, .L62+28
- 678 004e FFF7FEFF 		bl	key_add_event_handler
- 679              	.LVL27:
-  50:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIA, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_ding_
- 680              		.loc 1 50 0
- 681 0052 0820     		mov	r0, #8
- 682 0054 0021     		mov	r1, #0
- 683 0056 254A     		ldr	r2, .L62+32
- 684 0058 FFF7FEFF 		bl	key_add_event_handler
- 685              	.LVL28:
-  51:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_ding
- 686              		.loc 1 51 0
- 687 005c 0920     		mov	r0, #9
- 688 005e 0021     		mov	r1, #0
- 689 0060 234A     		ldr	r2, .L62+36
- 690 0062 FFF7FEFF 		bl	key_add_event_handler
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 14
-
-
- 691              	.LVL29:
-  52:app.c         ****     key_add_event_handler(KEY_BAI_DONG, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_bai_dong
- 692              		.loc 1 52 0
- 693 0066 0A20     		mov	r0, #10
- 694 0068 0021     		mov	r1, #0
- 695 006a 224A     		ldr	r2, .L62+40
- 696 006c FFF7FEFF 		bl	key_add_event_handler
- 697              	.LVL30:
-  53:app.c         ****     key_add_event_handler(KEY_ZHI_NENG, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_zhi_neng
- 698              		.loc 1 53 0
- 699 0070 0B20     		mov	r0, #11
- 700 0072 0021     		mov	r1, #0
- 701 0074 204A     		ldr	r2, .L62+44
- 702 0076 FFF7FEFF 		bl	key_add_event_handler
- 703              	.LVL31:
-  54:app.c         ****     
-  55:app.c         ****     key_add_event_handler(KEY_WENDU_JIA, KEY_EVENT_LONG_PRESS, APP_KEY_HANDlER(long_press_wen_du_ji
- 704              		.loc 1 55 0
- 705 007a 0220     		mov	r0, #2
- 706 007c 0121     		mov	r1, #1
- 707 007e 1F4A     		ldr	r2, .L62+48
- 708 0080 FFF7FEFF 		bl	key_add_event_handler
- 709              	.LVL32:
-  56:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIA, KEY_EVENT_LONG_PRESS, APP_KEY_HANDlER(long_press_ding_sh
- 710              		.loc 1 56 0
- 711 0084 0820     		mov	r0, #8
- 712 0086 0121     		mov	r1, #1
- 713 0088 1D4A     		ldr	r2, .L62+52
- 714 008a FFF7FEFF 		bl	key_add_event_handler
- 715              	.LVL33:
-  57:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIAN, KEY_EVENT_LONG_PRESS, APP_KEY_HANDlER(long_press_ding_s
- 716              		.loc 1 57 0
- 717 008e 0920     		mov	r0, #9
- 718 0090 0121     		mov	r1, #1
- 719 0092 1C4A     		ldr	r2, .L62+56
- 720 0094 FFF7FEFF 		bl	key_add_event_handler
- 721              	.LVL34:
-  58:app.c         ****     
-  59:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIA, KEY_EVENT_LONG_RELEASE, APP_KEY_HANDlER(long_release_din
- 722              		.loc 1 59 0
- 723 0098 0820     		mov	r0, #8
- 724 009a 0221     		mov	r1, #2
- 725 009c 1A4A     		ldr	r2, .L62+60
- 726 009e FFF7FEFF 		bl	key_add_event_handler
- 727              	.LVL35:
-  60:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIAN, KEY_EVENT_LONG_RELEASE, APP_KEY_HANDlER(long_release_di
- 728              		.loc 1 60 0
- 729 00a2 0920     		mov	r0, #9
- 730 00a4 0221     		mov	r1, #2
- 731 00a6 194A     		ldr	r2, .L62+64
- 732 00a8 FFF7FEFF 		bl	key_add_event_handler
- 733              	.LVL36:
-  61:app.c         ****     
-  62:app.c         ****     key_add_combine_handler(KEY_WENDU_JIA, KEY_DINGSHI_JIA, APP_KEY_HANDlER(combine_wen_jia_ding_ji
- 734              		.loc 1 62 0
- 735 00ac 0220     		mov	r0, #2
- 736 00ae 0821     		mov	r1, #8
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 15
-
-
- 737 00b0 174A     		ldr	r2, .L62+68
- 738 00b2 FFF7FEFF 		bl	key_add_combine_handler
- 739              	.LVL37:
-  63:app.c         ****     key_add_combine_handler(KEY_WENDU_JIAN, KEY_DINGSHI_JIAN, APP_KEY_HANDlER(combine_wen_jian_ding
- 740              		.loc 1 63 0
- 741 00b6 0320     		mov	r0, #3
- 742 00b8 0921     		mov	r1, #9
- 743 00ba 164A     		ldr	r2, .L62+72
- 744 00bc FFF7FEFF 		bl	key_add_combine_handler
- 745              	.LVL38:
-  64:app.c         ****     key_add_combine_handler(KEY_DINGSHI_JIAN, KEY_DIAN_YUAN, APP_KEY_HANDlER(combine_ding_jian_dian
- 746              		.loc 1 64 0
- 747 00c0 0920     		mov	r0, #9
- 748 00c2 0021     		mov	r1, #0
- 749 00c4 144A     		ldr	r2, .L62+76
- 750 00c6 FFF7FEFF 		bl	key_add_combine_handler
- 751              	.LVL39:
-  65:app.c         **** }
- 752              		.loc 1 65 0
- 753              		@ sp needed
- 754 00ca 08BD     		pop	{r3, pc}
- 755              	.L63:
- 756              		.align	2
- 757              	.L62:
- 758 00cc 00000000 		.word	app_key_short_press_dian_yuan_handler
- 759 00d0 00000000 		.word	app_key_short_press_feng_nuan_handler
- 760 00d4 00000000 		.word	app_key_short_press_wen_du_jia_handler
- 761 00d8 00000000 		.word	app_key_short_press_wen_du_jian_handler
- 762 00dc 00000000 		.word	app_key_short_press_xin_feng_handler
- 763 00e0 00000000 		.word	app_key_short_press_qiang_ruo_handler
- 764 00e4 00000000 		.word	app_key_short_press_huan_qi_handler
- 765 00e8 00000000 		.word	app_key_short_press_xin_feng_qu_nuan_handler
- 766 00ec 00000000 		.word	app_key_short_press_ding_shi_jia_handler
- 767 00f0 00000000 		.word	app_key_short_press_ding_shi_jian_handler
- 768 00f4 00000000 		.word	app_key_short_press_bai_dong_handler
- 769 00f8 00000000 		.word	app_key_short_press_zhi_neng_handler
- 770 00fc 00000000 		.word	app_key_long_press_wen_du_jia_handler
- 771 0100 00000000 		.word	app_key_long_press_ding_shi_jia_handler
- 772 0104 00000000 		.word	app_key_long_press_ding_shi_jian_handler
- 773 0108 00000000 		.word	app_key_long_release_ding_shi_jia_handler
- 774 010c 00000000 		.word	app_key_long_release_ding_shi_jian_handler
- 775 0110 00000000 		.word	app_key_combine_wen_jia_ding_jia_handler
- 776 0114 00000000 		.word	app_key_combine_wen_jian_ding_jian_handler
- 777 0118 00000000 		.word	app_key_combine_ding_jian_dian_yuan_handler
- 778              		.cfi_endproc
- 779              	.LFE55:
- 780              		.size	app_init, .-app_init
- 781              		.comm	app_send_buffer,10,4
- 782              		.text
- 783              	.Letext0:
- 784              		.file 2 "types.h"
- 785              		.file 3 "app.h"
- 786              		.file 4 "key_config.h"
- 787              		.file 5 "key.h"
- 788              		.file 6 "simple_protocol.h"
- 789              		.section	.debug_info,"",%progbits
- 790              	.Ldebug_info0:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 16
-
-
- 791 0000 95080000 		.4byte	0x895
- 792 0004 0400     		.2byte	0x4
- 793 0006 00000000 		.4byte	.Ldebug_abbrev0
- 794 000a 04       		.byte	0x4
- 795 000b 01       		.uleb128 0x1
- 796 000c 93000000 		.4byte	.LASF82
- 797 0010 01       		.byte	0x1
- 798 0011 45030000 		.4byte	.LASF83
- 799 0015 6F050000 		.4byte	.LASF84
- 800 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 801 001d 00000000 		.4byte	0
- 802 0021 00000000 		.4byte	.Ldebug_line0
- 803 0025 02       		.uleb128 0x2
- 804 0026 01       		.byte	0x1
- 805 0027 06       		.byte	0x6
- 806 0028 E3040000 		.4byte	.LASF0
- 807 002c 02       		.uleb128 0x2
- 808 002d 01       		.byte	0x1
- 809 002e 08       		.byte	0x8
- 810 002f B4040000 		.4byte	.LASF1
- 811 0033 02       		.uleb128 0x2
- 812 0034 02       		.byte	0x2
- 813 0035 05       		.byte	0x5
- 814 0036 80000000 		.4byte	.LASF2
- 815 003a 02       		.uleb128 0x2
- 816 003b 02       		.byte	0x2
- 817 003c 07       		.byte	0x7
- 818 003d 58060000 		.4byte	.LASF3
- 819 0041 02       		.uleb128 0x2
- 820 0042 04       		.byte	0x4
- 821 0043 05       		.byte	0x5
- 822 0044 CD030000 		.4byte	.LASF4
- 823 0048 02       		.uleb128 0x2
- 824 0049 04       		.byte	0x4
- 825 004a 07       		.byte	0x7
- 826 004b 03070000 		.4byte	.LASF5
- 827 004f 02       		.uleb128 0x2
- 828 0050 08       		.byte	0x8
- 829 0051 05       		.byte	0x5
- 830 0052 85030000 		.4byte	.LASF6
- 831 0056 02       		.uleb128 0x2
- 832 0057 08       		.byte	0x8
- 833 0058 07       		.byte	0x7
- 834 0059 FD040000 		.4byte	.LASF7
- 835 005d 03       		.uleb128 0x3
- 836 005e 04       		.byte	0x4
- 837 005f 05       		.byte	0x5
- 838 0060 696E7400 		.ascii	"int\000"
- 839 0064 02       		.uleb128 0x2
- 840 0065 04       		.byte	0x4
- 841 0066 07       		.byte	0x7
- 842 0067 14050000 		.4byte	.LASF8
- 843 006b 02       		.uleb128 0x2
- 844 006c 04       		.byte	0x4
- 845 006d 04       		.byte	0x4
- 846 006e 56030000 		.4byte	.LASF9
- 847 0072 02       		.uleb128 0x2
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 17
-
-
- 848 0073 08       		.byte	0x8
- 849 0074 04       		.byte	0x4
- 850 0075 15070000 		.4byte	.LASF10
- 851 0079 02       		.uleb128 0x2
- 852 007a 01       		.byte	0x1
- 853 007b 08       		.byte	0x8
- 854 007c 19060000 		.4byte	.LASF11
- 855 0080 04       		.uleb128 0x4
- 856 0081 04       		.byte	0x4
- 857 0082 86000000 		.4byte	0x86
- 858 0086 05       		.uleb128 0x5
- 859 0087 06       		.uleb128 0x6
- 860 0088 01       		.byte	0x1
- 861 0089 02       		.byte	0x2
- 862 008a 12       		.byte	0x12
- 863 008b 9C000000 		.4byte	0x9c
- 864 008f 07       		.uleb128 0x7
- 865 0090 6D000000 		.4byte	.LASF12
- 866 0094 00       		.sleb128 0
- 867 0095 07       		.uleb128 0x7
- 868 0096 F4070000 		.4byte	.LASF13
- 869 009a 01       		.sleb128 1
- 870 009b 00       		.byte	0
- 871 009c 08       		.uleb128 0x8
- 872 009d 92080000 		.4byte	.LASF49
- 873 00a1 02       		.byte	0x2
- 874 00a2 15       		.byte	0x15
- 875 00a3 87000000 		.4byte	0x87
- 876 00a7 02       		.uleb128 0x2
- 877 00a8 04       		.byte	0x4
- 878 00a9 07       		.byte	0x7
- 879 00aa 8A000000 		.4byte	.LASF14
- 880 00ae 06       		.uleb128 0x6
- 881 00af 01       		.byte	0x1
- 882 00b0 03       		.byte	0x3
- 883 00b1 1B       		.byte	0x1b
- 884 00b2 35010000 		.4byte	0x135
- 885 00b6 07       		.uleb128 0x7
- 886 00b7 F9070000 		.4byte	.LASF15
- 887 00bb 00       		.sleb128 0
- 888 00bc 07       		.uleb128 0x7
- 889 00bd B1030000 		.4byte	.LASF16
- 890 00c1 01       		.sleb128 1
- 891 00c2 07       		.uleb128 0x7
- 892 00c3 E7020000 		.4byte	.LASF17
- 893 00c7 02       		.sleb128 2
- 894 00c8 07       		.uleb128 0x7
- 895 00c9 B3060000 		.4byte	.LASF18
- 896 00cd 03       		.sleb128 3
- 897 00ce 07       		.uleb128 0x7
- 898 00cf D9070000 		.4byte	.LASF19
- 899 00d3 04       		.sleb128 4
- 900 00d4 07       		.uleb128 0x7
- 901 00d5 15080000 		.4byte	.LASF20
- 902 00d9 05       		.sleb128 5
- 903 00da 07       		.uleb128 0x7
- 904 00db FF050000 		.4byte	.LASF21
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 18
-
-
- 905 00df 06       		.sleb128 6
- 906 00e0 07       		.uleb128 0x7
- 907 00e1 22030000 		.4byte	.LASF22
- 908 00e5 07       		.sleb128 7
- 909 00e6 07       		.uleb128 0x7
- 910 00e7 93030000 		.4byte	.LASF23
- 911 00eb 08       		.sleb128 8
- 912 00ec 07       		.uleb128 0x7
- 913 00ed 03030000 		.4byte	.LASF24
- 914 00f1 09       		.sleb128 9
- 915 00f2 07       		.uleb128 0x7
- 916 00f3 8A070000 		.4byte	.LASF25
- 917 00f7 0A       		.sleb128 10
- 918 00f8 07       		.uleb128 0x7
- 919 00f9 7C010000 		.4byte	.LASF26
- 920 00fd 0B       		.sleb128 11
- 921 00fe 07       		.uleb128 0x7
- 922 00ff 3A000000 		.4byte	.LASF27
- 923 0103 0C       		.sleb128 12
- 924 0104 07       		.uleb128 0x7
- 925 0105 74080000 		.4byte	.LASF28
- 926 0109 0D       		.sleb128 13
- 927 010a 07       		.uleb128 0x7
- 928 010b 45040000 		.4byte	.LASF29
- 929 010f 0E       		.sleb128 14
- 930 0110 07       		.uleb128 0x7
- 931 0111 48010000 		.4byte	.LASF30
- 932 0115 0F       		.sleb128 15
- 933 0116 07       		.uleb128 0x7
- 934 0117 C2040000 		.4byte	.LASF31
- 935 011b 10       		.sleb128 16
- 936 011c 07       		.uleb128 0x7
- 937 011d 60080000 		.4byte	.LASF32
- 938 0121 11       		.sleb128 17
- 939 0122 07       		.uleb128 0x7
- 940 0123 68010000 		.4byte	.LASF33
- 941 0127 12       		.sleb128 18
- 942 0128 07       		.uleb128 0x7
- 943 0129 45080000 		.4byte	.LASF34
- 944 012d 13       		.sleb128 19
- 945 012e 07       		.uleb128 0x7
- 946 012f 3B010000 		.4byte	.LASF35
- 947 0133 14       		.sleb128 20
- 948 0134 00       		.byte	0
- 949 0135 04       		.uleb128 0x4
- 950 0136 04       		.byte	0x4
- 951 0137 2C000000 		.4byte	0x2c
- 952 013b 06       		.uleb128 0x6
- 953 013c 01       		.byte	0x1
- 954 013d 04       		.byte	0x4
- 955 013e 14       		.byte	0x14
- 956 013f 92010000 		.4byte	0x192
- 957 0143 07       		.uleb128 0x7
- 958 0144 95060000 		.4byte	.LASF36
- 959 0148 00       		.sleb128 0
- 960 0149 07       		.uleb128 0x7
- 961 014a 17000000 		.4byte	.LASF37
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 19
-
-
- 962 014e 01       		.sleb128 1
- 963 014f 07       		.uleb128 0x7
- 964 0150 EF040000 		.4byte	.LASF38
- 965 0154 02       		.sleb128 2
- 966 0155 07       		.uleb128 0x7
- 967 0156 39020000 		.4byte	.LASF39
- 968 015a 03       		.sleb128 3
- 969 015b 07       		.uleb128 0x7
- 970 015c D0060000 		.4byte	.LASF40
- 971 0160 04       		.sleb128 4
- 972 0161 07       		.uleb128 0x7
- 973 0162 73000000 		.4byte	.LASF41
- 974 0166 05       		.sleb128 5
- 975 0167 07       		.uleb128 0x7
- 976 0168 D6030000 		.4byte	.LASF42
- 977 016c 06       		.sleb128 6
- 978 016d 07       		.uleb128 0x7
- 979 016e 25000000 		.4byte	.LASF43
- 980 0172 07       		.sleb128 7
- 981 0173 07       		.uleb128 0x7
- 982 0174 A3060000 		.4byte	.LASF44
- 983 0178 08       		.sleb128 8
- 984 0179 07       		.uleb128 0x7
- 985 017a 25070000 		.4byte	.LASF45
- 986 017e 09       		.sleb128 9
- 987 017f 07       		.uleb128 0x7
- 988 0180 2C020000 		.4byte	.LASF46
- 989 0184 0A       		.sleb128 10
- 990 0185 07       		.uleb128 0x7
- 991 0186 56000000 		.4byte	.LASF47
- 992 018a 0B       		.sleb128 11
- 993 018b 07       		.uleb128 0x7
- 994 018c 4B030000 		.4byte	.LASF48
- 995 0190 0C       		.sleb128 12
- 996 0191 00       		.byte	0
- 997 0192 08       		.uleb128 0x8
- 998 0193 CF070000 		.4byte	.LASF50
- 999 0197 04       		.byte	0x4
- 1000 0198 22       		.byte	0x22
- 1001 0199 3B010000 		.4byte	0x13b
- 1002 019d 06       		.uleb128 0x6
- 1003 019e 01       		.byte	0x1
- 1004 019f 05       		.byte	0x5
- 1005 01a0 1A       		.byte	0x1a
- 1006 01a1 C4010000 		.4byte	0x1c4
- 1007 01a5 07       		.uleb128 0x7
- 1008 01a6 42060000 		.4byte	.LASF51
- 1009 01aa 00       		.sleb128 0
- 1010 01ab 07       		.uleb128 0x7
- 1011 01ac 30080000 		.4byte	.LASF52
- 1012 01b0 01       		.sleb128 1
- 1013 01b1 07       		.uleb128 0x7
- 1014 01b2 00000000 		.4byte	.LASF53
- 1015 01b6 02       		.sleb128 2
- 1016 01b7 07       		.uleb128 0x7
- 1017 01b8 CD010000 		.4byte	.LASF54
- 1018 01bc 03       		.sleb128 3
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 20
-
-
- 1019 01bd 07       		.uleb128 0x7
- 1020 01be BC010000 		.4byte	.LASF55
- 1021 01c2 04       		.sleb128 4
- 1022 01c3 00       		.byte	0
- 1023 01c4 08       		.uleb128 0x8
- 1024 01c5 63000000 		.4byte	.LASF56
- 1025 01c9 05       		.byte	0x5
- 1026 01ca 20       		.byte	0x20
- 1027 01cb 9D010000 		.4byte	0x19d
- 1028 01cf 08       		.uleb128 0x8
- 1029 01d0 33040000 		.4byte	.LASF57
- 1030 01d4 05       		.byte	0x5
- 1031 01d5 2C       		.byte	0x2c
- 1032 01d6 80000000 		.4byte	0x80
- 1033 01da 08       		.uleb128 0x8
- 1034 01db DD010000 		.4byte	.LASF58
- 1035 01df 05       		.byte	0x5
- 1036 01e0 2D       		.byte	0x2d
- 1037 01e1 80000000 		.4byte	0x80
- 1038 01e5 09       		.uleb128 0x9
- 1039 01e6 21050000 		.4byte	.LASF59
- 1040 01ea 01       		.byte	0x1
- 1041 01eb 10       		.byte	0x10
- 1042 01ec 00000000 		.4byte	.LFB35
- 1043 01f0 14000000 		.4byte	.LFE35-.LFB35
- 1044 01f4 01       		.uleb128 0x1
- 1045 01f5 9C       		.byte	0x9c
- 1046 01f6 13020000 		.4byte	0x213
- 1047 01fa 0A       		.uleb128 0xa
- 1048 01fb 0E000000 		.4byte	.LVL0
- 1049 01ff 44080000 		.4byte	0x844
- 1050 0203 0B       		.uleb128 0xb
- 1051 0204 01       		.uleb128 0x1
- 1052 0205 51       		.byte	0x51
- 1053 0206 01       		.uleb128 0x1
- 1054 0207 31       		.byte	0x31
- 1055 0208 0B       		.uleb128 0xb
- 1056 0209 01       		.uleb128 0x1
- 1057 020a 50       		.byte	0x50
- 1058 020b 05       		.uleb128 0x5
- 1059 020c 03       		.byte	0x3
- 1060 020d 00000000 		.4byte	app_send_buffer
- 1061 0211 00       		.byte	0
- 1062 0212 00       		.byte	0
- 1063 0213 09       		.uleb128 0x9
- 1064 0214 DD060000 		.4byte	.LASF60
- 1065 0218 01       		.byte	0x1
- 1066 0219 11       		.byte	0x11
- 1067 021a 00000000 		.4byte	.LFB36
- 1068 021e 14000000 		.4byte	.LFE36-.LFB36
- 1069 0222 01       		.uleb128 0x1
- 1070 0223 9C       		.byte	0x9c
- 1071 0224 41020000 		.4byte	0x241
- 1072 0228 0A       		.uleb128 0xa
- 1073 0229 0E000000 		.4byte	.LVL1
- 1074 022d 44080000 		.4byte	0x844
- 1075 0231 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 21
-
-
- 1076 0232 01       		.uleb128 0x1
- 1077 0233 51       		.byte	0x51
- 1078 0234 01       		.uleb128 0x1
- 1079 0235 31       		.byte	0x31
- 1080 0236 0B       		.uleb128 0xb
- 1081 0237 01       		.uleb128 0x1
- 1082 0238 50       		.byte	0x50
- 1083 0239 05       		.uleb128 0x5
- 1084 023a 03       		.byte	0x3
- 1085 023b 00000000 		.4byte	app_send_buffer
- 1086 023f 00       		.byte	0
- 1087 0240 00       		.byte	0
- 1088 0241 09       		.uleb128 0x9
- 1089 0242 D8050000 		.4byte	.LASF61
- 1090 0246 01       		.byte	0x1
- 1091 0247 12       		.byte	0x12
- 1092 0248 00000000 		.4byte	.LFB37
- 1093 024c 14000000 		.4byte	.LFE37-.LFB37
- 1094 0250 01       		.uleb128 0x1
- 1095 0251 9C       		.byte	0x9c
- 1096 0252 6F020000 		.4byte	0x26f
- 1097 0256 0A       		.uleb128 0xa
- 1098 0257 0E000000 		.4byte	.LVL2
- 1099 025b 44080000 		.4byte	0x844
- 1100 025f 0B       		.uleb128 0xb
- 1101 0260 01       		.uleb128 0x1
- 1102 0261 51       		.byte	0x51
- 1103 0262 01       		.uleb128 0x1
- 1104 0263 31       		.byte	0x31
- 1105 0264 0B       		.uleb128 0xb
- 1106 0265 01       		.uleb128 0x1
- 1107 0266 50       		.byte	0x50
- 1108 0267 05       		.uleb128 0x5
- 1109 0268 03       		.byte	0x3
- 1110 0269 00000000 		.4byte	app_send_buffer
- 1111 026d 00       		.byte	0
- 1112 026e 00       		.byte	0
- 1113 026f 09       		.uleb128 0x9
- 1114 0270 8C040000 		.4byte	.LASF62
- 1115 0274 01       		.byte	0x1
- 1116 0275 13       		.byte	0x13
- 1117 0276 00000000 		.4byte	.LFB38
- 1118 027a 14000000 		.4byte	.LFE38-.LFB38
- 1119 027e 01       		.uleb128 0x1
- 1120 027f 9C       		.byte	0x9c
- 1121 0280 9D020000 		.4byte	0x29d
- 1122 0284 0A       		.uleb128 0xa
- 1123 0285 0E000000 		.4byte	.LVL3
- 1124 0289 44080000 		.4byte	0x844
- 1125 028d 0B       		.uleb128 0xb
- 1126 028e 01       		.uleb128 0x1
- 1127 028f 51       		.byte	0x51
- 1128 0290 01       		.uleb128 0x1
- 1129 0291 31       		.byte	0x31
- 1130 0292 0B       		.uleb128 0xb
- 1131 0293 01       		.uleb128 0x1
- 1132 0294 50       		.byte	0x50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 22
-
-
- 1133 0295 05       		.uleb128 0x5
- 1134 0296 03       		.byte	0x3
- 1135 0297 00000000 		.4byte	app_send_buffer
- 1136 029b 00       		.byte	0
- 1137 029c 00       		.byte	0
- 1138 029d 09       		.uleb128 0x9
- 1139 029e 9C020000 		.4byte	.LASF63
- 1140 02a2 01       		.byte	0x1
- 1141 02a3 14       		.byte	0x14
- 1142 02a4 00000000 		.4byte	.LFB39
- 1143 02a8 14000000 		.4byte	.LFE39-.LFB39
- 1144 02ac 01       		.uleb128 0x1
- 1145 02ad 9C       		.byte	0x9c
- 1146 02ae CB020000 		.4byte	0x2cb
- 1147 02b2 0A       		.uleb128 0xa
- 1148 02b3 0E000000 		.4byte	.LVL4
- 1149 02b7 44080000 		.4byte	0x844
- 1150 02bb 0B       		.uleb128 0xb
- 1151 02bc 01       		.uleb128 0x1
- 1152 02bd 51       		.byte	0x51
- 1153 02be 01       		.uleb128 0x1
- 1154 02bf 31       		.byte	0x31
- 1155 02c0 0B       		.uleb128 0xb
- 1156 02c1 01       		.uleb128 0x1
- 1157 02c2 50       		.byte	0x50
- 1158 02c3 05       		.uleb128 0x5
- 1159 02c4 03       		.byte	0x3
- 1160 02c5 00000000 		.4byte	app_send_buffer
- 1161 02c9 00       		.byte	0
- 1162 02ca 00       		.byte	0
- 1163 02cb 09       		.uleb128 0x9
- 1164 02cc C1020000 		.4byte	.LASF64
- 1165 02d0 01       		.byte	0x1
- 1166 02d1 15       		.byte	0x15
- 1167 02d2 00000000 		.4byte	.LFB40
- 1168 02d6 14000000 		.4byte	.LFE40-.LFB40
- 1169 02da 01       		.uleb128 0x1
- 1170 02db 9C       		.byte	0x9c
- 1171 02dc F9020000 		.4byte	0x2f9
- 1172 02e0 0A       		.uleb128 0xa
- 1173 02e1 0E000000 		.4byte	.LVL5
- 1174 02e5 44080000 		.4byte	0x844
- 1175 02e9 0B       		.uleb128 0xb
- 1176 02ea 01       		.uleb128 0x1
- 1177 02eb 51       		.byte	0x51
- 1178 02ec 01       		.uleb128 0x1
- 1179 02ed 31       		.byte	0x31
- 1180 02ee 0B       		.uleb128 0xb
- 1181 02ef 01       		.uleb128 0x1
- 1182 02f0 50       		.byte	0x50
- 1183 02f1 05       		.uleb128 0x5
- 1184 02f2 03       		.byte	0x3
- 1185 02f3 00000000 		.4byte	app_send_buffer
- 1186 02f7 00       		.byte	0
- 1187 02f8 00       		.byte	0
- 1188 02f9 09       		.uleb128 0x9
- 1189 02fa 1E060000 		.4byte	.LASF65
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 23
-
-
- 1190 02fe 01       		.byte	0x1
- 1191 02ff 16       		.byte	0x16
- 1192 0300 00000000 		.4byte	.LFB41
- 1193 0304 14000000 		.4byte	.LFE41-.LFB41
- 1194 0308 01       		.uleb128 0x1
- 1195 0309 9C       		.byte	0x9c
- 1196 030a 27030000 		.4byte	0x327
- 1197 030e 0A       		.uleb128 0xa
- 1198 030f 0E000000 		.4byte	.LVL6
- 1199 0313 44080000 		.4byte	0x844
- 1200 0317 0B       		.uleb128 0xb
- 1201 0318 01       		.uleb128 0x1
- 1202 0319 51       		.byte	0x51
- 1203 031a 01       		.uleb128 0x1
- 1204 031b 31       		.byte	0x31
- 1205 031c 0B       		.uleb128 0xb
- 1206 031d 01       		.uleb128 0x1
- 1207 031e 50       		.byte	0x50
- 1208 031f 05       		.uleb128 0x5
- 1209 0320 03       		.byte	0x3
- 1210 0321 00000000 		.4byte	app_send_buffer
- 1211 0325 00       		.byte	0
- 1212 0326 00       		.byte	0
- 1213 0327 09       		.uleb128 0x9
- 1214 0328 AB050000 		.4byte	.LASF66
- 1215 032c 01       		.byte	0x1
- 1216 032d 17       		.byte	0x17
- 1217 032e 00000000 		.4byte	.LFB42
- 1218 0332 14000000 		.4byte	.LFE42-.LFB42
- 1219 0336 01       		.uleb128 0x1
- 1220 0337 9C       		.byte	0x9c
- 1221 0338 55030000 		.4byte	0x355
- 1222 033c 0A       		.uleb128 0xa
- 1223 033d 0E000000 		.4byte	.LVL7
- 1224 0341 44080000 		.4byte	0x844
- 1225 0345 0B       		.uleb128 0xb
- 1226 0346 01       		.uleb128 0x1
- 1227 0347 51       		.byte	0x51
- 1228 0348 01       		.uleb128 0x1
- 1229 0349 31       		.byte	0x31
- 1230 034a 0B       		.uleb128 0xb
- 1231 034b 01       		.uleb128 0x1
- 1232 034c 50       		.byte	0x50
- 1233 034d 05       		.uleb128 0x5
- 1234 034e 03       		.byte	0x3
- 1235 034f 00000000 		.4byte	app_send_buffer
- 1236 0353 00       		.byte	0
- 1237 0354 00       		.byte	0
- 1238 0355 09       		.uleb128 0x9
- 1239 0356 36070000 		.4byte	.LASF67
- 1240 035a 01       		.byte	0x1
- 1241 035b 18       		.byte	0x18
- 1242 035c 00000000 		.4byte	.LFB43
- 1243 0360 14000000 		.4byte	.LFE43-.LFB43
- 1244 0364 01       		.uleb128 0x1
- 1245 0365 9C       		.byte	0x9c
- 1246 0366 83030000 		.4byte	0x383
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 24
-
-
- 1247 036a 0A       		.uleb128 0xa
- 1248 036b 0E000000 		.4byte	.LVL8
- 1249 036f 44080000 		.4byte	0x844
- 1250 0373 0B       		.uleb128 0xb
- 1251 0374 01       		.uleb128 0x1
- 1252 0375 51       		.byte	0x51
- 1253 0376 01       		.uleb128 0x1
- 1254 0377 31       		.byte	0x31
- 1255 0378 0B       		.uleb128 0xb
- 1256 0379 01       		.uleb128 0x1
- 1257 037a 50       		.byte	0x50
- 1258 037b 05       		.uleb128 0x5
- 1259 037c 03       		.byte	0x3
- 1260 037d 00000000 		.4byte	app_send_buffer
- 1261 0381 00       		.byte	0
- 1262 0382 00       		.byte	0
- 1263 0383 09       		.uleb128 0x9
- 1264 0384 6B060000 		.4byte	.LASF68
- 1265 0388 01       		.byte	0x1
- 1266 0389 19       		.byte	0x19
- 1267 038a 00000000 		.4byte	.LFB44
- 1268 038e 14000000 		.4byte	.LFE44-.LFB44
- 1269 0392 01       		.uleb128 0x1
- 1270 0393 9C       		.byte	0x9c
- 1271 0394 B1030000 		.4byte	0x3b1
- 1272 0398 0A       		.uleb128 0xa
- 1273 0399 0E000000 		.4byte	.LVL9
- 1274 039d 44080000 		.4byte	0x844
- 1275 03a1 0B       		.uleb128 0xb
- 1276 03a2 01       		.uleb128 0x1
- 1277 03a3 51       		.byte	0x51
- 1278 03a4 01       		.uleb128 0x1
- 1279 03a5 31       		.byte	0x31
- 1280 03a6 0B       		.uleb128 0xb
- 1281 03a7 01       		.uleb128 0x1
- 1282 03a8 50       		.byte	0x50
- 1283 03a9 05       		.uleb128 0x5
- 1284 03aa 03       		.byte	0x3
- 1285 03ab 00000000 		.4byte	app_send_buffer
- 1286 03af 00       		.byte	0
- 1287 03b0 00       		.byte	0
- 1288 03b1 09       		.uleb128 0x9
- 1289 03b2 E2030000 		.4byte	.LASF69
- 1290 03b6 01       		.byte	0x1
- 1291 03b7 1A       		.byte	0x1a
- 1292 03b8 00000000 		.4byte	.LFB45
- 1293 03bc 14000000 		.4byte	.LFE45-.LFB45
- 1294 03c0 01       		.uleb128 0x1
- 1295 03c1 9C       		.byte	0x9c
- 1296 03c2 DF030000 		.4byte	0x3df
- 1297 03c6 0A       		.uleb128 0xa
- 1298 03c7 0E000000 		.4byte	.LVL10
- 1299 03cb 44080000 		.4byte	0x844
- 1300 03cf 0B       		.uleb128 0xb
- 1301 03d0 01       		.uleb128 0x1
- 1302 03d1 51       		.byte	0x51
- 1303 03d2 01       		.uleb128 0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 25
-
-
- 1304 03d3 31       		.byte	0x31
- 1305 03d4 0B       		.uleb128 0xb
- 1306 03d5 01       		.uleb128 0x1
- 1307 03d6 50       		.byte	0x50
- 1308 03d7 05       		.uleb128 0x5
- 1309 03d8 03       		.byte	0x3
- 1310 03d9 00000000 		.4byte	app_send_buffer
- 1311 03dd 00       		.byte	0
- 1312 03de 00       		.byte	0
- 1313 03df 09       		.uleb128 0x9
- 1314 03e0 97010000 		.4byte	.LASF70
- 1315 03e4 01       		.byte	0x1
- 1316 03e5 1B       		.byte	0x1b
- 1317 03e6 00000000 		.4byte	.LFB46
- 1318 03ea 14000000 		.4byte	.LFE46-.LFB46
- 1319 03ee 01       		.uleb128 0x1
- 1320 03ef 9C       		.byte	0x9c
- 1321 03f0 0D040000 		.4byte	0x40d
- 1322 03f4 0A       		.uleb128 0xa
- 1323 03f5 0E000000 		.4byte	.LVL11
- 1324 03f9 44080000 		.4byte	0x844
- 1325 03fd 0B       		.uleb128 0xb
- 1326 03fe 01       		.uleb128 0x1
- 1327 03ff 51       		.byte	0x51
- 1328 0400 01       		.uleb128 0x1
- 1329 0401 31       		.byte	0x31
- 1330 0402 0B       		.uleb128 0xb
- 1331 0403 01       		.uleb128 0x1
- 1332 0404 50       		.byte	0x50
- 1333 0405 05       		.uleb128 0x5
- 1334 0406 03       		.byte	0x3
- 1335 0407 00000000 		.4byte	app_send_buffer
- 1336 040b 00       		.byte	0
- 1337 040c 00       		.byte	0
- 1338 040d 09       		.uleb128 0x9
- 1339 040e F1010000 		.4byte	.LASF71
- 1340 0412 01       		.byte	0x1
- 1341 0413 1D       		.byte	0x1d
- 1342 0414 00000000 		.4byte	.LFB47
- 1343 0418 14000000 		.4byte	.LFE47-.LFB47
- 1344 041c 01       		.uleb128 0x1
- 1345 041d 9C       		.byte	0x9c
- 1346 041e 3B040000 		.4byte	0x43b
- 1347 0422 0A       		.uleb128 0xa
- 1348 0423 0E000000 		.4byte	.LVL12
- 1349 0427 44080000 		.4byte	0x844
- 1350 042b 0B       		.uleb128 0xb
- 1351 042c 01       		.uleb128 0x1
- 1352 042d 51       		.byte	0x51
- 1353 042e 01       		.uleb128 0x1
- 1354 042f 31       		.byte	0x31
- 1355 0430 0B       		.uleb128 0xb
- 1356 0431 01       		.uleb128 0x1
- 1357 0432 50       		.byte	0x50
- 1358 0433 05       		.uleb128 0x5
- 1359 0434 03       		.byte	0x3
- 1360 0435 00000000 		.4byte	app_send_buffer
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 26
-
-
- 1361 0439 00       		.byte	0
- 1362 043a 00       		.byte	0
- 1363 043b 09       		.uleb128 0x9
- 1364 043c 64040000 		.4byte	.LASF72
- 1365 0440 01       		.byte	0x1
- 1366 0441 1E       		.byte	0x1e
- 1367 0442 00000000 		.4byte	.LFB48
- 1368 0446 14000000 		.4byte	.LFE48-.LFB48
- 1369 044a 01       		.uleb128 0x1
- 1370 044b 9C       		.byte	0x9c
- 1371 044c 69040000 		.4byte	0x469
- 1372 0450 0A       		.uleb128 0xa
- 1373 0451 0E000000 		.4byte	.LVL13
- 1374 0455 44080000 		.4byte	0x844
- 1375 0459 0B       		.uleb128 0xb
- 1376 045a 01       		.uleb128 0x1
- 1377 045b 51       		.byte	0x51
- 1378 045c 01       		.uleb128 0x1
- 1379 045d 31       		.byte	0x31
- 1380 045e 0B       		.uleb128 0xb
- 1381 045f 01       		.uleb128 0x1
- 1382 0460 50       		.byte	0x50
- 1383 0461 05       		.uleb128 0x5
- 1384 0462 03       		.byte	0x3
- 1385 0463 00000000 		.4byte	app_send_buffer
- 1386 0467 00       		.byte	0
- 1387 0468 00       		.byte	0
- 1388 0469 09       		.uleb128 0x9
- 1389 046a 73020000 		.4byte	.LASF73
- 1390 046e 01       		.byte	0x1
- 1391 046f 1F       		.byte	0x1f
- 1392 0470 00000000 		.4byte	.LFB49
- 1393 0474 14000000 		.4byte	.LFE49-.LFB49
- 1394 0478 01       		.uleb128 0x1
- 1395 0479 9C       		.byte	0x9c
- 1396 047a 97040000 		.4byte	0x497
- 1397 047e 0A       		.uleb128 0xa
- 1398 047f 0E000000 		.4byte	.LVL14
- 1399 0483 44080000 		.4byte	0x844
- 1400 0487 0B       		.uleb128 0xb
- 1401 0488 01       		.uleb128 0x1
- 1402 0489 51       		.byte	0x51
- 1403 048a 01       		.uleb128 0x1
- 1404 048b 31       		.byte	0x31
- 1405 048c 0B       		.uleb128 0xb
- 1406 048d 01       		.uleb128 0x1
- 1407 048e 50       		.byte	0x50
- 1408 048f 05       		.uleb128 0x5
- 1409 0490 03       		.byte	0x3
- 1410 0491 00000000 		.4byte	app_send_buffer
- 1411 0495 00       		.byte	0
- 1412 0496 00       		.byte	0
- 1413 0497 09       		.uleb128 0x9
- 1414 0498 A5070000 		.4byte	.LASF74
- 1415 049c 01       		.byte	0x1
- 1416 049d 21       		.byte	0x21
- 1417 049e 00000000 		.4byte	.LFB50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 27
-
-
- 1418 04a2 14000000 		.4byte	.LFE50-.LFB50
- 1419 04a6 01       		.uleb128 0x1
- 1420 04a7 9C       		.byte	0x9c
- 1421 04a8 C5040000 		.4byte	0x4c5
- 1422 04ac 0A       		.uleb128 0xa
- 1423 04ad 0E000000 		.4byte	.LVL15
- 1424 04b1 44080000 		.4byte	0x844
- 1425 04b5 0B       		.uleb128 0xb
- 1426 04b6 01       		.uleb128 0x1
- 1427 04b7 51       		.byte	0x51
- 1428 04b8 01       		.uleb128 0x1
- 1429 04b9 31       		.byte	0x31
- 1430 04ba 0B       		.uleb128 0xb
- 1431 04bb 01       		.uleb128 0x1
- 1432 04bc 50       		.byte	0x50
- 1433 04bd 05       		.uleb128 0x5
- 1434 04be 03       		.byte	0x3
- 1435 04bf 00000000 		.4byte	app_send_buffer
- 1436 04c3 00       		.byte	0
- 1437 04c4 00       		.byte	0
- 1438 04c5 09       		.uleb128 0x9
- 1439 04c6 48020000 		.4byte	.LASF75
- 1440 04ca 01       		.byte	0x1
- 1441 04cb 22       		.byte	0x22
- 1442 04cc 00000000 		.4byte	.LFB51
- 1443 04d0 14000000 		.4byte	.LFE51-.LFB51
- 1444 04d4 01       		.uleb128 0x1
- 1445 04d5 9C       		.byte	0x9c
- 1446 04d6 F3040000 		.4byte	0x4f3
- 1447 04da 0A       		.uleb128 0xa
- 1448 04db 0E000000 		.4byte	.LVL16
- 1449 04df 44080000 		.4byte	0x844
- 1450 04e3 0B       		.uleb128 0xb
- 1451 04e4 01       		.uleb128 0x1
- 1452 04e5 51       		.byte	0x51
- 1453 04e6 01       		.uleb128 0x1
- 1454 04e7 31       		.byte	0x31
- 1455 04e8 0B       		.uleb128 0xb
- 1456 04e9 01       		.uleb128 0x1
- 1457 04ea 50       		.byte	0x50
- 1458 04eb 05       		.uleb128 0x5
- 1459 04ec 03       		.byte	0x3
- 1460 04ed 00000000 		.4byte	app_send_buffer
- 1461 04f1 00       		.byte	0
- 1462 04f2 00       		.byte	0
- 1463 04f3 09       		.uleb128 0x9
- 1464 04f4 5C030000 		.4byte	.LASF76
- 1465 04f8 01       		.byte	0x1
- 1466 04f9 24       		.byte	0x24
- 1467 04fa 00000000 		.4byte	.LFB52
- 1468 04fe 14000000 		.4byte	.LFE52-.LFB52
- 1469 0502 01       		.uleb128 0x1
- 1470 0503 9C       		.byte	0x9c
- 1471 0504 21050000 		.4byte	0x521
- 1472 0508 0A       		.uleb128 0xa
- 1473 0509 0E000000 		.4byte	.LVL17
- 1474 050d 44080000 		.4byte	0x844
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 28
-
-
- 1475 0511 0B       		.uleb128 0xb
- 1476 0512 01       		.uleb128 0x1
- 1477 0513 51       		.byte	0x51
- 1478 0514 01       		.uleb128 0x1
- 1479 0515 31       		.byte	0x31
- 1480 0516 0B       		.uleb128 0xb
- 1481 0517 01       		.uleb128 0x1
- 1482 0518 50       		.byte	0x50
- 1483 0519 05       		.uleb128 0x5
- 1484 051a 03       		.byte	0x3
- 1485 051b 00000000 		.4byte	app_send_buffer
- 1486 051f 00       		.byte	0
- 1487 0520 00       		.byte	0
- 1488 0521 09       		.uleb128 0x9
- 1489 0522 5F070000 		.4byte	.LASF77
- 1490 0526 01       		.byte	0x1
- 1491 0527 25       		.byte	0x25
- 1492 0528 00000000 		.4byte	.LFB53
- 1493 052c 14000000 		.4byte	.LFE53-.LFB53
- 1494 0530 01       		.uleb128 0x1
- 1495 0531 9C       		.byte	0x9c
- 1496 0532 4F050000 		.4byte	0x54f
- 1497 0536 0A       		.uleb128 0xa
- 1498 0537 0E000000 		.4byte	.LVL18
- 1499 053b 44080000 		.4byte	0x844
- 1500 053f 0B       		.uleb128 0xb
- 1501 0540 01       		.uleb128 0x1
- 1502 0541 51       		.byte	0x51
- 1503 0542 01       		.uleb128 0x1
- 1504 0543 31       		.byte	0x31
- 1505 0544 0B       		.uleb128 0xb
- 1506 0545 01       		.uleb128 0x1
- 1507 0546 50       		.byte	0x50
- 1508 0547 05       		.uleb128 0x5
- 1509 0548 03       		.byte	0x3
- 1510 0549 00000000 		.4byte	app_send_buffer
- 1511 054d 00       		.byte	0
- 1512 054e 00       		.byte	0
- 1513 054f 09       		.uleb128 0x9
- 1514 0550 07040000 		.4byte	.LASF78
- 1515 0554 01       		.byte	0x1
- 1516 0555 26       		.byte	0x26
- 1517 0556 00000000 		.4byte	.LFB54
- 1518 055a 14000000 		.4byte	.LFE54-.LFB54
- 1519 055e 01       		.uleb128 0x1
- 1520 055f 9C       		.byte	0x9c
- 1521 0560 7D050000 		.4byte	0x57d
- 1522 0564 0A       		.uleb128 0xa
- 1523 0565 0E000000 		.4byte	.LVL19
- 1524 0569 44080000 		.4byte	0x844
- 1525 056d 0B       		.uleb128 0xb
- 1526 056e 01       		.uleb128 0x1
- 1527 056f 51       		.byte	0x51
- 1528 0570 01       		.uleb128 0x1
- 1529 0571 31       		.byte	0x31
- 1530 0572 0B       		.uleb128 0xb
- 1531 0573 01       		.uleb128 0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 29
-
-
- 1532 0574 50       		.byte	0x50
- 1533 0575 05       		.uleb128 0x5
- 1534 0576 03       		.byte	0x3
- 1535 0577 00000000 		.4byte	app_send_buffer
- 1536 057b 00       		.byte	0
- 1537 057c 00       		.byte	0
- 1538 057d 09       		.uleb128 0x9
- 1539 057e 1C070000 		.4byte	.LASF79
- 1540 0582 01       		.byte	0x1
- 1541 0583 28       		.byte	0x28
- 1542 0584 00000000 		.4byte	.LFB55
- 1543 0588 1C010000 		.4byte	.LFE55-.LFB55
- 1544 058c 01       		.uleb128 0x1
- 1545 058d 9C       		.byte	0x9c
- 1546 058e 23080000 		.4byte	0x823
- 1547 0592 0C       		.uleb128 0xc
- 1548 0593 0C000000 		.4byte	.LVL20
- 1549 0597 5E080000 		.4byte	0x85e
- 1550 059b B3050000 		.4byte	0x5b3
- 1551 059f 0B       		.uleb128 0xb
- 1552 05a0 01       		.uleb128 0x1
- 1553 05a1 52       		.byte	0x52
- 1554 05a2 05       		.uleb128 0x5
- 1555 05a3 03       		.byte	0x3
- 1556 05a4 00000000 		.4byte	app_key_short_press_dian_yuan_handler
- 1557 05a8 0B       		.uleb128 0xb
- 1558 05a9 01       		.uleb128 0x1
- 1559 05aa 51       		.byte	0x51
- 1560 05ab 01       		.uleb128 0x1
- 1561 05ac 30       		.byte	0x30
- 1562 05ad 0B       		.uleb128 0xb
- 1563 05ae 01       		.uleb128 0x1
- 1564 05af 50       		.byte	0x50
- 1565 05b0 01       		.uleb128 0x1
- 1566 05b1 30       		.byte	0x30
- 1567 05b2 00       		.byte	0
- 1568 05b3 0C       		.uleb128 0xc
- 1569 05b4 16000000 		.4byte	.LVL21
- 1570 05b8 5E080000 		.4byte	0x85e
- 1571 05bc D4050000 		.4byte	0x5d4
- 1572 05c0 0B       		.uleb128 0xb
- 1573 05c1 01       		.uleb128 0x1
- 1574 05c2 52       		.byte	0x52
- 1575 05c3 05       		.uleb128 0x5
- 1576 05c4 03       		.byte	0x3
- 1577 05c5 00000000 		.4byte	app_key_short_press_feng_nuan_handler
- 1578 05c9 0B       		.uleb128 0xb
- 1579 05ca 01       		.uleb128 0x1
- 1580 05cb 51       		.byte	0x51
- 1581 05cc 01       		.uleb128 0x1
- 1582 05cd 30       		.byte	0x30
- 1583 05ce 0B       		.uleb128 0xb
- 1584 05cf 01       		.uleb128 0x1
- 1585 05d0 50       		.byte	0x50
- 1586 05d1 01       		.uleb128 0x1
- 1587 05d2 31       		.byte	0x31
- 1588 05d3 00       		.byte	0
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 30
-
-
- 1589 05d4 0C       		.uleb128 0xc
- 1590 05d5 20000000 		.4byte	.LVL22
- 1591 05d9 5E080000 		.4byte	0x85e
- 1592 05dd F5050000 		.4byte	0x5f5
- 1593 05e1 0B       		.uleb128 0xb
- 1594 05e2 01       		.uleb128 0x1
- 1595 05e3 52       		.byte	0x52
- 1596 05e4 05       		.uleb128 0x5
- 1597 05e5 03       		.byte	0x3
- 1598 05e6 00000000 		.4byte	app_key_short_press_wen_du_jia_handler
- 1599 05ea 0B       		.uleb128 0xb
- 1600 05eb 01       		.uleb128 0x1
- 1601 05ec 51       		.byte	0x51
- 1602 05ed 01       		.uleb128 0x1
- 1603 05ee 30       		.byte	0x30
- 1604 05ef 0B       		.uleb128 0xb
- 1605 05f0 01       		.uleb128 0x1
- 1606 05f1 50       		.byte	0x50
- 1607 05f2 01       		.uleb128 0x1
- 1608 05f3 32       		.byte	0x32
- 1609 05f4 00       		.byte	0
- 1610 05f5 0C       		.uleb128 0xc
- 1611 05f6 2A000000 		.4byte	.LVL23
- 1612 05fa 5E080000 		.4byte	0x85e
- 1613 05fe 16060000 		.4byte	0x616
- 1614 0602 0B       		.uleb128 0xb
- 1615 0603 01       		.uleb128 0x1
- 1616 0604 52       		.byte	0x52
- 1617 0605 05       		.uleb128 0x5
- 1618 0606 03       		.byte	0x3
- 1619 0607 00000000 		.4byte	app_key_short_press_wen_du_jian_handler
- 1620 060b 0B       		.uleb128 0xb
- 1621 060c 01       		.uleb128 0x1
- 1622 060d 51       		.byte	0x51
- 1623 060e 01       		.uleb128 0x1
- 1624 060f 30       		.byte	0x30
- 1625 0610 0B       		.uleb128 0xb
- 1626 0611 01       		.uleb128 0x1
- 1627 0612 50       		.byte	0x50
- 1628 0613 01       		.uleb128 0x1
- 1629 0614 33       		.byte	0x33
- 1630 0615 00       		.byte	0
- 1631 0616 0C       		.uleb128 0xc
- 1632 0617 34000000 		.4byte	.LVL24
- 1633 061b 5E080000 		.4byte	0x85e
- 1634 061f 37060000 		.4byte	0x637
- 1635 0623 0B       		.uleb128 0xb
- 1636 0624 01       		.uleb128 0x1
- 1637 0625 52       		.byte	0x52
- 1638 0626 05       		.uleb128 0x5
- 1639 0627 03       		.byte	0x3
- 1640 0628 00000000 		.4byte	app_key_short_press_xin_feng_handler
- 1641 062c 0B       		.uleb128 0xb
- 1642 062d 01       		.uleb128 0x1
- 1643 062e 51       		.byte	0x51
- 1644 062f 01       		.uleb128 0x1
- 1645 0630 30       		.byte	0x30
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 31
-
-
- 1646 0631 0B       		.uleb128 0xb
- 1647 0632 01       		.uleb128 0x1
- 1648 0633 50       		.byte	0x50
- 1649 0634 01       		.uleb128 0x1
- 1650 0635 34       		.byte	0x34
- 1651 0636 00       		.byte	0
- 1652 0637 0C       		.uleb128 0xc
- 1653 0638 3E000000 		.4byte	.LVL25
- 1654 063c 5E080000 		.4byte	0x85e
- 1655 0640 58060000 		.4byte	0x658
- 1656 0644 0B       		.uleb128 0xb
- 1657 0645 01       		.uleb128 0x1
- 1658 0646 52       		.byte	0x52
- 1659 0647 05       		.uleb128 0x5
- 1660 0648 03       		.byte	0x3
- 1661 0649 00000000 		.4byte	app_key_short_press_qiang_ruo_handler
- 1662 064d 0B       		.uleb128 0xb
- 1663 064e 01       		.uleb128 0x1
- 1664 064f 51       		.byte	0x51
- 1665 0650 01       		.uleb128 0x1
- 1666 0651 30       		.byte	0x30
- 1667 0652 0B       		.uleb128 0xb
- 1668 0653 01       		.uleb128 0x1
- 1669 0654 50       		.byte	0x50
- 1670 0655 01       		.uleb128 0x1
- 1671 0656 35       		.byte	0x35
- 1672 0657 00       		.byte	0
- 1673 0658 0C       		.uleb128 0xc
- 1674 0659 48000000 		.4byte	.LVL26
- 1675 065d 5E080000 		.4byte	0x85e
- 1676 0661 79060000 		.4byte	0x679
- 1677 0665 0B       		.uleb128 0xb
- 1678 0666 01       		.uleb128 0x1
- 1679 0667 52       		.byte	0x52
- 1680 0668 05       		.uleb128 0x5
- 1681 0669 03       		.byte	0x3
- 1682 066a 00000000 		.4byte	app_key_short_press_huan_qi_handler
- 1683 066e 0B       		.uleb128 0xb
- 1684 066f 01       		.uleb128 0x1
- 1685 0670 51       		.byte	0x51
- 1686 0671 01       		.uleb128 0x1
- 1687 0672 30       		.byte	0x30
- 1688 0673 0B       		.uleb128 0xb
- 1689 0674 01       		.uleb128 0x1
- 1690 0675 50       		.byte	0x50
- 1691 0676 01       		.uleb128 0x1
- 1692 0677 36       		.byte	0x36
- 1693 0678 00       		.byte	0
- 1694 0679 0C       		.uleb128 0xc
- 1695 067a 52000000 		.4byte	.LVL27
- 1696 067e 5E080000 		.4byte	0x85e
- 1697 0682 9A060000 		.4byte	0x69a
- 1698 0686 0B       		.uleb128 0xb
- 1699 0687 01       		.uleb128 0x1
- 1700 0688 52       		.byte	0x52
- 1701 0689 05       		.uleb128 0x5
- 1702 068a 03       		.byte	0x3
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 32
-
-
- 1703 068b 00000000 		.4byte	app_key_short_press_xin_feng_qu_nuan_handler
- 1704 068f 0B       		.uleb128 0xb
- 1705 0690 01       		.uleb128 0x1
- 1706 0691 51       		.byte	0x51
- 1707 0692 01       		.uleb128 0x1
- 1708 0693 30       		.byte	0x30
- 1709 0694 0B       		.uleb128 0xb
- 1710 0695 01       		.uleb128 0x1
- 1711 0696 50       		.byte	0x50
- 1712 0697 01       		.uleb128 0x1
- 1713 0698 37       		.byte	0x37
- 1714 0699 00       		.byte	0
- 1715 069a 0C       		.uleb128 0xc
- 1716 069b 5C000000 		.4byte	.LVL28
- 1717 069f 5E080000 		.4byte	0x85e
- 1718 06a3 BB060000 		.4byte	0x6bb
- 1719 06a7 0B       		.uleb128 0xb
- 1720 06a8 01       		.uleb128 0x1
- 1721 06a9 52       		.byte	0x52
- 1722 06aa 05       		.uleb128 0x5
- 1723 06ab 03       		.byte	0x3
- 1724 06ac 00000000 		.4byte	app_key_short_press_ding_shi_jia_handler
- 1725 06b0 0B       		.uleb128 0xb
- 1726 06b1 01       		.uleb128 0x1
- 1727 06b2 51       		.byte	0x51
- 1728 06b3 01       		.uleb128 0x1
- 1729 06b4 30       		.byte	0x30
- 1730 06b5 0B       		.uleb128 0xb
- 1731 06b6 01       		.uleb128 0x1
- 1732 06b7 50       		.byte	0x50
- 1733 06b8 01       		.uleb128 0x1
- 1734 06b9 38       		.byte	0x38
- 1735 06ba 00       		.byte	0
- 1736 06bb 0C       		.uleb128 0xc
- 1737 06bc 66000000 		.4byte	.LVL29
- 1738 06c0 5E080000 		.4byte	0x85e
- 1739 06c4 DC060000 		.4byte	0x6dc
- 1740 06c8 0B       		.uleb128 0xb
- 1741 06c9 01       		.uleb128 0x1
- 1742 06ca 52       		.byte	0x52
- 1743 06cb 05       		.uleb128 0x5
- 1744 06cc 03       		.byte	0x3
- 1745 06cd 00000000 		.4byte	app_key_short_press_ding_shi_jian_handler
- 1746 06d1 0B       		.uleb128 0xb
- 1747 06d2 01       		.uleb128 0x1
- 1748 06d3 51       		.byte	0x51
- 1749 06d4 01       		.uleb128 0x1
- 1750 06d5 30       		.byte	0x30
- 1751 06d6 0B       		.uleb128 0xb
- 1752 06d7 01       		.uleb128 0x1
- 1753 06d8 50       		.byte	0x50
- 1754 06d9 01       		.uleb128 0x1
- 1755 06da 39       		.byte	0x39
- 1756 06db 00       		.byte	0
- 1757 06dc 0C       		.uleb128 0xc
- 1758 06dd 70000000 		.4byte	.LVL30
- 1759 06e1 5E080000 		.4byte	0x85e
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 33
-
-
- 1760 06e5 FD060000 		.4byte	0x6fd
- 1761 06e9 0B       		.uleb128 0xb
- 1762 06ea 01       		.uleb128 0x1
- 1763 06eb 52       		.byte	0x52
- 1764 06ec 05       		.uleb128 0x5
- 1765 06ed 03       		.byte	0x3
- 1766 06ee 00000000 		.4byte	app_key_short_press_bai_dong_handler
- 1767 06f2 0B       		.uleb128 0xb
- 1768 06f3 01       		.uleb128 0x1
- 1769 06f4 51       		.byte	0x51
- 1770 06f5 01       		.uleb128 0x1
- 1771 06f6 30       		.byte	0x30
- 1772 06f7 0B       		.uleb128 0xb
- 1773 06f8 01       		.uleb128 0x1
- 1774 06f9 50       		.byte	0x50
- 1775 06fa 01       		.uleb128 0x1
- 1776 06fb 3A       		.byte	0x3a
- 1777 06fc 00       		.byte	0
- 1778 06fd 0C       		.uleb128 0xc
- 1779 06fe 7A000000 		.4byte	.LVL31
- 1780 0702 5E080000 		.4byte	0x85e
- 1781 0706 1E070000 		.4byte	0x71e
- 1782 070a 0B       		.uleb128 0xb
- 1783 070b 01       		.uleb128 0x1
- 1784 070c 52       		.byte	0x52
- 1785 070d 05       		.uleb128 0x5
- 1786 070e 03       		.byte	0x3
- 1787 070f 00000000 		.4byte	app_key_short_press_zhi_neng_handler
- 1788 0713 0B       		.uleb128 0xb
- 1789 0714 01       		.uleb128 0x1
- 1790 0715 51       		.byte	0x51
- 1791 0716 01       		.uleb128 0x1
- 1792 0717 30       		.byte	0x30
- 1793 0718 0B       		.uleb128 0xb
- 1794 0719 01       		.uleb128 0x1
- 1795 071a 50       		.byte	0x50
- 1796 071b 01       		.uleb128 0x1
- 1797 071c 3B       		.byte	0x3b
- 1798 071d 00       		.byte	0
- 1799 071e 0C       		.uleb128 0xc
- 1800 071f 84000000 		.4byte	.LVL32
- 1801 0723 5E080000 		.4byte	0x85e
- 1802 0727 3F070000 		.4byte	0x73f
- 1803 072b 0B       		.uleb128 0xb
- 1804 072c 01       		.uleb128 0x1
- 1805 072d 52       		.byte	0x52
- 1806 072e 05       		.uleb128 0x5
- 1807 072f 03       		.byte	0x3
- 1808 0730 00000000 		.4byte	app_key_long_press_wen_du_jia_handler
- 1809 0734 0B       		.uleb128 0xb
- 1810 0735 01       		.uleb128 0x1
- 1811 0736 51       		.byte	0x51
- 1812 0737 01       		.uleb128 0x1
- 1813 0738 31       		.byte	0x31
- 1814 0739 0B       		.uleb128 0xb
- 1815 073a 01       		.uleb128 0x1
- 1816 073b 50       		.byte	0x50
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 34
-
-
- 1817 073c 01       		.uleb128 0x1
- 1818 073d 32       		.byte	0x32
- 1819 073e 00       		.byte	0
- 1820 073f 0C       		.uleb128 0xc
- 1821 0740 8E000000 		.4byte	.LVL33
- 1822 0744 5E080000 		.4byte	0x85e
- 1823 0748 60070000 		.4byte	0x760
- 1824 074c 0B       		.uleb128 0xb
- 1825 074d 01       		.uleb128 0x1
- 1826 074e 52       		.byte	0x52
- 1827 074f 05       		.uleb128 0x5
- 1828 0750 03       		.byte	0x3
- 1829 0751 00000000 		.4byte	app_key_long_press_ding_shi_jia_handler
- 1830 0755 0B       		.uleb128 0xb
- 1831 0756 01       		.uleb128 0x1
- 1832 0757 51       		.byte	0x51
- 1833 0758 01       		.uleb128 0x1
- 1834 0759 31       		.byte	0x31
- 1835 075a 0B       		.uleb128 0xb
- 1836 075b 01       		.uleb128 0x1
- 1837 075c 50       		.byte	0x50
- 1838 075d 01       		.uleb128 0x1
- 1839 075e 38       		.byte	0x38
- 1840 075f 00       		.byte	0
- 1841 0760 0C       		.uleb128 0xc
- 1842 0761 98000000 		.4byte	.LVL34
- 1843 0765 5E080000 		.4byte	0x85e
- 1844 0769 81070000 		.4byte	0x781
- 1845 076d 0B       		.uleb128 0xb
- 1846 076e 01       		.uleb128 0x1
- 1847 076f 52       		.byte	0x52
- 1848 0770 05       		.uleb128 0x5
- 1849 0771 03       		.byte	0x3
- 1850 0772 00000000 		.4byte	app_key_long_press_ding_shi_jian_handler
- 1851 0776 0B       		.uleb128 0xb
- 1852 0777 01       		.uleb128 0x1
- 1853 0778 51       		.byte	0x51
- 1854 0779 01       		.uleb128 0x1
- 1855 077a 31       		.byte	0x31
- 1856 077b 0B       		.uleb128 0xb
- 1857 077c 01       		.uleb128 0x1
- 1858 077d 50       		.byte	0x50
- 1859 077e 01       		.uleb128 0x1
- 1860 077f 39       		.byte	0x39
- 1861 0780 00       		.byte	0
- 1862 0781 0C       		.uleb128 0xc
- 1863 0782 A2000000 		.4byte	.LVL35
- 1864 0786 5E080000 		.4byte	0x85e
- 1865 078a A2070000 		.4byte	0x7a2
- 1866 078e 0B       		.uleb128 0xb
- 1867 078f 01       		.uleb128 0x1
- 1868 0790 52       		.byte	0x52
- 1869 0791 05       		.uleb128 0x5
- 1870 0792 03       		.byte	0x3
- 1871 0793 00000000 		.4byte	app_key_long_release_ding_shi_jia_handler
- 1872 0797 0B       		.uleb128 0xb
- 1873 0798 01       		.uleb128 0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 35
-
-
- 1874 0799 51       		.byte	0x51
- 1875 079a 01       		.uleb128 0x1
- 1876 079b 32       		.byte	0x32
- 1877 079c 0B       		.uleb128 0xb
- 1878 079d 01       		.uleb128 0x1
- 1879 079e 50       		.byte	0x50
- 1880 079f 01       		.uleb128 0x1
- 1881 07a0 38       		.byte	0x38
- 1882 07a1 00       		.byte	0
- 1883 07a2 0C       		.uleb128 0xc
- 1884 07a3 AC000000 		.4byte	.LVL36
- 1885 07a7 5E080000 		.4byte	0x85e
- 1886 07ab C3070000 		.4byte	0x7c3
- 1887 07af 0B       		.uleb128 0xb
- 1888 07b0 01       		.uleb128 0x1
- 1889 07b1 52       		.byte	0x52
- 1890 07b2 05       		.uleb128 0x5
- 1891 07b3 03       		.byte	0x3
- 1892 07b4 00000000 		.4byte	app_key_long_release_ding_shi_jian_handler
- 1893 07b8 0B       		.uleb128 0xb
- 1894 07b9 01       		.uleb128 0x1
- 1895 07ba 51       		.byte	0x51
- 1896 07bb 01       		.uleb128 0x1
- 1897 07bc 32       		.byte	0x32
- 1898 07bd 0B       		.uleb128 0xb
- 1899 07be 01       		.uleb128 0x1
- 1900 07bf 50       		.byte	0x50
- 1901 07c0 01       		.uleb128 0x1
- 1902 07c1 39       		.byte	0x39
- 1903 07c2 00       		.byte	0
- 1904 07c3 0C       		.uleb128 0xc
- 1905 07c4 B6000000 		.4byte	.LVL37
- 1906 07c8 7D080000 		.4byte	0x87d
- 1907 07cc E4070000 		.4byte	0x7e4
- 1908 07d0 0B       		.uleb128 0xb
- 1909 07d1 01       		.uleb128 0x1
- 1910 07d2 52       		.byte	0x52
- 1911 07d3 05       		.uleb128 0x5
- 1912 07d4 03       		.byte	0x3
- 1913 07d5 00000000 		.4byte	app_key_combine_wen_jia_ding_jia_handler
- 1914 07d9 0B       		.uleb128 0xb
- 1915 07da 01       		.uleb128 0x1
- 1916 07db 51       		.byte	0x51
- 1917 07dc 01       		.uleb128 0x1
- 1918 07dd 38       		.byte	0x38
- 1919 07de 0B       		.uleb128 0xb
- 1920 07df 01       		.uleb128 0x1
- 1921 07e0 50       		.byte	0x50
- 1922 07e1 01       		.uleb128 0x1
- 1923 07e2 32       		.byte	0x32
- 1924 07e3 00       		.byte	0
- 1925 07e4 0C       		.uleb128 0xc
- 1926 07e5 C0000000 		.4byte	.LVL38
- 1927 07e9 7D080000 		.4byte	0x87d
- 1928 07ed 05080000 		.4byte	0x805
- 1929 07f1 0B       		.uleb128 0xb
- 1930 07f2 01       		.uleb128 0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 36
-
-
- 1931 07f3 52       		.byte	0x52
- 1932 07f4 05       		.uleb128 0x5
- 1933 07f5 03       		.byte	0x3
- 1934 07f6 00000000 		.4byte	app_key_combine_wen_jian_ding_jian_handler
- 1935 07fa 0B       		.uleb128 0xb
- 1936 07fb 01       		.uleb128 0x1
- 1937 07fc 51       		.byte	0x51
- 1938 07fd 01       		.uleb128 0x1
- 1939 07fe 39       		.byte	0x39
- 1940 07ff 0B       		.uleb128 0xb
- 1941 0800 01       		.uleb128 0x1
- 1942 0801 50       		.byte	0x50
- 1943 0802 01       		.uleb128 0x1
- 1944 0803 33       		.byte	0x33
- 1945 0804 00       		.byte	0
- 1946 0805 0A       		.uleb128 0xa
- 1947 0806 CA000000 		.4byte	.LVL39
- 1948 080a 7D080000 		.4byte	0x87d
- 1949 080e 0B       		.uleb128 0xb
- 1950 080f 01       		.uleb128 0x1
- 1951 0810 52       		.byte	0x52
- 1952 0811 05       		.uleb128 0x5
- 1953 0812 03       		.byte	0x3
- 1954 0813 00000000 		.4byte	app_key_combine_ding_jian_dian_yuan_handler
- 1955 0817 0B       		.uleb128 0xb
- 1956 0818 01       		.uleb128 0x1
- 1957 0819 51       		.byte	0x51
- 1958 081a 01       		.uleb128 0x1
- 1959 081b 30       		.byte	0x30
- 1960 081c 0B       		.uleb128 0xb
- 1961 081d 01       		.uleb128 0x1
- 1962 081e 50       		.byte	0x50
- 1963 081f 01       		.uleb128 0x1
- 1964 0820 39       		.byte	0x39
- 1965 0821 00       		.byte	0
- 1966 0822 00       		.byte	0
- 1967 0823 0D       		.uleb128 0xd
- 1968 0824 2C000000 		.4byte	0x2c
- 1969 0828 33080000 		.4byte	0x833
- 1970 082c 0E       		.uleb128 0xe
- 1971 082d A7000000 		.4byte	0xa7
- 1972 0831 09       		.byte	0x9
- 1973 0832 00       		.byte	0
- 1974 0833 0F       		.uleb128 0xf
- 1975 0834 5F050000 		.4byte	.LASF85
- 1976 0838 01       		.byte	0x1
- 1977 0839 0E       		.byte	0xe
- 1978 083a 23080000 		.4byte	0x823
- 1979 083e 05       		.uleb128 0x5
- 1980 083f 03       		.byte	0x3
- 1981 0840 00000000 		.4byte	app_send_buffer
- 1982 0844 10       		.uleb128 0x10
- 1983 0845 17020000 		.4byte	.LASF80
- 1984 0849 06       		.byte	0x6
- 1985 084a 29       		.byte	0x29
- 1986 084b 9C000000 		.4byte	0x9c
- 1987 084f 5E080000 		.4byte	0x85e
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 37
-
-
- 1988 0853 11       		.uleb128 0x11
- 1989 0854 35010000 		.4byte	0x135
- 1990 0858 11       		.uleb128 0x11
- 1991 0859 2C000000 		.4byte	0x2c
- 1992 085d 00       		.byte	0
- 1993 085e 10       		.uleb128 0x10
- 1994 085f 25010000 		.4byte	.LASF81
- 1995 0863 05       		.byte	0x5
- 1996 0864 40       		.byte	0x40
- 1997 0865 9C000000 		.4byte	0x9c
- 1998 0869 7D080000 		.4byte	0x87d
- 1999 086d 11       		.uleb128 0x11
- 2000 086e 92010000 		.4byte	0x192
- 2001 0872 11       		.uleb128 0x11
- 2002 0873 C4010000 		.4byte	0x1c4
- 2003 0877 11       		.uleb128 0x11
- 2004 0878 CF010000 		.4byte	0x1cf
- 2005 087c 00       		.byte	0
- 2006 087d 12       		.uleb128 0x12
- 2007 087e 47050000 		.4byte	.LASF86
- 2008 0882 05       		.byte	0x5
- 2009 0883 41       		.byte	0x41
- 2010 0884 9C000000 		.4byte	0x9c
- 2011 0888 11       		.uleb128 0x11
- 2012 0889 92010000 		.4byte	0x192
- 2013 088d 11       		.uleb128 0x11
- 2014 088e 92010000 		.4byte	0x192
- 2015 0892 11       		.uleb128 0x11
- 2016 0893 DA010000 		.4byte	0x1da
- 2017 0897 00       		.byte	0
- 2018 0898 00       		.byte	0
- 2019              		.section	.debug_abbrev,"",%progbits
- 2020              	.Ldebug_abbrev0:
- 2021 0000 01       		.uleb128 0x1
- 2022 0001 11       		.uleb128 0x11
- 2023 0002 01       		.byte	0x1
- 2024 0003 25       		.uleb128 0x25
- 2025 0004 0E       		.uleb128 0xe
- 2026 0005 13       		.uleb128 0x13
- 2027 0006 0B       		.uleb128 0xb
- 2028 0007 03       		.uleb128 0x3
- 2029 0008 0E       		.uleb128 0xe
- 2030 0009 1B       		.uleb128 0x1b
- 2031 000a 0E       		.uleb128 0xe
- 2032 000b 55       		.uleb128 0x55
- 2033 000c 17       		.uleb128 0x17
- 2034 000d 11       		.uleb128 0x11
- 2035 000e 01       		.uleb128 0x1
- 2036 000f 10       		.uleb128 0x10
- 2037 0010 17       		.uleb128 0x17
- 2038 0011 00       		.byte	0
- 2039 0012 00       		.byte	0
- 2040 0013 02       		.uleb128 0x2
- 2041 0014 24       		.uleb128 0x24
- 2042 0015 00       		.byte	0
- 2043 0016 0B       		.uleb128 0xb
- 2044 0017 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 38
-
-
- 2045 0018 3E       		.uleb128 0x3e
- 2046 0019 0B       		.uleb128 0xb
- 2047 001a 03       		.uleb128 0x3
- 2048 001b 0E       		.uleb128 0xe
- 2049 001c 00       		.byte	0
- 2050 001d 00       		.byte	0
- 2051 001e 03       		.uleb128 0x3
- 2052 001f 24       		.uleb128 0x24
- 2053 0020 00       		.byte	0
- 2054 0021 0B       		.uleb128 0xb
- 2055 0022 0B       		.uleb128 0xb
- 2056 0023 3E       		.uleb128 0x3e
- 2057 0024 0B       		.uleb128 0xb
- 2058 0025 03       		.uleb128 0x3
- 2059 0026 08       		.uleb128 0x8
- 2060 0027 00       		.byte	0
- 2061 0028 00       		.byte	0
- 2062 0029 04       		.uleb128 0x4
- 2063 002a 0F       		.uleb128 0xf
- 2064 002b 00       		.byte	0
- 2065 002c 0B       		.uleb128 0xb
- 2066 002d 0B       		.uleb128 0xb
- 2067 002e 49       		.uleb128 0x49
- 2068 002f 13       		.uleb128 0x13
- 2069 0030 00       		.byte	0
- 2070 0031 00       		.byte	0
- 2071 0032 05       		.uleb128 0x5
- 2072 0033 15       		.uleb128 0x15
- 2073 0034 00       		.byte	0
- 2074 0035 27       		.uleb128 0x27
- 2075 0036 19       		.uleb128 0x19
- 2076 0037 00       		.byte	0
- 2077 0038 00       		.byte	0
- 2078 0039 06       		.uleb128 0x6
- 2079 003a 04       		.uleb128 0x4
- 2080 003b 01       		.byte	0x1
- 2081 003c 0B       		.uleb128 0xb
- 2082 003d 0B       		.uleb128 0xb
- 2083 003e 3A       		.uleb128 0x3a
- 2084 003f 0B       		.uleb128 0xb
- 2085 0040 3B       		.uleb128 0x3b
- 2086 0041 0B       		.uleb128 0xb
- 2087 0042 01       		.uleb128 0x1
- 2088 0043 13       		.uleb128 0x13
- 2089 0044 00       		.byte	0
- 2090 0045 00       		.byte	0
- 2091 0046 07       		.uleb128 0x7
- 2092 0047 28       		.uleb128 0x28
- 2093 0048 00       		.byte	0
- 2094 0049 03       		.uleb128 0x3
- 2095 004a 0E       		.uleb128 0xe
- 2096 004b 1C       		.uleb128 0x1c
- 2097 004c 0D       		.uleb128 0xd
- 2098 004d 00       		.byte	0
- 2099 004e 00       		.byte	0
- 2100 004f 08       		.uleb128 0x8
- 2101 0050 16       		.uleb128 0x16
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 39
-
-
- 2102 0051 00       		.byte	0
- 2103 0052 03       		.uleb128 0x3
- 2104 0053 0E       		.uleb128 0xe
- 2105 0054 3A       		.uleb128 0x3a
- 2106 0055 0B       		.uleb128 0xb
- 2107 0056 3B       		.uleb128 0x3b
- 2108 0057 0B       		.uleb128 0xb
- 2109 0058 49       		.uleb128 0x49
- 2110 0059 13       		.uleb128 0x13
- 2111 005a 00       		.byte	0
- 2112 005b 00       		.byte	0
- 2113 005c 09       		.uleb128 0x9
- 2114 005d 2E       		.uleb128 0x2e
- 2115 005e 01       		.byte	0x1
- 2116 005f 3F       		.uleb128 0x3f
- 2117 0060 19       		.uleb128 0x19
- 2118 0061 03       		.uleb128 0x3
- 2119 0062 0E       		.uleb128 0xe
- 2120 0063 3A       		.uleb128 0x3a
- 2121 0064 0B       		.uleb128 0xb
- 2122 0065 3B       		.uleb128 0x3b
- 2123 0066 0B       		.uleb128 0xb
- 2124 0067 27       		.uleb128 0x27
- 2125 0068 19       		.uleb128 0x19
- 2126 0069 11       		.uleb128 0x11
- 2127 006a 01       		.uleb128 0x1
- 2128 006b 12       		.uleb128 0x12
- 2129 006c 06       		.uleb128 0x6
- 2130 006d 40       		.uleb128 0x40
- 2131 006e 18       		.uleb128 0x18
- 2132 006f 9742     		.uleb128 0x2117
- 2133 0071 19       		.uleb128 0x19
- 2134 0072 01       		.uleb128 0x1
- 2135 0073 13       		.uleb128 0x13
- 2136 0074 00       		.byte	0
- 2137 0075 00       		.byte	0
- 2138 0076 0A       		.uleb128 0xa
- 2139 0077 898201   		.uleb128 0x4109
- 2140 007a 01       		.byte	0x1
- 2141 007b 11       		.uleb128 0x11
- 2142 007c 01       		.uleb128 0x1
- 2143 007d 31       		.uleb128 0x31
- 2144 007e 13       		.uleb128 0x13
- 2145 007f 00       		.byte	0
- 2146 0080 00       		.byte	0
- 2147 0081 0B       		.uleb128 0xb
- 2148 0082 8A8201   		.uleb128 0x410a
- 2149 0085 00       		.byte	0
- 2150 0086 02       		.uleb128 0x2
- 2151 0087 18       		.uleb128 0x18
- 2152 0088 9142     		.uleb128 0x2111
- 2153 008a 18       		.uleb128 0x18
- 2154 008b 00       		.byte	0
- 2155 008c 00       		.byte	0
- 2156 008d 0C       		.uleb128 0xc
- 2157 008e 898201   		.uleb128 0x4109
- 2158 0091 01       		.byte	0x1
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 40
-
-
- 2159 0092 11       		.uleb128 0x11
- 2160 0093 01       		.uleb128 0x1
- 2161 0094 31       		.uleb128 0x31
- 2162 0095 13       		.uleb128 0x13
- 2163 0096 01       		.uleb128 0x1
- 2164 0097 13       		.uleb128 0x13
- 2165 0098 00       		.byte	0
- 2166 0099 00       		.byte	0
- 2167 009a 0D       		.uleb128 0xd
- 2168 009b 01       		.uleb128 0x1
- 2169 009c 01       		.byte	0x1
- 2170 009d 49       		.uleb128 0x49
- 2171 009e 13       		.uleb128 0x13
- 2172 009f 01       		.uleb128 0x1
- 2173 00a0 13       		.uleb128 0x13
- 2174 00a1 00       		.byte	0
- 2175 00a2 00       		.byte	0
- 2176 00a3 0E       		.uleb128 0xe
- 2177 00a4 21       		.uleb128 0x21
- 2178 00a5 00       		.byte	0
- 2179 00a6 49       		.uleb128 0x49
- 2180 00a7 13       		.uleb128 0x13
- 2181 00a8 2F       		.uleb128 0x2f
- 2182 00a9 0B       		.uleb128 0xb
- 2183 00aa 00       		.byte	0
- 2184 00ab 00       		.byte	0
- 2185 00ac 0F       		.uleb128 0xf
- 2186 00ad 34       		.uleb128 0x34
- 2187 00ae 00       		.byte	0
- 2188 00af 03       		.uleb128 0x3
- 2189 00b0 0E       		.uleb128 0xe
- 2190 00b1 3A       		.uleb128 0x3a
- 2191 00b2 0B       		.uleb128 0xb
- 2192 00b3 3B       		.uleb128 0x3b
- 2193 00b4 0B       		.uleb128 0xb
- 2194 00b5 49       		.uleb128 0x49
- 2195 00b6 13       		.uleb128 0x13
- 2196 00b7 3F       		.uleb128 0x3f
- 2197 00b8 19       		.uleb128 0x19
- 2198 00b9 02       		.uleb128 0x2
- 2199 00ba 18       		.uleb128 0x18
- 2200 00bb 00       		.byte	0
- 2201 00bc 00       		.byte	0
- 2202 00bd 10       		.uleb128 0x10
- 2203 00be 2E       		.uleb128 0x2e
- 2204 00bf 01       		.byte	0x1
- 2205 00c0 3F       		.uleb128 0x3f
- 2206 00c1 19       		.uleb128 0x19
- 2207 00c2 03       		.uleb128 0x3
- 2208 00c3 0E       		.uleb128 0xe
- 2209 00c4 3A       		.uleb128 0x3a
- 2210 00c5 0B       		.uleb128 0xb
- 2211 00c6 3B       		.uleb128 0x3b
- 2212 00c7 0B       		.uleb128 0xb
- 2213 00c8 27       		.uleb128 0x27
- 2214 00c9 19       		.uleb128 0x19
- 2215 00ca 49       		.uleb128 0x49
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 41
-
-
- 2216 00cb 13       		.uleb128 0x13
- 2217 00cc 3C       		.uleb128 0x3c
- 2218 00cd 19       		.uleb128 0x19
- 2219 00ce 01       		.uleb128 0x1
- 2220 00cf 13       		.uleb128 0x13
- 2221 00d0 00       		.byte	0
- 2222 00d1 00       		.byte	0
- 2223 00d2 11       		.uleb128 0x11
- 2224 00d3 05       		.uleb128 0x5
- 2225 00d4 00       		.byte	0
- 2226 00d5 49       		.uleb128 0x49
- 2227 00d6 13       		.uleb128 0x13
- 2228 00d7 00       		.byte	0
- 2229 00d8 00       		.byte	0
- 2230 00d9 12       		.uleb128 0x12
- 2231 00da 2E       		.uleb128 0x2e
- 2232 00db 01       		.byte	0x1
- 2233 00dc 3F       		.uleb128 0x3f
- 2234 00dd 19       		.uleb128 0x19
- 2235 00de 03       		.uleb128 0x3
- 2236 00df 0E       		.uleb128 0xe
- 2237 00e0 3A       		.uleb128 0x3a
- 2238 00e1 0B       		.uleb128 0xb
- 2239 00e2 3B       		.uleb128 0x3b
- 2240 00e3 0B       		.uleb128 0xb
- 2241 00e4 27       		.uleb128 0x27
- 2242 00e5 19       		.uleb128 0x19
- 2243 00e6 49       		.uleb128 0x49
- 2244 00e7 13       		.uleb128 0x13
- 2245 00e8 3C       		.uleb128 0x3c
- 2246 00e9 19       		.uleb128 0x19
- 2247 00ea 00       		.byte	0
- 2248 00eb 00       		.byte	0
- 2249 00ec 00       		.byte	0
- 2250              		.section	.debug_aranges,"",%progbits
- 2251 0000 BC000000 		.4byte	0xbc
- 2252 0004 0200     		.2byte	0x2
- 2253 0006 00000000 		.4byte	.Ldebug_info0
- 2254 000a 04       		.byte	0x4
- 2255 000b 00       		.byte	0
- 2256 000c 0000     		.2byte	0
- 2257 000e 0000     		.2byte	0
- 2258 0010 00000000 		.4byte	.LFB35
- 2259 0014 14000000 		.4byte	.LFE35-.LFB35
- 2260 0018 00000000 		.4byte	.LFB36
- 2261 001c 14000000 		.4byte	.LFE36-.LFB36
- 2262 0020 00000000 		.4byte	.LFB37
- 2263 0024 14000000 		.4byte	.LFE37-.LFB37
- 2264 0028 00000000 		.4byte	.LFB38
- 2265 002c 14000000 		.4byte	.LFE38-.LFB38
- 2266 0030 00000000 		.4byte	.LFB39
- 2267 0034 14000000 		.4byte	.LFE39-.LFB39
- 2268 0038 00000000 		.4byte	.LFB40
- 2269 003c 14000000 		.4byte	.LFE40-.LFB40
- 2270 0040 00000000 		.4byte	.LFB41
- 2271 0044 14000000 		.4byte	.LFE41-.LFB41
- 2272 0048 00000000 		.4byte	.LFB42
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 42
-
-
- 2273 004c 14000000 		.4byte	.LFE42-.LFB42
- 2274 0050 00000000 		.4byte	.LFB43
- 2275 0054 14000000 		.4byte	.LFE43-.LFB43
- 2276 0058 00000000 		.4byte	.LFB44
- 2277 005c 14000000 		.4byte	.LFE44-.LFB44
- 2278 0060 00000000 		.4byte	.LFB45
- 2279 0064 14000000 		.4byte	.LFE45-.LFB45
- 2280 0068 00000000 		.4byte	.LFB46
- 2281 006c 14000000 		.4byte	.LFE46-.LFB46
- 2282 0070 00000000 		.4byte	.LFB47
- 2283 0074 14000000 		.4byte	.LFE47-.LFB47
- 2284 0078 00000000 		.4byte	.LFB48
- 2285 007c 14000000 		.4byte	.LFE48-.LFB48
- 2286 0080 00000000 		.4byte	.LFB49
- 2287 0084 14000000 		.4byte	.LFE49-.LFB49
- 2288 0088 00000000 		.4byte	.LFB50
- 2289 008c 14000000 		.4byte	.LFE50-.LFB50
- 2290 0090 00000000 		.4byte	.LFB51
- 2291 0094 14000000 		.4byte	.LFE51-.LFB51
- 2292 0098 00000000 		.4byte	.LFB52
- 2293 009c 14000000 		.4byte	.LFE52-.LFB52
- 2294 00a0 00000000 		.4byte	.LFB53
- 2295 00a4 14000000 		.4byte	.LFE53-.LFB53
- 2296 00a8 00000000 		.4byte	.LFB54
- 2297 00ac 14000000 		.4byte	.LFE54-.LFB54
- 2298 00b0 00000000 		.4byte	.LFB55
- 2299 00b4 1C010000 		.4byte	.LFE55-.LFB55
- 2300 00b8 00000000 		.4byte	0
- 2301 00bc 00000000 		.4byte	0
- 2302              		.section	.debug_ranges,"",%progbits
- 2303              	.Ldebug_ranges0:
- 2304 0000 00000000 		.4byte	.LFB35
- 2305 0004 14000000 		.4byte	.LFE35
- 2306 0008 00000000 		.4byte	.LFB36
- 2307 000c 14000000 		.4byte	.LFE36
- 2308 0010 00000000 		.4byte	.LFB37
- 2309 0014 14000000 		.4byte	.LFE37
- 2310 0018 00000000 		.4byte	.LFB38
- 2311 001c 14000000 		.4byte	.LFE38
- 2312 0020 00000000 		.4byte	.LFB39
- 2313 0024 14000000 		.4byte	.LFE39
- 2314 0028 00000000 		.4byte	.LFB40
- 2315 002c 14000000 		.4byte	.LFE40
- 2316 0030 00000000 		.4byte	.LFB41
- 2317 0034 14000000 		.4byte	.LFE41
- 2318 0038 00000000 		.4byte	.LFB42
- 2319 003c 14000000 		.4byte	.LFE42
- 2320 0040 00000000 		.4byte	.LFB43
- 2321 0044 14000000 		.4byte	.LFE43
- 2322 0048 00000000 		.4byte	.LFB44
- 2323 004c 14000000 		.4byte	.LFE44
- 2324 0050 00000000 		.4byte	.LFB45
- 2325 0054 14000000 		.4byte	.LFE45
- 2326 0058 00000000 		.4byte	.LFB46
- 2327 005c 14000000 		.4byte	.LFE46
- 2328 0060 00000000 		.4byte	.LFB47
- 2329 0064 14000000 		.4byte	.LFE47
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 43
-
-
- 2330 0068 00000000 		.4byte	.LFB48
- 2331 006c 14000000 		.4byte	.LFE48
- 2332 0070 00000000 		.4byte	.LFB49
- 2333 0074 14000000 		.4byte	.LFE49
- 2334 0078 00000000 		.4byte	.LFB50
- 2335 007c 14000000 		.4byte	.LFE50
- 2336 0080 00000000 		.4byte	.LFB51
- 2337 0084 14000000 		.4byte	.LFE51
- 2338 0088 00000000 		.4byte	.LFB52
- 2339 008c 14000000 		.4byte	.LFE52
- 2340 0090 00000000 		.4byte	.LFB53
- 2341 0094 14000000 		.4byte	.LFE53
- 2342 0098 00000000 		.4byte	.LFB54
- 2343 009c 14000000 		.4byte	.LFE54
- 2344 00a0 00000000 		.4byte	.LFB55
- 2345 00a4 1C010000 		.4byte	.LFE55
- 2346 00a8 00000000 		.4byte	0
- 2347 00ac 00000000 		.4byte	0
- 2348              		.section	.debug_line,"",%progbits
- 2349              	.Ldebug_line0:
- 2350 0000 C8010000 		.section	.debug_str,"MS",%progbits,1
- 2350      02005E00 
- 2350      00000201 
- 2350      FB0E0D00 
- 2350      01010101 
- 2351              	.LASF53:
- 2352 0000 4B45595F 		.ascii	"KEY_EVENT_LONG_RELEASE\000"
- 2352      4556454E 
- 2352      545F4C4F 
- 2352      4E475F52 
- 2352      454C4541 
- 2353              	.LASF37:
- 2354 0017 4B45595F 		.ascii	"KEY_FENG_NUAN\000"
- 2354      46454E47 
- 2354      5F4E5541 
- 2354      4E00
- 2355              	.LASF43:
- 2356 0025 4B45595F 		.ascii	"KEY_XIN_FENG_QU_NUAN\000"
- 2356      58494E5F 
- 2356      46454E47 
- 2356      5F51555F 
- 2356      4E55414E 
- 2357              	.LASF27:
- 2358 003a 56414C55 		.ascii	"VALUE_LONG_PRESS_WEN_DU_JIA\000"
- 2358      455F4C4F 
- 2358      4E475F50 
- 2358      52455353 
- 2358      5F57454E 
- 2359              	.LASF47:
- 2360 0056 4B45595F 		.ascii	"KEY_ZHI_NENG\000"
- 2360      5A48495F 
- 2360      4E454E47 
- 2360      00
- 2361              	.LASF56:
- 2362 0063 4B65795F 		.ascii	"Key_event\000"
- 2362      6576656E 
- 2362      7400
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 44
-
-
- 2363              	.LASF12:
- 2364 006d 46414C53 		.ascii	"FALSE\000"
- 2364      4500
- 2365              	.LASF41:
- 2366 0073 4B45595F 		.ascii	"KEY_QING_RUO\000"
- 2366      51494E47 
- 2366      5F52554F 
- 2366      00
- 2367              	.LASF2:
- 2368 0080 73686F72 		.ascii	"short int\000"
- 2368      7420696E 
- 2368      7400
- 2369              	.LASF14:
- 2370 008a 73697A65 		.ascii	"sizetype\000"
- 2370      74797065 
- 2370      00
- 2371              	.LASF82:
- 2372 0093 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 2372      4320342E 
- 2372      392E3320 
- 2372      32303135 
- 2372      30333033 
- 2373 00c6 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
- 2373      20726576 
- 2373      6973696F 
- 2373      6E203232 
- 2373      31323230 
- 2374 00f9 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
- 2374      67202D66 
- 2374      66756E63 
- 2374      74696F6E 
- 2374      2D736563 
- 2375              	.LASF81:
- 2376 0125 6B65795F 		.ascii	"key_add_event_handler\000"
- 2376      6164645F 
- 2376      6576656E 
- 2376      745F6861 
- 2376      6E646C65 
- 2377              	.LASF35:
- 2378 013b 56414C55 		.ascii	"VALUE_NUMBER\000"
- 2378      455F4E55 
- 2378      4D424552 
- 2378      00
- 2379              	.LASF30:
- 2380 0148 56414C55 		.ascii	"VALUE_LONG_RELEASE_DING_SHI_JIA\000"
- 2380      455F4C4F 
- 2380      4E475F52 
- 2380      454C4541 
- 2380      53455F44 
- 2381              	.LASF33:
- 2382 0168 56414C55 		.ascii	"VALUE_COMBINE_WM_DM\000"
- 2382      455F434F 
- 2382      4D42494E 
- 2382      455F574D 
- 2382      5F444D00 
- 2383              	.LASF26:
- 2384 017c 56414C55 		.ascii	"VALUE_SHORT_PRESS_ZHI_NENG\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 45
-
-
- 2384      455F5348 
- 2384      4F52545F 
- 2384      50524553 
- 2384      535F5A48 
- 2385              	.LASF70:
- 2386 0197 6170705F 		.ascii	"app_key_short_press_zhi_neng_handler\000"
- 2386      6B65795F 
- 2386      73686F72 
- 2386      745F7072 
- 2386      6573735F 
- 2387              	.LASF55:
- 2388 01bc 4B45595F 		.ascii	"KEY_EVENT_NUMBER\000"
- 2388      4556454E 
- 2388      545F4E55 
- 2388      4D424552 
- 2388      00
- 2389              	.LASF54:
- 2390 01cd 4B45595F 		.ascii	"KEY_EVENT_STUCK\000"
- 2390      4556454E 
- 2390      545F5354 
- 2390      55434B00 
- 2391              	.LASF58:
- 2392 01dd 4B65795F 		.ascii	"Key_conbine_handler\000"
- 2392      636F6E62 
- 2392      696E655F 
- 2392      68616E64 
- 2392      6C657200 
- 2393              	.LASF71:
- 2394 01f1 6170705F 		.ascii	"app_key_long_press_wen_du_jia_handler\000"
- 2394      6B65795F 
- 2394      6C6F6E67 
- 2394      5F707265 
- 2394      73735F77 
- 2395              	.LASF80:
- 2396 0217 73696D70 		.ascii	"simple_protocol_send\000"
- 2396      6C655F70 
- 2396      726F746F 
- 2396      636F6C5F 
- 2396      73656E64 
- 2397              	.LASF46:
- 2398 022c 4B45595F 		.ascii	"KEY_BAI_DONG\000"
- 2398      4241495F 
- 2398      444F4E47 
- 2398      00
- 2399              	.LASF39:
- 2400 0239 4B45595F 		.ascii	"KEY_WENDU_JIAN\000"
- 2400      57454E44 
- 2400      555F4A49 
- 2400      414E00
- 2401              	.LASF75:
- 2402 0248 6170705F 		.ascii	"app_key_long_release_ding_shi_jian_handler\000"
- 2402      6B65795F 
- 2402      6C6F6E67 
- 2402      5F72656C 
- 2402      65617365 
- 2403              	.LASF73:
- 2404 0273 6170705F 		.ascii	"app_key_long_press_ding_shi_jian_handler\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 46
-
-
- 2404      6B65795F 
- 2404      6C6F6E67 
- 2404      5F707265 
- 2404      73735F64 
- 2405              	.LASF63:
- 2406 029c 6170705F 		.ascii	"app_key_short_press_xin_feng_handler\000"
- 2406      6B65795F 
- 2406      73686F72 
- 2406      745F7072 
- 2406      6573735F 
- 2407              	.LASF64:
- 2408 02c1 6170705F 		.ascii	"app_key_short_press_qiang_ruo_handler\000"
- 2408      6B65795F 
- 2408      73686F72 
- 2408      745F7072 
- 2408      6573735F 
- 2409              	.LASF17:
- 2410 02e7 56414C55 		.ascii	"VALUE_SHORT_PRESS_WENDU_JIA\000"
- 2410      455F5348 
- 2410      4F52545F 
- 2410      50524553 
- 2410      535F5745 
- 2411              	.LASF24:
- 2412 0303 56414C55 		.ascii	"VALUE_SHORT_PRESS_DINGSHI_JIAN\000"
- 2412      455F5348 
- 2412      4F52545F 
- 2412      50524553 
- 2412      535F4449 
- 2413              	.LASF22:
- 2414 0322 56414C55 		.ascii	"VALUE_SHORT_PRESS_XIN_FENG_QU_NUAN\000"
- 2414      455F5348 
- 2414      4F52545F 
- 2414      50524553 
- 2414      535F5849 
- 2415              	.LASF83:
- 2416 0345 6170702E 		.ascii	"app.c\000"
- 2416      6300
- 2417              	.LASF48:
- 2418 034b 4B45595F 		.ascii	"KEY_NUMBER\000"
- 2418      4E554D42 
- 2418      455200
- 2419              	.LASF9:
- 2420 0356 666C6F61 		.ascii	"float\000"
- 2420      7400
- 2421              	.LASF76:
- 2422 035c 6170705F 		.ascii	"app_key_combine_wen_jia_ding_jia_handler\000"
- 2422      6B65795F 
- 2422      636F6D62 
- 2422      696E655F 
- 2422      77656E5F 
- 2423              	.LASF6:
- 2424 0385 6C6F6E67 		.ascii	"long long int\000"
- 2424      206C6F6E 
- 2424      6720696E 
- 2424      7400
- 2425              	.LASF23:
- 2426 0393 56414C55 		.ascii	"VALUE_SHORT_PRESS_DINGSHI_JIA\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 47
-
-
- 2426      455F5348 
- 2426      4F52545F 
- 2426      50524553 
- 2426      535F4449 
- 2427              	.LASF16:
- 2428 03b1 56414C55 		.ascii	"VALUE_SHORT_PRESS_FENG_NUAN\000"
- 2428      455F5348 
- 2428      4F52545F 
- 2428      50524553 
- 2428      535F4645 
- 2429              	.LASF4:
- 2430 03cd 6C6F6E67 		.ascii	"long int\000"
- 2430      20696E74 
- 2430      00
- 2431              	.LASF42:
- 2432 03d6 4B45595F 		.ascii	"KEY_HUAN_QI\000"
- 2432      4855414E 
- 2432      5F514900 
- 2433              	.LASF69:
- 2434 03e2 6170705F 		.ascii	"app_key_short_press_bai_dong_handler\000"
- 2434      6B65795F 
- 2434      73686F72 
- 2434      745F7072 
- 2434      6573735F 
- 2435              	.LASF78:
- 2436 0407 6170705F 		.ascii	"app_key_combine_ding_jian_dian_yuan_handler\000"
- 2436      6B65795F 
- 2436      636F6D62 
- 2436      696E655F 
- 2436      64696E67 
- 2437              	.LASF57:
- 2438 0433 4B65795F 		.ascii	"Key_event_handler\000"
- 2438      6576656E 
- 2438      745F6861 
- 2438      6E646C65 
- 2438      7200
- 2439              	.LASF29:
- 2440 0445 56414C55 		.ascii	"VALUE_LONG_PRESS_DING_SHI_JIAN\000"
- 2440      455F4C4F 
- 2440      4E475F50 
- 2440      52455353 
- 2440      5F44494E 
- 2441              	.LASF72:
- 2442 0464 6170705F 		.ascii	"app_key_long_press_ding_shi_jia_handler\000"
- 2442      6B65795F 
- 2442      6C6F6E67 
- 2442      5F707265 
- 2442      73735F64 
- 2443              	.LASF62:
- 2444 048c 6170705F 		.ascii	"app_key_short_press_wen_du_jian_handler\000"
- 2444      6B65795F 
- 2444      73686F72 
- 2444      745F7072 
- 2444      6573735F 
- 2445              	.LASF1:
- 2446 04b4 756E7369 		.ascii	"unsigned char\000"
- 2446      676E6564 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 48
-
-
- 2446      20636861 
- 2446      7200
- 2447              	.LASF31:
- 2448 04c2 56414C55 		.ascii	"VALUE_LONG_RELEASE_DING_SHI_JIAN\000"
+ 632              		.loc 1 39 0
+ 633 0002 0348     		ldr	r0, .L62
+ 634 0004 1423     		mov	r3, #20
+ 635 0006 0370     		strb	r3, [r0]
+ 636 0008 0121     		mov	r1, #1
+ 637 000a FFF7FEFF 		bl	simple_protocol_send
+ 638              	.LVL20:
+ 639              		@ sp needed
+ 640 000e 08BD     		pop	{r3, pc}
+ 641              	.L63:
+ 642              		.align	2
+ 643              	.L62:
+ 644 0010 00000000 		.word	app_send_buffer
+ 645              		.cfi_endproc
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 13
+
+
+ 646              	.LFE55:
+ 647              		.size	app_key_combine_qiang_ruo_dian_yuan_handler, .-app_key_combine_qiang_ruo_dian_yuan_handler
+ 648              		.section	.text.app_init,"ax",%progbits
+ 649              		.align	2
+ 650              		.global	app_init
+ 651              		.code	16
+ 652              		.thumb_func
+ 653              		.type	app_init, %function
+ 654              	app_init:
+ 655              	.LFB56:
+  40:app.c         **** 
+  41:app.c         **** void app_init(void)
+  42:app.c         **** {
+ 656              		.loc 1 42 0
+ 657              		.cfi_startproc
+ 658 0000 08B5     		push	{r3, lr}
+ 659              		.cfi_def_cfa_offset 8
+ 660              		.cfi_offset 3, -8
+ 661              		.cfi_offset 14, -4
+  43:app.c         ****     key_add_event_handler(KEY_DIAN_YUAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_dian_yu
+ 662              		.loc 1 43 0
+ 663 0002 0020     		mov	r0, #0
+ 664 0004 0021     		mov	r1, #0
+ 665 0006 344A     		ldr	r2, .L65
+ 666 0008 FFF7FEFF 		bl	key_add_event_handler
+ 667              	.LVL21:
+  44:app.c         ****     key_add_event_handler(KEY_FENG_NUAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_feng_nu
+ 668              		.loc 1 44 0
+ 669 000c 0120     		mov	r0, #1
+ 670 000e 0021     		mov	r1, #0
+ 671 0010 324A     		ldr	r2, .L65+4
+ 672 0012 FFF7FEFF 		bl	key_add_event_handler
+ 673              	.LVL22:
+  45:app.c         ****     key_add_event_handler(KEY_WENDU_JIA, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_wen_du_
+ 674              		.loc 1 45 0
+ 675 0016 0220     		mov	r0, #2
+ 676 0018 0021     		mov	r1, #0
+ 677 001a 314A     		ldr	r2, .L65+8
+ 678 001c FFF7FEFF 		bl	key_add_event_handler
+ 679              	.LVL23:
+  46:app.c         ****     key_add_event_handler(KEY_WENDU_JIAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_wen_du
+ 680              		.loc 1 46 0
+ 681 0020 0320     		mov	r0, #3
+ 682 0022 0021     		mov	r1, #0
+ 683 0024 2F4A     		ldr	r2, .L65+12
+ 684 0026 FFF7FEFF 		bl	key_add_event_handler
+ 685              	.LVL24:
+  47:app.c         ****     key_add_event_handler(KEY_XIN_FENG, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_xin_feng
+ 686              		.loc 1 47 0
+ 687 002a 0420     		mov	r0, #4
+ 688 002c 0021     		mov	r1, #0
+ 689 002e 2E4A     		ldr	r2, .L65+16
+ 690 0030 FFF7FEFF 		bl	key_add_event_handler
+ 691              	.LVL25:
+  48:app.c         ****     key_add_event_handler(KEY_QING_RUO, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_qiang_ru
+ 692              		.loc 1 48 0
+ 693 0034 0520     		mov	r0, #5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 14
+
+
+ 694 0036 0021     		mov	r1, #0
+ 695 0038 2C4A     		ldr	r2, .L65+20
+ 696 003a FFF7FEFF 		bl	key_add_event_handler
+ 697              	.LVL26:
+  49:app.c         ****     key_add_event_handler(KEY_HUAN_QI, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_huan_qi))
+ 698              		.loc 1 49 0
+ 699 003e 0620     		mov	r0, #6
+ 700 0040 0021     		mov	r1, #0
+ 701 0042 2B4A     		ldr	r2, .L65+24
+ 702 0044 FFF7FEFF 		bl	key_add_event_handler
+ 703              	.LVL27:
+  50:app.c         ****     key_add_event_handler(KEY_XIN_FENG_QU_NUAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_
+ 704              		.loc 1 50 0
+ 705 0048 0720     		mov	r0, #7
+ 706 004a 0021     		mov	r1, #0
+ 707 004c 294A     		ldr	r2, .L65+28
+ 708 004e FFF7FEFF 		bl	key_add_event_handler
+ 709              	.LVL28:
+  51:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIA, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_ding_
+ 710              		.loc 1 51 0
+ 711 0052 0820     		mov	r0, #8
+ 712 0054 0021     		mov	r1, #0
+ 713 0056 284A     		ldr	r2, .L65+32
+ 714 0058 FFF7FEFF 		bl	key_add_event_handler
+ 715              	.LVL29:
+  52:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIAN, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_ding
+ 716              		.loc 1 52 0
+ 717 005c 0920     		mov	r0, #9
+ 718 005e 0021     		mov	r1, #0
+ 719 0060 264A     		ldr	r2, .L65+36
+ 720 0062 FFF7FEFF 		bl	key_add_event_handler
+ 721              	.LVL30:
+  53:app.c         ****     key_add_event_handler(KEY_BAI_DONG, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_bai_dong
+ 722              		.loc 1 53 0
+ 723 0066 0A20     		mov	r0, #10
+ 724 0068 0021     		mov	r1, #0
+ 725 006a 254A     		ldr	r2, .L65+40
+ 726 006c FFF7FEFF 		bl	key_add_event_handler
+ 727              	.LVL31:
+  54:app.c         ****     key_add_event_handler(KEY_ZHI_NENG, KEY_EVENT_SHORT_PRESS, APP_KEY_HANDlER(short_press_zhi_neng
+ 728              		.loc 1 54 0
+ 729 0070 0B20     		mov	r0, #11
+ 730 0072 0021     		mov	r1, #0
+ 731 0074 234A     		ldr	r2, .L65+44
+ 732 0076 FFF7FEFF 		bl	key_add_event_handler
+ 733              	.LVL32:
+  55:app.c         ****     
+  56:app.c         ****     key_add_event_handler(KEY_WENDU_JIA, KEY_EVENT_LONG_PRESS, APP_KEY_HANDlER(long_press_wen_du_ji
+ 734              		.loc 1 56 0
+ 735 007a 0220     		mov	r0, #2
+ 736 007c 0121     		mov	r1, #1
+ 737 007e 224A     		ldr	r2, .L65+48
+ 738 0080 FFF7FEFF 		bl	key_add_event_handler
+ 739              	.LVL33:
+  57:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIA, KEY_EVENT_LONG_PRESS, APP_KEY_HANDlER(long_press_ding_sh
+ 740              		.loc 1 57 0
+ 741 0084 0820     		mov	r0, #8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 15
+
+
+ 742 0086 0121     		mov	r1, #1
+ 743 0088 204A     		ldr	r2, .L65+52
+ 744 008a FFF7FEFF 		bl	key_add_event_handler
+ 745              	.LVL34:
+  58:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIAN, KEY_EVENT_LONG_PRESS, APP_KEY_HANDlER(long_press_ding_s
+ 746              		.loc 1 58 0
+ 747 008e 0920     		mov	r0, #9
+ 748 0090 0121     		mov	r1, #1
+ 749 0092 1F4A     		ldr	r2, .L65+56
+ 750 0094 FFF7FEFF 		bl	key_add_event_handler
+ 751              	.LVL35:
+  59:app.c         ****     
+  60:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIA, KEY_EVENT_LONG_RELEASE, APP_KEY_HANDlER(long_release_din
+ 752              		.loc 1 60 0
+ 753 0098 0820     		mov	r0, #8
+ 754 009a 0221     		mov	r1, #2
+ 755 009c 1D4A     		ldr	r2, .L65+60
+ 756 009e FFF7FEFF 		bl	key_add_event_handler
+ 757              	.LVL36:
+  61:app.c         ****     key_add_event_handler(KEY_DINGSHI_JIAN, KEY_EVENT_LONG_RELEASE, APP_KEY_HANDlER(long_release_di
+ 758              		.loc 1 61 0
+ 759 00a2 0920     		mov	r0, #9
+ 760 00a4 0221     		mov	r1, #2
+ 761 00a6 1C4A     		ldr	r2, .L65+64
+ 762 00a8 FFF7FEFF 		bl	key_add_event_handler
+ 763              	.LVL37:
+  62:app.c         ****     
+  63:app.c         ****     key_add_combine_handler(KEY_WENDU_JIA, KEY_DINGSHI_JIA, APP_KEY_HANDlER(combine_wen_jia_ding_ji
+ 764              		.loc 1 63 0
+ 765 00ac 0220     		mov	r0, #2
+ 766 00ae 0821     		mov	r1, #8
+ 767 00b0 1A4A     		ldr	r2, .L65+68
+ 768 00b2 FFF7FEFF 		bl	key_add_combine_handler
+ 769              	.LVL38:
+  64:app.c         ****     key_add_combine_handler(KEY_WENDU_JIAN, KEY_DINGSHI_JIAN, APP_KEY_HANDlER(combine_wen_jian_ding
+ 770              		.loc 1 64 0
+ 771 00b6 0320     		mov	r0, #3
+ 772 00b8 0921     		mov	r1, #9
+ 773 00ba 194A     		ldr	r2, .L65+72
+ 774 00bc FFF7FEFF 		bl	key_add_combine_handler
+ 775              	.LVL39:
+  65:app.c         ****     key_add_combine_handler(KEY_DINGSHI_JIAN, KEY_DIAN_YUAN, APP_KEY_HANDlER(combine_ding_jian_dian
+ 776              		.loc 1 65 0
+ 777 00c0 0920     		mov	r0, #9
+ 778 00c2 0021     		mov	r1, #0
+ 779 00c4 174A     		ldr	r2, .L65+76
+ 780 00c6 FFF7FEFF 		bl	key_add_combine_handler
+ 781              	.LVL40:
+  66:app.c         ****     key_add_combine_handler(KEY_QING_RUO, KEY_DIAN_YUAN, APP_KEY_HANDlER(combine_qiang_ruo_dian_yua
+ 782              		.loc 1 66 0
+ 783 00ca 0520     		mov	r0, #5
+ 784 00cc 0021     		mov	r1, #0
+ 785 00ce 164A     		ldr	r2, .L65+80
+ 786 00d0 FFF7FEFF 		bl	key_add_combine_handler
+ 787              	.LVL41:
+  67:app.c         **** }
+ 788              		.loc 1 67 0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 16
+
+
+ 789              		@ sp needed
+ 790 00d4 08BD     		pop	{r3, pc}
+ 791              	.L66:
+ 792 00d6 C046     		.align	2
+ 793              	.L65:
+ 794 00d8 00000000 		.word	app_key_short_press_dian_yuan_handler
+ 795 00dc 00000000 		.word	app_key_short_press_feng_nuan_handler
+ 796 00e0 00000000 		.word	app_key_short_press_wen_du_jia_handler
+ 797 00e4 00000000 		.word	app_key_short_press_wen_du_jian_handler
+ 798 00e8 00000000 		.word	app_key_short_press_xin_feng_handler
+ 799 00ec 00000000 		.word	app_key_short_press_qiang_ruo_handler
+ 800 00f0 00000000 		.word	app_key_short_press_huan_qi_handler
+ 801 00f4 00000000 		.word	app_key_short_press_xin_feng_qu_nuan_handler
+ 802 00f8 00000000 		.word	app_key_short_press_ding_shi_jia_handler
+ 803 00fc 00000000 		.word	app_key_short_press_ding_shi_jian_handler
+ 804 0100 00000000 		.word	app_key_short_press_bai_dong_handler
+ 805 0104 00000000 		.word	app_key_short_press_zhi_neng_handler
+ 806 0108 00000000 		.word	app_key_long_press_wen_du_jia_handler
+ 807 010c 00000000 		.word	app_key_long_press_ding_shi_jia_handler
+ 808 0110 00000000 		.word	app_key_long_press_ding_shi_jian_handler
+ 809 0114 00000000 		.word	app_key_long_release_ding_shi_jia_handler
+ 810 0118 00000000 		.word	app_key_long_release_ding_shi_jian_handler
+ 811 011c 00000000 		.word	app_key_combine_wen_jia_ding_jia_handler
+ 812 0120 00000000 		.word	app_key_combine_wen_jian_ding_jian_handler
+ 813 0124 00000000 		.word	app_key_combine_ding_jian_dian_yuan_handler
+ 814 0128 00000000 		.word	app_key_combine_qiang_ruo_dian_yuan_handler
+ 815              		.cfi_endproc
+ 816              	.LFE56:
+ 817              		.size	app_init, .-app_init
+ 818              		.comm	app_send_buffer,10,4
+ 819              		.text
+ 820              	.Letext0:
+ 821              		.file 2 "types.h"
+ 822              		.file 3 "app.h"
+ 823              		.file 4 "key_config.h"
+ 824              		.file 5 "key.h"
+ 825              		.file 6 "simple_protocol.h"
+ 826              		.section	.debug_info,"",%progbits
+ 827              	.Ldebug_info0:
+ 828 0000 EA080000 		.4byte	0x8ea
+ 829 0004 0400     		.2byte	0x4
+ 830 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 831 000a 04       		.byte	0x4
+ 832 000b 01       		.uleb128 0x1
+ 833 000c C2000000 		.4byte	.LASF84
+ 834 0010 01       		.byte	0x1
+ 835 0011 74030000 		.4byte	.LASF85
+ 836 0015 1E070000 		.4byte	.LASF86
+ 837 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 838 001d 00000000 		.4byte	0
+ 839 0021 00000000 		.4byte	.Ldebug_line0
+ 840 0025 02       		.uleb128 0x2
+ 841 0026 01       		.byte	0x1
+ 842 0027 06       		.byte	0x6
+ 843 0028 6D000000 		.4byte	.LASF0
+ 844 002c 02       		.uleb128 0x2
+ 845 002d 01       		.byte	0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 17
+
+
+ 846 002e 08       		.byte	0x8
+ 847 002f E3040000 		.4byte	.LASF1
+ 848 0033 02       		.uleb128 0x2
+ 849 0034 02       		.byte	0x2
+ 850 0035 05       		.byte	0x5
+ 851 0036 8C000000 		.4byte	.LASF2
+ 852 003a 02       		.uleb128 0x2
+ 853 003b 02       		.byte	0x2
+ 854 003c 07       		.byte	0x7
+ 855 003d 61060000 		.4byte	.LASF3
+ 856 0041 02       		.uleb128 0x2
+ 857 0042 04       		.byte	0x4
+ 858 0043 05       		.byte	0x5
+ 859 0044 FC030000 		.4byte	.LASF4
+ 860 0048 02       		.uleb128 0x2
+ 861 0049 04       		.byte	0x4
+ 862 004a 07       		.byte	0x7
+ 863 004b 0C070000 		.4byte	.LASF5
+ 864 004f 02       		.uleb128 0x2
+ 865 0050 08       		.byte	0x8
+ 866 0051 05       		.byte	0x5
+ 867 0052 B4030000 		.4byte	.LASF6
+ 868 0056 02       		.uleb128 0x2
+ 869 0057 08       		.byte	0x8
+ 870 0058 07       		.byte	0x7
+ 871 0059 42050000 		.4byte	.LASF7
+ 872 005d 03       		.uleb128 0x3
+ 873 005e 04       		.byte	0x4
+ 874 005f 05       		.byte	0x5
+ 875 0060 696E7400 		.ascii	"int\000"
+ 876 0064 02       		.uleb128 0x2
+ 877 0065 04       		.byte	0x4
+ 878 0066 07       		.byte	0x7
+ 879 0067 59050000 		.4byte	.LASF8
+ 880 006b 02       		.uleb128 0x2
+ 881 006c 04       		.byte	0x4
+ 882 006d 04       		.byte	0x4
+ 883 006e 85030000 		.4byte	.LASF9
+ 884 0072 02       		.uleb128 0x2
+ 885 0073 08       		.byte	0x8
+ 886 0074 04       		.byte	0x4
+ 887 0075 50070000 		.4byte	.LASF10
+ 888 0079 02       		.uleb128 0x2
+ 889 007a 01       		.byte	0x1
+ 890 007b 08       		.byte	0x8
+ 891 007c 22060000 		.4byte	.LASF11
+ 892 0080 04       		.uleb128 0x4
+ 893 0081 04       		.byte	0x4
+ 894 0082 86000000 		.4byte	0x86
+ 895 0086 05       		.uleb128 0x5
+ 896 0087 06       		.uleb128 0x6
+ 897 0088 01       		.byte	0x1
+ 898 0089 02       		.byte	0x2
+ 899 008a 12       		.byte	0x12
+ 900 008b 9C000000 		.4byte	0x9c
+ 901 008f 07       		.uleb128 0x7
+ 902 0090 79000000 		.4byte	.LASF12
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 18
+
+
+ 903 0094 00       		.sleb128 0
+ 904 0095 07       		.uleb128 0x7
+ 905 0096 38080000 		.4byte	.LASF13
+ 906 009a 01       		.sleb128 1
+ 907 009b 00       		.byte	0
+ 908 009c 08       		.uleb128 0x8
+ 909 009d D6080000 		.4byte	.LASF50
+ 910 00a1 02       		.byte	0x2
+ 911 00a2 15       		.byte	0x15
+ 912 00a3 87000000 		.4byte	0x87
+ 913 00a7 02       		.uleb128 0x2
+ 914 00a8 04       		.byte	0x4
+ 915 00a9 07       		.byte	0x7
+ 916 00aa E0070000 		.4byte	.LASF14
+ 917 00ae 06       		.uleb128 0x6
+ 918 00af 01       		.byte	0x1
+ 919 00b0 03       		.byte	0x3
+ 920 00b1 1B       		.byte	0x1b
+ 921 00b2 3B010000 		.4byte	0x13b
+ 922 00b6 07       		.uleb128 0x7
+ 923 00b7 3D080000 		.4byte	.LASF15
+ 924 00bb 00       		.sleb128 0
+ 925 00bc 07       		.uleb128 0x7
+ 926 00bd E0030000 		.4byte	.LASF16
+ 927 00c1 01       		.sleb128 1
+ 928 00c2 07       		.uleb128 0x7
+ 929 00c3 16030000 		.4byte	.LASF17
+ 930 00c7 02       		.sleb128 2
+ 931 00c8 07       		.uleb128 0x7
+ 932 00c9 BC060000 		.4byte	.LASF18
+ 933 00cd 03       		.sleb128 3
+ 934 00ce 07       		.uleb128 0x7
+ 935 00cf 1D080000 		.4byte	.LASF19
+ 936 00d3 04       		.sleb128 4
+ 937 00d4 07       		.uleb128 0x7
+ 938 00d5 59080000 		.4byte	.LASF20
+ 939 00d9 05       		.sleb128 5
+ 940 00da 07       		.uleb128 0x7
+ 941 00db 08060000 		.4byte	.LASF21
+ 942 00df 06       		.sleb128 6
+ 943 00e0 07       		.uleb128 0x7
+ 944 00e1 51030000 		.4byte	.LASF22
+ 945 00e5 07       		.sleb128 7
+ 946 00e6 07       		.uleb128 0x7
+ 947 00e7 C2030000 		.4byte	.LASF23
+ 948 00eb 08       		.sleb128 8
+ 949 00ec 07       		.uleb128 0x7
+ 950 00ed 32030000 		.4byte	.LASF24
+ 951 00f1 09       		.sleb128 9
+ 952 00f2 07       		.uleb128 0x7
+ 953 00f3 C5070000 		.4byte	.LASF25
+ 954 00f7 0A       		.sleb128 10
+ 955 00f8 07       		.uleb128 0x7
+ 956 00f9 AB010000 		.4byte	.LASF26
+ 957 00fd 0B       		.sleb128 11
+ 958 00fe 07       		.uleb128 0x7
+ 959 00ff 3A000000 		.4byte	.LASF27
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 19
+
+
+ 960 0103 0C       		.sleb128 12
+ 961 0104 07       		.uleb128 0x7
+ 962 0105 B8080000 		.4byte	.LASF28
+ 963 0109 0D       		.sleb128 13
+ 964 010a 07       		.uleb128 0x7
+ 965 010b 74040000 		.4byte	.LASF29
+ 966 010f 0E       		.sleb128 14
+ 967 0110 07       		.uleb128 0x7
+ 968 0111 77010000 		.4byte	.LASF30
+ 969 0115 0F       		.sleb128 15
+ 970 0116 07       		.uleb128 0x7
+ 971 0117 F1040000 		.4byte	.LASF31
+ 972 011b 10       		.sleb128 16
+ 973 011c 07       		.uleb128 0x7
+ 974 011d A4080000 		.4byte	.LASF32
+ 975 0121 11       		.sleb128 17
+ 976 0122 07       		.uleb128 0x7
+ 977 0123 97010000 		.4byte	.LASF33
+ 978 0127 12       		.sleb128 18
+ 979 0128 07       		.uleb128 0x7
+ 980 0129 89080000 		.4byte	.LASF34
+ 981 012d 13       		.sleb128 19
+ 982 012e 07       		.uleb128 0x7
+ 983 012f 12050000 		.4byte	.LASF35
+ 984 0133 14       		.sleb128 20
+ 985 0134 07       		.uleb128 0x7
+ 986 0135 6A010000 		.4byte	.LASF36
+ 987 0139 15       		.sleb128 21
+ 988 013a 00       		.byte	0
+ 989 013b 04       		.uleb128 0x4
+ 990 013c 04       		.byte	0x4
+ 991 013d 2C000000 		.4byte	0x2c
+ 992 0141 06       		.uleb128 0x6
+ 993 0142 01       		.byte	0x1
+ 994 0143 04       		.byte	0x4
+ 995 0144 14       		.byte	0x14
+ 996 0145 98010000 		.4byte	0x198
+ 997 0149 07       		.uleb128 0x7
+ 998 014a 9E060000 		.4byte	.LASF37
+ 999 014e 00       		.sleb128 0
+ 1000 014f 07       		.uleb128 0x7
+ 1001 0150 17000000 		.4byte	.LASF38
+ 1002 0154 01       		.sleb128 1
+ 1003 0155 07       		.uleb128 0x7
+ 1004 0156 34050000 		.4byte	.LASF39
+ 1005 015a 02       		.sleb128 2
+ 1006 015b 07       		.uleb128 0x7
+ 1007 015c 68020000 		.4byte	.LASF40
+ 1008 0160 03       		.sleb128 3
+ 1009 0161 07       		.uleb128 0x7
+ 1010 0162 D9060000 		.4byte	.LASF41
+ 1011 0166 04       		.sleb128 4
+ 1012 0167 07       		.uleb128 0x7
+ 1013 0168 7F000000 		.4byte	.LASF42
+ 1014 016c 05       		.sleb128 5
+ 1015 016d 07       		.uleb128 0x7
+ 1016 016e 05040000 		.4byte	.LASF43
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 20
+
+
+ 1017 0172 06       		.sleb128 6
+ 1018 0173 07       		.uleb128 0x7
+ 1019 0174 25000000 		.4byte	.LASF44
+ 1020 0178 07       		.sleb128 7
+ 1021 0179 07       		.uleb128 0x7
+ 1022 017a AC060000 		.4byte	.LASF45
+ 1023 017e 08       		.sleb128 8
+ 1024 017f 07       		.uleb128 0x7
+ 1025 0180 60070000 		.4byte	.LASF46
+ 1026 0184 09       		.sleb128 9
+ 1027 0185 07       		.uleb128 0x7
+ 1028 0186 5B020000 		.4byte	.LASF47
+ 1029 018a 0A       		.sleb128 10
+ 1030 018b 07       		.uleb128 0x7
+ 1031 018c 56000000 		.4byte	.LASF48
+ 1032 0190 0B       		.sleb128 11
+ 1033 0191 07       		.uleb128 0x7
+ 1034 0192 7A030000 		.4byte	.LASF49
+ 1035 0196 0C       		.sleb128 12
+ 1036 0197 00       		.byte	0
+ 1037 0198 08       		.uleb128 0x8
+ 1038 0199 13080000 		.4byte	.LASF51
+ 1039 019d 04       		.byte	0x4
+ 1040 019e 22       		.byte	0x22
+ 1041 019f 41010000 		.4byte	0x141
+ 1042 01a3 06       		.uleb128 0x6
+ 1043 01a4 01       		.byte	0x1
+ 1044 01a5 05       		.byte	0x5
+ 1045 01a6 1A       		.byte	0x1a
+ 1046 01a7 CA010000 		.4byte	0x1ca
+ 1047 01ab 07       		.uleb128 0x7
+ 1048 01ac 4B060000 		.4byte	.LASF52
+ 1049 01b0 00       		.sleb128 0
+ 1050 01b1 07       		.uleb128 0x7
+ 1051 01b2 74080000 		.4byte	.LASF53
+ 1052 01b6 01       		.sleb128 1
+ 1053 01b7 07       		.uleb128 0x7
+ 1054 01b8 00000000 		.4byte	.LASF54
+ 1055 01bc 02       		.sleb128 2
+ 1056 01bd 07       		.uleb128 0x7
+ 1057 01be FC010000 		.4byte	.LASF55
+ 1058 01c2 03       		.sleb128 3
+ 1059 01c3 07       		.uleb128 0x7
+ 1060 01c4 EB010000 		.4byte	.LASF56
+ 1061 01c8 04       		.sleb128 4
+ 1062 01c9 00       		.byte	0
+ 1063 01ca 08       		.uleb128 0x8
+ 1064 01cb 63000000 		.4byte	.LASF57
+ 1065 01cf 05       		.byte	0x5
+ 1066 01d0 20       		.byte	0x20
+ 1067 01d1 A3010000 		.4byte	0x1a3
+ 1068 01d5 08       		.uleb128 0x8
+ 1069 01d6 62040000 		.4byte	.LASF58
+ 1070 01da 05       		.byte	0x5
+ 1071 01db 2C       		.byte	0x2c
+ 1072 01dc 80000000 		.4byte	0x80
+ 1073 01e0 08       		.uleb128 0x8
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 21
+
+
+ 1074 01e1 0C020000 		.4byte	.LASF59
+ 1075 01e5 05       		.byte	0x5
+ 1076 01e6 2D       		.byte	0x2d
+ 1077 01e7 80000000 		.4byte	0x80
+ 1078 01eb 09       		.uleb128 0x9
+ 1079 01ec 66050000 		.4byte	.LASF60
+ 1080 01f0 01       		.byte	0x1
+ 1081 01f1 10       		.byte	0x10
+ 1082 01f2 00000000 		.4byte	.LFB35
+ 1083 01f6 14000000 		.4byte	.LFE35-.LFB35
+ 1084 01fa 01       		.uleb128 0x1
+ 1085 01fb 9C       		.byte	0x9c
+ 1086 01fc 19020000 		.4byte	0x219
+ 1087 0200 0A       		.uleb128 0xa
+ 1088 0201 0E000000 		.4byte	.LVL0
+ 1089 0205 99080000 		.4byte	0x899
+ 1090 0209 0B       		.uleb128 0xb
+ 1091 020a 01       		.uleb128 0x1
+ 1092 020b 51       		.byte	0x51
+ 1093 020c 01       		.uleb128 0x1
+ 1094 020d 31       		.byte	0x31
+ 1095 020e 0B       		.uleb128 0xb
+ 1096 020f 01       		.uleb128 0x1
+ 1097 0210 50       		.byte	0x50
+ 1098 0211 05       		.uleb128 0x5
+ 1099 0212 03       		.byte	0x3
+ 1100 0213 00000000 		.4byte	app_send_buffer
+ 1101 0217 00       		.byte	0
+ 1102 0218 00       		.byte	0
+ 1103 0219 09       		.uleb128 0x9
+ 1104 021a E6060000 		.4byte	.LASF61
+ 1105 021e 01       		.byte	0x1
+ 1106 021f 11       		.byte	0x11
+ 1107 0220 00000000 		.4byte	.LFB36
+ 1108 0224 14000000 		.4byte	.LFE36-.LFB36
+ 1109 0228 01       		.uleb128 0x1
+ 1110 0229 9C       		.byte	0x9c
+ 1111 022a 47020000 		.4byte	0x247
+ 1112 022e 0A       		.uleb128 0xa
+ 1113 022f 0E000000 		.4byte	.LVL1
+ 1114 0233 99080000 		.4byte	0x899
+ 1115 0237 0B       		.uleb128 0xb
+ 1116 0238 01       		.uleb128 0x1
+ 1117 0239 51       		.byte	0x51
+ 1118 023a 01       		.uleb128 0x1
+ 1119 023b 31       		.byte	0x31
+ 1120 023c 0B       		.uleb128 0xb
+ 1121 023d 01       		.uleb128 0x1
+ 1122 023e 50       		.byte	0x50
+ 1123 023f 05       		.uleb128 0x5
+ 1124 0240 03       		.byte	0x3
+ 1125 0241 00000000 		.4byte	app_send_buffer
+ 1126 0245 00       		.byte	0
+ 1127 0246 00       		.byte	0
+ 1128 0247 09       		.uleb128 0x9
+ 1129 0248 E1050000 		.4byte	.LASF62
+ 1130 024c 01       		.byte	0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 22
+
+
+ 1131 024d 12       		.byte	0x12
+ 1132 024e 00000000 		.4byte	.LFB37
+ 1133 0252 14000000 		.4byte	.LFE37-.LFB37
+ 1134 0256 01       		.uleb128 0x1
+ 1135 0257 9C       		.byte	0x9c
+ 1136 0258 75020000 		.4byte	0x275
+ 1137 025c 0A       		.uleb128 0xa
+ 1138 025d 0E000000 		.4byte	.LVL2
+ 1139 0261 99080000 		.4byte	0x899
+ 1140 0265 0B       		.uleb128 0xb
+ 1141 0266 01       		.uleb128 0x1
+ 1142 0267 51       		.byte	0x51
+ 1143 0268 01       		.uleb128 0x1
+ 1144 0269 31       		.byte	0x31
+ 1145 026a 0B       		.uleb128 0xb
+ 1146 026b 01       		.uleb128 0x1
+ 1147 026c 50       		.byte	0x50
+ 1148 026d 05       		.uleb128 0x5
+ 1149 026e 03       		.byte	0x3
+ 1150 026f 00000000 		.4byte	app_send_buffer
+ 1151 0273 00       		.byte	0
+ 1152 0274 00       		.byte	0
+ 1153 0275 09       		.uleb128 0x9
+ 1154 0276 BB040000 		.4byte	.LASF63
+ 1155 027a 01       		.byte	0x1
+ 1156 027b 13       		.byte	0x13
+ 1157 027c 00000000 		.4byte	.LFB38
+ 1158 0280 14000000 		.4byte	.LFE38-.LFB38
+ 1159 0284 01       		.uleb128 0x1
+ 1160 0285 9C       		.byte	0x9c
+ 1161 0286 A3020000 		.4byte	0x2a3
+ 1162 028a 0A       		.uleb128 0xa
+ 1163 028b 0E000000 		.4byte	.LVL3
+ 1164 028f 99080000 		.4byte	0x899
+ 1165 0293 0B       		.uleb128 0xb
+ 1166 0294 01       		.uleb128 0x1
+ 1167 0295 51       		.byte	0x51
+ 1168 0296 01       		.uleb128 0x1
+ 1169 0297 31       		.byte	0x31
+ 1170 0298 0B       		.uleb128 0xb
+ 1171 0299 01       		.uleb128 0x1
+ 1172 029a 50       		.byte	0x50
+ 1173 029b 05       		.uleb128 0x5
+ 1174 029c 03       		.byte	0x3
+ 1175 029d 00000000 		.4byte	app_send_buffer
+ 1176 02a1 00       		.byte	0
+ 1177 02a2 00       		.byte	0
+ 1178 02a3 09       		.uleb128 0x9
+ 1179 02a4 CB020000 		.4byte	.LASF64
+ 1180 02a8 01       		.byte	0x1
+ 1181 02a9 14       		.byte	0x14
+ 1182 02aa 00000000 		.4byte	.LFB39
+ 1183 02ae 14000000 		.4byte	.LFE39-.LFB39
+ 1184 02b2 01       		.uleb128 0x1
+ 1185 02b3 9C       		.byte	0x9c
+ 1186 02b4 D1020000 		.4byte	0x2d1
+ 1187 02b8 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 23
+
+
+ 1188 02b9 0E000000 		.4byte	.LVL4
+ 1189 02bd 99080000 		.4byte	0x899
+ 1190 02c1 0B       		.uleb128 0xb
+ 1191 02c2 01       		.uleb128 0x1
+ 1192 02c3 51       		.byte	0x51
+ 1193 02c4 01       		.uleb128 0x1
+ 1194 02c5 31       		.byte	0x31
+ 1195 02c6 0B       		.uleb128 0xb
+ 1196 02c7 01       		.uleb128 0x1
+ 1197 02c8 50       		.byte	0x50
+ 1198 02c9 05       		.uleb128 0x5
+ 1199 02ca 03       		.byte	0x3
+ 1200 02cb 00000000 		.4byte	app_send_buffer
+ 1201 02cf 00       		.byte	0
+ 1202 02d0 00       		.byte	0
+ 1203 02d1 09       		.uleb128 0x9
+ 1204 02d2 F0020000 		.4byte	.LASF65
+ 1205 02d6 01       		.byte	0x1
+ 1206 02d7 15       		.byte	0x15
+ 1207 02d8 00000000 		.4byte	.LFB40
+ 1208 02dc 14000000 		.4byte	.LFE40-.LFB40
+ 1209 02e0 01       		.uleb128 0x1
+ 1210 02e1 9C       		.byte	0x9c
+ 1211 02e2 FF020000 		.4byte	0x2ff
+ 1212 02e6 0A       		.uleb128 0xa
+ 1213 02e7 0E000000 		.4byte	.LVL5
+ 1214 02eb 99080000 		.4byte	0x899
+ 1215 02ef 0B       		.uleb128 0xb
+ 1216 02f0 01       		.uleb128 0x1
+ 1217 02f1 51       		.byte	0x51
+ 1218 02f2 01       		.uleb128 0x1
+ 1219 02f3 31       		.byte	0x31
+ 1220 02f4 0B       		.uleb128 0xb
+ 1221 02f5 01       		.uleb128 0x1
+ 1222 02f6 50       		.byte	0x50
+ 1223 02f7 05       		.uleb128 0x5
+ 1224 02f8 03       		.byte	0x3
+ 1225 02f9 00000000 		.4byte	app_send_buffer
+ 1226 02fd 00       		.byte	0
+ 1227 02fe 00       		.byte	0
+ 1228 02ff 09       		.uleb128 0x9
+ 1229 0300 27060000 		.4byte	.LASF66
+ 1230 0304 01       		.byte	0x1
+ 1231 0305 16       		.byte	0x16
+ 1232 0306 00000000 		.4byte	.LFB41
+ 1233 030a 14000000 		.4byte	.LFE41-.LFB41
+ 1234 030e 01       		.uleb128 0x1
+ 1235 030f 9C       		.byte	0x9c
+ 1236 0310 2D030000 		.4byte	0x32d
+ 1237 0314 0A       		.uleb128 0xa
+ 1238 0315 0E000000 		.4byte	.LVL6
+ 1239 0319 99080000 		.4byte	0x899
+ 1240 031d 0B       		.uleb128 0xb
+ 1241 031e 01       		.uleb128 0x1
+ 1242 031f 51       		.byte	0x51
+ 1243 0320 01       		.uleb128 0x1
+ 1244 0321 31       		.byte	0x31
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 24
+
+
+ 1245 0322 0B       		.uleb128 0xb
+ 1246 0323 01       		.uleb128 0x1
+ 1247 0324 50       		.byte	0x50
+ 1248 0325 05       		.uleb128 0x5
+ 1249 0326 03       		.byte	0x3
+ 1250 0327 00000000 		.4byte	app_send_buffer
+ 1251 032b 00       		.byte	0
+ 1252 032c 00       		.byte	0
+ 1253 032d 09       		.uleb128 0x9
+ 1254 032e B4050000 		.4byte	.LASF67
+ 1255 0332 01       		.byte	0x1
+ 1256 0333 17       		.byte	0x17
+ 1257 0334 00000000 		.4byte	.LFB42
+ 1258 0338 14000000 		.4byte	.LFE42-.LFB42
+ 1259 033c 01       		.uleb128 0x1
+ 1260 033d 9C       		.byte	0x9c
+ 1261 033e 5B030000 		.4byte	0x35b
+ 1262 0342 0A       		.uleb128 0xa
+ 1263 0343 0E000000 		.4byte	.LVL7
+ 1264 0347 99080000 		.4byte	0x899
+ 1265 034b 0B       		.uleb128 0xb
+ 1266 034c 01       		.uleb128 0x1
+ 1267 034d 51       		.byte	0x51
+ 1268 034e 01       		.uleb128 0x1
+ 1269 034f 31       		.byte	0x31
+ 1270 0350 0B       		.uleb128 0xb
+ 1271 0351 01       		.uleb128 0x1
+ 1272 0352 50       		.byte	0x50
+ 1273 0353 05       		.uleb128 0x5
+ 1274 0354 03       		.byte	0x3
+ 1275 0355 00000000 		.4byte	app_send_buffer
+ 1276 0359 00       		.byte	0
+ 1277 035a 00       		.byte	0
+ 1278 035b 09       		.uleb128 0x9
+ 1279 035c 71070000 		.4byte	.LASF68
+ 1280 0360 01       		.byte	0x1
+ 1281 0361 18       		.byte	0x18
+ 1282 0362 00000000 		.4byte	.LFB43
+ 1283 0366 14000000 		.4byte	.LFE43-.LFB43
+ 1284 036a 01       		.uleb128 0x1
+ 1285 036b 9C       		.byte	0x9c
+ 1286 036c 89030000 		.4byte	0x389
+ 1287 0370 0A       		.uleb128 0xa
+ 1288 0371 0E000000 		.4byte	.LVL8
+ 1289 0375 99080000 		.4byte	0x899
+ 1290 0379 0B       		.uleb128 0xb
+ 1291 037a 01       		.uleb128 0x1
+ 1292 037b 51       		.byte	0x51
+ 1293 037c 01       		.uleb128 0x1
+ 1294 037d 31       		.byte	0x31
+ 1295 037e 0B       		.uleb128 0xb
+ 1296 037f 01       		.uleb128 0x1
+ 1297 0380 50       		.byte	0x50
+ 1298 0381 05       		.uleb128 0x5
+ 1299 0382 03       		.byte	0x3
+ 1300 0383 00000000 		.4byte	app_send_buffer
+ 1301 0387 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 25
+
+
+ 1302 0388 00       		.byte	0
+ 1303 0389 09       		.uleb128 0x9
+ 1304 038a 74060000 		.4byte	.LASF69
+ 1305 038e 01       		.byte	0x1
+ 1306 038f 19       		.byte	0x19
+ 1307 0390 00000000 		.4byte	.LFB44
+ 1308 0394 14000000 		.4byte	.LFE44-.LFB44
+ 1309 0398 01       		.uleb128 0x1
+ 1310 0399 9C       		.byte	0x9c
+ 1311 039a B7030000 		.4byte	0x3b7
+ 1312 039e 0A       		.uleb128 0xa
+ 1313 039f 0E000000 		.4byte	.LVL9
+ 1314 03a3 99080000 		.4byte	0x899
+ 1315 03a7 0B       		.uleb128 0xb
+ 1316 03a8 01       		.uleb128 0x1
+ 1317 03a9 51       		.byte	0x51
+ 1318 03aa 01       		.uleb128 0x1
+ 1319 03ab 31       		.byte	0x31
+ 1320 03ac 0B       		.uleb128 0xb
+ 1321 03ad 01       		.uleb128 0x1
+ 1322 03ae 50       		.byte	0x50
+ 1323 03af 05       		.uleb128 0x5
+ 1324 03b0 03       		.byte	0x3
+ 1325 03b1 00000000 		.4byte	app_send_buffer
+ 1326 03b5 00       		.byte	0
+ 1327 03b6 00       		.byte	0
+ 1328 03b7 09       		.uleb128 0x9
+ 1329 03b8 11040000 		.4byte	.LASF70
+ 1330 03bc 01       		.byte	0x1
+ 1331 03bd 1A       		.byte	0x1a
+ 1332 03be 00000000 		.4byte	.LFB45
+ 1333 03c2 14000000 		.4byte	.LFE45-.LFB45
+ 1334 03c6 01       		.uleb128 0x1
+ 1335 03c7 9C       		.byte	0x9c
+ 1336 03c8 E5030000 		.4byte	0x3e5
+ 1337 03cc 0A       		.uleb128 0xa
+ 1338 03cd 0E000000 		.4byte	.LVL10
+ 1339 03d1 99080000 		.4byte	0x899
+ 1340 03d5 0B       		.uleb128 0xb
+ 1341 03d6 01       		.uleb128 0x1
+ 1342 03d7 51       		.byte	0x51
+ 1343 03d8 01       		.uleb128 0x1
+ 1344 03d9 31       		.byte	0x31
+ 1345 03da 0B       		.uleb128 0xb
+ 1346 03db 01       		.uleb128 0x1
+ 1347 03dc 50       		.byte	0x50
+ 1348 03dd 05       		.uleb128 0x5
+ 1349 03de 03       		.byte	0x3
+ 1350 03df 00000000 		.4byte	app_send_buffer
+ 1351 03e3 00       		.byte	0
+ 1352 03e4 00       		.byte	0
+ 1353 03e5 09       		.uleb128 0x9
+ 1354 03e6 C6010000 		.4byte	.LASF71
+ 1355 03ea 01       		.byte	0x1
+ 1356 03eb 1B       		.byte	0x1b
+ 1357 03ec 00000000 		.4byte	.LFB46
+ 1358 03f0 14000000 		.4byte	.LFE46-.LFB46
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 26
+
+
+ 1359 03f4 01       		.uleb128 0x1
+ 1360 03f5 9C       		.byte	0x9c
+ 1361 03f6 13040000 		.4byte	0x413
+ 1362 03fa 0A       		.uleb128 0xa
+ 1363 03fb 0E000000 		.4byte	.LVL11
+ 1364 03ff 99080000 		.4byte	0x899
+ 1365 0403 0B       		.uleb128 0xb
+ 1366 0404 01       		.uleb128 0x1
+ 1367 0405 51       		.byte	0x51
+ 1368 0406 01       		.uleb128 0x1
+ 1369 0407 31       		.byte	0x31
+ 1370 0408 0B       		.uleb128 0xb
+ 1371 0409 01       		.uleb128 0x1
+ 1372 040a 50       		.byte	0x50
+ 1373 040b 05       		.uleb128 0x5
+ 1374 040c 03       		.byte	0x3
+ 1375 040d 00000000 		.4byte	app_send_buffer
+ 1376 0411 00       		.byte	0
+ 1377 0412 00       		.byte	0
+ 1378 0413 09       		.uleb128 0x9
+ 1379 0414 20020000 		.4byte	.LASF72
+ 1380 0418 01       		.byte	0x1
+ 1381 0419 1D       		.byte	0x1d
+ 1382 041a 00000000 		.4byte	.LFB47
+ 1383 041e 14000000 		.4byte	.LFE47-.LFB47
+ 1384 0422 01       		.uleb128 0x1
+ 1385 0423 9C       		.byte	0x9c
+ 1386 0424 41040000 		.4byte	0x441
+ 1387 0428 0A       		.uleb128 0xa
+ 1388 0429 0E000000 		.4byte	.LVL12
+ 1389 042d 99080000 		.4byte	0x899
+ 1390 0431 0B       		.uleb128 0xb
+ 1391 0432 01       		.uleb128 0x1
+ 1392 0433 51       		.byte	0x51
+ 1393 0434 01       		.uleb128 0x1
+ 1394 0435 31       		.byte	0x31
+ 1395 0436 0B       		.uleb128 0xb
+ 1396 0437 01       		.uleb128 0x1
+ 1397 0438 50       		.byte	0x50
+ 1398 0439 05       		.uleb128 0x5
+ 1399 043a 03       		.byte	0x3
+ 1400 043b 00000000 		.4byte	app_send_buffer
+ 1401 043f 00       		.byte	0
+ 1402 0440 00       		.byte	0
+ 1403 0441 09       		.uleb128 0x9
+ 1404 0442 93040000 		.4byte	.LASF73
+ 1405 0446 01       		.byte	0x1
+ 1406 0447 1E       		.byte	0x1e
+ 1407 0448 00000000 		.4byte	.LFB48
+ 1408 044c 14000000 		.4byte	.LFE48-.LFB48
+ 1409 0450 01       		.uleb128 0x1
+ 1410 0451 9C       		.byte	0x9c
+ 1411 0452 6F040000 		.4byte	0x46f
+ 1412 0456 0A       		.uleb128 0xa
+ 1413 0457 0E000000 		.4byte	.LVL13
+ 1414 045b 99080000 		.4byte	0x899
+ 1415 045f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 27
+
+
+ 1416 0460 01       		.uleb128 0x1
+ 1417 0461 51       		.byte	0x51
+ 1418 0462 01       		.uleb128 0x1
+ 1419 0463 31       		.byte	0x31
+ 1420 0464 0B       		.uleb128 0xb
+ 1421 0465 01       		.uleb128 0x1
+ 1422 0466 50       		.byte	0x50
+ 1423 0467 05       		.uleb128 0x5
+ 1424 0468 03       		.byte	0x3
+ 1425 0469 00000000 		.4byte	app_send_buffer
+ 1426 046d 00       		.byte	0
+ 1427 046e 00       		.byte	0
+ 1428 046f 09       		.uleb128 0x9
+ 1429 0470 A2020000 		.4byte	.LASF74
+ 1430 0474 01       		.byte	0x1
+ 1431 0475 1F       		.byte	0x1f
+ 1432 0476 00000000 		.4byte	.LFB49
+ 1433 047a 14000000 		.4byte	.LFE49-.LFB49
+ 1434 047e 01       		.uleb128 0x1
+ 1435 047f 9C       		.byte	0x9c
+ 1436 0480 9D040000 		.4byte	0x49d
+ 1437 0484 0A       		.uleb128 0xa
+ 1438 0485 0E000000 		.4byte	.LVL14
+ 1439 0489 99080000 		.4byte	0x899
+ 1440 048d 0B       		.uleb128 0xb
+ 1441 048e 01       		.uleb128 0x1
+ 1442 048f 51       		.byte	0x51
+ 1443 0490 01       		.uleb128 0x1
+ 1444 0491 31       		.byte	0x31
+ 1445 0492 0B       		.uleb128 0xb
+ 1446 0493 01       		.uleb128 0x1
+ 1447 0494 50       		.byte	0x50
+ 1448 0495 05       		.uleb128 0x5
+ 1449 0496 03       		.byte	0x3
+ 1450 0497 00000000 		.4byte	app_send_buffer
+ 1451 049b 00       		.byte	0
+ 1452 049c 00       		.byte	0
+ 1453 049d 09       		.uleb128 0x9
+ 1454 049e E9070000 		.4byte	.LASF75
+ 1455 04a2 01       		.byte	0x1
+ 1456 04a3 21       		.byte	0x21
+ 1457 04a4 00000000 		.4byte	.LFB50
+ 1458 04a8 14000000 		.4byte	.LFE50-.LFB50
+ 1459 04ac 01       		.uleb128 0x1
+ 1460 04ad 9C       		.byte	0x9c
+ 1461 04ae CB040000 		.4byte	0x4cb
+ 1462 04b2 0A       		.uleb128 0xa
+ 1463 04b3 0E000000 		.4byte	.LVL15
+ 1464 04b7 99080000 		.4byte	0x899
+ 1465 04bb 0B       		.uleb128 0xb
+ 1466 04bc 01       		.uleb128 0x1
+ 1467 04bd 51       		.byte	0x51
+ 1468 04be 01       		.uleb128 0x1
+ 1469 04bf 31       		.byte	0x31
+ 1470 04c0 0B       		.uleb128 0xb
+ 1471 04c1 01       		.uleb128 0x1
+ 1472 04c2 50       		.byte	0x50
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 28
+
+
+ 1473 04c3 05       		.uleb128 0x5
+ 1474 04c4 03       		.byte	0x3
+ 1475 04c5 00000000 		.4byte	app_send_buffer
+ 1476 04c9 00       		.byte	0
+ 1477 04ca 00       		.byte	0
+ 1478 04cb 09       		.uleb128 0x9
+ 1479 04cc 77020000 		.4byte	.LASF76
+ 1480 04d0 01       		.byte	0x1
+ 1481 04d1 22       		.byte	0x22
+ 1482 04d2 00000000 		.4byte	.LFB51
+ 1483 04d6 14000000 		.4byte	.LFE51-.LFB51
+ 1484 04da 01       		.uleb128 0x1
+ 1485 04db 9C       		.byte	0x9c
+ 1486 04dc F9040000 		.4byte	0x4f9
+ 1487 04e0 0A       		.uleb128 0xa
+ 1488 04e1 0E000000 		.4byte	.LVL16
+ 1489 04e5 99080000 		.4byte	0x899
+ 1490 04e9 0B       		.uleb128 0xb
+ 1491 04ea 01       		.uleb128 0x1
+ 1492 04eb 51       		.byte	0x51
+ 1493 04ec 01       		.uleb128 0x1
+ 1494 04ed 31       		.byte	0x31
+ 1495 04ee 0B       		.uleb128 0xb
+ 1496 04ef 01       		.uleb128 0x1
+ 1497 04f0 50       		.byte	0x50
+ 1498 04f1 05       		.uleb128 0x5
+ 1499 04f2 03       		.byte	0x3
+ 1500 04f3 00000000 		.4byte	app_send_buffer
+ 1501 04f7 00       		.byte	0
+ 1502 04f8 00       		.byte	0
+ 1503 04f9 09       		.uleb128 0x9
+ 1504 04fa 8B030000 		.4byte	.LASF77
+ 1505 04fe 01       		.byte	0x1
+ 1506 04ff 24       		.byte	0x24
+ 1507 0500 00000000 		.4byte	.LFB52
+ 1508 0504 14000000 		.4byte	.LFE52-.LFB52
+ 1509 0508 01       		.uleb128 0x1
+ 1510 0509 9C       		.byte	0x9c
+ 1511 050a 27050000 		.4byte	0x527
+ 1512 050e 0A       		.uleb128 0xa
+ 1513 050f 0E000000 		.4byte	.LVL17
+ 1514 0513 99080000 		.4byte	0x899
+ 1515 0517 0B       		.uleb128 0xb
+ 1516 0518 01       		.uleb128 0x1
+ 1517 0519 51       		.byte	0x51
+ 1518 051a 01       		.uleb128 0x1
+ 1519 051b 31       		.byte	0x31
+ 1520 051c 0B       		.uleb128 0xb
+ 1521 051d 01       		.uleb128 0x1
+ 1522 051e 50       		.byte	0x50
+ 1523 051f 05       		.uleb128 0x5
+ 1524 0520 03       		.byte	0x3
+ 1525 0521 00000000 		.4byte	app_send_buffer
+ 1526 0525 00       		.byte	0
+ 1527 0526 00       		.byte	0
+ 1528 0527 09       		.uleb128 0x9
+ 1529 0528 9A070000 		.4byte	.LASF78
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 29
+
+
+ 1530 052c 01       		.byte	0x1
+ 1531 052d 25       		.byte	0x25
+ 1532 052e 00000000 		.4byte	.LFB53
+ 1533 0532 14000000 		.4byte	.LFE53-.LFB53
+ 1534 0536 01       		.uleb128 0x1
+ 1535 0537 9C       		.byte	0x9c
+ 1536 0538 55050000 		.4byte	0x555
+ 1537 053c 0A       		.uleb128 0xa
+ 1538 053d 0E000000 		.4byte	.LVL18
+ 1539 0541 99080000 		.4byte	0x899
+ 1540 0545 0B       		.uleb128 0xb
+ 1541 0546 01       		.uleb128 0x1
+ 1542 0547 51       		.byte	0x51
+ 1543 0548 01       		.uleb128 0x1
+ 1544 0549 31       		.byte	0x31
+ 1545 054a 0B       		.uleb128 0xb
+ 1546 054b 01       		.uleb128 0x1
+ 1547 054c 50       		.byte	0x50
+ 1548 054d 05       		.uleb128 0x5
+ 1549 054e 03       		.byte	0x3
+ 1550 054f 00000000 		.4byte	app_send_buffer
+ 1551 0553 00       		.byte	0
+ 1552 0554 00       		.byte	0
+ 1553 0555 09       		.uleb128 0x9
+ 1554 0556 36040000 		.4byte	.LASF79
+ 1555 055a 01       		.byte	0x1
+ 1556 055b 26       		.byte	0x26
+ 1557 055c 00000000 		.4byte	.LFB54
+ 1558 0560 14000000 		.4byte	.LFE54-.LFB54
+ 1559 0564 01       		.uleb128 0x1
+ 1560 0565 9C       		.byte	0x9c
+ 1561 0566 83050000 		.4byte	0x583
+ 1562 056a 0A       		.uleb128 0xa
+ 1563 056b 0E000000 		.4byte	.LVL19
+ 1564 056f 99080000 		.4byte	0x899
+ 1565 0573 0B       		.uleb128 0xb
+ 1566 0574 01       		.uleb128 0x1
+ 1567 0575 51       		.byte	0x51
+ 1568 0576 01       		.uleb128 0x1
+ 1569 0577 31       		.byte	0x31
+ 1570 0578 0B       		.uleb128 0xb
+ 1571 0579 01       		.uleb128 0x1
+ 1572 057a 50       		.byte	0x50
+ 1573 057b 05       		.uleb128 0x5
+ 1574 057c 03       		.byte	0x3
+ 1575 057d 00000000 		.4byte	app_send_buffer
+ 1576 0581 00       		.byte	0
+ 1577 0582 00       		.byte	0
+ 1578 0583 09       		.uleb128 0x9
+ 1579 0584 96000000 		.4byte	.LASF80
+ 1580 0588 01       		.byte	0x1
+ 1581 0589 27       		.byte	0x27
+ 1582 058a 00000000 		.4byte	.LFB55
+ 1583 058e 14000000 		.4byte	.LFE55-.LFB55
+ 1584 0592 01       		.uleb128 0x1
+ 1585 0593 9C       		.byte	0x9c
+ 1586 0594 B1050000 		.4byte	0x5b1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 30
+
+
+ 1587 0598 0A       		.uleb128 0xa
+ 1588 0599 0E000000 		.4byte	.LVL20
+ 1589 059d 99080000 		.4byte	0x899
+ 1590 05a1 0B       		.uleb128 0xb
+ 1591 05a2 01       		.uleb128 0x1
+ 1592 05a3 51       		.byte	0x51
+ 1593 05a4 01       		.uleb128 0x1
+ 1594 05a5 31       		.byte	0x31
+ 1595 05a6 0B       		.uleb128 0xb
+ 1596 05a7 01       		.uleb128 0x1
+ 1597 05a8 50       		.byte	0x50
+ 1598 05a9 05       		.uleb128 0x5
+ 1599 05aa 03       		.byte	0x3
+ 1600 05ab 00000000 		.4byte	app_send_buffer
+ 1601 05af 00       		.byte	0
+ 1602 05b0 00       		.byte	0
+ 1603 05b1 09       		.uleb128 0x9
+ 1604 05b2 57070000 		.4byte	.LASF81
+ 1605 05b6 01       		.byte	0x1
+ 1606 05b7 29       		.byte	0x29
+ 1607 05b8 00000000 		.4byte	.LFB56
+ 1608 05bc 2C010000 		.4byte	.LFE56-.LFB56
+ 1609 05c0 01       		.uleb128 0x1
+ 1610 05c1 9C       		.byte	0x9c
+ 1611 05c2 78080000 		.4byte	0x878
+ 1612 05c6 0C       		.uleb128 0xc
+ 1613 05c7 0C000000 		.4byte	.LVL21
+ 1614 05cb B3080000 		.4byte	0x8b3
+ 1615 05cf E7050000 		.4byte	0x5e7
+ 1616 05d3 0B       		.uleb128 0xb
+ 1617 05d4 01       		.uleb128 0x1
+ 1618 05d5 52       		.byte	0x52
+ 1619 05d6 05       		.uleb128 0x5
+ 1620 05d7 03       		.byte	0x3
+ 1621 05d8 00000000 		.4byte	app_key_short_press_dian_yuan_handler
+ 1622 05dc 0B       		.uleb128 0xb
+ 1623 05dd 01       		.uleb128 0x1
+ 1624 05de 51       		.byte	0x51
+ 1625 05df 01       		.uleb128 0x1
+ 1626 05e0 30       		.byte	0x30
+ 1627 05e1 0B       		.uleb128 0xb
+ 1628 05e2 01       		.uleb128 0x1
+ 1629 05e3 50       		.byte	0x50
+ 1630 05e4 01       		.uleb128 0x1
+ 1631 05e5 30       		.byte	0x30
+ 1632 05e6 00       		.byte	0
+ 1633 05e7 0C       		.uleb128 0xc
+ 1634 05e8 16000000 		.4byte	.LVL22
+ 1635 05ec B3080000 		.4byte	0x8b3
+ 1636 05f0 08060000 		.4byte	0x608
+ 1637 05f4 0B       		.uleb128 0xb
+ 1638 05f5 01       		.uleb128 0x1
+ 1639 05f6 52       		.byte	0x52
+ 1640 05f7 05       		.uleb128 0x5
+ 1641 05f8 03       		.byte	0x3
+ 1642 05f9 00000000 		.4byte	app_key_short_press_feng_nuan_handler
+ 1643 05fd 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 31
+
+
+ 1644 05fe 01       		.uleb128 0x1
+ 1645 05ff 51       		.byte	0x51
+ 1646 0600 01       		.uleb128 0x1
+ 1647 0601 30       		.byte	0x30
+ 1648 0602 0B       		.uleb128 0xb
+ 1649 0603 01       		.uleb128 0x1
+ 1650 0604 50       		.byte	0x50
+ 1651 0605 01       		.uleb128 0x1
+ 1652 0606 31       		.byte	0x31
+ 1653 0607 00       		.byte	0
+ 1654 0608 0C       		.uleb128 0xc
+ 1655 0609 20000000 		.4byte	.LVL23
+ 1656 060d B3080000 		.4byte	0x8b3
+ 1657 0611 29060000 		.4byte	0x629
+ 1658 0615 0B       		.uleb128 0xb
+ 1659 0616 01       		.uleb128 0x1
+ 1660 0617 52       		.byte	0x52
+ 1661 0618 05       		.uleb128 0x5
+ 1662 0619 03       		.byte	0x3
+ 1663 061a 00000000 		.4byte	app_key_short_press_wen_du_jia_handler
+ 1664 061e 0B       		.uleb128 0xb
+ 1665 061f 01       		.uleb128 0x1
+ 1666 0620 51       		.byte	0x51
+ 1667 0621 01       		.uleb128 0x1
+ 1668 0622 30       		.byte	0x30
+ 1669 0623 0B       		.uleb128 0xb
+ 1670 0624 01       		.uleb128 0x1
+ 1671 0625 50       		.byte	0x50
+ 1672 0626 01       		.uleb128 0x1
+ 1673 0627 32       		.byte	0x32
+ 1674 0628 00       		.byte	0
+ 1675 0629 0C       		.uleb128 0xc
+ 1676 062a 2A000000 		.4byte	.LVL24
+ 1677 062e B3080000 		.4byte	0x8b3
+ 1678 0632 4A060000 		.4byte	0x64a
+ 1679 0636 0B       		.uleb128 0xb
+ 1680 0637 01       		.uleb128 0x1
+ 1681 0638 52       		.byte	0x52
+ 1682 0639 05       		.uleb128 0x5
+ 1683 063a 03       		.byte	0x3
+ 1684 063b 00000000 		.4byte	app_key_short_press_wen_du_jian_handler
+ 1685 063f 0B       		.uleb128 0xb
+ 1686 0640 01       		.uleb128 0x1
+ 1687 0641 51       		.byte	0x51
+ 1688 0642 01       		.uleb128 0x1
+ 1689 0643 30       		.byte	0x30
+ 1690 0644 0B       		.uleb128 0xb
+ 1691 0645 01       		.uleb128 0x1
+ 1692 0646 50       		.byte	0x50
+ 1693 0647 01       		.uleb128 0x1
+ 1694 0648 33       		.byte	0x33
+ 1695 0649 00       		.byte	0
+ 1696 064a 0C       		.uleb128 0xc
+ 1697 064b 34000000 		.4byte	.LVL25
+ 1698 064f B3080000 		.4byte	0x8b3
+ 1699 0653 6B060000 		.4byte	0x66b
+ 1700 0657 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 32
+
+
+ 1701 0658 01       		.uleb128 0x1
+ 1702 0659 52       		.byte	0x52
+ 1703 065a 05       		.uleb128 0x5
+ 1704 065b 03       		.byte	0x3
+ 1705 065c 00000000 		.4byte	app_key_short_press_xin_feng_handler
+ 1706 0660 0B       		.uleb128 0xb
+ 1707 0661 01       		.uleb128 0x1
+ 1708 0662 51       		.byte	0x51
+ 1709 0663 01       		.uleb128 0x1
+ 1710 0664 30       		.byte	0x30
+ 1711 0665 0B       		.uleb128 0xb
+ 1712 0666 01       		.uleb128 0x1
+ 1713 0667 50       		.byte	0x50
+ 1714 0668 01       		.uleb128 0x1
+ 1715 0669 34       		.byte	0x34
+ 1716 066a 00       		.byte	0
+ 1717 066b 0C       		.uleb128 0xc
+ 1718 066c 3E000000 		.4byte	.LVL26
+ 1719 0670 B3080000 		.4byte	0x8b3
+ 1720 0674 8C060000 		.4byte	0x68c
+ 1721 0678 0B       		.uleb128 0xb
+ 1722 0679 01       		.uleb128 0x1
+ 1723 067a 52       		.byte	0x52
+ 1724 067b 05       		.uleb128 0x5
+ 1725 067c 03       		.byte	0x3
+ 1726 067d 00000000 		.4byte	app_key_short_press_qiang_ruo_handler
+ 1727 0681 0B       		.uleb128 0xb
+ 1728 0682 01       		.uleb128 0x1
+ 1729 0683 51       		.byte	0x51
+ 1730 0684 01       		.uleb128 0x1
+ 1731 0685 30       		.byte	0x30
+ 1732 0686 0B       		.uleb128 0xb
+ 1733 0687 01       		.uleb128 0x1
+ 1734 0688 50       		.byte	0x50
+ 1735 0689 01       		.uleb128 0x1
+ 1736 068a 35       		.byte	0x35
+ 1737 068b 00       		.byte	0
+ 1738 068c 0C       		.uleb128 0xc
+ 1739 068d 48000000 		.4byte	.LVL27
+ 1740 0691 B3080000 		.4byte	0x8b3
+ 1741 0695 AD060000 		.4byte	0x6ad
+ 1742 0699 0B       		.uleb128 0xb
+ 1743 069a 01       		.uleb128 0x1
+ 1744 069b 52       		.byte	0x52
+ 1745 069c 05       		.uleb128 0x5
+ 1746 069d 03       		.byte	0x3
+ 1747 069e 00000000 		.4byte	app_key_short_press_huan_qi_handler
+ 1748 06a2 0B       		.uleb128 0xb
+ 1749 06a3 01       		.uleb128 0x1
+ 1750 06a4 51       		.byte	0x51
+ 1751 06a5 01       		.uleb128 0x1
+ 1752 06a6 30       		.byte	0x30
+ 1753 06a7 0B       		.uleb128 0xb
+ 1754 06a8 01       		.uleb128 0x1
+ 1755 06a9 50       		.byte	0x50
+ 1756 06aa 01       		.uleb128 0x1
+ 1757 06ab 36       		.byte	0x36
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 33
+
+
+ 1758 06ac 00       		.byte	0
+ 1759 06ad 0C       		.uleb128 0xc
+ 1760 06ae 52000000 		.4byte	.LVL28
+ 1761 06b2 B3080000 		.4byte	0x8b3
+ 1762 06b6 CE060000 		.4byte	0x6ce
+ 1763 06ba 0B       		.uleb128 0xb
+ 1764 06bb 01       		.uleb128 0x1
+ 1765 06bc 52       		.byte	0x52
+ 1766 06bd 05       		.uleb128 0x5
+ 1767 06be 03       		.byte	0x3
+ 1768 06bf 00000000 		.4byte	app_key_short_press_xin_feng_qu_nuan_handler
+ 1769 06c3 0B       		.uleb128 0xb
+ 1770 06c4 01       		.uleb128 0x1
+ 1771 06c5 51       		.byte	0x51
+ 1772 06c6 01       		.uleb128 0x1
+ 1773 06c7 30       		.byte	0x30
+ 1774 06c8 0B       		.uleb128 0xb
+ 1775 06c9 01       		.uleb128 0x1
+ 1776 06ca 50       		.byte	0x50
+ 1777 06cb 01       		.uleb128 0x1
+ 1778 06cc 37       		.byte	0x37
+ 1779 06cd 00       		.byte	0
+ 1780 06ce 0C       		.uleb128 0xc
+ 1781 06cf 5C000000 		.4byte	.LVL29
+ 1782 06d3 B3080000 		.4byte	0x8b3
+ 1783 06d7 EF060000 		.4byte	0x6ef
+ 1784 06db 0B       		.uleb128 0xb
+ 1785 06dc 01       		.uleb128 0x1
+ 1786 06dd 52       		.byte	0x52
+ 1787 06de 05       		.uleb128 0x5
+ 1788 06df 03       		.byte	0x3
+ 1789 06e0 00000000 		.4byte	app_key_short_press_ding_shi_jia_handler
+ 1790 06e4 0B       		.uleb128 0xb
+ 1791 06e5 01       		.uleb128 0x1
+ 1792 06e6 51       		.byte	0x51
+ 1793 06e7 01       		.uleb128 0x1
+ 1794 06e8 30       		.byte	0x30
+ 1795 06e9 0B       		.uleb128 0xb
+ 1796 06ea 01       		.uleb128 0x1
+ 1797 06eb 50       		.byte	0x50
+ 1798 06ec 01       		.uleb128 0x1
+ 1799 06ed 38       		.byte	0x38
+ 1800 06ee 00       		.byte	0
+ 1801 06ef 0C       		.uleb128 0xc
+ 1802 06f0 66000000 		.4byte	.LVL30
+ 1803 06f4 B3080000 		.4byte	0x8b3
+ 1804 06f8 10070000 		.4byte	0x710
+ 1805 06fc 0B       		.uleb128 0xb
+ 1806 06fd 01       		.uleb128 0x1
+ 1807 06fe 52       		.byte	0x52
+ 1808 06ff 05       		.uleb128 0x5
+ 1809 0700 03       		.byte	0x3
+ 1810 0701 00000000 		.4byte	app_key_short_press_ding_shi_jian_handler
+ 1811 0705 0B       		.uleb128 0xb
+ 1812 0706 01       		.uleb128 0x1
+ 1813 0707 51       		.byte	0x51
+ 1814 0708 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 34
+
+
+ 1815 0709 30       		.byte	0x30
+ 1816 070a 0B       		.uleb128 0xb
+ 1817 070b 01       		.uleb128 0x1
+ 1818 070c 50       		.byte	0x50
+ 1819 070d 01       		.uleb128 0x1
+ 1820 070e 39       		.byte	0x39
+ 1821 070f 00       		.byte	0
+ 1822 0710 0C       		.uleb128 0xc
+ 1823 0711 70000000 		.4byte	.LVL31
+ 1824 0715 B3080000 		.4byte	0x8b3
+ 1825 0719 31070000 		.4byte	0x731
+ 1826 071d 0B       		.uleb128 0xb
+ 1827 071e 01       		.uleb128 0x1
+ 1828 071f 52       		.byte	0x52
+ 1829 0720 05       		.uleb128 0x5
+ 1830 0721 03       		.byte	0x3
+ 1831 0722 00000000 		.4byte	app_key_short_press_bai_dong_handler
+ 1832 0726 0B       		.uleb128 0xb
+ 1833 0727 01       		.uleb128 0x1
+ 1834 0728 51       		.byte	0x51
+ 1835 0729 01       		.uleb128 0x1
+ 1836 072a 30       		.byte	0x30
+ 1837 072b 0B       		.uleb128 0xb
+ 1838 072c 01       		.uleb128 0x1
+ 1839 072d 50       		.byte	0x50
+ 1840 072e 01       		.uleb128 0x1
+ 1841 072f 3A       		.byte	0x3a
+ 1842 0730 00       		.byte	0
+ 1843 0731 0C       		.uleb128 0xc
+ 1844 0732 7A000000 		.4byte	.LVL32
+ 1845 0736 B3080000 		.4byte	0x8b3
+ 1846 073a 52070000 		.4byte	0x752
+ 1847 073e 0B       		.uleb128 0xb
+ 1848 073f 01       		.uleb128 0x1
+ 1849 0740 52       		.byte	0x52
+ 1850 0741 05       		.uleb128 0x5
+ 1851 0742 03       		.byte	0x3
+ 1852 0743 00000000 		.4byte	app_key_short_press_zhi_neng_handler
+ 1853 0747 0B       		.uleb128 0xb
+ 1854 0748 01       		.uleb128 0x1
+ 1855 0749 51       		.byte	0x51
+ 1856 074a 01       		.uleb128 0x1
+ 1857 074b 30       		.byte	0x30
+ 1858 074c 0B       		.uleb128 0xb
+ 1859 074d 01       		.uleb128 0x1
+ 1860 074e 50       		.byte	0x50
+ 1861 074f 01       		.uleb128 0x1
+ 1862 0750 3B       		.byte	0x3b
+ 1863 0751 00       		.byte	0
+ 1864 0752 0C       		.uleb128 0xc
+ 1865 0753 84000000 		.4byte	.LVL33
+ 1866 0757 B3080000 		.4byte	0x8b3
+ 1867 075b 73070000 		.4byte	0x773
+ 1868 075f 0B       		.uleb128 0xb
+ 1869 0760 01       		.uleb128 0x1
+ 1870 0761 52       		.byte	0x52
+ 1871 0762 05       		.uleb128 0x5
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 35
+
+
+ 1872 0763 03       		.byte	0x3
+ 1873 0764 00000000 		.4byte	app_key_long_press_wen_du_jia_handler
+ 1874 0768 0B       		.uleb128 0xb
+ 1875 0769 01       		.uleb128 0x1
+ 1876 076a 51       		.byte	0x51
+ 1877 076b 01       		.uleb128 0x1
+ 1878 076c 31       		.byte	0x31
+ 1879 076d 0B       		.uleb128 0xb
+ 1880 076e 01       		.uleb128 0x1
+ 1881 076f 50       		.byte	0x50
+ 1882 0770 01       		.uleb128 0x1
+ 1883 0771 32       		.byte	0x32
+ 1884 0772 00       		.byte	0
+ 1885 0773 0C       		.uleb128 0xc
+ 1886 0774 8E000000 		.4byte	.LVL34
+ 1887 0778 B3080000 		.4byte	0x8b3
+ 1888 077c 94070000 		.4byte	0x794
+ 1889 0780 0B       		.uleb128 0xb
+ 1890 0781 01       		.uleb128 0x1
+ 1891 0782 52       		.byte	0x52
+ 1892 0783 05       		.uleb128 0x5
+ 1893 0784 03       		.byte	0x3
+ 1894 0785 00000000 		.4byte	app_key_long_press_ding_shi_jia_handler
+ 1895 0789 0B       		.uleb128 0xb
+ 1896 078a 01       		.uleb128 0x1
+ 1897 078b 51       		.byte	0x51
+ 1898 078c 01       		.uleb128 0x1
+ 1899 078d 31       		.byte	0x31
+ 1900 078e 0B       		.uleb128 0xb
+ 1901 078f 01       		.uleb128 0x1
+ 1902 0790 50       		.byte	0x50
+ 1903 0791 01       		.uleb128 0x1
+ 1904 0792 38       		.byte	0x38
+ 1905 0793 00       		.byte	0
+ 1906 0794 0C       		.uleb128 0xc
+ 1907 0795 98000000 		.4byte	.LVL35
+ 1908 0799 B3080000 		.4byte	0x8b3
+ 1909 079d B5070000 		.4byte	0x7b5
+ 1910 07a1 0B       		.uleb128 0xb
+ 1911 07a2 01       		.uleb128 0x1
+ 1912 07a3 52       		.byte	0x52
+ 1913 07a4 05       		.uleb128 0x5
+ 1914 07a5 03       		.byte	0x3
+ 1915 07a6 00000000 		.4byte	app_key_long_press_ding_shi_jian_handler
+ 1916 07aa 0B       		.uleb128 0xb
+ 1917 07ab 01       		.uleb128 0x1
+ 1918 07ac 51       		.byte	0x51
+ 1919 07ad 01       		.uleb128 0x1
+ 1920 07ae 31       		.byte	0x31
+ 1921 07af 0B       		.uleb128 0xb
+ 1922 07b0 01       		.uleb128 0x1
+ 1923 07b1 50       		.byte	0x50
+ 1924 07b2 01       		.uleb128 0x1
+ 1925 07b3 39       		.byte	0x39
+ 1926 07b4 00       		.byte	0
+ 1927 07b5 0C       		.uleb128 0xc
+ 1928 07b6 A2000000 		.4byte	.LVL36
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 36
+
+
+ 1929 07ba B3080000 		.4byte	0x8b3
+ 1930 07be D6070000 		.4byte	0x7d6
+ 1931 07c2 0B       		.uleb128 0xb
+ 1932 07c3 01       		.uleb128 0x1
+ 1933 07c4 52       		.byte	0x52
+ 1934 07c5 05       		.uleb128 0x5
+ 1935 07c6 03       		.byte	0x3
+ 1936 07c7 00000000 		.4byte	app_key_long_release_ding_shi_jia_handler
+ 1937 07cb 0B       		.uleb128 0xb
+ 1938 07cc 01       		.uleb128 0x1
+ 1939 07cd 51       		.byte	0x51
+ 1940 07ce 01       		.uleb128 0x1
+ 1941 07cf 32       		.byte	0x32
+ 1942 07d0 0B       		.uleb128 0xb
+ 1943 07d1 01       		.uleb128 0x1
+ 1944 07d2 50       		.byte	0x50
+ 1945 07d3 01       		.uleb128 0x1
+ 1946 07d4 38       		.byte	0x38
+ 1947 07d5 00       		.byte	0
+ 1948 07d6 0C       		.uleb128 0xc
+ 1949 07d7 AC000000 		.4byte	.LVL37
+ 1950 07db B3080000 		.4byte	0x8b3
+ 1951 07df F7070000 		.4byte	0x7f7
+ 1952 07e3 0B       		.uleb128 0xb
+ 1953 07e4 01       		.uleb128 0x1
+ 1954 07e5 52       		.byte	0x52
+ 1955 07e6 05       		.uleb128 0x5
+ 1956 07e7 03       		.byte	0x3
+ 1957 07e8 00000000 		.4byte	app_key_long_release_ding_shi_jian_handler
+ 1958 07ec 0B       		.uleb128 0xb
+ 1959 07ed 01       		.uleb128 0x1
+ 1960 07ee 51       		.byte	0x51
+ 1961 07ef 01       		.uleb128 0x1
+ 1962 07f0 32       		.byte	0x32
+ 1963 07f1 0B       		.uleb128 0xb
+ 1964 07f2 01       		.uleb128 0x1
+ 1965 07f3 50       		.byte	0x50
+ 1966 07f4 01       		.uleb128 0x1
+ 1967 07f5 39       		.byte	0x39
+ 1968 07f6 00       		.byte	0
+ 1969 07f7 0C       		.uleb128 0xc
+ 1970 07f8 B6000000 		.4byte	.LVL38
+ 1971 07fc D2080000 		.4byte	0x8d2
+ 1972 0800 18080000 		.4byte	0x818
+ 1973 0804 0B       		.uleb128 0xb
+ 1974 0805 01       		.uleb128 0x1
+ 1975 0806 52       		.byte	0x52
+ 1976 0807 05       		.uleb128 0x5
+ 1977 0808 03       		.byte	0x3
+ 1978 0809 00000000 		.4byte	app_key_combine_wen_jia_ding_jia_handler
+ 1979 080d 0B       		.uleb128 0xb
+ 1980 080e 01       		.uleb128 0x1
+ 1981 080f 51       		.byte	0x51
+ 1982 0810 01       		.uleb128 0x1
+ 1983 0811 38       		.byte	0x38
+ 1984 0812 0B       		.uleb128 0xb
+ 1985 0813 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 37
+
+
+ 1986 0814 50       		.byte	0x50
+ 1987 0815 01       		.uleb128 0x1
+ 1988 0816 32       		.byte	0x32
+ 1989 0817 00       		.byte	0
+ 1990 0818 0C       		.uleb128 0xc
+ 1991 0819 C0000000 		.4byte	.LVL39
+ 1992 081d D2080000 		.4byte	0x8d2
+ 1993 0821 39080000 		.4byte	0x839
+ 1994 0825 0B       		.uleb128 0xb
+ 1995 0826 01       		.uleb128 0x1
+ 1996 0827 52       		.byte	0x52
+ 1997 0828 05       		.uleb128 0x5
+ 1998 0829 03       		.byte	0x3
+ 1999 082a 00000000 		.4byte	app_key_combine_wen_jian_ding_jian_handler
+ 2000 082e 0B       		.uleb128 0xb
+ 2001 082f 01       		.uleb128 0x1
+ 2002 0830 51       		.byte	0x51
+ 2003 0831 01       		.uleb128 0x1
+ 2004 0832 39       		.byte	0x39
+ 2005 0833 0B       		.uleb128 0xb
+ 2006 0834 01       		.uleb128 0x1
+ 2007 0835 50       		.byte	0x50
+ 2008 0836 01       		.uleb128 0x1
+ 2009 0837 33       		.byte	0x33
+ 2010 0838 00       		.byte	0
+ 2011 0839 0C       		.uleb128 0xc
+ 2012 083a CA000000 		.4byte	.LVL40
+ 2013 083e D2080000 		.4byte	0x8d2
+ 2014 0842 5A080000 		.4byte	0x85a
+ 2015 0846 0B       		.uleb128 0xb
+ 2016 0847 01       		.uleb128 0x1
+ 2017 0848 52       		.byte	0x52
+ 2018 0849 05       		.uleb128 0x5
+ 2019 084a 03       		.byte	0x3
+ 2020 084b 00000000 		.4byte	app_key_combine_ding_jian_dian_yuan_handler
+ 2021 084f 0B       		.uleb128 0xb
+ 2022 0850 01       		.uleb128 0x1
+ 2023 0851 51       		.byte	0x51
+ 2024 0852 01       		.uleb128 0x1
+ 2025 0853 30       		.byte	0x30
+ 2026 0854 0B       		.uleb128 0xb
+ 2027 0855 01       		.uleb128 0x1
+ 2028 0856 50       		.byte	0x50
+ 2029 0857 01       		.uleb128 0x1
+ 2030 0858 39       		.byte	0x39
+ 2031 0859 00       		.byte	0
+ 2032 085a 0A       		.uleb128 0xa
+ 2033 085b D4000000 		.4byte	.LVL41
+ 2034 085f D2080000 		.4byte	0x8d2
+ 2035 0863 0B       		.uleb128 0xb
+ 2036 0864 01       		.uleb128 0x1
+ 2037 0865 52       		.byte	0x52
+ 2038 0866 05       		.uleb128 0x5
+ 2039 0867 03       		.byte	0x3
+ 2040 0868 00000000 		.4byte	app_key_combine_qiang_ruo_dian_yuan_handler
+ 2041 086c 0B       		.uleb128 0xb
+ 2042 086d 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 38
+
+
+ 2043 086e 51       		.byte	0x51
+ 2044 086f 01       		.uleb128 0x1
+ 2045 0870 30       		.byte	0x30
+ 2046 0871 0B       		.uleb128 0xb
+ 2047 0872 01       		.uleb128 0x1
+ 2048 0873 50       		.byte	0x50
+ 2049 0874 01       		.uleb128 0x1
+ 2050 0875 35       		.byte	0x35
+ 2051 0876 00       		.byte	0
+ 2052 0877 00       		.byte	0
+ 2053 0878 0D       		.uleb128 0xd
+ 2054 0879 2C000000 		.4byte	0x2c
+ 2055 087d 88080000 		.4byte	0x888
+ 2056 0881 0E       		.uleb128 0xe
+ 2057 0882 A7000000 		.4byte	0xa7
+ 2058 0886 09       		.byte	0x9
+ 2059 0887 00       		.byte	0
+ 2060 0888 0F       		.uleb128 0xf
+ 2061 0889 A4050000 		.4byte	.LASF87
+ 2062 088d 01       		.byte	0x1
+ 2063 088e 0E       		.byte	0xe
+ 2064 088f 78080000 		.4byte	0x878
+ 2065 0893 05       		.uleb128 0x5
+ 2066 0894 03       		.byte	0x3
+ 2067 0895 00000000 		.4byte	app_send_buffer
+ 2068 0899 10       		.uleb128 0x10
+ 2069 089a 46020000 		.4byte	.LASF82
+ 2070 089e 06       		.byte	0x6
+ 2071 089f 29       		.byte	0x29
+ 2072 08a0 9C000000 		.4byte	0x9c
+ 2073 08a4 B3080000 		.4byte	0x8b3
+ 2074 08a8 11       		.uleb128 0x11
+ 2075 08a9 3B010000 		.4byte	0x13b
+ 2076 08ad 11       		.uleb128 0x11
+ 2077 08ae 2C000000 		.4byte	0x2c
+ 2078 08b2 00       		.byte	0
+ 2079 08b3 10       		.uleb128 0x10
+ 2080 08b4 54010000 		.4byte	.LASF83
+ 2081 08b8 05       		.byte	0x5
+ 2082 08b9 40       		.byte	0x40
+ 2083 08ba 9C000000 		.4byte	0x9c
+ 2084 08be D2080000 		.4byte	0x8d2
+ 2085 08c2 11       		.uleb128 0x11
+ 2086 08c3 98010000 		.4byte	0x198
+ 2087 08c7 11       		.uleb128 0x11
+ 2088 08c8 CA010000 		.4byte	0x1ca
+ 2089 08cc 11       		.uleb128 0x11
+ 2090 08cd D5010000 		.4byte	0x1d5
+ 2091 08d1 00       		.byte	0
+ 2092 08d2 12       		.uleb128 0x12
+ 2093 08d3 8C050000 		.4byte	.LASF88
+ 2094 08d7 05       		.byte	0x5
+ 2095 08d8 41       		.byte	0x41
+ 2096 08d9 9C000000 		.4byte	0x9c
+ 2097 08dd 11       		.uleb128 0x11
+ 2098 08de 98010000 		.4byte	0x198
+ 2099 08e2 11       		.uleb128 0x11
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 39
+
+
+ 2100 08e3 98010000 		.4byte	0x198
+ 2101 08e7 11       		.uleb128 0x11
+ 2102 08e8 E0010000 		.4byte	0x1e0
+ 2103 08ec 00       		.byte	0
+ 2104 08ed 00       		.byte	0
+ 2105              		.section	.debug_abbrev,"",%progbits
+ 2106              	.Ldebug_abbrev0:
+ 2107 0000 01       		.uleb128 0x1
+ 2108 0001 11       		.uleb128 0x11
+ 2109 0002 01       		.byte	0x1
+ 2110 0003 25       		.uleb128 0x25
+ 2111 0004 0E       		.uleb128 0xe
+ 2112 0005 13       		.uleb128 0x13
+ 2113 0006 0B       		.uleb128 0xb
+ 2114 0007 03       		.uleb128 0x3
+ 2115 0008 0E       		.uleb128 0xe
+ 2116 0009 1B       		.uleb128 0x1b
+ 2117 000a 0E       		.uleb128 0xe
+ 2118 000b 55       		.uleb128 0x55
+ 2119 000c 17       		.uleb128 0x17
+ 2120 000d 11       		.uleb128 0x11
+ 2121 000e 01       		.uleb128 0x1
+ 2122 000f 10       		.uleb128 0x10
+ 2123 0010 17       		.uleb128 0x17
+ 2124 0011 00       		.byte	0
+ 2125 0012 00       		.byte	0
+ 2126 0013 02       		.uleb128 0x2
+ 2127 0014 24       		.uleb128 0x24
+ 2128 0015 00       		.byte	0
+ 2129 0016 0B       		.uleb128 0xb
+ 2130 0017 0B       		.uleb128 0xb
+ 2131 0018 3E       		.uleb128 0x3e
+ 2132 0019 0B       		.uleb128 0xb
+ 2133 001a 03       		.uleb128 0x3
+ 2134 001b 0E       		.uleb128 0xe
+ 2135 001c 00       		.byte	0
+ 2136 001d 00       		.byte	0
+ 2137 001e 03       		.uleb128 0x3
+ 2138 001f 24       		.uleb128 0x24
+ 2139 0020 00       		.byte	0
+ 2140 0021 0B       		.uleb128 0xb
+ 2141 0022 0B       		.uleb128 0xb
+ 2142 0023 3E       		.uleb128 0x3e
+ 2143 0024 0B       		.uleb128 0xb
+ 2144 0025 03       		.uleb128 0x3
+ 2145 0026 08       		.uleb128 0x8
+ 2146 0027 00       		.byte	0
+ 2147 0028 00       		.byte	0
+ 2148 0029 04       		.uleb128 0x4
+ 2149 002a 0F       		.uleb128 0xf
+ 2150 002b 00       		.byte	0
+ 2151 002c 0B       		.uleb128 0xb
+ 2152 002d 0B       		.uleb128 0xb
+ 2153 002e 49       		.uleb128 0x49
+ 2154 002f 13       		.uleb128 0x13
+ 2155 0030 00       		.byte	0
+ 2156 0031 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 40
+
+
+ 2157 0032 05       		.uleb128 0x5
+ 2158 0033 15       		.uleb128 0x15
+ 2159 0034 00       		.byte	0
+ 2160 0035 27       		.uleb128 0x27
+ 2161 0036 19       		.uleb128 0x19
+ 2162 0037 00       		.byte	0
+ 2163 0038 00       		.byte	0
+ 2164 0039 06       		.uleb128 0x6
+ 2165 003a 04       		.uleb128 0x4
+ 2166 003b 01       		.byte	0x1
+ 2167 003c 0B       		.uleb128 0xb
+ 2168 003d 0B       		.uleb128 0xb
+ 2169 003e 3A       		.uleb128 0x3a
+ 2170 003f 0B       		.uleb128 0xb
+ 2171 0040 3B       		.uleb128 0x3b
+ 2172 0041 0B       		.uleb128 0xb
+ 2173 0042 01       		.uleb128 0x1
+ 2174 0043 13       		.uleb128 0x13
+ 2175 0044 00       		.byte	0
+ 2176 0045 00       		.byte	0
+ 2177 0046 07       		.uleb128 0x7
+ 2178 0047 28       		.uleb128 0x28
+ 2179 0048 00       		.byte	0
+ 2180 0049 03       		.uleb128 0x3
+ 2181 004a 0E       		.uleb128 0xe
+ 2182 004b 1C       		.uleb128 0x1c
+ 2183 004c 0D       		.uleb128 0xd
+ 2184 004d 00       		.byte	0
+ 2185 004e 00       		.byte	0
+ 2186 004f 08       		.uleb128 0x8
+ 2187 0050 16       		.uleb128 0x16
+ 2188 0051 00       		.byte	0
+ 2189 0052 03       		.uleb128 0x3
+ 2190 0053 0E       		.uleb128 0xe
+ 2191 0054 3A       		.uleb128 0x3a
+ 2192 0055 0B       		.uleb128 0xb
+ 2193 0056 3B       		.uleb128 0x3b
+ 2194 0057 0B       		.uleb128 0xb
+ 2195 0058 49       		.uleb128 0x49
+ 2196 0059 13       		.uleb128 0x13
+ 2197 005a 00       		.byte	0
+ 2198 005b 00       		.byte	0
+ 2199 005c 09       		.uleb128 0x9
+ 2200 005d 2E       		.uleb128 0x2e
+ 2201 005e 01       		.byte	0x1
+ 2202 005f 3F       		.uleb128 0x3f
+ 2203 0060 19       		.uleb128 0x19
+ 2204 0061 03       		.uleb128 0x3
+ 2205 0062 0E       		.uleb128 0xe
+ 2206 0063 3A       		.uleb128 0x3a
+ 2207 0064 0B       		.uleb128 0xb
+ 2208 0065 3B       		.uleb128 0x3b
+ 2209 0066 0B       		.uleb128 0xb
+ 2210 0067 27       		.uleb128 0x27
+ 2211 0068 19       		.uleb128 0x19
+ 2212 0069 11       		.uleb128 0x11
+ 2213 006a 01       		.uleb128 0x1
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 41
+
+
+ 2214 006b 12       		.uleb128 0x12
+ 2215 006c 06       		.uleb128 0x6
+ 2216 006d 40       		.uleb128 0x40
+ 2217 006e 18       		.uleb128 0x18
+ 2218 006f 9742     		.uleb128 0x2117
+ 2219 0071 19       		.uleb128 0x19
+ 2220 0072 01       		.uleb128 0x1
+ 2221 0073 13       		.uleb128 0x13
+ 2222 0074 00       		.byte	0
+ 2223 0075 00       		.byte	0
+ 2224 0076 0A       		.uleb128 0xa
+ 2225 0077 898201   		.uleb128 0x4109
+ 2226 007a 01       		.byte	0x1
+ 2227 007b 11       		.uleb128 0x11
+ 2228 007c 01       		.uleb128 0x1
+ 2229 007d 31       		.uleb128 0x31
+ 2230 007e 13       		.uleb128 0x13
+ 2231 007f 00       		.byte	0
+ 2232 0080 00       		.byte	0
+ 2233 0081 0B       		.uleb128 0xb
+ 2234 0082 8A8201   		.uleb128 0x410a
+ 2235 0085 00       		.byte	0
+ 2236 0086 02       		.uleb128 0x2
+ 2237 0087 18       		.uleb128 0x18
+ 2238 0088 9142     		.uleb128 0x2111
+ 2239 008a 18       		.uleb128 0x18
+ 2240 008b 00       		.byte	0
+ 2241 008c 00       		.byte	0
+ 2242 008d 0C       		.uleb128 0xc
+ 2243 008e 898201   		.uleb128 0x4109
+ 2244 0091 01       		.byte	0x1
+ 2245 0092 11       		.uleb128 0x11
+ 2246 0093 01       		.uleb128 0x1
+ 2247 0094 31       		.uleb128 0x31
+ 2248 0095 13       		.uleb128 0x13
+ 2249 0096 01       		.uleb128 0x1
+ 2250 0097 13       		.uleb128 0x13
+ 2251 0098 00       		.byte	0
+ 2252 0099 00       		.byte	0
+ 2253 009a 0D       		.uleb128 0xd
+ 2254 009b 01       		.uleb128 0x1
+ 2255 009c 01       		.byte	0x1
+ 2256 009d 49       		.uleb128 0x49
+ 2257 009e 13       		.uleb128 0x13
+ 2258 009f 01       		.uleb128 0x1
+ 2259 00a0 13       		.uleb128 0x13
+ 2260 00a1 00       		.byte	0
+ 2261 00a2 00       		.byte	0
+ 2262 00a3 0E       		.uleb128 0xe
+ 2263 00a4 21       		.uleb128 0x21
+ 2264 00a5 00       		.byte	0
+ 2265 00a6 49       		.uleb128 0x49
+ 2266 00a7 13       		.uleb128 0x13
+ 2267 00a8 2F       		.uleb128 0x2f
+ 2268 00a9 0B       		.uleb128 0xb
+ 2269 00aa 00       		.byte	0
+ 2270 00ab 00       		.byte	0
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 42
+
+
+ 2271 00ac 0F       		.uleb128 0xf
+ 2272 00ad 34       		.uleb128 0x34
+ 2273 00ae 00       		.byte	0
+ 2274 00af 03       		.uleb128 0x3
+ 2275 00b0 0E       		.uleb128 0xe
+ 2276 00b1 3A       		.uleb128 0x3a
+ 2277 00b2 0B       		.uleb128 0xb
+ 2278 00b3 3B       		.uleb128 0x3b
+ 2279 00b4 0B       		.uleb128 0xb
+ 2280 00b5 49       		.uleb128 0x49
+ 2281 00b6 13       		.uleb128 0x13
+ 2282 00b7 3F       		.uleb128 0x3f
+ 2283 00b8 19       		.uleb128 0x19
+ 2284 00b9 02       		.uleb128 0x2
+ 2285 00ba 18       		.uleb128 0x18
+ 2286 00bb 00       		.byte	0
+ 2287 00bc 00       		.byte	0
+ 2288 00bd 10       		.uleb128 0x10
+ 2289 00be 2E       		.uleb128 0x2e
+ 2290 00bf 01       		.byte	0x1
+ 2291 00c0 3F       		.uleb128 0x3f
+ 2292 00c1 19       		.uleb128 0x19
+ 2293 00c2 03       		.uleb128 0x3
+ 2294 00c3 0E       		.uleb128 0xe
+ 2295 00c4 3A       		.uleb128 0x3a
+ 2296 00c5 0B       		.uleb128 0xb
+ 2297 00c6 3B       		.uleb128 0x3b
+ 2298 00c7 0B       		.uleb128 0xb
+ 2299 00c8 27       		.uleb128 0x27
+ 2300 00c9 19       		.uleb128 0x19
+ 2301 00ca 49       		.uleb128 0x49
+ 2302 00cb 13       		.uleb128 0x13
+ 2303 00cc 3C       		.uleb128 0x3c
+ 2304 00cd 19       		.uleb128 0x19
+ 2305 00ce 01       		.uleb128 0x1
+ 2306 00cf 13       		.uleb128 0x13
+ 2307 00d0 00       		.byte	0
+ 2308 00d1 00       		.byte	0
+ 2309 00d2 11       		.uleb128 0x11
+ 2310 00d3 05       		.uleb128 0x5
+ 2311 00d4 00       		.byte	0
+ 2312 00d5 49       		.uleb128 0x49
+ 2313 00d6 13       		.uleb128 0x13
+ 2314 00d7 00       		.byte	0
+ 2315 00d8 00       		.byte	0
+ 2316 00d9 12       		.uleb128 0x12
+ 2317 00da 2E       		.uleb128 0x2e
+ 2318 00db 01       		.byte	0x1
+ 2319 00dc 3F       		.uleb128 0x3f
+ 2320 00dd 19       		.uleb128 0x19
+ 2321 00de 03       		.uleb128 0x3
+ 2322 00df 0E       		.uleb128 0xe
+ 2323 00e0 3A       		.uleb128 0x3a
+ 2324 00e1 0B       		.uleb128 0xb
+ 2325 00e2 3B       		.uleb128 0x3b
+ 2326 00e3 0B       		.uleb128 0xb
+ 2327 00e4 27       		.uleb128 0x27
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 43
+
+
+ 2328 00e5 19       		.uleb128 0x19
+ 2329 00e6 49       		.uleb128 0x49
+ 2330 00e7 13       		.uleb128 0x13
+ 2331 00e8 3C       		.uleb128 0x3c
+ 2332 00e9 19       		.uleb128 0x19
+ 2333 00ea 00       		.byte	0
+ 2334 00eb 00       		.byte	0
+ 2335 00ec 00       		.byte	0
+ 2336              		.section	.debug_aranges,"",%progbits
+ 2337 0000 C4000000 		.4byte	0xc4
+ 2338 0004 0200     		.2byte	0x2
+ 2339 0006 00000000 		.4byte	.Ldebug_info0
+ 2340 000a 04       		.byte	0x4
+ 2341 000b 00       		.byte	0
+ 2342 000c 0000     		.2byte	0
+ 2343 000e 0000     		.2byte	0
+ 2344 0010 00000000 		.4byte	.LFB35
+ 2345 0014 14000000 		.4byte	.LFE35-.LFB35
+ 2346 0018 00000000 		.4byte	.LFB36
+ 2347 001c 14000000 		.4byte	.LFE36-.LFB36
+ 2348 0020 00000000 		.4byte	.LFB37
+ 2349 0024 14000000 		.4byte	.LFE37-.LFB37
+ 2350 0028 00000000 		.4byte	.LFB38
+ 2351 002c 14000000 		.4byte	.LFE38-.LFB38
+ 2352 0030 00000000 		.4byte	.LFB39
+ 2353 0034 14000000 		.4byte	.LFE39-.LFB39
+ 2354 0038 00000000 		.4byte	.LFB40
+ 2355 003c 14000000 		.4byte	.LFE40-.LFB40
+ 2356 0040 00000000 		.4byte	.LFB41
+ 2357 0044 14000000 		.4byte	.LFE41-.LFB41
+ 2358 0048 00000000 		.4byte	.LFB42
+ 2359 004c 14000000 		.4byte	.LFE42-.LFB42
+ 2360 0050 00000000 		.4byte	.LFB43
+ 2361 0054 14000000 		.4byte	.LFE43-.LFB43
+ 2362 0058 00000000 		.4byte	.LFB44
+ 2363 005c 14000000 		.4byte	.LFE44-.LFB44
+ 2364 0060 00000000 		.4byte	.LFB45
+ 2365 0064 14000000 		.4byte	.LFE45-.LFB45
+ 2366 0068 00000000 		.4byte	.LFB46
+ 2367 006c 14000000 		.4byte	.LFE46-.LFB46
+ 2368 0070 00000000 		.4byte	.LFB47
+ 2369 0074 14000000 		.4byte	.LFE47-.LFB47
+ 2370 0078 00000000 		.4byte	.LFB48
+ 2371 007c 14000000 		.4byte	.LFE48-.LFB48
+ 2372 0080 00000000 		.4byte	.LFB49
+ 2373 0084 14000000 		.4byte	.LFE49-.LFB49
+ 2374 0088 00000000 		.4byte	.LFB50
+ 2375 008c 14000000 		.4byte	.LFE50-.LFB50
+ 2376 0090 00000000 		.4byte	.LFB51
+ 2377 0094 14000000 		.4byte	.LFE51-.LFB51
+ 2378 0098 00000000 		.4byte	.LFB52
+ 2379 009c 14000000 		.4byte	.LFE52-.LFB52
+ 2380 00a0 00000000 		.4byte	.LFB53
+ 2381 00a4 14000000 		.4byte	.LFE53-.LFB53
+ 2382 00a8 00000000 		.4byte	.LFB54
+ 2383 00ac 14000000 		.4byte	.LFE54-.LFB54
+ 2384 00b0 00000000 		.4byte	.LFB55
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 44
+
+
+ 2385 00b4 14000000 		.4byte	.LFE55-.LFB55
+ 2386 00b8 00000000 		.4byte	.LFB56
+ 2387 00bc 2C010000 		.4byte	.LFE56-.LFB56
+ 2388 00c0 00000000 		.4byte	0
+ 2389 00c4 00000000 		.4byte	0
+ 2390              		.section	.debug_ranges,"",%progbits
+ 2391              	.Ldebug_ranges0:
+ 2392 0000 00000000 		.4byte	.LFB35
+ 2393 0004 14000000 		.4byte	.LFE35
+ 2394 0008 00000000 		.4byte	.LFB36
+ 2395 000c 14000000 		.4byte	.LFE36
+ 2396 0010 00000000 		.4byte	.LFB37
+ 2397 0014 14000000 		.4byte	.LFE37
+ 2398 0018 00000000 		.4byte	.LFB38
+ 2399 001c 14000000 		.4byte	.LFE38
+ 2400 0020 00000000 		.4byte	.LFB39
+ 2401 0024 14000000 		.4byte	.LFE39
+ 2402 0028 00000000 		.4byte	.LFB40
+ 2403 002c 14000000 		.4byte	.LFE40
+ 2404 0030 00000000 		.4byte	.LFB41
+ 2405 0034 14000000 		.4byte	.LFE41
+ 2406 0038 00000000 		.4byte	.LFB42
+ 2407 003c 14000000 		.4byte	.LFE42
+ 2408 0040 00000000 		.4byte	.LFB43
+ 2409 0044 14000000 		.4byte	.LFE43
+ 2410 0048 00000000 		.4byte	.LFB44
+ 2411 004c 14000000 		.4byte	.LFE44
+ 2412 0050 00000000 		.4byte	.LFB45
+ 2413 0054 14000000 		.4byte	.LFE45
+ 2414 0058 00000000 		.4byte	.LFB46
+ 2415 005c 14000000 		.4byte	.LFE46
+ 2416 0060 00000000 		.4byte	.LFB47
+ 2417 0064 14000000 		.4byte	.LFE47
+ 2418 0068 00000000 		.4byte	.LFB48
+ 2419 006c 14000000 		.4byte	.LFE48
+ 2420 0070 00000000 		.4byte	.LFB49
+ 2421 0074 14000000 		.4byte	.LFE49
+ 2422 0078 00000000 		.4byte	.LFB50
+ 2423 007c 14000000 		.4byte	.LFE50
+ 2424 0080 00000000 		.4byte	.LFB51
+ 2425 0084 14000000 		.4byte	.LFE51
+ 2426 0088 00000000 		.4byte	.LFB52
+ 2427 008c 14000000 		.4byte	.LFE52
+ 2428 0090 00000000 		.4byte	.LFB53
+ 2429 0094 14000000 		.4byte	.LFE53
+ 2430 0098 00000000 		.4byte	.LFB54
+ 2431 009c 14000000 		.4byte	.LFE54
+ 2432 00a0 00000000 		.4byte	.LFB55
+ 2433 00a4 14000000 		.4byte	.LFE55
+ 2434 00a8 00000000 		.4byte	.LFB56
+ 2435 00ac 2C010000 		.4byte	.LFE56
+ 2436 00b0 00000000 		.4byte	0
+ 2437 00b4 00000000 		.4byte	0
+ 2438              		.section	.debug_line,"",%progbits
+ 2439              	.Ldebug_line0:
+ 2440 0000 D9010000 		.section	.debug_str,"MS",%progbits,1
+ 2440      02005E00 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 45
+
+
+ 2440      00000201 
+ 2440      FB0E0D00 
+ 2440      01010101 
+ 2441              	.LASF54:
+ 2442 0000 4B45595F 		.ascii	"KEY_EVENT_LONG_RELEASE\000"
+ 2442      4556454E 
+ 2442      545F4C4F 
+ 2442      4E475F52 
+ 2442      454C4541 
+ 2443              	.LASF38:
+ 2444 0017 4B45595F 		.ascii	"KEY_FENG_NUAN\000"
+ 2444      46454E47 
+ 2444      5F4E5541 
+ 2444      4E00
+ 2445              	.LASF44:
+ 2446 0025 4B45595F 		.ascii	"KEY_XIN_FENG_QU_NUAN\000"
+ 2446      58494E5F 
+ 2446      46454E47 
+ 2446      5F51555F 
+ 2446      4E55414E 
+ 2447              	.LASF27:
+ 2448 003a 56414C55 		.ascii	"VALUE_LONG_PRESS_WEN_DU_JIA\000"
  2448      455F4C4F 
- 2448      4E475F52 
- 2448      454C4541 
- 2448      53455F44 
- 2449              	.LASF0:
- 2450 04e3 7369676E 		.ascii	"signed char\000"
- 2450      65642063 
- 2450      68617200 
- 2451              	.LASF38:
- 2452 04ef 4B45595F 		.ascii	"KEY_WENDU_JIA\000"
- 2452      57454E44 
- 2452      555F4A49 
- 2452      4100
- 2453              	.LASF7:
- 2454 04fd 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2454      206C6F6E 
- 2454      6720756E 
- 2454      7369676E 
- 2454      65642069 
- 2455              	.LASF8:
- 2456 0514 756E7369 		.ascii	"unsigned int\000"
- 2456      676E6564 
- 2456      20696E74 
- 2456      00
- 2457              	.LASF59:
- 2458 0521 6170705F 		.ascii	"app_key_short_press_dian_yuan_handler\000"
- 2458      6B65795F 
- 2458      73686F72 
- 2458      745F7072 
- 2458      6573735F 
- 2459              	.LASF86:
- 2460 0547 6B65795F 		.ascii	"key_add_combine_handler\000"
- 2460      6164645F 
- 2460      636F6D62 
- 2460      696E655F 
- 2460      68616E64 
- 2461              	.LASF85:
- 2462 055f 6170705F 		.ascii	"app_send_buffer\000"
- 2462      73656E64 
- 2462      5F627566 
- 2462      66657200 
+ 2448      4E475F50 
+ 2448      52455353 
+ 2448      5F57454E 
+ 2449              	.LASF48:
+ 2450 0056 4B45595F 		.ascii	"KEY_ZHI_NENG\000"
+ 2450      5A48495F 
+ 2450      4E454E47 
+ 2450      00
+ 2451              	.LASF57:
+ 2452 0063 4B65795F 		.ascii	"Key_event\000"
+ 2452      6576656E 
+ 2452      7400
+ 2453              	.LASF0:
+ 2454 006d 7369676E 		.ascii	"signed char\000"
+ 2454      65642063 
+ 2454      68617200 
+ 2455              	.LASF12:
+ 2456 0079 46414C53 		.ascii	"FALSE\000"
+ 2456      4500
+ 2457              	.LASF42:
+ 2458 007f 4B45595F 		.ascii	"KEY_QING_RUO\000"
+ 2458      51494E47 
+ 2458      5F52554F 
+ 2458      00
+ 2459              	.LASF2:
+ 2460 008c 73686F72 		.ascii	"short int\000"
+ 2460      7420696E 
+ 2460      7400
+ 2461              	.LASF80:
+ 2462 0096 6170705F 		.ascii	"app_key_combine_qiang_ruo_dian_yuan_handler\000"
+ 2462      6B65795F 
+ 2462      636F6D62 
+ 2462      696E655F 
+ 2462      7169616E 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 46
+
+
  2463              	.LASF84:
- 2464 056f 443A5C6C 		.ascii	"D:\\local_svn\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\A"
- 2464      6F63616C 
- 2464      5F73766E 
- 2464      5C415942 
- 2464      52333030 
- 2465 059d 59425233 		.ascii	"YBR3000.cydsn\000"
- 2465      3030302E 
- 2465      63796473 
- 2465      6E00
- 2466              	.LASF66:
- 2467 05ab 6170705F 		.ascii	"app_key_short_press_xin_feng_qu_nuan_handler\000"
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 49
+ 2464 00c2 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2464      4320342E 
+ 2464      392E3320 
+ 2464      32303135 
+ 2464      30333033 
+ 2465 00f5 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0plus -mthumb -"
+ 2465      20726576 
+ 2465      6973696F 
+ 2465      6E203232 
+ 2465      31323230 
+ 2466 0128 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 2466      67202D66 
+ 2466      66756E63 
+ 2466      74696F6E 
+ 2466      2D736563 
+ 2467              	.LASF83:
+ 2468 0154 6B65795F 		.ascii	"key_add_event_handler\000"
+ 2468      6164645F 
+ 2468      6576656E 
+ 2468      745F6861 
+ 2468      6E646C65 
+ 2469              	.LASF36:
+ 2470 016a 56414C55 		.ascii	"VALUE_NUMBER\000"
+ 2470      455F4E55 
+ 2470      4D424552 
+ 2470      00
+ 2471              	.LASF30:
+ 2472 0177 56414C55 		.ascii	"VALUE_LONG_RELEASE_DING_SHI_JIA\000"
+ 2472      455F4C4F 
+ 2472      4E475F52 
+ 2472      454C4541 
+ 2472      53455F44 
+ 2473              	.LASF33:
+ 2474 0197 56414C55 		.ascii	"VALUE_COMBINE_WM_DM\000"
+ 2474      455F434F 
+ 2474      4D42494E 
+ 2474      455F574D 
+ 2474      5F444D00 
+ 2475              	.LASF26:
+ 2476 01ab 56414C55 		.ascii	"VALUE_SHORT_PRESS_ZHI_NENG\000"
+ 2476      455F5348 
+ 2476      4F52545F 
+ 2476      50524553 
+ 2476      535F5A48 
+ 2477              	.LASF71:
+ 2478 01c6 6170705F 		.ascii	"app_key_short_press_zhi_neng_handler\000"
+ 2478      6B65795F 
+ 2478      73686F72 
+ 2478      745F7072 
+ 2478      6573735F 
+ 2479              	.LASF56:
+ 2480 01eb 4B45595F 		.ascii	"KEY_EVENT_NUMBER\000"
+ 2480      4556454E 
+ 2480      545F4E55 
+ 2480      4D424552 
+ 2480      00
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 47
 
 
- 2467      6B65795F 
- 2467      73686F72 
- 2467      745F7072 
- 2467      6573735F 
- 2468              	.LASF61:
- 2469 05d8 6170705F 		.ascii	"app_key_short_press_wen_du_jia_handler\000"
- 2469      6B65795F 
- 2469      73686F72 
- 2469      745F7072 
- 2469      6573735F 
- 2470              	.LASF21:
- 2471 05ff 56414C55 		.ascii	"VALUE_SHORT_PRESS_HUAN_QI\000"
- 2471      455F5348 
- 2471      4F52545F 
- 2471      50524553 
- 2471      535F4855 
- 2472              	.LASF11:
- 2473 0619 63686172 		.ascii	"char\000"
- 2473      00
- 2474              	.LASF65:
- 2475 061e 6170705F 		.ascii	"app_key_short_press_huan_qi_handler\000"
- 2475      6B65795F 
- 2475      73686F72 
- 2475      745F7072 
- 2475      6573735F 
- 2476              	.LASF51:
- 2477 0642 4B45595F 		.ascii	"KEY_EVENT_SHORT_PRESS\000"
- 2477      4556454E 
- 2477      545F5348 
- 2477      4F52545F 
- 2477      50524553 
- 2478              	.LASF3:
- 2479 0658 73686F72 		.ascii	"short unsigned int\000"
- 2479      7420756E 
- 2479      7369676E 
- 2479      65642069 
- 2479      6E7400
- 2480              	.LASF68:
- 2481 066b 6170705F 		.ascii	"app_key_short_press_ding_shi_jian_handler\000"
- 2481      6B65795F 
- 2481      73686F72 
- 2481      745F7072 
- 2481      6573735F 
- 2482              	.LASF36:
- 2483 0695 4B45595F 		.ascii	"KEY_DIAN_YUAN\000"
- 2483      4449414E 
- 2483      5F595541 
- 2483      4E00
- 2484              	.LASF44:
- 2485 06a3 4B45595F 		.ascii	"KEY_DINGSHI_JIA\000"
- 2485      44494E47 
- 2485      5348495F 
- 2485      4A494100 
- 2486              	.LASF18:
- 2487 06b3 56414C55 		.ascii	"VALUE_SHORT_PRESS_WENDU_JIAN\000"
- 2487      455F5348 
- 2487      4F52545F 
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 50
+ 2481              	.LASF55:
+ 2482 01fc 4B45595F 		.ascii	"KEY_EVENT_STUCK\000"
+ 2482      4556454E 
+ 2482      545F5354 
+ 2482      55434B00 
+ 2483              	.LASF59:
+ 2484 020c 4B65795F 		.ascii	"Key_conbine_handler\000"
+ 2484      636F6E62 
+ 2484      696E655F 
+ 2484      68616E64 
+ 2484      6C657200 
+ 2485              	.LASF72:
+ 2486 0220 6170705F 		.ascii	"app_key_long_press_wen_du_jia_handler\000"
+ 2486      6B65795F 
+ 2486      6C6F6E67 
+ 2486      5F707265 
+ 2486      73735F77 
+ 2487              	.LASF82:
+ 2488 0246 73696D70 		.ascii	"simple_protocol_send\000"
+ 2488      6C655F70 
+ 2488      726F746F 
+ 2488      636F6C5F 
+ 2488      73656E64 
+ 2489              	.LASF47:
+ 2490 025b 4B45595F 		.ascii	"KEY_BAI_DONG\000"
+ 2490      4241495F 
+ 2490      444F4E47 
+ 2490      00
+ 2491              	.LASF40:
+ 2492 0268 4B45595F 		.ascii	"KEY_WENDU_JIAN\000"
+ 2492      57454E44 
+ 2492      555F4A49 
+ 2492      414E00
+ 2493              	.LASF76:
+ 2494 0277 6170705F 		.ascii	"app_key_long_release_ding_shi_jian_handler\000"
+ 2494      6B65795F 
+ 2494      6C6F6E67 
+ 2494      5F72656C 
+ 2494      65617365 
+ 2495              	.LASF74:
+ 2496 02a2 6170705F 		.ascii	"app_key_long_press_ding_shi_jian_handler\000"
+ 2496      6B65795F 
+ 2496      6C6F6E67 
+ 2496      5F707265 
+ 2496      73735F64 
+ 2497              	.LASF64:
+ 2498 02cb 6170705F 		.ascii	"app_key_short_press_xin_feng_handler\000"
+ 2498      6B65795F 
+ 2498      73686F72 
+ 2498      745F7072 
+ 2498      6573735F 
+ 2499              	.LASF65:
+ 2500 02f0 6170705F 		.ascii	"app_key_short_press_qiang_ruo_handler\000"
+ 2500      6B65795F 
+ 2500      73686F72 
+ 2500      745F7072 
+ 2500      6573735F 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 48
 
 
- 2487      50524553 
- 2487      535F5745 
- 2488              	.LASF40:
- 2489 06d0 4B45595F 		.ascii	"KEY_XIN_FENG\000"
- 2489      58494E5F 
- 2489      46454E47 
- 2489      00
- 2490              	.LASF60:
- 2491 06dd 6170705F 		.ascii	"app_key_short_press_feng_nuan_handler\000"
- 2491      6B65795F 
- 2491      73686F72 
- 2491      745F7072 
- 2491      6573735F 
- 2492              	.LASF5:
- 2493 0703 6C6F6E67 		.ascii	"long unsigned int\000"
- 2493      20756E73 
- 2493      69676E65 
- 2493      6420696E 
- 2493      7400
- 2494              	.LASF10:
- 2495 0715 646F7562 		.ascii	"double\000"
- 2495      6C6500
- 2496              	.LASF79:
- 2497 071c 6170705F 		.ascii	"app_init\000"
- 2497      696E6974 
- 2497      00
- 2498              	.LASF45:
- 2499 0725 4B45595F 		.ascii	"KEY_DINGSHI_JIAN\000"
- 2499      44494E47 
- 2499      5348495F 
- 2499      4A49414E 
- 2499      00
- 2500              	.LASF67:
- 2501 0736 6170705F 		.ascii	"app_key_short_press_ding_shi_jia_handler\000"
- 2501      6B65795F 
- 2501      73686F72 
- 2501      745F7072 
- 2501      6573735F 
- 2502              	.LASF77:
- 2503 075f 6170705F 		.ascii	"app_key_combine_wen_jian_ding_jian_handler\000"
- 2503      6B65795F 
- 2503      636F6D62 
- 2503      696E655F 
- 2503      77656E5F 
- 2504              	.LASF25:
- 2505 078a 56414C55 		.ascii	"VALUE_SHORT_PRESS_BAI_DONG\000"
- 2505      455F5348 
- 2505      4F52545F 
- 2505      50524553 
- 2505      535F4241 
- 2506              	.LASF74:
- 2507 07a5 6170705F 		.ascii	"app_key_long_release_ding_shi_jia_handler\000"
- 2507      6B65795F 
- 2507      6C6F6E67 
- 2507      5F72656C 
- 2507      65617365 
- 2508              	.LASF50:
-ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccAmpstE.s 			page 51
+ 2501              	.LASF17:
+ 2502 0316 56414C55 		.ascii	"VALUE_SHORT_PRESS_WENDU_JIA\000"
+ 2502      455F5348 
+ 2502      4F52545F 
+ 2502      50524553 
+ 2502      535F5745 
+ 2503              	.LASF24:
+ 2504 0332 56414C55 		.ascii	"VALUE_SHORT_PRESS_DINGSHI_JIAN\000"
+ 2504      455F5348 
+ 2504      4F52545F 
+ 2504      50524553 
+ 2504      535F4449 
+ 2505              	.LASF22:
+ 2506 0351 56414C55 		.ascii	"VALUE_SHORT_PRESS_XIN_FENG_QU_NUAN\000"
+ 2506      455F5348 
+ 2506      4F52545F 
+ 2506      50524553 
+ 2506      535F5849 
+ 2507              	.LASF85:
+ 2508 0374 6170702E 		.ascii	"app.c\000"
+ 2508      6300
+ 2509              	.LASF49:
+ 2510 037a 4B45595F 		.ascii	"KEY_NUMBER\000"
+ 2510      4E554D42 
+ 2510      455200
+ 2511              	.LASF9:
+ 2512 0385 666C6F61 		.ascii	"float\000"
+ 2512      7400
+ 2513              	.LASF77:
+ 2514 038b 6170705F 		.ascii	"app_key_combine_wen_jia_ding_jia_handler\000"
+ 2514      6B65795F 
+ 2514      636F6D62 
+ 2514      696E655F 
+ 2514      77656E5F 
+ 2515              	.LASF6:
+ 2516 03b4 6C6F6E67 		.ascii	"long long int\000"
+ 2516      206C6F6E 
+ 2516      6720696E 
+ 2516      7400
+ 2517              	.LASF23:
+ 2518 03c2 56414C55 		.ascii	"VALUE_SHORT_PRESS_DINGSHI_JIA\000"
+ 2518      455F5348 
+ 2518      4F52545F 
+ 2518      50524553 
+ 2518      535F4449 
+ 2519              	.LASF16:
+ 2520 03e0 56414C55 		.ascii	"VALUE_SHORT_PRESS_FENG_NUAN\000"
+ 2520      455F5348 
+ 2520      4F52545F 
+ 2520      50524553 
+ 2520      535F4645 
+ 2521              	.LASF4:
+ 2522 03fc 6C6F6E67 		.ascii	"long int\000"
+ 2522      20696E74 
+ 2522      00
+ 2523              	.LASF43:
+ 2524 0405 4B45595F 		.ascii	"KEY_HUAN_QI\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 49
 
 
- 2509 07cf 4B65795F 		.ascii	"Key_Index\000"
- 2509      496E6465 
- 2509      7800
- 2510              	.LASF19:
- 2511 07d9 56414C55 		.ascii	"VALUE_SHORT_PRESS_XIN_FENG\000"
- 2511      455F5348 
- 2511      4F52545F 
- 2511      50524553 
- 2511      535F5849 
- 2512              	.LASF13:
- 2513 07f4 54525545 		.ascii	"TRUE\000"
- 2513      00
- 2514              	.LASF15:
- 2515 07f9 56414C55 		.ascii	"VALUE_SHORT_PRESS_DIAN_YUAN\000"
- 2515      455F5348 
- 2515      4F52545F 
- 2515      50524553 
- 2515      535F4449 
- 2516              	.LASF20:
- 2517 0815 56414C55 		.ascii	"VALUE_SHORT_PRESS_QING_RUO\000"
- 2517      455F5348 
- 2517      4F52545F 
- 2517      50524553 
- 2517      535F5149 
- 2518              	.LASF52:
- 2519 0830 4B45595F 		.ascii	"KEY_EVENT_LONG_PRESS\000"
- 2519      4556454E 
- 2519      545F4C4F 
- 2519      4E475F50 
- 2519      52455353 
- 2520              	.LASF34:
- 2521 0845 56414C55 		.ascii	"VALUE_COMBINE_DM_DIAN_YUAN\000"
- 2521      455F434F 
- 2521      4D42494E 
- 2521      455F444D 
- 2521      5F444941 
- 2522              	.LASF32:
- 2523 0860 56414C55 		.ascii	"VALUE_COMBINE_WA_DA\000"
- 2523      455F434F 
- 2523      4D42494E 
- 2523      455F5741 
- 2523      5F444100 
- 2524              	.LASF28:
- 2525 0874 56414C55 		.ascii	"VALUE_LONG_PRESS_DING_SHI_JIA\000"
- 2525      455F4C4F 
- 2525      4E475F50 
- 2525      52455353 
- 2525      5F44494E 
- 2526              	.LASF49:
- 2527 0892 426F6F6C 		.ascii	"Bool\000"
- 2527      00
- 2528              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 2524      4855414E 
+ 2524      5F514900 
+ 2525              	.LASF70:
+ 2526 0411 6170705F 		.ascii	"app_key_short_press_bai_dong_handler\000"
+ 2526      6B65795F 
+ 2526      73686F72 
+ 2526      745F7072 
+ 2526      6573735F 
+ 2527              	.LASF79:
+ 2528 0436 6170705F 		.ascii	"app_key_combine_ding_jian_dian_yuan_handler\000"
+ 2528      6B65795F 
+ 2528      636F6D62 
+ 2528      696E655F 
+ 2528      64696E67 
+ 2529              	.LASF58:
+ 2530 0462 4B65795F 		.ascii	"Key_event_handler\000"
+ 2530      6576656E 
+ 2530      745F6861 
+ 2530      6E646C65 
+ 2530      7200
+ 2531              	.LASF29:
+ 2532 0474 56414C55 		.ascii	"VALUE_LONG_PRESS_DING_SHI_JIAN\000"
+ 2532      455F4C4F 
+ 2532      4E475F50 
+ 2532      52455353 
+ 2532      5F44494E 
+ 2533              	.LASF73:
+ 2534 0493 6170705F 		.ascii	"app_key_long_press_ding_shi_jia_handler\000"
+ 2534      6B65795F 
+ 2534      6C6F6E67 
+ 2534      5F707265 
+ 2534      73735F64 
+ 2535              	.LASF63:
+ 2536 04bb 6170705F 		.ascii	"app_key_short_press_wen_du_jian_handler\000"
+ 2536      6B65795F 
+ 2536      73686F72 
+ 2536      745F7072 
+ 2536      6573735F 
+ 2537              	.LASF1:
+ 2538 04e3 756E7369 		.ascii	"unsigned char\000"
+ 2538      676E6564 
+ 2538      20636861 
+ 2538      7200
+ 2539              	.LASF31:
+ 2540 04f1 56414C55 		.ascii	"VALUE_LONG_RELEASE_DING_SHI_JIAN\000"
+ 2540      455F4C4F 
+ 2540      4E475F52 
+ 2540      454C4541 
+ 2540      53455F44 
+ 2541              	.LASF35:
+ 2542 0512 56414C55 		.ascii	"VALUE_CONBINE_QIANG_RUO_DIAN_YUAN\000"
+ 2542      455F434F 
+ 2542      4E42494E 
+ 2542      455F5149 
+ 2542      414E475F 
+ 2543              	.LASF39:
+ 2544 0534 4B45595F 		.ascii	"KEY_WENDU_JIA\000"
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 50
+
+
+ 2544      57454E44 
+ 2544      555F4A49 
+ 2544      4100
+ 2545              	.LASF7:
+ 2546 0542 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2546      206C6F6E 
+ 2546      6720756E 
+ 2546      7369676E 
+ 2546      65642069 
+ 2547              	.LASF8:
+ 2548 0559 756E7369 		.ascii	"unsigned int\000"
+ 2548      676E6564 
+ 2548      20696E74 
+ 2548      00
+ 2549              	.LASF60:
+ 2550 0566 6170705F 		.ascii	"app_key_short_press_dian_yuan_handler\000"
+ 2550      6B65795F 
+ 2550      73686F72 
+ 2550      745F7072 
+ 2550      6573735F 
+ 2551              	.LASF88:
+ 2552 058c 6B65795F 		.ascii	"key_add_combine_handler\000"
+ 2552      6164645F 
+ 2552      636F6D62 
+ 2552      696E655F 
+ 2552      68616E64 
+ 2553              	.LASF87:
+ 2554 05a4 6170705F 		.ascii	"app_send_buffer\000"
+ 2554      73656E64 
+ 2554      5F627566 
+ 2554      66657200 
+ 2555              	.LASF67:
+ 2556 05b4 6170705F 		.ascii	"app_key_short_press_xin_feng_qu_nuan_handler\000"
+ 2556      6B65795F 
+ 2556      73686F72 
+ 2556      745F7072 
+ 2556      6573735F 
+ 2557              	.LASF62:
+ 2558 05e1 6170705F 		.ascii	"app_key_short_press_wen_du_jia_handler\000"
+ 2558      6B65795F 
+ 2558      73686F72 
+ 2558      745F7072 
+ 2558      6573735F 
+ 2559              	.LASF21:
+ 2560 0608 56414C55 		.ascii	"VALUE_SHORT_PRESS_HUAN_QI\000"
+ 2560      455F5348 
+ 2560      4F52545F 
+ 2560      50524553 
+ 2560      535F4855 
+ 2561              	.LASF11:
+ 2562 0622 63686172 		.ascii	"char\000"
+ 2562      00
+ 2563              	.LASF66:
+ 2564 0627 6170705F 		.ascii	"app_key_short_press_huan_qi_handler\000"
+ 2564      6B65795F 
+ 2564      73686F72 
+ 2564      745F7072 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 51
+
+
+ 2564      6573735F 
+ 2565              	.LASF52:
+ 2566 064b 4B45595F 		.ascii	"KEY_EVENT_SHORT_PRESS\000"
+ 2566      4556454E 
+ 2566      545F5348 
+ 2566      4F52545F 
+ 2566      50524553 
+ 2567              	.LASF3:
+ 2568 0661 73686F72 		.ascii	"short unsigned int\000"
+ 2568      7420756E 
+ 2568      7369676E 
+ 2568      65642069 
+ 2568      6E7400
+ 2569              	.LASF69:
+ 2570 0674 6170705F 		.ascii	"app_key_short_press_ding_shi_jian_handler\000"
+ 2570      6B65795F 
+ 2570      73686F72 
+ 2570      745F7072 
+ 2570      6573735F 
+ 2571              	.LASF37:
+ 2572 069e 4B45595F 		.ascii	"KEY_DIAN_YUAN\000"
+ 2572      4449414E 
+ 2572      5F595541 
+ 2572      4E00
+ 2573              	.LASF45:
+ 2574 06ac 4B45595F 		.ascii	"KEY_DINGSHI_JIA\000"
+ 2574      44494E47 
+ 2574      5348495F 
+ 2574      4A494100 
+ 2575              	.LASF18:
+ 2576 06bc 56414C55 		.ascii	"VALUE_SHORT_PRESS_WENDU_JIAN\000"
+ 2576      455F5348 
+ 2576      4F52545F 
+ 2576      50524553 
+ 2576      535F5745 
+ 2577              	.LASF41:
+ 2578 06d9 4B45595F 		.ascii	"KEY_XIN_FENG\000"
+ 2578      58494E5F 
+ 2578      46454E47 
+ 2578      00
+ 2579              	.LASF61:
+ 2580 06e6 6170705F 		.ascii	"app_key_short_press_feng_nuan_handler\000"
+ 2580      6B65795F 
+ 2580      73686F72 
+ 2580      745F7072 
+ 2580      6573735F 
+ 2581              	.LASF5:
+ 2582 070c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2582      20756E73 
+ 2582      69676E65 
+ 2582      6420696E 
+ 2582      7400
+ 2583              	.LASF86:
+ 2584 071e 443A5C41 		.ascii	"D:\\AYBR3000\\AYBR3000_V2.0\\AYBR3000\\AYBR3000.cyd"
+ 2584      59425233 
+ 2584      3030305C 
+ 2584      41594252 
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 52
+
+
+ 2584      33303030 
+ 2585 074d 736E00   		.ascii	"sn\000"
+ 2586              	.LASF10:
+ 2587 0750 646F7562 		.ascii	"double\000"
+ 2587      6C6500
+ 2588              	.LASF81:
+ 2589 0757 6170705F 		.ascii	"app_init\000"
+ 2589      696E6974 
+ 2589      00
+ 2590              	.LASF46:
+ 2591 0760 4B45595F 		.ascii	"KEY_DINGSHI_JIAN\000"
+ 2591      44494E47 
+ 2591      5348495F 
+ 2591      4A49414E 
+ 2591      00
+ 2592              	.LASF68:
+ 2593 0771 6170705F 		.ascii	"app_key_short_press_ding_shi_jia_handler\000"
+ 2593      6B65795F 
+ 2593      73686F72 
+ 2593      745F7072 
+ 2593      6573735F 
+ 2594              	.LASF78:
+ 2595 079a 6170705F 		.ascii	"app_key_combine_wen_jian_ding_jian_handler\000"
+ 2595      6B65795F 
+ 2595      636F6D62 
+ 2595      696E655F 
+ 2595      77656E5F 
+ 2596              	.LASF25:
+ 2597 07c5 56414C55 		.ascii	"VALUE_SHORT_PRESS_BAI_DONG\000"
+ 2597      455F5348 
+ 2597      4F52545F 
+ 2597      50524553 
+ 2597      535F4241 
+ 2598              	.LASF14:
+ 2599 07e0 73697A65 		.ascii	"sizetype\000"
+ 2599      74797065 
+ 2599      00
+ 2600              	.LASF75:
+ 2601 07e9 6170705F 		.ascii	"app_key_long_release_ding_shi_jia_handler\000"
+ 2601      6B65795F 
+ 2601      6C6F6E67 
+ 2601      5F72656C 
+ 2601      65617365 
+ 2602              	.LASF51:
+ 2603 0813 4B65795F 		.ascii	"Key_Index\000"
+ 2603      496E6465 
+ 2603      7800
+ 2604              	.LASF19:
+ 2605 081d 56414C55 		.ascii	"VALUE_SHORT_PRESS_XIN_FENG\000"
+ 2605      455F5348 
+ 2605      4F52545F 
+ 2605      50524553 
+ 2605      535F5849 
+ 2606              	.LASF13:
+ 2607 0838 54525545 		.ascii	"TRUE\000"
+ 2607      00
+ 2608              	.LASF15:
+ARM GAS  C:\Users\Administrator\AppData\Local\Temp\ccjysziQ.s 			page 53
+
+
+ 2609 083d 56414C55 		.ascii	"VALUE_SHORT_PRESS_DIAN_YUAN\000"
+ 2609      455F5348 
+ 2609      4F52545F 
+ 2609      50524553 
+ 2609      535F4449 
+ 2610              	.LASF20:
+ 2611 0859 56414C55 		.ascii	"VALUE_SHORT_PRESS_QING_RUO\000"
+ 2611      455F5348 
+ 2611      4F52545F 
+ 2611      50524553 
+ 2611      535F5149 
+ 2612              	.LASF53:
+ 2613 0874 4B45595F 		.ascii	"KEY_EVENT_LONG_PRESS\000"
+ 2613      4556454E 
+ 2613      545F4C4F 
+ 2613      4E475F50 
+ 2613      52455353 
+ 2614              	.LASF34:
+ 2615 0889 56414C55 		.ascii	"VALUE_COMBINE_DM_DIAN_YUAN\000"
+ 2615      455F434F 
+ 2615      4D42494E 
+ 2615      455F444D 
+ 2615      5F444941 
+ 2616              	.LASF32:
+ 2617 08a4 56414C55 		.ascii	"VALUE_COMBINE_WA_DA\000"
+ 2617      455F434F 
+ 2617      4D42494E 
+ 2617      455F5741 
+ 2617      5F444100 
+ 2618              	.LASF28:
+ 2619 08b8 56414C55 		.ascii	"VALUE_LONG_PRESS_DING_SHI_JIA\000"
+ 2619      455F4C4F 
+ 2619      4E475F50 
+ 2619      52455353 
+ 2619      5F44494E 
+ 2620              	.LASF50:
+ 2621 08d6 426F6F6C 		.ascii	"Bool\000"
+ 2621      00
+ 2622              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

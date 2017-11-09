@@ -1,0 +1,4 @@
+---- app_lcd_display_init Matches (3 in 3 files) ----
+App_lcd_display.c (user):void app_lcd_display_init(void)
+App_lcd_display.h (user):extern void app_lcd_display_init(void);
+Main.c (user):    app_lcd_display_init();

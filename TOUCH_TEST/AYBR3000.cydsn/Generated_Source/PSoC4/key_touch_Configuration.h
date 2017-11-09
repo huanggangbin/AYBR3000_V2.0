@@ -225,7 +225,7 @@
 #define key_touch_CSD_SS_HWTH_EN     (key_touch_CSD_SS_HW_EN | \
                                              key_touch_CSD_SS_TH_EN)
 
-#define key_touch_CSD_AUTOTUNE       key_touch_CSD_SS_HWTH_EN
+#define key_touch_CSD_AUTOTUNE       key_touch_CSD_SS_DIS
 
 
 /*******************************************************************************
@@ -466,7 +466,7 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 #define key_touch_CSD_SHIELD_DELAY             (key_touch_NO_DELAY)
 #define key_touch_CSD_TOTAL_SHIELD_COUNT       (0u)
 #define key_touch_CSD_SCANSPEED_DIVIDER        (1u)
-#define key_touch_CSD_COMMON_SNS_CLK_EN        (0u)
+#define key_touch_CSD_COMMON_SNS_CLK_EN        (1u)
 #define key_touch_CSD_SNS_CLK_SOURCE           (key_touch_CLK_SOURCE_PRSAUTO)
 #define key_touch_CSD_SNS_CLK_DIVIDER          (4u)
 #define key_touch_CSD_INACTIVE_SNS_CONNECTION  (key_touch_SNS_CONNECTION_GROUND)
@@ -525,198 +525,174 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 *******************************************************************************/
 
 /* RAM Global Parameters Definitions */
-#define key_touch_CONFIG_ID                     (0xA122u)
+#define key_touch_CONFIG_ID                     (0xF558u)
 #define key_touch_DEVICE_ID                     (0x0130u)
 #define key_touch_CSD0_CONFIG                   (0x0008u)
 
 /***************************************************************************//**
 * Button0 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON0_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON0_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON0_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
 * Button0 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON0_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON0_FINGER_TH             (100u)
-#define key_touch_BUTTON0_NOISE_TH              (40u)
-#define key_touch_BUTTON0_NNOISE_TH             (40u)
-#define key_touch_BUTTON0_HYSTERESIS            (10u)
+#define key_touch_BUTTON0_FINGER_TH             (150u)
+#define key_touch_BUTTON0_NOISE_TH              (65u)
+#define key_touch_BUTTON0_NNOISE_TH             (30u)
+#define key_touch_BUTTON0_HYSTERESIS            (7u)
 #define key_touch_BUTTON0_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON0_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON0_BSLN_COEFF            (100u)
 #define key_touch_BUTTON0_IDAC_MOD0             (32u)
-#define key_touch_BUTTON0_SNS_CLK               (4u)
 #define key_touch_BUTTON0_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON0_FINGER_CAP            (160u)
-#define key_touch_BUTTON0_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button1 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON1_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON1_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON1_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
 * Button1 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON1_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON1_FINGER_TH             (100u)
-#define key_touch_BUTTON1_NOISE_TH              (40u)
-#define key_touch_BUTTON1_NNOISE_TH             (40u)
-#define key_touch_BUTTON1_HYSTERESIS            (10u)
+#define key_touch_BUTTON1_FINGER_TH             (70u)
+#define key_touch_BUTTON1_NOISE_TH              (35u)
+#define key_touch_BUTTON1_NNOISE_TH             (35u)
+#define key_touch_BUTTON1_HYSTERESIS            (6u)
 #define key_touch_BUTTON1_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON1_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON1_BSLN_COEFF            (100u)
 #define key_touch_BUTTON1_IDAC_MOD0             (32u)
-#define key_touch_BUTTON1_SNS_CLK               (4u)
 #define key_touch_BUTTON1_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON1_FINGER_CAP            (160u)
-#define key_touch_BUTTON1_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button2 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON2_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON2_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON2_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
 * Button2 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON2_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON2_FINGER_TH             (100u)
+#define key_touch_BUTTON2_FINGER_TH             (80u)
 #define key_touch_BUTTON2_NOISE_TH              (40u)
 #define key_touch_BUTTON2_NNOISE_TH             (40u)
-#define key_touch_BUTTON2_HYSTERESIS            (10u)
+#define key_touch_BUTTON2_HYSTERESIS            (5u)
 #define key_touch_BUTTON2_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON2_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON2_BSLN_COEFF            (100u)
 #define key_touch_BUTTON2_IDAC_MOD0             (32u)
-#define key_touch_BUTTON2_SNS_CLK               (4u)
 #define key_touch_BUTTON2_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON2_FINGER_CAP            (160u)
-#define key_touch_BUTTON2_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button3 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON3_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON3_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON3_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
 * Button3 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON3_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON3_FINGER_TH             (100u)
-#define key_touch_BUTTON3_NOISE_TH              (40u)
-#define key_touch_BUTTON3_NNOISE_TH             (40u)
-#define key_touch_BUTTON3_HYSTERESIS            (10u)
+#define key_touch_BUTTON3_FINGER_TH             (50u)
+#define key_touch_BUTTON3_NOISE_TH              (25u)
+#define key_touch_BUTTON3_NNOISE_TH             (25u)
+#define key_touch_BUTTON3_HYSTERESIS            (4u)
 #define key_touch_BUTTON3_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON3_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON3_BSLN_COEFF            (100u)
 #define key_touch_BUTTON3_IDAC_MOD0             (32u)
-#define key_touch_BUTTON3_SNS_CLK               (4u)
 #define key_touch_BUTTON3_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON3_FINGER_CAP            (160u)
-#define key_touch_BUTTON3_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button4 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON4_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON4_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON4_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
 * Button4 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON4_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON4_FINGER_TH             (100u)
-#define key_touch_BUTTON4_NOISE_TH              (40u)
-#define key_touch_BUTTON4_NNOISE_TH             (40u)
-#define key_touch_BUTTON4_HYSTERESIS            (10u)
+#define key_touch_BUTTON4_FINGER_TH             (55u)
+#define key_touch_BUTTON4_NOISE_TH              (28u)
+#define key_touch_BUTTON4_NNOISE_TH             (28u)
+#define key_touch_BUTTON4_HYSTERESIS            (4u)
 #define key_touch_BUTTON4_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON4_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON4_BSLN_COEFF            (100u)
 #define key_touch_BUTTON4_IDAC_MOD0             (32u)
-#define key_touch_BUTTON4_SNS_CLK               (4u)
 #define key_touch_BUTTON4_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON4_FINGER_CAP            (160u)
-#define key_touch_BUTTON4_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button5 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON5_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON5_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON5_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
 * Button5 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON5_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON5_FINGER_TH             (100u)
-#define key_touch_BUTTON5_NOISE_TH              (40u)
-#define key_touch_BUTTON5_NNOISE_TH             (40u)
-#define key_touch_BUTTON5_HYSTERESIS            (10u)
+#define key_touch_BUTTON5_FINGER_TH             (60u)
+#define key_touch_BUTTON5_NOISE_TH              (30u)
+#define key_touch_BUTTON5_NNOISE_TH             (30u)
+#define key_touch_BUTTON5_HYSTERESIS            (4u)
 #define key_touch_BUTTON5_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON5_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON5_BSLN_COEFF            (100u)
 #define key_touch_BUTTON5_IDAC_MOD0             (32u)
-#define key_touch_BUTTON5_SNS_CLK               (4u)
 #define key_touch_BUTTON5_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON5_FINGER_CAP            (160u)
-#define key_touch_BUTTON5_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button6 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON6_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON6_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON6_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
 * Button6 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON6_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON6_FINGER_TH             (100u)
-#define key_touch_BUTTON6_NOISE_TH              (40u)
-#define key_touch_BUTTON6_NNOISE_TH             (40u)
-#define key_touch_BUTTON6_HYSTERESIS            (10u)
+#define key_touch_BUTTON6_FINGER_TH             (160u)
+#define key_touch_BUTTON6_NOISE_TH              (80u)
+#define key_touch_BUTTON6_NNOISE_TH             (80u)
+#define key_touch_BUTTON6_HYSTERESIS            (7u)
 #define key_touch_BUTTON6_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON6_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON6_BSLN_COEFF            (100u)
 #define key_touch_BUTTON6_IDAC_MOD0             (32u)
-#define key_touch_BUTTON6_SNS_CLK               (4u)
 #define key_touch_BUTTON6_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON6_FINGER_CAP            (160u)
-#define key_touch_BUTTON6_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button7 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON7_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON7_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON7_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
 * Button7 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON7_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON7_FINGER_TH             (100u)
-#define key_touch_BUTTON7_NOISE_TH              (40u)
-#define key_touch_BUTTON7_NNOISE_TH             (40u)
-#define key_touch_BUTTON7_HYSTERESIS            (10u)
+#define key_touch_BUTTON7_FINGER_TH             (78u)
+#define key_touch_BUTTON7_NOISE_TH              (39u)
+#define key_touch_BUTTON7_NNOISE_TH             (39u)
+#define key_touch_BUTTON7_HYSTERESIS            (6u)
 #define key_touch_BUTTON7_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON7_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON7_BSLN_COEFF            (100u)
 #define key_touch_BUTTON7_IDAC_MOD0             (32u)
-#define key_touch_BUTTON7_SNS_CLK               (4u)
 #define key_touch_BUTTON7_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON7_FINGER_CAP            (160u)
-#define key_touch_BUTTON7_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button8 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON8_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON8_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON8_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
@@ -724,86 +700,74 @@ typedef uint16 key_touch_THRESHOLD_TYPE;
 *******************************************************************************/
 #define key_touch_BUTTON8_RESOLUTION            (key_touch_RES12BIT)
 #define key_touch_BUTTON8_FINGER_TH             (100u)
-#define key_touch_BUTTON8_NOISE_TH              (40u)
-#define key_touch_BUTTON8_NNOISE_TH             (40u)
-#define key_touch_BUTTON8_HYSTERESIS            (10u)
+#define key_touch_BUTTON8_NOISE_TH              (50u)
+#define key_touch_BUTTON8_NNOISE_TH             (50u)
+#define key_touch_BUTTON8_HYSTERESIS            (6u)
 #define key_touch_BUTTON8_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON8_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON8_BSLN_COEFF            (100u)
 #define key_touch_BUTTON8_IDAC_MOD0             (32u)
-#define key_touch_BUTTON8_SNS_CLK               (4u)
 #define key_touch_BUTTON8_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON8_FINGER_CAP            (160u)
-#define key_touch_BUTTON8_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button9 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON9_STATIC_CONFIG         (1u)
+#define key_touch_BUTTON9_STATIC_CONFIG         (0u)
 #define key_touch_BUTTON9_NUM_SENSORS           (1u)
 
 /***************************************************************************//**
 * Button9 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON9_RESOLUTION            (key_touch_RES12BIT)
-#define key_touch_BUTTON9_FINGER_TH             (100u)
-#define key_touch_BUTTON9_NOISE_TH              (40u)
-#define key_touch_BUTTON9_NNOISE_TH             (40u)
-#define key_touch_BUTTON9_HYSTERESIS            (10u)
+#define key_touch_BUTTON9_FINGER_TH             (56u)
+#define key_touch_BUTTON9_NOISE_TH              (28u)
+#define key_touch_BUTTON9_NNOISE_TH             (28u)
+#define key_touch_BUTTON9_HYSTERESIS            (4u)
 #define key_touch_BUTTON9_ON_DEBOUNCE           (3u)
 #define key_touch_BUTTON9_LOW_BSLN_RST          (30u)
 #define key_touch_BUTTON9_BSLN_COEFF            (100u)
 #define key_touch_BUTTON9_IDAC_MOD0             (32u)
-#define key_touch_BUTTON9_SNS_CLK               (4u)
 #define key_touch_BUTTON9_SNS_CLK_SOURCE        (0u)
-#define key_touch_BUTTON9_FINGER_CAP            (160u)
-#define key_touch_BUTTON9_SIGPFC                (0u)
 
 /***************************************************************************//**
 * Button10 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON10_STATIC_CONFIG        (1u)
+#define key_touch_BUTTON10_STATIC_CONFIG        (0u)
 #define key_touch_BUTTON10_NUM_SENSORS          (1u)
 
 /***************************************************************************//**
 * Button10 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON10_RESOLUTION           (key_touch_RES12BIT)
-#define key_touch_BUTTON10_FINGER_TH            (100u)
-#define key_touch_BUTTON10_NOISE_TH             (40u)
-#define key_touch_BUTTON10_NNOISE_TH            (40u)
-#define key_touch_BUTTON10_HYSTERESIS           (10u)
+#define key_touch_BUTTON10_FINGER_TH            (78u)
+#define key_touch_BUTTON10_NOISE_TH             (39u)
+#define key_touch_BUTTON10_NNOISE_TH            (39u)
+#define key_touch_BUTTON10_HYSTERESIS           (5u)
 #define key_touch_BUTTON10_ON_DEBOUNCE          (3u)
 #define key_touch_BUTTON10_LOW_BSLN_RST         (30u)
 #define key_touch_BUTTON10_BSLN_COEFF           (100u)
 #define key_touch_BUTTON10_IDAC_MOD0            (32u)
-#define key_touch_BUTTON10_SNS_CLK              (4u)
 #define key_touch_BUTTON10_SNS_CLK_SOURCE       (0u)
-#define key_touch_BUTTON10_FINGER_CAP           (160u)
-#define key_touch_BUTTON10_SIGPFC               (0u)
 
 /***************************************************************************//**
 * Button11 initialization values for FLASH data structure
 *******************************************************************************/
-#define key_touch_BUTTON11_STATIC_CONFIG        (1u)
+#define key_touch_BUTTON11_STATIC_CONFIG        (0u)
 #define key_touch_BUTTON11_NUM_SENSORS          (1u)
 
 /***************************************************************************//**
 * Button11 initialization values for RAM data structure
 *******************************************************************************/
 #define key_touch_BUTTON11_RESOLUTION           (key_touch_RES12BIT)
-#define key_touch_BUTTON11_FINGER_TH            (100u)
-#define key_touch_BUTTON11_NOISE_TH             (40u)
-#define key_touch_BUTTON11_NNOISE_TH            (40u)
-#define key_touch_BUTTON11_HYSTERESIS           (10u)
+#define key_touch_BUTTON11_FINGER_TH            (70u)
+#define key_touch_BUTTON11_NOISE_TH             (35u)
+#define key_touch_BUTTON11_NNOISE_TH            (35u)
+#define key_touch_BUTTON11_HYSTERESIS           (4u)
 #define key_touch_BUTTON11_ON_DEBOUNCE          (3u)
 #define key_touch_BUTTON11_LOW_BSLN_RST         (30u)
 #define key_touch_BUTTON11_BSLN_COEFF           (100u)
 #define key_touch_BUTTON11_IDAC_MOD0            (32u)
-#define key_touch_BUTTON11_SNS_CLK              (4u)
 #define key_touch_BUTTON11_SNS_CLK_SOURCE       (0u)
-#define key_touch_BUTTON11_FINGER_CAP           (160u)
-#define key_touch_BUTTON11_SIGPFC               (0u)
 
 /* RAM Sensor Parameters Definitions */
 #define key_touch_BUTTON0_SNS0_IDAC_COMP0       (32u)
