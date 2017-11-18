@@ -1,0 +1,14 @@
+1
+2
+3
+4
+5
+6master
+7
+8hotfix
+<<<<<<< HEAD
+9fix
+=======
+9hot
+>>>>>>> hotfix
+master
